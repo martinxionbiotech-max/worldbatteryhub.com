@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'CCA by Battery Group: Typical Cold Cranking Amps for H4–H9, L1–L6, JIS and BCI';
+const description = 'Typical cold cranking amps (CCA) by battery group size — H4/H5/H6/H7/H8/H9, L1–L6, JIS N-series and BCI Group 31/8D — and why CCA scales with group size but varies by design and standard.';
+const canonical = '/lead-acid/cca/cca-by-battery-group/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'CCA by battery group size',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Does CCA increase with battery group size?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Generally yes. A larger battery group has a larger case and more plate surface area, which supports more cranking current. But within the same group, CCA varies by design (AGM vs flooded, plate thickness) and by test standard, so the group only sets a rough range, not a fixed value.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What CCA is an H7 battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An H7 (L4) battery is typically about 80 Ah with roughly 760 CCA under EN 50342. Exact values vary by manufacturer and technology, so treat the figure as a typical range and confirm the specific battery\u2019s datasheet.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · CCA Cluster · Last reviewed 2026-09-14</p>
+      <h1>CCA by Battery Group: Typical Cold Cranking Amps for H4–H9, L1–L6, JIS and BCI</h1>
+      <p class="lead">
+        Cold cranking amps scale with battery size, because a bigger case holds more plate surface area — and
+        plate surface is what delivers cranking current. The table below gives typical CCA by group, but the
+        number is a <strong>range, not a fixed value</strong>: within any one group it varies by technology, plate design
+        and test standard.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> CCA rises with group size — an H9 has more than an H4, a JIS N200 more than a JIS N150, a BCI 8D more than a Group 31. But the group only bounds a typical range. The precise figure depends on the <strong>test standard</strong> (a JIS number reads higher than an EN number for the same battery — see <a href="/lead-acid/cca/what-is-cca/">What is CCA</a>) and the <strong>design</strong> (AGM vs flooded, thin vs thick plates).
+      </div>
+
+      <h2>Typical CCA by group</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Group / family</th>
+            <th>Typical capacity</th>
+            <th>Typical CCA</th>
+            <th>Standard (basis)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>H4 (L1)</strong></td><td>~55–60 Ah</td><td>~500–600 A</td><td>EN / DIN</td></tr>
+          <tr><td><strong>H5 (L2)</strong></td><td>~60 Ah</td><td>~600 A</td><td>EN / DIN</td></tr>
+          <tr><td><strong>H6 (L3)</strong></td><td>~70 Ah</td><td>~640–700 A</td><td>EN / DIN</td></tr>
+          <tr><td><strong>H7 (L4)</strong></td><td>~80 Ah</td><td>~760 A</td><td>EN / DIN</td></tr>
+          <tr><td><strong>H8 (L5)</strong></td><td>~90–95 Ah</td><td>~850–900 A</td><td>EN / DIN</td></tr>
+          <tr><td><strong>H9 (L6)</strong></td><td>~105 Ah</td><td>~950 A</td><td>EN / DIN</td></tr>
+          <tr><td><strong>JIS 55D23</strong></td><td>~60 Ah</td><td>~540 A</td><td>JIS (−15°C)</td></tr>
+          <tr><td><strong>JIS N150 (145G51)</strong></td><td>~135 Ah</td><td>~900 A</td><td>JIS (−15°C)</td></tr>
+          <tr><td><strong>JIS N200 (190H52)</strong></td><td>~200 Ah</td><td>~1100 A</td><td>JIS (−15°C)</td></tr>
+          <tr><td><strong>BCI Group 31</strong></td><td>~100 Ah</td><td>~900 A</td><td>SAE / BCI</td></tr>
+          <tr><td><strong>BCI Group 8D</strong></td><td>~200+ Ah</td><td>~1400+ A</td><td>SAE / BCI</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Figures are typical ranges cross-checked across multiple manufacturer datasheets; they are not a
+        substitute for the exact value on a specific battery, which can differ by ±10–15% within a group.
+      </p>
+
+      <h2>Why CCA scales with group size</h2>
+      <p>
+        Cranking current comes from <strong>plate surface area</strong>: more surface in contact with the electrolyte
+        means more current can leave the cell at once. A larger group case physically holds more (or larger)
+        plates, so its CCA ceiling rises. That is why the relationship is monotonic but loose — two batteries
+        in the same group can differ by a hundred CCA or more if one uses thinner plates (more surface, higher
+        CCA) and the other thicker plates (more durability, lower CCA).
+      </p>
+
+      <h2>The two reasons the same group prints different CCA</h2>
+      <ol>
+        <li><strong>Standard</strong> — a JIS (−15°C) number reads higher than an EN/SAE (−18°C) number for the same physical battery. Compare only within one standard.</li>
+        <li><strong>Design</strong> — AGM and EFB typically deliver higher CCA than a flooded battery of the same group, because their construction reduces internal resistance.</li>
+      </ol>
+
+      <h2>How to use the table</h2>
+      <p>
+        Use the group first to match the vehicle's tray and terminal layout, then use CCA to match the engine's
+        cold-start demand and your climate. The owner's manual or the original battery label is the authority on
+        the exact figure — the table is a starting point for recognizing whether a quoted number is in the right
+        ballpark.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>CCA rises with group size because a larger case holds <strong>more plate surface area</strong>.</li>
+          <li>The group bounds a <strong>typical range</strong>, not a fixed number — values vary by ±10–15% within a group.</li>
+          <li>Two variables move the number within a group: the <strong>test standard</strong> and the <strong>design</strong> (AGM/EFB vs flooded).</li>
+          <li>Match the <strong>group to the tray</strong> first, then the <strong>CCA to the engine and climate</strong>.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> A "typical CCA by group" table is a sanity check, not a specification — and the
+          useful skill is reading it as a range that two variables (standard and design) can push in opposite
+          directions.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The table tells you an H7 "should" be around 760 CCA, which immediately flags a
+          quote of "H7 — 900 CCA" as either an AGM/EFB design or a JIS-warmed number. That one comparison — expected
+          range versus quoted figure, then asking which standard produced it — catches most specification mistakes
+          before they become a wrong purchase.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        CCA ranges cross-verified from manufacturer datasheets (Varta, Bosch, Yuasa, Century, Exide and Chinese
+        manufacturers including Dingwei/Chengguang) and the BCI group-size reference. Where manufacturers differ,
+        the range is stated rather than a single figure.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — group-size definitions.</li>
+        <li>EN 50342, JIS D5301, SAE J537 — cranking-amp test methods.</li>
+        <li>Manufacturer datasheets — H4–H9, JIS N150/N200, BCI 31/8D typical CCA values.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
