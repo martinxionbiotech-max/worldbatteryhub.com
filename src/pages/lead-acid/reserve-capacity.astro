@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Reserve Capacity (RC): What It Is and Why It Matters More Than You Think';
+const description = 'Reserve capacity (RC) is the minutes a battery can sustain a 25-amp load before dropping to 10.5V. How it differs from Ah and CCA, and why it matters for vehicles with heavy electrical loads.';
+const canonical = '/lead-acid/reserve-capacity/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery reserve capacity (RC)',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is reserve capacity on a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Reserve capacity (RC) is the number of minutes a fully-charged 12V battery can deliver 25 amps at 27°C (80°F) before the voltage drops to 10.5V. It measures how long the battery can keep the electrical system running if the charging system (alternator) fails.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between RC and Ah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They measure related but different things. Ah (amp-hours) is total stored energy at a slow 20-hour discharge; RC is minutes at a fixed 25-amp load. RC is a practical "run the car without the alternator" figure, while Ah is a storage-energy figure.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Ratings · Last reviewed 2026-09-14</p>
+      <h1>Reserve Capacity (RC): What It Is and Why It Matters More Than You Think</h1>
+      <p class="lead">
+        CCA tells you whether the battery starts the engine; reserve capacity tells you whether it keeps the
+        lights on if the alternator quits. It is the often-ignored third rating, and it matters most in exactly
+        the failure scenarios buyers forget to plan for.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Reserve capacity (RC) is the <strong>minutes a fully-charged 12V battery can deliver
+        25 amps at 27°C (80°F) before dropping to 10.5V</strong>. It is a practical endurance figure — how long the
+        battery keeps the electrical system alive with the engine (and alternator) out of the picture. Higher RC
+        means a longer buffer for lights, electronics and engine-off loads.
+      </div>
+
+      <h2>What RC actually measures</h2>
+      <p>
+        RC is defined at a fixed 25-amp load and a fixed temperature, so it is directly comparable between
+        batteries. A battery rated <strong>120 min RC</strong> can hold 25 A for two hours before falling to 10.5V. The 25 A is
+        chosen to approximate the running electrical load of a vehicle — lights, ignition, electronics — which is
+        why RC maps so well to the real "alternator just died" scenario.
+      </p>
+
+      <h2>RC vs Ah vs CCA</h2>
+      <table>
+        <thead>
+          <tr><th>Rating</th><th>Question it answers</th><th>Method</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>CCA</strong></td><td>Can it start the engine cold?</td><td>30 s at −18°C to 7.2V</td></tr>
+          <tr><td><strong>RC</strong></td><td>How long can it run without the alternator?</td><td>25 A at 27°C to 10.5V</td></tr>
+          <tr><td><strong>Ah (C20)</strong></td><td>How much energy does it store?</td><td>20 h to 10.5V</td></tr>
+        </tbody>
+      </table>
+      <p>
+        They are related but answer different questions. A battery can crank strongly (high CCA) yet have a short
+        reserve (low RC), or hold lots of energy (high Ah) but crank modestly. For a vehicle with heavy
+        engine-off loads, RC is the number that matters most.
+      </p>
+
+      <h2>Why RC matters for modern vehicles</h2>
+      <p>
+        Modern vehicles draw current even with the engine off — telematics, alarms, infotainment, stop-start
+        systems. The deeper that parasitic load, the more RC you want, because RC is the buffer that keeps the
+        vehicle operable between charging events and through an alternator failure. This is also why deep-cycle
+        and AGM batteries, which are built for sustained discharge, carry higher RC than a thin-plate starting
+        battery of the same group.
+      </p>
+
+      <h2>How to read the number</h2>
+      <ul>
+        <li><strong>Passenger car</strong> — RC of roughly 60–120 minutes is typical.</li>
+        <li><strong>Heavy load / accessory-heavy vehicle</strong> — look for higher RC (120+ min).</li>
+        <li><strong>Rule of thumb</strong> — for a given group, higher RC usually means thicker plates and more active material (and often a slightly lower CCA).</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"RC is the same as Ah."</strong> They overlap but are different tests — Ah is a 20-hour storage figure; RC is minutes at a fixed 25 A.</li>
+        <li><strong>"CCA is the only rating that matters."</strong> CCA only covers starting. For engine-off loads and alternator failure, RC is the decisive number.</li>
+        <li><strong>"Higher CCA always means a better battery."</strong> A very high-CCA battery can trade away RC (thin plates), leaving you with less endurance.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>RC = <strong>minutes at 25 A to 10.5V</strong> — the "run without the alternator" endurance figure.</li>
+          <li>CCA, RC and Ah answer <strong>three different questions</strong>: start, endure, store.</li>
+          <li>Higher RC matters for <strong>heavy electrical load and engine-off use</strong>.</li>
+          <li>RC and CCA can trade against each other — thick plates raise RC, thin plates raise CCA.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Reserve capacity is the rating buyers ignore because they only plan for starting —
+          and it is precisely the rating that matters in the failure they did not plan for.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Everyone specs CCA for the cold morning. Almost no one specs RC for the alternator that
+          fails on a highway at night, which is when the difference between a 60-minute and a 120-minute battery is
+          the difference between limping to a garage and being stranded in the dark. A complete battery spec names
+          CCA, RC and Ah — not just the number that gets you started.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and manufacturer datasheets. The 25 A / 27°C / 10.5V RC
+        definition is the standard BCI convention.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — reserve-capacity definition.</li>
+        <li>EN 50342 / SAE J537 — battery test methods (reference).</li>
+        <li>Manufacturer datasheets — RC values and plate-design trade-offs.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
