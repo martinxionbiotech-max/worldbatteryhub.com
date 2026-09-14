@@ -1,0 +1,64 @@
+import type { Props } from './types';
+
+const { title, description, canonical, ogType = 'website', jsonLd = [], author, dateModified } = Astro.props;
+
+const SITE = 'https://worldbatteryhub.com';
+const BRAND = 'World Battery Hub';
+const fullTitle = title.includes('World Battery Hub') ? title : `${title} | ${BRAND}`;
+const resolvedDescription = description || 'A battery knowledge and data platform — lead-acid and lithium battery specifications, technology, testing, manufacturers and market data.';
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: BRAND,
+  url: SITE,
+  description: 'Battery knowledge and data platform covering lead-acid and lithium batteries — specifications, technology, testing, manufacturers and market intelligence.',
+};
+
+const pageJsonLd = jsonLd.map((item) => ({ '@context': 'https://schema.org', ...item }));
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={resolvedDescription} />
+    <link rel="canonical" href={canonical ? `${SITE}${canonical}` : SITE} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={resolvedDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical ? `${SITE}${canonical}` : SITE} />
+    <meta property="og:site_name" content={BRAND} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+    {pageJsonLd.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">World Battery Hub</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/lead-acid/">Lead-Acid</a>
+          <a href="/lithium/">Lithium</a>
+          <a href="/testing/">Testing</a>
+          <a href="/technology/">Technology</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>World Battery Hub — a battery knowledge and data platform. Content is researched from public sources and cross-verified; it is informational, not purchasing advice.</p>
+        <p class="muted">Data sub-sites: <a href="https://data.worldbatteryhub.com">Data</a> · <a href="https://technology.worldbatteryhub.com">Technology</a> · <a href="https://testing.worldbatteryhub.com">Testing</a> · <a href="https://manufacturer.worldbatteryhub.com">Manufacturers</a> · <a href="https://market.worldbatteryhub.com">Market</a></p>
+        {dateModified && <p class="muted">Last reviewed: {dateModified}</p>}
+      </div>
+    </footer>
+  </body>
+</html>
