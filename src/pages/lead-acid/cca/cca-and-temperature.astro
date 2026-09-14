@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'CCA and Temperature: Why Cold Cranking Amps Drops as It Gets Colder';
+const description = 'How temperature affects cold cranking amps — as temperature drops, a battery\u2019s internal resistance rises and its deliverable current falls, which is why CCA is rated at the worst-case cold.';
+const canonical = '/lead-acid/cca/cca-and-temperature/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'CCA and temperature',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Does temperature affect CCA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — strongly. As temperature drops, the electrolyte becomes more viscous and the battery\u2019s internal resistance rises, so it can deliver less current. That is exactly why CCA is measured at a cold temperature (−18°C): the cold number is the worst case, not a typical condition.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is CCA rated at cold and not room temperature?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because cold is the hardest moment for starting — the engine oil is thick and the battery delivers less current. A cold rating tells you the battery\u2019s performance at the moment it matters most, rather than at a comfortable room temperature where it would read higher.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · CCA Cluster · Last reviewed 2026-09-14</p>
+      <h1>CCA and Temperature: Why Cold Cranking Amps Drops as It Gets Colder</h1>
+      <p class="lead">
+        CCA is a number measured in the cold on purpose. Temperature is the single biggest external influence
+        on a battery's cranking ability — as it gets colder, the battery delivers less current, exactly when the
+        engine needs more.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Cold reduces a battery's deliverable current in two ways. It thickens the
+        electrolyte (raising internal resistance), and it thickens the engine oil (raising the starter's demand).
+        The two effects stack, which is why the CCA rating is taken at the cold worst case (−18°C under SAE) —
+        so the number you see is the battery's performance at its hardest moment, not its best.
+      </div>
+
+      <h2>What cold does to a battery's chemistry</h2>
+      <p>
+        A lead-acid battery works by moving ions through a liquid electrolyte. Cold makes that electrolyte more
+        viscous, slowing ion movement and raising <strong>internal resistance</strong>. Higher resistance means more of the
+        battery's voltage is lost inside itself, so less current reaches the starter. The result is a real,
+        measurable drop in cranking amps as the temperature falls toward and below freezing.
+      </p>
+      <p>
+        This is also why a battery that starts a car fine on a warm afternoon can fail on a cold morning — the
+        battery did not change; the temperature did.
+      </p>
+
+      <h2>Why the rating is taken in the cold</h2>
+      <p>
+        CCA is defined at −18°C (0°F) precisely because cold is the worst case. A rating taken at room
+        temperature would look more impressive but would mislead you about the moment that actually matters. The
+        colder test deliberately <em>handicaps</em> the battery so that the printed number reflects real cold-morning
+        capability. The related ratings (<a href="/lead-acid/cca/cca-vs-ca/">CA, MCA, HCA</a>) exist for warmer
+        contexts and print higher numbers for the same reason.
+      </p>
+
+      <h2>What this means for choosing a battery</h2>
+      <ul>
+        <li><strong>Cold climate</strong> — meet or exceed the manufacturer's CCA; the cold number is exactly the one you should trust.</li>
+        <li><strong>Warm climate</strong> — a CA/MCA rating (0°C) is a realistic worst case, and you rarely need extra CCA headroom.</li>
+        <li><strong>Extreme cold</strong> — consider a higher-CCA battery than the minimum, because the drop below −18°C continues and a minimum-spec battery may be marginal.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Temperature is the biggest external driver of CCA — <strong>colder = lower deliverable current</strong>.</li>
+          <li>Cold attacks twice: it raises the battery's internal resistance <em>and</em> the engine's cranking demand.</li>
+          <li>CCA is measured at −18°C <strong>because cold is the worst case</strong> — that is the number to trust for cold starts.</li>
+          <li>Warm-climate buyers can work off CA/MCA; cold-climate buyers should meet or exceed the CCA spec.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The most under-appreciated fact about CCA is that the number already assumes the
+          cold — so a "marginal" CCA spec in a warm showroom is exactly the battery that will strand you at −20°C.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> People read CCA as a fixed property of the battery, when it is really a snapshot at one
+          hostile temperature. Understanding that the cold number is the honest one — and that the drop continues as
+          you go below the test temperature — is the difference between buying a battery that starts your car where
+          you test it and one that starts it where you live.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from primary standards and battery engineering references; the temperature–conductance
+        relationship is a well-established property of lead-acid electrochemistry.
+      </p>
+      <ul>
+        <li>SAE J537 — CCA test method at −18°C.</li>
+        <li>Battery Council International (BCI) — temperature and cranking-performance guidance.</li>
+        <li>Lead-acid battery engineering references — electrolyte viscosity and internal-resistance temperature dependence.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
