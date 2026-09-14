@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How a Lead-Acid Battery Works: The Electrochemistry Behind SLI, AGM and EFB';
+const description = 'The electrochemistry of a lead-acid battery — how lead and lead-dioxide plates in sulfuric acid store and release energy, why a cell is 2.1V, and how sulfation, corrosion and water loss degrade it.';
+const canonical = '/technology/how-lead-acid-battery-works/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery electrochemistry',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does a lead-acid battery work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It stores energy chemically. During discharge, the lead (Pb) negative plate and lead-dioxide (PbO2) positive plate react with sulfuric acid (H2SO4) to form lead sulfate (PbSO4) and water, releasing electrons as current. Charging reverses the reaction, converting the sulfate back into lead, lead dioxide and acid.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is a lead-acid cell 2.1 volts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It is a property of the lead/lead-dioxide/sulfuric-acid chemistry — the potential difference between the two electrodes is about 2.1V per cell. A 12V battery wires six cells in series (6 × 2.1V = 12.6V).',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Lead-Acid · Last reviewed 2026-09-14</p>
+      <h1>How a Lead-Acid Battery Works: The Electrochemistry Behind SLI, AGM and EFB</h1>
+      <p class="lead">
+        A lead-acid battery is a reversible chemical engine: it converts chemical energy to electricity on
+        discharge and back again on charge. Every property of the battery — its 2.1V cells, its CCA, its aging —
+        traces back to that chemistry.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A lead-acid cell stores energy in two electrodes — a <strong>lead (Pb)</strong> negative plate
+        and a <strong>lead-dioxide (PbO₂)</strong> positive plate — immersed in <strong>sulfuric acid (H₂SO₄)</strong>. On discharge both
+        plates react with the acid to form <strong>lead sulfate (PbSO₄)</strong> and water, releasing electrons as current. On
+        charge the reaction reverses. Each cell produces about <strong>2.1V</strong>, so a 12V battery wires six cells in series.
+      </div>
+
+      <h2>The discharge reaction</h2>
+      <p>
+        At the negative plate, lead gives up electrons to become lead sulfate. At the positive plate, lead dioxide
+        accepts electrons and also becomes lead sulfate. The electrolyte supplies sulfate ions and is consumed —
+        which is why the acid <strong>gets weaker</strong> as the battery discharges, a measurable signal of state of charge.
+      </p>
+      <p>
+        The overall reaction converts lead, lead dioxide and sulfuric acid into lead sulfate and water. The
+        electrons that flow between the two plates through the external circuit are the current that does the work.
+      </p>
+
+      <h2>The charge reaction</h2>
+      <p>
+        Charging pushes current the other way and reverses everything: lead sulfate on each plate is converted back
+        into lead on the negative and lead dioxide on the positive, and sulfuric acid is regenerated. This
+        reversibility is why a lead-acid battery can cycle thousands of times — but never perfectly, because each
+        cycle leaves a little sulfate behind.
+      </p>
+
+      <h2>Why 2.1V per cell</h2>
+      <p>
+        The ~2.1V figure is a fixed property of the lead/lead-dioxide/sulfuric-acid chemistry, not a design choice.
+        A "12V" battery is six 2.1V cells in series (≈12.6V when fully charged and at rest). This is also why a
+        battery's resting voltage is a direct read on its state of charge: about 12.6V full, about 12.0V half, and
+        below ~11.9V nearly empty.
+      </p>
+
+      <h2>The three failure modes</h2>
+      <ul>
+        <li><strong>Sulfation</strong> — lead sulfate that is not re-converted hardens into crystals that block the plates, the dominant cause of early death in an under-charged battery.</li>
+        <li><strong>Corrosion</strong> — the positive grid slowly oxidises, especially with overcharging and heat.</li>
+        <li><strong>Water loss</strong> — overcharging splits water into hydrogen and oxygen, drying the electrolyte.</li>
+      </ul>
+      <p>
+        This is also why the technology variants matter: <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM</a> immobilises
+        the electrolyte to suppress water loss and improve charge acceptance, and EFB adds carbon to the negative
+        plate for the same reason.
+      </p>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"The acid is the energy."</strong> The energy is in the electrodes; the acid is the medium that carries the reaction. Both plates, not the acid, store the energy.</li>
+        <li><strong>"12V is exact."</strong> It is nominal — a healthy, fully-charged 12V battery rests at ~12.6V, not 12.0V.</li>
+        <li><strong>"Discharging to empty is harmless."</strong> Deep discharge promotes sulfation, which is why a lead-acid battery left flat dies early.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Lead + lead dioxide + sulfuric acid ⇄ lead sulfate + water — the reversible reaction is the whole battery.</li>
+          <li>Each cell is ~2.1V; six in series make ~12.6V (a "12V" battery).</li>
+          <li>Resting voltage is a direct state-of-charge gauge.</li>
+          <li>Sulfation, corrosion and water loss are the three aging mechanisms.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The single most useful thing to understand about lead-acid is that it dies by slow,
+          reversible chemistry — and most early failures are sulfation from being left under-charged, which is a
+          usage problem, not a manufacturing one.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The reactions are reversible in principle but never perfectly in practice, and the gap
+          between "reversible" and "perfect" is sulfation. A battery that is kept charged lasts years; the same
+          battery left flat for weeks sulfates and dies. This is why maintenance — keeping it charged — matters more
+          than brand.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and manufacturer technical documentation. The
+        lead-acid electrochemistry is well-established and consistent across sources.
+      </p>
+      <ul>
+        <li>Battery engineering references — lead-acid electrochemistry and failure modes.</li>
+        <li>Manufacturer technical documentation — cell voltage and state-of-charge relationships.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
