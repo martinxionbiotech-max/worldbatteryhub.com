@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'LFP vs NMC vs LTO: Lithium Battery Chemistries Compared';
+const description = 'LFP, NMC and LTO lithium-ion chemistries compared — nominal voltage, energy density, cycle life, safety and cost. Which chemistry suits EVs, energy storage and fast-charge applications.';
+const canonical = '/lithium/lfp-vs-nmc-vs-lto/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'LFP vs NMC vs LTO',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between LFP and NMC?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Chemistry and trade-off. LFP (lithium iron phosphate) is safer, longer-cycling and cheaper, but has lower energy density. NMC (nickel-manganese-cobalt) has higher energy density for longer EV range, but costs more and is less thermally stable. LFP suits storage and short-range EVs; NMC suits long-range EVs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which is safer, LFP or NMC?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LFP is generally considered the safer chemistry — it is more thermally stable and less prone to thermal runaway. NMC carries more energy per weight, which is why it needs more active thermal management.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Chemistry · Last reviewed 2026-09-14</p>
+      <h1>LFP vs NMC vs LTO: Lithium Battery Chemistries Compared</h1>
+      <p class="lead">
+        "Lithium-ion" is not one chemistry — it is a family, and the three main members (LFP, NMC, LTO) trade
+        energy density, cycle life, safety and cost against each other. The right choice depends on whether you
+        are building an EV, a storage system or a fast-charge bus.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>LFP</strong> (lithium iron phosphate) is the safe, long-life, lower-cost chemistry with
+        modest energy density. <strong>NMC</strong> (nickel-manganese-cobalt) packs more energy per kilogram for longer EV
+        range but costs more and is less thermally stable. <strong>LTO</strong> (lithium titanate) has the longest cycle life
+        and fastest charging but the lowest energy density, so it is reserved for niche high-cycle, fast-charge
+        applications.
+      </div>
+
+      <h2>The three chemistries side by side</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>LFP</th><th>NMC</th><th>LTO</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Full name</strong></td><td>Lithium iron phosphate</td><td>Nickel-manganese-cobalt</td><td>Lithium titanate</td></tr>
+          <tr><td><strong>Nominal cell voltage</strong></td><td>~3.2 V</td><td>~3.7 V</td><td>~2.4 V</td></tr>
+          <tr><td><strong>Energy density</strong></td><td>~90–160 Wh/kg</td><td>~150–220 Wh/kg</td><td>~60–110 Wh/kg (lowest)</td></tr>
+          <tr><td><strong>Cycle life</strong></td><td>~2,000–5,000</td><td>~1,000–2,000</td><td>~10,000+ (highest)</td></tr>
+          <tr><td><strong>Thermal stability</strong></td><td>Highest</td><td>Lower (needs management)</td><td>High</td></tr>
+          <tr><td><strong>Cost</strong></td><td>Lower</td><td>Higher</td><td>Highest</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Storage, short-range EV</td><td>Long-range EV</td><td>Bus, grid, fast-charge</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Energy-density and cycle-life figures are typical ranges that vary by cell manufacturer, form factor and
+        depth of discharge — treat them as relative, not absolute.
+      </p>
+
+      <h2>Why LFP wins on safety and longevity</h2>
+      <p>
+        LFP's iron-phosphate cathode is thermally stable and resists the oxygen release that drives thermal
+        runaway in higher-energy chemistries. That stability, plus a gentler voltage curve, is why LFP cells
+        routinely deliver thousands of cycles — which is exactly the property that matters for stationary storage
+        and for vehicles where lifetime cost beats absolute range.
+      </p>
+
+      <h2>Why NMC wins on range</h2>
+      <p>
+        NMC's higher voltage and energy density mean more usable energy per kilogram, which translates directly to
+        longer EV range in a given pack weight. The cost is thermal management: NMC needs more careful temperature
+        control, which adds system complexity and cost.
+      </p>
+
+      <h2>Why LTO is the specialist</h2>
+      <p>
+        LTO uses a titanate anode instead of graphite, which accepts charge extremely fast and barely degrades —
+        hence its exceptional cycle life. Its low voltage and energy density make it heavy and bulky for its energy,
+        so it is reserved for applications that value ultra-fast charging and extreme longevity over range: city
+        buses, fast-charge fleets and frequency-regulation grid storage.
+      </p>
+
+      <h2>How to choose</h2>
+      <ul>
+        <li><strong>Stationary storage / short-range EV / lifetime cost</strong> — LFP.</li>
+        <li><strong>Long-range EV where range per kilogram matters</strong> — NMC.</li>
+        <li><strong>Ultra-fast charging and extreme cycle life, weight not critical</strong> — LTO.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"NMC is better because it has more range."</strong> Better at range, yes — but not at cost, safety or cycle life. "Better" depends on the application.</li>
+        <li><strong>"LFP is outdated."</strong> The opposite in many markets — LFP's safety and longevity have made it the dominant chemistry for storage and a growing share of EVs.</li>
+        <li><strong>"All lithium batteries have the same fire risk."</strong> No — LFP is materially more thermally stable than NMC, which is why safety standards treat them differently.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>LFP = <strong>safety + longevity + low cost</strong>; NMC = <strong>energy density + range</strong>; LTO = <strong>fast charge + extreme cycle life</strong>.</li>
+          <li>The trade-off is energy density against cycle life, safety and cost.</li>
+          <li>Choose by application — storage and lifetime cost favour LFP, range favours NMC, fast-charge favours LTO.</li>
+          <li>Treat published energy-density and cycle figures as ranges, not fixed values.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The LFP-vs-NMC debate is usually framed as "which is better," when it is really
+          "which trade-off do you want" — and for most non-EV and lifetime-cost decisions, LFP wins by default.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> NMC's range advantage matters most in passenger EVs, where every kilogram counts. Everywhere
+          else — storage, fleet vehicles, anything bought for lifetime cost — LFP's safety and cycle life dominate. The
+          buyer who asks "which chemistry matches my application" instead of "which is best" makes the better decision.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from cell-manufacturer datasheets and battery engineering references. Energy-density and
+        cycle-life figures are stated as ranges because they vary by manufacturer and test condition.
+      </p>
+      <ul>
+        <li>Cell-manufacturer datasheets (CATL, BYD, EVE, LISHEN) — LFP/NMC/LTO specifications.</li>
+        <li>IEC 62660 / ISO 12405 — lithium cell and pack test standards (reference).</li>
+        <li>Battery engineering references — lithium chemistry comparison.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
