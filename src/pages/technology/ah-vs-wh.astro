@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Ah vs Wh: The Difference Between Amp-Hours and Watt-Hours';
+const description = 'Amp-hours (Ah) measures charge; watt-hours (Wh) measures energy. They are related by voltage — Wh = V × Ah — which is why the same Ah means very different energy at different voltages.';
+const canonical = '/technology/ah-vs-wh/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Ah vs Wh',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between Ah and Wh?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ah (amp-hours) is charge capacity — current × time. Wh (watt-hours) is energy — voltage × Ah. They are related by voltage: Wh = V × Ah. The same Ah means very different energy at different voltages, which is why Wh is the honest comparison across chemistries.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I convert Ah to Wh?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Multiply amp-hours by the nominal voltage: Wh = V × Ah. A 100 Ah 12V lead-acid battery is ~1,200 Wh; a 100 Ah 3.2V LFP cell is only ~320 Wh. That is why comparing two batteries by Ah alone can be misleading.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Units · Last reviewed 2026-09-14</p>
+      <h1>Ah vs Wh: The Difference Between Amp-Hours and Watt-Hours</h1>
+      <p class="lead">
+        Amp-hours and watt-hours are both "capacity" numbers, but they measure different things — and confusing
+        them is how two batteries with the same Ah end up storing very different amounts of energy.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Ah (amp-hours)</strong> is charge capacity — how many amps for how long (current ×
+        time). <strong>Wh (watt-hours)</strong> is energy — the actual work stored (voltage × Ah). They are related by voltage:
+        <strong>Wh = V × Ah</strong>. Because voltage differs between chemistries, the same Ah means different energy — a
+        100&nbsp;Ah 12V battery holds ~1,200&nbsp;Wh, while a 100&nbsp;Ah 3.2V LFP cell holds only ~320&nbsp;Wh.
+      </div>
+
+      <h2>The two units</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>Ah (amp-hours)</th><th>Wh (watt-hours)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Measures</strong></td><td>Charge capacity</td><td>Energy</td></tr>
+          <tr><td><strong>Formula</strong></td><td>current × time</td><td>voltage × Ah</td></tr>
+          <tr><td><strong>Independent of voltage?</strong></td><td>No — charge only</td><td>Yes — the true energy</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Ah tells you how much <em>charge</em> the battery holds; Wh tells you how much <em>energy</em>. The voltage is the
+        missing piece that connects them.
+      </p>
+
+      <h2>Why the voltage matters</h2>
+      <p>
+        Two batteries with identical Ah but different voltages store different energy. A 100&nbsp;Ah lead-acid battery
+        at 12V stores about 1,200&nbsp;Wh. A 100&nbsp;Ah LFP cell at 3.2V stores about 320&nbsp;Wh — less than a third. This is
+        why <strong>Wh is the honest unit for cross-chemistry comparison</strong>: it already accounts for voltage, while Ah
+        does not.
+      </p>
+
+      <h2>When to use each</h2>
+      <ul>
+        <li><strong>Same voltage, same chemistry</strong> — Ah is fine (e.g. comparing two 12V lead-acid batteries).</li>
+        <li><strong>Different voltages or chemistries</strong> — convert to Wh, or the comparison is misleading.</li>
+        <li><strong>Range and energy capacity</strong> — Wh is what matters (an EV pack's energy is quoted in kWh, which is 1,000 Wh).</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Ah is the energy."</strong> No — Ah is charge. Energy is Wh, which is Ah multiplied by voltage.</li>
+        <li><strong>"Two batteries with the same Ah store the same energy."</strong> Only at the same voltage. A 100 Ah 12V and a 100 Ah 3.2V battery differ by ~3.75× in energy.</li>
+        <li><strong>"Wh and Ah are interchangeable."</strong> They are not — you need the voltage to convert.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li><strong>Ah = charge</strong> (current × time); <strong>Wh = energy</strong> (voltage × Ah).</li>
+          <li>The relationship is <strong>Wh = V × Ah</strong>.</li>
+          <li>The same Ah means <strong>different energy at different voltages</strong> — compare in Wh across chemistries.</li>
+          <li>EV packs are quoted in <strong>kWh</strong> (1,000 Wh), which is the energy figure.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The Ah-vs-Wh confusion is the single most common unit error in battery buying — and
+          it quietly rewards the seller who quotes a big Ah number while hiding a low voltage.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Ah looks like energy but is only charge, so a battery can be quoted with a flattering Ah
+          while storing modest energy. The fix is one multiplication: convert everything to Wh and the comparison
+          becomes honest. Anyone comparing batteries across chemistries should default to Wh — and treat an Ah-only
+          comparison as incomplete.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references. The Ah/Wh relationship is a standard unit conversion
+        (Wh = V × Ah).
+      </p>
+      <ul>
+        <li>Battery engineering references — charge and energy unit definitions.</li>
+        <li>Manufacturer datasheets — nominal voltage and capacity specifications.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
