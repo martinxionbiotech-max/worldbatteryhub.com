@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Start-Stop Battery: Why It Needs EFB or AGM, Not a Conventional Flooded Battery';
+const description = 'A start-stop system shuts the engine off at idle and restarts it hundreds of times a drive — which is why it needs an EFB or AGM battery, not a conventional flooded one. How start-stop works and what to replace it with.';
+const canonical = '/lead-acid/start-stop-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Start-stop battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What battery does a start-stop car need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An EFB or AGM battery, depending on what the manufacturer specified. Start-stop systems cycle the battery hundreds of times a drive, which a conventional flooded battery cannot survive — so replacing with the specified EFB/AGM technology is essential.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use a normal battery in a start-stop car?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. A conventional flooded battery in a start-stop car will start the engine but degrade rapidly from the frequent deep cycling, failing far sooner than the specified EFB or AGM battery. Always match the technology the manufacturer specified.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-14</p>
+      <h1>Start-Stop Battery: Why It Needs EFB or AGM, Not a Conventional Flooded Battery</h1>
+      <p class="lead">
+        Start-stop looks like a simple feature — the engine shuts off at red lights and restarts when you move —
+        but it quietly turns the battery into the hardest-working component in the car. That is why the battery
+        technology matters more here than almost anywhere else.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A start-stop car shuts the engine off whenever the vehicle stops and restarts it
+        when you release the brake or clutch. That means the battery is <strong>cycled hundreds of times per drive</strong> and
+        must keep the car's electrics running while the engine is off. This workload demands an <strong>EFB or AGM</strong>
+        battery — never a conventional flooded battery, which will fail early under the repeated cycling.
+      </div>
+
+      <h2>How start-stop works</h2>
+      <p>
+        At a stop, the engine management cuts fuel and the engine stops. The battery then powers everything the
+        car needs — lights, infotainment, climate, steering assist — while the engine is off. On restart, the
+        battery must deliver a cranking burst, then immediately accept a fast recharge so it is ready for the next
+        stop. A normal commute can run this cycle hundreds of times.
+      </p>
+
+      <h2>Why the battery technology matters</h2>
+      <p>
+        The workload is the problem: repeated partial discharge and rapid recharge. A conventional flooded battery
+        is built for one cold start per trip, not hundreds. Two technologies handle it:
+      </p>
+      <ul>
+        <li><strong>EFB</strong> — an enhanced flooded battery with carbon on the negative plate for faster charge acceptance; the entry start-stop technology.</li>
+        <li><strong>AGM</strong> — electrolyte absorbed in a glass mat, with lower internal resistance and higher cycle life; the premium start-stop technology for high electrical load.</li>
+      </ul>
+      <p>
+        See <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs Flooded</a> for the full comparison.
+      </p>
+
+      <h2>The replacement rule</h2>
+      <p>
+        When a start-stop battery needs replacing, the rule is simple and non-negotiable: <strong>match the technology
+        the manufacturer specified</strong>. If the car came with AGM, replace with AGM; if EFB, replace with EFB.
+        Never downgrade (AGM → flooded) and never fit a conventional battery — the saving is tiny and the failure
+        is early. Some vehicles also require the battery to be "registered" to the vehicle's battery-management
+        system after replacement, which a shop must do.
+      </p>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Any 12V battery works in a start-stop car."</strong> No — the frequent cycling destroys a conventional battery quickly.</li>
+        <li><strong>"Start-stop only saves a little fuel."</strong> It saves fuel, but the relevant point for the battery is the cycle count, not the fuel saving.</li>
+        <li><strong>"A bigger flooded battery compensates."</strong> Size does not change the chemistry — a larger flooded battery still cannot survive the cycling.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Start-stop cycles the battery <strong>hundreds of times per drive</strong> — a workload only EFB/AGM survive.</li>
+          <li>EFB is the entry tech; AGM is the premium for high electrical load.</li>
+          <li><strong>Match the technology the manufacturer specified</strong> — never downgrade to a conventional flooded battery.</li>
+          <li>Some vehicles need battery "registration" after replacement.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The start-stop battery is where the "just fit a cheaper battery" instinct costs the most —
+          because the system is designed around a specific battery technology, and a downgrade trades a small saving
+          for an early, guaranteed failure.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Start-stop is not a heavier version of normal starting; it is a different duty cycle, and
+          the battery is specified for it. The buyer who fits a conventional battery has not saved money — they have
+          deferred a larger cost to a few months later, when the wrong battery fails. Match the specified technology,
+          register it where required, and the battery lasts as designed.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from manufacturer technical documentation and battery engineering references. Start-stop
+        battery requirements (EFB/AGM) are established industry practice.
+      </p>
+      <ul>
+        <li>EN 50342 — European starter-battery standard (EFB/AGM definitions).</li>
+        <li>Manufacturer technical documentation — start-stop battery requirements and registration.</li>
+        <li>Battery engineering references — start-stop duty cycle and battery selection.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
