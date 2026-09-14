@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Group Sizes Explained: H4–H9, L1–L6, JIS and BCI';
+const description = 'What battery group sizes mean and how the families map — H4–H9 (DIN/EN) equals L1–L6 (BCI), plus JIS D23/N-series and BCI Group 31/8D. Group size is about physical fit, not performance.';
+const canonical = '/lead-acid/battery-group-sizes/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery group sizes',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a battery group size?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A standardized case dimension and terminal layout, so any battery of that group fits the same tray and cables. It is a physical-fit spec, not a performance spec — CCA and Ah vary within a group by design.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between H6 and L3?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They are the same physical battery under two naming systems — H6 is the DIN/EN name and L3 is the BCI name for the same case. H4=L1, H5=L2, H6=L3, H7=L4, H8=L5 and H9=L6.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-14</p>
+      <h1>Battery Group Sizes Explained: H4–H9, L1–L6, JIS and BCI</h1>
+      <p class="lead">
+        A battery "group size" is a standardized <strong>case dimension and terminal layout</strong>, so that any battery of
+        that group fits the same tray and cables. The same physical battery has different names in different
+        markets — the H6 sold in Europe is the L3 sold in North America — and understanding that mapping is the
+        first step to buying the right battery.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Group size is a <strong>fit spec, not a performance spec</strong>. It standardizes the case
+        length/width/height, terminal type, terminal position and polarity, so the battery drops into the tray and
+        connects correctly. CCA and Ah are separate numbers that vary within a group. The main families are
+        <strong>DIN/EN (H4–H9)</strong>, <strong>BCI (L1–L6, Group 31/8D)</strong> and <strong>JIS (D23, N-series)</strong>, and they overlap: H4=L1, H5=L2, H6=L3, H7=L4, H8=L5, H9=L6.
+      </div>
+
+      <h2>The three naming families, and how they map</h2>
+      <table>
+        <thead>
+          <tr><th>DIN/EN name</th><th>BCI name</th><th>Typical use</th><th>Typical capacity</th><th>Typical CCA (EN)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>H4</strong></td><td>L1</td><td>Small / compact cars</td><td>~55–60 Ah</td><td>~500–600 A</td></tr>
+          <tr><td><strong>H5</strong></td><td>L2</td><td>Compact / midsize</td><td>~60 Ah</td><td>~600 A</td></tr>
+          <tr><td><strong>H6</strong></td><td>L3</td><td>Midsize / start-stop</td><td>~70 Ah</td><td>~640–700 A</td></tr>
+          <tr><td><strong>H7</strong></td><td>L4</td><td>Large cars / SUV</td><td>~80 Ah</td><td>~760 A</td></tr>
+          <tr><td><strong>H8</strong></td><td>L5</td><td>Large SUV / light truck</td><td>~90–95 Ah</td><td>~850–900 A</td></tr>
+          <tr><td><strong>H9</strong></td><td>L6</td><td>Heavy-duty / premium</td><td>~105 Ah</td><td>~950 A</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        The H4–H9 ↔ L1–L6 mapping is a close physical equivalent, not a perfect one-to-one — always confirm
+        length, width, height and terminal position against the original battery.
+      </p>
+
+      <h2>JIS and BCI heavy-duty groups</h2>
+      <p>
+        Japanese vehicles use the <strong>JIS</strong> naming — the "D23" case (55D23, 65D23, 75D23) for passenger cars,
+        and the "N-series" (N150, N200) for trucks and heavy-duty. North American commercial vehicles use
+        <strong>BCI Group 31</strong> and <strong>8D</strong> for trucks and diesel equipment. A European truck uses DIN; a Japanese truck uses
+        JIS; a North American fleet uses BCI — the group name tells you which market's standard the vehicle was
+        built around.
+      </p>
+
+      <h2>What group size does — and does not — tell you</h2>
+      <ul>
+        <li><strong>It tells you</strong> — the physical dimensions, terminal type, terminal position and polarity.</li>
+        <li><strong>It does not tell you</strong> — the CCA, capacity or technology (those vary within a group by design and chemistry).</li>
+      </ul>
+      <p>
+        This is why the correct sequence is <strong>group first, then CCA</strong>: match the group to the tray, then match
+        the <a href="/lead-acid/cca/what-is-cca/">CCA</a> to the engine and climate.
+      </p>
+
+      <h2>How to find your group size</h2>
+      <ol>
+        <li>Read the code printed on the current battery — it is usually a group code (H6, L3, 55D23, etc.).</li>
+        <li>Or measure the tray: length, width, height, and note the terminal position and polarity.</li>
+        <li>Confirm the equivalent in your market's naming (H6 = L3), then match CCA and technology.</li>
+      </ol>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Group size = <strong>physical fit</strong> (case, terminals, polarity), not performance.</li>
+          <li>DIN/EN (H4–H9) ≈ BCI (L1–L6): <strong>H4=L1 … H9=L6</strong>.</li>
+          <li>JIS (D23, N-series) and BCI (Group 31/8D) cover Japanese and heavy-duty markets.</li>
+          <li>Match the <strong>group to the tray</strong> first, then CCA to the engine and climate.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The most common battery-buying error is treating group size as a performance spec —
+          when it is really just the answer to "will it fit and connect," and the performance questions (CCA, Ah)
+          are asked separately.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Every market renames the same physical battery, which is why the same car can "need" an
+          H6 in Europe and an L3 in North America. The buyer who learns the H4–H9 ↔ L1–L6 mapping stops being
+          confused by the two names and starts comparing the numbers that actually differ — CCA and capacity.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Group mappings cross-verified from BCI group-size reference and manufacturer fitment guides (Varta, Bosch,
+        Yuasa, Century, Exide). Typical CCA values are ranges, consistent with the CCA-by-group reference.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — group-size definitions.</li>
+        <li>EN 50342, JIS D5301, SAE J537 — the standard families the groups belong to.</li>
+        <li>Manufacturer fitment guides — H4–H9 / L1–L6 / JIS / BCI mappings.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
