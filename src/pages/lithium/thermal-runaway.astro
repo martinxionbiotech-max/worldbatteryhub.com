@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What Is Thermal Runaway in a Lithium Battery? How It Starts and How It Is Prevented';
+const description = 'Thermal runaway is the self-sustaining exothermic reaction that can ignite a lithium cell. How it starts, why LFP is more stable than NMC, and the BMS, thermal-management and design measures that prevent it.';
+const canonical = '/lithium/thermal-runaway/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery thermal runaway',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is thermal runaway in a lithium battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A self-sustaining exothermic chain reaction in which rising cell temperature triggers further chemical reactions that release more heat, eventually venting gas or igniting the cell. It is the primary fire hazard of lithium batteries, and it is why they need a BMS and thermal management.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What causes thermal runaway?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The common triggers are overcharging, internal or external short circuit, mechanical damage (crush or puncture), and overheating. Each pushes the cell past the temperature at which its internal reactions become self-sustaining.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Safety · Last reviewed 2026-09-14</p>
+      <h1>What Is Thermal Runaway in a Lithium Battery? How It Starts and How It Is Prevented</h1>
+      <p class="lead">
+        Thermal runaway is the failure mode that makes lithium batteries a fire hazard: a self-sustaining
+        reaction in which heat triggers more heat until the cell vents or ignites. Understanding how it starts is
+        the basis for every safety measure built into a lithium pack.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Thermal runaway is a <strong>self-sustaining exothermic chain reaction</strong>. A cell's
+        temperature rises past a threshold, its internal materials begin decomposing and releasing heat, and that
+        heat drives further decomposition — until the cell vents flammable gas or ignites. It is the primary
+        lithium fire hazard, and the reason every lithium pack needs a BMS and thermal management.
+      </div>
+
+      <h2>The four common triggers</h2>
+      <ul>
+        <li><strong>Overcharge</strong> — charging past the voltage limit drives lithium plating and electrolyte breakdown.</li>
+        <li><strong>Short circuit</strong> — an internal (manufacturing defect) or external short delivers a damaging current surge.</li>
+        <li><strong>Mechanical damage</strong> — crushing or puncturing a cell breaches the separator and shorts the electrodes.</li>
+        <li><strong>Overheating</strong> — external heat (fire, sun, a failed neighbour cell) pushes the cell past its safe temperature.</li>
+      </ul>
+
+      <h2>The chain reaction, step by step</h2>
+      <p>
+        The runaway begins when heat breaks down the <strong>SEI layer</strong> (the protective film on the anode), exposing
+        the electrolyte to the electrode. The electrolyte then decomposes and releases flammable gas and more heat;
+        the cathode decomposes and releases oxygen. Once oxygen, fuel and heat are present together, the cell can
+        vent and ignite without any external spark — which is why a runaway cell is hard to stop once it starts.
+      </p>
+
+      <h2>Why LFP is more stable than NMC</h2>
+      <p>
+        The cathode is the difference. NMC releases oxygen at a lower temperature and holds more energy per gram,
+        so its runaway is more energetic. LFP's iron-phosphate cathode holds its oxygen far more tightly and only
+        releases it at a much higher temperature, which is why <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP is the
+        more thermally stable chemistry</a>. This is a matter of degree — both can fail — but LFP's margin is
+        materially larger.
+      </p>
+
+      <h2>How it is prevented</h2>
+      <ul>
+        <li><strong>BMS protection</strong> — cut off on overcharge, overdischarge, overcurrent and over-temperature (see <a href="/lithium/what-is-bms/">what a BMS does</a>).</li>
+        <li><strong>Thermal management</strong> — cooling to keep cells inside their safe operating window.</li>
+        <li><strong>Cell design</strong> — separators that shut down (increase resistance) at high temperature, and venting to relieve pressure.</li>
+        <li><strong>Mechanical protection</strong> — crush-resistant enclosures and module spacing so one failing cell cannot propagate to its neighbours.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Only cheap batteries catch fire."</strong> Quality reduces the risk but does not eliminate it — any lithium cell can run away under the right trigger.</li>
+        <li><strong>"A BMS makes runaway impossible."</strong> A BMS prevents the common triggers; it cannot stop a runaway once internal decomposition has started.</li>
+        <li><strong>"LFP cannot burn."</strong> LFP is more stable and does not release oxygen as readily, but it can still vent and fail under extreme abuse.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Thermal runaway is a <strong>self-sustaining heat → decomposition → more heat</strong> chain reaction.</li>
+          <li>Triggers: overcharge, short circuit, mechanical damage, overheating.</li>
+          <li><strong>LFP is more thermally stable than NMC</strong> — a matter of degree, not immunity.</li>
+          <li>Prevention is layered: <strong>BMS + thermal management + cell design + mechanical protection</strong>.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The right way to think about lithium safety is not "which chemistry cannot catch
+          fire" — it is "which layers of protection are between a fault and a fire," and the cheapest battery is
+          usually the one with the fewest layers.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Runaway is a chain reaction, and every link — BMS, cooling, separator, enclosure — is a
+          chance to break it. A buyer who asks only about chemistry is ignoring most of the safety system. The
+          protection stack, and whether it is tested, is the more honest measure of a pack's real-world safety than
+          the cathode material alone.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a safety certification or purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and cell-manufacturer safety documentation. Thermal
+        runaway mechanisms and LFP-vs-NMC stability are established battery-safety topics.
+      </p>
+      <ul>
+        <li>IEC 62660 / ISO 12405 — lithium cell and pack safety test standards (reference).</li>
+        <li>UN 38.3 — lithium battery transport safety tests (reference).</li>
+        <li>Battery engineering references — thermal runaway mechanism and prevention.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
