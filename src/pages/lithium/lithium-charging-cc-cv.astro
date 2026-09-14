@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Charge a Lithium Battery: The CC/CV Method and Why It Cannot Be Overcharged';
+const description = 'Lithium batteries charge with a constant-current / constant-voltage (CC/CV) profile — current is held constant until a voltage limit, then voltage is held while current tapers. Why the BMS enforces this.';
+const canonical = '/lithium/lithium-charging-cc-cv/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery charging (CC/CV)',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is a lithium battery charged?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'With a constant-current / constant-voltage (CC/CV) profile. First the charger holds a constant current while the cell voltage rises to its limit (about 4.2V for NMC, 3.65V for LFP); then it holds that voltage while the current tapers down to a small cutoff, at which point charging ends.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if you overcharge a lithium battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lithium cells cannot tolerate overcharge — it plates lithium metal and can trigger thermal runaway. That is why the BMS and charger enforce a strict voltage limit and cut off charging, unlike a lead-acid battery which merely gasses.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Charging · Last reviewed 2026-09-14</p>
+      <h1>How to Charge a Lithium Battery: The CC/CV Method and Why It Cannot Be Overcharged</h1>
+      <p class="lead">
+        Charging a lithium battery is not the same as charging a lead-acid one — it follows a strict two-stage
+        profile, and the voltage limit is absolute, not a suggestion. Get the profile wrong and you damage or
+        endanger the cell.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Lithium is charged with a <strong>constant-current / constant-voltage (CC/CV)</strong>
+        profile. Stage one holds a <strong>constant current</strong> while the cell voltage rises to its limit (about 4.2V for
+        NMC, 3.65V for LFP). Stage two holds that <strong>constant voltage</strong> while the current tapers down to a small
+        cutoff. The voltage limit is enforced by the charger and the BMS because lithium cannot be overcharged.
+      </div>
+
+      <h2>The two stages</h2>
+      <ol>
+        <li><strong>Constant current (CC)</strong> — the charger pushes a fixed current and the voltage climbs. Most of the capacity is restored here.</li>
+        <li><strong>Constant voltage (CV)</strong> — at the voltage limit, the charger holds that voltage and the current falls as the cell fills. Charging ends when the current drops to a small cutoff.</li>
+      </ol>
+      <p>
+        The CC stage fills the battery quickly; the CV stage tops it off gently. This is why a battery charges fast
+        to ~80% and then slows for the last 20%.
+      </p>
+
+      <h2>Why the voltage limit is absolute</h2>
+      <p>
+        A lead-acid battery tolerates overcharge — it just gasses and loses water. A lithium cell does not: pushing
+        it past its voltage limit plates lithium metal on the anode and heats the cell, which can end in
+        <a href="/lithium/thermal-runaway/">thermal runaway</a>. This is why the charger and the
+        <a href="/lithium/what-is-bms/">BMS</a> both enforce the limit — the voltage ceiling is a safety boundary,
+        not a performance target.
+      </p>
+
+      <h2>The charging limits</h2>
+      <ul>
+        <li><strong>Voltage</strong> — ~4.2V/cell for NMC, ~3.65V/cell for LFP (exact values vary by cell).</li>
+        <li><strong>Temperature</strong> — charging below ~0°C plates lithium; most BMS block or limit cold charging.</li>
+        <li><strong>Current</strong> — each cell has a maximum charge rate (C-rate), and exceeding it heats and degrades the cell.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Lithium charges like lead-acid."</strong> No — lead-acid tolerates a constant-voltage float; lithium needs the strict CC/CV profile and an absolute voltage limit.</li>
+        <li><strong>"You can leave lithium on a charger indefinitely."</strong> Unlike lead-acid float charging, lithium should not be held at full voltage indefinitely — it ages the cell.</li>
+        <li><strong>"Fast charging is always fine."</strong> Fast charging heats the cell and accelerates degradation, which is why the charge rate is a specified limit, not a free choice.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Lithium charges with <strong>CC/CV</strong> — constant current to the voltage limit, then constant voltage while current tapers.</li>
+          <li>The <strong>voltage limit is a safety boundary</strong> — lithium cannot be overcharged.</li>
+          <li>Limits: ~4.2V (NMC) / ~3.65V (LFP), no charging below ~0°C, and a max C-rate.</li>
+          <li>Fast charging and holding at full voltage both accelerate aging.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The most useful thing to know about charging lithium is that the voltage limit is not a
+          target to approach — it is a wall, and everything about lithium safety follows from respecting it.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Lead-acid taught generations of users that "a little more voltage is fine," and that
+          habit is exactly what destroys lithium. Understanding that lithium charges on a strict profile — and that
+          the BMS and charger exist to hold that line — is the difference between a battery that lasts a decade and
+          one that fails or catches fire.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and cell/charger manufacturer documentation. The CC/CV
+        profile and voltage limits are standard lithium-charging practice.
+      </p>
+      <ul>
+        <li>Cell-manufacturer datasheets — charge voltage and current limits.</li>
+        <li>IEC 62660 / ISO 12405 — lithium cell and pack test standards (reference).</li>
+        <li>Battery engineering references — lithium charging fundamentals.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
