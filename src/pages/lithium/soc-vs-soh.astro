@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'SOC vs SOH: The Two Numbers a Battery Management System Reports';
+const description = 'State of charge (SOC) vs state of health (SOH) — what each measures, how they differ, and why a battery can show 100% SOC at only 80% SOH.';
+const canonical = '/lithium/soc-vs-soh/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'SOC vs SOH',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between SOC and SOH?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SOC (state of charge) is how full the battery is right now — a fuel gauge. SOH (state of health) is how much of its original capacity it still holds — an aging report. A battery can be 100% SOC but only 80% SOH, meaning it charges full but that full is a smaller tank.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does a battery show 100% SOC but 80% SOH?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because the two measure different things. SOH reflects irreversible capacity loss from aging; SOC reflects the current charge relative to that reduced capacity. A degraded battery still charges to its (now smaller) full, so SOC reads 100% while SOH has fallen.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Systems · Last reviewed 2026-09-14</p>
+      <h1>SOC vs SOH: The Two Numbers a Battery Management System Reports</h1>
+      <p class="lead">
+        A battery management system reports two numbers that sound similar but answer different questions: how
+        full the battery is, and how healthy it is. Confusing them is one of the most common mistakes in reading
+        a battery's condition.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>SOC (state of charge)</strong> is the fuel gauge — the percentage of usable capacity
+        available right now. <strong>SOH (state of health)</strong> is the aging report — how much of the battery's <em>original</em>
+        capacity it still holds. They are independent: a battery can read 100% SOC while its SOH has fallen to 80%,
+        because it still charges "full" — but that full is a smaller tank than it was when new.
+      </div>
+
+      <h2>What SOC measures</h2>
+      <p>
+        State of charge is the momentary energy level: 100% means fully charged, 0% means the usable capacity is
+        exhausted. It is what a phone or EV dashboard shows as the battery bar. The BMS estimates it from cell
+        voltage, current integration (coulomb counting) and temperature, and it resets to 0–100% on every cycle.
+      </p>
+
+      <h2>What SOH measures</h2>
+      <p>
+        State of health is the battery's remaining capacity relative to when it was new. A battery with 80% SOH has
+        lost 20% of its original capacity to irreversible aging — mostly electrode degradation and electrolyte
+        breakdown. SOH only moves in one direction (down) and does not reset.
+      </p>
+
+      <h2>Why the two decouple</h2>
+      <p>
+        The decoupling is the key insight. A degraded battery still charges to its own (now smaller) 100%, so SOC
+        reads full while SOH has fallen. That is why "100% charged" says nothing about whether the battery is
+        healthy — a 100% SOC / 60% SOH pack is full, but only holds a little over half its original energy. The
+        usable energy is the <em>product</em>: SOC × SOH × original capacity.
+      </p>
+
+      <h2>Why this matters in practice</h2>
+      <ul>
+        <li><strong>EV range</strong> — a car at 100% SOC with 80% SOH has lost ~20% of its original range, even though the gauge says full.</li>
+        <li><strong>Second-life / resale</strong> — SOH is the number that determines a used battery's value, not SOC.</li>
+        <li><strong>Warranty</strong> — many battery warranties are written against SOH (e.g. "70% SOH after 8 years"), not SOC.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"100% charged means the battery is healthy."</strong> No — it means full. Health is SOH, a separate number.</li>
+        <li><strong>"SOC and SOH are the same thing."</strong> They answer different questions: how full vs how degraded.</li>
+        <li><strong>"SOH is measured directly."</strong> It is estimated — from capacity tests, internal resistance and voltage behaviour, which is why different tools can report slightly different SOH.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li><strong>SOC</strong> = how full (fuel gauge); <strong>SOH</strong> = how degraded (aging report).</li>
+          <li>A battery can be <strong>100% SOC but 80% SOH</strong> — full, but a smaller tank.</li>
+          <li>Usable energy = <strong>SOC × SOH × original capacity</strong>.</li>
+          <li>SOH is the number that matters for <strong>range loss, resale value and warranty</strong>.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The SOC-vs-SOH distinction is the single most useful concept for judging a used
+          battery — because "100% charged" is a statement about the last hour, while SOH is a statement about the
+          battery's whole life.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Sellers quote SOC because it is flattering; buyers should ask for SOH because it is the
+          truth. A used EV advertised as "fully charged" tells you almost nothing about what you are buying — the
+          SOH tells you how much of the original battery you are actually getting. Learn to ask for SOH, and the
+          ambiguity disappears.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and BMS documentation. SOC/SOH definitions are
+        standard battery-management terminology.
+      </p>
+      <ul>
+        <li>IEC 62660 / ISO 12405 — lithium cell and pack test standards (reference).</li>
+        <li>BMS and EV-manufacturer documentation — SOC and SOH estimation.</li>
+        <li>Battery engineering references — state-of-charge and state-of-health definitions.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
