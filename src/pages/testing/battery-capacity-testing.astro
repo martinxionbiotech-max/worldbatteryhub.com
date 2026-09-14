@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Capacity Testing: Ah, the C20 Rate, and How Actual Capacity Is Measured';
+const description = 'How battery capacity (Ah) is tested — the 20-hour C20 discharge, how it differs from CCA and reserve capacity, and how to read a measured capacity against the rated label.';
+const canonical = '/testing/battery-capacity-testing/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery capacity testing',
+  articleSection: 'Battery Testing',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is battery capacity tested?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A fully-charged battery is discharged at a constant current until it reaches a cut-off voltage, and the time is recorded. Capacity (Ah) is current × time. The standard lead-acid rating is the C20 rate — a 20-hour discharge — because capacity falls at higher discharge rates.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between capacity testing and CCA testing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Capacity testing measures stored energy (a long, low-current discharge). CCA testing measures cranking power (a short, high-current cold burst). They are independent — a battery can have good CCA but degraded capacity, or vice versa.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Testing · Capacity · Last reviewed 2026-09-14</p>
+      <h1>Battery Capacity Testing: Ah, the C20 Rate, and How Actual Capacity Is Measured</h1>
+      <p class="lead">
+        Capacity is the "how much energy" number, and it is measured by draining the battery at a constant current
+        and timing it. The catch — as with CCA — is that the answer depends on <strong>how fast</strong> you drain it.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Capacity (Ah) is measured by discharging a fully-charged battery at a constant
+        current until it reaches a cut-off voltage, then computing <strong>current × time</strong>. The standard lead-acid rating
+        is the <strong>C20 rate</strong> — the current that fully drains the battery in 20 hours — because capacity drops at
+        higher rates. A "60&nbsp;Ah" battery delivers 3&nbsp;A for 20 hours, but noticeably less than 60&nbsp;Ah if drained in
+        5 hours.
+      </div>
+
+      <h2>The basic method</h2>
+      <ol>
+        <li>Fully charge the battery and let it rest to a stable state.</li>
+        <li>Discharge at a constant current (a resistive or electronic load).</li>
+        <li>Stop at the cut-off voltage (for lead-acid, typically 10.5V for a 12V battery).</li>
+        <li>Record the time; capacity = discharge current × hours.</li>
+      </ol>
+      <p>
+        A 60&nbsp;Ah battery discharged at 3&nbsp;A should last 20 hours. If it only lasts 15 hours, its actual capacity is
+        45&nbsp;Ah — a 25% loss from the label.
+      </p>
+
+      <h2>Why the rate matters: C20 vs higher rates</h2>
+      <p>
+        Capacity is <strong>not a fixed property</strong> — it falls as the discharge rate rises, because a fast discharge
+        wastes more energy as internal heat and cannot extract the electrolyte deep in the plates. This is why the
+        label states a rate. The C20 rate (20-hour) is the lead-acid standard; the same battery quoted at C5 (5-hour)
+        or C1 (1-hour) shows a lower number. Always compare capacity at the same rate.
+      </p>
+
+      <h2>Capacity vs CCA vs reserve capacity</h2>
+      <table>
+        <thead>
+          <tr><th>Test</th><th>What it measures</th><th>Method</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Capacity (C20)</strong></td><td>Total stored energy</td><td>~20 h discharge to 10.5V</td></tr>
+          <tr><td><strong><a href="/lead-acid/cca/how-cca-is-tested/">CCA</a></strong></td><td>Cold cranking power</td><td>30 s at −18°C to 7.2V</td></tr>
+          <tr><td><strong>Reserve capacity (RC)</strong></td><td>Minutes at a fixed load</td><td>25 A at 27°C to 10.5V</td></tr>
+        </tbody>
+      </table>
+      <p>
+        These are independent dimensions. A battery can hold strong CCA but degraded capacity (it cranks fine but
+        runs down quickly), which is why a health check often runs both.
+      </p>
+
+      <h2>How to read a measured capacity</h2>
+      <p>
+        A new battery usually delivers at or slightly above its label. A reading below about <strong>80% of rated
+        capacity</strong> is the conventional end-of-life signal for many applications — the battery still works, but its
+        usable energy has fallen materially. For a used battery, the measured C20 capacity is the honest number to
+        compare against the label.
+      </p>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Ah is the same at any discharge rate."</strong> No — capacity falls at higher rates, which is why the rate (C20) must be stated.</li>
+        <li><strong>"Capacity testing is the same as CCA testing."</strong> They measure energy vs power — independent, not interchangeable.</li>
+        <li><strong>"A battery passes if it holds 12.6V."</strong> Voltage is a state-of-charge signal, not a capacity test — a weak battery can still read full voltage.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Capacity (Ah) = <strong>constant-current discharge × time</strong>, to the cut-off voltage.</li>
+          <li>The label rate is <strong>C20</strong> (20-hour); capacity falls at higher rates.</li>
+          <li>Capacity, CCA and RC are <strong>three independent tests</strong> — energy, power and endurance.</li>
+          <li>Below ~80% of rated C20 capacity is the common end-of-life threshold.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The capacity label is a promise made at one specific discharge rate, and the most
+          useful skill is asking "at what rate?" — because the same battery is a 60&nbsp;Ah battery at C20 and a notably
+          smaller one at C5.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Capacity is quoted at the most flattering slow rate, which is why two "60&nbsp;Ah" batteries
+          can behave differently in a real, faster-discharge application. A buyer who understands the rate — and asks
+          for the measured C20 capacity on a used battery — knows what they are actually buying, rather than what
+          the label once promised.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and manufacturer test documentation. The C20 rate and
+        10.5V cut-off are standard lead-acid test conventions.
+      </p>
+      <ul>
+        <li>EN 50342 / JIS D5301 — capacity test methods (C20 rate).</li>
+        <li>Battery Council International (BCI) — capacity and reserve-capacity definitions.</li>
+        <li>Manufacturer test documentation — discharge test procedures.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
