@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'H6 vs H7 vs H8 Battery: Size, Capacity, CCA and Which Car Each Fits';
+const description = 'H6 (L3), H7 (L4) and H8 (L5) compared — dimensions, capacity, CCA and vehicle fitment. How to choose the right group for your car or SUV, and why the tray is the deciding factor.';
+const canonical = '/lead-acid/h6-vs-h7-vs-h8/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'H6 vs H7 vs H8 battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between H6, H7 and H8 batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Physical size and output. H6 (L3) is ~278mm long and ~70 Ah; H7 (L4) is ~315mm and ~80 Ah; H8 (L5) is ~352mm and ~90–95 Ah. Each step up fits a larger, higher-demand vehicle, but the tray must accept the bigger case.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I replace an H7 with an H8?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if the tray, hold-down and cables accept the longer H8 case. The H8 is ~37mm longer than the H7, so it will not fit an H7 tray. Confirm the physical dimensions before upgrading.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-14</p>
+      <h1>H6 vs H7 vs H8 Battery: Size, Capacity, CCA and Which Car Each Fits</h1>
+      <p class="lead">
+        H6, H7 and H8 are the three most common European passenger-car groups, and they differ mainly in
+        <strong>length and output</strong>. The choice is usually settled by the tray — if the bigger case does not fit, the
+        comparison ends there.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> H6 (L3) is ~278mm and ~70 Ah, H7 (L4) ~315mm and ~80 Ah, H8 (L5) ~352mm and
+        ~90–95 Ah — each step up is a longer case with more capacity and CCA for a larger vehicle. The tray decides:
+        you can only upgrade to a bigger group if the case physically fits, because the three are not interchangeable
+        in length.
+      </div>
+
+      <h2>The three groups side by side</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>H6 (L3)</th><th>H7 (L4)</th><th>H8 (L5)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Length × width × height</strong></td><td>~278 × 175 × 190 mm</td><td>~315 × 175 × 190 mm</td><td>~352 × 175 × 190 mm</td></tr>
+          <tr><td><strong>Typical capacity</strong></td><td>~70 Ah</td><td>~80 Ah</td><td>~90–95 Ah</td></tr>
+          <tr><td><strong>Typical CCA (EN)</strong></td><td>~640–700 A</td><td>~760 A</td><td>~850–900 A</td></tr>
+          <tr><td><strong>Typical vehicle</strong></td><td>Midsize car / start-stop</td><td>Large car / SUV</td><td>Large SUV / light truck</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Dimensions are typical; height varies slightly with terminal type. Always confirm against the original
+        battery before ordering.
+      </p>
+
+      <h2>Why the difference is mostly length</h2>
+      <p>
+        All three groups share the same width (~175mm) and height (~190mm); what grows is the <strong>length</strong>. A longer
+        case holds more plate surface area, which raises both capacity and CCA. The trade-off is physical: a car's
+        tray is sized for a specific group, and a longer battery simply will not drop in or clamp down.
+      </p>
+
+      <h2>Which one do you need?</h2>
+      <ul>
+        <li><strong>H6 (L3)</strong> — the modern start-stop default for midsize petrol and diesel cars; balanced size and output.</li>
+        <li><strong>H7 (L4)</strong> — large cars and SUVs with higher electrical load (heated seats, telematics, start-stop).</li>
+        <li><strong>H8 (L5)</strong> — large SUVs and light trucks with the highest accessory and cranking demand.</li>
+      </ul>
+      <p>
+        The rule is <strong>match the group to the tray first</strong>, then confirm the CCA meets the engine and climate — see
+        <a href="/lead-acid/battery-group-sizes/">battery group sizes</a> and
+        <a href="/lead-acid/cca/what-is-cca/">what is CCA</a>.
+      </p>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"A bigger group is always a better battery."</strong> It is more output, but it must fit the tray — an H8 in an H6 tray is a non-starter.</li>
+        <li><strong>"H6, H7 and H8 are interchangeable."</strong> No — they differ in length, so they are not physically interchangeable.</li>
+        <li><strong>"Higher CCA means I should upsize."</strong> Only if the tray allows it; otherwise buy the correct group with the CCA the engine needs.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>H6 → H7 → H8 is a <strong>length and output ladder</strong> (~278 → ~315 → ~352 mm).</li>
+          <li>Bigger group = more capacity and CCA, <strong>but only if the tray accepts it</strong>.</li>
+          <li>Match the <strong>group to the tray</strong>, then the CCA to the engine and climate.</li>
+          <li>H6 is the start-stop default; H7/H8 are for larger, higher-load vehicles.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The H6/H7/H8 question almost always answers itself the moment you measure the tray —
+          the group is a physical constraint first and a performance choice second.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> People compare CCA across the three groups when the deciding variable is 37 millimetres of
+          case length. Upsizing to an H8 for "more power" fails the moment the battery will not fit. The correct
+          sequence — measure the tray, read the current group, then confirm CCA — removes the entire dilemma.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Dimensions and CCA ranges cross-verified from manufacturer datasheets (Varta, Bosch, Exide, Yuasa) and the
+        BCI group-size reference. Values are typical ranges, not a substitute for a specific battery's datasheet.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — group-size and dimension definitions.</li>
+        <li>EN 50342 — European starter-battery standard (CCA basis).</li>
+        <li>Manufacturer fitment guides — H6/H7/H8 dimensions and CCA.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
