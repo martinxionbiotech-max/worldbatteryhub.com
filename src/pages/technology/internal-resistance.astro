@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Internal Resistance: The Hidden Number That Governs CCA and Aging';
+const description = 'Internal resistance is a battery\u2019s own opposition to current — the reason CCA drops with temperature and age, and the number a conductance tester reads. How it works and why it matters.';
+const canonical = '/technology/internal-resistance/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery internal resistance',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is battery internal resistance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It is the battery\u2019s own opposition to current flow, caused by the plates, electrolyte, connections and separators. Under load, that resistance drops the battery\u2019s voltage internally, so less of it reaches the starter — which is why high internal resistance means lower CCA and more heat.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does internal resistance rise as a battery ages?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because sulfation coats the plates and the electrolyte degrades, both of which oppose current flow. A conductance tester measures this rising resistance to estimate how much of the battery\u2019s original CCA remains.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Fundamentals · Last reviewed 2026-09-14</p>
+      <h1>Battery Internal Resistance: The Hidden Number That Governs CCA and Aging</h1>
+      <p class="lead">
+        CCA is the number everyone compares, but internal resistance is the number underneath it. It explains why
+        the same battery delivers less current in the cold, why it cranks weaker as it ages, and what a conductance
+        tester is actually measuring.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Internal resistance is the battery's own <strong>opposition to current flow</strong> — from
+        the plates, electrolyte, separators and connections. Under load, that resistance drops the battery's voltage
+        internally (by Ohm's law, V = I × R), so less voltage reaches the starter. <strong>Higher internal resistance =
+        lower CCA and more heat</strong>, which is why it rises with cold and with age — and why it is the number a
+        conductance tester reads.
+      </div>
+
+      <h2>What creates internal resistance</h2>
+      <p>
+        Every part of the current path resists a little: the electrolyte's ionic conductivity, the plates and
+        grids, the separator, and the internal connections. These add up to a small but real resistance — typically
+        a few milliohms for a healthy car battery. It is small, but at cranking currents of hundreds of amps, even
+        a few milliohms drops the terminal voltage meaningfully.
+      </p>
+
+      <h2>Why it is the number behind CCA</h2>
+      <p>
+        When a battery delivers 500&nbsp;A, its internal resistance subtracts voltage before the current even leaves the
+        terminals. A healthy low-resistance battery holds its voltage under load; a high-resistance battery sags.
+        This is the whole mechanism behind CCA: a lower internal resistance is what allows a higher cranking
+        current. Cold raises resistance (thicker electrolyte) and age raises it (sulfation), which is why both
+        reduce CCA — see <a href="/lead-acid/cca/cca-and-temperature/">CCA and temperature</a>.
+      </p>
+
+      <h2>How it is measured</h2>
+      <p>
+        A <strong>conductance tester</strong> sends a small AC signal through the battery and measures how easily current
+        passes. Because conductance is the inverse of resistance, and resistance tracks aging, the tester uses the
+        reading to estimate the battery's remaining CCA and state of health. It is fast and non-destructive — which
+        is why it replaced the heavy load test in most shops — but it is an estimate, not a direct measurement.
+      </p>
+
+      <h2>What raises it (and what that means)</h2>
+      <ul>
+        <li><strong>Cold</strong> — thickens the electrolyte, raising resistance and lowering CCA.</li>
+        <li><strong>Sulfation</strong> — sulfate crystals coat the plates and block current, the main aging mechanism.</li>
+        <li><strong>Corrosion and loose connections</strong> — add resistance at the grids and terminals.</li>
+        <li><strong>Low charge</strong> — a discharged battery shows higher resistance, which is why tests require a full charge first.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Internal resistance is constant."</strong> No — it rises with cold, discharge and age, which is exactly why performance changes.</li>
+        <li><strong>"A conductance tester measures CCA directly."</strong> It measures conductance (1/resistance) and estimates CCA from that.</li>
+        <li><strong>"Low resistance only matters for starting."</strong> It also affects charging efficiency and heat generation under any load.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Internal resistance is the battery's own <strong>opposition to current</strong>, a few milliohms in a healthy battery.</li>
+          <li><strong>Higher resistance = lower CCA + more heat</strong> — the mechanism behind cold and age reducing cranking power.</li>
+          <li>Conductance testers measure its inverse to <strong>estimate CCA and state of health</strong>.</li>
+          <li>Cold, sulfation, corrosion and low charge all <strong>raise</strong> internal resistance.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> If you understand internal resistance, you understand why batteries behave the way
+          they do — every "why is my battery weaker" question traces back to this one number.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Cold morning weakness, gradual aging, the conductance test result — all are the same story
+          told three ways: resistance went up, so the battery delivers less. The buyer or technician who thinks in
+          terms of resistance stops being surprised by battery behaviour and starts predicting it.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and tester-manufacturer documentation. The
+        resistance-CCA relationship is standard battery-testing knowledge.
+      </p>
+      <ul>
+        <li>Battery engineering references — internal resistance and its temperature/age dependence.</li>
+        <li>Conductance-tester manufacturer documentation — resistance and CCA estimation.</li>
+        <li>SAE J537 — CCA test method (reference).</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
