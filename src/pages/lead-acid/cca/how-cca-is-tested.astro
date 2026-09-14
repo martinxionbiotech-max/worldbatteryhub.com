@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'How CCA Is Tested: The Rating Test vs the Diagnostic Load Test';
+const description = 'How cold cranking amps (CCA) is actually measured — the factory rating test under SAE J537, and the field diagnostic load and conductance tests a technician runs to check a battery\u2019s health.';
+const canonical = '/lead-acid/cca/how-cca-is-tested/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'CCA testing',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is CCA tested on a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Two ways. The factory rating test discharges a fully-charged battery at the rated current for 30 seconds at −18°C (0°F) and checks the voltage stays above 7.2V (SAE J537). The field diagnostic test uses a load tester (typically half the rated CCA for 15 seconds, voltage should stay above about 9.6V) or a conductance tester that measures internal resistance to estimate CCA.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What voltage is a pass on a CCA load test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A common field rule is that a battery loaded at half its CCA rating for 15 seconds should hold above roughly 9.6V at room temperature. A reading well below that indicates the battery can no longer deliver its rated cranking current.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · CCA Cluster · Last reviewed 2026-09-14</p>
+      <h1>How CCA Is Tested: The Rating Test vs the Diagnostic Load Test</h1>
+      <p class="lead">
+        "Testing CCA" means two different things. There is the <strong>factory rating test</strong> that produces the
+        number on the label, and the <strong>field diagnostic test</strong> that tells you whether a used battery can
+        still deliver it. They use different equipment, different loads and different pass criteria — and
+        confusing them is a common mistake.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The rating is determined at the factory by discharging a fully-charged battery at
+        its rated current for 30 seconds at −18°C and confirming the voltage stays above 7.2V (SAE J537). In the
+        field, a technician checks a battery with a <strong>load test</strong> — typically half the rated CCA for about 15
+        seconds, expecting the voltage to hold above roughly 9.6V — or with a <strong>conductance tester</strong> that reads
+        internal resistance and estimates CCA without a heavy discharge.
+      </div>
+
+      <h2>The factory rating test (SAE J537)</h2>
+      <p>
+        The printed CCA is a <em>specification measured once</em>, under controlled conditions. A battery that is to be
+        labelled "600 CCA" must be cooled to −18°C (0°F), discharged at 600&nbsp;amps, and hold at least 7.2&nbsp;volts
+        for 30 seconds. The 7.2V floor is 1.2V per cell — the point below which a starter motor no longer turns
+        reliably. This is a laboratory test, not something done at the roadside.
+      </p>
+      <p>
+        Related ratings (<a href="/lead-acid/cca/cca-vs-ca/">CA, MCA, HCA</a>) run the same procedure at warmer
+        temperatures, which is why their numbers are higher.
+      </p>
+
+      <h2>The field diagnostic: load test</h2>
+      <p>
+        A shop does not re-run the −18°C rating. It runs a <strong>load test</strong> at room temperature: a carbon-pile or
+        fixed-resistance tester applies a load — a common rule is <strong>half the rated CCA for about 15 seconds</strong> —
+        and the technician watches the voltage. A healthy, fully-charged battery should hold above roughly
+        <strong>9.6V</strong> during the test. A reading that collapses well below 9.6V means the battery has lost its
+        ability to deliver cranking current — regardless of what the label still says.
+      </p>
+      <p>
+        The load must be proportional to the battery's own rating: a fixed 100A load means nothing without
+        knowing whether the battery is a 300 CCA or an 800 CCA unit. This is why testers are set to the
+        battery's rated CCA before the test.
+      </p>
+
+      <h2>The field diagnostic: conductance testing</h2>
+      <p>
+        Modern handheld testers use <strong>conductance</strong>: they send a small AC signal through the battery, measure
+        the internal resistance (and sometimes a temperature reading), and estimate CCA from that. It is fast,
+        non-destructive and does not require a full charge first, which is why it has replaced the carbon-pile
+        load in most shops. Its weakness is that it is an <em>estimate</em> — the correlation between conductance and
+        true cold cranking ability is strong but not perfect.
+      </p>
+
+      <h2>What skews the result</h2>
+      <ul>
+        <li><strong>State of charge</strong> — a load test on a partially-charged battery reads low; the battery must be fully charged (or corrected) first.</li>
+        <li><strong>Temperature</strong> — a cold battery delivers less current, so a test run in a freezing bay reads lower than the same battery warm.</li>
+        <li><strong>Age and sulfation</strong> — accumulated sulfation raises internal resistance, which is exactly what a conductance test detects.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"The label CCA is what the battery still delivers."</strong> No — the label is the rating it delivered when new; the diagnostic test tells you what remains.</li>
+        <li><strong>"A conductance test measures CCA directly."</strong> It estimates CCA from resistance; it is a strong proxy, not a direct measurement.</li>
+        <li><strong>"Any load test works on any battery."</strong> The load must be set to the battery's rated CCA, or the pass/fail threshold is meaningless.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>The <strong>rating test</strong> (SAE J537) is a one-time −18°C laboratory discharge to 7.2V; the <strong>diagnostic test</strong> is a room-temperature health check.</li>
+          <li>The field <strong>load test</strong> uses about half the rated CCA for 15 seconds, expecting ≥~9.6V.</li>
+          <li>The <strong>conductance test</strong> estimates CCA from internal resistance — fast, but an estimate.</li>
+          <li>Charge and temperature must be accounted for, or the reading is meaningless.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The most useful thing to understand about CCA testing is that the label number is a
+          birth certificate, not a current health report — and only a load or conductance test tells you which one
+          you are holding.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> A battery does not lose its label as it ages; it loses its ability to meet it. The
+          diagnostic test exists precisely to measure that gap. A buyer or technician who trusts the sticker
+          instead of the test is making a decision about a battery's present state using information about its
+          past — which is why any serious battery decision starts with a test, not a label.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from primary standards and secondary references; the half-CCA / 15-second / 9.6V load-test
+        figures are stated as typical field practice because exact thresholds vary by tester and battery type.
+      </p>
+      <ul>
+        <li>SAE J537 — cranking-ampere rating method (−18°C, 30 s, 7.2V).</li>
+        <li>Battery Council International (BCI) — battery testing and rating guidance.</li>
+        <li>Platrex, Jump Charge HQ and battery-tester manufacturers — load-test and conductance-test procedures.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
