@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'CCA vs CA vs MCA: The Temperature Ladder Behind Cranking-Amp Ratings';
+const description = 'CCA, CA, MCA and HCA all measure cranking amps, but at different temperatures. CCA is at -18°C, CA/MCA at 0°C, and HCA at 27°C — so the same battery prints a different, higher number at each warmer test.';
+const canonical = '/lead-acid/cca/cca-vs-ca/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Cranking amp ratings (CCA, CA, MCA, HCA)',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between CCA and CA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Temperature. CCA (cold cranking amps) is measured at −18°C (0°F); CA (cranking amps) at 0°C (32°F). Because CA is tested warmer, the CA number is always higher than the CCA number for the same battery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is MCA the same as CA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For practical purposes yes — MCA (marine cranking amps) and CA are both measured at 0°C (32°F) for 30 seconds to 7.2V. The difference is the label's intended market (marine vs automotive), not the test.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much higher is MCA than CCA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Typically about 20–25% higher, because MCA is tested at 0°C rather than −18°C. A battery rated 800 MCA is roughly a 640 CCA battery — the difference is the temperature, not the battery.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · CCA Cluster · Last reviewed 2026-09-14</p>
+      <h1>CCA vs CA vs MCA: The Temperature Ladder Behind Cranking-Amp Ratings</h1>
+      <p class="lead">
+        CCA, CA, MCA and HCA all measure the same thing — cranking power — but at <strong>different
+        temperatures</strong>. The only thing that changes is how cold the test is, and that single variable is
+        why one battery can carry four different amp ratings on its label.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> These are the same test at different temperatures. <strong>CCA</strong> is measured at −18°C (0°F); <strong>CA</strong> and <strong>MCA</strong> at 0°C (32°F); <strong>HCA</strong> at 27°C (80°F). A warmer test makes the battery deliver more current, so the number climbs as you move down the ladder — a battery's MCA is always higher than its CCA, and its HCA higher still.
+      </div>
+
+      <h2>The four ratings at a glance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Full name</th>
+            <th>Test temperature</th>
+            <th>Where it appears</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CCA</strong></td>
+            <td>Cold Cranking Amps</td>
+            <td>−18°C (0°F)</td>
+            <td>Automotive batteries (cold-climate)</td>
+          </tr>
+          <tr>
+            <td><strong>CA</strong></td>
+            <td>Cranking Amps</td>
+            <td>0°C (32°F)</td>
+            <td>Older / warm-climate labels</td>
+          </tr>
+          <tr>
+            <td><strong>MCA</strong></td>
+            <td>Marine Cranking Amps</td>
+            <td>0°C (32°F)</td>
+            <td>Marine and powersports batteries</td>
+          </tr>
+          <tr>
+            <td><strong>HCA</strong></td>
+            <td>Hot Cranking Amps</td>
+            <td>27°C (80°F)</td>
+            <td>Warm-climate / seasonal ratings</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        All four use the same 30-second, 7.2V-cutoff method (SAE J537). The only variable that changes is
+        temperature — and that is the whole story, because a battery's ability to deliver current drops as it
+        gets colder.
+      </p>
+
+      <h2>Why the number climbs as the test warms</h2>
+      <p>
+        Cold slows a battery's electrochemistry and raises its internal resistance, so at −18°C it can deliver
+        less current than at 0°C. Test the same battery warmer and you measure a bigger number — not because
+        the battery improved, but because you asked it an easier question. This is why <strong>MCA ≈ 1.2–1.25 × CCA</strong>:
+        the 18-degree difference (0°C vs −18°C) is worth roughly 20–25% more current.
+      </p>
+      <p>
+        An "800 MCA" marine battery is, in cold-starting terms, about a <strong>640 CCA</strong> car battery. The label is
+        not lying; it is just using a warmer yardstick.
+      </p>
+
+      <h2>The practical trap: comparing across the ladder</h2>
+      <p>
+        The trap is identical to the JIS-vs-EN trap covered in <a href="/lead-acid/cca/what-is-cca/">What is CCA</a>, but
+        within a single market. A buyer comparing a "750 MCA" marine battery against a "700 CCA" car battery and
+        concluding the marine one is stronger has made a category error — the marine number is inflated by the
+        warmer test. To compare them honestly, convert MCA to CCA by dividing by roughly 1.2–1.25, then compare.
+      </p>
+
+      <h2>When each rating actually matters</h2>
+      <ul>
+        <li><strong>CCA</strong> — cold-climate automotive; the number to trust when a hard cold start is the requirement.</li>
+        <li><strong>CA / MCA</strong> — warm climates and marine use, where 0°C is a realistic worst case and the higher label reflects a milder assumption.</li>
+        <li><strong>HCA</strong> — warm-climate sizing; rarely the number you should buy against, since a real engine still has to start on a cool morning.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"MCA and CCA are interchangeable."</strong> No — MCA is tested warmer, so it is always the higher of the two for the same battery.</li>
+        <li><strong>"A higher number is a stronger battery."</strong> Only within the same rating. A 750 MCA battery is not stronger than a 700 CCA battery.</li>
+        <li><strong>"HCA is a stricter test."</strong> The opposite — it is the easiest test (warmest), which is why the number is highest.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>CCA (−18°C), CA/MCA (0°C) and HCA (27°C) are the <strong>same test at different temperatures</strong>.</li>
+          <li>Warmer test → higher number: <strong>MCA ≈ 1.2–1.25 × CCA</strong>, and HCA higher still.</li>
+          <li>To compare across the ladder, <strong>convert to one rating</strong> (divide MCA by ~1.2–1.25 to get CCA) before judging.</li>
+          <li>Buy against <strong>CCA for cold climates</strong>, CA/MCA for warm or marine use.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Comparing CCA against MCA is the marine world's version of the JIS-vs-EN trap —
+          and the fix is the same one question: "which temperature is this number measured at?"
+        </p>
+        <p>
+          <strong>Reasoning:</strong> A label that switches from CCA to MCA is doing one of two things: honestly matching
+          a marine market, or quietly making a modest battery look bigger. Either way, the buyer who knows that
+          MCA runs about 20–25% hotter (and therefore 20–25% higher) can read past the label to the actual
+          cold-start capability — which is, on a cold morning, the only number that matters.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from primary standards and secondary references; the 0°C vs −18°C relationship is
+        consistent across sources, with the exact MCA-to-CCA multiplier stated as an approximate range (1.2–1.25×)
+        because it varies slightly by battery design.
+      </p>
+      <ul>
+        <li>SAE J537 — cranking-ampere method (CCA −18°C, CA 0°C, HCA 27°C).</li>
+        <li>Battery Council International (BCI) — cranking-rating definitions.</li>
+        <li>Jump Charge HQ, Power Curious and marine battery guides — CCA/CA/MCA comparison and the ~20–25% MCA-vs-CCA difference.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
