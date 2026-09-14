@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'AGM vs EFB vs Flooded Battery: Construction, CCA, Cycle Life and Which to Choose';
+const description = 'AGM, EFB and flooded lead-acid batteries compared — how each is built, how CCA and cycle life differ, and which technology your car or start-stop system actually needs.';
+const canonical = '/lead-acid/agm-vs-efb-vs-flooded/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'AGM vs EFB vs flooded battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between AGM, EFB and flooded batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Construction. A flooded battery has liquid electrolyte; an EFB (enhanced flooded) adds carbon to the negative plate for better charge acceptance; an AGM absorbs the electrolyte in a glass mat, making it sealed, higher-CCA and longer-cycling. They suit progressively higher electrical and start-stop demand.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I put an AGM battery in a car designed for a flooded battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually yes physically, but the charging system matters — AGM is sensitive to overcharging, so a vehicle without AGM-compatible charging may shorten its life. Follow the vehicle\u2019s specified technology rather than assuming a higher-tech battery is always better.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Technology · Last reviewed 2026-09-14</p>
+      <h1>AGM vs EFB vs Flooded Battery: Construction, CCA, Cycle Life and Which to Choose</h1>
+      <p class="lead">
+        These three are all lead-acid, but they are built differently — and the difference determines their CCA,
+        cycle life and cost. The correct choice is set by the vehicle's electrical system, not by picking the
+        "best" one.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>flooded</strong> battery has free liquid electrolyte; an <strong>EFB</strong> (enhanced flooded
+        battery) is a flooded battery with carbon added to the negative plate for better charge acceptance; an
+        <strong>AGM</strong> absorbs the electrolyte into a glass mat, sealing it and improving CCA, vibration resistance and
+        cycle life. In short: flooded is the standard, EFB is the start-stop upgrade, AGM is the high-demand and
+        start-stop premium.
+      </div>
+
+      <h2>The three technologies side by side</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>Flooded (SLI)</th><th>EFB</th><th>AGM</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Electrolyte</strong></td><td>Free liquid</td><td>Free liquid + carbon additive</td><td>Absorbed in glass mat</td></tr>
+          <tr><td><strong>Sealed</strong></td><td>Vented (some maintenance)</td><td>Vented / low-maintenance</td><td>Sealed (valve-regulated)</td></tr>
+          <tr><td><strong>CCA (same group)</strong></td><td>Baseline</td><td>Similar to flooded</td><td>Higher (lower internal resistance)</td></tr>
+          <tr><td><strong>Cycle life</strong></td><td>Lowest (~2–3× less than AGM)</td><td>~2× flooded</td><td>Highest (~3× flooded)</td></tr>
+          <tr><td><strong>Cost</strong></td><td>Lowest</td><td>Mid</td><td>Highest</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Conventional cars</td><td>Start-stop cars</td><td>Start-stop + high electrical load</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Cycle-life figures are relative (expressed as multiples of flooded) because absolute cycle counts vary
+        heavily with depth of discharge, temperature and charging profile.
+      </p>
+
+      <h2>Why AGM delivers more CCA and cycles</h2>
+      <p>
+        AGM's glass-mat separator holds the electrolyte tightly against the plates and compresses the cell, which
+        <strong>lowers internal resistance</strong> — the same reason it delivers higher CCA. The tight construction also
+        resists vibration and supports the repeated partial discharge of start-stop driving, which is why AGM is
+        the technology automakers specify for high-load and start-stop systems.
+      </p>
+
+      <h2>EFB: the start-stop middle ground</h2>
+      <p>
+        EFB is a flooded battery with carbon added to the negative plate. The carbon improves <strong>charge
+        acceptance</strong> — the battery recovers faster between start-stop cycles — which roughly doubles its cycle life
+        over a conventional flooded battery, at a cost below AGM. It is the entry technology for many start-stop
+        vehicles.
+      </p>
+
+      <h2>How to choose</h2>
+      <ul>
+        <li><strong>Conventional car, modest load</strong> — a flooded battery matched to the group and CCA is all you need.</li>
+        <li><strong>Start-stop car</strong> — match the technology the manufacturer specified: EFB or AGM. Do not fit a conventional flooded battery into a start-stop system; it will fail early.</li>
+        <li><strong>High electrical load, stop-start, or AGM-spec vehicle</strong> — AGM.</li>
+      </ul>
+      <p>
+        The critical rule: <strong>replace with the same technology the vehicle was specified for</strong>, and never downgrade
+        (AGM → flooded) in a start-stop or high-load system.
+      </p>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"AGM is always better, so always buy AGM."</strong> AGM costs more and can be damaged by a charging system not calibrated for it. Buy the technology the vehicle specifies.</li>
+        <li><strong>"EFB and AGM are the same."</strong> EFB is an enhanced flooded battery; AGM absorbs the electrolyte in a glass mat. AGM has higher CCA and cycle life.</li>
+        <li><strong>"A flooded battery works fine in a start-stop car."</strong> It will start, but repeated deep partial discharge will kill it quickly.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Flooded → EFB → AGM is a <strong>ladder of charge acceptance, CCA and cycle life</strong>, at rising cost.</li>
+          <li>AGM's glass mat <strong>lowers internal resistance</strong>, raising CCA and cycle life.</li>
+          <li><strong>Match the technology to the vehicle</strong> — especially for start-stop, where a downgrade fails early.</li>
+          <li>Never put a conventional flooded battery into a start-stop or high-load system.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The AGM-vs-EFB-vs-flooded question is not "which is best" — it is "which did the
+          vehicle's charging system specify," and a downgrade is the expensive mistake, not the cheap fix.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Start-stop systems discharge and recharge the battery hundreds of times more than a
+          conventional car, which is exactly the workload a flooded battery cannot survive. Buying a flooded battery
+          to "save money" in a start-stop car trades a small upfront saving for an early failure. The correct choice
+          follows the manufacturer's spec, not the price tag.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and manufacturer technology guides (Varta, Bosch, Exide,
+        Yuasa). Cycle-life comparisons are stated as relative multiples because absolute values depend on test
+        conditions.
+      </p>
+      <ul>
+        <li>EN 50342 — European starter-battery standard (AGM/EFB test basis).</li>
+        <li>Battery Council International (BCI) — battery technology and group reference.</li>
+        <li>Manufacturer technology guides — AGM/EFB/flooded construction and performance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
