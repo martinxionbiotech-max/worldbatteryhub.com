@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What Is a BMS (Battery Management System)? Why Lithium Packs Need One';
+const description = 'A battery management system (BMS) monitors voltage, temperature and current, balances cells, and protects a lithium pack from overcharge, overdischarge and overheating. Why lithium needs it and lead-acid does not.';
+const canonical = '/lithium/what-is-bms/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery management system (BMS)',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-14',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does a BMS do?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A battery management system monitors each cell\u2019s voltage and temperature and the pack current, balances cells so they charge evenly, and protects the pack by cutting off on overcharge, overdischarge, overcurrent or over-temperature. It also estimates state of charge (SOC) and state of health (SOH).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do lead-acid batteries need a BMS?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. A lead-acid battery is self-limiting and tolerant of abuse that would damage or ignite a lithium cell. Lithium needs a BMS because individual cells can be overcharged or overdischarged to the point of damage or thermal runaway, so every cell must be monitored and balanced.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-14"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Systems · Last reviewed 2026-09-14</p>
+      <h1>What Is a BMS (Battery Management System)? Why Lithium Packs Need One</h1>
+      <p class="lead">
+        A BMS is the electronic brain of a lithium pack — the reason a lithium battery is safe to use at all.
+        Without it, the individual cells that make up a pack would drift apart, overcharge and fail, sometimes
+        dangerously.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A battery management system (BMS) continuously monitors <strong>cell voltage,
+        temperature and pack current</strong>, <strong>balances</strong> the cells so they charge and discharge evenly, and
+        <strong>protects</strong> the pack by cutting off on overcharge, overdischarge, overcurrent or over-temperature. It also
+        estimates <strong>state of charge (SOC)</strong> and <strong>state of health (SOH)</strong>. Lithium needs this because individual cells
+        are unforgiving; lead-acid is self-limiting and does not.
+      </div>
+
+      <h2>The four jobs of a BMS</h2>
+      <ul>
+        <li><strong>Monitor</strong> — read every cell's voltage and temperature, and the pack current, in real time.</li>
+        <li><strong>Balance</strong> — equalize cell voltages so no cell lags or leads the others (a lagging cell limits the whole pack).</li>
+        <li><strong>Protect</strong> — disconnect the pack on overcharge, overdischarge, overcurrent or over-temperature.</li>
+        <li><strong>Estimate</strong> — compute state of charge (how full) and state of health (how degraded).</li>
+      </ul>
+
+      <h2>Why lithium needs a BMS and lead-acid does not</h2>
+      <p>
+        A lithium pack is built from many cells wired in series, and the cells are never perfectly identical.
+        Without balancing, the weakest cell charges to full and keeps charging — which overcharges and can damage
+        or ignite it — while the strongest cell discharges too deep on the other end. A BMS watches each cell
+        individually and prevents both extremes.
+      </p>
+      <p>
+        A lead-acid battery is chemically self-limiting: it tolerates overcharge (it just gasses and loses water)
+        and does not undergo the same kind of runaway. That is why a car's lead-acid battery runs with nothing
+        more than a voltage regulator, while a lithium pack is never sold without a BMS.
+      </p>
+
+      <h2>SOC vs SOH: the two numbers the BMS reports</h2>
+      <p>
+        <strong>State of charge (SOC)</strong> is the fuel gauge — the percentage of usable capacity remaining.
+        <strong>State of health (SOH)</strong> is the battery's aging report — how much of its original capacity it still holds,
+        relative to when it was new. A healthy battery can show 100% SOC but only 80% SOH, meaning it charges
+        "full" but that full is a smaller tank than it used to be.
+      </p>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"A BMS makes a lithium battery impossible to overheat."</strong> It reduces risk, but a failed BMS or thermal runaway can still occur — the BMS is protection, not a guarantee.</li>
+        <li><strong>"SOC is the same as SOH."</strong> No — SOC is how full, SOH is how degraded. They measure different things.</li>
+        <li><strong>"All BMS are equal."</strong> They vary in balancing method (passive vs active), measurement accuracy and protection limits, which affects pack life and safety.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>A BMS <strong>monitors, balances, protects and estimates</strong> — it is the safety brain of a lithium pack.</li>
+          <li>Lithium cells are unforgiving, so every cell must be watched; lead-acid is self-limiting and does not need one.</li>
+          <li><strong>SOC</strong> = how full; <strong>SOH</strong> = how degraded — two different numbers.</li>
+          <li>BMS quality (balancing and protection) directly affects pack life and safety.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The BMS is the part of a lithium pack buyers most overlook — and the part that most
+          determines whether the pack lasts 500 cycles or 3,000, safely.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Cells are commodity; the electronics that keep them balanced and protected are where
+          lifespan and safety are actually decided. A buyer who specs only "LFP, 100Ah" and ignores the BMS is buying
+          a chemistry without the system that makes it work. Ask about the BMS — its balancing, its protection limits
+          and its SOC/SOH accuracy — before you ask about the cells.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and BMS/cell-manufacturer documentation. SOC/SOH and
+        balancing concepts are standard battery-management terminology.
+      </p>
+      <ul>
+        <li>IEC 62660 / ISO 12405 — lithium cell and pack test standards (reference).</li>
+        <li>BMS and cell-manufacturer documentation — balancing, protection and SOC/SOH estimation.</li>
+        <li>Battery engineering references — battery management fundamentals.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-14</p>
+    </div>
+  </section>
+</BaseLayout>
