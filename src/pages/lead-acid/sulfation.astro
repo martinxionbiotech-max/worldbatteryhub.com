@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What is Battery Sulfation? The Lead-Acid Failure You Can Prevent';
+const description = 'Sulfation is the hardening of lead sulfate crystals on a lead-acid battery\'s plates, caused by chronic undercharging. It permanently raises internal resistance and lowers capacity and CCA — but early sulfation is partly reversible.';
+const canonical = '/lead-acid/sulfation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery sulfation',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-15',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-15"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-15</p>
+      <h1>What is Battery Sulfation?</h1>
+      <p class="lead">
+        Sulfation is the most common cause of lead-acid battery death — and the one most people cause by accident.
+        It is the hardening of lead sulfate crystals on the plates, and it is the direct result of leaving a battery
+        undercharged.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Sulfation is lead sulfate (PbSO₄) crystals that form on a lead-acid battery's
+        plates during discharge and then <strong>harden</strong> when the battery is not recharged promptly. Fresh lead
+        sulfate converts back to active material on recharge; hardened crystals do not. The result is permanently
+        higher internal resistance, lower capacity, and a weaker cold start (lower CCA).
+      </div>
+
+      <h2>How sulfation happens</h2>
+      <ol>
+        <li><strong>Discharge</strong> — the chemical reaction turns plate material and sulfuric acid into lead sulfate.</li>
+        <li><strong>Prompt recharge</strong> — fresh, fine lead sulfate converts back. This is normal, reversible cycling.</li>
+        <li><strong>Left undercharged</strong> — if the battery sits below full, the fine crystals grow into coarse, hard ones that no longer convert back.</li>
+      </ol>
+      <p>
+        The trigger is not age — it is <strong>time spent below full charge</strong>. A battery stored discharged for
+        weeks sulfates even if it is never used.
+      </p>
+
+      <h2>What sulfation does</h2>
+      <ul>
+        <li><strong>Raises internal resistance</strong> — the hard sulfate is a poor conductor.</li>
+        <li><strong>Lowers capacity</strong> — less active material is available to react.</li>
+        <li><strong>Lowers CCA</strong> — higher resistance means less cranking current, which is why a sulfated battery
+        reads weak on a conductance tester and turns the engine slowly.</li>
+      </ul>
+
+      <h2>Prevention and reversal</h2>
+      <table>
+        <thead><tr><th>Stage</th><th>What to do</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Prevention</td><td>Recharge promptly; keep the battery charged (float); don't store discharged</td><td>No sulfation</td></tr>
+          <tr><td>Early / mild</td><td>A long, slow charge or a controlled equalization (flooded only)</td><td>Partly reversible</td></tr>
+          <tr><td>Severe / old</td><td>Replacement — hardened sulfate is permanent</td><td>Not recoverable</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Equalization (a controlled overcharge) can break up mild sulfation in <strong>flooded</strong> batteries, but it
+        must not be used on AGM or gel — see
+        <a href="/lead-acid/lead-acid-charging/">how to charge a lead-acid battery</a>.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Sulfation is the battery disease that is almost always a storage and charging
+          habit, not a manufacturing defect — and it is cheap to prevent and usually too late to cure.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The same battery that dies "suddenly" in winter was usually sulfated quietly over
+          months of sitting below full. The cheapest maintenance is simply keeping it charged, which is what the float
+          stage exists to do.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — sulfation and lead-acid maintenance references.</li>
+        <li>Manufacturer maintenance guides (Yuasa, Canadian Energy, Varta) — sulfation causes, prevention and equalization.</li>
+        <li>Cross-verified with charging and failure-mode references.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-15</p>
+    </div>
+  </section>
+</BaseLayout>
