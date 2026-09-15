@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Charge a Lead-Acid Battery: Stages, Voltages and the Two Mistakes';
+const description = 'Lead-acid charging has three stages — bulk, absorption and float — at specific voltages. Overcharging causes gassing and water loss; undercharging causes sulfation. Here is what each stage does and the right voltages for 12V flooded and AGM batteries.';
+const canonical = '/lead-acid/lead-acid-charging/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery charging',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-15',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-15"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-15</p>
+      <h1>How to Charge a Lead-Acid Battery</h1>
+      <p class="lead">
+        Lead-acid charging is a three-stage process — bulk, absorption, float — at specific voltages.
+        The two classic mistakes are overcharging (gassing and water loss) and undercharging (sulfation).
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A 12V lead-acid battery is charged first at constant current
+        (bulk), then held at a constant voltage around <strong>14.4V</strong> (absorption) until full, then dropped to a
+        <strong>float of about 13.5–13.8V</strong> to hold it without overcharging. AGM batteries use slightly lower
+        voltages; equalization (≈15.5V) is a periodic flooded-only step, not for AGM or gel.
+      </div>
+
+      <h2>The three stages</h2>
+      <table>
+        <thead>
+          <tr><th>Stage</th><th>What happens</th><th>Typical 12V voltage</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bulk</strong></td>
+            <td>Constant current pushes charge in until the voltage rises to the absorption limit</td>
+            <td>rises to ~14.4V</td>
+          </tr>
+          <tr>
+            <td><strong>Absorption</strong></td>
+            <td>Constant voltage finishes the charge; current tapers down as the battery fills</td>
+            <td>~14.4–14.8V (flooded) / ~14.2–14.4V (AGM)</td>
+          </tr>
+          <tr>
+            <td><strong>Float</strong></td>
+            <td>Low maintenance voltage holds the battery full without overcharging</td>
+            <td>~13.5–13.8V (flooded) / ~13.4–13.6V (AGM)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The two mistakes</h2>
+      <p>Lead-acid chemistry punishes both extremes:</p>
+      <ul>
+        <li>
+          <strong>Overcharging</strong> — holding the battery too high too long electrolyzes the water into hydrogen
+          and oxygen (gassing), losing electrolyte and corroding the positive grid. In sealed/maintenance-free or AGM
+          batteries the water cannot be topped up, so overcharging is especially damaging.
+        </li>
+        <li>
+          <strong>Undercharging</strong> — if the battery never reaches full, lead sulfate crystals left on the plates
+          harden (sulfation) and no longer convert back, permanently reducing capacity and cranking power.
+        </li>
+      </ul>
+
+      <h2>Voltage depends on chemistry and temperature</h2>
+      <p>
+        The exact voltages depend on the battery type and its temperature. Flooded, AGM and gel each have their own
+        recommended limits, and chargers compensate voltage with temperature — lower voltage when hot, higher when cold.
+        Charging a battery at the wrong type's voltage is a common cause of early failure.
+      </p>
+
+      <h2>Charging and CCA</h2>
+      <p>
+        Charging is also where cranking performance is preserved. Sulfation from chronic undercharging raises internal
+        resistance, which is exactly what lowers cold cranking amps (CCA) over time — see
+        <a href="/lead-acid/cca/what-is-cca/">what CCA is</a> and
+        <a href="/technology/internal-resistance/">internal resistance</a>.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Most lead-acid "sudden death" is really slow undercharging — a battery left below
+          full for weeks sulfates, and no jump-start fixes that.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Sulfation is silent and cumulative; it shows up as a weak cold start long after the
+          damage was done. The cheap fix is keeping the battery charged, which is why the float stage exists.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — lead-acid charging and maintenance guidance.</li>
+        <li>Manufacturer charging guides (Yuasa, Canadian Energy, Varta) — flooded vs AGM voltage limits.</li>
+        <li>Cross-verified with charger documentation on bulk/absorption/float and temperature compensation.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-15</p>
+    </div>
+  </section>
+</BaseLayout>

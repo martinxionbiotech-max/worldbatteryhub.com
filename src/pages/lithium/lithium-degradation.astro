@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Why Lithium Batteries Degrade: Calendar Aging, SEI and Plating';
+const description = 'Lithium batteries degrade through two paths — calendar aging (time, even at rest) and cycle aging (use) — driven by SEI growth and lithium plating. Here is what actually causes capacity fade and how temperature, state of charge and charge rate accelerate it.';
+const canonical = '/lithium/lithium-degradation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery degradation',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-15',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-15"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Last reviewed 2026-09-15</p>
+      <h1>Why Lithium Batteries Degrade</h1>
+      <p class="lead">
+        A lithium battery loses capacity even when it is never used. The two mechanisms — calendar aging and
+        cycle aging — are driven by two chemical processes: SEI growth and lithium plating.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Lithium batteries degrade through <strong>calendar aging</strong> (time, even at
+        rest) and <strong>cycle aging</strong> (charge/discharge use). The main drivers are growth of the solid
+        electrolyte interphase (SEI), which slowly consumes lithium, and <strong>lithium plating</strong>, which deposits
+        metallic lithium instead of intercalating it. High temperature and high state of charge accelerate both.
+      </div>
+
+      <h2>Two kinds of aging</h2>
+      <table>
+        <thead><tr><th>Aging mode</th><th>What it is</th><th>Main accelerator</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Calendar aging</strong></td><td>Degradation over time, even with no use</td><td>High temperature, high state of charge (SOC)</td></tr>
+          <tr><td><strong>Cycle aging</strong></td><td>Degradation from each charge/discharge cycle</td><td>Depth of discharge, charge rate, temperature</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The two chemical culprits</h2>
+      <ul>
+        <li>
+          <strong>SEI growth.</strong> On first charge the electrolyte reacts with the anode to form a thin passivating
+          layer — the solid electrolyte interphase. It is protective but grows slowly over time, consuming lithium and
+          raising internal resistance. It grows fastest when the battery sits hot and at high SOC.
+        </li>
+        <li>
+          <strong>Lithium plating.</strong> When a battery is charged fast or cold, lithium ions can deposit as metallic
+          lithium on the anode instead of intercalating into it. Plated lithium is largely irreversible — it is lost
+          capacity, and it can grow dendrites that risk internal shorting.
+        </li>
+      </ul>
+
+      <h2>Capacity fade vs power fade</h2>
+      <p>Degradation shows up two ways:</p>
+      <ul>
+        <li><strong>Capacity fade</strong> — the battery stores less energy (Ah/Wh drops).</li>
+        <li><strong>Power fade</strong> — internal resistance rises, so the battery cannot deliver or accept current as fast (a CCA-style problem for a lithium pack's burst output).</li>
+      </ul>
+      <p>Both matter, but for different applications — an EV cares about range (capacity), a power tool about burst (power).</p>
+
+      <h2>What accelerates it, practically</h2>
+      <ul>
+        <li><strong>Heat</strong> — the single biggest accelerator; every chemistry degrades faster hot.</li>
+        <li><strong>High SOC</strong> — storing a battery at 100% (especially in heat) ages it faster than storing at 50%.</li>
+        <li><strong>Fast charging when cold</strong> — the classic lithium-plating condition.</li>
+        <li><strong>Deep cycling</strong> — shallower cycles extend cycle life; full 0–100% swings age it faster.</li>
+      </ul>
+      <p>
+        NMC and LFP differ in detail — LFP is generally more cycle-tolerant and safer under abuse, while NMC is more
+        energy-dense but ages faster at high temperature and SOC. See
+        <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a> and
+        <a href="/lithium/soc-vs-soh/">SOC vs SOH</a>.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The single highest-leverage habit for battery life is boring: don't store it hot and
+          full. Heat plus 100% SOC is where lithium quietly dies.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> SEI growth and plating are both accelerated by exactly the conditions users create
+          accidentally — a laptop left plugged in at full charge in a warm room. The fix costs nothing and is rarely
+          communicated clearly.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Peer-reviewed literature on SEI formation and lithium plating (calendar vs cycle aging).</li>
+        <li>Battery manufacturer technical references (NMC vs LFP degradation profiles).</li>
+        <li>Cross-verified with BMS and cell-datasheet guidance on temperature and SOC limits.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-15</p>
+    </div>
+  </section>
+</BaseLayout>
