@@ -1,5 +1,6 @@
 ---
 import type { Props } from './types';
+import '../styles/global.css';
 
 const { title, description, canonical, ogType = 'website', jsonLd = [], author, dateModified } = Astro.props;
 
@@ -25,6 +26,8 @@ const pageJsonLd = jsonLd.map((item) => ({ '@context': 'https://schema.org', ...
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#0f1f3d" />
     <title>{fullTitle}</title>
     <meta name="description" content={resolvedDescription} />
     <link rel="canonical" href={canonical ? `${SITE}${canonical}` : SITE} />
@@ -34,11 +37,11 @@ const pageJsonLd = jsonLd.map((item) => ({ '@context': 'https://schema.org', ...
     <meta property="og:url" content={canonical ? `${SITE}${canonical}` : SITE} />
     <meta property="og:site_name" content={BRAND} />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="/styles/global.css" />
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
     {pageJsonLd.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/">World Battery Hub</a>
