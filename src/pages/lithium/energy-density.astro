@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lithium Battery Energy Density: Wh/kg vs Wh/L and Why It Matters';
+const description = 'Energy density — watt-hours per kilogram (gravimetric) and per litre (volumetric) — is the metric that makes lithium win in EVs and storage. How it works, LFP vs NMC, and why it matters.';
+const canonical = '/lithium/energy-density/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery energy density',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-15',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is lithium battery energy density?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It is the energy a battery stores per unit mass (Wh/kg, gravimetric) or volume (Wh/L, volumetric). Lithium is roughly 3-5x lead-acid on Wh/kg, which is why it dominates EVs and storage where weight and space are the constraint.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does energy density matter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because range and runtime are limited by how much energy fits in a given weight and space. Higher energy density means a lighter, smaller pack for the same energy — the decisive advantage for EVs, drones and portable devices.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-15"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Fundamentals · Last reviewed 2026-09-15</p>
+      <h1>Lithium Battery Energy Density: Wh/kg vs Wh/L and Why It Matters</h1>
+      <p class="lead">
+        Energy density is the metric behind lithium's entire rise — it is why a lithium pack powers an EV or a
+        phone where a lead-acid battery simply could not. And it comes in two forms that are easily confused.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Energy density is energy stored per unit of <strong>mass</strong>
+        (<strong>Wh/kg</strong>, gravimetric) or per unit of <strong>volume</strong> (<strong>Wh/L</strong>, volumetric).
+        Lithium delivers roughly <strong>3–5× the Wh/kg of lead-acid</strong>, which is why it dominates electric
+        vehicles, storage and portable devices — the applications where weight and space are the hard constraint.
+      </div>
+
+      <h2>The two forms of energy density</h2>
+      <table>
+        <thead><tr><th>Metric</th><th>Measures</th><th>Matters most for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Wh/kg (gravimetric)</strong></td><td>Energy per mass</td><td>EVs, drones, anything lifted or carried</td></tr>
+          <tr><td><strong>Wh/L (volumetric)</strong></td><td>Energy per volume</td><td>Phones, packs with fixed space</td></tr>
+        </tbody>
+      </table>
+      <p>
+        The two do not move together. A chemistry can pack lots of energy per kilogram but be bulky (low Wh/L), or
+        vice versa. When a spec quotes "energy density" without saying which, it is incomplete.
+      </p>
+
+      <h2>Lithium vs lead-acid, and LFP vs NMC</h2>
+      <table>
+        <thead><tr><th>Chemistry</th><th>Wh/kg (typical)</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Lead-acid</td><td>~30–50</td><td>Heavy, mature</td></tr>
+          <tr><td>LFP</td><td>~90–160</td><td>Safe, long-life, lower density</td></tr>
+          <tr><td>NMC</td><td>~150–220</td><td>Higher density, higher cost</td></tr>
+        </tbody>
+      </table>
+      <p>
+        This is the whole <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC</a> story in one number: NMC's higher
+        energy density buys longer EV range at a higher cost and lower thermal stability, while LFP trades density
+        for safety and longevity. And it is why
+        <a href="/technology/lithium-vs-lead-acid/">lithium beats lead-acid</a> wherever weight matters.
+      </p>
+
+      <h2>Why it matters</h2>
+      <p>
+        Range and runtime are limited by how much energy fits in a given weight and space. Every Wh/kg gained means
+        either more range at the same weight, or the same range in a lighter pack — a lighter car accelerates
+        better, and a lighter drone flies longer. That single metric is why the industry relentlessly pushes
+        cathode and anode chemistry to raise it.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Energy density is the number that decides which applications a chemistry can
+          even enter — and the most useful habit is always asking "Wh/kg or Wh/L?" before comparing two batteries.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The two metrics diverge, and a marketing number without the unit is meaningless. The
+          buyer or engineer who distinguishes gravimetric from volumetric energy density — and knows the LFP/NMC
+          trade-off it encodes — understands why lithium dominates transport and lead-acid does not.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and cell-manufacturer datasheets. Values are typical ranges.</p>
+      <ul>
+        <li>Cell-manufacturer datasheets (CATL, BYD, EVE) — energy-density specifications.</li>
+        <li>Battery engineering references — gravimetric and volumetric energy density.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-15</p>
+    </div>
+  </section>
+</BaseLayout>

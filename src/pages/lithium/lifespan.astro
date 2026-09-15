@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lithium Battery Lifespan: Cycle Life vs Calendar Aging';
+const description = 'A lithium battery ages two ways — cycle life (from use) and calendar aging (from time). How depth of discharge, temperature and charge rate shorten life, and how to extend it.';
+const canonical = '/lithium/lifespan/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery lifespan',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-15',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does a lithium battery last?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It ages in two ways at once: cycle life (how many charge-discharge cycles before capacity falls, typically to 80%) and calendar aging (degradation from time alone, faster in heat). LFP cells commonly reach thousands of cycles; NMC fewer. Actual life depends on depth of discharge, temperature and charge rate.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What shortens lithium battery life the most?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Heat, deep discharge and fast charging. High temperature accelerates every aging reaction, deep cycles stress the electrodes more, and fast charging heats and degrades the cell. Keeping the battery cool, shallow-cycled and moderately charged extends life the most.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-15"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Fundamentals · Last reviewed 2026-09-15</p>
+      <h1>Lithium Battery Lifespan: Cycle Life vs Calendar Aging</h1>
+      <p class="lead">
+        A lithium battery does not have one lifespan — it has two, running at the same time. The battery ages from
+        <em>using</em> it and from merely <em>existing</em>, and the distinction explains most of what people get
+        wrong about battery life.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A lithium battery ages through <strong>cycle life</strong> (degradation from
+        charge-discharge cycles) and <strong>calendar aging</strong> (degradation from time alone, faster in heat).
+        Both are driven by <strong>depth of discharge, temperature and charge rate</strong>. LFP cells commonly reach
+        thousands of cycles; NMC fewer — but the real number depends on how the battery is treated, not just its
+        chemistry.
+      </div>
+
+      <h2>The two aging processes</h2>
+      <table>
+        <thead><tr><th>Aging type</th><th>Driven by</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cycle life</strong></td><td>Number and depth of cycles</td><td>Degradation from charge-discharge use</td></tr>
+          <tr><td><strong>Calendar aging</strong></td><td>Time + temperature + state of charge</td><td>Degradation while idle</td></tr>
+        </tbody>
+      </table>
+      <p>
+        A battery sitting on a shelf still ages — slowly in a cool place, faster in a hot one, and faster still when
+        stored fully charged. This is why a lightly-used EV can still lose capacity over years: calendar aging does
+        not wait for you to drive.
+      </p>
+
+      <h2>What shortens life</h2>
+      <ul>
+        <li><strong>Depth of discharge</strong> — deep cycles stress the electrodes more than shallow ones; a shallow 20% cycle yields far more cycles than an 80% cycle.</li>
+        <li><strong>Temperature</strong> — heat accelerates every aging reaction; cold is less damaging but reduces usable power.</li>
+        <li><strong>Charge rate</strong> — fast charging heats the cell and accelerates degradation.</li>
+        <li><strong>High state of charge</strong> — holding the battery at 100% (especially in heat) ages it faster.</li>
+      </ul>
+
+      <h2>How to extend life</h2>
+      <ul>
+        <li>Keep the battery <strong>cool</strong> and avoid prolonged heat.</li>
+        <li>Avoid <strong>deep discharge</strong> when possible; cycle shallowly.</li>
+        <li>For storage, hold at a <strong>moderate state of charge</strong> (~40–60%), not full.</li>
+        <li>Charge <strong>moderately</strong>, not always at maximum rate.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"A battery only ages when used."</strong> Calendar aging runs even when idle — heat and full charge accelerate it.</li>
+        <li><strong>"Cycle count is the whole lifespan."</strong> It is half the story; time and temperature matter independently.</li>
+        <li><strong>"Draining to empty is fine for lithium."</strong> Deep discharge shortens cycle life — it is more forgiving than lead-acid, but not free.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Lithium ages by <strong>cycle life</strong> (use) and <strong>calendar aging</strong> (time + heat).</li>
+          <li>Deep discharge, heat, fast charging and holding 100% all <strong>shorten</strong> life.</li>
+          <li>Cool, shallow, moderate-charge use <strong>extends</strong> life the most.</li>
+          <li>See <a href="/lithium/soc-vs-soh/">SOC vs SOH</a> for how lifespan is reported.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The single most useful fact about lithium lifespan is that time and heat age the
+          battery even when you are not using it — so the best "maintenance" is keeping it cool and moderately
+          charged, not any special charging ritual.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Most people optimise cycle count while ignoring calendar aging, which runs in the
+          background regardless. Understanding that heat and a full state of charge age the cell even in storage — and
+          acting on it — does more for real-world life than any brand choice.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and cell-manufacturer aging data.</p>
+      <ul>
+        <li>Battery engineering references — cycle life and calendar aging.</li>
+        <li>Cell-manufacturer datasheets — cycle life vs depth of discharge and temperature.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-15</p>
+    </div>
+  </section>
+</BaseLayout>
