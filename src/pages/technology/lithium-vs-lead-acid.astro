@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lithium vs Lead-Acid: Energy Density, Cycle Life, Cost and When Each Wins';
+const description = 'Lithium and lead-acid compared — energy density, cycle life, weight, cost, safety and maintenance. Why lithium is winning in EV and storage, and why lead-acid still owns starting and cost-sensitive uses.';
+const canonical = '/technology/lithium-vs-lead-acid/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium vs lead-acid',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-15',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Which is better, lithium or lead-acid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the job. Lithium wins on energy density, weight and cycle life; lead-acid wins on upfront cost, recyclability and simplicity. Lithium dominates EV and storage; lead-acid still owns automotive starting and cost-sensitive standby applications.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is lead-acid still used if lithium is better?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because lead-acid is cheaper up front, fully recyclable, and well-suited to the short high-current bursts of engine starting — and it needs no BMS. It remains the default for automotive SLI and cost-sensitive industrial standby.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-15"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Cross-chemistry · Last reviewed 2026-09-15</p>
+      <h1>Lithium vs Lead-Acid: Energy Density, Cycle Life, Cost and When Each Wins</h1>
+      <p class="lead">
+        The two chemistries are not competing in most applications — they are solving different problems. Lithium
+        wins where weight, energy and cycle life matter; lead-acid wins where cost, simplicity and a proven starting
+        burst matter.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Lithium</strong> has far higher energy density, lower weight and longer
+        cycle life, but costs more and needs a BMS. <strong>Lead-acid</strong> is heavier and shorter-lived but cheap,
+        fully recyclable, and needs no management electronics. Lithium dominates EV and storage; lead-acid still owns
+        automotive starting and cost-sensitive standby.
+      </div>
+
+      <h2>The two chemistries side by side</h2>
+      <table>
+        <thead><tr><th></th><th>Lead-acid</th><th>Lithium-ion</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Energy density</strong></td><td>~30–50 Wh/kg</td><td>~90–220 Wh/kg</td></tr>
+          <tr><td><strong>Weight (same energy)</strong></td><td>~3–4× heavier</td><td>Much lighter</td></tr>
+          <tr><td><strong>Cycle life</strong></td><td>~300–1,500 (deep)</td><td>~1,000–5,000+</td></tr>
+          <tr><td><strong>Upfront cost</strong></td><td>Low</td><td>Higher</td></tr>
+          <tr><td><strong>BMS required</strong></td><td>No</td><td>Yes</td></tr>
+          <tr><td><strong>Recyclability</strong></td><td>~99% (most recycled product)</td><td>Emerging, less established</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Starting, standby, cost-sensitive</td><td>EV, storage, portable</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Figures are typical ranges that vary by design and test conditions.</p>
+
+      <h2>Why lithium is winning transport and storage</h2>
+      <p>
+        The decisive metric is <a href="/technology/ah-vs-wh/">energy per kilogram</a>. Lithium's ~3–5× energy-density
+        advantage means an EV or a storage system can carry far more usable energy for the same weight — which is
+        exactly the constraint those applications face. Combined with a longer cycle life, lithium's higher upfront
+        cost is recovered over the system's life in applications that cycle the battery deeply.
+      </p>
+
+      <h2>Why lead-acid still owns starting</h2>
+      <p>
+        Engine starting is a short, high-current burst followed by a full recharge — a job lead-acid does well
+        without any management electronics. It is cheap, proven, and recycled at ~99% (the most recycled product on
+        the planet). For an automotive SLI battery where weight barely matters and the battery is rarely deep-cycled,
+        lead-acid remains the rational default — see
+        <a href="/lead-acid/deep-cycle-vs-starting/">starting vs deep-cycle</a>.
+      </p>
+
+      <h2>When each wins</h2>
+      <ul>
+        <li><strong>Lithium</strong> — EV, energy storage, portable, anything where weight and cycle life dominate lifetime cost.</li>
+        <li><strong>Lead-acid</strong> — automotive starting, industrial standby, cost-sensitive and safety-simple applications.</li>
+        <li><strong>Overlap</strong> — marine, off-grid and RV, where lithium's lighter weight and deeper cycling now compete directly with lead-acid's lower upfront cost.</li>
+      </ul>
+
+      <h2>Common misconceptions</h2>
+      <ul>
+        <li><strong>"Lithium is always better."</strong> Better at energy and weight, not at cost or simplicity — the job decides.</li>
+        <li><strong>"Lead-acid is obsolete."</strong> It is the default for starting and standby, and is not being replaced there.</li>
+        <li><strong>"The two are interchangeable."</strong> They need different charging, and lithium needs a BMS — they are not drop-in substitutes.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Lithium wins on <strong>energy density, weight and cycle life</strong>; lead-acid wins on <strong>cost, simplicity and recyclability</strong>.</li>
+          <li>The choice is <strong>job-driven</strong> — EV/storage favour lithium, starting/standby favour lead-acid.</li>
+          <li>Lead-acid is ~99% recycled; lithium needs a <strong>BMS</strong> and different charging.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> "Lithium vs lead-acid" is the wrong question — the right one is "which job, and
+          which cost over life," and the answer splits cleanly: lithium for energy and weight, lead-acid for cost and
+          starting.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Each chemistry is unbeatable in its own lane. Framing it as a competition misses that
+          they coexist because they solve different constraints. The buyer who asks the job first — not "which is
+          better" — picks correctly almost every time.
+        </p>
+        <p class="muted">
+          <em>This is the author's editorial view, not a purchasing guarantee.</em>
+        </p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from battery engineering references and manufacturer datasheets. Energy-density and cycle-life
+        figures are typical ranges.
+      </p>
+      <ul>
+        <li>Battery engineering references — energy density and cycle life by chemistry.</li>
+        <li>Manufacturer datasheets — lithium and lead-acid specifications.</li>
+        <li>Battery Council International (BCI) — lead-acid recycling and application references.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-15</p>
+    </div>
+  </section>
+</BaseLayout>
