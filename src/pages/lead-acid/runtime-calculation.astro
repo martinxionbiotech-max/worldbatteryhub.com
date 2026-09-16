@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Calculate Battery Runtime';
+const description = 'Battery runtime = usable capacity divided by the load. Worked examples — Ah ÷ amps, Wh ÷ watts — with the Peukert effect caveat that higher loads deliver less.';
+const canonical = '/lead-acid/runtime-calculation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery runtime calculation',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you calculate how long a battery will last?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divide the usable capacity by the load: hours = Ah ÷ amps (or Wh ÷ watts). A 100 Ah battery at a 10 A load runs roughly 10 hours to empty — about 5 hours if you limit lead-acid discharge to 50% for longevity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does a battery deliver less capacity at high loads?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Peukert effect: internal losses grow with current, so the same battery delivers fewer usable amp-hours at a fast discharge than at the slow 20-hour rate its capacity is rated at. The nameplate Ah assumes the C20 rate.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How to Calculate Battery Runtime</h1>
+      <p class="lead">
+        Every battery runtime question is one division — capacity over load — with two honest adjustments on top:
+        how deep you may discharge, and how fast the load drains reality beyond the nameplate.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Runtime in hours = <strong>usable capacity ÷ load</strong>:
+        <strong>hours = Ah ÷ amps</strong> (or <strong>Wh ÷ watts</strong>). A 100 Ah battery at a 10 A load runs
+        about <strong>10 hours to empty</strong> — roughly <strong>5 hours</strong> if you limit lead-acid
+        discharge to 50% for longevity (see <a href="/lead-acid/deep-cycle-vs-starting/">deep cycling</a>).
+      </div>
+
+      <h2>Worked examples</h2>
+      <table>
+        <thead><tr><th>Battery</th><th>Load</th><th>Calculation</th><th>Runtime</th></tr></thead>
+        <tbody>
+          <tr><td>100 Ah (C20)</td><td>10 A</td><td>100 ÷ 10</td><td>~10 h to empty (~5 h at 50% DoD)</td></tr>
+          <tr><td>100 Ah (C20)</td><td>5 A</td><td>100 ÷ 5</td><td>~20 h to empty</td></tr>
+          <tr><td>1,200 Wh (lithium)</td><td>120 W</td><td>1,200 ÷ 120</td><td>~10 h (usable at 80–90% DoD)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The Peukert adjustment</h2>
+      <p>
+        The nameplate Ah assumes the slow <strong>C20 rate</strong> (see
+        <a href="https://testing.worldbatteryhub.com/capacity-rates/">C20/C10/C5</a>). At higher currents the
+        internal losses grow, so the same battery delivers <em>fewer</em> usable amp-hours — a 100 Ah battery
+        drained at 50 A may deliver far less than 2 hours. For loads near or above 1C, check the rate-capacity
+        data instead of trusting the division.
+      </p>
+
+      <h2>The depth-of-discharge decision</h2>
+      <p>
+        The second adjustment is the <strong>usable window</strong>: lead-acid survives longest at 50% depth of
+        discharge (so plan half the rated Ah), while lithium LFP allows 80–90% (see
+        <a href="/lithium/lifespan/">cycle life vs depth</a>). The runtime formula stays the same — the
+        difference is which fraction of the capacity you count as usable.
+      </p>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My take:</strong> Runtime calculation is one honest division plus two honest adjustments — and
+          most planning errors are the adjustments, not the arithmetic: people divide by the nameplate Ah and
+          forget the load's Peukert bite and the depth-of-discharge limit.</p>
+        <p>
+          <strong>Why:</strong> The formula is trivial; the usable-window discipline is everything. A plan built on
+          usable capacity — half the rating for lead-acid, 80–90% for LFP, rate-adjusted for heavy loads — is
+          rarely off by much, and it is the difference between a system that matches its math and one that
+          disappoints its owner.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>At which rate (C20/C10/C5) is the capacity figure rated?</li>
+        <li>What depth of discharge does the application allow?</li>
+        <li>What is the actual load in amps or watts, including peaks?</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer discharge data.</p>
+      <ul>
+        <li>Battery engineering references — Peukert behaviour and rate capacity.</li>
+        <li>Manufacturer datasheets — capacity ratings at standard rates.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
