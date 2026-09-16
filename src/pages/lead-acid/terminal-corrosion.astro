@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Terminal Corrosion: The Crust That Stops Starting';
+const description = 'The white-blue crust on battery terminals is corrosion — acid vapour reacting with the lead. It raises resistance, blocks charging and causes starting failures. Causes, symptoms, prevention.';
+const canonical = '/lead-acid/terminal-corrosion/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery terminal corrosion',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why do battery terminals corrode?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Acid vapour and hydrogen escape around the terminal seal during charging, then react with the lead terminal and air to form the white-blue crust — lead sulfate and oxides. Overcharging accelerates the vapour, so corrosion often signals a charging problem.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you fix corroded battery terminals?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Disconnect, clean the crust with a brush and a baking-soda-and-water solution (neutralises acid), rinse, dry, and protect with terminal grease. The cause — acid vapour — should also be checked, since corrosion returns if overcharging continues.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Problems · Last reviewed 2026-09-16</p>
+      <h1>Battery Terminal Corrosion: The Crust That Stops Starting</h1>
+      <p class="lead">
+        The white-blue crust on a battery terminal is not dirt — it is a chemical reaction escaping from inside
+        the battery, and it explains a surprising share of "dead battery" diagnoses.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Terminal corrosion is the <strong>white-blue crust</strong> of lead sulfate
+        and oxides that forms when <strong>acid vapour and hydrogen</strong> escape around the terminal seal during
+        charging and react with the lead terminal in air. The crust <strong>raises resistance</strong>, blocks
+        charging current and eventually causes starting failures — and it often signals overcharging underneath.
+      </div>
+
+      <h2>Cause → Mechanism → Symptoms</h2>
+      <table>
+        <thead><tr><th></th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cause</strong></td><td>Acid vapour/hydrogen escaping the terminal seal — worse with overcharge</td></tr>
+          <tr><td><strong>Mechanism</strong></td><td>Vapour reacts with lead + air → lead sulfate/oxide crust</td></tr>
+          <tr><td><strong>Symptoms</strong></td><td>Crust on terminals, slow cranking, no-start, weak charging</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Diagnosis and prevention</h2>
+      <p>
+        <strong>Diagnosis:</strong> the crust itself is the diagnosis — check the charging system too, because
+        corrosion that keeps returning points to overcharging or a leaking seal, not just age.
+        <strong>Prevention:</strong> clean with baking soda and water (neutralises the acid), rinse and dry, then
+        protect the connection with terminal grease. The fix lasts only if the vapour source is addressed
+        (see <a href="/lead-acid/agm-charging/">charging discipline</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Terminal corrosion is the best-known battery problem and the most misread one —
+          it is usually a symptom of overcharging or a failing seal, not a cosmetic blemish, so cleaning it without
+          finding the source just schedules the next no-start.</p>
+        <p>
+          <strong>Reasoning:</strong> The crust is the reaction's visible half; the invisible half is the vapour still
+          escaping. Ten minutes of cleaning removes the symptom; five minutes of checking the charging voltage
+          removes the cause — and the second is the repair that actually lasts.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and BCI maintenance guidance.</p>
+      <ul>
+        <li>Battery Council International (BCI) — terminal maintenance guidance.</li>
+        <li>Battery engineering references — terminal corrosion chemistry.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

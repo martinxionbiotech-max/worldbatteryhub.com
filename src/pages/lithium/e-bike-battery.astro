@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'E-Bike Battery: The Two-Wheeler Chemistry Shift';
+const description = 'E-bike batteries — historically lead-acid, now dominated by lithium packs at 36V and 48V. Why lithium won the two-wheeler, and what matters when replacing one.';
+const canonical = '/lithium/e-bike-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'E-bike battery',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What battery does an e-bike use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Modern e-bikes use lithium packs — usually 36V or 48V, commonly LFP or NMC — because weight matters on a bicycle and lithium delivers the range lead-acid cannot at an acceptable weight. Early budget e-bikes used lead-acid; new models are overwhelmingly lithium.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why did lithium replace lead-acid on e-bikes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Weight. A lead-acid pack heavy enough for useful range makes the bike unrideable; lithium provides 3-5x the energy per kilogram. On a vehicle where the rider must also move that weight with leg power, the weight advantage decides everything.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>E-Bike Battery: The Two-Wheeler Chemistry Shift</h1>
+      <p class="lead">
+        The e-bike is where the battery-chemistry transition happened first and most completely — because on a
+        bicycle, weight is not a trade-off, it is the entire product.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> E-bike batteries are <strong>lithium packs</strong> — typically
+        <strong>36V or 48V</strong>, commonly LFP or NMC — replacing the early <strong>lead-acid</strong> packs.
+        Lithium won because a bicycle must carry its battery with leg power, and
+        <a href="/lithium/energy-density/">energy density</a> is the deciding factor: lithium delivers the range
+        at a weight lead-acid simply cannot.
+      </div>
+
+      <h2>Why the chemistry shift was total</h2>
+      <p>
+        The weight arithmetic is brutal: a lead-acid pack sized for useful range weighs roughly as much as the bike
+        itself, while lithium's 3-5× Wh/kg advantage cuts that to a manageable fraction. On two wheels, the
+        rider's legs must move the battery too, so the chemistry with the higher energy density wins outright —
+        the same logic that decides EVs, compressed (see
+        <a href="https://technology.worldbatteryhub.com/lithium-cathode-anode/">cathode chemistries</a>).
+      </p>
+
+      <h2>What matters when replacing</h2>
+      <ul>
+        <li><strong>Voltage and connector</strong> — the pack must match the motor system (36V vs 48V) and the connector.</li>
+        <li><strong>Capacity</strong> — Ah sets range; larger is heavier.</li>
+        <li><strong>Cell quality and BMS</strong> — the <a href="/lithium/what-is-bms/">BMS</a> is the safety layer; budget packs often skip on it.</li>
+        <li><strong>Compatibility</strong> — charger and controller must match the pack's voltage and communication.</li>
+      </ul>
+
+      <h2>The safety note</h2>
+      <p>
+        The e-bike segment has a disproportionately high fire record among lithium applications — largely from
+        <strong>low-cost packs with weak BMS protection and mismatched chargers</strong>. The lesson is structural:
+        the BMS and charger matching are as important as the cells (see
+        <a href="/lithium/thermal-runaway/">thermal runaway</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The e-bike is lithium's purest victory — the weight constraint is absolute, so
+          lead-acid lost on physics, not fashion — and the segment's fire record is the cautionary half of that
+          story, written by packs that cut corners on the BMS.</p>
+        <p>
+          <strong>Reasoning:</strong> Where the constraint is weight, energy density decides; where the market is
+          cost-driven, protection gets cut. Both halves matter: chemistry explains the shift, and the BMS explains
+          the safety spread — together they define what a good e-bike pack actually is.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and e-bike system documentation.</p>
+      <ul>
+        <li>E-bike system and pack documentation — voltage and connector standards.</li>
+        <li>Battery engineering references — lithium pack safety and BMS requirements.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
