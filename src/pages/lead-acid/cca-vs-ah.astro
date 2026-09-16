@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'CCA vs Ah: Cranking Power vs Stored Energy';
+const description = 'CCA measures cold cranking power; Ah measures stored energy. The two ratings answer different questions — why a battery can crank strongly yet hold little energy, and vice versa.';
+const canonical = '/lead-acid/cca-vs-ah/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'CCA vs Ah',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between CCA and Ah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'CCA (cold cranking amps) measures cranking power — the current the battery delivers for 30 seconds in the cold. Ah (amp-hours) measures stored energy — how much current it can deliver over 20 hours. They answer different questions: starting power vs runtime.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is higher CCA or higher Ah better?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Neither is universally better. A starter battery needs high CCA to crank; a deep-cycle bank needs high Ah for runtime. The right one depends on the job — which is why the two ratings exist separately.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Comparisons · Last reviewed 2026-09-16</p>
+      <h1>CCA vs Ah: Cranking Power vs Stored Energy</h1>
+      <p class="lead">
+        Two numbers dominate every battery label, and they measure different things. Confusing them is the most
+        common battery-buying mistake.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <a href="/lead-acid/cca/what-is-cca/">CCA</a> (cold cranking amps) measures
+        <strong>cranking power</strong> — the current the battery can deliver for 30 seconds at −18°C.
+        <strong>Ah</strong> (amp-hours) measures <strong>stored energy</strong> — the current it can deliver over 20
+        hours. They answer different questions: CCA asks "can it start the engine?", Ah asks "how long can it run
+        things?"
+      </div>
+
+      <h2>The two ratings</h2>
+      <table>
+        <thead><tr><th></th><th>CCA</th><th>Ah (C20)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Question</strong></td><td>Can it crank in the cold?</td><td>How much energy is stored?</td></tr>
+          <tr><td><strong>Test</strong></td><td>30 s at −18°C to 7.2V</td><td>20 h discharge to 10.5V</td></tr>
+          <tr><td><strong>Design driver</strong></td><td>Plate surface area (many thin plates)</td><td>Plate material (thicker plates)</td></tr>
+          <tr><td><strong>Matters most for</strong></td><td>Starting</td><td>Runtime, deep cycling</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why a battery can be strong in one and weak in the other</h2>
+      <p>
+        The two ratings pull the design in opposite directions. Many thin plates maximise surface area for cranking
+        (high CCA) but store modest material (lower Ah); thick plates store more material (higher Ah) but expose
+        less surface (lower CCA). A starting battery therefore reads strong in CCA and modest in Ah, while a
+        deep-cycle battery reads the reverse — see <a href="/lead-acid/deep-cycle-vs-starting/">starting vs
+        deep-cycle</a> for the design split.
+      </p>
+
+      <h2>Which to buy?</h2>
+      <p>
+        Match the rating to the job. A car needs CCA first (cranking) with enough Ah to cover the electrical load
+        between charges; a solar or marine house bank needs Ah first, with CCA irrelevant. The common mistake is
+        buying the bigger Ah battery for a starting application — the cranking ability may actually be <em>worse</em>
+        despite the bigger number.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> CCA and Ah are not competitors — they are two answers to two different
+          questions, and the buyer who knows which question their application asks can never be misled by a bigger
+          number on the wrong scale.</p>
+        <p>
+          <strong>Reasoning:</strong> The design trade between surface area and material means the two ratings move in
+          opposite directions across battery types. Understanding that one trade-off replaces a hundred marketing
+          comparisons — you buy the rating your job actually uses.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and standards documentation.</p>
+      <ul>
+        <li>Battery Council International (BCI) — CCA and capacity definitions.</li>
+        <li>SAE J537 / EN 50342 — CCA and C20 test methods.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

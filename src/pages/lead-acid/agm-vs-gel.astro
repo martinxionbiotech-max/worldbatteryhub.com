@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'AGM vs Gel Battery: Two Sealed Designs Compared';
+const description = 'AGM and gel are both sealed VRLA lead-acid, but the electrolyte is immobilised differently — AGM in a glass mat, gel with silica. High current vs deep cycling: which fits which job.';
+const canonical = '/lead-acid/agm-vs-gel/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'AGM vs gel battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between AGM and gel batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both are sealed VRLA batteries, but the electrolyte is immobilised differently: AGM absorbs it in a fiberglass mat, gel solidifies it with silica. AGM handles high current better (lower resistance); gel tolerates deep cycling better and is more position-flexible, but is stricter about charge voltage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which is better, AGM or gel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Neither is universally better. AGM suits starting, start-stop and high-current use; gel suits slow deep cycling like solar and mobility. The choice follows the duty cycle, not the label.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Comparisons · Last reviewed 2026-09-16</p>
+      <h1>AGM vs Gel Battery: Two Sealed Designs Compared</h1>
+      <p class="lead">
+        AGM and gel look alike from the outside — sealed, maintenance-free, spill-proof. Inside, the electrolyte is
+        immobilised two different ways, and the difference decides which jobs each one serves.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Both are sealed <a href="https://technology.worldbatteryhub.com/vrla/">VRLA</a>
+        batteries, but <a href="/lead-acid/agm-battery/">AGM</a> absorbs the electrolyte in a
+        <strong>fiberglass mat</strong> while <strong>gel</strong> solidifies it with <strong>silica</strong>. AGM has
+        lower resistance and handles <strong>high current</strong> better; gel tolerates <strong>deep cycling</strong>
+        better and works in any position, but demands the strictest charge voltage.
+      </div>
+
+      <h2>The comparison</h2>
+      <table>
+        <thead><tr><th></th><th>AGM</th><th>Gel</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Electrolyte</strong></td><td>Absorbed in glass mat</td><td>Silica gel</td></tr>
+          <tr><td><strong>High current / cranking</strong></td><td><strong>Better</strong> (low resistance)</td><td>Lower</td></tr>
+          <tr><td><strong>Deep cycling</strong></td><td>Good</td><td><strong>Excellent</strong></td></tr>
+          <tr><td><strong>Position flexibility</strong></td><td>Good</td><td>Excellent</td></tr>
+          <tr><td><strong>Charge voltage strictness</strong></td><td>Moderate</td><td><strong>Strictest</strong> (gassing forms voids)</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Automotive, start-stop, UPS</td><td>Solar, mobility, deep-cycle</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the duty cycle decides</h2>
+      <p>
+        The design difference is a flow difference: the mat lets ions move freely for fast current; the gel slows
+        them, which costs power but spreads the discharge evenly — exactly what deep cycling wants. So the choice
+        follows the job: high current → AGM; slow, deep, repeated discharge → gel. No universal winner exists, only
+        a fit.
+      </p>
+
+      <h2>The charging caution</h2>
+      <p>
+        Gel's weakness is its charging window — overvoltage <strong>gasses the gel</strong> into permanent voids, so
+        the charger must have a dedicated gel profile (see
+        <a href="/lead-acid/agm-charging/">charging discipline</a> for the same logic in AGM). A gel battery charged
+        on an AGM profile is being quietly damaged; the reverse is merely suboptimal.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> AGM vs gel is not a quality contest — it is a duty-cycle question, and the
+          deciding factor is whether the battery's job is fast bursts of current or slow, deep endurance.</p>
+        <p>
+          <strong>Reasoning:</strong> The electrolyte's physical form sets the trade: free ion flow for power (AGM) or
+          even, slow discharge for endurance (gel). Match that trade to the application and either battery excels;
+          swap them and either one disappoints — the whole comparison in one principle.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer documentation.</p>
+      <ul>
+        <li>Battery engineering references — AGM and gelled electrolyte construction.</li>
+        <li>Manufacturer technical literature — charge profiles and duty recommendations.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

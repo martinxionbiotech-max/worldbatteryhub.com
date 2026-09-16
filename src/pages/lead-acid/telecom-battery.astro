@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Telecom Battery: Standby Power for Towers';
+const description = 'Telecom batteries keep cell towers running when the grid fails — historically VRLA lead-acid, increasingly lithium. The standby duty, sizing, and the chemistry shift.';
+const canonical = '/lead-acid/telecom-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Telecom battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What batteries do telecom towers use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Traditionally VRLA lead-acid (AGM or gel), sized for hours of backup during grid outages. Lithium (LFP) is increasingly replacing them where weight, footprint and longer life justify the higher cost — especially in shared, roof-top and off-grid sites.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why are telecom batteries replaced on a schedule?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because they age by calendar life while sitting at float charge — and in hot climates that aging is faster. Replacing on a 3-5 year schedule prevents the classic failure mode: discovering the dead battery during the outage it was meant to cover.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>Telecom Battery: Standby Power for Towers</h1>
+      <p class="lead">
+        Every cell tower carries a battery bank whose entire purpose is to be boring for years — and perfect in the
+        one moment the grid fails.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Telecom batteries are <strong>standby power for cell towers</strong> —
+        traditionally <strong>VRLA lead-acid</strong> (AGM or gel), sized for hours of backup during grid outages,
+        and increasingly <strong>lithium (LFP)</strong> where weight, footprint and longer life justify the cost.
+        The duty is float-and-wait, and the batteries are replaced on a schedule because they die of age, not use.
+      </div>
+
+      <h2>The standby duty</h2>
+      <p>
+        A telecom battery floats at a constant trickle charge for years, discharging only when the grid fails —
+        exactly the <a href="/lead-acid/ups-battery/">UPS-style standby duty</a>, scaled up and repeated across
+        thousands of sites. What kills them is <strong>calendar aging at float, accelerated by heat</strong>, which
+        is why hot-climate towers replace banks on shorter cycles (see
+        <a href="https://worldbatteryhub.com/lithium/lifespan/">calendar aging</a>).
+      </p>
+
+      <h2>VRLA lead-acid vs lithium for telecom</h2>
+      <table>
+        <thead><tr><th></th><th>VRLA lead-acid</th><th>Lithium (LFP)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Upfront cost</strong></td><td>Lower</td><td>Higher</td></tr>
+          <tr><td><strong>Footprint / weight</strong></td><td>Large, heavy</td><td>Small, light (matters on rooftops)</td></tr>
+          <tr><td><strong>Lifespan</strong></td><td>~3–5 years (hot climates shorter)</td><td>~8–10+ years</td></tr>
+          <tr><td><strong>Best fit</strong></td><td>Ground sites, budget rollouts</td><td>Shared, rooftop, off-grid, remote sites</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the shift is happening</h2>
+      <p>
+        The switch to lithium is driven by <strong>footprint and life</strong>: rooftop and shared sites have no
+        room for heavy lead banks, and off-grid solar-hybrid sites cycle daily — a duty where lithium's cycle life
+        wins outright (see <a href="/lead-acid/solar-battery/">solar batteries</a>). Lead-acid holds the cost-driven
+        ground-site market, but the growth segments are going lithium.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The telecom battery market is quietly splitting by site type — lead-acid where
+          space and cost are cheap, lithium where the rooftop, the heat or the daily solar cycle punishes the old
+          chemistry — and the site's physical constraints predict the chemistry better than any spec sheet.</p>
+        <p>
+          <strong>Reasoning:</strong> The duty is identical everywhere; the constraints are not. Where the tower is
+          cramped, hot or off-grid, lithium's advantages compound; where it is not, lead-acid's price still wins. The
+          analytical habit is to read the site, not the technology.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and telecom power documentation.</p>
+      <ul>
+        <li>Telecom power-system documentation — battery sizing and standby duty.</li>
+        <li>Battery engineering references — VRLA float life and lithium cycle life.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

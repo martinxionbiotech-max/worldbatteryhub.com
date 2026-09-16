@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Industrial Battery: Motive Power, Standby and Stationary';
+const description = 'Industrial batteries cover the heavy-duty categories — forklift motive power, UPS standby and stationary storage. What unifies them, and how they differ from consumer batteries.';
+const canonical = '/lead-acid/industrial-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Industrial battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an industrial battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It is a battery built for heavy professional duty — forklift motive power, UPS standby and stationary storage — typically large flooded or sealed lead-acid cells, with lithium increasingly taking the cycling applications.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do industrial batteries differ from consumer batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They are designed for continuous professional use and long service life — thick plates, individual-cell construction, regular maintenance — where consumer batteries are built for occasional bursts and lower cost. The duty and the economics both differ.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>Industrial Battery: Motive Power, Standby and Stationary</h1>
+      <p class="lead">
+        Industrial batteries are the working-class branch of the battery world — built to be cycled daily or kept
+        ready for years, and judged on total cost over a decade rather than price at the checkout.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> An industrial battery is built for <strong>heavy professional duty</strong> —
+        three categories: <strong>motive power</strong> (forklifts and handling equipment), <strong>standby</strong>
+        (UPS and emergency power), and <strong>stationary</strong> (telecom, switchgear, storage). Traditionally
+        large flooded or sealed lead-acid cells, with <strong>lithium</strong> increasingly taking the cycling
+        applications.
+      </div>
+
+      <h2>The three industrial categories</h2>
+      <table>
+        <thead><tr><th>Category</th><th>Duty</th><th>Typical battery</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Motive power</strong></td><td>Daily deep cycling</td><td>Flooded traction or lithium LFP</td></tr>
+          <tr><td><strong>Standby (UPS)</strong></td><td>Float for years, rare discharge</td><td>VRLA (AGM/gel)</td></tr>
+          <tr><td><strong>Stationary / telecom</strong></td><td>Float + occasional outages</td><td>VRLA or lithium</td></tr>
+        </tbody>
+      </table>
+      <p>See the category pages: <a href="/lead-acid/forklift-battery/">forklift</a>, <a href="/lead-acid/ups-battery/">UPS</a>, <a href="/lead-acid/telecom-battery/">telecom</a>.</p>
+
+      <h2>What unifies the category</h2>
+      <p>
+        Three things: <strong>duty</strong> (professional, predictable, unforgiving of downtime), <strong>design</strong>
+        (individual cells, thick plates, serviceability), and <strong>economics</strong> (total cost of ownership
+        over years, not purchase price). An industrial buyer evaluates cycles, maintenance and replacement cost —
+        the opposite logic of a consumer buying on price alone.
+      </p>
+
+      <h2>Why lithium is crossing over</h2>
+      <p>
+        Lithium entered the industrial space first where its advantages compound — daily-cycled motive power
+        (opportunity charging) and space-constrained standby — while lead-acid holds the cost-driven float
+        applications. The crossover point moves with the
+        <a href="https://market.worldbatteryhub.com/battery-price-trends/">lithium price curve</a>, which keeps
+        pushing it into new industrial niches each year.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The industrial battery market is where total-cost thinking lives — the buyer
+          buys ten years of availability, not a box on a shelf — and that mindset, more than any chemistry, is what
+          defines the category.</p>
+        <p>
+          <strong>Reasoning:</strong> Every industrial decision — flooded vs VRLA, lead vs lithium — resolves into a
+          decade-long cost curve of cycles, maintenance and downtime. The analyst who thinks in total cost reads the
+          industrial market correctly; the one who compares sticker prices does not.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and industrial power documentation.</p>
+      <ul>
+        <li>Industrial battery manufacturer documentation — traction and standby lines.</li>
+        <li>Battery engineering references — industrial cell design and duty cycles.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
