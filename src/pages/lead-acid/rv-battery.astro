@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'RV Battery: House vs Chassis, AGM vs Lithium';
+const description = 'RVs run two battery systems — a starting battery for the engine and a deep-cycle house battery for lights and appliances. AGM vs lithium for the house bank, and how to choose.';
+const canonical = '/lead-acid/rv-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'RV battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What battery does an RV use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An RV uses two systems: a starting battery to crank the engine, and a deep-cycle house battery bank to power lights, fridge and appliances off-grid. The house bank is the one people mean by RV battery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'AGM or lithium for an RV house battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'AGM is cheaper, drop-in and proven; lithium (LiFePO4) is lighter, uses more of its capacity and lasts far longer, but costs more and needs different charging. Lithium wins for serious off-grid use; AGM wins on upfront cost.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>RV Battery: House vs Chassis, AGM vs Lithium</h1>
+      <p class="lead">
+        An RV actually carries two battery systems with opposite jobs — and most "RV battery" confusion comes from
+        mixing them up.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> An RV uses <strong>two battery systems</strong>: a <strong>starting
+        battery</strong> to crank the engine (a standard <a href="/lead-acid/sli-battery/">SLI</a> job), and a
+        <strong>deep-cycle house battery bank</strong> to power lights, fridge and appliances off-grid. For the
+        house bank the choice is <strong>AGM</strong> (cheaper, drop-in, proven) or <strong>lithium (LiFePO4)</strong>
+        (lighter, deeper usable capacity, much longer life, higher cost).
+      </div>
+
+      <h2>The two systems, separated</h2>
+      <table>
+        <thead><tr><th></th><th>Chassis (starting)</th><th>House (deep-cycle)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Job</strong></td><td>Crank the engine</td><td>Run lights, fridge, appliances off-grid</td></tr>
+          <tr><td><strong>Battery</strong></td><td>SLI starting battery</td><td>Deep-cycle AGM or lithium</td></tr>
+          <tr><td><strong>Failure if wrong</strong></td><td>—</td><td>A starting battery deep-cycled dies in weeks</td></tr>
+        </tbody>
+      </table>
+      <p>
+        The house bank is the one that earns the "RV battery" name, and it must be a
+        <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> design — the discharge is deep and daily,
+        the opposite of a starting battery's duty.
+      </p>
+
+      <h2>AGM vs lithium for the house bank</h2>
+      <table>
+        <thead><tr><th></th><th>AGM</th><th>LiFePO4</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Usable capacity</strong></td><td>~50% of rated</td><td>~80–90% of rated</td></tr>
+          <tr><td><strong>Weight</strong></td><td>Heavy</td><td>~half the weight</td></tr>
+          <tr><td><strong>Cycle life</strong></td><td>~500–800 deep cycles</td><td>~2,000–5,000</td></tr>
+          <tr><td><strong>Cost</strong></td><td>Lower</td><td>Higher up front</td></tr>
+          <tr><td><strong>Charging</strong></td><td>Standard chargers work</td><td>Needs lithium profile</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The RV battery decision is a usage-frequency decision — weekenders should buy
+          AGM, full-timers and serious boondockers should buy LiFePO4 — and the mistake to avoid is putting either
+          one in the wrong of the RV's two battery jobs.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Lithium's premium pays back only through deep, frequent cycling; occasional use
+          never recovers it. Match the battery to the duty — deep-cycle in the house, starting on the chassis — and
+          the two systems last as designed.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and RV/marine power documentation.</p>
+      <ul>
+        <li>Battery engineering references — deep-cycle AGM and LiFePO4 specifications.</li>
+        <li>RV and marine power documentation — house-bank sizing and charging.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
