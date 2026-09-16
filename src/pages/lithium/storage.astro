@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Store Lithium Batteries';
+const description = 'Lithium batteries store best at 40-60% charge, cool, and away from heat — the state that slows calendar aging. The storage rules and why they work.';
+const canonical = '/lithium/storage/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery storage',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What charge should lithium batteries be stored at?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Around 40-60% state of charge. Full charge and empty both age the battery faster in storage — the middle range minimises the stress on the electrodes, which is why devices ship at roughly half charge.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What temperature should lithium batteries be stored at?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cool and stable — room temperature or below. Heat roughly doubles the aging rate every 10°C, so a hot garage or car interior is the worst place for a stored lithium battery.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How to Store Lithium Batteries</h1>
+      <p class="lead">
+        The best way to store a lithium battery contradicts the instinct to charge it first. The storage-optimal
+        state is half-full, cool and untouched.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Store lithium batteries at <strong>40–60% state of charge</strong>, in a
+        <strong>cool, stable place</strong>. Both full and empty accelerate
+        <a href="/lithium/lifespan/">calendar aging</a>, and heat roughly doubles the aging rate every 10°C — which
+        is why devices ship at half charge and why hot garages are the worst storage spot.
+      </div>
+
+      <h2>The storage rules</h2>
+      <table>
+        <thead><tr><th>Variable</th><th>Storage-optimal</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>State of charge</strong></td><td>~40–60%</td><td>Minimises electrode stress at both extremes</td></tr>
+          <tr><td><strong>Temperature</strong></td><td>Cool, stable (~15–25°C)</td><td>Heat accelerates every aging reaction</td></tr>
+          <tr><td><strong>Environment</strong></td><td>Dry, away from flammables</td><td>Damaged cells can vent or burn</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why half-charge, not full</h2>
+      <p>
+        Full charge keeps the cathode at its highest voltage — the state where side reactions proceed fastest —
+        while deep-empty risks over-discharge and cell damage. The middle range sits in the quiet zone between
+        the two stresses, which is why manufacturers ship cells at partial charge and why long-term storage
+        guidance centres on it (see <a href="/lithium/soc-vs-soh/">SOC</a> for the state-of-charge language).
+      </p>
+
+      <h2>The heat rule</h2>
+      <p>
+        Heat is the other multiplier: storage in a hot car or garage can age a battery several times faster than
+        a cool shelf. Combined with partial charge, cool storage is the single biggest lever on a stored battery's
+        life — more than any brand choice (see
+        <a href="/lead-acid/self-discharge/">self-discharge</a> for the lead-acid version of the same physics).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The lithium storage rule is counterintuitive but cheap — half charge, cool
+          shelf — and it matters because storage damage is invisible: the battery that aged badly in a hot drawer
+          fails later, with no warning at the time.</p>
+        <p>
+          <strong>Reasoning:</strong> Calendar aging runs silently, driven by charge state and temperature. The two
+          rules — middle charge, cool place — attack both drivers directly and cost nothing, which makes them the
+          highest-return storage advice in batteries.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from cell-manufacturer storage guidance and battery engineering references.</p>
+      <ul>
+        <li>Cell-manufacturer documentation — storage state-of-charge and temperature guidance.</li>
+        <li>Battery engineering references — calendar aging dependence on SOC and temperature.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
