@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'AGM Battery Charging: Voltages, Limits and What Overcharge Does';
+const description = 'AGM batteries charge with a voltage-limited profile — absorption around 14.4-14.7V and no equalisation. Why overcharge dries the mat, and how to charge AGM correctly.';
+const canonical = '/lead-acid/agm-charging/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'AGM battery charging',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What voltage should an AGM battery be charged at?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'AGM is charged with a voltage-limited profile — roughly 14.4-14.7V absorption for a 12V battery — and must not receive the equalisation charge used on flooded batteries. The charger must have an AGM setting.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if you overcharge an AGM battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Overcharge drives the recombination reaction too hard, building pressure until the valve vents — permanently losing electrolyte that cannot be replaced in the sealed design. Repeated overcharge dries the mat and shortens life sharply.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Charging · Last reviewed 2026-09-16</p>
+      <h1>AGM Battery Charging: Voltages, Limits and What Overcharge Does</h1>
+      <p class="lead">
+        AGM is sealed, and the seal changes the charging rules. The number-one AGM killer is not the chemistry — it
+        is charging it like a flooded battery.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> AGM is charged with a <strong>voltage-limited profile</strong> — absorption
+        around <strong>14.4–14.7V</strong> for a 12V battery, then float — and it must <strong>not receive the
+        equalisation charge</strong> used on flooded batteries. Overcharging drives the valve to vent electrolyte
+        that <strong>cannot be replaced</strong>, drying the glass mat and shortening life sharply.
+      </div>
+
+      <h2>AGM vs flooded charging rules</h2>
+      <table>
+        <thead><tr><th></th><th>Flooded</th><th>AGM</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Absorption (12V)</strong></td><td>~14.4–14.8V</td><td>~14.4–14.7V (stay in limit)</td></tr>
+          <tr><td><strong>Equalisation</strong></td><td>Yes, periodically</td><td><strong>No</strong></td></tr>
+          <tr><td><strong>Overcharge result</strong></td><td>Water loss — refillable</td><td>Vented electrolyte — permanent</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why overcharge is permanent damage</h2>
+      <p>
+        In a flooded battery, overcharge gasses off water that you top up. In AGM, the
+        <a href="https://technology.worldbatteryhub.com/vrla/">VRLA</a> recombination normally recycles the oxygen —
+        but if the charge voltage exceeds the recombination rate, pressure builds until the <strong>valve
+        vents</strong>, and the lost electrolyte is gone forever in the sealed design. Each overcharge event
+        permanently dries the mat.
+      </p>
+
+      <h2>The three rules</h2>
+      <ul>
+        <li><strong>Use an AGM setting</strong> — never charge on a flooded or equalisation profile.</li>
+        <li><strong>Respect the voltage limit</strong> — keep absorption inside the manufacturer's stated range.</li>
+        <li><strong>Temperature-compensate</strong> — hot batteries need lower voltage; the charger should adjust (see <a href="/lead-acid/lead-acid-charging/">lead-acid charging</a>).</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The AGM battery's worst enemy is a charger set for the wrong battery — and the
+          single highest-value maintenance habit is simply using the AGM setting, which costs nothing and prevents
+          the one failure AGM cannot recover from.</p>
+        <p>
+          <strong>Reasoning:</strong> AGM's sealed advantage carries a sealed penalty: what vents can never be refilled.
+          The charging discipline — right profile, right limit, no equalisation — is therefore not a refinement but the
+          entire game for AGM lifespan.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer charging documentation.</p>
+      <ul>
+        <li>Manufacturer charging documentation (Varta, Bosch, Exide) — AGM voltage limits.</li>
+        <li>Battery engineering references — VRLA recombination and venting.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
