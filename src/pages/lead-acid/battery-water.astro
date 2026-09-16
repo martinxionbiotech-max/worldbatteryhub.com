@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Water Level: Topping Up a Flooded Battery';
+const description = 'Flooded lead-acid batteries need periodic watering with distilled water — never acid, never tap. When, how, and why the level matters.';
+const canonical = '/lead-acid/battery-water/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery water level',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do I need to add water to my car battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only flooded batteries with removable vent caps — and only distilled water, never acid and never tap water. AGM, EFB and gel batteries are sealed and must never be opened. Add when the level falls below the plates, covering them without overfilling.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why distilled water and not tap water?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The minerals and chlorine in tap water poison the plates and shorten the battery\u2019s life. Charging consumes water, not acid — so the replacement is pure water, and distilled avoids the contaminants that would otherwise accumulate.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Maintenance · Last reviewed 2026-09-16</p>
+      <h1>Battery Water Level: Topping Up a Flooded Battery</h1>
+      <p class="lead">
+        Charging slowly consumes water, not acid — and the only correct replacement is distilled water. The
+        maintenance is small, and the two classic mistakes (acid instead of water, tap instead of distilled) are
+        how batteries are quietly ruined.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Flooded</strong> batteries with removable caps need periodic
+        watering with <strong>distilled water only</strong> — never acid, never tap. Add when the level drops below
+        the plates, covering them without overfilling. Sealed types (AGM/EFB/gel) must never be opened
+        (see <a href="/lead-acid/types/">the type family</a>).
+      </div>
+
+      <h2>The rules</h2>
+      <table>
+        <thead><tr><th>Rule</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Distilled water only</strong></td><td>Charging consumes water; minerals in tap water poison plates</td></tr>
+          <tr><td><strong>Never add acid</strong></td><td>Acid is not consumed; adding it raises concentration beyond design</td></tr>
+          <tr><td><strong>Cover the plates, do not overfill</strong></td><td>Exposed plates sulfate; overfill spills acid in charging</td></tr>
+          <tr><td><strong>Water after charging</strong></td><td>The level reads higher during charge (gassing)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why only distilled</h2>
+      <p>
+        The water lost during charging evaporates <em>as water</em> — the acid stays behind. The top-up is therefore
+        pure water, and distilled is the requirement because the calcium, iron and chlorine in tap water accumulate
+        with every top-up and accelerate corrosion and self-discharge (see
+        <a href="/lead-acid/terminal-corrosion/">corrosion</a> for the vapour side of the same chemistry).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Battery watering is the smallest maintenance task with the biggest
+          mistake-to-task ratio — the whole skill is distilled water, no acid, plates covered — and the batteries
+          that die young are usually the ones whose caps were never lifted.</p>
+        <p>
+          <strong>Reasoning:</strong> The failure mode is silent: low electrolyte exposes the plates to sulfation,
+          and the wrong water poisons them slowly. Ten minutes a season with the right water is the entire
+          maintenance — and its absence is the most common cause of avoidable flooded-battery death.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from manufacturer maintenance documentation and BCI guidance.</p>
+      <ul>
+        <li>Manufacturer maintenance documentation — watering procedure.</li>
+        <li>Battery Council International (BCI) — flooded battery maintenance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
