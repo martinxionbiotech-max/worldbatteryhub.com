@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'UPS Battery: Standby Power Explained';
+const description = 'UPS batteries are sealed lead-acid (VRLA/AGM) batteries that sit at float charge and deliver backup power when the grid fails. How they work and why they differ from starting batteries.';
+const canonical = '/lead-acid/ups-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'UPS battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What battery does a UPS use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A UPS uses sealed lead-acid batteries — usually VRLA, typically AGM — because they are maintenance-free, spill-proof, and well suited to sitting at float charge for years until the rare moment they must deliver backup power.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a UPS battery last?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Typically 3–5 years at room temperature. UPS batteries age mainly by calendar life — heat and prolonged float charging degrade them even without use — which is why they are replaced on a schedule rather than when they fail.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>UPS Battery: Standby Power Explained</h1>
+      <p class="lead">
+        A UPS battery spends most of its life doing nothing — and that is exactly what it is designed for. The
+        engineering question is surviving years of idle waiting, then delivering power the moment the grid fails.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A UPS (uninterruptible power supply) uses <strong>sealed lead-acid
+        batteries</strong> — usually VRLA, typically <strong>AGM</strong> — that sit at a constant <strong>float
+        charge</strong> and deliver backup power when the mains fails. They are chosen for being
+        <strong>maintenance-free and spill-proof</strong>, and they age mainly by calendar life, which is why they
+        are replaced on a schedule of roughly 3–5 years.
+      </div>
+
+      <h2>Why sealed lead-acid, and why AGM</h2>
+      <p>
+        A UPS battery sits indoors, often near electronics, for years. That rules out flooded batteries (acid, gas,
+        maintenance) and favours <strong>VRLA</strong> — sealed, with the electrolyte immobilised. <strong>AGM</strong> is
+        the common choice because its absorbed electrolyte and valve-regulated design make it spill-proof and
+        orientation-tolerant, with good power delivery for the discharge. See
+        <a href="/lead-acid/agm-battery/">what an AGM battery is</a>.
+      </p>
+
+      <h2>Why UPS batteries age by calendar, not cycles</h2>
+      <p>
+        A UPS battery may be discharged only a handful of times in its life. What ages it instead is
+        <strong>time at float charge and heat</strong> — the slow corrosion and drying that proceed even while idle,
+        faster in warm rooms. That is why the 3–5-year replacement rule exists: the battery is changed on a
+        schedule, because its failure is a matter of age, not use (see
+        <a href="/lithium/lifespan/">calendar aging</a> for the same idea in lithium).
+      </p>
+
+      <h2>UPS vs starting vs deep-cycle</h2>
+      <table>
+        <thead><tr><th></th><th>UPS (standby)</th><th>Starting (SLI)</th><th>Deep-cycle</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Duty</strong></td><td>Float for years, rare discharge</td><td>Daily short bursts</td><td>Regular deep discharge</td></tr>
+          <tr><td><strong>Design focus</strong></td><td>Low self-discharge, sealed, long float life</td><td>High CCA</td><td>Thick plates, deep cycling</td></tr>
+          <tr><td><strong>Failure mode</strong></td><td>Calendar aging at float</td><td>Sulfation from undercharge</td><td>Plate wear from cycling</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The UPS battery is the purest example of a battery bought for its idle life, not
+          its use — and the practical rule is to replace it on a schedule, because it dies of age in a way you cannot
+          see until the moment you needed it.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Everything about the UPS battery — the sealed AGM design, the float charger, the
+          3–5-year schedule — follows from one fact: it must work after years of waiting. A user who understands that
+          replaces it on time instead of discovering the failure during an outage.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and UPS manufacturer documentation.</p>
+      <ul>
+        <li>UPS and battery manufacturer documentation — float service and replacement guidance.</li>
+        <li>Battery engineering references — VRLA float life and calendar aging.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
