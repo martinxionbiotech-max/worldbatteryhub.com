@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Charge a Lithium Battery';
+const description = 'Lithium charging is CC-CV — constant current to the voltage limit, then constant voltage to low current — with no charging below 0°C and no trickle after full. The rules and why.';
+const canonical = '/lithium/how-to-charge/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'How to charge a lithium battery',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the correct way to charge a lithium battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'CC-CV: constant current until the cell reaches its voltage limit (e.g. 3.65V for LFP), then constant voltage while the current tapers to the cutoff — then stop. No trickle charging, and no charging below 0°C, which would plate metallic lithium.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should lithium batteries be kept at 100% charge?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Lithium ages fastest at full charge and at high temperature. For daily use, charging to 80-90% extends life; for storage, 40-60% is optimal. Unlike lead-acid, lithium prefers not to sit full.',
+      },
+    },
+  ],
+ };
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How to Charge a Lithium Battery</h1>
+      <p class="lead">
+        Lithium charging has three rules that invert the lead-acid instincts most users bring: stop at full, never
+        charge in the cold, and do not keep it at 100%.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Charge lithium with <strong>CC-CV</strong> — constant current to the cell's
+        voltage limit (about <strong>3.65V for LFP</strong>, 4.2V for NMC), then constant voltage while current
+        tapers to the cutoff — then <strong>stop</strong>. Three rules: <strong>no charging below 0°C</strong>
+        (it plates metallic lithium), <strong>no trickle charging</strong> after full, and for longevity
+        <strong>avoid sitting at 100%</strong> (see <a href="/lithium/cc-cv-charging/">CC-CV charging</a>).
+      </div>
+
+      <h2>The rules and why</h2>
+      <table>
+        <thead><tr><th>Rule</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CC-CV, then stop</strong></td><td>The chemistry defines the profile; overcharge decomposes the electrolyte</td></tr>
+          <tr><td><strong>No charge below 0°C</strong></td><td>Cold charging plates metallic lithium — permanent capacity loss, safety risk</td></tr>
+          <tr><td><strong>No trickle after full</strong></td><td>Unlike lead-acid, lithium must not float at full voltage</td></tr>
+          <tr><td><strong>Not always 100%</strong></td><td>Full charge + heat = fastest <a href="/lithium/lifespan/">calendar aging</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the cold rule is absolute</h2>
+      <p>
+        Below 0°C the lithium ions cannot intercalate into the graphite fast enough, so they <strong>plate as
+        metal</strong> on the anode instead — permanent capacity loss plus dendrite risk. Good BMSs simply refuse
+        charge current in the cold (see <a href="/lithium/what-is-bms/">the BMS</a>); the rule is why winter
+        charging needs a warm battery or a battery heater.
+      </p>
+
+      <h2>The longevity dial</h2>
+      <p>
+        Charging to <strong>80–90% daily instead of 100%</strong> measurably extends life, because the aging
+        reactions accelerate near full voltage — the same reason storage prefers
+        <a href="/lithium/storage/">40–60%</a>. The charger's charge limit is a lifespan dial most users never
+        touch, and it is the cheapest life extension available.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Lithium charging is best summed up as discipline instead of habit — stop at
+          full, refuse the cold, skip the 100% — and the 80% daily limit is the single cheapest lifespan extension
+          a user can buy.</p>
+        <p>
+          <strong>Reasoning:</strong> Every lithium failure mode (plating, electrolyte decomposition, fast calendar
+          aging) is a charging rule violation. The rules invert lead-acid habit, which is exactly why learning them —
+          and setting the charge limit — returns more battery life than any brand premium.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from cell-manufacturer charging guidance and battery engineering references.</p>
+      <ul>
+        <li>Cell-manufacturer datasheets — CC-CV profiles and temperature limits.</li>
+        <li>Battery engineering references — lithium plating and charge-voltage aging.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

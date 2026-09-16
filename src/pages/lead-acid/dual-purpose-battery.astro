@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Dual-Purpose Battery: Starting and Cycling in One Case';
+const description = 'A dual-purpose battery blends starting and deep-cycle duty in one case — moderate CCA plus moderate cycling. The compromise, and where it fits.';
+const canonical = '/lead-acid/dual-purpose-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Dual-purpose battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a dual-purpose battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A battery designed to do both jobs — crank the engine (starting) and run loads (deep cycling) — at a moderate level of each. It sits between a starting battery and a true deep-cycle battery: better cycling than the first, better cranking than the second.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a dual-purpose battery a good idea?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For boats and RVs with light house loads, yes — one battery does both jobs acceptably. For serious house banks or dedicated starting, no: each extreme job is better served by the specialist battery.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>Dual-Purpose Battery: Starting and Cycling in One Case</h1>
+      <p class="lead">
+        Boats and RVs often want one battery to do everything. The dual-purpose battery exists for exactly that —
+        and its whole character is a negotiation between two opposite designs.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>dual-purpose battery</strong> blends the two lead-acid duties:
+        it cranks the engine (<strong>starting</strong>) and runs loads (<strong>deep cycling</strong>) at a
+        <strong>moderate level of each</strong> — better cycling than a starting battery, better cranking than a
+        deep-cycle. It is the compromise for boats and RVs with light house loads.
+      </div>
+
+      <h2>The compromise, quantified</h2>
+      <table>
+        <thead><tr><th></th><th>Starting</th><th>Dual-purpose</th><th>Deep-cycle</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Plates</strong></td><td>Many, thin</td><td>Mid-thickness</td><td>Few, thick</td></tr>
+          <tr><td><strong>Cranking</strong></td><td>Best</td><td>Good</td><td>Weak</td></tr>
+          <tr><td><strong>Deep cycling</strong></td><td>Poor</td><td>Moderate</td><td>Best</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Where the compromise fits</h2>
+      <p>
+        The dual-purpose battery is the right answer for the <strong>light-duty boat or RV</strong> — one battery
+        that starts the engine and runs modest loads between charges. It is the wrong answer at the extremes: a
+        serious house bank wants <a href="/lead-acid/rv-battery/">a true deep-cycle</a>, and a dedicated starting
+        job wants the <a href="/lead-acid/sli-battery/">thin-plate SLI</a>. The compromise is real, so the fit
+        decides (see <a href="/lead-acid/marine-battery/">marine battery</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The dual-purpose battery is the honest compromise of the lead-acid world — it
+          does both jobs, neither perfectly — and its purchase rule is the duty question: light house loads, yes;
+          either extreme, no.</p>
+        <p>
+          <strong>Reasoning:</strong> Plate geometry cannot serve two masters at full strength. The dual-purpose design
+          splits the difference on purpose, which makes it the right tool for the middle of the duty spectrum and a
+          disguised wrong tool at either end — the fit, not the label, is the decision.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and marine-power documentation.</p>
+      <ul>
+        <li>Manufacturer documentation — dual-purpose plate design.</li>
+        <li>Battery engineering references — starting vs deep-cycle plate geometry.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
