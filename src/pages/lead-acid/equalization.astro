@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Equalization: The Controlled Overcharge That Saves Flooded Batteries';
+const description = 'Equalization is a deliberate, controlled overcharge of a flooded battery bank — it remixes stratified acid and balances the cells. When to equalize and why AGM and gel must never be.';
+const canonical = '/lead-acid/equalization/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery equalization',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is battery equalization?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A deliberate, controlled overcharge at a raised voltage (roughly 15-16V for a 12V flooded bank) that remixes stratified acid, balances the cells, and reverses early sulfation. It is standard maintenance for flooded deep-cycle banks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you equalize AGM or gel batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Equalization gasses a sealed battery past its recombination limit and vents electrolyte that cannot be replaced. It is a flooded-only procedure; sealed batteries must never be equalized.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Charging · Last reviewed 2026-09-16</p>
+      <h1>Battery Equalization: The Controlled Overcharge That Saves Flooded Batteries</h1>
+      <p class="lead">
+        There is exactly one situation where overcharging a battery is correct maintenance — and it is flooded-only,
+        scheduled, and controlled. It is called equalization.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Equalization is a <strong>deliberate, controlled overcharge</strong> at a
+        raised voltage (roughly <strong>15–16V for a 12V flooded bank</strong>, per manufacturer guidance) that
+        <strong>remixes stratified acid, balances the cells and reverses early sulfation</strong>. It is
+        <strong>flooded-only</strong> — AGM and gel must never be equalized, because gassing vents their sealed
+        electrolyte permanently.
+      </div>
+
+      <h2>What it fixes</h2>
+      <table>
+        <thead><tr><th>Problem</th><th>How equalization helps</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Acid stratification</strong></td><td>The gassing remixes the acid that sinks to the bottom</td></tr>
+          <tr><td><strong>Cell imbalance</strong></td><td>The raised voltage brings lagging cells to full</td></tr>
+          <tr><td><strong>Early sulfation</strong></td><td>The controlled overcharge softens young sulfate crystals</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The flooded-only rule</h2>
+      <p>
+        Equalization gasses deliberately — the bubbles are the mechanism. A flooded battery tolerates the gassing
+        (you top up with <a href="/lead-acid/battery-water/">distilled water</a> afterward); a sealed
+        <a href="https://technology.worldbatteryhub.com/vrla/">VRLA</a> battery vents that gas permanently through
+        its valve, drying the mat or gel — the same damage as
+        <a href="/lead-acid/agm-charging/">overcharging an AGM</a>, on purpose. Sealed designs balance by other
+        means, not by equalization.
+      </p>
+
+      <h2>When and how</h2>
+      <ul>
+        <li><strong>Schedule it</strong> — monthly-to-quarterly for cycled flooded banks, per manufacturer guidance.</li>
+        <li><strong>Watch it</strong> — voltage, temperature and specific gravity tell you when it is done.</li>
+        <li><strong>Water after</strong> — the gassing costs water; top up with distilled.</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Equalization is the exception that proves the overcharge rule — controlled and
+          flooded-only, it extends deep-cycle banks; applied to sealed batteries, it destroys them — and the
+          flooded/sealed distinction is the entire safety of the procedure.</p>
+        <p>
+          <strong>Reasoning:</strong> The same gassing that balances a flooded bank vents a sealed one dry. The
+          procedure's value and its danger come from the same physics, which is why the flooded-only rule is
+          absolute — and why the chargers that offer equalization only offer it on flooded profiles.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and charger/BCI guidance.</p>
+      <ul>
+        <li>Battery Council International (BCI) — equalization guidance.</li>
+        <li>Manufacturer charging documentation — equalization voltage and schedule.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
