@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Jump Start a Car Safely';
+const description = 'The safe jump-start sequence — red to dead positive, red to donor positive, black to donor negative, black to an engine ground on the dead car. The order and why it matters.';
+const canonical = '/lead-acid/jump-starting/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Jump starting a car',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the correct order to connect jumper cables?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Red to the dead battery positive, red to the donor positive, black to the donor negative, then the final black to an unpainted engine ground on the dead car — not to the battery. Connecting the last clamp away from the battery keeps sparks away from the hydrogen a charging battery can emit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you jump start a start-stop car?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, with the same procedure — but many start-stop and hybrid cars have dedicated jump points specified in the manual, which should be used instead of the battery terminals to protect the electronics.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How to Jump Start a Car Safely</h1>
+      <p class="lead">
+        Jump starting is simple — and the difference between a safe start and a battery explosion is the order of
+        four clamps and the choice of one connection point.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Connect in order: <strong>red to the dead battery positive</strong> →
+        <strong>red to the donor positive</strong> → <strong>black to the donor negative</strong> →
+        <strong>black to an unpainted engine ground on the dead car</strong> (not its battery). Start the donor,
+        then the dead car, and disconnect in reverse. The last clamp goes on the ground to keep sparks away from
+        the battery.
+      </div>
+
+      <h2>The sequence and why</h2>
+      <table>
+        <thead><tr><th>Step</th><th>Connection</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Red → dead battery (+)</td><td>First live-side anchor</td></tr>
+          <tr><td>2</td><td>Red → donor battery (+)</td><td>Completes the positive path</td></tr>
+          <tr><td>3</td><td>Black → donor battery (−)</td><td>Grounds the donor</td></tr>
+          <tr><td>4</td><td>Black → dead car engine ground</td><td><strong>Last connection, sparks away from the battery</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h2>The safety logic</h2>
+      <p>
+        A charging battery can emit <strong>hydrogen</strong>, and a spark at the terminal can ignite it. The final
+        connection is therefore made to a <strong>metal engine part</strong> on the dead car — the current still
+        flows, but the spark occurs far from the gas. The same logic rules the disconnect: remove the ground clamp
+        first (see <a href="/lead-acid/battery-sulfation/">battery care</a> for the aftermath — a drained battery
+        should be recharged, not just idled).
+      </p>
+
+      <h2>Notes for modern cars</h2>
+      <ul>
+        <li><strong>Start-stop and hybrids</strong> — use the dedicated jump points in the manual, not the battery terminals.</li>
+        <li><strong>Never reverse polarity</strong> — a moment of reversed clamps can destroy electronics.</li>
+        <li><strong>Charge afterward</strong> — the alternator recharges, but a full charge from a charger restores what the dead state cost.</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The jump-start procedure is a four-clamp sequence whose entire safety rests on
+          one habit — the last connection goes to the engine ground, not the battery — and that habit is worth
+          knowing before the cold morning you need it.</p>
+        <p>
+          <strong>Reasoning:</strong> The physics is unforgiving: hydrogen, spark, battery. The ground-clamp rule
+          removes the risk at the one point it can ignite. Learn the order once, and the roadside moment becomes
+          routine instead of improvised.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee. Battery work carries electrical and chemical hazards; follow vehicle instructions.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from automotive and battery safety guidance.</p>
+      <ul>
+        <li>Vehicle-manual jump-start procedures.</li>
+        <li>Battery Council International (BCI) — battery safety guidance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

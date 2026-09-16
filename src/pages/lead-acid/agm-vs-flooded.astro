@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'AGM vs Flooded Battery: Sealed vs Liquid Electrolyte';
+const description = 'AGM immobilises the electrolyte in a glass mat; flooded keeps it as free liquid. Sealed and maintenance-free vs cheaper and traditional — which fits which job.';
+const canonical = '/lead-acid/agm-vs-flooded/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'AGM vs flooded battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between AGM and flooded batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Flooded keeps the electrolyte as free liquid and vents during charging, needing occasional watering. AGM absorbs the electrolyte in a fiberglass mat inside a sealed valve-regulated case — maintenance-free, spill-proof and more vibration- and cycling-tolerant, at a higher price.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I replace a flooded battery with AGM?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually yes — AGM is a drop-in upgrade in most cars, and it is required rather than optional on many start-stop vehicles. The charging system should have an AGM-compatible profile for full life.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Comparisons · Last reviewed 2026-09-16</p>
+      <h1>AGM vs Flooded Battery: Sealed vs Liquid Electrolyte</h1>
+      <p class="lead">
+        The oldest battery design and its sealed descendant sit side by side on the shelf — same chemistry,
+        different packaging, and the packaging changes how each one lives.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Flooded</strong> keeps the electrolyte as <strong>free liquid</strong>
+        with vent caps, needs occasional watering, and costs less. <strong>AGM</strong> absorbs the electrolyte in a
+        <strong>fiberglass mat</strong> inside a sealed
+        <a href="https://technology.worldbatteryhub.com/vrla/">valve-regulated</a> case — maintenance-free,
+        spill-proof, more vibration- and cycling-tolerant, at a higher price.
+      </div>
+
+      <h2>The comparison</h2>
+      <table>
+        <thead><tr><th></th><th>Flooded</th><th>AGM</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Electrolyte</strong></td><td>Free liquid, vent caps</td><td>Absorbed in glass mat, sealed</td></tr>
+          <tr><td><strong>Maintenance</strong></td><td>Occasional watering</td><td>None</td></tr>
+          <tr><td><strong>Vibration / tilt tolerance</strong></td><td>Limited</td><td>High</td></tr>
+          <tr><td><strong>Cycling tolerance</strong></td><td>Lower</td><td>Higher</td></tr>
+          <tr><td><strong>Price</strong></td><td>Lower</td><td>Higher</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Basic cars, budget</td><td>Start-stop, premium, demanding duty</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why AGM is often not optional</h2>
+      <p>
+        Start-stop systems cycle the battery far more than a traditional car, and the repeated discharge while the
+        engine is off demands the cycling tolerance that only AGM (or EFB as a step below) provides
+        (see <a href="/lead-acid/efb-battery/">EFB</a>). In those cars, AGM is the specification, not an upgrade —
+        installing a flooded battery there shortens its life sharply.
+      </p>
+
+      <h2>Which to choose</h2>
+      <p>
+        Follow the car's requirement first: start-stop and demanding vehicles specify AGM. For a basic car, the
+        choice is budget vs convenience — flooded wins on price and keeps working well in gentle duty, while AGM
+        buys freedom from watering and greater tolerance of heat, vibration and shallow cycling. Neither is
+        universally better; the fit decides (see <a href="/lead-acid/agm-vs-gel/">AGM vs gel</a> for the other
+        sibling comparison).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> AGM vs flooded is a packaging decision with real consequences — the seal buys
+          maintenance-freedom and cycling tolerance, the liquid buys cheapness — and the car's own specification
+          usually makes the decision for you.</p>
+        <p>
+          <strong>Reasoning:</strong> Where the duty is gentle and money matters, flooded still works as it has for a
+          century; where the duty cycles and shakes, the sealed design earns its premium. Match the packaging to
+          the duty, and the comparison resolves itself.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer documentation.</p>
+      <ul>
+        <li>Manufacturer documentation — flooded and AGM construction and duty guidance.</li>
+        <li>Battery engineering references — VRLA design and cycling behaviour.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
