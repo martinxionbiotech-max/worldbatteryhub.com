@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Self-Discharge: Why Batteries Go Flat Sitting Still';
+const description = 'Every battery loses charge while idle — a few percent per month for lead-acid, faster in heat. Why self-discharge happens, and why stored batteries need attention.';
+const canonical = '/lead-acid/self-discharge/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery self-discharge',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How fast does a car battery self-discharge?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A healthy lead-acid battery loses roughly a few percent of charge per month at room temperature — faster in heat, and faster still if the vehicle draws parasitic current. A battery left months in storage can sulfate from the self-discharge alone.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you stop battery self-discharge in storage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You cannot stop it, only manage it: store cool, keep the battery charged (or on a maintainer), and recharge periodically. Letting a stored battery go flat is how self-discharge becomes permanent sulfation damage.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Problems · Last reviewed 2026-09-16</p>
+      <h1>Battery Self-Discharge: Why Batteries Go Flat Sitting Still</h1>
+      <p class="lead">
+        A battery sitting untouched on a shelf is not idle — it is quietly discharging itself, a few percent at a
+        time, and the process is the silent cause of most stored-battery deaths.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Self-discharge is the <strong>slow loss of charge while idle</strong> —
+        a healthy lead-acid battery loses roughly <strong>a few percent per month</strong> at room temperature,
+        faster in heat. You cannot stop it; you manage it by storing <strong>cool and charged</strong>, because a
+        battery left to go flat in storage converts self-discharge into permanent
+        <a href="/lead-acid/battery-sulfation/">sulfation</a> damage.
+      </div>
+
+      <h2>Why it happens</h2>
+      <p>
+        Self-discharge is chemistry continuing in the background: internal side reactions slowly consume the
+        charge even with no load connected. Heat roughly doubles the rate every 10°C, which is why batteries in hot
+        garages and hot climates need attention more often. Vehicles add <strong>parasitic draw</strong> — alarms,
+        clocks, telematics — on top of the chemistry (see
+        <a href="https://testing.worldbatteryhub.com/self-discharge-testing/">self-discharge testing</a>).
+      </p>
+
+      <h2>The storage rules</h2>
+      <ul>
+        <li><strong>Store cool</strong> — temperature is the multiplier.</li>
+        <li><strong>Store charged</strong> — start from full, and recharge periodically (or use a maintainer).</li>
+        <li><strong>Disconnect or maintain</strong> — remove parasitic draw in long storage.</li>
+        <li><strong>Check the <a href="/lead-acid/battery-date-code/">date code</a></strong> — shelf time is self-discharge time.</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Self-discharge is the battery problem nobody sees happening — the damage
+          accrues invisibly during the very storage that people think is harmless — and the cheap counter is simply
+          keeping stored batteries cool and charged.</p>
+        <p>
+          <strong>Reasoning:</strong> The physics never pauses: heat and time keep working while the battery sits.
+          Since the rate is temperature-driven, the cool shelf and the periodic recharge are the whole strategy —
+          small habits that prevent the classic discovery of a flat, sulfated battery when it is finally needed.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer storage guidance.</p>
+      <ul>
+        <li>Manufacturer storage documentation — self-discharge rates and storage practice.</li>
+        <li>Battery engineering references — self-discharge mechanisms and temperature dependence.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Why Batteries Weaken in Cold Weather';
+const description = 'Cold slows every chemical reaction in a battery — cranking power drops, capacity shrinks, and the engine demands more. Why a cold battery behaves this way, and what to do.';
+const canonical = '/lead-acid/cold-weather-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery cold weather performance',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why does a car battery die in cold weather?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cold slows the electrochemical reactions, cutting the battery\u2019s cranking power sharply — while the engine needs more current because cold oil is thick. The battery usually was not dead; it was weakened by cold below what the cold engine demanded.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much power does a battery lose in the cold?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Roughly a third or more at very low temperatures: CCA is rated at −18°C precisely because that is where the loss matters. The engine, meanwhile, needs more cranking current in the cold — the double squeeze behind most winter no-starts.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Problems · Last reviewed 2026-09-16</p>
+      <h1>Why Batteries Weaken in Cold Weather</h1>
+      <p class="lead">
+        Winter no-starts are usually not dead batteries — they are the same battery, slowed down by the cold, at
+        the exact moment the engine asks for more.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Cold <strong>slows every chemical reaction</strong> in a battery, cutting
+        its cranking power sharply — which is why <a href="/lead-acid/cca/what-is-cca/">CCA</a> is measured at
+        −18°C. Meanwhile the <strong>engine demands more current</strong> because cold oil is thick. The result is a
+        double squeeze: less power available, more power required — the physics behind most winter no-starts.
+      </div>
+
+      <h2>The double squeeze</h2>
+      <table>
+        <thead><tr><th>Side</th><th>What cold does</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Battery output</strong></td><td>Slower reactions → less current (a third or more lost at very low temperatures)</td></tr>
+          <tr><td><strong>Engine demand</strong></td><td>Thick cold oil → higher cranking current needed</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What the cold actually changes</h2>
+      <p>
+        The battery's stored energy is still there — the cold has not drained it; it has <em>slowed the
+        delivery</em>. The chemistry's reaction rate falls with temperature, so the same battery that started
+        easily in summer delivers less current in winter. A fully charged battery tolerates this better than a
+        half-charged one, which is why winter failures cluster in batteries that were already marginal.
+      </p>
+
+      <h2>What helps</h2>
+      <ul>
+        <li><strong>Start fully charged</strong> — a full battery has the most margin for the cold's penalty.</li>
+        <li><strong>Keep connections clean</strong> — corrosion's resistance bites harder in winter (see <a href="/lead-acid/terminal-corrosion/">terminal corrosion</a>).</li>
+        <li><strong>Test before winter</strong> — a <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA test</a> in autumn catches the battery that will fail in January.</li>
+        <li><strong>Park warmer where possible</strong> — temperature is the variable, not the brand.</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The winter no-start is the battery's most misunderstood failure — the cold did
+          not kill the battery; it exposed it, and the autumn CCA test is the cheapest insurance against the
+          January tow.</p>
+        <p>
+          <strong>Reasoning:</strong> The physics is simple: cold cuts output while raising demand. Everything that
+          helps — full charge, clean terminals, an autumn test — works by widening the margin between the two. A
+          driver who understands the squeeze prepares for it, and rarely meets it on a cold morning.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and BCI guidance.</p>
+      <ul>
+        <li>Battery Council International (BCI) — cold-weather performance guidance.</li>
+        <li>Battery engineering references — temperature effects on reaction kinetics.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
