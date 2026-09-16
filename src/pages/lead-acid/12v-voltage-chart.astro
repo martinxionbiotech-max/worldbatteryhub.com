@@ -93,6 +93,15 @@ const faqJsonLd = {
         is, not how big the tank is (see
         <a href="/testing/battery-capacity-testing/">capacity testing</a> for the difference).
       </p>
+      <h2>Why temperature shifts the chart</h2>
+      <p>
+        The chart assumes room temperature; cold reads lower and heat reads higher at the same state of charge —
+        roughly <strong>a few hundredths of a volt per 10°C</strong> of temperature swing. A battery read on a
+        cold winter morning looks more discharged than it is, which is why the rest-and-temperature rule matters
+        before the number is trusted (see
+        <a href="https://testing.worldbatteryhub.com/temperature-testing/">temperature testing</a>).
+      </p>
+
 
       <h2>Our Read</h2>
       <div class="takeaways">
