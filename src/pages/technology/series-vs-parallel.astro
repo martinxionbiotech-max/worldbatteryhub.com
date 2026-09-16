@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Batteries in Series vs Parallel: Voltage and Capacity Wiring';
+const description = 'Series wiring adds voltage (two 12V batteries make 24V); parallel wiring adds capacity (two 100Ah batteries make 200Ah). The two rules and the matching caveats.';
+const canonical = '/technology/series-vs-parallel/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Batteries in series vs parallel',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between series and parallel batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Series adds voltage: two 12V batteries wired in series make 24V at the same capacity. Parallel adds capacity: two 100Ah batteries wired in parallel make 200Ah at the same voltage. Series changes the voltage; parallel changes the amp-hours.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you mix old and new batteries in a bank?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not advised. A bank is limited by its weakest battery — a new battery paired with a worn one is dragged down by it, and in series the imbalance causes one battery to overcharge. Banks should use matched batteries of the same type, age and capacity.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Fundamentals · Last reviewed 2026-09-16</p>
+      <h1>Batteries in Series vs Parallel: Voltage and Capacity Wiring</h1>
+      <p class="lead">
+        Two wiring patterns answer almost every multi-battery question, and they do opposite things: one raises
+        the voltage, the other raises the capacity.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Series</strong> wiring (positive to negative) <strong>adds
+        voltage</strong> — two 12V batteries make 24V at the same amp-hours. <strong>Parallel</strong> wiring
+        (positive to positive, negative to negative) <strong>adds capacity</strong> — two 100Ah batteries make
+        200Ah at the same voltage. Series changes the voltage; parallel changes the capacity.
+      </div>
+
+      <h2>The two rules</h2>
+      <table>
+        <thead><tr><th>Wiring</th><th>Result</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Series</strong></td><td>Voltage adds, capacity stays</td><td>2 × 12V 100Ah → 24V 100Ah</td></tr>
+          <tr><td><strong>Parallel</strong></td><td>Capacity adds, voltage stays</td><td>2 × 12V 100Ah → 12V 200Ah</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Series serves higher-voltage systems (24V trucks, 48V banks); parallel serves longer runtime at the same
+        voltage. Combined series-parallel banks serve both at once — the building block of every large
+        installation.
+      </p>
+
+      <h2>The matching rule</h2>
+      <p>
+        A bank is only as good as its <strong>weakest battery</strong>, so batteries in a bank should be
+        <strong>matched</strong> — same chemistry, type, capacity and age. In series, an old battery's higher
+        resistance forces it to overcharge while the others lag; in parallel, a weak battery drags the healthy ones
+        down. Mixing old and new is the most common bank-killing mistake.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The series-vs-parallel rules are two sentences — voltage adds in series,
+          capacity adds in parallel — but the real lesson is the matching rule, because a bank fails at its weakest
+          battery, not its average.</p>
+        <p>
+          <strong>Reasoning:</strong> Wiring mistakes are rare; mismatch mistakes are everywhere. Once you know the two
+          rules and that banks must be matched, you can build and diagnose any multi-battery system — and avoid the
+          old-plus-new pairing that quietly ruins most banks.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and system documentation.</p>
+      <ul>
+        <li>Battery engineering references — series and parallel bank design.</li>
+        <li>System documentation — bank wiring and matching guidance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
