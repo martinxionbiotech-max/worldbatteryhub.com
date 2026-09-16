@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Desulfate a Battery: What Works and What Does Not';
+const description = 'Desulfation — reversing early sulfation with equalization or pulse chargers. The honest limits: young crystals reverse, hardened ones are permanent. What works, and prevention first.';
+const canonical = '/lead-acid/desulfation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery desulfation',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can you reverse battery sulfation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Early sulfation can be partially reversed — the soft crystals formed by recent undercharging dissolve again under a controlled overcharge (equalization) or a pulse-desulfation charger. Hardened sulfation from months of neglect is permanent: the crystals no longer dissolve.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do pulse desulfation chargers really work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They can help on early, soft sulfation, where the pulsed energy loosens the young crystals — but they cannot resurrect a battery with hardened sulfation or structural plate damage. The honest answer: helpful early, ineffective late.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Maintenance · Last reviewed 2026-09-16</p>
+      <h1>How to Desulfate a Battery: What Works and What Does Not</h1>
+      <p class="lead">
+        Sulfation has a reversibility window — early crystals dissolve, hardened ones are forever — and the entire
+        desulfation field is about being honest about which side of that window the battery is on.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Early sulfation</strong> (recent undercharging) can be partly
+        reversed: a controlled overcharge (<a href="/lead-acid/equalization/">equalization</a>, flooded only) or a
+        pulse-desulfation charger can dissolve the <strong>soft crystals</strong>. <strong>Hardened
+        sulfation</strong> — months of neglect — is <strong>permanent</strong>: the crystals no longer dissolve,
+        and no charger fixes that.
+      </div>
+
+      <h2>The reversibility window</h2>
+      <table>
+        <thead><tr><th>State</th><th>Reversible?</th><th>Method</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Soft crystals (days-weeks)</strong></td><td>Mostly</td><td>Equalization / pulse charging / full recharge</td></tr>
+          <tr><td><strong>Hardened crystals (months)</strong></td><td>No</td><td>Replacement — the capacity is gone</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What the methods actually do</h2>
+      <p>
+        <strong>Equalization</strong> (flooded) remixes the acid and dissolves young crystals with a deliberate
+        overcharge. <strong>Pulse desulfation chargers</strong> send high-frequency pulses meant to shake the
+        crystals loose. Both work on the <strong>early</strong> case; both fail on hardened sulfation, where the
+        sulfate has consumed active material that cannot return
+        (see <a href="/lead-acid/battery-sulfation/">what sulfation is</a>).
+      </p>
+
+      <h2>Prevention beats cure</h2>
+      <p>
+        The cheapest desulfator is a charger connected in time: sulfation begins the moment a battery sits
+        discharged. The <a href="/lead-acid/battery-maintainer-vs-charger/">maintainer</a> on a stored battery
+        prevents the crystals from ever forming — which is why every desulfation guide's honest first sentence
+        is: the best cure is not needing one.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Desulfation is a race against crystal growth, not a repair technology — it
+          works on young sulfation and nothing on old — so the honest practice is desulfate early, prevent always,
+          and replace the rest.</p>
+        <p>
+          <strong>Reasoning:</strong> The chemistry sets the limit: soft crystals dissolve, hardened ones do not.
+          Every desulfation product's claims are bounded by that one fact, and the buyer who knows the window buys
+          prevention instead of miracles.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and charger-manufacturer documentation.</p>
+      <ul>
+        <li>Battery engineering references — sulfation reversal mechanisms and limits.</li>
+        <li>Charger-manufacturer documentation — desulfation modes.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
