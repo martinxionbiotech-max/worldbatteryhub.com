@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How Long Does It Take to Charge a Battery?';
+const description = 'Charging time = capacity to replace divided by charger current — plus the absorption tail. Worked examples and why the last 20% takes as long as the first 80%.';
+const canonical = '/lead-acid/charging-time-calculation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery charging time calculation',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you calculate battery charging time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divide the capacity to be replaced by the charger current — a 50 Ah deficit at a 10 A charger is about 5 hours of bulk charging — then add the absorption tail, because the final 20% charges at a tapering current and takes roughly as long as the first 80%.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does the last part of charging take so long?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because charging switches from constant current to constant voltage as the battery fills: the current tapers to protect the chemistry, so the final 20% arrives slowly. It is the same physics as filling a glass without spilling — the last part is poured carefully.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How Long Does It Take to Charge a Battery?</h1>
+      <p class="lead">
+        The charging-time estimate is one division plus one honest tail: the bulk charge is arithmetic, and the
+        final 20% is chemistry taking its time.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Charging time ≈ <strong>capacity to replace ÷ charger current</strong>,
+        plus the <strong>absorption tail</strong>. A 50 Ah deficit at a 10 A charger is about
+        <strong>5 hours of bulk</strong> — then roughly as long again for the final 20% as the current tapers
+        (see <a href="/lead-acid/cc-cv-charging/">CC-CV charging</a>).
+      </div>
+
+      <h2>Worked examples</h2>
+      <table>
+        <thead><tr><th>Capacity to replace</th><th>Charger</th><th>Bulk time</th><th>Realistic total</th></tr></thead>
+        <tbody>
+          <tr><td>50 Ah</td><td>10 A</td><td>50 ÷ 10 = 5 h</td><td>~7–8 h including the tail</td></tr>
+          <tr><td>30 Ah</td><td>5 A</td><td>30 ÷ 5 = 6 h</td><td>~9 h including the tail</td></tr>
+          <tr><td>80 Ah</td><td>20 A</td><td>80 ÷ 20 = 4 h</td><td>~6 h including the tail</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the tail exists</h2>
+      <p>
+        Charging switches from <strong>constant current</strong> to <strong>constant voltage</strong> as the
+        battery fills — the current tapers to protect the chemistry from overvoltage. The result is the classic
+        rule of thumb: <strong>the last 20% takes about as long as the first 80%</strong>. Chargers advertise the
+        bulk rate; the battery spends the tail at a fraction of it.
+      </p>
+
+      <h2>The charger-size rule of thumb</h2>
+      <p>
+        For healthy lead-acid charging, the charger current sits around <strong>10–20% of the Ah rating</strong> —
+        a 100 Ah battery pairs with a 10–20 A charger. Much faster stresses the battery; much slower just extends
+        the tail (see <a href="/lead-acid/agm-charging/">charging limits</a>).
+      </p>
+
+      <h2>Why This Matters</h2>
+      <div class="takeaways">
+        <p>
+          <strong>In my view:</strong> Charging-time estimates go wrong at the tail, not the division — people
+          divide capacity by charger amps and get a number the battery will beat on paper and miss in reality,
+          because the absorption stage charges at a tapering current nobody advertises.</p>
+        <p>
+          <strong>Why I think so:</strong> The bulk division is exact; the tail is physics. Adding 30–50% to the
+          bulk estimate — or better, trusting the charger's own completion signal — turns a guess into a schedule,
+          and it costs nothing to know.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>What is the charger's actual output current in amps?</li>
+        <li>Does the charger have the right profile for the battery type (flooded/AGM/gel/lithium)?</li>
+        <li>Is the charger sized at 10–20% of the battery's Ah rating?</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from charger-manufacturer documentation and battery engineering references.</p>
+      <ul>
+        <li>Charger-manufacturer documentation — bulk/absorption stage currents.</li>
+        <li>Battery engineering references — CC-CV charging physics.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
