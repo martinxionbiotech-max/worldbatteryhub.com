@@ -108,6 +108,15 @@ const faqJsonLd = {
           <li>Fast charging and holding at full voltage both accelerate aging.</li>
         </ul>
       </div>
+      <h2>The stage numbers</h2>
+      <p>
+        The handover points are defined, not arbitrary: the charger holds <strong>constant current</strong> until
+        the cell reaches its voltage limit (3.65V for LFP, 4.2V for NMC), then holds that
+        <strong>constant voltage</strong> while the current tapers — typically terminating around
+        <strong>C/10 to C/20</strong>. Those two numbers — the voltage limit and the termination current — are
+        the whole profile (see <a href="/lithium/how-to-charge/">the charging rules</a>).
+      </p>
+
 
       <h2>Why This Matters</h2>
       <div class="takeaways">
