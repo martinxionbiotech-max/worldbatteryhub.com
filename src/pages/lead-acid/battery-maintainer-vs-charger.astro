@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Maintainer vs Charger: What Is the Difference?';
+const description = 'A charger delivers a charging cycle; a maintainer keeps an idle battery at full charge indefinitely. Why the maintainer, not the charger, is the storage tool.';
+const canonical = '/lead-acid/battery-maintainer-vs-charger/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery maintainer vs charger',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between a battery charger and a maintainer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A charger runs a charging cycle and stops; a maintainer (float/trickle) holds an idle battery at full charge indefinitely without overcharging it. Use the charger to recharge, the maintainer to store.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I leave a battery maintainer connected all winter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — that is exactly what a maintainer is for. It monitors the voltage and tops up only when needed, so a stored battery stays full without being overcharged. A plain charger should not be left connected indefinitely.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>Battery Maintainer vs Charger: What Is the Difference?</h1>
+      <p class="lead">
+        They look like the same box, plug into the same terminals, and do opposite jobs — the difference between
+        them is the difference between a stored battery that survives the winter and one that is quietly cooked.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>charger</strong> runs a charging cycle — bulk, absorption, float —
+        and stops. A <strong>maintainer</strong> (float/trickle charger) holds an idle battery at
+        <strong>full charge indefinitely</strong>, topping up only what
+        <a href="/lead-acid/self-discharge/">self-discharge</a> drains. Recharge with the charger; store with the
+        maintainer.
+      </div>
+
+      <h2>The two tools</h2>
+      <table>
+        <thead><tr><th></th><th>Charger</th><th>Maintainer</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Job</strong></td><td>Recharge a discharged battery</td><td>Hold an idle battery at full</td></tr>
+          <tr><td><strong>Current</strong></td><td>Higher (amps)</td><td>Low (hundreds of mA)</td></tr>
+          <tr><td><strong>Left connected long-term</strong></td><td>Risks overcharge</td><td><strong>Designed for it</strong></td></tr>
+          <tr><td><strong>Use case</strong></td><td>Flat battery</td><td>Storage: winter, seasonal vehicles</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the maintainer is the storage tool</h2>
+      <p>
+        Storage is the battery's most dangerous season: idle batteries drain themselves and
+        <a href="/lead-acid/battery-sulfation/">sulfate</a> as they fall. The maintainer counters exactly that —
+        it watches the voltage and tops up the self-discharge loss, holding the battery at full without the
+        overcharge a plain charger would eventually deliver. A battery on a maintainer through winter emerges
+        ready; one left raw often emerges dead.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The maintainer is the cheapest battery-life insurance sold — a small box that
+          does the one job storage demands, holding the line against self-discharge — and confusing it with a
+          charger is how stored batteries get damaged.</p>
+        <p>
+          <strong>Reasoning:</strong> The physics is simple: idle batteries drain; drained batteries sulfate; the
+          maintainer interrupts the chain at the first link. At its price, nothing else returns so much battery
+          life per dollar — provided it is used for its actual job.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from charger-manufacturer documentation and BCI storage guidance.</p>
+      <ul>
+        <li>Charger-manufacturer documentation — float and maintenance modes.</li>
+        <li>Battery Council International (BCI) — storage and charging guidance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
