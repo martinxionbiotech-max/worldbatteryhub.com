@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Test a Battery at Home';
+const description = 'Testing a battery at home — resting voltage, load test, conductance, and the hydrometer for flooded batteries. What each test tells you, and the order that avoids misdiagnosis.';
+const canonical = '/lead-acid/how-to-test-a-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'How to test a battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I test a car battery at home?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Start with the resting voltage — about 12.6V means full after the battery has rested. Then a load test (half CCA for 15 seconds, holding ~9.6V+) or a conductance tester for the definitive health verdict. For flooded batteries, a hydrometer reads the acid density per cell.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I test a battery with a multimeter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Partially — a multimeter reads resting voltage, which tells the state of charge but not the battery\u2019s ability to deliver current. For the health verdict you need a load or conductance test; the multimeter alone can call a weak battery healthy.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How to Test a Battery at Home</h1>
+      <p class="lead">
+        Three tools — a multimeter, a load or conductance tester, and for flooded batteries a hydrometer — cover
+        almost every home battery verdict. The skill is knowing which question each one answers.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The home battery test ladder: <strong>① resting voltage</strong> (multimeter —
+        ~12.6V full, after rest; reads state of charge), <strong>② load or conductance test</strong> (the definitive
+        health verdict — see <a href="https://testing.worldbatteryhub.com/load-testing/">load testing</a> and
+        <a href="https://testing.worldbatteryhub.com/resistance-conductance/">conductance</a>), <strong>③
+        hydrometer</strong> for flooded batteries (acid density per cell). Do them in that order, and the voltage
+        reading alone never misleads you.
+      </div>
+
+      <h2>The three tests</h2>
+      <table>
+        <thead><tr><th>Test</th><th>Tool</th><th>What it answers</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Resting voltage</strong></td><td>Multimeter</td><td>State of charge (not health)</td></tr>
+          <tr><td><strong>Load / conductance</strong></td><td>Tester</td><td>Can it deliver? (health verdict)</td></tr>
+          <tr><td><strong>Specific gravity</strong></td><td>Hydrometer</td><td>Per-cell charge and balance (flooded)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The order that avoids misdiagnosis</h2>
+      <p>
+        Voltage first, then the load test, then the hydrometer. Each step screens the next: a low resting voltage
+        means "charge it and retest" (see <a href="/lead-acid/12v-voltage-chart/">the voltage chart</a>); a good
+        voltage followed by a failed load test means "the battery is weak despite looking full" — the exact
+        misdiagnosis the voltage-only method causes. The hydrometer adds the per-cell detail flooded batteries
+        allow (see <a href="https://technology.worldbatteryhub.com/electrolyte-specific-gravity/">specific
+        gravity</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Home battery testing is a ladder, not a single reading — and the most common
+          mistake is stopping at the first rung, where the multimeter says "full" while the load test would have
+          said "finished".</p>
+        <p>
+          <strong>Reasoning:</strong> Voltage measures charge; only a load measures delivery. The two-rung habit —
+          voltage for charge, load for health — converts a guess into a verdict, and it costs less than the wrong
+          battery it prevents.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from tester-manufacturer documentation and BCI guidance.</p>
+      <ul>
+        <li>Battery Council International (BCI) — home testing guidance.</li>
+        <li>Tester-manufacturer documentation — measurement procedures.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
