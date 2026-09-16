@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How Long Does a Car Battery Last?';
+const description = 'A car battery typically lasts 3-5 years — shortened by heat, short trips, and sitting discharged. The factors that decide lifespan, and the signs of a dying battery.';
+const canonical = '/lead-acid/how-long-does-a-car-battery-last/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Car battery lifespan',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long should a car battery last?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Typically 3-5 years. Hot climates shorten that toward 2-3 years, cool climates can stretch it past 5. The real determinants are heat, how often the battery is fully recharged, and how often it sits discharged.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the signs a car battery is dying?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Slow cranking, dim lights at idle, needing jump starts, and a battery past its date code. A load test or conductance test gives the definitive answer — slow cranking is usually the first warning.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How Long Does a Car Battery Last?</h1>
+      <p class="lead">
+        The honest answer is a range, not a number — because a car battery's lifespan is decided less by the brand
+        than by the climate and the driving pattern it lives in.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A car battery typically lasts <strong>3–5 years</strong>. <strong>Heat</strong>
+        shortens it (2–3 years in hot climates), <strong>short trips</strong> shorten it (never fully recharging), and
+        <strong>sitting discharged</strong> shortens it most (sulfation). A cool climate with regular full charges can
+        stretch the same battery past 5 years.
+      </div>
+
+      <h2>What decides the number</h2>
+      <table>
+        <thead><tr><th>Factor</th><th>Effect on lifespan</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Heat</strong></td><td>Shortens — every 10°C roughly doubles the aging rate</td></tr>
+          <tr><td><strong>Short trips</strong></td><td>Shortens — the alternator never fully recharges</td></tr>
+          <tr><td><strong>Sitting discharged</strong></td><td>Shortens most — sulfation hardens</td></tr>
+          <tr><td><strong>Cool climate + full charges</strong></td><td>Extends</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The signs of a dying battery</h2>
+      <ul>
+        <li><strong>Slow cranking</strong> — the engine turns over lazily, the classic first warning.</li>
+        <li><strong>Dim lights at idle</strong> — the electrical load outruns the battery.</li>
+        <li><strong>Repeated jump starts</strong> — the battery no longer holds charge between drives.</li>
+        <li><strong>Age</strong> — check the <a href="/lead-acid/battery-date-code/">date code</a>; past ~4-5 years, suspicion is warranted.</li>
+      </ul>
+      <p>
+        The definitive answer comes from a
+        <a href="https://testing.worldbatteryhub.com/cca-testing/">load or conductance test</a>, not from age alone
+        — but the symptoms above are when to test.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The question "how long does a car battery last" has a better answer than 3-5
+          years — it lasts as long as its climate and charging pattern allow, and the buyer who understands heat and
+          short trips already knows their own number.</p>
+        <p>
+          <strong>Reasoning:</strong> The range is wide because the drivers are external — heat, driving pattern,
+          storage. A battery in a hot city with short trips lives 2 years; the same battery in a cool climate with
+          highway commutes lives 5+. The useful skill is reading your own conditions, not the spec sheet.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and BCI guidance.</p>
+      <ul>
+        <li>Battery Council International (BCI) — battery life and failure guidance.</li>
+        <li>Battery engineering references — temperature and cycling effects on life.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
