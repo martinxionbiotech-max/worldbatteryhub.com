@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Forklift Battery: Motive Power Explained (Lead-Acid vs Lithium)';
+const description = 'Forklift batteries are deep-cycle motive power batteries — deep-discharged daily, recharged nightly. Lead-acid vs lithium for forklifts, and what drives the shift.';
+const canonical = '/lead-acid/forklift-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Forklift battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What kind of battery does a forklift use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Forklifts use deep-cycle motive-power batteries — traditionally large flooded lead-acid cells, now increasingly lithium (LFP). Both are built for deep daily discharge followed by a full recharge, unlike a car starting battery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is lithium better than lead-acid for forklifts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lithium (LFP) is lighter, charges much faster (opportunity charging), needs no watering and lasts longer, but costs more up front. Lead-acid remains cheaper to buy. Lithium is winning multi-shift operations; lead-acid survives on upfront cost.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>Forklift Battery: Motive Power Explained (Lead-Acid vs Lithium)</h1>
+      <p class="lead">
+        A forklift battery is a deep-cycle battery asked to work like an athlete — discharged deeply every shift,
+        recharged every night — and that duty cycle is why it is a completely different product from a car battery.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Forklifts run on <strong>deep-cycle motive-power batteries</strong> —
+        traditionally large <strong>flooded lead-acid</strong> cells, now increasingly <strong>lithium (LFP)</strong>.
+        Both are built for <strong>deep daily discharge followed by a full recharge</strong>, the opposite duty of a
+        starting battery. Lithium is lighter and charges faster but costs more up front; lead-acid remains cheaper
+        to buy.
+      </div>
+
+      <h2>The motive duty cycle</h2>
+      <p>
+        The job defines the battery: deep discharges (often 80% or more) every shift, then a full recharge. That is
+        exactly what <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> plates are built for — thick plates
+        that tolerate deep cycling, in exchange for lower cranking current, which a forklift never needs. A starting
+        battery in the same service would fail in weeks.
+      </p>
+
+      <h2>Lead-acid vs lithium for forklifts</h2>
+      <table>
+        <thead><tr><th></th><th>Flooded lead-acid</th><th>Lithium (LFP)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Upfront cost</strong></td><td>Lower</td><td>Higher</td></tr>
+          <tr><td><strong>Charging</strong></td><td>Long equalising charges, battery room, watering</td><td>Fast opportunity charging, no watering</td></tr>
+          <tr><td><strong>Lifespan</strong></td><td>~1,500 cycles (deep)</td><td>~3,000+ cycles</td></tr>
+          <tr><td><strong>Weight</strong></td><td>Heavy (acts as counterweight)</td><td>Lighter (may need ballast)</td></tr>
+          <tr><td><strong>Best for</strong></td><td>Single-shift, cost-sensitive</td><td>Multi-shift, fast-turnaround</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why lithium is winning multi-shift operations</h2>
+      <p>
+        The killer advantage is <strong>opportunity charging</strong>: a lithium forklift can be topped up during
+        breaks instead of swapping batteries or sitting through a long equalising charge. For multi-shift warehouses,
+        that uptime — plus no watering, no battery room and longer life — recovers lithium's higher upfront cost
+        over the pack's life. Lead-acid holds on where the counterweight and the low purchase price matter more.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The forklift battery choice is really a shift-count decision — lithium buys
+          uptime, lead-acid buys cheap — and the duty cycle, not the spec sheet, decides which wins.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Single-shift operations rarely recover lithium's premium; multi-shift operations
+          rarely afford lead-acid's downtime. The same battery question answered two ways by how many shifts the
+          warehouse runs — which is the analytical habit worth keeping.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and motive-power manufacturer documentation.</p>
+      <ul>
+        <li>Motive-power battery manufacturer documentation — cycle life and charging.</li>
+        <li>Battery engineering references — deep-cycle plate design and lithium LFP for traction.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
