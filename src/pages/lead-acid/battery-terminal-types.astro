@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Terminal Types: SAE Post, JIS, Stud and Side';
+const description = 'Battery terminals come in four main families — SAE post, JIS taper, stud/bolt and side terminal. How to identify them and why the fit decides the connection.';
+const canonical = '/lead-acid/battery-terminal-types/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery terminal types',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the different battery terminal types?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The main families: SAE post (round tapered posts, the universal automotive type), JIS (pencil-size taper, Japanese cars), stud/bolt (threaded posts, trucks and marine), and side terminal (flush GM-style bolts). The car\u2019s cables decide which fits.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do terminal types matter when buying a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because the car\u2019s cable clamps were built for one terminal shape. A battery with the wrong terminal type will not connect properly — the terminal, like the group size, is a fit requirement, not a preference.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>Battery Terminal Types: SAE Post, JIS, Stud and Side</h1>
+      <p class="lead">
+        The battery's power exits through a small piece of lead whose shape varies by market and vehicle — and the
+        car's cable clamps were built for exactly one of those shapes.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The main terminal families: <strong>SAE post</strong> (round tapered posts,
+        the universal automotive standard), <strong>JIS</strong> (pencil-thin taper, Japanese vehicles), <strong>stud /
+        bolt</strong> (threaded posts, trucks, marine, dual-purpose), and <strong>side terminal</strong> (flush
+        GM-style bolts). The terminal type is a <strong>fit requirement</strong> — the cables decide which one
+        connects.
+      </div>
+
+      <h2>The four families</h2>
+      <table>
+        <thead><tr><th>Type</th><th>Look</th><th>Typical vehicles</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SAE post</strong></td><td>Round tapered post, top</td><td>Most cars, universal</td></tr>
+          <tr><td><strong>JIS taper</strong></td><td>Thin pencil-size post</td><td>Japanese cars (see <a href="/lead-acid/battery-group-sizes/">JIS groups</a>)</td></tr>
+          <tr><td><strong>Stud / bolt</strong></td><td>Threaded stud, top or side</td><td>Trucks, marine, heavy duty</td></tr>
+          <tr><td><strong>Side terminal</strong></td><td>Flush bolt on the case side</td><td>GM vehicles, tight under-hood layouts</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the fit is non-negotiable</h2>
+      <p>
+        The cable clamps are made for one terminal shape — a JIS clamp does not grip an SAE post properly, and an
+        adapter is a workaround, not a repair. The terminal therefore joins the
+        <a href="/lead-acid/battery-size-selection/">group size</a> as the two fit checks that come before every
+        other spec (see the <a href="https://data.worldbatteryhub.com/dimensions-terminals/">terminal reference</a>
+        for the per-group details).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The terminal type is the smallest part of the battery and one of the most
+          consequential — a wrong terminal cannot be corrected by better specs, which makes it a check that
+          belongs before any rating comparison.</p>
+        <p>
+          <strong>Reasoning:</strong> Fit is binary: the clamp either grips or it does not, and a bad connection at
+          the terminal wastes everything the battery delivers. Ten seconds of terminal identification prevents the
+          most avoidable purchase error in the category.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from BCI and JIS terminal specifications and manufacturer documentation.</p>
+      <ul>
+        <li>BCI / JIS terminal specifications.</li>
+        <li>Manufacturer fitment documentation — terminal per group.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
