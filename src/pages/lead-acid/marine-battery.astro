@@ -84,6 +84,28 @@ const articleJsonLd = {
         <li>Does the CCA meet the engine's requirement?</li>
         <li>For house banks: what is the cycle life at the planned depth of discharge?</li>
       </ul>
+      <h2>Sizing a house bank</h2>
+      <p>
+        The sizing arithmetic is the same as any bank (see <a href="/lead-acid/sizing-calculation/">capacity
+        sizing</a>): <strong>load (W) × hours ÷ 12V ÷ 0.5</strong> for lead-acid's 50% usable window. Worked
+        example: 100 W of house loads for 8 hours = 800 Wh ÷ 12V ≈ 67 Ah ÷ 0.5 ≈ <strong>134 Ah of bank</strong> —
+        in practice a pair of Group 27 deep-cycles or a single Group 31, depending on space and weight.
+      </p>
+
+      <h2>CCA vs MCA, with their standards</h2>
+      <table>
+        <thead><tr><th>Rating</th><th>Temperature</th><th>Typical standard</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>CCA</td><td>−18°C (0°F)</td><td>SAE J537 / EN 50342 / DIN</td><td>Cold-climate cranking</td></tr>
+          <tr><td>MCA (CA)</td><td>0°C (32°F)</td><td>SAE marine rating</td><td>Marine cranking — higher number, warmer test</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Different standards and temperatures are not directly interchangeable — MCA reads higher than CCA on the
+        same battery because the test is warmer, not because the battery is stronger (see
+        <a href="/lead-acid/cca/what-is-cca/">the CCA standard ladder</a>).
+      </p>
+
 
 
       <h2>Our Read</h2>
