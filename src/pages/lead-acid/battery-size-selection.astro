@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What Size Battery Does My Car Need?';
+const description = 'Car battery sizing — match the group size (H6/H7/BCI), terminal orientation and CCA to the original specification. The fit comes first, then the rating.';
+const canonical = '/lead-acid/battery-size-selection/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Car battery size selection',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I know what size battery my car needs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Match the group size — the code (H6, H7, BCI 24, etc.) that defines the case dimensions and terminal layout — to the original battery or the owner\u2019s manual. Then match or exceed the CCA rating. The fit comes first; the rating second.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I put a bigger battery in my car?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if it physically fits the tray, the terminals match, and the hold-down works. A bigger group with more capacity is fine when it fits; a physically larger battery that does not fit is not.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>What Size Battery Does My Car Need?</h1>
+      <p class="lead">
+        Car batteries are not one-size-fits-all — the tray, the cables and the clamp were built for a specific
+        group, and the right battery is the one that fits that envelope.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The battery size is the <strong>group code</strong> — H6, H7, BCI 24 and so
+        on — which defines the <strong>case dimensions and terminal layout</strong>. Find your car's group (owner's
+        manual, the old battery's label, or a fitment lookup), then match or exceed the <strong>CCA</strong>. The
+        fit comes first; the rating second.
+      </div>
+
+      <h2>The three checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>What to match</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Group size</strong></td><td>Case dimensions + terminal positions (H6/H7/BCI…)</td></tr>
+          <tr><td><strong>CCA</strong></td><td>Match or exceed the original spec (see <a href="/lead-acid/cca/what-is-cca/">CCA</a>)</td></tr>
+          <tr><td><strong>Technology</strong></td><td>Flooded / EFB / AGM as the car requires (start-stop cars need EFB/AGM)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the fit comes first</h2>
+      <p>
+        The tray, the hold-down clamp and the cable reach were all designed for one case shape
+        (see <a href="/lead-acid/battery-group-sizes/">battery group sizes</a>). A battery that does not fit cannot
+        be secured, and an unsecured battery vibrates, shortens and leaks. Everything else — capacity, brand,
+        warranty — is secondary to the case that fits the car.
+      </p>
+
+      <h2>Can you go bigger?</h2>
+      <p>
+        Yes, when it fits: a larger group that sits in the tray with matching terminals and a working hold-down is
+        an upgrade, usually with more capacity and CCA. The rule is physical — <strong>if it fits and matches, it
+        works</strong>; the rating then only needs to meet or beat the original.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Battery sizing is a fit problem disguised as a power problem — the group code
+          decides almost everything, and the people who start with CCA are answering the second question before
+          the first.</p>
+        <p>
+          <strong>Reasoning:</strong> The tray and terminals are fixed; the rating is flexible upward. Identify the
+          group first and the purchase almost decides itself — which is why the fitment lookup, not the spec sheet,
+          is the correct starting point.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from BCI group-size references and fitment documentation.</p>
+      <ul>
+        <li>Battery Council International (BCI) — group-size standard.</li>
+        <li>Manufacturer fitment documentation — group and CCA requirements.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
