@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Motorcycle Battery: Sizes, AGM vs Flooded and What to Buy';
+const description = 'Motorcycle batteries — small sealed lead-acid units in JIS sizes (YTX, 6N, 12N). Why AGM became the standard, how sizing works, and what matters when replacing one.';
+const canonical = '/lead-acid/motorcycle-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Motorcycle battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What battery do motorcycles use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most modern motorcycles use small sealed AGM lead-acid batteries in JIS-derived sizes such as YTX, YTZ or the older 6N/12N codes. AGM won because it is spill-proof, vibration-resistant and maintenance-free.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do motorcycle batteries die quickly?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Small batteries sulfate fast when a bike sits unridden — the same sulfation process as car batteries, compressed into a small, rarely-ridden battery. A maintainer in storage prevents most early deaths.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>Motorcycle Battery: Sizes, AGM vs Flooded and What to Buy</h1>
+      <p class="lead">
+        The motorcycle battery is the same chemistry as a car battery, squeezed small and punished harder — and the
+        whole category now runs on one technology: sealed AGM.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Motorcycles use small <strong>sealed lead-acid batteries</strong>, and
+        <strong>AGM</strong> has become the standard because it is <strong>spill-proof, vibration-resistant and
+        maintenance-free</strong> — exactly what a tilted, shaking motorcycle needs. Sizes follow JIS-derived codes
+        such as <strong>YTX, YTZ and the older 6N/12N series</strong>, where the code encodes the case dimensions
+        and terminal layout.
+      </div>
+
+      <h2>Why AGM won the motorcycle market</h2>
+      <p>
+        A motorcycle battery must survive vibration, occasional tilting, and long winter storage. Flooded batteries
+        leak acid and need topping up; <a href="/lead-acid/agm-battery/">AGM</a> immobilises the electrolyte in a
+        glass mat, so nothing spills and nothing needs maintenance. Combined with better cranking per size, AGM
+        replaced flooded designs across the category — the same logic that made it standard in cars, compressed.
+      </p>
+
+      <h2>How sizing works: the JIS codes</h2>
+      <p>
+        Motorcycle battery codes are size and terminal codes, not arbitrary names. A <strong>YTX9-BS</strong>, for
+        example, encodes the case dimensions, terminal orientation and that it ships factory-activated. When
+        replacing, the code must match what the bike's tray and cables accept — the fit comes first, then the
+        rating (see <a href="/lead-acid/battery-group-sizes/">battery group sizes</a> for the same logic in cars).
+      </p>
+
+      <h2>Why they die: sulfation in miniature</h2>
+      <p>
+        The number-one cause of motorcycle battery death is the same as in cars — <a href="/lead-acid/battery-sulfation/">sulfation</a> —
+        but worse, because the battery is small and the bike often sits unridden for months. A small battery
+        self-discharges and sulfates faster relative to its size, which is why a <strong>maintainer in
+        storage</strong> is the single most effective way to double its life.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The motorcycle battery lesson is that the technology is solved — AGM — and the
+          real variable is storage, because a tiny battery sitting unridden sulfates faster than anything else on
+          two wheels.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Buyers obsess over brand and cranking amps, but the failure mode is neglect in the
+          garage. Match the code, buy AGM, and keep it on a maintainer over winter — those three rules beat any
+          premium badge.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer sizing charts.</p>
+      <ul>
+        <li>Manufacturer fitment and sizing charts (Yuasa, GS) — JIS code structure.</li>
+        <li>Battery engineering references — AGM suitability for powersports.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
