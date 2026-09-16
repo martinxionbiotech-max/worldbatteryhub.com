@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Solar Battery: Storing Daylight for the Night (Lead-Acid vs Lithium)';
+const description = 'A solar battery stores daytime solar energy for night use — a daily deep cycle that favours deep-cycle lead-acid (AGM/gel) or lithium LFP. How to choose for off-grid and hybrid systems.';
+const canonical = '/lead-acid/solar-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Solar battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What battery is best for solar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For daily deep cycling, lithium (LFP) is the modern default — higher usable capacity, longer life and no maintenance — while deep-cycle lead-acid (AGM or gel) remains the cheaper upfront option. Both work; lithium wins on lifetime cost in daily-cycled systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do solar batteries need to be deep-cycle?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because solar is a daily deep cycle — charged by day, discharged at night. Starting-battery plates fail quickly under that duty; deep-cycle plates are built to discharge deeply and repeatedly.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>Solar Battery: Storing Daylight for the Night (Lead-Acid vs Lithium)</h1>
+      <p class="lead">
+        Solar panels are only half a solar system. The battery is the other half — and it works a daily deep cycle
+        that decides exactly which battery belongs there.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A solar battery stores daytime solar energy for use at night — a
+        <strong>daily deep cycle</strong> that demands a <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a>
+        design. The two realistic choices are <strong>deep-cycle lead-acid (AGM or gel)</strong>, cheaper up front,
+        and <strong>lithium (LFP)</strong>, lighter with more usable capacity and far more cycles. Lithium is the
+        modern default for daily-cycled systems; lead-acid holds on where upfront cost dominates.
+      </div>
+
+      <h2>Why the daily cycle decides everything</h2>
+      <p>
+        A solar battery charges through the day and discharges through the night — deep and daily, hundreds of
+        cycles a year. That duty eliminates starting batteries immediately (their
+        <a href="/lead-acid/sli-battery/">thin plates</a> fail in weeks) and drives the lead-acid choice toward
+        thick-plate AGM or gel, which tolerate the deep cycling and need no watering.
+      </p>
+
+      <h2>Lead-acid vs lithium for solar</h2>
+      <table>
+        <thead><tr><th></th><th>Deep-cycle AGM/gel</th><th>Lithium (LFP)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Usable capacity</strong></td><td>~50% of rated</td><td>~80–90% of rated</td></tr>
+          <tr><td><strong>Cycle life</strong></td><td>~500–1,200 deep cycles</td><td>~3,000–5,000+</td></tr>
+          <tr><td><strong>Upfront cost</strong></td><td>Lower</td><td>Higher</td></tr>
+          <tr><td><strong>Maintenance</strong></td><td>None (sealed)</td><td>None</td></tr>
+          <tr><td><strong>Best for</strong></td><td>Budget, occasional use</td><td>Daily cycling, off-grid</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The usable-capacity correction</h2>
+      <p>
+        The most common sizing mistake is comparing rated amp-hours without the usable share. A lead-acid bank
+        should only be discharged to ~50% to preserve life, while lithium gives ~80–90%. A 100 Ah lithium battery
+        therefore delivers roughly as much usable energy as a ~180 Ah lead-acid bank — the comparison that decides
+        most off-grid purchases.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The solar battery decision is decided by one number — usable capacity, not
+          rated capacity — and on that corrected comparison, lithium wins daily-cycled systems while lead-acid
+          survives only where the system is rarely cycled or the budget is hard.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Rated Ah flatters lead-acid; the 50% usable limit is the real spec. Anyone who
+          corrects for usable capacity sees the true cost picture and sizes the bank properly — which is where most
+          off-grid systems fail.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and solar-system documentation.</p>
+      <ul>
+        <li>Battery engineering references — deep-cycle duty and usable capacity.</li>
+        <li>Solar and off-grid system documentation — battery sizing and cycling.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
