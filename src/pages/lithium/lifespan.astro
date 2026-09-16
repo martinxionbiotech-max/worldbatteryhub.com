@@ -113,6 +113,28 @@ const faqJsonLd = {
           <li>See <a href="/lithium/soc-vs-soh/">SOC vs SOH</a> for how lifespan is reported.</li>
         </ul>
       </div>
+      <h2>The cycle-life numbers</h2>
+      <table>
+        <thead><tr><th>Chemistry</th><th>Typical cycle life (to ~80% capacity)</th><th>Design depth of discharge</th></tr></thead>
+        <tbody>
+          <tr><td>Flooded deep-cycle lead-acid</td><td>~400–800 cycles</td><td>50%</td></tr>
+          <tr><td>AGM</td><td>~500–800 cycles</td><td>50%</td></tr>
+          <tr><td>LFP (LiFePO4)</td><td>~2,000–5,000 cycles</td><td>80–90%</td></tr>
+          <tr><td>NMC</td><td>~1,000–2,000 cycles</td><td>80%</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Order-of-magnitude figures from manufacturer data — actual life depends on temperature, rate and depth.
+        The DoD column is the usable window each chemistry is designed around.
+      </p>
+
+      <h2>The temperature multiplier</h2>
+      <p>
+        Heat roughly doubles the aging rate every 10°C — the rule that governs calendar aging. A battery stored
+        hot and full can lose years of life without a single cycle, which is why
+        <a href="/lithium/storage/">storage rules</a> put cool-and-partial-charge ahead of everything else.
+      </p>
+
 
       <h2>What This Means</h2>
       <div class="takeaways">
