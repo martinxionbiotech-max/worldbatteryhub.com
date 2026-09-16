@@ -98,6 +98,17 @@ const faqJsonLd = {
         <li>What backup duration is required?</li>
         <li>What is the expected life at the site's temperature?</li>
       </ul>
+      <h2>The backup duration classes</h2>
+      <table>
+        <thead><tr><th>Site class</th><th>Typical backup</th><th>Battery implication</th></tr></thead>
+        <tbody>
+          <tr><td>Urban, grid-reliable</td><td>~1–2 hours</td><td>Small VRLA strings — cost per kWh matters</td></tr>
+          <tr><td>Suburban / semi-rural</td><td>~4–8 hours</td><td>Larger strings; cycle life enters the math</td></tr>
+          <tr><td>Off-grid / remote</td><td>Days</td><td>Deep-cycling chemistry + solar hybrid</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">The duration class decides the chemistry — standby VRLA for short, cycling-capable lithium for long.</p>
+
 
 
       <h2>Why This Matters</h2>
