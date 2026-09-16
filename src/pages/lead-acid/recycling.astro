@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lead-Acid Battery Recycling: The Most Recycled Product on Earth';
+const description = 'Lead-acid batteries are recycled at roughly 99% — the highest rate of any product. How the closed loop works, and why it is the circular-economy exemplar.';
+const canonical = '/lead-acid/recycling/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery recycling',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Are lead-acid batteries recyclable?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — lead-acid is the most recycled product in the world, at roughly 99%. The lead, plastic case and even the sulfuric acid are recovered: lead is refined and returned to new batteries, and the case is remoulded. A new battery is mostly old batteries.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is lead-acid recycling so high?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Economics and regulation. The lead is valuable and easily recovered, deposit/return systems are widespread, and the infrastructure matured over decades. The result is a genuine closed loop: most of the lead in a new battery has been used before.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Sustainability · Last reviewed 2026-09-16</p>
+      <h1>Lead-Acid Battery Recycling: The Most Recycled Product on Earth</h1>
+      <p class="lead">
+        The battery with the oldest reputation is the world's best recycling story: roughly 99% of lead-acid
+        batteries are recycled, and a new battery is mostly old batteries.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Lead-acid batteries are recycled at roughly <strong>99%</strong> — the
+        highest rate of any consumer product. The <strong>lead</strong> is refined and returned to new batteries,
+        the <strong>polypropylene case</strong> is remoulded, and the <strong>acid</strong> is reclaimed or
+        neutralised. The loop is so complete that most of the lead in a new battery has been used before.
+      </div>
+
+      <h2>The closed loop</h2>
+      <table>
+        <thead><tr><th>Component</th><th>What happens to it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lead (plates, terminals)</strong></td><td>Smelted and refined, then cast into new grids</td></tr>
+          <tr><td><strong>Polypropylene case</strong></td><td>Washed, ground and remoulded into new cases</td></tr>
+          <tr><td><strong>Sulfuric acid</strong></td><td>Reclaimed or neutralised for other uses</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the rate is so high</h2>
+      <p>
+        Two forces made lead-acid recycling the benchmark: <strong>economics</strong> — the lead is valuable, dense
+        and easy to recover, so recycling pays — and <strong>regulation</strong>, with deposit/return and
+        take-back systems built over decades. The infrastructure is mature everywhere, which is exactly what
+        lithium recycling is still trying to build (see
+        <a href="/lithium/lithium-recycling/">lithium recycling</a> for the contrast).
+      </p>
+
+      <h2>The practical consequence</h2>
+      <p>
+        The closed loop changes the environmental calculus of lead-acid. The material is hazardous if discarded,
+        but the ~99% recovery means the hazard is managed and the resource keeps circulating. It is the strongest
+        counter-argument in lead-acid's favour in the lithium comparison — no other battery chemistry comes close
+        to that material efficiency today.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The lead-acid recycling loop is the one environmental claim in batteries that
+          is fully earned — and it deserves a place in every lead-acid vs lithium comparison, because no other
+          chemistry matches that material recovery today.</p>
+        <p>
+          <strong>Reasoning:</strong> The 99% figure is not marketing; it is a measured, mature system. The comparison
+          discussion usually ends at energy density, but the material loop is where lead-acid genuinely leads — and an
+          honest comparison states both.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from industry recycling statistics and BCI references.</p>
+      <ul>
+        <li>Battery Council International (BCI) — lead-acid recycling rate.</li>
+        <li>Industry recycling references — closed-loop recovery process.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Read a Battery Date Code';
+const description = 'Every battery carries a date code — a letter for month and digits for year, stamped or burned into the case. How to decode the common formats and why freshness matters.';
+const canonical = '/lead-acid/battery-date-code/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery date code',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Where is the date code on a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'On the case, usually on the top edge or side — a small stamped or heat-burned code. Formats vary by brand: a common one is a letter for the month (A=January, skipping I) plus a digit for the year, e.g. F6 = June 2026.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does battery age matter when buying?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lead-acid batteries age even sitting on a shelf — sulfation and self-discharge proceed slowly without use. A battery months past its manufacture date has lost part of its shelf life, which is why a fresh date code is worth checking at purchase.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How to Read a Battery Date Code</h1>
+      <p class="lead">
+        A battery does not start aging on the day you buy it — it started on the day it was made. The date code
+        tells you which day that was.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Every battery carries a <strong>date code</strong> — small stamped or
+        heat-burned characters on the case, usually the top edge or side. A common format is a <strong>letter for
+        the month</strong> (A = January, B = February … skipping I) plus a <strong>digit for the year</strong>:
+        <strong>F6 = June 2026</strong>. Formats vary by brand, so the pattern matters more than a single rule.
+      </div>
+
+      <h2>Common formats</h2>
+      <table>
+        <thead><tr><th>Format</th><th>Example</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Letter + digit</td><td>F6</td><td>June 2026 (F = June, 6 = 2026)</td></tr>
+          <tr><td>Month/year stamp</td><td>06/26</td><td>June 2026</td></tr>
+          <tr><td>Year + week</td><td>2624</td><td>2026, week 24</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        The letter-month convention varies by manufacturer; check the brand's coding if the stamp looks
+        non-standard.
+      </p>
+
+      <h2>Why freshness matters</h2>
+      <p>
+        Lead-acid batteries age on the shelf — <a href="/lead-acid/battery-sulfation/">sulfation</a> and
+        self-discharge proceed slowly even unused. A battery that sat for a year since manufacture has consumed
+        part of its life before you connected it, which is why the date code is worth reading at purchase: all else
+        equal, <strong>fresher is better</strong>.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The date code is the ten-second check that most battery buyers skip — and it is
+          the cheapest quality signal available, because shelf age is invisible in every other way.</p>
+        <p>
+          <strong>Reasoning:</strong> Two identical-looking batteries can differ by a year of shelf aging, and the only
+          way to see it is the stamp. Reading the code costs nothing and avoids paying full price for part of a
+          battery's life — the rare free lunch in battery buying.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from manufacturer coding documentation and BCI references.</p>
+      <ul>
+        <li>Manufacturer documentation — date-code formats.</li>
+        <li>Battery Council International (BCI) — battery labelling references.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
