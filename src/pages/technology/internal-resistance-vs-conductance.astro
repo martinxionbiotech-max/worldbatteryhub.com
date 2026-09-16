@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Internal Resistance vs Conductance: The Same Health Signal in Two Units';
+const description = 'Internal resistance (milliohms) and conductance (siemens) measure the same battery-health property — they are mathematical inverses. Why testers use each, and how to read them.';
+const canonical = '/technology/internal-resistance-vs-conductance/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Internal resistance vs conductance',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between internal resistance and conductance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They measure the same thing from opposite directions. Internal resistance (mΩ) is how much the battery resists current; conductance (S) is how easily it passes current — conductance is the reciprocal of resistance. A low resistance means high conductance, and both signal a healthy battery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do battery testers report conductance instead of resistance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because a small AC conductance measurement is fast, non-destructive and works on a partially-charged battery, and it correlates well with CCA — a healthy battery conducts well. The tester then converts conductance into a CCA estimate.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Units &amp; fundamentals · Last reviewed 2026-09-16</p>
+      <h1>Internal Resistance vs Conductance: The Same Health Signal in Two Units</h1>
+      <p class="lead">
+        Two battery testers can look like they measure different things — one reads milliohms, the other reads
+        siemens. They are reading the same thing from opposite directions.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <a href="/technology/internal-resistance/">Internal resistance</a> (mΩ) is
+        how strongly the battery opposes current; <strong>conductance</strong> (S, siemens) is how easily it passes
+        current — they are <strong>mathematical inverses</strong> (conductance = 1/resistance). Low resistance
+        equals high conductance, and both signal a healthy battery, which is why conductance testers use the reading
+        to <strong>estimate CCA</strong>.
+      </div>
+
+      <h2>The inverse relationship</h2>
+      <table>
+        <thead><tr><th>Battery state</th><th>Internal resistance</th><th>Conductance</th></tr></thead>
+        <tbody>
+          <tr><td>Healthy</td><td>Low (a few mΩ)</td><td>High</td></tr>
+          <tr><td>Aging / sulfated</td><td>Rising</td><td>Falling</td></tr>
+          <tr><td>Failed</td><td>High</td><td>Low</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Aging raises resistance (sulfation, corrosion) and therefore lowers conductance — the same physical change,
+        reported in two units. A conductance number falling over time is the same warning as a resistance number
+        rising.
+      </p>
+
+      <h2>Why testers chose conductance</h2>
+      <p>
+        The handheld tester works by passing a small AC signal and measuring how well the battery conducts. That
+        measurement is <strong>fast, non-destructive, and works even on a partially-charged battery</strong>, and it
+        correlates with cranking ability — a battery that conducts well can deliver current. The tester then converts
+        the conductance into a <strong>CCA estimate</strong>, which is the number users actually want
+        (see <a href="https://testing.worldbatteryhub.com/resistance-conductance/">conductance testing</a>).
+      </p>
+
+      <h2>What the units do not tell you</h2>
+      <p>
+        Neither resistance nor conductance is capacity. A battery can read healthy on both while holding little
+        energy, because the measurement reflects the current path, not the stored amp-hours. The reading is a
+        <strong>health proxy</strong> — excellent for triage, not a substitute for a
+        <a href="/testing/battery-capacity-testing/">capacity test</a> when the exact energy matters.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The resistance-vs-conductance confusion is a unit problem, not a physics problem —
+          and the useful habit is reading both as one signal, while remembering that neither one measures capacity.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The inverse relationship means every conductance test is a resistance test in
+          disguise. Users who see that stop being confused by the units — and avoid the real error, which is treating
+          a healthy conductance reading as proof of full capacity.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and tester-manufacturer documentation.</p>
+      <ul>
+        <li>Battery engineering references — resistance and conductance relationship.</li>
+        <li>Tester-manufacturer documentation — conductance measurement and CCA estimation.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
