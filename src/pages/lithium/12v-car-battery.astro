@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = '12V Lithium Battery for Cars: The LiFePO4 Starter';
+const description = '12V lithium (LiFePO4) starter batteries are arriving — far lighter and longer-lived than AGM, but expensive and cold-cranking limited. The honest trade-offs.';
+const canonical = '/lithium/12v-car-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: '12V lithium car battery',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can you use a lithium battery as a car starter battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — 12V LiFePO4 starter batteries exist and work, offering roughly half the weight and several times the cycle life of AGM. The caveats: much higher cost, reduced cranking in extreme cold, and a charging system that must suit lithium.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why has not lithium replaced lead-acid as the 12V car battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cost and cold. Lead-acid cranks well at −18°C for a fraction of lithium\u2019s price, and the 12V battery is a cost-optimised commodity. Lithium wins on weight and life, which is why it is spreading first in premium, weight-sensitive and racing applications.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Applications · Last reviewed 2026-09-16</p>
+      <h1>12V Lithium Battery for Cars: The LiFePO4 Starter</h1>
+      <p class="lead">
+        The last lead-acid stronghold in the car — the 12V battery under the hood — is being tested by lithium,
+        and the outcome is decided by two words: cost and cold.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> 12V <strong>LiFePO4</strong> starter batteries are arriving: roughly
+        <strong>half the weight</strong> and <strong>several times the cycle life</strong> of AGM, at
+        <strong>several times the price</strong>, with <strong>reduced cranking in extreme cold</strong>. They work,
+        and they spread first where weight and life matter most — premium, motorsport, overlanding — while
+        lead-acid holds the cost-optimised mainstream.
+      </div>
+
+      <h2>The trade-offs</h2>
+      <table>
+        <thead><tr><th></th><th>AGM 12V</th><th>LiFePO4 12V</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Weight</strong></td><td>~17–25 kg</td><td>~half</td></tr>
+          <tr><td><strong>Cycle life</strong></td><td>~500–800 (shallow)</td><td>~2,000–5,000</td></tr>
+          <tr><td><strong>Price</strong></td><td>Low</td><td>Several times higher</td></tr>
+          <tr><td><strong>Cold cranking</strong></td><td>Strong at −18°C</td><td>Reduced in extreme cold (needs warm-up)</td></tr>
+          <tr><td><strong>Charging</strong></td><td>Standard alternator</td><td>Lithium-suitable profile (BMS-managed)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why the cold caveat exists</h2>
+      <p>
+        LFP's <strong>charging ban below 0°C</strong> is the physics the marketing skips: the internal BMS refuses
+        charge current in the cold, and cranking power also drops with temperature (see
+        <a href="/lithium/how-to-charge/">lithium charging</a>). Lead-acid's cold-cranking pedigree
+        (see <a href="/lead-acid/cca/what-is-cca/">CCA</a>) is exactly what lithium still struggles to match at the
+        extreme — which is why the two coexist rather than replace.
+      </p>
+
+      <h2>Where lithium 12V actually wins today</h2>
+      <p>
+        The wins are real and specific: <strong>weight-sensitive platforms</strong> (racing, premium),
+        <strong>long-sitting vehicles</strong> (low self-discharge — see
+        <a href="/lithium/storage/">storage</a>), and <strong>deep-cycling auxiliary duty</strong> where the
+        alternator's shallow cycles underuse lead-acid but suit lithium. The mainstream 12V replacement market —
+        price-driven and cold-tested — stays lead-acid for now (see
+        <a href="https://market.worldbatteryhub.com/lead-acid-battery-market/">the lead-acid market</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The 12V lithium starter is a niche product with a mainstream price problem —
+          it wins on weight and life, loses on cost and cold, and will spread the way every battery technology
+          does: premium first, commodity later.</p>
+        <p>
+          <strong>Reasoning:</strong> The 12V battery is the most cost-optimised battery in the world, and cold
+          cranking is its core job. Lithium must beat lead-acid on both fronts at once to take the mainstream —
+          which is why the honest forecast is coexistence for years, with lithium taking the high-value corners
+          first.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from starter-battery manufacturer documentation and battery engineering references.</p>
+      <ul>
+        <li>12V lithium starter manufacturer documentation — specifications and limits.</li>
+        <li>Battery engineering references — LFP cold-cranking and charging behaviour.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
