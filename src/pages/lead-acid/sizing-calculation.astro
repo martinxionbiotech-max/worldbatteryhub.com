@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How Much Battery Capacity Do I Need?';
+const description = 'Battery sizing = load in watts × hours ÷ voltage, plus the depth-of-discharge margin. The sizing formula with worked examples for cars, boats and off-grid.';
+const canonical = '/lead-acid/sizing-calculation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery capacity sizing',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I calculate what size battery I need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Energy needed = load in watts × hours. Capacity = energy ÷ voltage, then divide by the usable depth of discharge. A 100 W load for 5 hours needs 500 Wh; on 12 V that is about 42 Ah, or roughly 85 Ah at lead-acid\u2019s 50% usable window.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why should lead-acid banks be oversized?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because lead-acid should only be discharged to about 50% for a reasonable life — so the bank must be roughly double the calculated need. Lithium (LFP) allows 80–90%, so its margin is smaller.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>How Much Battery Capacity Do I Need?</h1>
+      <p class="lead">
+        Sizing a battery bank is one multiplication, one division, and one honest margin — and the margin is the
+        part people skip, which is why so many banks come up short on day three.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Energy needed = load (W) × hours</strong>. Then
+        <strong>capacity = energy ÷ voltage</strong>, divided by the usable
+        <a href="/lead-acid/deep-cycle-vs-starting/">depth of discharge</a>. A 100 W load for 5 hours needs
+        <strong>500 Wh</strong>; on 12 V that is about <strong>42 Ah</strong> — roughly <strong>85 Ah</strong> for
+        lead-acid at its 50% usable window, or ~55 Ah for LFP at 80%.
+      </div>
+
+      <h2>The formula and worked examples</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Load</th><th>Hours</th><th>Energy</th><th>12V bank (50% DoD)</th></tr></thead>
+        <tbody>
+          <tr><td>Fridge + lights (boat)</td><td>100 W</td><td>5 h</td><td>500 Wh</td><td>~85 Ah</td></tr>
+          <tr><td>CPAP overnight</td><td>50 W</td><td>8 h</td><td>400 Wh</td><td>~70 Ah</td></tr>
+          <tr><td>Small off-grid cabin</td><td>300 W</td><td>6 h</td><td>1,800 Wh</td><td>~300 Ah</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The depth-of-discharge margin</h2>
+      <p>
+        Lead-acid survives longest at <strong>50% depth of discharge</strong>, so the bank is built roughly
+        <strong>double</strong> the calculated need; lithium LFP allows 80–90%, so its margin is far smaller
+        (see <a href="/lithium/lifespan/">cycle life</a>). The margin is the difference between the arithmetic
+        answer and the battery that actually lasts — skip it and the bank cycles too deep, aging early.
+      </p>
+
+      <h2>The Peukert and temperature caveats</h2>
+      <p>
+        Two more honest adjustments: high loads deliver fewer usable Ah than the C20 nameplate
+        (see <a href="/lead-acid/runtime-calculation/">runtime calculation</a>), and cold cuts available capacity
+        (see <a href="/lead-acid/cold-weather-battery/">cold weather</a>). A sizing that ignores either is
+        optimistic exactly where real conditions are harsh.
+      </p>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> Battery sizing is a margin problem disguised as arithmetic — the formula
+          is two lines, and the failures are almost always the depth-of-discharge margin that was skipped to save
+          money, paid back in early replacement.</p>
+        <p>
+          <strong>Why:</strong> The arithmetic gives a floor; the 50% rule gives the design. A bank built on the
+          usable window — with a glance at load rate and temperature — matches its math in year three as well as
+          day one, which is the actual definition of the right size.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>What is the real load in watts, including peaks and idle draw?</li>
+        <li>How many hours must the bank cover between charges?</li>
+        <li>Is the depth-of-discharge window right for the chemistry (50% vs 80–90%)?</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and off-grid system documentation.</p>
+      <ul>
+        <li>Off-grid system documentation — load tables and sizing practice.</li>
+        <li>Battery engineering references — depth of discharge and cycle life.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
