@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lead-Acid Battery Disposal: The Recycling Loop';
+const description = 'Lead-acid batteries are recycled by law in most countries — into new batteries at ~99% recovery. Never landfill them and never drain the acid. The disposal path.';
+const canonical = '/lead-acid/disposal/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery disposal',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you dispose of a lead-acid battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Return it — retailers and recycling centres take old batteries, and in most countries selling a new one requires taking the old one. Lead-acid is recycled by law almost everywhere, because the lead, plastic and acid are all recovered.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why must a lead-acid battery never go to landfill?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lead and sulfuric acid are toxic — a buried battery corrodes and leaks both into soil and water. The recycling loop recovers about 99% of the battery; landfilling throws that away and creates a contamination site instead.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>Lead-Acid Battery Disposal: The Recycling Loop</h1>
+      <p class="lead">
+        The lead-acid battery is the recycling world's success story — and the disposal rule is simple because the
+        loop is closed: the old battery is the raw material for the next one.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Return old lead-acid batteries to <strong>retailers or recycling
+        centres</strong> — in most countries the seller must take the old battery with the new one. The
+        <a href="/lead-acid/recycling/">~99% recycling loop</a> recovers the lead, plastic and acid into new
+        batteries. Never landfill them and <strong>never drain the acid</strong>.
+      </div>
+
+      <h2>The disposal path</h2>
+      <ul>
+        <li><strong>Return at purchase</strong> — the core-deposit system: the old battery offsets the new one.</li>
+        <li><strong>Collection points</strong> — scrap yards and recycling centres pay for the lead value.</li>
+        <li><strong>Never the bin, never the ground</strong> — lead and acid are toxic waste, and landfilling is illegal in most jurisdictions.</li>
+      </ul>
+
+      <h2>Why the loop works</h2>
+      <p>
+        The economics are self-enforcing: the lead is valuable, the smelter pays for it, and the loop is the
+        cheapest source of new battery lead (see
+        <a href="https://market.worldbatteryhub.com/battery-recycling-market/">the recycling market</a> and
+        <a href="https://technology.worldbatteryhub.com/battery-recycling-technology/">the technology</a>). The
+        result: more recycled lead-acid batteries than any other consumer product — the standard every other
+        chemistry's recycling is measured against.
+      </p>
+
+      <h2>The safety note</h2>
+      <p>
+        The acid inside is sulfuric acid — corrosive, and not something to handle at home. The disposal rule is
+        therefore hands-off: carry the battery upright, do not open or drain it, and let the collection point do
+        the rest (see <a href="/lithium/disposal/">lithium disposal</a> for the other chemistry's rules).
+      </p>
+
+      <h2>Why This Matters</h2>
+      <div class="takeaways">
+        <p>
+          <strong>In my view:</strong> Lead-acid disposal is the rare environmental story with no dilemma — the
+          right thing to do (return it) is also the economically natural thing (it has value), and the only
+          failure mode is carelessness, not cost.</p>
+        <p>
+          <strong>Why I think so:</strong> The loop pays for itself, which is why it works at ~99%. The environmental
+          lesson generalises: when recovery is profitable, recycling is not a burden to encourage but an outcome
+          to expect — and the lead-acid loop is the proof that batteries can be a closed material system.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from BCI recycling guidance and recycling-industry references.</p>
+      <ul>
+        <li>Battery Council International (BCI) — recycling rates and practice.</li>
+        <li>Recycling-industry references — smelter economics and recovery rates.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
