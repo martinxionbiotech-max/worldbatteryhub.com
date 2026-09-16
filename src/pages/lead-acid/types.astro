@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Types of Lead-Acid Batteries: The Complete Family';
+const description = 'The lead-acid family — flooded, EFB, AGM, gel, SLI and deep-cycle — organised by electrolyte form and plate design. How the six types differ and which fits which job.';
+const canonical = '/lead-acid/types/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Types of lead-acid batteries',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the main types of lead-acid batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Organised by electrolyte: flooded (liquid), EFB (enhanced flooded with carbon), AGM (absorbed glass mat) and gel (silica-gelled) — and by duty: SLI starting vs deep-cycle. The six common labels all map onto these two dimensions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which lead-acid type should I choose?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Follow the duty: basic cars take flooded or EFB, start-stop cars require EFB or AGM, deep-cycling jobs (solar, marine house) take AGM, gel or deep-cycle flooded. The vehicle or application specification usually decides it for you.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Fundamentals · Last reviewed 2026-09-16</p>
+      <h1>Types of Lead-Acid Batteries: The Complete Family</h1>
+      <p class="lead">
+        The lead-acid family has many labels — SLI, EFB, AGM, gel, deep-cycle — and they all reduce to two
+        questions: how is the electrolyte held, and what is the battery asked to do?
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The types organise by <strong>electrolyte form</strong> —
+        <strong>flooded</strong> (liquid), <strong>EFB</strong> (enhanced flooded with carbon),
+        <strong>AGM</strong> (glass-mat sealed), <strong>gel</strong> (silica-gelled) — and by
+        <strong>duty</strong>: <strong>SLI</strong> starting vs <strong>deep-cycle</strong>. Every common label
+        maps onto those two dimensions.
+      </div>
+
+      <h2>The family map</h2>
+      <table>
+        <thead><tr><th>Type</th><th>Electrolyte</th><th>Best at</th><th>Typical use</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flooded SLI</strong></td><td>Free liquid</td><td>Cheap cranking</td><td>Basic cars</td></tr>
+          <tr><td><strong>EFB</strong></td><td>Liquid + carbon</td><td>Cycling at low cost</td><td>Start-stop (entry)</td></tr>
+          <tr><td><strong>AGM</strong></td><td>Glass mat, sealed</td><td>Power + cycling, sealed</td><td>Start-stop, premium, UPS</td></tr>
+          <tr><td><strong>Gel</strong></td><td>Silica gel, sealed</td><td>Deep cycling, any position</td><td>Solar, mobility</td></tr>
+          <tr><td><strong>Deep-cycle flooded</strong></td><td>Free liquid, thick plates</td><td>Deep discharge endurance</td><td>Marine, forklift, off-grid</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How the two dimensions decide</h2>
+      <p>
+        The electrolyte form sets <strong>maintenance and safety</strong> (sealed vs watering); the plate design
+        sets <strong>duty</strong> (thin plates crank, thick plates cycle — see
+        <a href="/lead-acid/deep-cycle-vs-starting/">starting vs deep-cycle</a>). A type is the combination: AGM
+        deep-cycle, for example, is a sealed design with cycling-oriented plates. Reading any label through the two
+        dimensions explains what it is for.
+      </p>
+
+      <h2>Which to choose</h2>
+      <p>
+        Follow the duty, then the price: start-stop cars <em>require</em> EFB or AGM
+        (see <a href="/lead-acid/efb-battery/">EFB</a> and <a href="/lead-acid/agm-battery/">AGM</a>); basic cars
+        take flooded; deep-cycling jobs take AGM, gel or deep-cycle flooded
+        (see <a href="/lead-acid/agm-vs-gel/">AGM vs gel</a>). The specification usually decides — and when it does
+        not, the duty does.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The lead-acid family looks complicated until you see the two dimensions behind
+          every label — electrolyte form and duty — after which every type in the catalogue is just a cell in a
+          2×2 table, and the purchase rule is simply matching the cell to the job.</p>
+        <p>
+          <strong>Reasoning:</strong> Labels multiply; dimensions do not. Once the map is known — sealed or not,
+          cranking or cycling — the buyer stops being confused by marketing names and reads each battery for what
+          it is: a specific answer to a specific duty.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and BCI documentation.</p>
+      <ul>
+        <li>Battery Council International (BCI) — battery type classifications.</li>
+        <li>Manufacturer documentation — type construction and duty guidance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

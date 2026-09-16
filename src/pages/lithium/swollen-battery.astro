@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Why Is My Battery Swollen? The Lithium Swelling Warning';
+const description = 'A swollen lithium battery is gas build-up from electrolyte decomposition — overcharge, heat, age or a defect. Why it swells, why it is dangerous, and what to do.';
+const canonical = '/lithium/swollen-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Swollen lithium battery',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why do lithium batteries swell?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Gas builds up inside when the electrolyte decomposes — driven by overcharge, overheating, deep over-discharge or aging. The pouch or case bulges as the pressure rises. Swelling is a failure sign, not a minor blemish.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a swollen battery dangerous?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A swollen cell is a failed cell with internal pressure — it can vent or ignite if punctured, crushed or further charged. Stop using and charging it, store it away from flammables, and recycle it through proper battery disposal.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Problems · Last reviewed 2026-09-16</p>
+      <h1>Why Is My Battery Swollen? The Lithium Swelling Warning</h1>
+      <p class="lead">
+        A battery that bulges is not a cosmetic issue — it is a chemical message from inside the cell, and the
+        message is that the cell has failed.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Swelling is <strong>gas build-up</strong> from the electrolyte decomposing —
+        driven by <strong>overcharge, overheating, deep over-discharge or aging</strong>. The case bulges as
+        internal pressure rises. A swollen cell is a <strong>failed cell</strong>: stop using and charging it,
+        keep it away from flammables, and recycle it through proper battery disposal.
+      </div>
+
+      <h2>Cause → Mechanism</h2>
+      <table>
+        <thead><tr><th>Cause</th><th>How it produces gas</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Overcharge</strong></td><td>Excess voltage decomposes the electrolyte directly</td></tr>
+          <tr><td><strong>Heat</strong></td><td>High temperature accelerates every decomposition reaction</td></tr>
+          <tr><td><strong>Over-discharge</strong></td><td>Copper dissolution destabilises the chemistry on recharge</td></tr>
+          <tr><td><strong>Aging / defects</strong></td><td>SEI damage and internal shorts gas the cell slowly</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why it is a safety event</h2>
+      <p>
+        The gas is flammable, and the pressure distorts the layers inside — two steps toward
+        <a href="/lithium/thermal-runaway/">thermal runaway</a> if the cell is punctured, crushed or charged again.
+        This is why a swollen device battery should never be "checked" by pressing it, and why proper disposal —
+        not the bin — is the end of its life (see <a href="/lithium/storage/">storage rules</a> for prevention).
+      </p>
+
+      <h2>What to do</h2>
+      <ul>
+        <li><strong>Stop use and charging</strong> immediately — remove from the device where possible.</li>
+        <li><strong>Store safely</strong> — cool, dry, away from flammables, not in a pocket or drawer.</li>
+        <li><strong>Recycle properly</strong> — through battery collection points, never household waste.</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Swelling is the battery's own warning light — the only visible symptom of an
+          invisible chemical failure — and the correct response is retirement, not investigation, because the
+          curiosity that punctures a swollen cell is how small problems become fires.</p>
+        <p>
+          <strong>Reasoning:</strong> The gas is flammable and the pressure is real; every additional charge or poke
+          adds risk with zero benefit. Reading swelling as the failure signal it is — stop, store safe, recycle —
+          is the whole protocol, and it is the cheapest safety discipline in lithium.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee. Swollen batteries are hazardous; dispose through proper channels.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from cell-manufacturer safety guidance and battery engineering references.</p>
+      <ul>
+        <li>Cell-manufacturer safety documentation — swelling and gassing failure modes.</li>
+        <li>Battery engineering references — electrolyte decomposition and cell failure.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
