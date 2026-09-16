@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lithium Battery Disposal: How to Recycle Safely';
+const description = 'Lithium batteries must be recycled, never binned — a damaged cell can ignite in a garbage truck. The safe disposal rules and the recycling path.';
+const canonical = '/lithium/disposal/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery disposal',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you dispose of lithium batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Through battery collection and recycling points — never in household waste. Damaged or swollen batteries should be insulated (tape the terminals) and handled as hazardous; many collection schemes have specific drop-off procedures for them.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why can\u2019t lithium batteries go in the bin?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A crushed or punctured cell shorts internally and can ignite — in the bin, the truck compactor or the landfill. Proper recycling both removes that hazard and recovers the valuable lithium, nickel and cobalt inside.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>Lithium Battery Disposal: How to Recycle Safely</h1>
+      <p class="lead">
+        A lithium battery in the bin is a fire waiting for a compactor. The disposal rule is simple — recycle,
+        never bin — and the details protect everyone downstream.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Lithium batteries go to <strong>battery collection and recycling
+        points</strong>, never household waste. <strong>Tape or insulate the terminals</strong> before drop-off,
+        and handle <strong>swollen or damaged</strong> cells as hazardous — many schemes have dedicated procedures.
+        Recycling removes the fire risk and recovers the lithium, nickel and cobalt
+        (see <a href="/lithium/lithium-recycling/">lithium recycling</a>).
+      </div>
+
+      <h2>Why the bin is the wrong place</h2>
+      <p>
+        The failure path is mechanical: a cell crushed in a bin or compactor shorts internally and can ignite,
+        taking the surrounding waste with it — the documented cause of recurring garbage-truck and landfill fires.
+        The same stored energy that powers the device becomes the hazard the moment the case is breached
+        (see <a href="/lithium/swollen-battery/">swollen batteries</a> and
+        <a href="/lithium/thermal-runaway/">thermal runaway</a>).
+      </p>
+
+      <h2>The safe procedure</h2>
+      <ul>
+        <li><strong>Insulate the terminals</strong> — tape over contacts so nothing shorts in transit.</li>
+        <li><strong>Keep cells separate</strong> — a bag of loose cells is a bag of potential shorts.</li>
+        <li><strong>Flag damaged batteries</strong> — swollen, punctured or hot cells get special handling, not the standard bin.</li>
+        <li><strong>Use collection points</strong> — shops, recycling centres, dedicated battery schemes.</li>
+      </ul>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Battery disposal is the cheapest safety act in lithium ownership — tape the
+          terminals, use the collection point, never the bin — and it is also the quiet start of the recycling
+          loop the industry is counting on.</p>
+        <p>
+          <strong>Reasoning:</strong> Every bin fire started as a small decision. The taped terminal and the correct
+          drop-off cost seconds and prevent the cascade — and they feed the same material loop that the EV
+          transition's economics will ultimately depend on.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee. Damaged batteries are hazardous; follow local disposal guidance.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery-safety guidance and recycling-scheme documentation.</p>
+      <ul>
+        <li>Recycling-scheme documentation — collection and handling procedures.</li>
+        <li>Battery-safety references — terminal insulation and damaged-cell handling.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
