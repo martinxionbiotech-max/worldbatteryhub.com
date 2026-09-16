@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'LiFePO4 Voltage Chart: Why Voltage Is a Poor Gauge for LFP';
+const description = 'A 12V LiFePO4 battery\u2019s voltage barely moves between 20% and 90% charge — the flat curve. The chart, and why the BMS\u2019s coulomb counting, not voltage, reads LFP state of charge.';
+const canonical = '/lithium/lifepo4-voltage-chart/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'LiFePO4 voltage chart',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What voltage is a fully charged 12V LiFePO4 battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'About 13.3-13.6V at rest when full — but the flat discharge curve means voltage stays near 13.2-13.0V across most of the charge range, so a voltage reading alone cannot tell 40% from 80% on LFP the way it can on lead-acid.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why can\u2019t I use voltage to read LiFePO4 state of charge?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because the LFP voltage curve is extremely flat between roughly 20% and 90% charge — the voltage barely moves while the charge falls. Only at the extremes does voltage change quickly. That is why LFP systems rely on the BMS\u2019s current counting, not voltage, for accurate state of charge.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>LiFePO4 Voltage Chart: Why Voltage Is a Poor Gauge for LFP</h1>
+      <p class="lead">
+        The lead-acid habit of reading state of charge from voltage breaks down completely on LiFePO4 — because
+        the LFP voltage curve is nearly flat, on purpose.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A 12V LiFePO4 battery rests at about <strong>13.3–13.6V when full</strong>
+        and falls to roughly <strong>12.8–13.0V</strong> across most of the discharge — the curve is so
+        <strong>flat between ~20% and ~90% charge</strong> that voltage cannot distinguish 40% from 80%. That is
+        why LFP systems read state of charge through the BMS's <strong>current counting</strong>, not the
+        voltmeter (compare the <a href="/lead-acid/12v-voltage-chart/">lead-acid chart</a>, where voltage works).
+      </div>
+
+      <h2>The approximate chart (12V LiFePO4 at rest)</h2>
+      <table>
+        <thead><tr><th>Resting voltage</th><th>Approximate state of charge</th></tr></thead>
+        <tbody>
+          <tr><td>~13.3–13.6V</td><td>100%</td></tr>
+          <tr><td>~13.2V</td><td>~70–90%</td></tr>
+          <tr><td>~13.1V</td><td>~50–70%</td></tr>
+          <tr><td>~13.0V</td><td>~30–50%</td></tr>
+          <tr><td>~12.8V</td><td>~10–20%</td></tr>
+          <tr><td>~12.0V</td><td>~0% (disconnect soon)</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Approximate values; the flat mid-range makes precise mapping impossible by voltage alone.</p>
+
+      <h2>Why the curve is flat</h2>
+      <p>
+        The LFP cathode holds its voltage almost constant as lithium is removed — a property of the iron-phosphate
+        chemistry's two-phase plateau. The flatness is actually good engineering (stable power delivery), but it
+        destroys the voltage-as-fuel-gauge trick that works so well on lead-acid.
+      </p>
+
+      <h2>What to use instead</h2>
+      <p>
+        The reliable gauge is the <a href="/lithium/what-is-bms/">BMS's</a> <strong>coulomb counting</strong> —
+        integrating current in and out — recalibrated at the extremes (full charge, near-empty) where the voltage
+        finally moves. Voltage remains useful only at the ends: a reading near 13.4V says "full", near 12.0V says
+        "empty now", and the vast middle says nothing precise (see <a href="/lithium/soc-vs-soh/">SOC</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The LiFePO4 voltage chart is really a lesson about the ends, not the middle —
+          voltage tells you "full" and "almost empty", and the BMS owns everything between, which is the opposite
+          of the lead-acid habit most users bring with them.</p>
+        <p>
+          <strong>Reasoning:</strong> The flat curve is chemistry, not a defect: it is why LFP power delivery is stable
+          and why its state of charge needs counting instead of measuring. Users who accept that — trust the BMS in
+          the middle, watch voltage at the ends — stop misreading their own battery.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from cell-manufacturer discharge curves and battery engineering references.</p>
+      <ul>
+        <li>Cell-manufacturer datasheets — LiFePO4 discharge-voltage curves.</li>
+        <li>Battery engineering references — LFP voltage plateau and SOC estimation.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
