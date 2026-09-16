@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What Is an SLI Battery? Starting, Lighting and Ignition Explained';
+const description = 'SLI means starting, lighting and ignition — the three jobs of an automotive battery. Why SLI batteries use thin plates for high CCA, and why they are built for bursts, not deep cycling.';
+const canonical = '/lead-acid/sli-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'SLI battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does SLI battery mean?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SLI stands for starting, lighting and ignition — the three jobs of a conventional automotive battery: cranking the engine, powering the lights, and firing the ignition. SLI batteries are built for short high-current bursts and are recharged continuously by the alternator.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an SLI battery be used for deep cycling?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. SLI batteries use many thin plates optimized for high cranking current (CCA), which makes them fragile under deep discharge. Deep-cycling an SLI battery shortens its life sharply; deep-cycle applications need a deep-cycle battery instead.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Products · Last reviewed 2026-09-16</p>
+      <h1>What Is an SLI Battery? Starting, Lighting and Ignition Explained</h1>
+      <p class="lead">
+        Almost every car on the road has an SLI battery under the hood — and the name describes exactly what it
+        does, and exactly what it is not built to do.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>SLI</strong> stands for <strong>starting, lighting and
+        ignition</strong> — the three jobs of a conventional automotive battery. It cranks the engine (starting),
+        powers the lights and electronics (lighting), and fires the spark (ignition). An SLI battery is built for
+        <strong>short, high-current bursts</strong> followed by continuous recharging from the alternator — not for
+        deep cycling.
+      </div>
+
+      <h2>Why SLI batteries are built the way they are</h2>
+      <p>
+        The starting burst is the design driver: a few seconds of very high current in the cold. That is a
+        <strong>surface-area</strong> game, so SLI batteries use <strong>many thin plates</strong> to maximise the
+        reactive surface — which is exactly what raises
+        <a href="/lead-acid/cca/what-is-cca/">CCA</a>. The trade-off is durability: thin plates are fragile under
+        deep discharge, which is why SLI batteries are cycled shallowly and recharged almost immediately.
+      </p>
+
+      <h2>SLI vs deep-cycle: the plate trade-off</h2>
+      <table>
+        <thead><tr><th></th><th>SLI (starting)</th><th>Deep-cycle</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Plates</strong></td><td>Many, thin</td><td>Fewer, thicker</td></tr>
+          <tr><td><strong>Strength</strong></td><td>High CCA (cranking)</td><td>Long deep discharge</td></tr>
+          <tr><td><strong>Weakness</strong></td><td>Fragile under deep discharge</td><td>Lower cranking current</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Car starting</td><td>Marine, RV, off-grid</td></tr>
+        </tbody>
+      </table>
+      <p>See <a href="/lead-acid/deep-cycle-vs-starting/">starting vs deep-cycle</a> for the full comparison.</p>
+
+      <h2>How modern vehicles stretch the SLI concept</h2>
+      <p>
+        Start-stop systems cycle the battery far more than a traditional car, and the shallow-but-frequent cycling
+        is why start-stop cars specify <a href="/lead-acid/efb-battery/">EFB</a> or
+        <a href="/lead-acid/agm-battery/">AGM</a> instead of a basic flooded SLI battery. The SLI job remains the
+        same — start, light, ignite — but the duty cycle has tightened, and the battery technology follows.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The single most useful fact about an SLI battery is that it is a sprinter, not a
+          marathon runner — and most early SLI deaths come from asking it to run a marathon it was never designed for.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The thin-plate design that gives high CCA is the same design that fails under deep
+          discharge. Understanding that one trade-off explains why the right battery depends on the job, and why using
+          a starting battery for deep cycling is the most common avoidable mistake.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer documentation.</p>
+      <ul>
+        <li>Battery Council International (BCI) — SLI battery definition and design.</li>
+        <li>Manufacturer technical literature — thin-plate SLI vs thick-plate deep-cycle design.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
