@@ -92,6 +92,21 @@ const faqJsonLd = {
         them: verify the battery first, then measure the draw — the order that prevents replacing a good battery
         for a circuit's sin (see <a href="/lead-acid/how-long-does-a-car-battery-last/">lifespan</a>).
       </p>
+      <h2>The typical draws</h2>
+      <table>
+        <thead><tr><th>Load</th><th>Typical draw</th></tr></thead>
+        <tbody>
+          <tr><td>Factory sleep (modules off)</td><td>~20–50 mA — normal</td></tr>
+          <tr><td>Dashcam on constant power</td><td>~100–300 mA — a slow drain</td></tr>
+          <tr><td>Alarm / telematics standby</td><td>~20–80 mA</td></tr>
+          <tr><td>Interior light left on</td><td>~500 mA–1 A+ — flattens overnight</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Typical order-of-magnitude values — the diagnosis compares the measured sleep current against the
+        ~20–50 mA baseline.
+      </p>
+
 
       <h2>The Editor's View</h2>
       <div class="takeaways">
