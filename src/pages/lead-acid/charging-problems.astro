@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lead-Acid Charging Problems: Overcharge, Undercharge and the Wrong Charger';
+const description = 'The two lead-acid charging failures are overcharge (gassing, corrosion, water loss) and undercharge (sulfation). Here is how each shows up, how to diagnose it, and the correct charging voltages.';
+const canonical = '/lead-acid/charging-problems/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery charging problems',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>Lead-Acid Charging Problems</h1>
+      <p class="lead">
+        Almost every lead-acid charging problem is one of two opposites: <strong>overcharging</strong> or
+        <strong>undercharging</strong> — plus the common third case, using a charger set for the wrong battery type.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Overcharging gasses off water, corrodes the positive grid and overheats the
+        battery; undercharging leaves lead sulfate on the plates, which hardens into
+        <a href="/lead-acid/sulfation/">sulfation</a>. Both permanently reduce capacity and CCA. The fix is the correct
+        charger voltage for the battery type — and never equalizing a sealed battery.
+      </div>
+
+      <h2>Cause</h2>
+      <table>
+        <thead><tr><th>Problem</th><th>Cause</th></tr></thead>
+        <tbody>
+          <tr><td>Overcharge</td><td>Voltage held too high / too long; equalizing AGM or gel</td></tr>
+          <tr><td>Undercharge</td><td>Voltage too low, or the battery never reaches full</td></tr>
+          <tr><td>Wrong-type charger</td><td>Using a flooded profile on AGM/gel, or vice versa</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Mechanism</h2>
+      <p>
+        Overcharge drives the electrolysis of water into hydrogen and oxygen (gassing), which is why a flooded
+        battery can be topped up but a sealed AGM/gel cannot — the lost water is gone permanently. Undercharge leaves
+        the discharge product (lead sulfate) unconverted, and the fine crystals coarsen and harden over time.
+      </p>
+
+      <h2>Symptoms</h2>
+      <ul>
+        <li><strong>Overcharge:</strong> hot case, swelling, strong acid smell, frequent top-ups needed, low electrolyte.</li>
+        <li><strong>Undercharge:</strong> battery won't hold charge, weak cranking, low specific gravity, sulphate deposits.</li>
+        <li><strong>Wrong charger:</strong> battery fails early with mixed symptoms of both.</li>
+      </ul>
+
+      <h2>Measurement</h2>
+      <p>
+        Measure the charge voltage at the terminals and the electrolyte specific gravity (flooded). A resting, fully
+        charged 12 V battery sits near 12.6–12.7 V; a charger holding it well above ~14.8 V (flooded) is overcharging,
+        and one that never lifts it above ~13.8 V is undercharging.
+      </p>
+
+      <h2>Diagnosis</h2>
+      <p>
+        Compare the charger's absorption and float voltages against the battery type's spec: flooded absorbs at
+        ~14.4–14.8 V and floats ~13.5–13.8 V; AGM and gel absorb slightly lower and must never be equalized. A charger
+        with a single "sealed/flooded" setting is a common source of the wrong profile.
+      </p>
+
+      <h2>Prevention</h2>
+      <ul>
+        <li>Use a charger (or a charger setting) matched to the battery type.</li>
+        <li>Set correct absorption and float voltages; use temperature compensation where available.</li>
+        <li>Recharge promptly; never equalize AGM or gel.</li>
+      </ul>
+
+      <h2>Limitations</h2>
+      <p>
+        Charging can only convert back <em>fresh</em> lead sulfate. Once sulfation has hardened, or once a sealed
+        battery has lost water, charging cannot restore it. Charging fixes the habit going forward; it does not undo
+        past damage.
+      </p>
+
+      <h2>World Battery Hub Analysis</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The highest-leverage charging fix is boring and almost free — use the right
+          voltage for the right battery type — and it prevents more battery deaths than any "smart charger" feature.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Charging problems are rarely exotic; they are almost always a voltage set for the
+          wrong chemistry. The gap between a flooded profile and an AGM profile is small in volts but large in
+          consequences over thousands of hours on float.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — charging voltage references by battery type.</li>
+        <li>Manufacturer charging guides (Yuasa, Varta, EnerSys) — flooded vs AGM vs gel profiles and equalization limits.</li>
+        <li>Cross-verified with <a href="/lead-acid/lead-acid-charging/">how to charge a lead-acid battery</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

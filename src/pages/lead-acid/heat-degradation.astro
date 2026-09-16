@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Heat and Lead-Acid Batteries: How Temperature Shortens Life';
+const description = 'Heat is the fastest killer of lead-acid batteries — it accelerates corrosion, water loss and self-discharge. Here is the temperature-vs-life rule of thumb, the symptoms, and how to protect a battery in a hot engine bay.';
+const canonical = '/lead-acid/heat-degradation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery heat degradation',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>Heat and Lead-Acid Batteries</h1>
+      <p class="lead">
+        Heat, not cold, is the thing that <em>kills</em> lead-acid batteries. Cold makes them start hard; heat quietly
+        ages them fast — by accelerating the chemical reactions that corrode, dry out and discharge the battery.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Higher temperature speeds up every ageing reaction in a lead-acid battery —
+        grid corrosion, water loss and self-discharge. A widely used rule of thumb is that battery life roughly
+        <strong>halves for every ~8–10 °C of sustained temperature above ~25 °C</strong>. This is why the engine bay,
+        not the winter, is where batteries actually age.
+      </div>
+
+      <h2>Cause</h2>
+      <p>
+        The cause is sustained elevated temperature — most often the engine compartment in summer, but also a charger
+        that holds the battery too hot, or a battery installed without heat shielding.
+      </p>
+
+      <h2>Mechanism</h2>
+      <ul>
+        <li><strong>Grid corrosion</strong> — the positive grid oxidises faster as temperature rises.</li>
+        <li><strong>Water loss</strong> — gassing and evaporation accelerate, drying out sealed batteries.</li>
+        <li><strong>Self-discharge</strong> — roughly doubles with each ~10 °C rise, so a hot battery goes flat faster in storage.</li>
+      </ul>
+      <p>
+        The temperature dependence is exponential (Arrhenius behaviour): reaction rates roughly double per 10 °C, so a
+        battery that lives 6 years at 25 °C may last only ~3 years at 35 °C — the origin of the halving rule of thumb.
+      </p>
+
+      <h2>Symptoms</h2>
+      <ul>
+        <li>Shortened service life with no other obvious fault.</li>
+        <li>Corroded or swollen case, low electrolyte (flooded), dry-out (sealed).</li>
+        <li>Faster self-discharge when parked.</li>
+        <li>Weak cranking despite normal charging.</li>
+      </ul>
+
+      <h2>Measurement</h2>
+      <p>
+        There is no single "temperature gauge" — the practical signals are electrolyte specific gravity (flooded),
+        internal resistance/conductance, and water usage. The key is correlating them with the battery's operating
+        temperature. Chargers with temperature compensation measure battery temperature and adjust voltage down when
+        hot, which is the direct prevention tool.
+      </p>
+
+      <h2>Diagnosis</h2>
+      <p>
+        If a battery fails early with signs of corrosion and water loss but normal charging habits, sustained heat is
+        the usual suspect. A hot-running battery that gasses or bulges while charging points to both heat <em>and</em>
+        an over-voltage charger — see <a href="/lead-acid/charging-problems/">charging problems</a>.
+      </p>
+
+      <h2>Prevention</h2>
+      <ul>
+        <li>Use a charger with temperature compensation (lowers voltage when hot).</li>
+        <li>Add heat shielding or relocate the battery where possible.</li>
+        <li>Ventilate the bay and keep the battery clean (dirt holds heat).</li>
+        <li>Store batteries cool and charged.</li>
+      </ul>
+
+      <h2>Limitations</h2>
+      <p>
+        The "halves per 8–10 °C" figure is a <strong>rule of thumb</strong>, not a precise law — actual life depends on
+        battery construction, duty cycle and charging. But the direction is unambiguous: sustained heat always shortens
+        life, and the damage is largely irreversible once corrosion and dry-out occur.
+      </p>
+
+      <h2>World Battery Hub Analysis</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The most misunderstood fact about lead-acid batteries is that cold is annoying but
+          heat is fatal — people replace a battery that "died in winter" when it was actually aged all summer in the
+          engine bay.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The exponential temperature dependence means a few degrees of sustained heat
+          matter more than a cold snap. Understanding that reframes the whole "why did my battery die" question from
+          weather to operating temperature.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — temperature and life references.</li>
+        <li>Manufacturer technical literature (Yuasa, Varta, Exide) — temperature compensation and heat ageing.</li>
+        <li>Cross-verified with <a href="/lead-acid/charging-problems/">charging problems</a> and <a href="/lead-acid/capacity-loss/">capacity loss</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

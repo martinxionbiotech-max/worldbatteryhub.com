@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lead-Acid Capacity Loss: Causes, Symptoms and What Is Reversible';
+const description = 'Why a lead-acid battery loses capacity — sulfation, grid corrosion, active-material shedding and water loss — how to measure it, and what can and cannot be recovered.';
+const canonical = '/lead-acid/capacity-loss/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lead-acid battery capacity loss',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>Lead-Acid Capacity Loss</h1>
+      <p class="lead">
+        A lead-acid battery loses capacity for a handful of well-understood reasons. Knowing which one is at work is
+        the difference between a recoverable battery and one that is already finished.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Lead-acid capacity loss comes mainly from <strong>sulfation</strong> (hardened
+        sulfate from undercharging), <strong>grid corrosion</strong> (from overcharge, heat and age),
+        <strong>active-material shedding</strong> (from cycling and vibration), and <strong>water loss</strong> (from
+        overcharge). Early sulfation is partly reversible; corrosion, shedding and dry-out are not.
+      </div>
+
+      <h2>Cause</h2>
+      <table>
+        <thead><tr><th>Cause</th><th>What triggers it</th></tr></thead>
+        <tbody>
+          <tr><td>Sulfation</td><td>Left undercharged / stored discharged</td></tr>
+          <tr><td>Grid corrosion</td><td>Overcharge, high temperature, age</td></tr>
+          <tr><td>Active-material shedding</td><td>Deep cycling, vibration, age</td></tr>
+          <tr><td>Water loss / dry-out</td><td>Overcharge (gassing), especially sealed batteries</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Mechanism</h2>
+      <p>
+        All four reduce the amount of active material available to react, and most also raise internal resistance.
+        Sulfation hardens the sulfate so it no longer converts back; corrosion converts the conductive grid into
+        non-conductive oxide; shedding physically removes paste from the plates; dry-out removes the ion conductor.
+      </p>
+
+      <h2>Symptoms</h2>
+      <ul>
+        <li>Shorter runtime — the battery "dies" sooner under the same load.</li>
+        <li>Lower measured Ah on a capacity test.</li>
+        <li>Weaker cold start (lower CCA) from raised internal resistance.</li>
+        <li>Battery won't reach or hold full charge voltage.</li>
+      </ul>
+
+      <h2>Measurement</h2>
+      <p>
+        Capacity is measured by a controlled discharge — the <strong>C20 test</strong> drains the battery at a fixed
+        current (1/20 of rated Ah) until it reaches 10.5 V. The delivered amp-hours are the measured capacity. Compare
+        that to the rated Ah to quantify the loss. See
+        <a href="/testing/battery-capacity-testing/">capacity testing</a>.
+      </p>
+
+      <h2>Diagnosis</h2>
+      <p>
+        A conductance/CCA reading and a specific-gravity check (flooded) separate the causes: uniformly low gravity
+        and high resistance point to sulfation; visible corrosion or a bulged case points to corrosion/water loss; a
+        low reading that recovers after a long slow charge suggests reversible sulfation.
+      </p>
+
+      <h2>Prevention</h2>
+      <ul>
+        <li>Keep the battery charged (use the float stage); recharge promptly after use.</li>
+        <li>Use the correct charger voltage for the battery type (flooded vs AGM vs gel).</li>
+        <li>Avoid deep discharges and excessive heat; store cool and charged.</li>
+      </ul>
+
+      <h2>Limitations</h2>
+      <p>
+        Early sulfation can be partly reversed with a long slow charge or a controlled equalization (flooded only).
+        Corrosion, plate shedding and dry-out are <strong>permanent</strong> — no charging or additive restores lost
+        active material or electrolyte. When measured capacity falls to roughly 80% of rating, the battery is at its
+        practical end of life.
+      </p>
+
+      <h2>World Battery Hub Analysis</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The single most useful fact about capacity loss is that most of it is
+          <em>preventable and some of it is silent</em> — sulfation quietly builds over weeks of undercharge, then
+          looks like sudden failure later.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Treating "the battery died" as one event hides the real story: the damage was
+          done earlier by a charging habit. The recoverable-vs-permanent distinction is what actually decides whether
+          a battery is worth trying to save.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — capacity-loss and C20 test references.</li>
+        <li>Manufacturer maintenance guides (Yuasa, Varta, Exide) — sulfation, corrosion and water-loss diagnosis.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
