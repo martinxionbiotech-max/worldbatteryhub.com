@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What is an EFB Battery? Enhanced Flooded Battery for Start-Stop';
+const description = 'An EFB (Enhanced Flooded Battery) is an improved wet lead-acid battery with thicker plates and a better separator. It offers roughly double the cycle life of a conventional flooded battery at a lower cost than AGM — the entry-level start-stop technology.';
+const canonical = '/lead-acid/efb-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'EFB battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>What is an EFB Battery?</h1>
+      <p class="lead">
+        EFB stands for <strong>Enhanced Flooded Battery</strong>. It is still a wet (flooded) lead-acid battery, but
+        with a thicker plate design, a special separator, and an improved active material — all to survive the deep
+        partial cycling of start-stop driving.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> An EFB is a <em>hardened</em> flooded battery, not a new chemistry. It keeps
+        the liquid electrolyte but adds construction upgrades that roughly <strong>double the cycle life</strong> of a
+        conventional flooded battery at a lower price than AGM — making it the entry-level technology for start-stop
+        vehicles.
+      </div>
+
+      <h2>EFB vs conventional flooded vs AGM</h2>
+      <table>
+        <thead><tr><th>Property</th><th>Conventional flooded</th><th>EFB</th><th>AGM</th></tr></thead>
+        <tbody>
+          <tr><td>Type</td><td>Wet (flooded)</td><td>Wet, enhanced</td><td>Sealed (VRLA)</td></tr>
+          <tr><td>Cycle life</td><td>Baseline</td><td>~2× flooded</td><td>~3× flooded</td></tr>
+          <tr><td>Cost</td><td>Lowest</td><td>Mid</td><td>Highest</td></tr>
+          <tr><td>Charge acceptance</td><td>Lower</td><td>Higher than flooded</td><td>Highest</td></tr>
+          <tr><td>Start-stop fit</td><td>Poor</td><td>Yes (entry)</td><td>Yes (full)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why start-stop needs more than a flooded battery</h2>
+      <p>
+        A start-stop car shuts the engine off at every stop and restarts it constantly. Each restart is a deep
+        discharge on a battery that must then recover quickly before the next stop. A conventional flooded battery
+        wears out fast under that pattern; EFB adds the plate and separator upgrades that absorb those cycles.
+        See <a href="/lead-acid/start-stop-battery/">start-stop battery</a>.
+      </p>
+
+      <h2>When EFB is the right choice</h2>
+      <ul>
+        <li>Entry-level start-stop vehicles (the OEM-fit technology for many European start-stop cars)</li>
+        <li>Where an AGM upgrade is not required by the vehicle</li>
+        <li>Budget-conscious replacement with genuine cycle-life improvement</li>
+      </ul>
+      <p class="muted">
+        The replacement rule is strict: an EFB-equipped car should be replaced with EFB or AGM — never a downgrade to a
+        conventional flooded battery, which will fail early.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>EFB = Enhanced Flooded Battery — a wet battery with thicker plates and a better separator.</li>
+          <li>~2× the cycle life of conventional flooded, at a lower cost than AGM.</li>
+          <li>The entry-level start-stop technology; the correct (not downgraded) replacement for EFB cars.</li>
+          <li>Still flooded, so it can be vented and (unlike AGM) is not sealed.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> EFB is the honest middle ground the battery market needed — most of start-stop's
+          benefit at a price that does not force every commuter into an AGM.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The real error is not choosing between EFB and AGM; it is downgrading an EFB car
+          to a conventional flooded battery to save a few dollars. That "saving" buys a battery that will die in a
+          fraction of the service life.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — EFB construction and start-stop application references.</li>
+        <li>Manufacturer technical literature (Varta, Bosch, Exide) — EFB cycle life and charge acceptance.</li>
+        <li>Cross-verified with the <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs Flooded</a> comparison.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

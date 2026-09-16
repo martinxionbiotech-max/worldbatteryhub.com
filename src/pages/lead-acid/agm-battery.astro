@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What is an AGM Battery? Absorbent Glass Mat, CCA and Cycle Life';
+const description = 'An AGM (Absorbent Glass Mat) battery is a sealed, valve-regulated lead-acid battery where the electrolyte is absorbed into a glass-mat separator. It delivers higher CCA and more cycles than a flooded battery, which is why start-stop and luxury cars use it.';
+const canonical = '/lead-acid/agm-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'AGM battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>What is an AGM Battery?</h1>
+      <p class="lead">
+        AGM stands for <strong>Absorbent Glass Mat</strong>. It is a sealed, valve-regulated lead-acid (VRLA)
+        battery whose electrolyte is absorbed into a glass-fibre mat between the plates, instead of sloshing
+        freely like a conventional flooded battery.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> An AGM battery immobilizes its sulfuric-acid electrolyte in a glass-mat
+        separator. That single design choice makes it spill-proof, vibration-resistant, low-maintenance, and
+        electrically "tighter" — so it delivers <strong>more CCA and more charge/discharge cycles</strong> than a
+        flooded battery of the same size. It is the standard upgrade for start-stop and luxury vehicles.
+      </div>
+
+      <h2>Why the glass mat changes everything</h2>
+      <table>
+        <thead><tr><th>Property</th><th>Flooded</th><th>AGM</th></tr></thead>
+        <tbody>
+          <tr><td>Electrolyte</td><td>Free liquid</td><td>Absorbed in glass mat</td></tr>
+          <tr><td>Sealed / spill-proof</td><td>No (vented)</td><td>Yes (valve-regulated)</td></tr>
+          <tr><td>Internal resistance</td><td>Higher</td><td>Lower → higher CCA</td></tr>
+          <tr><td>Cycle life</td><td>Lower</td><td>~2–3× flooded</td></tr>
+          <tr><td>Vibration tolerance</td><td>Moderate</td><td>High</td></tr>
+          <tr><td>Water top-up</td><td>Possible</td><td>Not possible (sealed)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why AGM delivers more CCA</h2>
+      <p>
+        The glass mat holds the electrolyte tightly against the plates and the separators are thin, which lowers
+        internal resistance. Lower resistance means the battery can push out more instantaneous current — a higher
+        <a href="/lead-acid/cca/what-is-cca/">cold cranking amps (CCA)</a> rating for the same footprint. This is why
+        AGM is chosen where cranking power and quick charge acceptance matter.
+      </p>
+
+      <h2>Where AGM is used</h2>
+      <ul>
+        <li>Start-stop vehicles (frequent restarts, deep partial cycling)</li>
+        <li>Luxury / high-electrical-load cars</li>
+        <li>Motorcycles, powersports and marine</li>
+        <li>UPS and deep-cycle / solar applications (AGM deep-cycle variants)</li>
+      </ul>
+
+      <h2>Charging: the one rule to remember</h2>
+      <p>
+        AGM is sealed, so it cannot be topped up and must not be overcharged — overcharging gasses off water that
+        cannot be replaced. Charge at AGM-specific voltages (typically a slightly lower absorption voltage than
+        flooded, around 14.2–14.4 V) and <strong>never equalize</strong> an AGM. See
+        <a href="/lead-acid/lead-acid-charging/">how to charge a lead-acid battery</a>.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>AGM = Absorbent Glass Mat — a sealed VRLA battery with electrolyte held in glass fibre.</li>
+          <li>Lower internal resistance → higher CCA and faster charge acceptance than flooded.</li>
+          <li>~2–3× the cycle life and high vibration tolerance; the start-stop and luxury-car standard.</li>
+          <li>Sealed = never top up, never equalize; overcharging is permanently damaging.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> For most modern cars, AGM is no longer a premium choice — it is the correct one,
+          because start-stop and rising electrical loads punish a conventional flooded battery in ways it was never
+          designed for.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The flooded battery is a solved 20th-century product; the AGM is the same
+          chemistry re-engineered around the glass mat for the 21st-century duty cycle. The cost difference is real,
+          but installing a flooded battery in a start-stop car is a false economy.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — AGM construction and valve-regulated lead-acid references.</li>
+        <li>Manufacturer technical literature (Varta, Bosch, Yuasa, Clarios) — AGM CCA, cycle life and charging limits.</li>
+        <li>Cross-verified with the <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs Flooded</a> comparison.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Truck Battery: High CCA, High Capacity and the N-Series Explained';
+const description = 'Truck and heavy-duty batteries deliver very high cold cranking amps (CCA) and capacity (Ah) in large, vibration-resistant cases — the JIS N-series (N150, N200) and BCI Group 31/4D/8D are the common forms, in 12V or 24V systems.';
+const canonical = '/lead-acid/truck-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Truck battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>Truck Battery: High CCA, High Capacity, and the N-Series</h1>
+      <p class="lead">
+        A truck (heavy-duty) battery is a large lead-acid battery built for <strong>very high cold cranking amps
+        (CCA)</strong> to turn over big diesel engines, and high capacity (Ah) to run the vehicle's electrical load —
+        all in a rugged, vibration-resistant case.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Truck batteries come in large formats — the JIS <strong>N-series</strong>
+        (N150, N200, N200L) and BCI <strong>Group 31, 4D and 8D</strong> — delivering hundreds to over a thousand
+        cold cranking amps. Heavy trucks often use <strong>24V systems</strong> (two 12V batteries in series), so the
+        battery spec and the system voltage are two separate things to get right.
+      </div>
+
+      <h2>Common truck battery formats</h2>
+      <table>
+        <thead><tr><th>Group / model</th><th>Typical capacity</th><th>Typical CCA</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Group 31</td><td>~100 Ah</td><td>~900 A</td><td>Widespread North American heavy-duty</td></tr>
+          <tr><td>N150 (145G51)</td><td>~135 Ah</td><td>~900 A</td><td>JIS heavy-duty</td></tr>
+          <tr><td>N200 (190H52)</td><td>~200 Ah</td><td>~1100 A</td><td>JIS, very high capacity/CCA</td></tr>
+          <tr><td>8D</td><td>~200 Ah</td><td>~1400 A</td><td>Large BCI, heavy equipment</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        CCA is standard-dependent — a JIS value (tested at −15°C) reads higher than an EN/SAE value (tested at −18°C)
+        for the same battery. Compare only within one standard. See
+        <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>.
+      </p>
+
+      <h2>12V vs 24V: read the system, not just the battery</h2>
+      <p>
+        Light and medium trucks run on 12V. Many heavy trucks, buses and off-highway machines run on
+        <strong>24V</strong>, built from two 12V batteries wired in series. The two batteries must be matched — same
+        chemistry, capacity and age — or the pair ages unevenly and fails early.
+      </p>
+
+      <h2>What makes a truck battery different</h2>
+      <ul>
+        <li><strong>Thicker plates</strong> — for high capacity and durability under vibration and deep cycling.</li>
+        <li><strong>High CCA</strong> — diesel engines compress harder and crank under more load, especially cold.</li>
+        <li><strong>Rugged case and terminals</strong> — built for vibration, not just cranking.</li>
+        <li><strong>Deep-cycle tolerance</strong> — truck batteries power hotel loads (lights, lift gates, sleeper cabs), not just starting.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Truck batteries are large, high-CCA, high-Ah, vibration-resistant lead-acid batteries.</li>
+          <li>Common formats: JIS N150/N200 and BCI Group 31/4D/8D.</li>
+          <li>Heavy trucks often use 24V (two matched 12V in series) — never mix mismatched batteries.</li>
+          <li>Always state the CCA standard when comparing truck batteries.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The most expensive truck-battery mistake is not buying too small a battery — it is
+          mismatching a 24V pair, which quietly destroys both batteries long before their rated life.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Two mismatched 12V batteries in series do not "average out" — the weaker one is
+          dragged down and the pair fails together. Matching chemistry, capacity and age is the whole ballgame in a
+          24V truck system.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — Group 31/4D/8D size and rating references.</li>
+        <li>JIS D5301 — N-series (N150/N200) capacity and CCA.</li>
+        <li>Manufacturer datasheets (Varta, Exide, GS Yuasa, Dingwei/Chengguang) — truck battery CCA and capacity.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

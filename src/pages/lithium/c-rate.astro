@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What is Battery C-Rate? Charge and Discharge Rate Explained';
+const description = 'C-rate expresses a battery\'s charge or discharge current as a multiple of its capacity — 1C empties a battery in one hour, 0.5C in two, 2C in 30 minutes. Charge and discharge C-rates are separate limits, and high C-rate costs capacity and life.';
+const canonical = '/lithium/c-rate/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery C-rate',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Last reviewed 2026-09-16</p>
+      <h1>What is Battery C-Rate?</h1>
+      <p class="lead">
+        C-rate is how a battery's current is expressed relative to its capacity. It is the language that tells you
+        how fast a battery is being charged or discharged — and it applies to both lithium and lead-acid.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>1C</strong> rate moves the battery's full rated capacity in one hour —
+        so a 100 Ah cell at 1C charges or discharges at 100 A. <strong>0.5C</strong> is 50 A (two hours),
+        <strong>2C</strong> is 200 A (30 minutes). Charge and discharge C-rates are <em>separate</em> limits, and higher
+        C-rate means more heat, less usable capacity, and faster ageing.
+      </div>
+
+      <h2>The basic arithmetic</h2>
+      <table>
+        <thead><tr><th>C-rate</th><th>Current (for a 100 Ah battery)</th><th>Time to full/empty</th></tr></thead>
+        <tbody>
+          <tr><td>0.5C</td><td>50 A</td><td>2 hours</td></tr>
+          <tr><td>1C</td><td>100 A</td><td>1 hour</td></tr>
+          <tr><td>2C</td><td>200 A</td><td>30 minutes</td></tr>
+          <tr><td>3C</td><td>300 A</td><td>20 minutes</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Charge and discharge are different limits</h2>
+      <p>
+        A cell is usually rated with <em>two</em> C-rates: a <strong>maximum charge rate</strong> (often lower, e.g.
+        0.5C–1C for energy cells) and a <strong>maximum discharge rate</strong> (often higher, especially for power
+        cells). Exceeding the rated charge rate is the classic cause of
+        <a href="/lithium/lithium-degradation/">lithium plating</a>; exceeding the discharge rate overheats and
+        stresses the cell. The datasheet, not intuition, sets both limits.
+      </p>
+
+      <h2>Why higher C-rate costs capacity and life</h2>
+      <p>
+        At high current, a battery delivers <em>less usable energy</em> than at low current — internal resistance and
+        diffusion cannot keep up, so more energy is lost as heat. The same cell can show a lower measured Ah at 3C
+        than at 0.2C. High C-rate also accelerates degradation (more heat, more stress), which is why fast charging
+        and long battery life are in direct tension.
+      </p>
+
+      <h2>Where C-rate matters in practice</h2>
+      <ul>
+        <li><strong>EV fast charging</strong> — "150 kW charging" is a high effective C-rate; it trades time for heat and ageing.</li>
+        <li><strong>Power tools / drones</strong> — high-discharge cells are built for sustained high C (power cells).</li>
+        <li><strong>Energy storage</strong> — runs at low C (0.25C–0.5C) for long life.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>C-rate = current as a multiple of capacity; 1C empties/fills in one hour.</li>
+          <li>Charge and discharge C-rates are separate limits — read the datasheet for both.</li>
+          <li>High C-rate costs usable capacity and accelerates ageing; heat is the mechanism.</li>
+          <li>Fast charging and long life are in direct tension.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> C-rate is the number that explains why "fast charging" is not free — every
+          convenience of speed is paid in heat and shorter life, and the datasheet's charge-rate limit is the honest
+          bill.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Users read range and price and ignore C-rate, then wonder why fast-charging
+          batteries age faster. The C-rate is where the energy-storage physics actually lives.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Cell manufacturer datasheets (CATL, LG, Panasonic) — charge/discharge C-rate limits.</li>
+        <li>Peer-reviewed literature on rate capability and C-rate ageing.</li>
+        <li>Cross-verified with <a href="/lithium/lithium-charging-cc-cv/">CC/CV charging</a> and <a href="/lithium/lithium-degradation/">degradation</a> references.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What is a Gel Battery? The Gelled-Electrolyte VRLA for Deep Cycle';
+const description = 'A gel battery is a sealed valve-regulated lead-acid (VRLA) battery whose electrolyte is thickened into a silica gel. It excels at slow, deep discharge and vibration resistance, but delivers lower CCA than AGM and is sensitive to overcharging.';
+const canonical = '/lead-acid/gel-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Gel battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>What is a Gel Battery?</h1>
+      <p class="lead">
+        A gel battery is a sealed, <strong>valve-regulated lead-acid (VRLA)</strong> battery whose sulfuric-acid
+        electrolyte is thickened into a <strong>silica gel</strong>, so it cannot spill and does not need topping up.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A gel battery immobilizes its electrolyte as a gel, making it spill-proof and
+        vibration-tolerant and well suited to <strong>slow, deep discharge</strong> (solar, marine, mobility, golf
+        carts). Its trade-off is a <strong>lower CCA than AGM</strong> — the thick gel raises internal resistance —
+        and a strict no-overcharge rule.
+      </div>
+
+      <h2>Gel vs AGM vs flooded</h2>
+      <table>
+        <thead><tr><th>Property</th><th>Gel</th><th>AGM</th><th>Flooded</th></tr></thead>
+        <tbody>
+          <tr><td>Electrolyte</td><td>Silica gel</td><td>Absorbed glass mat</td><td>Free liquid</td></tr>
+          <tr><td>CCA</td><td>Lower</td><td>Higher</td><td>Mid</td></tr>
+          <tr><td>Deep-discharge tolerance</td><td>High</td><td>High</td><td>Lower</td></tr>
+          <tr><td>Slow-discharge fit</td><td>Excellent</td><td>Good</td><td>Fair</td></tr>
+          <tr><td>Overcharge sensitivity</td><td>High (gel voids)</td><td>Moderate</td><td>Lower (toppable)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Where gel batteries win</h2>
+      <ul>
+        <li>Solar and off-grid storage (slow, deep, daily cycling)</li>
+        <li>Marine and RV house banks</li>
+        <li>Mobility scooters, wheelchairs, golf carts</li>
+        <li>Anywhere spill-proofing and vibration tolerance matter</li>
+      </ul>
+
+      <h2>The two rules that matter</h2>
+      <ol>
+        <li><strong>Never overcharge.</strong> Overcharging a gel battery gasses the electrolyte, and the gas forms
+        permanent voids and cracks in the gel that cannot be repaired.</li>
+        <li><strong>Charge at gel-specific voltages.</strong> Gel uses a lower absorption voltage than AGM or flooded.
+        A charger set for the wrong type is a common cause of gel failure — see
+        <a href="/lead-acid/lead-acid-charging/">how to charge a lead-acid battery</a>.</li>
+      </ol>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Gel = gelled-electrolyte VRLA; sealed, spill-proof, vibration-tolerant.</li>
+          <li>Best for slow, deep discharge (solar, marine, mobility); lower CCA than AGM.</li>
+          <li>Strict no-overcharge rule — gassing creates permanent gel voids.</li>
+          <li>Charge only at gel-specific voltages.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Gel is a specialist's battery — superb for the deep, slow discharge it was built
+          for, and the wrong choice when cranking power is what you actually need.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The lower CCA is not a defect; it is the price of the gel's deep-discharge and
+          vibration virtues. Choosing gel for a starting application, or AGM for a slow solar bank, is the classic
+          type-mismatch that shortens service life.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — gel / valve-regulated lead-acid construction references.</li>
+        <li>Manufacturer technical literature (Varta, EnerSys, Trojan) — gel charging limits and deep-cycle ratings.</li>
+        <li>Cross-verified with the <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs Flooded</a> comparison.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

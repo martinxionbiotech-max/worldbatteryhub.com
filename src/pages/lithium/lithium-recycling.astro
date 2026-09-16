@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lithium Battery Recycling: Pyrometallurgy, Hydrometallurgy and Direct Recycling';
+const description = 'Lithium battery recycling recovers valuable materials — cobalt, nickel, lithium — from spent cells via pyrometallurgy (smelting), hydrometallurgy (leaching) or direct recycling. The method decides what is recovered and at what cost.';
+const canonical = '/lithium/lithium-recycling/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium battery recycling',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Last reviewed 2026-09-16</p>
+      <h1>Lithium Battery Recycling</h1>
+      <p class="lead">
+        Lithium batteries are recycled to recover <strong>cobalt, nickel, lithium and copper</strong> — valuable,
+        supply-constrained materials — and to keep hazardous cell contents out of landfill. The method used decides
+        what gets recovered and at what cost.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> There are three main routes: <strong>pyrometallurgy</strong> (high-temperature
+        smelting, recovers metals but burns off lithium and electrolyte), <strong>hydrometallurgy</strong> (chemical
+        leaching, recovers most metals including lithium), and <strong>direct recycling</strong> (recovers cathode
+        material with less processing). The choice is an economics-and-recovery trade-off.
+      </div>
+
+      <h2>The three routes compared</h2>
+      <table>
+        <thead><tr><th>Method</th><th>How it works</th><th>Recovers</th><th>Trade-off</th></tr></thead>
+        <tbody>
+          <tr><td>Pyrometallurgy</td><td>Smelting / high heat</td><td>Cobalt, nickel, copper alloy</td><td>Robust, but loses lithium (to slag) and is energy-intensive</td></tr>
+          <tr><td>Hydrometallurgy</td><td>Shred → "black mass" → acid leaching</td><td>Most metals incl. lithium</td><td>Higher recovery, but more chemical handling</td></tr>
+          <tr><td>Direct recycling</td><td>Recover cathode material with minimal breakdown</td><td>Cathode active material</td><td>Lower energy, but needs clean sorted feedstock</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What "black mass" is</h2>
+      <p>
+        The first mechanical step shreds spent cells and separates out the casing, foil and separator, leaving a
+        fine powder of mixed electrode material called <strong>black mass</strong>. It is the common feedstock for the
+        chemical (hydrometallurgical) route, and its composition — and therefore its value — depends on the battery
+        chemistry it came from.
+      </p>
+
+      <h2>Why recycling matters (and why it is hard)</h2>
+      <ul>
+        <li><strong>Value recovery</strong> — cobalt and nickel are expensive and geographically concentrated; recovering them closes the supply loop.</li>
+        <li><strong>Safety</strong> — spent cells can still hold charge and energy; they must be handled and discharged safely before processing.</li>
+        <li><strong>Regulation</strong> — the EU Battery Regulation and other rules set collection and recycled-content targets, pushing the industry forward.</li>
+        <li><strong>Economics</strong> — LFP cells (no cobalt/nickel) are cheaper to recycle but yield less recovered value, which shapes which chemistries get recycled where.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Three routes: pyrometallurgy (smelting), hydrometallurgy (leaching), direct recycling.</li>
+          <li>Hydrometallurgy recovers lithium; pyrometallurgy largely does not.</li>
+          <li>"Black mass" is the shredded mixed-electrode feedstock for chemical recovery.</li>
+          <li>LFP (no cobalt/nickel) yields less recovered value, which affects recycling economics.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The honest headline on battery recycling is that it is an economics problem, not a
+          technology problem — the chemistry exists; what decides whether a battery is recycled is whether the
+          recovered materials are worth more than the cost of getting them out.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Cobalt-rich NMC is recycled because cobalt pays for it; cobalt-free LFP is often
+          not, because nothing valuable enough comes back. Regulation exists precisely to close that gap.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not investment or purchasing advice.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Peer-reviewed literature on pyrometallurgical, hydrometallurgical and direct recycling routes.</li>
+        <li>EU Battery Regulation — collection and recycled-content targets.</li>
+        <li>Industry reporting on black-mass recovery and LFP-vs-NMC recycling economics.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

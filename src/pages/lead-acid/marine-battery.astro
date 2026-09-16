@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Marine Battery: Cranking, Deep-Cycle and Dual-Purpose Explained';
+const description = 'Marine batteries come in three types — starting (MCA-rated cranking), deep-cycle (for trolling motors and house loads), and dual-purpose. Choosing the wrong type is the most common marine-battery mistake.';
+const canonical = '/lead-acid/marine-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Marine battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub Research Team"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Last reviewed 2026-09-16</p>
+      <h1>Marine Battery: Cranking, Deep-Cycle and Dual-Purpose</h1>
+      <p class="lead">
+        A "marine battery" is not one thing — it is a family of three: <strong>starting (cranking)</strong> batteries,
+        <strong>deep-cycle</strong> batteries, and <strong>dual-purpose</strong> batteries. The mistake that strands
+        boaters is using a cranking battery where a deep-cycle battery belongs.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Marine <strong>starting</strong> batteries deliver a big burst to crank the
+        engine and are rated in <strong>MCA (Marine Cranking Amps, at 0°C)</strong>, not CCA. Marine
+        <strong>deep-cycle</strong> batteries deliver steady power over long periods for trolling motors and house
+        loads. <strong>Dual-purpose</strong> batteries compromise between the two.
+      </div>
+
+      <h2>The three types</h2>
+      <table>
+        <thead><tr><th>Type</th><th>Built for</th><th>Rating</th><th>Plate design</th></tr></thead>
+        <tbody>
+          <tr><td>Starting</td><td>Engine cranking</td><td>MCA (0°C)</td><td>Many thin plates (high burst)</td></tr>
+          <tr><td>Deep-cycle</td><td>Trolling motor, house loads</td><td>Ah + cycle life</td><td>Fewer thick plates (deep discharge)</td></tr>
+          <tr><td>Dual-purpose</td><td>Both, in a pinch</td><td>MCA + Ah</td><td>Compromise design</td></tr>
+        </tbody>
+      </table>
+
+      <h2>MCA is not CCA</h2>
+      <p>
+        Marine cranking amps are tested at <strong>0°C (32°F)</strong> — warmer than CCA's −18°C — so an MCA number is
+        always <em>higher</em> than the same battery's CCA, typically by 20–25%. An "800 MCA" marine battery is closer
+        to a <strong>640 CCA</strong> car battery, not an 800 CCA one. See
+        <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA vs MCA</a>.
+      </p>
+
+      <h2>The mistake that strands boaters</h2>
+      <p>
+        Using a starting battery to run a trolling motor (a deep, sustained discharge) quickly destroys it, because
+        starting batteries have thin plates designed for short bursts, not deep cycling. The two jobs are
+        electrically opposite, which is exactly why the deep-cycle type exists.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Marine batteries are starting, deep-cycle, or dual-purpose — not one interchangeable type.</li>
+          <li>Starting batteries are MCA-rated (0°C), not CCA (−18°C); MCA is always higher.</li>
+          <li>Deep-cycle is for trolling motors and house loads; starting is for the engine.</li>
+          <li>Corrosion-resistant terminals and rugged cases are standard marine features.</li>
+        </ul>
+      </div>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The single most useful thing to know about marine batteries is that "starting"
+          and "deep-cycle" are opposites — and using one in the other's job is how most marine batteries die early.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The MCA-vs-Ah distinction is the whole story: a cranking battery is a sprinter, a
+          deep-cycle is a marathoner. Boaters who understand that one contrast stop buying the wrong battery.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Battery Council International (BCI) — marine battery types and MCA definition.</li>
+        <li>Manufacturer literature (Varta, Exide, Trojan, Odyssey) — marine starting vs deep-cycle vs dual-purpose.</li>
+        <li>Cross-verified with the <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA vs MCA</a> reference.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
