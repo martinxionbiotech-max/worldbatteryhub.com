@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Why Is My Car Battery Draining? The Parasitic Draw Diagnosis';
+const description = 'A car battery that goes flat overnight usually has a parasitic draw — something staying on after the key leaves. The diagnosis path from drain to culprit.';
+const canonical = '/lead-acid/car-battery-draining/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Car battery draining',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why does my car battery keep dying overnight?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually a parasitic draw — something staying powered after the key is out (lights, alarm, infotainment, a stuck relay). Normal draw is tens of milliamps; a flat battery overnight means something is drawing far more, or the battery itself can no longer hold charge.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you find a parasitic battery drain?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Measure the sleep current with an ammeter (normal is roughly 20-50 mA), then pull fuses one by one — the fuse whose removal drops the current is the circuit hiding the drain. Then trace that circuit to the culprit.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Problems · Last reviewed 2026-09-16</p>
+      <h1>Why Is My Car Battery Draining? The Parasitic Draw Diagnosis</h1>
+      <p class="lead">
+        When a healthy battery goes flat overnight, the battery is usually innocent — the car is awake while you
+        sleep, and the diagnosis is finding which circuit refused to shut down.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A car battery that drains overnight usually has a <strong>parasitic
+        draw</strong> — something staying powered after the key is out: lights, alarm, infotainment, a stuck relay.
+        Normal sleep current is roughly <strong>20–50 mA</strong>; a flat battery by morning means far more is
+        flowing, or the battery can no longer hold what
+        <a href="/lead-acid/self-discharge/">self-discharge</a> asks of it.
+      </div>
+
+      <h2>The diagnosis path</h2>
+      <table>
+        <thead><tr><th>Step</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Verify the battery</strong></td><td><a href="https://testing.worldbatteryhub.com/cca-testing/">Test it</a> — a weak battery mimics a drain</td></tr>
+          <tr><td><strong>2. Measure sleep current</strong></td><td>Ammeter in series — normal ~20–50 mA after shutdown</td></tr>
+          <tr><td><strong>3. Pull fuses</strong></td><td>One by one — the fuse that drops the current marks the circuit</td></tr>
+          <tr><td><strong>4. Trace the circuit</strong></td><td>Lights, aftermarket devices, relays are the usual culprits</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The usual culprits</h2>
+      <p>
+        Aftermarket accessories lead the list — dashcams on constant power, alarms, phone chargers left plugged
+        in — followed by interior lights, trunk lights with failed switches, and modules that never enter sleep.
+        The pattern is constant: the draw hides in what was <em>added</em> or what <em>fails to switch off</em>,
+        rarely in the factory design itself.
+      </p>
+
+      <h2>Drain vs a dying battery</h2>
+      <p>
+        The two confuse each other. A battery that has lost capacity (age, heat, deep discharges) goes flat from a
+        <em>normal</em> draw, while a healthy battery goes flat from an <em>abnormal</em> one. The test separates
+        them: verify the battery first, then measure the draw — the order that prevents replacing a good battery
+        for a circuit's sin (see <a href="/lead-acid/how-long-does-a-car-battery-last/">lifespan</a>).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The overnight-flat mystery is almost always a measurement problem solved in
+          order — battery first, current second, fuses third — and the discipline of that order saves more
+          misdiagnosed batteries than any tool.</p>
+        <p>
+          <strong>Reasoning:</strong> Drain and battery failure produce identical symptoms through opposite causes.
+          Testing the battery before chasing the circuit avoids the expensive classic — a new battery installed to
+          fix a draw that empties it within the month.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from automotive electrical references and BCI guidance.</p>
+      <ul>
+        <li>Automotive electrical references — parasitic draw measurement and diagnosis.</li>
+        <li>Battery Council International (BCI) — battery testing and application guidance.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
