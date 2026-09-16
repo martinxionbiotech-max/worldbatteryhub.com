@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = '12V Battery Voltage Chart: State of Charge by Resting Voltage';
+const description = 'A 12V lead-acid battery\u2019s state of charge can be read from its resting voltage — 12.6-12.7V full, 12.2V half. The chart, the caveats, and how to measure it correctly.';
+const canonical = '/lead-acid/12v-voltage-chart/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: '12V battery voltage chart',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What voltage is a fully charged 12V battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A fully charged 12V lead-acid battery reads about 12.6-12.7V at rest. 12.4V is roughly 75%, 12.2V about 50%, 12.0V about 25%, and 11.8V or below is effectively empty. The reading must be taken after the battery has rested, not while charging or discharging.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why must the battery rest before measuring voltage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Charging or discharging distorts the reading — the surface charge after charging reads artificially high, and a load reads artificially low. The battery should rest for several hours (or overnight) before the voltage reflects the true state of charge.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Practical · Last reviewed 2026-09-16</p>
+      <h1>12V Battery Voltage Chart: State of Charge by Resting Voltage</h1>
+      <p class="lead">
+        A multimeter and a few minutes of patience are enough to read a lead-acid battery's state of charge — but
+        only if the reading is taken the right way.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A 12V lead-acid battery's <strong>state of charge maps to its resting
+        voltage</strong>: <strong>12.6–12.7V = full, 12.4V ≈ 75%, 12.2V ≈ 50%, 12.0V ≈ 25%, 11.8V or below =
+        effectively empty</strong>. The reading must be taken <strong>at rest</strong> — hours after charging or
+        load — or the number is misleading.
+      </div>
+
+      <h2>The voltage-to-charge chart</h2>
+      <table>
+        <thead><tr><th>Resting voltage (12V)</th><th>State of charge</th></tr></thead>
+        <tbody>
+          <tr><td>12.6–12.7V</td><td>100%</td></tr>
+          <tr><td>12.4V</td><td>~75%</td></tr>
+          <tr><td>12.2V</td><td>~50%</td></tr>
+          <tr><td>12.0V</td><td>~25%</td></tr>
+          <tr><td>11.8V or below</td><td>Discharged</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Approximate values at room temperature for a healthy flooded/AGM battery.</p>
+
+      <h2>The rest requirement</h2>
+      <p>
+        Voltage only reflects state of charge when the battery is <strong>resting</strong>. Just after charging,
+        the surface charge inflates the reading (a just-charged battery can read 13V+ while still warm); under
+        load, the reading sags. The reliable method: disconnect or switch off, wait several hours — ideally
+        overnight — then measure.
+      </p>
+
+      <h2>Why this is not a capacity test</h2>
+      <p>
+        The voltage chart reads <em>state of charge</em>, not <em>capacity</em>. An old battery can read a full
+        12.6V while holding only a fraction of its rated amp-hours — the voltage says how full the remaining tank
+        is, not how big the tank is (see
+        <a href="/testing/battery-capacity-testing/">capacity testing</a> for the difference).
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> The voltage chart is the most useful ten-minute diagnostic in lead-acid — as
+          long as the measurement is taken at rest, because every wrong reading starts with impatience.</p>
+        <p>
+          <strong>Reasoning:</strong> The mapping itself is simple; the discipline (rest, then measure) is what people
+          skip. Do the measurement right and you get a true state-of-charge read for free; do it wrong and the chart
+          tells you nothing.</p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and BCI guidance.</p>
+      <ul>
+        <li>Battery Council International (BCI) — open-circuit voltage vs state of charge.</li>
+        <li>Manufacturer documentation — resting-voltage reference values.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
