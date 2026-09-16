@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Solid-State Battery: What Changes When the Liquid Goes';
+const description = 'Solid-state batteries replace the liquid electrolyte with a solid one — enabling higher energy density and better safety, at the cost of hard manufacturing. Status and outlook.';
+const canonical = '/lithium/solid-state-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Solid-state battery',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a solid-state battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It replaces the flammable liquid electrolyte of a lithium cell with a solid electrolyte. The solid enables a lithium-metal anode and higher energy density, and removes most of the fire risk — but it is hard to manufacture at scale, which is why it is still emerging.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When will solid-state batteries arrive?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Early small-scale and premium-vehicle deployments are appearing through 2026-2028; mass-market scale is still years away. The pattern is the usual one: first in high-end applications where the premium is affordable, then down the cost curve.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Chemistries · Last reviewed 2026-09-16</p>
+      <h1>Solid-State Battery: What Changes When the Liquid Goes</h1>
+      <p class="lead">
+        Every lithium battery on the road today carries a flammable liquid electrolyte. The solid-state battery
+        removes it — and that one change unlocks the two things the industry wants most.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>solid-state battery</strong> replaces the liquid electrolyte with a
+        <strong>solid electrolyte</strong>. The solid permits a <strong>lithium-metal anode</strong>, raising energy
+        density toward ~400–500 Wh/kg, and removes most of the
+        <a href="/lithium/thermal-runaway/">thermal-runaway</a> fuel — the trade is a much harder manufacturing
+        problem that is still being solved.
+      </div>
+
+      <h2>What the solid electrolyte changes</h2>
+      <table>
+        <thead><tr><th></th><th>Liquid electrolyte (today)</th><th>Solid electrolyte</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flammability</strong></td><td>Flammable — the runaway fuel</td><td>Mostly non-flammable</td></tr>
+          <tr><td><strong>Anode</strong></td><td>Graphite (lithium metal unsafe)</td><td>Lithium metal possible → higher energy</td></tr>
+          <tr><td><strong>Energy density</strong></td><td>~150–220 Wh/kg</td><td>~400–500 Wh/kg potential</td></tr>
+          <tr><td><strong>Manufacturing</strong></td><td>Mature</td><td>Hard — interface, pressure, scale</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why it is not here yet</h2>
+      <p>
+        The obstacle is manufacturing, not chemistry. Solid electrolytes must maintain perfect contact with the
+        electrodes as the cell swells and shrinks, and they are brittle and sensitive to moisture. Producing them
+        at automotive scale and cost is the unsolved part — which is why progress arrives first in premium and
+        low-volume applications, then down the cost curve, like every battery technology before it.
+      </p>
+
+      <h2>What to believe and what to discount</h2>
+      <p>
+        The direction is real — solid electrolytes do raise energy and safety. What to discount is timelines:
+        "revolutionary next year" claims have repeated for a decade. The honest read: solid-state will arrive
+        <strong>top-down</strong> (premium first, mass market later), while today's LFP and NMC keep improving
+        underneath it — which narrows the gap solid-state must clear.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Solid-state is the industry's best-defined next step — the chemistry is
+          convincing, the manufacturing is not yet — and the honest forecast is top-down adoption over years, not a
+          sudden lithium replacement.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> Every battery advance arrives through premium niches first, because the cost curve
+          needs volume to descend. Meanwhile incumbent lithium keeps improving, which raises the bar. The right posture
+          is to track solid-state as a real but gradual shift — not to believe the revolution calendar.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from cell-manufacturer roadmaps and battery engineering references. Figures are typical ranges and targets.</p>
+      <ul>
+        <li>Cell-manufacturer roadmaps — solid-state programmes and targets.</li>
+        <li>Battery engineering references — solid electrolyte materials and interfaces.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>

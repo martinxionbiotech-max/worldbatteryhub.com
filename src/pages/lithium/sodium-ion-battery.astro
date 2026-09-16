@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Sodium-Ion Battery: The Cheaper Alternative to Lithium?';
+const description = 'Sodium-ion batteries work like lithium-ion but use abundant sodium — cheaper materials, lower energy density, and an emerging role in storage and budget EVs.';
+const canonical = '/lithium/sodium-ion-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Sodium-ion battery',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-16',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a sodium-ion battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A sodium-ion battery works on the same principle as lithium-ion but shuttles sodium ions instead of lithium. Sodium is abundant and cheap, which lowers material cost, but sodium-ion has lower energy density — around 120-160 Wh/kg — so it suits storage and budget vehicles rather than long-range EVs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will sodium-ion replace lithium-ion?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not entirely. Sodium-ion will take the cost-sensitive, energy-flexible segments — grid storage, budget EVs, two-wheelers — while lithium (especially LFP and NMC) keeps the high-energy segments. It is a complement and price hedge more than a replacement.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-16"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Chemistries · Last reviewed 2026-09-16</p>
+      <h1>Sodium-Ion Battery: The Cheaper Alternative to Lithium?</h1>
+      <p class="lead">
+        The newest chemistry in commercial batteries replaces the rarest ingredient — lithium — with one of the most
+        common elements on Earth. The trade is lower energy for lower cost.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>sodium-ion battery</strong> works on the same shuttling principle as
+        lithium-ion but moves <strong>sodium ions</strong> between the electrodes. Sodium is <strong>abundant and
+        cheap</strong> (and works with aluminium on both electrodes), so materials cost less — but energy density is
+        lower, roughly <strong>120–160 Wh/kg</strong>, which positions it for <strong>grid storage and budget
+        vehicles</strong> rather than long-range EVs.
+      </div>
+
+      <h2>Sodium-ion vs lithium-ion</h2>
+      <table>
+        <thead><tr><th></th><th>Sodium-ion</th><th>Lithium-ion (LFP)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Energy density</strong></td><td>~120–160 Wh/kg</td><td>~90–160 Wh/kg (LFP)</td></tr>
+          <tr><td><strong>Raw material</strong></td><td>Sodium — abundant, cheap</td><td>Lithium — concentrated supply</td></tr>
+          <tr><td><strong>Cold performance</strong></td><td>Good</td><td>Weaker (charge limits near 0°C)</td></tr>
+          <tr><td><strong>Maturity</strong></td><td>Early commercialisation</td><td>Mature</td></tr>
+          <tr><td><strong>Best fit</strong></td><td>Storage, budget EVs, two-wheelers</td><td>EVs, storage, portable</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why sodium is rising now</h2>
+      <p>
+        Two forces: <strong>cost</strong> and <strong>supply</strong>. Sodium removes the lithium-supply question
+        entirely, and its materials avoid the price spikes lithium has suffered. As LFP prices have collapsed, the
+        sodium value case shifted from "much cheaper" toward "cheaper materials plus a hedge against lithium
+        supply" — which is why major cell makers are commercialising it mainly for storage and budget segments.
+      </p>
+
+      <h2>What it is not</h2>
+      <p>
+        Sodium-ion is not a lithium killer. Its energy density ceiling keeps it out of long-range EVs, and lithium's
+        own price collapse has narrowed the cost gap. The realistic future is a <strong>chemistry split</strong>:
+        lithium for energy-dense applications, sodium where cost and material security dominate — a hedge, not a
+        replacement.
+      </p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>Position:</strong> Sodium-ion's real value is not beating lithium on performance — it is removing
+          the supply question from the cost-sensitive segments, which is why its future is storage and budget
+          transport, not long-range EVs.
+        </p>
+        <p>
+          <strong>Reasoning:</strong> The energy-density ceiling is structural, not a teething problem. Sodium will slot
+          in where cost per kWh and material security matter more than weight — exactly the segments where lithium's
+          advantage is thinnest. Reading it as a lithium replacement misses where it actually wins.
+        </p>
+        <p class="muted"><em>This is the author's editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from cell-manufacturer announcements and battery engineering references. Energy-density figures are typical ranges.</p>
+      <ul>
+        <li>Cell-manufacturer announcements (CATL, BYD) — sodium-ion product lines.</li>
+        <li>Battery engineering references — sodium-ion electrochemistry and energy density.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-16</p>
+    </div>
+  </section>
+</BaseLayout>
