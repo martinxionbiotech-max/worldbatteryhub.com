@@ -19,7 +19,7 @@ const productJsonLd = {
   url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
 };
 
-const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source } = p;
+const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source, brand_note } = p;
 const catName = productsData.categories[category] ? productsData.categories[category][0] : category;
 const knowLinks = {
   'group-sizes': { href: '/lead-acid/battery-group-sizes/', label: 'Battery group sizes explained' },
@@ -54,6 +54,12 @@ const related = productsData.products.filter((x) => x.category === category && x
         Powsea OEM battery, category {catName}. Bulk supply and private labelling from the manufacturer —
         specifications below as published on the source site.
       </p>
+
+      {brand_note && (
+        <div class="takeaways">
+          <strong>Brand relationship:</strong> {brand_note}
+        </div>
+      )}
 
       <div class="takeaways">
         <strong>Direct answer:</strong> {description}

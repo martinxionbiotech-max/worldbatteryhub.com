@@ -503,7 +503,8 @@
     "cca"
    ],
    "description": "The Bateria Bosch S4 Equivalent Battery from Powsea is a high-performance, maintenance-free lead-acid battery designed for a wide range of passenger cars, SUVs, and light commercial vehicles.",
-   "source": "Powsea OEM manufacturer — specifications as published, 2026-09"
+   "source": "Powsea OEM manufacturer — specifications as published, 2026-09",
+   "brand_note": "Independent reference — not affiliated with Bosch. \"Equivalent\" refers to dimensional and rating compatibility only."
   },
   {
    "id": "din66-mf-equivalent-powsea-car-lead-acid-battery",
@@ -572,7 +573,8 @@
     "cca"
    ],
    "description": "Powsea BCI Group 51R high-performance battery, Duralast Gold 51R-DLG equivalent. 12V maintenance-free lead-acid, ideal for compact Japanese and American cars. OEM/ODM bulk supply, custom branding. Factory direct from China. 🔗 Also check 38B19L and 44B19L",
-   "source": "Powsea OEM manufacturer — specifications as published, 2026-09"
+   "source": "Powsea OEM manufacturer — specifications as published, 2026-09",
+   "brand_note": "Independent reference — not affiliated with Duralast/AutoZone. \"Equivalent\" refers to dimensional and rating compatibility only."
   },
   {
    "id": "efb-65-equivalent-powsea-car-battery-bulk-sale",
@@ -618,7 +620,8 @@
     "cca"
    ],
    "description": "The Exide AGM Battery Equivalent by Powsea is a high-performance, maintenance-free Absorbent Glass Mat (AGM) battery designed for start-stop vehicles, high-energy demand applications, and deep-cycle performance.",
-   "source": "Powsea OEM manufacturer — specifications as published, 2026-09"
+   "source": "Powsea OEM manufacturer — specifications as published, 2026-09",
+   "brand_note": "Independent reference — not affiliated with Exide. \"Equivalent\" refers to dimensional and rating compatibility only."
   },
   {
    "id": "group-27-deep-cycle-battery-100ah-equivalent",
@@ -664,7 +667,8 @@
     "motorcycle"
    ],
    "description": "The Powsea Odyssey PC680 Equivalent Battery is a high-performance 12V AGM (Absorbent Glass Mat) battery engineered as a direct replacement for the Odyssey PC680.",
-   "source": "Powsea OEM manufacturer — specifications as published, 2026-09"
+   "source": "Powsea OEM manufacturer — specifications as published, 2026-09",
+   "brand_note": "Independent reference — not affiliated with Odyssey/EnerSys. \"Equivalent\" refers to dimensional and rating compatibility only."
   },
   {
    "id": "powsea-95d31l-95d31r-automotive-battery-oem-equivalent",
