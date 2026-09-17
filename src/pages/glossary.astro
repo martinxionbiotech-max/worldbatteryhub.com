@@ -63,9 +63,27 @@ const definedTermJsonLd = {
   dateModified="2026-09-17"
 >
   <style>
-    .def { margin-bottom: 14px; }
-    .def dt { font-weight: 700; color: #0f1f3d; }
-    .def dd { margin: 2px 0 0; }
+    .def {
+      margin: 0;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .def:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    .def dt {
+      color: var(--ink);
+      font-size: 0.98rem;
+      font-weight: 750;
+      letter-spacing: -0.005em;
+    }
+    .def dd {
+      margin: 4px 0 0;
+      color: var(--body);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
   </style>
 
   <section class="section">

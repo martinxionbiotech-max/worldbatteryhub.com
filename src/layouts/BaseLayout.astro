@@ -57,7 +57,7 @@ const breadcrumbJsonLd = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#0f1f3d" />
+    <meta name="theme-color" content="#0d1e3c" />
     <title>{fullTitle}</title>
     <meta name="description" content={resolvedDescription} />
     <link rel="canonical" href={canonical ? `${SITE}${canonical}` : SITE} />
@@ -97,5 +97,359 @@ const breadcrumbJsonLd = {
         {dateModified && <p class="muted">Last reviewed: {dateModified}</p>}
       </div>
     </footer>
+    <style is:global>
+      :root {
+        --wb-blue: #1d4ed8;
+        --wb-blue-dark: #1e40af;
+        --wb-navy: #0f1f3d;
+        --wb-blue-50: #eff6ff;
+        --wb-blue-100: #dbeafe;
+        --wb-blue-200: #bfdbfe;
+        --wb-blue-300: #93c5fd;
+        --wb-border: #e2e8f0;
+        --wb-text: #1f2937;
+        --wb-text-soft: #334155;
+        --wb-muted: #64748b;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--wb-text);
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img,
+      svg,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: var(--wb-blue);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+        transition: color 0.15s ease;
+      }
+
+      a:hover {
+        color: var(--wb-blue-dark);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--wb-blue);
+        outline-offset: 2px;
+      }
+
+      .container {
+        width: calc(100% - 2.5rem);
+        max-width: 72rem;
+        width: min(100% - 2.5rem, 72rem);
+        margin: 0 auto;
+        margin-inline: auto;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -3rem;
+        left: 1rem;
+        z-index: 100;
+        padding: 0.6rem 1rem;
+        border-radius: 0.375rem;
+        background: var(--wb-blue);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        transition: top 0.15s ease;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+        color: #fff;
+      }
+
+      .site-header {
+        background: var(--wb-navy);
+        border-bottom: 4px solid var(--wb-blue);
+      }
+
+      .header-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem 1.5rem;
+        padding-block: 1rem;
+      }
+
+      .brand {
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        text-decoration: none;
+      }
+
+      .brand:hover {
+        color: var(--wb-blue-300);
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+      }
+
+      .nav a {
+        padding: 0.4rem 0.75rem;
+        border-radius: 0.375rem;
+        color: var(--wb-blue-200);
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .nav a:hover {
+        color: #fff;
+        background: rgb(255 255 255 / 0.08);
+      }
+
+      main {
+        padding: 3rem 0 4rem;
+      }
+
+      p {
+        margin: 0 0 1.25rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--wb-navy);
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+      }
+
+      h1 {
+        margin: 0 0 1.5rem;
+        font-size: clamp(2rem, 1.4rem + 2.5vw, 2.75rem);
+      }
+
+      h2 {
+        margin: 2.75rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--wb-border);
+        font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.875rem);
+      }
+
+      h3 {
+        margin: 2rem 0 0.75rem;
+        font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+      }
+
+      .lead {
+        margin-bottom: 1.75rem;
+        color: var(--wb-text-soft);
+        font-size: 1.1875rem;
+        line-height: 1.65;
+      }
+
+      .byline {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.25rem 0.75rem;
+        margin: 0 0 1.75rem;
+        color: var(--wb-muted);
+        font-size: 0.875rem;
+      }
+
+      .muted {
+        color: var(--wb-muted);
+        font-size: 0.875rem;
+      }
+
+      strong {
+        color: var(--wb-navy);
+      }
+
+      ul,
+      ol {
+        margin: 0 0 1.5rem;
+        padding-left: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      li > ul,
+      li > ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+      }
+
+      .takeaways {
+        margin: 1.75rem 0;
+        padding: 1.25rem 1.5rem;
+        background: var(--wb-blue-50);
+        border: 1px solid var(--wb-blue-200);
+        border-left: 4px solid var(--wb-blue);
+        border-radius: 0.5rem;
+      }
+
+      .takeaways :last-child {
+        margin-bottom: 0;
+      }
+
+      .box {
+        margin: 1.5rem 0;
+        padding: 1.25rem 1.5rem;
+        background: #f8fafc;
+        border: 1px solid var(--wb-border);
+        border-radius: 0.625rem;
+      }
+
+      .box :last-child {
+        margin-bottom: 0;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .card-grid > * {
+        padding: 1.25rem 1.5rem;
+        background: #fff;
+        border: 1px solid var(--wb-border);
+        border-radius: 0.75rem;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+      }
+
+      .card-grid a {
+        text-decoration: none;
+      }
+
+      .card-grid > *:hover {
+        border-color: var(--wb-blue-300);
+        box-shadow: 0 8px 24px rgb(29 78 216 / 0.08);
+        transform: translateY(-2px);
+      }
+
+      .card-grid h2,
+      .card-grid h3 {
+        margin-top: 0;
+      }
+
+      table {
+        width: 100%;
+        margin: 1.75rem 0;
+        border-collapse: collapse;
+        font-size: 0.9375rem;
+      }
+
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--wb-border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--wb-navy);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #f8fafc;
+      }
+
+      tbody tr:hover {
+        background: var(--wb-blue-50);
+      }
+
+      .site-footer {
+        padding: 2.5rem 0;
+        background: var(--wb-navy);
+        color: #cbd5e1;
+        font-size: 0.9375rem;
+      }
+
+      .site-footer p:last-child {
+        margin-bottom: 0;
+      }
+
+      .site-footer a {
+        color: var(--wb-blue-300);
+      }
+
+      .site-footer a:hover {
+        color: #fff;
+      }
+
+      .site-footer .muted {
+        color: #94a3b8;
+      }
+
+      @media (max-width: 48rem) {
+        .header-inner {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .nav {
+          justify-content: center;
+        }
+
+        main {
+          padding: 2rem 0 3rem;
+        }
+
+        h2 {
+          margin-top: 2rem;
+        }
+
+        .takeaways,
+        .box {
+          padding: 1rem 1.125rem;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a,
+        .card-grid > * {
+          transition: none;
+        }
+      }
+    </style>
   </body>
 </html>
