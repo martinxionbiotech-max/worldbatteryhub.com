@@ -3,7 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import productsData from '../../../data/products.json';
 
 const title = 'Lead-Acid Product Catalogue — Powsea OEM (Commercial Section)';
-const description = '35 Powsea OEM lead-acid batteries from cnbatteries.com — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines. Filterable catalogue with group-size navigation, published specifications and honest sourcing.';
+const description = '35 Powsea OEM lead-acid batteries — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines. Filterable catalogue with group-size navigation, published specifications and honest sourcing.';
 const canonical = '/lead-acid/products/';
 
 const collectionJsonLd = {
@@ -65,8 +65,6 @@ const findP = (id) => productsData.products.find((p) => p.id === id);
     .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
     .filter-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 14px 0 6px; }
     .filter-row input { flex: 1; min-width: 220px; padding: 9px 13px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 0.95rem; }
-    .inquiry { margin: 20px 0; padding: 16px 18px; border: 1px solid var(--accent-border); border-radius: var(--radius-md); background: var(--accent-soft); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
-    .inquiry p { margin: 0; color: var(--navy); font-weight: 650; }
   </style>
 
   <section class="section">
@@ -74,20 +72,13 @@ const findP = (id) => productsData.products.find((p) => p.id === id);
       <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
       <h1>Lead-Acid Product Catalogue — Powsea OEM</h1>
       <p class="lead">
-        {productsData.products.length} lead-acid models supplied by
-        <a href="https://cnbatteries.com">Powsea (CN Batteries)</a> — China OEM/ODM battery manufacturer.
-        Filterable catalogue, group-size navigation, published specifications, honest sourcing. No images; no
-        invented numbers.
+        {productsData.products.length} lead-acid models — filterable catalogue with group-size navigation,
+        published specifications and honest sourcing. No images; no invented numbers.
       </p>
-
-      <div class="inquiry">
-        <p>B2B buyers: bulk supply, private labelling, OEM/ODM programmes.</p>
-        <a class="cta" href="https://cnbatteries.com/contact-us" target="_blank" rel="noopener">Inquire &amp; request quotation →</a>
-      </div>
 
       <div class="takeaways">
         <strong>Direct answer:</strong> {productsData.products.length} products across 9 lines — every
-        specification below is as published on cnbatteries.com; missing values are stated, not guessed.
+        specification below is the manufacturer's published value; missing values are stated, not guessed.
       </div>
 
       <h2>Filter the catalogue</h2>
@@ -160,10 +151,10 @@ const findP = (id) => productsData.products.find((p) => p.id === id);
 
       <h2>How this section works</h2>
       <ul>
-        <li><strong>Source</strong> — every product page links to its page on cnbatteries.com and states that specifications are the supplier's published values (2026-09).</li>
+        <li><strong>Source</strong> — every product page states that specifications are the manufacturer's published values (2026-09).</li>
         <li><strong>Honesty</strong> — missing CCA or dimensions read "per manufacturer quotation" rather than an invented number.</li>
         <li><strong>Context</strong> — every product page links to the knowledge pages that interpret its ratings (CCA standards, group sizes, chemistry).</li>
-        <li><strong>No pricing</strong> — bulk OEM pricing is quotation-based; use the inquiry link above.</li>
+        <li><strong>No pricing</strong> — bulk OEM pricing is quotation-based and provided on request.</li>
       </ul>
 
       <h2>What This Means</h2>

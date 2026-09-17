@@ -15,11 +15,11 @@ const productJsonLd = {
   name: p.name,
   description: p.description,
   brand: { '@type': 'Brand', name: 'Powsea' },
-  manufacturer: { '@type': 'Organization', name: 'Powsea (CN Batteries)', url: 'https://cnbatteries.com' },
+  manufacturer: { '@type': 'Organization', name: 'Powsea' },
   url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
 };
 
-const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source_url, source } = p;
+const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source } = p;
 const catName = productsData.categories[category] ? productsData.categories[category][0] : category;
 const knowLinks = {
   'group-sizes': { href: '/lead-acid/battery-group-sizes/', label: 'Battery group sizes explained' },
@@ -46,11 +46,6 @@ const related = productsData.products.filter((x) => x.category === category && x
   author="World Battery Hub"
   dateModified="2026-09-17"
 >
-  <style>
-    .inquiry { margin: 20px 0; padding: 16px 18px; border: 1px solid var(--accent-border); border-radius: var(--radius-md); background: var(--accent-soft); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
-    .inquiry p { margin: 0; color: var(--navy); font-weight: 650; }
-  </style>
-
   <section class="section">
     <div class="container">
       <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
@@ -77,11 +72,6 @@ const related = productsData.products.filter((x) => x.category === category && x
         </tbody>
       </table>
 
-      <div class="inquiry">
-        <p><strong>B2B buyers:</strong> bulk supply, private labelling, OEM/ODM programmes.</p>
-        <a class="cta" href="https://cnbatteries.com/contact-us" target="_blank" rel="noopener">Inquire about this model &rarr;</a>
-      </div>
-
       <h2>What this battery does</h2>
       <p>{description}</p>
 
@@ -98,7 +88,7 @@ const related = productsData.products.filter((x) => x.category === category && x
 
       <h2>Read before buying</h2>
       <ul>
-        <li>Specifications are as published on <a href={source_url}>cnbatteries.com</a> (2026-09) and should be re-confirmed with the manufacturer for current production runs.</li>
+        <li>Specifications are the manufacturer's published values (2026-09) and should be re-confirmed for current production runs.</li>
         <li>CCA figures follow the standard stated with the value; values from different standards are not directly comparable (see <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA</a>).</li>
         <li>Group size decides physical fit, not performance — match the group first, then the ratings (see <a href="/lead-acid/battery-group-sizes/">group sizes</a>).</li>
       </ul>
@@ -134,7 +124,7 @@ const related = productsData.products.filter((x) => x.category === category && x
       )}
 
       <h2>Source</h2>
-      <p class="muted">{source} · <a href={source_url}>Product page on cnbatteries.com</a></p>
+      <p class="muted">{source}</p>
 
       <p class="muted">
         <a href="/lead-acid/products/">All products</a> · <a href="/lead-acid/">Lead-acid knowledge</a> · Last reviewed: 2026-09-17
