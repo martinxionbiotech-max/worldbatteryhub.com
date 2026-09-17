@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Runtime Calculator';
+const description = 'Interactive calculator: how long will a battery last? Capacity × usable depth ÷ load, with the Peukert caveat, worked examples and the limits of the estimate.';
+const canonical = '/tools/runtime-calculator/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery runtime calculation',
+  articleSection: 'Battery Tools',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you calculate how long a battery will last?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divide the usable capacity by the load: hours = capacity × usable depth ÷ amps. A 100 Ah lead-acid battery at a 10 A load, with its 50% usable window, runs about 5 hours — a 100 Ah LFP at 80% runs about 8 hours.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does the calculator only count half of a lead-acid battery\u2019s capacity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because lead-acid lives longest when discharged to about 50%; the unused half is the margin that protects cycle life. Lithium LFP allows 80–90%, so its margin is smaller — the calculator\u2019s depth setting encodes that difference.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <style>
+    .calc { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .calc-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; color: #0f1f3d; }
+    .calc-field input, .calc-field select { padding: 8px 10px; border: 1px solid #bfdbfe; border-radius: 6px; font-size: 1rem; }
+    .calc-result { font-size: 1.15rem; margin: 14px 0 0; }
+    .calc-result strong { color: #1d4ed8; font-size: 1.35rem; }
+    .calc-result-sub { margin: 2px 0 0; color: #64748b; font-size: 0.9rem; }
+    .calc-warn { background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 8px 12px; margin-top: 12px; font-size: 0.9rem; }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Tools · Interactive · Last reviewed 2026-09-17</p>
+      <h1>Battery Runtime Calculator</h1>
+      <p class="lead">
+        One division answers every runtime question — capacity over load — with two honest adjustments on top:
+        how deep you may discharge, and how fast the load drains reality beyond the nameplate.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Runtime in hours = <strong>capacity × usable depth ÷ load</strong>.
+        A 100 Ah lead-acid battery at a 10 A load, with its 50% usable window, runs about
+        <strong>5 hours</strong> (see <a href="/lead-acid/runtime-calculation/">the full method</a>).
+      </div>
+
+      <h2>The calculator</h2>
+      <div class="calc">
+        <div class="calc-grid">
+          <label class="calc-field">Battery capacity (Ah)
+            <input type="number" id="ah" value="100" min="1" step="1" />
+          </label>
+          <label class="calc-field">Load (amps)
+            <input type="number" id="load" value="10" min="0.1" step="0.1" />
+          </label>
+          <label class="calc-field">Usable depth of discharge
+            <select id="dod">
+              <option value="0.5">Lead-acid — 50% (longevity)</option>
+              <option value="0.8">LFP — 80%</option>
+              <option value="0.9">LFP — 90% (aggressive)</option>
+              <option value="1">100% (to empty, theoretical)</option>
+            </select>
+          </label>
+        </div>
+        <p class="calc-result">Runtime: <strong id="result">5.0</strong> hours</p>
+        <p class="calc-warn" id="peukert" hidden>
+          High-rate warning: at this load the battery delivers less than its nameplate Ah — the real runtime is
+          shorter (Peukert effect, explained below).
+        </p>
+      </div>
+      <p class="muted">
+        Assumes the nameplate Ah at its rated (C20) rate and room temperature. Loads near or above 1C and cold
+        conditions both reduce the real answer.
+      </p>
+
+      <h2>How does the formula work?</h2>
+      <p>
+        The calculation is three steps, and each step is a decision:
+      </p>
+      <ol>
+        <li><strong>Usable capacity = nameplate Ah × depth of discharge.</strong> Lead-acid's 50% window halves
+        the 100 Ah nameplate to 50 usable amp-hours; LFP's 80% window keeps 80.</li>
+        <li><strong>Runtime = usable capacity ÷ load.</strong> 50 Ah at 10 A is 5 hours; at 5 A it is 10 hours.</li>
+        <li><strong>Check the load's rate.</strong> If the load is heavy relative to the rating (roughly above
+        the C20/5 mark), the battery delivers less than the nameplate, and step 1 over-credits it.</li>
+      </ol>
+
+      <h2>Why does only half the lead-acid capacity count?</h2>
+      <p>
+        The 50% window is the cycle-life trade, not a rule of physics: lead-acid discharged to 80% every day
+        dies early, discharged to 50% it earns its rated life (see
+        <a href="/lithium/lifespan/">the cycle-life numbers</a>). The calculator's depth setting exists to encode
+        that choice — the arithmetic is the same either way, the battery's life is not.
+      </p>
+
+      <h2>Why do heavy loads deliver less than the nameplate?</h2>
+      <p>
+        The nameplate Ah assumes the slow <strong>C20 rate</strong>. At higher currents the internal losses grow,
+        so the same battery delivers fewer usable amp-hours — a 100 Ah battery drained at 50 A may deliver far
+        less than the division predicts (see <a href="/lithium/c-rate/">C-rate fundamentals</a>). The calculator
+        shows the warning when the load crosses into that territory; treat the result there as an upper bound,
+        not a schedule.
+      </p>
+
+      <h2>Worked examples</h2>
+      <table>
+        <thead><tr><th>Battery</th><th>Load</th><th>Depth setting</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>100 Ah lead-acid</td><td>10 A</td><td>50%</td><td>~5 h</td></tr>
+          <tr><td>100 Ah LFP</td><td>10 A</td><td>80%</td><td>~8 h</td></tr>
+          <tr><td>200 Ah AGM</td><td>20 A</td><td>50%</td><td>~5 h</td></tr>
+        </tbody>
+      </table>
+
+      <h2>When does this calculator mislead?</h2>
+      <ul>
+        <li><strong>Heavy loads</strong> — above roughly the C20/5 mark the real capacity shrinks (see above).</li>
+        <li><strong>Cold</strong> — available capacity falls with temperature (see
+        <a href="/lead-acid/cold-weather-battery/">cold weather</a>).</li>
+        <li><strong>An aging battery</strong> — a battery at 80% of its original capacity delivers 80% of the
+        nameplate, and the calculator cannot see its age.</li>
+        <li><strong>Mixed or variable loads</strong> — the tool divides by one load; real duty cycles need the
+        load averaged over the period.</li>
+      </ul>
+
+      <h2>Why This Matters</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> Runtime estimates fail at the two adjustments, not the division — people
+          divide by the nameplate and forget the depth-of-discharge window and the load's Peukert bite, and both
+          errors run in the same direction: over-promising runtime.</p>
+        <p>
+          <strong>Why:</strong> The arithmetic is trivial; the honesty is everything. A number built on usable
+          capacity — half the rating for lead-acid, 80–90% for LFP, rate-adjusted for heavy loads — is rarely
+          far off, and it is the difference between a system that matches its math and one that disappoints its
+          owner.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How do you calculate how long a battery will last?</h3>
+      <p>
+        Divide the usable capacity by the load: hours = capacity × usable depth ÷ amps. A 100 Ah lead-acid
+        battery at a 10 A load, with its 50% usable window, runs about 5 hours — a 100 Ah LFP at 80% runs about
+        8 hours.
+      </p>
+      <h3>Why does the calculator only count half of a lead-acid battery&rsquo;s capacity?</h3>
+      <p>
+        Because lead-acid lives longest when discharged to about 50%; the unused half is the margin that protects
+        cycle life. Lithium LFP allows 80–90%, so its margin is smaller — the calculator&rsquo;s depth setting
+        encodes that difference.
+      </p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and manufacturer discharge data.</p>
+      <ul>
+        <li>Battery engineering references — Peukert behaviour and rate capacity.</li>
+        <li>Manufacturer datasheets — capacity ratings at standard rates.</li>
+      </ul>
+
+      <p class="muted">
+        More tools: <a href="/tools/sizing-calculator/">bank sizing calculator</a> ·
+        <a href="/tools/charging-time-calculator/">charging time calculator</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Bank Sizing Calculator';
+const description = 'Interactive calculator: how much battery capacity do you need? Load × hours ÷ voltage ÷ usable depth, with autonomy days, worked examples and the margin logic.';
+const canonical = '/tools/sizing-calculator/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery bank sizing',
+  articleSection: 'Battery Tools',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I size a battery bank?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Multiply the load in watts by the hours needed, divide by the system voltage, then divide by the usable depth of discharge. 100 W for 8 hours is 800 Wh; at 12V with a 50% lead-acid window that is about 133 Ah.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I add extra capacity for cloudy days?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — autonomy days multiply the bank. Each extra day of backup doubles the rated capacity, so decide the worst-case gap between charges before sizing, not after.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <style>
+    .calc { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .calc-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; color: #0f1f3d; }
+    .calc-field input, .calc-field select { padding: 8px 10px; border: 1px solid #bfdbfe; border-radius: 6px; font-size: 1rem; }
+    .calc-result { font-size: 1.15rem; margin: 14px 0 0; }
+    .calc-result strong { color: #1d4ed8; font-size: 1.35rem; }
+    .calc-result-sub { margin: 2px 0 0; color: #64748b; font-size: 0.9rem; }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Tools · Interactive · Last reviewed 2026-09-17</p>
+      <h1>Battery Bank Sizing Calculator</h1>
+      <p class="lead">
+        Sizing a battery bank is one multiplication, one division, and one honest margin — and the margin is the
+        part people skip, which is why so many banks come up short on day three.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Energy = load (W) × hours × autonomy days</strong>. Then
+        <strong>capacity = energy ÷ voltage ÷ usable depth</strong>. 100 W for 8 hours is 800 Wh; at 12V with a
+        50% lead-acid window that is about <strong>133 Ah</strong> (see
+        <a href="/lead-acid/sizing-calculation/">the full method</a>).
+      </div>
+
+      <h2>The calculator</h2>
+      <div class="calc">
+        <div class="calc-grid">
+          <label class="calc-field">Load (watts)
+            <input type="number" id="watts" value="100" min="1" step="1" />
+          </label>
+          <label class="calc-field">Hours per day
+            <input type="number" id="hours" value="8" min="0.5" step="0.5" />
+          </label>
+          <label class="calc-field">System voltage
+            <select id="volts">
+              <option value="12">12V</option>
+              <option value="24">24V</option>
+              <option value="48">48V</option>
+            </select>
+          </label>
+          <label class="calc-field">Usable depth of discharge
+            <select id="dod">
+              <option value="0.5">Lead-acid — 50%</option>
+              <option value="0.8">LFP — 80%</option>
+              <option value="0.9">LFP — 90%</option>
+            </select>
+          </label>
+          <label class="calc-field">Autonomy days (gap between charges)
+            <input type="number" id="days" value="1" min="1" max="10" step="1" />
+          </label>
+        </div>
+        <p class="calc-result">Bank size: <strong id="result">133</strong> Ah at <span id="vlabel">12</span>V</p>
+        <p class="calc-result-sub" id="whout">800 Wh rated capacity</p>
+      </div>
+      <p class="muted">
+        The result is rated capacity — what the label must say. The usable energy is the rated figure times the
+        depth setting.
+      </p>
+
+      <h2>How does the formula work?</h2>
+      <p>
+        Four steps, each a decision rather than an arithmetic detail:
+      </p>
+      <ol>
+        <li><strong>Energy = load × hours.</strong> This is the demand side — what the system must deliver
+        between charges. Add autonomy days to cover the worst-case gap.</li>
+        <li><strong>Amp-hours = energy ÷ voltage.</strong> The same 800 Wh is ~67 Ah at 12V, ~33 Ah at 24V, ~17 Ah
+        at 48V — the voltage choice changes the number, not the energy.</li>
+        <li><strong>Rated capacity = amp-hours ÷ usable depth.</strong> Lead-acid's 50% window doubles the
+        arithmetic answer; LFP's 80% adds a quarter.</li>
+        <li><strong>Round up to real batteries.</strong> The calculator's answer lands between catalogue sizes —
+        the nearest group up is the purchase.</li>
+      </ol>
+
+      <h2>Why the margin is the design</h2>
+      <p>
+        The depth-of-discharge margin is where sizing succeeds or fails. Lead-acid survives longest at
+        <strong>50%</strong>; LFP allows <strong>80–90%</strong> (see
+        <a href="/lithium/lifespan/">the cycle-life numbers</a>). Skip the margin to save money and the bank
+        cycles too deep and ages early — the margin is the difference between the arithmetic answer and the
+        battery that actually lasts.
+      </p>
+
+      <h2>The autonomy decision</h2>
+      <p>
+        Autonomy days are the sizing question nobody can answer for you: how many days must the bank cover if
+        the sun or the grid is unavailable? One day is the default; two days doubles the bank; off-grid homes
+        often plan <strong>three or more</strong> — and each day multiplies the rated capacity, which is why the
+        number must be decided before the first component is bought.
+      </p>
+
+      <h2>Worked examples</h2>
+      <table>
+        <thead><tr><th>Scenario</th><th>Load</th><th>Hours</th><th>Voltage / chemistry</th><th>Autonomy</th><th>Bank</th></tr></thead>
+        <tbody>
+          <tr><td>RV house bank</td><td>100 W</td><td>8 h</td><td>12V lead-acid</td><td>1 day</td><td>~133 Ah</td></tr>
+          <tr><td>Off-grid cabin</td><td>300 W</td><td>6 h</td><td>24V LFP</td><td>2 days</td><td>~250 Ah</td></tr>
+          <tr><td>Solar shed</td><td>50 W</td><td>12 h</td><td>12V LFP</td><td>1 day</td><td>~94 Ah</td></tr>
+        </tbody>
+      </table>
+
+      <h2>When does this calculator mislead?</h2>
+      <ul>
+        <li><strong>Loads with peaks</strong> — motor starts and surges draw more than the average; a bank sized
+        to the average may sag on the peaks.</li>
+        <li><strong>Cold</strong> — available capacity falls with temperature (see
+        <a href="/lead-acid/cold-weather-battery/">cold weather</a>).</li>
+        <li><strong>Partial recharging</strong> — the model assumes a full recharge each cycle; chronic
+        undercharging ages lead-acid faster than the depth table assumes.</li>
+      </ul>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My take:</strong> Sizing is a margin problem wearing arithmetic's clothes — the formula is two
+          lines, and the failures are almost always the depth-of-discharge or autonomy decision that was skipped
+          to save money, paid back in early replacement.</p>
+        <p>
+          <strong>Why:</strong> The arithmetic gives a floor; the margins give the design. A bank built on the
+          usable window, the worst-case gap between charges, and a glance at the load's peaks matches its math
+          in year three as well as day one — which is the actual definition of the right size.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How do I size a battery bank?</h3>
+      <p>
+        Multiply the load in watts by the hours needed, divide by the system voltage, then divide by the usable
+        depth of discharge. 100 W for 8 hours is 800 Wh; at 12V with a 50% lead-acid window that is about 133 Ah.
+      </p>
+      <h3>Should I add extra capacity for cloudy days?</h3>
+      <p>
+        Yes — autonomy days multiply the bank. Each extra day of backup doubles the rated capacity, so decide the
+        worst-case gap between charges before sizing, not after.
+      </p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from battery engineering references and off-grid system documentation.</p>
+      <ul>
+        <li>Off-grid system documentation — load tables and sizing practice.</li>
+        <li>Battery engineering references — depth of discharge and cycle life.</li>
+      </ul>
+
+      <p class="muted">
+        More tools: <a href="/tools/runtime-calculator/">runtime calculator</a> ·
+        <a href="/tools/charging-time-calculator/">charging time calculator</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

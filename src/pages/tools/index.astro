@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Calculators & Tools';
+const description = 'Interactive battery tools: runtime calculator, bank sizing calculator and charging time calculator — with the honest adjustments each estimate needs.';
+const canonical = '/tools/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  '@id': `https://worldbatteryhub.com${canonical}#page`,
+  name: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery calculation tools',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Tools · Last reviewed 2026-09-17</p>
+      <h1>Battery Calculators &amp; Tools</h1>
+      <p class="lead">
+        Three calculators that answer the three questions every battery decision starts with — and each one
+        carries the honest adjustments that make the number worth trusting.
+      </p>
+
+      <div class="takeaways">
+        <strong>The three questions:</strong> how long will it run, how big must it be, and how long will it take
+        to charge — one division each, plus the depth-of-discharge, rate and absorption-tail adjustments that
+        separate a usable estimate from wishful arithmetic.
+      </div>
+
+      <h2>Which tool answers which question?</h2>
+      <table>
+        <thead><tr><th>Question</th><th>Tool</th><th>What it adjusts for</th></tr></thead>
+        <tbody>
+          <tr><td>How long will this battery run this load?</td><td><a href="/tools/runtime-calculator/">Runtime calculator</a></td><td>Usable depth of discharge, Peukert rate effect</td></tr>
+          <tr><td>How much battery capacity do I need?</td><td><a href="/tools/sizing-calculator/">Bank sizing calculator</a></td><td>Depth of discharge, autonomy days, system voltage</td></tr>
+          <tr><td>How long until the battery is charged?</td><td><a href="/tools/charging-time-calculator/">Charging time calculator</a></td><td>The absorption tail, charger sizing</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The assumptions behind the tools</h2>
+      <p>
+        All three calculators assume the <strong>nameplate capacity at its rated rate</strong> (C20 for lead-acid)
+        and <strong>room temperature</strong>. Three real-world conditions bend the results: heavy loads deliver
+        less than the nameplate (the Peukert effect), cold reduces available capacity, and an aging battery
+        delivers less than its label. Each calculator's page states where its estimate stops being reliable —
+        the honesty is part of the tool.
+      </p>
+
+      <h2>The methods behind the tools</h2>
+      <ul>
+        <li><a href="/lead-acid/runtime-calculation/">How to calculate battery runtime</a> — the full method with
+        worked examples</li>
+        <li><a href="/lead-acid/sizing-calculation/">How much battery capacity do I need?</a> — sizing in depth</li>
+        <li><a href="/lead-acid/charging-time-calculation/">How long does it take to charge a battery?</a> — the
+        charging-time method</li>
+      </ul>
+
+      <h2>Our Read</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My read:</strong> The best calculator is the one that tells you when it is wrong — and the
+          battery arithmetic is honest only when its three adjustments (depth, rate, temperature) are visible on
+          the same screen as the answer.</p>
+        <p>
+          <strong>Why:</strong> A tool that hides its assumptions produces confident errors; a tool that shows
+          them produces decisions. These calculators exist to be the second kind — the number, the method, and
+          the boundary, all on one page.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <p class="muted">
+        Related: <a href="/lead-acid/">lead-acid knowledge</a> ·
+        <a href="/lithium/">lithium knowledge</a> ·
+        <a href="https://testing.worldbatteryhub.com">testing methods</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Charging Time Calculator';
+const description = 'Interactive calculator: how long to charge a battery? Capacity to replace ÷ charger current, plus the absorption tail — why the last 20% takes as long as the first 80%.';
+const canonical = '/tools/charging-time-calculator/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery charging time calculation',
+  articleSection: 'Battery Tools',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does it take to charge a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Divide the capacity to replace by the charger current for the bulk stage — 50 Ah at 10 A is about 5 hours — then add roughly half again for the absorption tail, because the final 20% charges at a tapering current.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does the last 20% of charging take so long?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The charger switches from constant current to constant voltage as the battery fills and the current tapers to protect the chemistry — so the last part arrives slowly, about as long as the first 80%.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <style>
+    .calc { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .calc-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; color: #0f1f3d; }
+    .calc-field input, .calc-field select { padding: 8px 10px; border: 1px solid #bfdbfe; border-radius: 6px; font-size: 1rem; }
+    .calc-result { font-size: 1.15rem; margin: 14px 0 0; }
+    .calc-result strong { color: #1d4ed8; font-size: 1.35rem; }
+    .calc-warn { background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 8px 12px; margin-top: 12px; font-size: 0.9rem; }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Tools · Interactive · Last reviewed 2026-09-17</p>
+      <h1>Battery Charging Time Calculator</h1>
+      <p class="lead">
+        The charging-time estimate is one division plus one honest tail: the bulk charge is arithmetic, and the
+        final 20% is chemistry taking its time.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Charging time = <strong>capacity to replace ÷ charger current</strong>,
+        plus the <strong>absorption tail</strong>. 50 Ah at a 10 A charger is about <strong>5 hours of bulk</strong>
+        — then roughly half as long again for the final 20% (see
+        <a href="/lead-acid/charging-time-calculation/">the full method</a>).
+      </div>
+
+      <h2>The calculator</h2>
+      <div class="calc">
+        <div class="calc-grid">
+          <label class="calc-field">Capacity to replace (Ah)
+            <input type="number" id="need" value="50" min="1" step="1" />
+          </label>
+          <label class="calc-field">Charger output (amps)
+            <input type="number" id="charger" value="10" min="0.5" step="0.5" />
+          </label>
+        </div>
+        <p class="calc-result">Bulk stage: <strong id="bulk">5.0</strong> hours</p>
+        <p class="calc-result">Realistic total (with absorption tail): <strong id="total">~7–8</strong> hours</p>
+        <p class="calc-warn" id="oversize" hidden>
+          Charger sizing note: a healthy charge current is roughly 10–20% of the battery's Ah rating — well
+          above that heats the battery and shortens life.
+        </p>
+      </div>
+      <p class="muted">
+        The "realistic total" adds the absorption stage, where the current tapers and the final 20% arrives
+        slowly. The charger's own completion signal always beats the estimate.
+      </p>
+
+      <h2>How does the formula work?</h2>
+      <p>
+        Two stages, two different maths:
+      </p>
+      <ol>
+        <li><strong>Bulk = capacity to replace ÷ charger current.</strong> The charger pushes its full current
+        while the battery accepts it — 50 Ah at 10 A is 5 hours of straight arithmetic.</li>
+        <li><strong>The absorption tail.</strong> As the battery fills, the charger switches to constant voltage
+        and the current tapers. The final 20% arrives at a fraction of the charger's rating, taking roughly as
+        long as the first 80% — hence the 40–60% added in the calculator's realistic total.</li>
+      </ol>
+
+      <h2>Why the tail exists</h2>
+      <p>
+        The tail is protection, not inefficiency: holding the voltage constant while the current falls keeps the
+        battery from overcharging — the same physics as filling a glass without spilling, where the last part is
+        poured carefully (see <a href="/lithium/lithium-charging-cc-cv/">CC-CV charging</a>). Chargers advertise
+        the bulk rate; the battery spends the tail at a fraction of it, which is why "charger amps" alone never
+        equals the wall-clock time.
+      </p>
+
+      <h2>The charger-size rule</h2>
+      <p>
+        For healthy lead-acid charging, the charger current sits around <strong>10–20% of the Ah rating</strong> —
+        a 100 Ah battery pairs with a 10–20 A charger. Much faster stresses the battery and heats it; much slower
+        just extends the tail (see <a href="/lead-acid/agm-charging/">charging limits</a>). The calculator flags
+        the oversized case, because a charger that beats the clock is quietly spending the battery's life.
+      </p>
+
+      <h2>Worked examples</h2>
+      <table>
+        <thead><tr><th>Capacity to replace</th><th>Charger</th><th>Bulk time</th><th>Realistic total</th></tr></thead>
+        <tbody>
+          <tr><td>50 Ah</td><td>10 A</td><td>5 h</td><td>~7–8 h</td></tr>
+          <tr><td>30 Ah</td><td>5 A</td><td>6 h</td><td>~9 h</td></tr>
+          <tr><td>80 Ah</td><td>20 A</td><td>4 h</td><td>~6 h</td></tr>
+        </tbody>
+      </table>
+
+      <h2>When does this calculator mislead?</h2>
+      <ul>
+        <li><strong>Cold charging</strong> — lead-acid accepts charge slowly when cold; lithium refuses to
+        charge below freezing entirely (see <a href="/lithium/how-to-charge/">lithium charging</a>).</li>
+        <li><strong>A deeply sulfated battery</strong> — a damaged battery may never reach the absorption
+        handover, so the tail stretches far beyond the estimate.</li>
+        <li><strong>Solar charging</strong> — panel output varies through the day, so the effective "charger
+        current" is a moving average, not a label.</li>
+      </ul>
+
+      <h2>The Author&rsquo;s Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>In my view:</strong> Charging-time estimates go wrong at the tail, not the division — people
+          divide capacity by charger amps and get a number the battery will beat on paper and miss in reality,
+          because the absorption stage charges at a tapering current nobody advertises.</p>
+        <p>
+          <strong>Why I think so:</strong> The bulk division is exact; the tail is physics. Adding 40–60% to the
+          bulk estimate — or better, trusting the charger's own completion signal — turns a guess into a
+          schedule, and it costs nothing to know.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How long does it take to charge a battery?</h3>
+      <p>
+        Divide the capacity to replace by the charger current for the bulk stage — 50 Ah at 10 A is about
+        5 hours — then add roughly half again for the absorption tail, because the final 20% charges at a
+        tapering current.
+      </p>
+      <h3>Why does the last 20% of charging take so long?</h3>
+      <p>
+        The charger switches from constant current to constant voltage as the battery fills and the current
+        tapers to protect the chemistry — so the last part arrives slowly, about as long as the first 80%.
+      </p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from charger-manufacturer documentation and battery engineering references.</p>
+      <ul>
+        <li>Charger-manufacturer documentation — bulk/absorption stage currents.</li>
+        <li>Battery engineering references — CC-CV charging physics.</li>
+      </ul>
+
+      <p class="muted">
+        More tools: <a href="/tools/runtime-calculator/">runtime calculator</a> ·
+        <a href="/tools/sizing-calculator/">bank sizing calculator</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
