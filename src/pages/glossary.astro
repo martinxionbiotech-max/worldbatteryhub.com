@@ -64,25 +64,33 @@ const definedTermJsonLd = {
 >
   <style>
     .def {
-      margin: 0;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 10px;
+      padding: 14px 16px 15px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      transition: border-color 140ms ease, box-shadow 140ms ease;
     }
-    .def:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
+    .def:hover {
+      border-color: var(--accent-border);
+      box-shadow: var(--shadow-md);
     }
     .def dt {
-      color: var(--ink);
-      font-size: 0.98rem;
-      font-weight: 750;
-      letter-spacing: -0.005em;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.02rem;
+      scroll-margin-top: 92px;
     }
     .def dd {
-      margin: 4px 0 0;
+      margin: 6px 0 0;
       color: var(--body);
-      font-size: 0.95rem;
-      line-height: 1.65;
+      line-height: 1.6;
+    }
+    @media (max-width: 520px) {
+      .def {
+        padding: 12px 14px;
+      }
     }
   </style>
 

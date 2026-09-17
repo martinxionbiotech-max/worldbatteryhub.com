@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import productsData from '../../data/products.json';
+
+export function getStaticPaths() {
+  return productsData.products.map((p) => ({ params: { product: p.id } }));
+}
+
+const { product } = Astro.params;
+const p = productsData.products.find((x) => x.id === product);
+const title = `${p.name} — Powsea OEM Battery | World Battery Hub`;
+
+const productJsonLd = {
+  '@type': 'Product',
+  name: p.name,
+  description: p.description,
+  brand: { '@type': 'Brand', name: 'Powsea' },
+  manufacturer: { '@type': 'Organization', name: 'Powsea (CN Batteries)', url: 'https://cnbatteries.com' },
+  url: `https://worldbatteryhub.com/products/${p.id}/`,
+};
+
+const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source_url, source } = p;
+const catName = productsData.categories[category] ? productsData.categories[category][0] : category;
+const knowLinks = {
+  'group-sizes': { href: '/lead-acid/battery-group-sizes/', label: 'Battery group sizes explained' },
+  'cca': { href: '/lead-acid/cca/what-is-cca/', label: 'What CCA means' },
+  'charging': { href: '/lead-acid/lead-acid-charging/', label: 'Lead-acid charging' },
+  'deep-cycle': { href: '/lead-acid/deep-cycle-vs-starting/', label: 'Deep-cycle vs starting' },
+  'runtime': { href: '/tools/runtime-calculator/', label: 'Runtime calculator' },
+  'agm': { href: '/lead-acid/agm-battery/', label: 'AGM technology' },
+  'efb': { href: '/lead-acid/efb-battery/', label: 'EFB technology' },
+  'marine': { href: '/lead-acid/marine-battery/', label: 'Marine batteries' },
+  'motorcycle': { href: '/lead-acid/motorcycle-battery/', label: 'Motorcycle batteries' },
+  'oem': { href: '/lead-acid/sli-battery/', label: 'SLI batteries' },
+  'truck-battery': { href: '/lead-acid/truck-battery/', label: 'Truck batteries' },
+};
+const related = productsData.products.filter((x) => x.category === category && x.id !== p.id).slice(0, 4);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={`/products/${p.id}/`}
+  ogType="article"
+  jsonLd={[productJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
+      <h1>{p.name}</h1>
+      <p class="lead">
+        Powsea OEM battery, category {catName}. Bulk supply and private labelling from the manufacturer —
+        specifications below as published on the source site.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> {description}
+      </div>
+
+      <h2>Key specifications</h2>
+      <table>
+        <tbody>
+          <tr><th>Category</th><td>{catName}</td></tr>
+          <tr><th>Voltage</th><td>12V</td></tr>
+          <tr><th>Capacity</th><td>{capacity_ah ? `${capacity_ah} Ah` : 'Per manufacturer quotation'} {capacity_basis ? `(${capacity_basis})` : ''}</td></tr>
+          <tr><th>CCA</th><td>{cca ? `${cca} A${cca_basis ? ` (${cca_basis})` : ''}` : 'Per manufacturer quotation'}</td></tr>
+          <tr><th>Dimensions</th><td>{dimensions_mm ? `${dimensions_mm} mm${dimensions_basis ? ` — ${dimensions_basis}` : ''}` : 'Per manufacturer quotation'}</td></tr>
+          <tr><th>Chemistry</th><td>{chemistry}</td></tr>
+          <tr><th>Applications</th><td>{applications}</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What this battery does</h2>
+      <p>{description}</p>
+
+      {equivalents.length > 0 && (
+        <>
+          <h2>Equivalent models</h2>
+          <p>
+            The source site cross-references this model with: {equivalents.map((e) => <code>{e}</code>)}.
+            Equivalents name the battery family and market position — physical fit and terminal layout must be
+            confirmed against the vehicle before ordering.
+          </p>
+        </>
+      )}
+
+      <h2>Read before buying</h2>
+      <ul>
+        <li>Specifications are as published on <a href={source_url}>cnbatteries.com</a> (2026-09) and should be re-confirmed with the manufacturer for current production runs.</li>
+        <li>CCA figures follow the standard stated with the value; values from different standards are not directly comparable (see <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA</a>).</li>
+        <li>Group size decides physical fit, not performance — match the group first, then the ratings (see <a href="/lead-acid/battery-group-sizes/">group sizes</a>).</li>
+      </ul>
+
+      <h2>Related knowledge</h2>
+      <ul>
+        {knowledge.map((k) => {
+          const l = knowLinks[k];
+          return l ? <li><a href={l.href}>{l.label}</a></li> : null;
+        })}
+      </ul>
+
+      <h2>Our Read</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My read:</strong> This page presents the product as the manufacturer publishes it — the
+          commercial section's role is structured access and honest context, not promotion. Where a value is
+          missing, it is marked "per manufacturer quotation" rather than guessed.</p>
+        <p>
+          <strong>Why:</strong> B2B battery sourcing lives and dies on spec accuracy. A catalogue that invents
+          numbers is worse than one that admits a gap, so this section states its sources and its omissions
+          side by side.</p>
+        <p class="muted"><em>Editorial note — commercial section; specifications are the supplier's published values, not independently verified.</em></p>
+      </div>
+
+      {related.length > 0 && (
+        <>
+          <h2>Related products</h2>
+          <ul>
+            {related.map((r) => <li><a href={`/products/${r.id}/`}>{r.name}</a></li>)}
+          </ul>
+        </>
+      )}
+
+      <h2>Source</h2>
+      <p class="muted">{source} · <a href={source_url}>Product page on cnbatteries.com</a></p>
+
+      <p class="muted">
+        <a href="/products/">All products</a> · <a href="/lead-acid/">Lead-acid knowledge</a> · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

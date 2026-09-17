@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import productsData from '../../data/products.json';
+
+const title = 'Powsea OEM Battery Products — Commercial Section';
+const description = 'The commercial section: 35 Powsea OEM lead-acid batteries from cnbatteries.com — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines, with published specifications and honest sourcing notes.';
+const canonical = '/products/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/products/',
+  about: 'Powsea OEM battery product catalogue',
+};
+
+const cats = productsData.categories;
+const grouped = {};
+for (const p of productsData.products) {
+  (grouped[p.category] = grouped[p.category] || []).push(p);
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
+      <h1>Powsea OEM Battery Products</h1>
+      <p class="lead">
+        The commercial section: {productsData.products.length} lead-acid battery models supplied by
+        <a href="https://cnbatteries.com">Powsea (CN Batteries)</a> — a China OEM/ODM battery manufacturer —
+        presented with published specifications and honest sourcing notes. No images; no invented numbers.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> {productsData.products.length} products across {Object.keys(cats).length} lines —
+        JIS, DIN/EN, BCI, AGM, EFB, deep-cycle, marine, motorcycle and OEM programmes. Bulk supply with private
+        labelling, ISO9001 certified per the company's publication. Every specification below is as published
+        on cnbatteries.com; missing values are stated, not guessed.
+      </div>
+
+      <h2>The catalogue by line</h2>
+      {Object.entries(grouped).map(([cat, items]) => (
+        <div>
+          <h3>{cats[cat] ? cats[cat][0] : cat}</h3>
+          <p class="muted">{cats[cat] ? cats[cat][1] : ''}</p>
+          <table>
+            <thead><tr><th>Model</th><th>Capacity</th><th>CCA</th><th>Dimensions</th></tr></thead>
+            <tbody>
+              {items.map((p) => (
+                <tr>
+                  <td><a href={`/products/${p.id}/`}>{p.name}</a></td>
+                  <td>{p.capacity_ah ? `${p.capacity_ah} Ah` : '—'}</td>
+                  <td>{p.cca ? `${p.cca} A` : '—'}</td>
+                  <td>{p.dimensions_mm ? `${p.dimensions_mm} mm` : '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+
+      <h2>How this section works</h2>
+      <ul>
+        <li><strong>Source</strong> — every product page links to its page on cnbatteries.com and states that specifications are the supplier's published values (2026-09).</li>
+        <li><strong>Honesty</strong> — missing CCA or dimensions read "per manufacturer quotation" rather than an invented number.</li>
+        <li><strong>Context</strong> — every product page links to the knowledge pages that interpret its ratings (CCA standards, group sizes, chemistry).</li>
+        <li><strong>No pricing</strong> — bulk OEM pricing is quotation-based; contact the supplier directly.</li>
+      </ul>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> A commercial section earns trust by stating what it is — a structured
+          mirror of the supplier's published catalogue, with every omission visible and every number carrying
+          its source. That is the only way commerce and editorial integrity can share a site.</p>
+        <p>
+          <strong>Why:</strong> The reader who finds an invented CCA will never trust the knowledge pages that
+          share the domain. The section's credibility is therefore the whole site's credibility, and the
+          catalogue is built accordingly.</p>
+        <p class="muted"><em>Commercial section — supplier's published specifications, not independently verified.</em></p>
+      </div>
+
+      <p class="muted">
+        <a href="/lead-acid/">Lead-acid knowledge</a> · <a href="/lead-acid/battery-group-sizes/">Group sizes</a> ·
+        <a href="/lead-acid/cca/what-is-cca/">CCA explained</a> · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
