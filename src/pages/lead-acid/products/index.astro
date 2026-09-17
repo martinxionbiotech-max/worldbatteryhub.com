@@ -2,22 +2,52 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import productsData from '../../../data/products.json';
 
-const title = 'Powsea OEM Battery Products — Commercial Section';
-const description = 'The commercial section: 35 Powsea OEM lead-acid batteries from cnbatteries.com — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines, with published specifications and honest sourcing notes.';
+const title = 'Lead-Acid Product Catalogue — Powsea OEM (Commercial Section)';
+const description = '35 Powsea OEM lead-acid batteries from cnbatteries.com — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines. Filterable catalogue with group-size navigation, published specifications and honest sourcing.';
 const canonical = '/lead-acid/products/';
 
 const collectionJsonLd = {
   '@type': 'CollectionPage',
   name: title,
   url: 'https://worldbatteryhub.com/lead-acid/products/',
-  about: 'Powsea OEM battery product catalogue',
+  about: 'Powsea OEM lead-acid battery product catalogue',
 };
 
 const cats = productsData.categories;
-const grouped = {};
-for (const p of productsData.products) {
-  (grouped[p.category] = grouped[p.category] || []).push(p);
-}
+const lineOrder = ['jis', 'din', 'bci', 'agm', 'efb', 'deep-cycle', 'marine', 'motorcycle', 'oem'];
+const lineLabels = { jis: 'JIS', din: 'DIN/EN', bci: 'BCI', agm: 'AGM', efb: 'EFB', 'deep-cycle': 'Deep-cycle', marine: 'Marine', motorcycle: 'Motorcycle', oem: 'OEM' };
+const lineDescs = {
+  jis: 'Japanese-standard starting batteries (JIS D5301 codes)',
+  din: 'European-standard starting batteries (DIN/EN codes)',
+  bci: 'BCI/SAE group-size starting batteries',
+  agm: 'Absorbent glass mat — sealed, start-stop and premium',
+  efb: 'Enhanced flooded — the entry start-stop technology',
+  'deep-cycle': 'Thick-plate batteries for sustained discharge',
+  marine: 'Boat and RV batteries, sealed corrosion-resistant',
+  motorcycle: 'YTX-class powersports batteries',
+  oem: 'Vehicle-manufacturer OEM/ODM programmes',
+};
+
+const groups = [
+  { label: 'JIS B19', models: ['38b19l-38b19r-mf-battery-honda', '44b19l-equivalent-powsea-battery'], data: null },
+  { label: 'JIS B20', models: ['38b20l-equivalent-battery'], data: null },
+  { label: 'JIS B24', models: ['55b24l-55b24r-battery-oem-manufacturer', '55b24l-mf-best-equivalent'], data: '55b24' },
+  { label: 'JIS D23', models: ['70d23l-mf-equivalent-powsea', '80d23l-battery-equivalent-bulk-supply-powsea-battery-manufacturer'], data: '75d23' },
+  { label: 'JIS D26', models: ['12v-50ah-deep-cycle-battery-mf-automotive', '12v-marine-battery-maintenance-free-automotive-80d26', '80d26l-mf-car-lead-acid-battery-12v-nx110-5l'], data: '80d26' },
+  { label: 'JIS D31', models: ['powsea-95d31l-95d31r-automotive-battery-oem-equivalent', '100d31r-100d31l-mf-battery-equivalent-bulk-supply-powsea', '110d31l-110d31r-mf-battery-equivalent-bulk-supply-powsea'], data: '95d31' },
+  { label: 'DIN 40–44', models: ['12v-35ah-battery-for-vehicles-customization', '12v-40ah-maintenance-free-car-battery-lead-acid-oem-factory-direct', '12v-44ah-battery-din44', 'bateria-bosch-s4-battery-equivalent-bulk-supply-powsea-manufacturer'], data: null },
+  { label: 'DIN 60–66 (H6-class)', models: ['60038-mf-battery-equivalent-great-powsea', 'din66-mf-equivalent-powsea-car-lead-acid-battery', '375ln2-mf-battery-equivalent-powsea-model-customization'], data: 'h6' },
+  { label: 'DIN 85+ (H8-class)', models: ['din88-mf-equivalent-powsea-car-lead-acid-battery', '105e41r-battery-best-equivalent-powsea-oem'], data: 'h8' },
+  { label: 'H6-class start-stop', models: ['70-efb-equivalent-powsea-battery-oem-manufacturer', 'efb-65-equivalent-powsea-car-battery-bulk-sale', 'agm70-equivalent-powsea-car-battery', 'exide-agm-battery-equivalent-bulk-supply-powsea-manufacturer'], data: 'h6' },
+  { label: 'T7 / H7-class', models: ['powsea-power-6-qtpe-75-t7-12v-efb-agm-automotive-high-performance-lead-acid-battery'], data: 'h7' },
+  { label: 'BCI 51R', models: ['duralast-gold-51r-dlg-battery-equivalent-made-in-china-hi-quality-oem-battery'], data: 'group-51' },
+  { label: 'BCI Group 27', models: ['group-27-deep-cycle-battery-100ah-equivalent'], data: 'group-27' },
+  { label: 'BCI Group 31', models: ['31m-agm-best-equivalent-powsea-marine-battery-oem'], data: 'group-31' },
+  { label: 'Powersports', models: ['battery-12v-motocycle-oem-bulk-sale-factory-direct', 'odyssey-pc680-equivalent-bulk-supply-powsea-battery-manufacturer'], data: null },
+  { label: 'OEM lines', models: ['powsea-nissan-oem-battery-manufacturer-supply', 'toyota-oem-battery-manufacturer-supply', 'powsea-oem-e92-m3-battery-manufacturer-supply-premium-agm-automotive-battery'], data: null },
+];
+
+const findP = (id) => productsData.products.find((p) => p.id === id);
 ---
 
 <BaseLayout
@@ -29,50 +59,111 @@ for (const p of productsData.products) {
   author="World Battery Hub"
   dateModified="2026-09-17"
 >
+  <style>
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 8px; }
+    .chip { padding: 6px 13px; border: 1px solid var(--border-strong); border-radius: 999px; background: var(--surface); color: var(--muted-strong); font-size: 0.85rem; font-weight: 650; cursor: pointer; }
+    .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .filter-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 14px 0 6px; }
+    .filter-row input { flex: 1; min-width: 220px; padding: 9px 13px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 0.95rem; }
+    .inquiry { margin: 20px 0; padding: 16px 18px; border: 1px solid var(--accent-border); border-radius: var(--radius-md); background: var(--accent-soft); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
+    .inquiry p { margin: 0; color: var(--navy); font-weight: 650; }
+  </style>
+
   <section class="section">
     <div class="container">
       <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
-      <h1>Powsea OEM Battery Products</h1>
+      <h1>Lead-Acid Product Catalogue — Powsea OEM</h1>
       <p class="lead">
-        The commercial section: {productsData.products.length} lead-acid battery models supplied by
-        <a href="https://cnbatteries.com">Powsea (CN Batteries)</a> — a China OEM/ODM battery manufacturer —
-        presented with published specifications and honest sourcing notes. No images; no invented numbers.
+        {productsData.products.length} lead-acid models supplied by
+        <a href="https://cnbatteries.com">Powsea (CN Batteries)</a> — China OEM/ODM battery manufacturer.
+        Filterable catalogue, group-size navigation, published specifications, honest sourcing. No images; no
+        invented numbers.
       </p>
 
-      <div class="takeaways">
-        <strong>Direct answer:</strong> {productsData.products.length} products across {Object.keys(cats).length} lines —
-        JIS, DIN/EN, BCI, AGM, EFB, deep-cycle, marine, motorcycle and OEM programmes. Bulk supply with private
-        labelling, ISO9001 certified per the company's publication. Every specification below is as published
-        on cnbatteries.com; missing values are stated, not guessed.
+      <div class="inquiry">
+        <p>B2B buyers: bulk supply, private labelling, OEM/ODM programmes.</p>
+        <a class="cta" href="https://cnbatteries.com/contact-us" target="_blank" rel="noopener">Inquire &amp; request quotation →</a>
       </div>
 
-      <h2>The catalogue by line</h2>
-      {Object.entries(grouped).map(([cat, items]) => (
-        <div>
-          <h3>{cats[cat] ? cats[cat][0] : cat}</h3>
-          <p class="muted">{cats[cat] ? cats[cat][1] : ''}</p>
-          <table>
-            <thead><tr><th>Model</th><th>Capacity</th><th>CCA</th><th>Dimensions</th></tr></thead>
-            <tbody>
-              {items.map((p) => (
-                <tr>
-                  <td><a href={`/lead-acid/products/${p.id}/`}>{p.name}</a></td>
-                  <td>{p.capacity_ah ? `${p.capacity_ah} Ah` : '—'}</td>
-                  <td>{p.cca ? `${p.cca} A` : '—'}</td>
-                  <td>{p.dimensions_mm ? `${p.dimensions_mm} mm` : '—'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
+      <div class="takeaways">
+        <strong>Direct answer:</strong> {productsData.products.length} products across 9 lines — every
+        specification below is as published on cnbatteries.com; missing values are stated, not guessed.
+      </div>
+
+      <h2>Filter the catalogue</h2>
+      <div class="filter-row">
+        <input type="text" id="q" placeholder="Search model, application (e.g. 70D23, marine, start-stop)…" />
+      </div>
+      <div class="chips" id="chips">
+        <span class="chip active" data-cat="all">All ({productsData.products.length})</span>
+        {lineOrder.map((c) => (
+          <span class="chip" data-cat={c}>{lineLabels[c]}</span>
+        ))}
+      </div>
+      <table id="ptable">
+        <thead><tr><th>Model</th><th>Line</th><th>Capacity</th><th>CCA</th><th>Dimensions</th></tr></thead>
+        <tbody>
+          {productsData.products.map((p) => (
+            <tr data-cat={p.category}>
+              <td><a href={`/lead-acid/products/${p.id}/`}>{p.name}</a></td>
+              <td>{lineLabels[p.category]}</td>
+              <td>{p.capacity_ah ? `${p.capacity_ah} Ah` : '—'}</td>
+              <td>{p.cca ? `${p.cca} A` : '—'}</td>
+              <td>{p.dimensions_mm ? `${p.dimensions_mm} mm` : '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <script>
+        const filter = () => {
+          const q = (document.getElementById('q').value || '').toLowerCase();
+          const cat = document.querySelector('.chip.active')?.dataset.cat || 'all';
+          document.querySelectorAll('#ptable tbody tr').forEach((tr) => {
+            const okCat = cat === 'all' || tr.dataset.cat === cat;
+            const okQ = !q || tr.textContent.toLowerCase().includes(q);
+            tr.style.display = okCat && okQ ? '' : 'none';
+          });
+        };
+        document.getElementById('q').addEventListener('input', filter);
+        document.querySelectorAll('.chip').forEach((c) => c.addEventListener('click', () => {
+          document.querySelectorAll('.chip').forEach((x) => x.classList.remove('active'));
+          c.classList.add('active');
+          filter();
+        }));
+      </script>
+
+      <h2>Find by battery group</h2>
+      <p>
+        Group size decides physical fit. Each group links to its models in this catalogue — and, where a
+        structured reference exists, to the <a href="https://data.worldbatteryhub.com">battery data</a> entity:
+      </p>
+      <table>
+        <thead><tr><th>Group</th><th>Models in this catalogue</th></tr></thead>
+        <tbody>
+          {groups.map((g) => (
+            <tr>
+              <td>{g.data ? <a href={`https://data.worldbatteryhub.com/battery-groups/${g.data}/`}>{g.label}</a> : g.label}</td>
+              <td>
+                {g.models.map((id) => {
+                  const p = findP(id);
+                  return p ? <a href={`/lead-acid/products/${p.id}/`}>{p.name.split(' (')[0]}</a> : null;
+                }).reduce((acc, x, i, arr) => {
+                  acc.push(x);
+                  if (i < arr.length - 1) acc.push(<span> · </span>);
+                  return acc;
+                }, [])}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       <h2>How this section works</h2>
       <ul>
         <li><strong>Source</strong> — every product page links to its page on cnbatteries.com and states that specifications are the supplier's published values (2026-09).</li>
         <li><strong>Honesty</strong> — missing CCA or dimensions read "per manufacturer quotation" rather than an invented number.</li>
         <li><strong>Context</strong> — every product page links to the knowledge pages that interpret its ratings (CCA standards, group sizes, chemistry).</li>
-        <li><strong>No pricing</strong> — bulk OEM pricing is quotation-based; contact the supplier directly.</li>
+        <li><strong>No pricing</strong> — bulk OEM pricing is quotation-based; use the inquiry link above.</li>
       </ul>
 
       <h2>What This Means</h2>

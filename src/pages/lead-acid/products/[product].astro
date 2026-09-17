@@ -46,6 +46,11 @@ const related = productsData.products.filter((x) => x.category === category && x
   author="World Battery Hub"
   dateModified="2026-09-17"
 >
+  <style>
+    .inquiry { margin: 20px 0; padding: 16px 18px; border: 1px solid var(--accent-border); border-radius: var(--radius-md); background: var(--accent-soft); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
+    .inquiry p { margin: 0; color: var(--navy); font-weight: 650; }
+  </style>
+
   <section class="section">
     <div class="container">
       <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
@@ -71,6 +76,11 @@ const related = productsData.products.filter((x) => x.category === category && x
           <tr><th>Applications</th><td>{applications}</td></tr>
         </tbody>
       </table>
+
+      <div class="inquiry">
+        <p><strong>B2B buyers:</strong> bulk supply, private labelling, OEM/ODM programmes.</p>
+        <a class="cta" href="https://cnbatteries.com/contact-us" target="_blank" rel="noopener">Inquire about this model &rarr;</a>
+      </div>
 
       <h2>What this battery does</h2>
       <p>{description}</p>
