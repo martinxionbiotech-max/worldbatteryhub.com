@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Standards: The Complete System';
+const description = 'The battery standards system — SAE J537, EN 50342, JIS D5301, DIN 43539, IEC 60095/62660/62133, UN 38.3, UL 1973/2580 and more. What each standard governs, and how standards connect groups, tests and manufacturers.';
+const canonical = '/standards/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/standards/',
+  about: 'Battery standards system',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Standards · Last reviewed 2026-09-17</p>
+      <h1>Battery Standards: The Complete System</h1>
+      <p class="lead">
+        Standards are the battery industry&rsquo;s shared language — every rating on every battery resolves to a
+        standard, a test condition and a pass criterion. This hub maps the system the whole site runs on.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> 15 standards across five families —
+        <strong>SAE</strong> (J537 cranking), <strong>EN/DIN</strong> (50342, 43539),
+        <strong>JIS</strong> (D5301), <strong>IEC</strong> (60095, 62660, 62133), <strong>UL</strong>
+        (1973, 2580) and <strong>UN</strong> (38.3 transport) — each linked to the battery groups, tests and
+        manufacturers it governs.
+      </div>
+
+      <h2>Why standards are the knowledge graph&rsquo;s connector</h2>
+      <p>
+        A battery group, a test method and a manufacturer's claim all meet at a standard. The chain runs:
+        <strong>H6 → EN 50342 → CCA test → −18°C / 7.5V cutoff → manufacturer rating</strong>. Learn the
+        standards and the rest of the battery market stops being numbers without context — every figure
+        gains its condition (see <a href="/lead-acid/cca/what-is-cca/">what CCA means</a> and
+        <a href="/lead-acid/cca/cca-vs-ca/">why CCA values differ between standards</a>).
+      </p>
+
+      <h2>The standards directory</h2>
+      <table>
+        <thead><tr><th>Standard</th><th>Region</th><th>Chemistry</th><th>What it governs</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a></td><td>North America</td><td>Lead-acid</td><td>Cranking performance (CCA/CA/HCA) and capacity</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/en-50342/">EN 50342</a></td><td>Europe</td><td>Lead-acid</td><td>Starter battery performance, dimensions and ratings</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">JIS D5301</a></td><td>Japan</td><td>Lead-acid</td><td>Automotive battery ratings and group codes</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/din-43539/">DIN 43539</a></td><td>Europe</td><td>Lead-acid</td><td>Starter battery cranking ratings</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/iec-60095/">IEC 60095</a></td><td>International</td><td>Lead-acid</td><td>Starter battery general requirements</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/iec-62660/">IEC 62660</a></td><td>International</td><td>Lithium-ion</td><td>EV cell performance and life</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/iec-62133/">IEC 62133</a></td><td>International</td><td>Lithium-ion</td><td>Portable cell safety</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/un-38-3/">UN 38.3</a></td><td>International</td><td>Lithium</td><td>Transport safety (T1–T8)</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/ul-1973/">UL 1973</a></td><td>North America</td><td>Lithium</td><td>Stationary storage safety</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/ul-2580/">UL 2580</a></td><td>North America</td><td>Lithium</td><td>EV battery safety</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/ieee-1188/">IEEE 1188</a></td><td>International</td><td>Lead-acid (VRLA)</td><td>Stationary battery maintenance and replacement</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/en-50272/">EN 50272</a></td><td>Europe</td><td>All</td><td>Battery room and installation safety</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/iata-dgr/">IATA DGR</a></td><td>International (air)</td><td>Lithium</td><td>Air transport of lithium batteries</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/un-3171/">UN 3171</a></td><td>International</td><td>Lithium</td><td>Battery-powered vehicles and equipment</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/standards/sae-j2464/">SAE J2464</a></td><td>North America</td><td>Lithium</td><td>EV battery abuse testing</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to read a standard&rsquo;s rating</h2>
+      <p>
+        One standard, one number, one condition — and the condition is half the meaning. CCA is meaningless
+        without its test temperature and cutoff voltage; capacity is meaningless without its discharge rate.
+        The standard supplies all three, which is why comparing ratings across standards is not arithmetic
+        but translation (see <a href="https://testing.worldbatteryhub.com/cca-testing/">how CCA is tested</a>).
+      </p>
+
+      <h2>Engineering interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>What the data means:</strong> Standards are the site&rsquo;s trust infrastructure. A battery
+          claim that names its standard and condition is checkable; one that does not is marketing. The
+          standards system exists so that every entity on this site — group, test, manufacturer, product —
+          can be traced back to the document that defines it.</p>
+        <p>
+          <strong>Why it matters:</strong> The difference between a battery data platform and a battery blog is
+          exactly this layer. Blogs quote numbers; platforms quote numbers with their standards — and that is
+          what makes the numbers verifiable by engineers, buyers and AI systems alike.</p>
+        <p class="muted"><em>Editorial interpretation, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Standard titles and scopes per the publishing organizations; test conditions as cited on the linked testing pages.</p>
+
+      <p class="muted">
+        <a href="/testing/">Testing hub</a> · <a href="/lead-acid/battery-group-sizes/">Group sizes</a> ·
+        <a href="/lead-acid/cca/what-is-cca/">CCA explained</a> · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
