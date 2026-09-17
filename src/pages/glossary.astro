@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Battery Glossary: 30 Terms That Matter';
+const description = 'The battery terms that carry the industry\u2019s real meaning — Ah, Wh, CCA, RC, SOC, SOH, DoD, C-rate, Peukert, LFP, NMC, BMS and more, defined in plain language with links to the deep pages.';
+const canonical = '/glossary/';
+
+const defs = [
+  ['Amp-hour (Ah)', 'A capacity unit: one amp for one hour. A 100 Ah battery can deliver 10 A for about 10 hours — at its rated (C20) rate and before usable-depth adjustments.', '/lead-acid/runtime-calculation/'],
+  ['Watt-hour (Wh)', 'An energy unit that removes the voltage ambiguity of Ah: Wh = Ah × voltage. 100 Ah at 12V is 1,200 Wh; the same 100 Ah at 48V is 4,800 Wh.', '/technology/ah-vs-wh/'],
+  ['CCA (cold cranking amps)', 'The current a battery can deliver for 30 seconds at −18°C while staying above 7.2V (SAE J537). The starting battery\u2019s headline rating.', '/lead-acid/cca/what-is-cca/'],
+  ['Reserve capacity (RC)', 'Minutes a battery delivers 25 A before falling to 10.5V — the \u201cengine off, lights on\u201d measure, roughly 1.5–1.7× the Ah rating in minutes.', '/lead-acid/reserve-capacity/'],
+  ['State of charge (SOC)', 'How full the battery is now, as a percentage of its current capacity — estimated by voltage, coulomb counting or a model.', '/lithium/soc-vs-soh/'],
+  ['State of health (SOH)', 'How much of the battery\u2019s original capacity remains — the aging number that falls slowly with every cycle and every month.', '/lithium/soc-vs-soh/'],
+  ['Depth of discharge (DoD)', 'How deep the battery is cycled. Lead-acid is designed around 50% DoD for longevity; LFP around 80–90%.', '/lead-acid/deep-cycle-vs-starting/'],
+  ['C-rate', 'Current expressed as a multiple of capacity: 1C discharges a 100 Ah battery at 100 A. Higher C-rates deliver less than the nameplate capacity (Peukert).', '/lithium/c-rate/'],
+  ['Peukert effect', 'The capacity penalty at high currents: internal losses grow with load, so heavy drains deliver fewer usable Ah than the C20 nameplate.', '/lead-acid/runtime-calculation/'],
+  ['Internal resistance', 'The battery\u2019s own opposition to current, in milliohms. It sets the CCA ceiling, heats the battery under load, and climbs with age.', '/technology/internal-resistance/'],
+  ['Specific gravity', 'The electrolyte\u2019s density — a flooded lead-acid battery\u2019s honest fuel gauge: ~1.265 full, ~1.190 at 50%.', 'https://technology.worldbatteryhub.com/electrolyte-specific-gravity/'],
+  ['Nominal voltage', 'The chemistry\u2019s nameplate voltage: 2.0V per lead-acid cell, 3.2V for LFP, 3.6–3.7V for NMC. Packs are multiples of the cell.', '/lithium/lfp-vs-nmc-vs-lto/'],
+  ['SLI battery', 'Starting-Lighting-Ignition: the thin-plate battery built for short, strong cranking bursts and immediate recharge.', '/lead-acid/sli-battery/'],
+  ['AGM (absorbent glass mat)', 'A sealed lead-acid battery whose electrolyte is held in a fibreglass mat ~90–95% saturated — spill-proof, vibration-tolerant, recombination-capable.', '/lead-acid/agm-battery/'],
+  ['EFB (enhanced flooded battery)', 'A flooded battery with carbon added to the negative plate — roughly 2–3× the cycling of standard flooded, the entry start-stop battery.', '/lead-acid/efb-battery/'],
+  ['Gel battery', 'A sealed lead-acid whose electrolyte is a silica gel. Strong deep-cycling at moderate rates, but the lowest charge-voltage ceiling (14.1–14.4V).', '/lead-acid/gel-battery/'],
+  ['VRLA (valve-regulated lead-acid)', 'The sealed family — AGM and gel — where oxygen recombines inside and a valve vents only on overpressure.', 'https://technology.worldbatteryhub.com/vrla/'],
+  ['Deep-cycle battery', 'The thick-plate design built to be discharged deeply and often — the opposite of the SLI sprint.', '/lead-acid/deep-cycle-vs-starting/'],
+  ['LFP (lithium iron phosphate)', 'The lithium chemistry of stability: ~3.2V nominal, 2,000–5,000 cycles, no nickel or cobalt, the storage and entry-EV standard.', '/lithium/lfp-vs-nmc-vs-lto/'],
+  ['NMC (nickel-manganese-cobalt)', 'The lithium chemistry of density: ~3.7V nominal, high energy per kilogram, nickel and cobalt dependent — the premium EV choice.', '/lithium/lfp-vs-nmc-vs-lto/'],
+  ['LTO (lithium titanate)', 'The lithium chemistry of endurance: lower voltage and density, but ~10,000+ cycles and extreme-rate tolerance — niche industrial use.', '/lithium/lfp-vs-nmc-vs-lto/'],
+  ['BMS (battery management system)', 'The electronics that protect every lithium cell — over/undervoltage, overcurrent, temperature — and estimate SOC/SOH. Lithium\u2019s safety layer.', '/lithium/what-is-bms/'],
+  ['Thermal runaway', 'The self-feeding failure chain: heat breaks down the SEI, the cathode follows, and the cell vents or ignites. The lithium safety worst case.', '/lithium/thermal-runaway/'],
+  ['Equalization', 'A deliberate overcharge of a flooded lead-acid bank that remixes the acid and rebalances cells — flooded only, and watched.', '/lead-acid/equalization/'],
+  ['Conductance testing', 'An AC-signal health screen that estimates CCA from the battery\u2019s internal conductance — fast, non-invasive, an estimate rather than a load test.', 'https://testing.worldbatteryhub.com/resistance-conductance/'],
+  ['Gigafactory', 'A cell plant built at multi-GWh scale — the unit of the battery industry\u2019s capacity race.', '/market/china-battery-production/'],
+  ['BESS (battery energy storage system)', 'A containerised or building-scale battery bank serving the grid — the fastest-growing layer of the battery market.', '/market/storage-battery-market/'],
+  ['CAGR (compound annual growth rate)', 'The constant annual rate that carries a value from start to finish: (end ÷ start)^(1/years) − 1. Battery demand\u2019s ~20% CAGR doubles it every ~3.8 years.', '/market/battery-demand-forecast/'],
+  ['Black mass', 'The shredded, crushed output of battery recycling — the mixed cathode/anode powder that smelters and leachers recover metals from.', '/lithium/lithium-recycling/'],
+  ['Calendar aging', 'Battery aging that runs with time rather than use — heat roughly doubles its rate every 10°C, and it continues in storage.', '/lithium/lithium-degradation/'],
+];
+
+const definedTermJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': 'https://worldbatteryhub.com/glossary/#termset',
+  name: 'Battery Glossary',
+  hasDefinedTerm: defs.map(([name, definition, url]) => ({
+    '@type': 'DefinedTerm',
+    '@id': `https://worldbatteryhub.com/glossary/#${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+    name,
+    description: definition,
+    url: url.startsWith('http') ? url : `https://worldbatteryhub.com${url}`,
+  })),
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[definedTermJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <style>
+    .def { margin-bottom: 14px; }
+    .def dt { font-weight: 700; color: #0f1f3d; }
+    .def dd { margin: 2px 0 0; }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <p class="byline">Reference · Last reviewed 2026-09-17</p>
+      <h1>Battery Glossary: 30 Terms That Matter</h1>
+      <p class="lead">
+        Thirty terms that carry the industry&rsquo;s real meaning — each defined in plain language, each linking
+        to the page that goes deeper. Definitions are original to this site, written against the engineering
+        references in the linked pages.
+      </p>
+
+      <h2>Fundamentals</h2>
+      <dl>
+        {defs.slice(0, 12).map(([name, definition, url]) => (
+          <div class="def">
+            <dt id={name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{name}</dt>
+            <dd>
+              {definition}{' '}
+              <a href={url}>Full explanation →</a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>Battery types</h2>
+      <dl>
+        {defs.slice(12, 21).map(([name, definition, url]) => (
+          <div class="def">
+            <dt id={name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{name}</dt>
+            <dd>
+              {definition}{' '}
+              <a href={url}>Full explanation →</a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>Safety, testing and the industry</h2>
+      <dl>
+        {defs.slice(21).map(([name, definition, url]) => (
+          <div class="def">
+            <dt id={name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{name}</dt>
+            <dd>
+              {definition}{' '}
+              <a href={url}>Full explanation →</a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>Our Interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> A glossary is a site&rsquo;s honesty policy made visible — the place
+          where Ah and Wh stop being interchangeable, where CCA names its standard, and where a cycle-life
+          claim names its depth of discharge. Terminology discipline is content discipline.</p>
+        <p>
+          <strong>Why:</strong> Battery errors usually begin as word errors — mixing power and energy, comparing
+          CCA across standards, quoting cycle life without its depth. Definitions that carry their units,
+          conditions and limits are the cheapest quality control a reader can buy, and this page exists to be
+          exactly that.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Definitions cross-verified against the engineering references cited on the linked pages.</p>
+
+      <p class="muted">
+        Related: <a href="/tools/">battery calculators</a> ·
+        <a href="/lead-acid/">lead-acid knowledge</a> ·
+        <a href="/lithium/">lithium knowledge</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
