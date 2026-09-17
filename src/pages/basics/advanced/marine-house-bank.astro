@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Case Study: Designing a Marine House Bank';
+const description = 'A marine house bank walkthrough — 100W average, 8 hours between charges, 12V — with the sizing arithmetic, the runtime cross-check and the engine-start separation rule.';
+const canonical = '/basics/advanced/marine-house-bank/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics — Advanced',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How big should a marine house bank be?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Energy first: 100W for 8 hours is 800 Wh, which at 12V is about 67 Ah usable — roughly 134 Ah rated for lead-acid's 50% window, typically a pair of Group 27 deep-cycles or a single 130–150 Ah deep-cycle.",
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'Why keep the engine battery separate from the house bank?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "So the house loads can never drain the boat's ability to start the engine. The standard design is a dedicated starting battery with a charge relay between it and the house bank — the separation is the safety margin.",
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Advanced Case Study · Last reviewed 2026-09-17</p>
+      <h1>Case Study: Designing a Marine House Bank</h1>
+      <p class="lead">A sailboat's house bank is a small off-grid system that happens to float — and the same three-step method sizes it, with one marine addition: keep the starting battery separate.</p>
+
+      <div class="takeaways">
+        <strong>The case:</strong> A boat's house loads average <strong>100W</strong> (instruments, autopilot, fridge, lights) for <strong>8 hours</strong> between engine or shore charging, on a <strong>12V</strong> system with <strong>1 day</strong> of autonomy.
+      </div>
+
+      <h2>Step 1: the demand</h2>
+      <p>Energy = 100W × 8h = <strong>800 Wh</strong>. Modest by house standards — and enough to strand a boat if the bank is undersized, because there is no grid to fall back on.</p>
+
+      <h2>Step 2: the sizing</h2>
+      <p>800 Wh ÷ 12V = <strong>67 Ah usable</strong>. At lead-acid's 50% window: <strong>~134 Ah rated</strong> — in practice a pair of Group 27 deep-cycles in parallel, or a single 130–150 Ah deep-cycle (see the <a href='/tools/sizing-calculator/'>sizing calculator</a>). At LFP's 80%: ~84 Ah rated — the same duty at roughly 60% of the bank.</p>
+
+      <h2>Step 3: the runtime cross-check</h2>
+      <p>At 100W the 12V bank draws ~8.3A. The 134 Ah lead-acid bank's usable 67 Ah at 8.3A runs <strong>~8.1 hours</strong> — exactly the requirement (see the <a href='/tools/runtime-calculator/'>runtime calculator</a>). The numbers close; the marine design rules are next.</p>
+
+      <h2>Step 4: the marine-specific rules</h2>
+      <ul>
+        <li><strong>Separate the engine battery</strong> — the house bank must never be able to leave the boat unable to start; a <a href='/lead-acid/marine-battery/'>dedicated starting battery</a> with a charge relay is the standard.</li>
+        <li><strong>Read the ratings correctly</strong> — marine batteries are rated in <strong>MCA at 0°C</strong>, which reads higher than CCA at −18°C; do not compare the two ladders (see <a href='/lead-acid/cca/cca-vs-ca/'>CCA vs CA</a>).</li>
+        <li><strong>Anchor the bank</strong> — a boat that heels is a vibration and shifting hazard; strap the batteries down as firmly as the engine.</li>
+      </ul>
+
+      <h2>What the case teaches</h2>
+      <p>The marine case is the off-grid method plus one hazard: <strong>no grid, no tow</strong>. The sizing arithmetic is identical to the cabin's; the discipline difference is the separation rule — the house bank may fail without leaving the vessel dark, because the starting battery still answers.</p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>In my view:</strong> The marine house bank is the purest test of sizing discipline — small loads, real consequences, and no second chances from a power socket. The method is the same three steps as any bank, and the boat's contribution is the rule that the house must never own the ignition.</p>
+        <p>
+          <strong>Why:</strong> Every stranded-boat story is a sizing or separation failure, and both are preventable with arithmetic and one relay. The case is worth studying because its stakes are the highest of any battery decision an individual makes.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How big should a marine house bank be?</h3>
+      <p>Energy first: 100W for 8 hours is 800 Wh, which at 12V is about 67 Ah usable — roughly 134 Ah rated for lead-acid's 50% window, typically a pair of Group 27 deep-cycles or a single 130–150 Ah deep-cycle.</p>
+      <h3>Why keep the engine battery separate from the house bank?</h3>
+      <p>So the house loads can never drain the boat's ability to start the engine. The standard design is a dedicated starting battery with a charge relay between it and the house bank — the separation is the safety margin.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Marine electrical practice references — house bank and separation design.</li>
+        <li>Battery engineering references — capacity ratings and depth of discharge.</li>
+      </ul>
+
+      <p class="muted">
+        <a href='/basics/'>Basics index</a> · <a href='/lead-acid/marine-battery/'>Marine batteries</a> · Next case: <a href='/basics/advanced/rv-lithium-conversion/'>RV lithium conversion</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

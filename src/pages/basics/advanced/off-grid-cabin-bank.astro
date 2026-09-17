@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Case Study: Sizing an Off-Grid Cabin Battery Bank';
+const description = 'A complete off-grid cabin battery sizing walkthrough — 300W, 6 hours, 2 autonomy days, 24V — with the calculator, the cross-checks and the lead-acid vs LFP decision.';
+const canonical = '/basics/advanced/off-grid-cabin-bank/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics — Advanced',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How big a battery bank does an off-grid cabin need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Energy first: load in watts × hours × autonomy days. A 300W, 6-hour, 2-day cabin needs 3,600 Wh. At 24V that is 150 Ah usable — about 300 Ah rated for lead-acid's 50% window or about 188 Ah rated for LFP's 80%.",
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'Should an off-grid bank be lead-acid or LFP?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LFP usually wins the life-cycle economics: about twice the usable depth, five to ten times the cycles, and half the weight — at a higher upfront price. Lead-acid remains the budget entry, and both work when the depth-of-discharge margin is applied honestly.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Advanced Case Study · Last reviewed 2026-09-17</p>
+      <h1>Case Study: Sizing an Off-Grid Cabin Battery Bank</h1>
+      <p class="lead">A cabin drawing 300W for six hours a day with two days of autonomy behind it — sized twice, once for lead-acid and once for LFP, and the difference is the lesson.</p>
+
+      <div class="takeaways">
+        <strong>The case:</strong> An off-grid cabin runs <strong>300W average</strong> (lights, fridge, router) for <strong>6 effective hours a day</strong>, and the owner wants <strong>2 days of autonomy</strong> for cloudy spells on a <strong>24V</strong> system.
+      </div>
+
+      <h2>Step 1: the energy demand</h2>
+      <p>Energy = 300W × 6h × 2 days = <strong>3,600 Wh</strong>. That single number is the demand side, and every step after it is conversion.</p>
+
+      <h2>Step 2: the calculator, run twice</h2>
+      <p>Into the <a href='/tools/sizing-calculator/'>sizing calculator</a>: 300W, 6 hours, 24V, 2 days — once at 50% depth (<strong>lead-acid</strong>) and once at 80% (<strong>LFP</strong>):</p>
+      <table>
+        <thead><tr><th>Chemistry</th><th>Energy</th><th>Voltage</th><th>Depth</th><th>Bank size</th></tr></thead>
+        <tbody>
+          <tr><td>Lead-acid</td><td>3,600 Wh</td><td>24V</td><td>50%</td><td><strong>~300 Ah</strong></td></tr>
+          <tr><td>LFP</td><td>3,600 Wh</td><td>24V</td><td>80%</td><td><strong>~188 Ah</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="muted">3,600 Wh ÷ 24V = 150 Ah usable; ÷ 0.5 = 300 Ah rated (lead-acid); ÷ 0.8 = ~188 Ah rated (LFP).</p>
+
+      <h2>Step 3: the cross-check</h2>
+      <p>Verify with the <a href='/tools/runtime-calculator/'>runtime calculator</a>: at 300W the 24V bank draws 12.5A. The lead-acid bank's usable half — 150 Ah — at 12.5A runs <strong>12 hours</strong>, exactly the 6h × 2 days requirement. The arithmetic closes; now the decision opens.</p>
+
+      <h2>Step 4: the purchase decision</h2>
+      <p>The lead-acid option is two 150 Ah 12V deep-cycles in series (or one 300 Ah-class bank); the LFP option is a single ~200 Ah 24V pack. The <strong>cost-per-cycle math</strong> decides: lead-acid at ~500 cycles costs roughly double per cycle what LFP costs at ~3,000 (see <a href='/basics/battery-chemistry-basics/'>the chemistry lesson</a>) — and the LFP pack weighs roughly half as much to carry to a cabin.</p>
+
+      <h2>What the case teaches</h2>
+      <p>The case's real lesson is the margin, not the arithmetic: the same demand produced 300 Ah and 188 Ah answers because the <strong>depth-of-discharge window</strong> differed. Skip the margin and the "cheaper" lead-acid bank comes up short on the third cloudy day; apply it and both chemistries meet the same honest requirement.</p>
+
+      <h2>Why This Matters</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> Off-grid sizing is where the calculator earns its keep — the numbers are small enough to verify by hand and the consequences are far from any help desk. The case shows the method, and the method is transferable to every bank you will ever size.</p>
+        <p>
+          <strong>Why:</strong> The demand-energy-margin sequence — 3,600 Wh, then voltage, then depth — is the entire discipline of off-grid planning. Master it once, with the cross-check habit, and no bank purchase is ever a guess again.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How big a battery bank does an off-grid cabin need?</h3>
+      <p>Energy first: load in watts × hours × autonomy days. A 300W, 6-hour, 2-day cabin needs 3,600 Wh. At 24V that is 150 Ah usable — about 300 Ah rated for lead-acid's 50% window or about 188 Ah rated for LFP's 80%.</p>
+      <h3>Should an off-grid bank be lead-acid or LFP?</h3>
+      <p>LFP usually wins the life-cycle economics: about twice the usable depth, five to ten times the cycles, and half the weight — at a higher upfront price. Lead-acid remains the budget entry, and both work when the depth-of-discharge margin is applied honestly.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Off-grid system documentation — load tables and sizing practice.</li>
+        <li>Battery engineering references — depth of discharge and cycle life.</li>
+      </ul>
+
+      <p class="muted">
+        <a href='/basics/'>Basics index</a> · <a href='/tools/sizing-calculator/'>Sizing calculator</a> · Next case: <a href='/basics/advanced/marine-house-bank/'>marine house bank</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

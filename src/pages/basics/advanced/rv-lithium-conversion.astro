@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Case Study: The RV Lead-Acid to Lithium Conversion';
+const description = 'The RV lithium conversion decision, quantified — 200 Ah AGM vs 200 Ah LFP: usable capacity, cost per cycle, and the three system changes the swap requires.';
+const canonical = '/basics/advanced/rv-lithium-conversion/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics — Advanced',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is a lithium conversion worth it for an RV?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "It depends on usage: LFP at ~$0.40 per cycle against AGM's ~$0.80 pays off only for batteries that actually cycle — heavy boondockers convert, permanently plugged-in RVs do not. Add 60% more usable energy per charge, and the heavy-use case becomes decisive.",
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'What must change when converting an RV to lithium?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Three systems: the charging profile (lithium settings, no equalization), alternator protection (a DC-DC charger, because LFP draws harder than AGM), and cold-weather charging (LFP must not charge below 0°C). The battery is the cheap part of the swap.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Advanced Case Study · Last reviewed 2026-09-17</p>
+      <h1>Case Study: The RV Lead-Acid to Lithium Conversion</h1>
+      <p class="lead">The same 200 Ah label means different things in the two chemistries — and the conversion decision is decided by the difference: usable energy, cycles, and cost per cycle.</p>
+
+      <div class="takeaways">
+        <strong>The case:</strong> An RV owner considers replacing a <strong>200 Ah AGM house bank</strong> with a <strong>200 Ah LFP</strong> bank. The label is identical; the usable energy is not — and the arithmetic below is the entire decision.
+      </div>
+
+      <h2>The usable-capacity difference</h2>
+      <p>At the recommended windows, the AGM bank offers <strong>200 Ah × 50% = 100 Ah usable</strong>; the LFP offers <strong>200 Ah × 80% = 160 Ah usable</strong> — <strong>60% more energy</strong> from the same label (see <a href='/basics/battery-capacity/'>capacity</a>). The runtime calculator shows it: at a 10A house draw, the AGM runs ~10 hours, the LFP ~16.</p>
+
+      <h2>The cost-per-cycle arithmetic</h2>
+      <p>The original calculation that decides the purchase:</p>
+      <table>
+        <thead><tr><th></th><th>AGM</th><th>LFP</th></tr></thead>
+        <tbody>
+          <tr><td>Purchase price (typical)</td><td>~$400</td><td>~$1,200</td></tr>
+          <tr><td>Cycle life (to ~80%)</td><td>~500</td><td>~3,000</td></tr>
+          <tr><td>Cost per cycle</td><td><strong>~$0.80</strong></td><td><strong>~$0.40</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Typical order-of-magnitude figures — LFP costs three times as much upfront and roughly half as much per cycle, while also carrying 60% more usable energy per charge.</p>
+
+      <h2>The three system changes the swap requires</h2>
+      <ul>
+        <li><strong>Charging profile</strong> — the converter and solar controller must switch to a lithium profile (3.65V/cell absorption, no equalization) or the LFP is charged wrong from day one (see <a href='/lithium/how-to-charge/'>lithium charging</a>).</li>
+        <li><strong>Alternator protection</strong> — LFP accepts current far more eagerly than AGM; a DC-DC charger protects the alternator from the load (a <a href='/lithium/what-is-bms/'>BMS</a> alone does not).</li>
+        <li><strong>Cold-weather charging</strong> — LFP refuses to charge below 0°C; winter users need heating pads or a charge-block strategy (see <a href='/lead-acid/cold-weather-battery/'>cold behaviour</a>).</li>
+      </ul>
+
+      <h2>When the conversion is not worth it</h2>
+      <p>Three honest counter-cases: the RV that sits plugged in (cycles never accumulate, so the per-cycle saving never materialises), the budget build (the upfront triple is real money), and the winter-only user (the cold-charge limits bite hardest exactly when the RV is used). The arithmetic says LFP; the <em>usage pattern</em> is the tiebreaker.</p>
+
+      <h2>Our Read</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My read:</strong> The RV conversion is the clearest worked example of battery economics anywhere — the same 200 Ah label, three times the price, half the cost per cycle — and the decision is decided not by the chemistry but by the usage pattern the owner actually lives.</p>
+        <p>
+          <strong>Why:</strong> Cost per cycle plus usable energy is the correct frame, and the frame disciplines the decision: heavy users should convert, plugged-in users should not, and everyone should budget the three system changes before buying the battery — the battery is the cheap part of the swap.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Is a lithium conversion worth it for an RV?</h3>
+      <p>It depends on usage: LFP at ~$0.40 per cycle against AGM's ~$0.80 pays off only for batteries that actually cycle — heavy boondockers convert, permanently plugged-in RVs do not. Add 60% more usable energy per charge, and the heavy-use case becomes decisive.</p>
+      <h3>What must change when converting an RV to lithium?</h3>
+      <p>Three systems: the charging profile (lithium settings, no equalization), alternator protection (a DC-DC charger, because LFP draws harder than AGM), and cold-weather charging (LFP must not charge below 0°C). The battery is the cheap part of the swap.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Manufacturer datasheets — AGM and LFP cycle life at rated depths.</li>
+        <li>RV electrical practice references — DC-DC charging and lithium integration.</li>
+      </ul>
+
+      <p class="muted">
+        <a href='/basics/'>Basics index</a> · <a href='/lithium/12v-car-battery/'>Lithium 12V</a> · Next case: <a href='/basics/advanced/telecom-backup-sizing/'>telecom backup</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

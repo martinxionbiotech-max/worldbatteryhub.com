@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Case Study: Sizing a Telecom Backup Battery';
+const description = 'A telecom backup battery sizing walkthrough — 500W site load, 8 hours of backup, 48V — with the standby design factors, the recharge window and why standby sizing differs from cycling sizing.';
+const canonical = '/basics/advanced/telecom-backup-sizing/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics — Advanced',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you size a telecom backup battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Energy first: 500W × 8 hours = 4,000 Wh, which at 48V is about 83 Ah. Apply the standby design factor of roughly 1.25 so the battery still meets the duration at end of life — about 105 Ah at 48V, plus a recharge window that restores the bank before the next outage.',
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'Why do standby batteries age if they are rarely cycled?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because calendar aging runs with time, not use — float charging at elevated temperatures halves life roughly every 10°C above 25°C. The standby battery ages on its own rack, which is why replacement windows are time-based (3–5 years typical) rather than cycle-based.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Advanced Case Study · Last reviewed 2026-09-17</p>
+      <h1>Case Study: Sizing a Telecom Backup Battery</h1>
+      <p class="lead">Standby sizing is the cycling method turned upside down: the battery sits full for years, then must deliver everything on the one bad day — and the arithmetic adds a design factor the off-grid case never meets.</p>
+
+      <div class="takeaways">
+        <strong>The case:</strong> A telecom site draws <strong>500W</strong> and must ride through <strong>8 hours</strong> of grid outage on a <strong>48V</strong> system — a standby battery that spends its life waiting for exactly this day.
+      </div>
+
+      <h2>Step 1: the energy demand</h2>
+      <p>Energy = 500W × 8h = <strong>4,000 Wh</strong>. At 48V that is <strong>~83 Ah</strong> — the raw requirement, before the standby discipline begins.</p>
+
+      <h2>Step 2: the standby design factor</h2>
+      <p>Standby banks are sized <em>up</em>, not down, for two reasons: the battery must deliver the full duration <strong>at end of life</strong>, not when new, and aging reduces real capacity toward the rating. Practice applies a design factor of roughly <strong>1.25</strong> (the IEEE 485-style logic): <strong>83 Ah × 1.25 ≈ 104 Ah</strong> — the honest bank is ~105 Ah at 48V, typically a string of 4× 12V 105 Ah VRLA blocks or an LFP system rated likewise.</p>
+
+      <h2>Step 3: the recharge window</h2>
+      <p>The second constraint most off-grid cases never face: the bank must <strong>recharge before the next outage</strong>. With an 8-hour autonomy and a 48V/20A charger, the bulk recharge is ~104 Ah ÷ 20A ≈ <strong>5+ hours</strong> plus the tail (see the <a href='/tools/charging-time-calculator/'>charging calculator</a>) — fine for daily cycling, tight for a site that can lose power twice in a day. The recharge window is as much a design input as the autonomy.</p>
+
+      <h2>Step 4: the chemistry choice</h2>
+      <p>Two honest options: <strong>VRLA lead-acid</strong> — the incumbent, no electronics, calendar-limited (~5 years float), or <strong>LFP</strong> — longer life, higher upfront, needs a BMS, and wins where the site cycles often (see <a href='/lead-acid/telecom-battery/'>telecom batteries</a>). The standby duty's distinguishing feature is the <strong>float life</strong>: the battery ages on the shelf of its own rack (see <a href='/lead-acid/ups-battery/'>UPS float life</a>).</p>
+
+      <h2>What the case teaches</h2>
+      <p>Standby sizing inverts the off-grid mindset: the cycling case fears running out of depth; the standby case fears arriving at the outage with a battery that has quietly aged. The design factor and the float-life discipline are the standby world's version of the depth-of-discharge margin — same honesty, different axis.</p>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My take:</strong> The telecom case is the standby world in one worked example — and its lesson generalises to every UPS, data-centre and hospital battery on earth: size for the end of life, not the nameplate, and treat float life as the real battery life.</p>
+        <p>
+          <strong>Why:</strong> The standby battery's failure mode is not exhaustion but silent aging — the outage finds the battery, not the other way round. The design factor is the industry's answer, and understanding it separates a backup that works from one that merely exists.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How do you size a telecom backup battery?</h3>
+      <p>Energy first: 500W × 8 hours = 4,000 Wh, which at 48V is about 83 Ah. Apply the standby design factor of roughly 1.25 so the battery still meets the duration at end of life — about 105 Ah at 48V, plus a recharge window that restores the bank before the next outage.</p>
+      <h3>Why do standby batteries age if they are rarely cycled?</h3>
+      <p>Because calendar aging runs with time, not use — float charging at elevated temperatures halves life roughly every 10°C above 25°C. The standby battery ages on its own rack, which is why replacement windows are time-based (3–5 years typical) rather than cycle-based.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>IEEE 485-style sizing practice — standby design factors.</li>
+        <li>Battery engineering references — float life and calendar aging.</li>
+      </ul>
+
+      <p class="muted">
+        <a href='/basics/'>Basics index</a> · <a href='/lead-acid/telecom-battery/'>Telecom batteries</a> · <a href='/tools/charging-time-calculator/'>Charging calculator</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
