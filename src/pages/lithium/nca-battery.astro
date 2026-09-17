@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'NCA Battery: What It Is, Energy Density and Why Tesla Uses It';
+const description = 'NCA (lithium nickel cobalt aluminium oxide) explained — nominal voltage, energy density, cobalt content and cycle life, how it compares with NMC and LFP, and the original density calculation.';
+const canonical = '/lithium/nca-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'NCA battery chemistry',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an NCA battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'NCA is lithium nickel cobalt aluminium oxide — a high-energy lithium-ion cathode chemistry. It has a nominal voltage of about 3.6V and one of the highest energy densities of any commercial lithium cell (~200–260 Wh/kg at cell level), which is why it was used in Tesla\u2019s early cylindrical packs. It contains much less cobalt than older NMC chemistries but is less thermally stable than LFP.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between NCA and NMC?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both are high-energy nickel-based cathodes with similar nominal voltage (~3.6V), but they differ in the stabilising elements: NCA uses aluminium, NMC uses manganese. NCA typically holds a small edge in energy density and contains roughly 10–15% cobalt, whereas early NMC 111 used about 33% — both are now being pushed to lower cobalt. NCA is concentrated in cylindrical cells (Panasonic/Tesla), NMC in pouch and prismatic.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is NCA safe?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'NCA is less thermally stable than LFP and can enter thermal runaway if damaged, overcharged or overheated, so it needs active thermal management and a functioning BMS. It is a mature, safe chemistry when those systems are in place — but its safety margin is lower than LFP\u2019s.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Chemistry · Last reviewed 2026-09-17</p>
+      <h1>NCA Battery: What It Is, Energy Density and Why Tesla Uses It</h1>
+      <p class="lead">
+        NCA is the high-energy chemistry behind Tesla&rsquo;s early cylindrical packs and the reason &ldquo;lithium
+        aluminium oxide&rdquo; matters more than it sounds — the aluminium is a tiny addition that stabilises a
+        nickel-heavy cathode, letting it hold more energy per kilogram than almost anything else on the market.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> NCA is <strong>lithium nickel cobalt aluminium oxide</strong> — a
+        high-energy cathode with a nominal voltage of ~3.6V and cell-level energy density around
+        <strong>200–260 Wh/kg</strong>. It uses <strong>much less cobalt</strong> than early NMC (roughly
+        10–15% vs ~33% for NMC 111) and was the chemistry behind Tesla&rsquo;s long-range cylindrical cells.
+        The trade-off: it is <strong>less thermally stable than LFP</strong> and needs active management.
+      </div>
+
+      <h2>What is an NCA battery?</h2>
+      <p>
+        NCA stands for <strong>lithium nickel cobalt aluminium oxide</strong> (LiNiCoAlO&#8322;). The cathode is
+        dominated by nickel — the element that stores the most energy — with cobalt for stability and a small
+        amount of aluminium to reinforce the structure. The aluminium is the point: it lets the cell push nickel
+        content high while keeping the cathode from degrading, which is how NCA reaches its energy density (see
+        <a href="/lithium/energy-density/">how energy density works</a>).
+      </p>
+
+      <h2>How does NCA compare with NMC and LFP?</h2>
+      <table>
+        <thead><tr><th></th><th>NCA</th><th>NMC</th><th>LFP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Full name</strong></td><td>Nickel-cobalt-aluminium</td><td>Nickel-manganese-cobalt</td><td>Lithium iron phosphate</td></tr>
+          <tr><td><strong>Nominal voltage</strong></td><td>~3.6 V</td><td>~3.6–3.7 V</td><td>~3.2 V</td></tr>
+          <tr><td><strong>Energy density (cell)</strong></td><td>~200–260 Wh/kg</td><td>~150–220 Wh/kg</td><td>~90–160 Wh/kg</td></tr>
+          <tr><td><strong>Cobalt content</strong></td><td>~10–15% (falling)</td><td>~9–33% (blend-dependent)</td><td>None</td></tr>
+          <tr><td><strong>Thermal stability</strong></td><td>Lower (needs management)</td><td>Lower (needs management)</td><td>Highest</td></tr>
+          <tr><td><strong>Typical cell format</strong></td><td>Cylindrical</td><td>Pouch / prismatic</td><td>Prismatic / cylindrical</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Energy-density and cobalt figures are typical ranges that vary by manufacturer and blend — treat them as
+        relative, not absolute (see <a href="/lithium/lfp-vs-nmc-vs-lto/">the chemistry baseline</a>).
+      </p>
+
+      <h2>The original calculation: from cathode to cell</h2>
+      <p>
+        NCA&rsquo;s headline energy density can be derived from two numbers: its specific capacity and its average
+        voltage. The cathode material stores roughly <strong>200 mAh per gram</strong> at an average voltage of
+        <strong>3.6 V</strong>, so its material-level energy density is:
+      </p>
+      <div class="evidence">
+        <p><strong>Step 1 — cathode material:</strong> 200 mAh/g × 3.6 V = 720 mWh/g = <strong>~720 Wh/kg</strong> at the cathode-material level.</p>
+        <p><strong>Step 2 — cell level:</strong> a real cell adds the anode, electrolyte, separator, current collectors and the can, which together leave only about a third of the mass as active cathode. Dividing by that overhead: 720 Wh/kg × ~0.35 ≈ <strong>~250 Wh/kg</strong> at cell level.</p>
+        <p class="muted">
+          That ~250 Wh/kg is the middle of the published 200–260 Wh/kg range — the gap between the two steps is
+          the packaging penalty, not chemistry loss.
+        </p>
+      </div>
+
+      <h2>Why Tesla used NCA</h2>
+      <p>
+        Tesla&rsquo;s long-range Model S and Model X packs were built on Panasonic NCA cylindrical cells because
+        NCA&rsquo;s energy density translated directly into range per kilogram — the metric that decides a
+        long-range EV. As the industry shifted, Tesla&rsquo;s focus moved toward NMC and LFP for cost and safety,
+        but NCA remains a benchmark for what a nickel-rich cathode can do when energy density is the priority.
+      </p>
+
+      <h2>What are NCA&rsquo;s limits?</h2>
+      <ul>
+        <li><strong>Thermal stability</strong> — lower than LFP; a damaged or overcharged NCA cell can enter
+        <a href="/lithium/thermal-runaway/">thermal runaway</a>, so it relies on cooling and a BMS.</li>
+        <li><strong>Cycle life</strong> — typically shorter than LFP&rsquo;s thousands of cycles; NCA is usually
+        quoted in the hundreds to low thousands depending on depth of discharge.</li>
+        <li><strong>Cobalt cost</strong> — lower than old NMC but still non-zero, which is why the whole industry
+        keeps pushing cobalt out.</li>
+      </ul>
+
+      <h2>Engineering interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>What the data means:</strong> NCA is a niche chemistry with an outsized legacy — it proved that a
+          nickel-rich cathode with a small aluminium stabiliser could hit the energy density a long-range EV
+          needs. Its lesson is structural, not commercial: the aluminium stabiliser opened the door to the
+          low-cobalt, high-nickel cathodes that now define the field.</p>
+        <p>
+          <strong>Why it matters:</strong> If you see an NCA cell on a datasheet, read it as &ldquo;maximum energy
+          density with a thermal-management requirement.&rdquo; The chemistry that wins on Wh/kg loses on thermal
+          headroom, and the engineering decision is always that trade-off — which is why NCA sits alongside, not
+          ahead of, LFP and NMC.</p>
+        <p class="muted"><em>Engineering interpretation, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is an NCA battery?</h3>
+      <p>NCA is lithium nickel cobalt aluminium oxide — a high-energy lithium-ion cathode chemistry. It has a nominal voltage of about 3.6V and one of the highest energy densities of any commercial lithium cell (~200–260 Wh/kg at cell level), which is why it was used in Tesla&rsquo;s early cylindrical packs. It contains much less cobalt than older NMC chemistries but is less thermally stable than LFP.</p>
+      <h3>What is the difference between NCA and NMC?</h3>
+      <p>Both are high-energy nickel-based cathodes with similar nominal voltage (~3.6V), but they differ in the stabilising elements: NCA uses aluminium, NMC uses manganese. NCA typically holds a small edge in energy density and contains roughly 10–15% cobalt, whereas early NMC 111 used about 33% — both are now being pushed to lower cobalt. NCA is concentrated in cylindrical cells (Panasonic/Tesla), NMC in pouch and prismatic.</p>
+      <h3>Is NCA safe?</h3>
+      <p>NCA is less thermally stable than LFP and can enter thermal runaway if damaged, overcharged or overheated, so it needs active thermal management and a functioning BMS. It is a mature, safe chemistry when those systems are in place — but its safety margin is lower than LFP&rsquo;s.</p>
+
+      <h2>Sources</h2>
+      <p>Chemistry parameters cross-verified from cell-manufacturer datasheets and battery engineering references; the cathode-to-cell calculation is this site&rsquo;s own derivation from published specific-capacity and voltage figures.</p>
+      <ul>
+        <li>Cell-manufacturer datasheets (Panasonic, and NCA cell suppliers) — nominal voltage, energy density, cobalt content.</li>
+        <li>Battery engineering references — nickel-rich cathode composition and thermal stability.</li>
+        <li>IEC 62660 / ISO 12405 — lithium cell test standards (reference).</li>
+      </ul>
+
+      <p class="muted">
+        Related: <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a> ·
+        <a href="/lithium/energy-density/">energy density</a> ·
+        <a href="/lithium/cell-formats-18650-21700-4680/">cell formats (18650 / 21700 / 4680)</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

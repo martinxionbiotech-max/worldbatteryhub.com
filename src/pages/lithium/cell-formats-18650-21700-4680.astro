@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = '18650 vs 21700 vs 4680: Lithium Cell Formats Compared';
+const description = '18650, 21700 and 4680 cylindrical lithium cells compared — dimensions, volume, capacity and energy, with the original volume calculation that explains the 5x 4680 claim.';
+const canonical = '/lithium/cell-formats-18650-21700-4680/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: '18650 vs 21700 vs 4680 cell formats',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What do 18650, 21700 and 4680 mean?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They are cylindrical cell size codes: the first two digits are the diameter in millimetres and the last three are the length in tenths of a millimetre. So 18650 is 18 mm wide × 65 mm long, 21700 is 21 mm × 70 mm, and 4680 is 46 mm × 80 mm.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is 4680 five times better than 21700?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not five times better per cell — roughly five times bigger in volume. A 4680 has about 5.5 times the volume of a 21700, so it holds about five times the energy per cell. The energy per kilogram is similar; the difference is fewer, larger cells per pack, which is a manufacturing and pack-design advantage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which cell format is best?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the pack. 18650 is the mature standard for laptops and power tools; 21700 is the EV sweet spot balancing size, cooling and energy; 4680 reduces cell count and cost at pack level but needs more advanced thermal management because each cell is larger. "Best" is a pack-design question, not a chemistry one.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Cell Formats · Last reviewed 2026-09-17</p>
+      <h1>18650 vs 21700 vs 4680: Lithium Cell Formats Compared</h1>
+      <p class="lead">
+        The three cylindrical formats are not rival chemistries — they are rival <strong>sizes</strong>, and the
+        size is the whole story. A bigger cell holds more energy but is harder to cool and pack, so each format
+        won its niche: 18650 in laptops, 21700 in EVs, and 4680 in the next generation of large packs.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> The name is the dimension — <strong>18650</strong> is 18 mm × 65 mm,
+        <strong>21700</strong> is 21 mm × 70 mm, <strong>4680</strong> is 46 mm × 80 mm. Each step up is a
+        bigger, higher-capacity cell: a 4680 holds roughly <strong>5× the energy of a 21700</strong> because it
+        has about <strong>5.5× the volume</strong> — not because the chemistry is 5× better. The trade-off is
+        cooling and pack complexity.
+      </div>
+
+      <h2>How to read the size code</h2>
+      <p>
+        The code is physical, not marketing. The first two digits are the <strong>diameter in millimetres</strong>;
+        the last three are the <strong>length in tenths of a millimetre</strong>. So 18650 = 18 mm diameter, 65.0
+        mm long; 21700 = 21 mm, 70.0 mm; 4680 = 46 mm, 80.0 mm. The zero at the end of 21700 and 4680 is a
+        round-length placeholder.
+      </p>
+
+      <h2>The three formats side by side</h2>
+      <table>
+        <thead><tr><th></th><th>18650</th><th>21700</th><th>4680</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Diameter × length</strong></td><td>18 × 65 mm</td><td>21 × 70 mm</td><td>46 × 80 mm</td></tr>
+          <tr><td><strong>Approx. volume</strong></td><td>~16.5 cm³</td><td>~24.2 cm³</td><td>~133 cm³</td></tr>
+          <tr><td><strong>Typical capacity</strong></td><td>~2.5–3.5 Ah</td><td>~4.5–5.0 Ah</td><td>~25–30 Ah (design target)</td></tr>
+          <tr><td><strong>Typical use</strong></td><td>Laptops, power tools, e-bikes</td><td>EVs, e-bikes, storage</td><td>EV packs, large-format</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Capacities are typical ranges that depend on chemistry and manufacturer — treat them as relative, not
+        absolute. The 4680 figure is the design target Tesla announced in 2020; production cells vary.
+      </p>
+
+      <h2>The original calculation: why 4680 is ~5× bigger</h2>
+      <p>
+        A cylinder&rsquo;s volume is π × radius² × height. Plugging in the half-diameter (radius) and the length
+        gives the volume, and the ratio of volumes is the whole &ldquo;5× energy&rdquo; claim in arithmetic.
+      </p>
+      <div class="evidence">
+        <p><strong>18650:</strong> π × (9 mm)² × 65 mm = π × 81 × 65 ≈ <strong>16,540 mm³ ≈ 16.5 cm³</strong></p>
+        <p><strong>21700:</strong> π × (10.5 mm)² × 70 mm = π × 110.25 × 70 ≈ <strong>24,245 mm³ ≈ 24.2 cm³</strong></p>
+        <p><strong>4680:</strong> π × (23 mm)² × 80 mm = π × 529 × 80 ≈ <strong>132,952 mm³ ≈ 133 cm³</strong></p>
+        <p><strong>The ratio:</strong> 133 ÷ 24.2 ≈ <strong>5.5×</strong> the 21700&rsquo;s volume; 133 ÷ 16.5 ≈ <strong>8×</strong> the 18650&rsquo;s.</p>
+        <p class="muted">
+          That ~5.5× volume is the source of Tesla&rsquo;s &ldquo;five times the energy&rdquo; figure for the 4680
+          — a geometry statement about cell size, not a chemistry breakthrough. Per kilogram, the cells are similar.
+        </p>
+      </div>
+
+      <h2>Why bigger is not automatically better</h2>
+      <p>
+        A larger cell stores more energy but has a lower <strong>surface-area-to-volume ratio</strong>, which makes
+        it harder to cool — heat generated inside has farther to travel to escape. A 4680 therefore needs more
+        careful thermal design than an 18650, and the pack must manage fewer, larger cells rather than many small
+        ones (see <a href="/lithium/what-is-bms/">how a BMS manages a pack</a>).
+      </p>
+
+      <h2>Why the industry moved through these sizes</h2>
+      <ul>
+        <li><strong>18650</strong> — the mature standard, optimised for consumer electronics where millions of
+        identical cells are made at lowest cost.</li>
+        <li><strong>21700</strong> — the EV sweet spot: ~1.5× the 18650&rsquo;s energy for a small increase in
+        cooling complexity, which is why it became the workhorse of Tesla and other EV makers.</li>
+        <li><strong>4680</strong> — the pack-level play: fewer cells and fewer welds per pack reduce cost and
+        assembly complexity, at the price of harder thermal management.</li>
+      </ul>
+
+      <h2>Engineering interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>What the data means:</strong> The 18650 → 21700 → 4680 progression is not a performance ladder
+          but a <strong>packaging ladder</strong>. Each step trades surface area (cooling) for volume (energy per
+          cell), so the engineering decision is always &ldquo;how do I cool the biggest cell I can afford to
+          manage?&rdquo;</p>
+        <p>
+          <strong>Why it matters:</strong> If a datasheet quotes a 4680&rsquo;s energy, the honest comparison is
+          per kilogram and per litre, not per cell — because the cell is just a bigger box. The buyer who asks
+          &ldquo;energy per kilogram, and how will it be cooled?&rdquo; is asking the right question.</p>
+        <p class="muted"><em>Engineering interpretation, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What do 18650, 21700 and 4680 mean?</h3>
+      <p>They are cylindrical cell size codes: the first two digits are the diameter in millimetres and the last three are the length in tenths of a millimetre. So 18650 is 18 mm wide × 65 mm long, 21700 is 21 mm × 70 mm, and 4680 is 46 mm × 80 mm.</p>
+      <h3>Is 4680 five times better than 21700?</h3>
+      <p>Not five times better per cell — roughly five times bigger in volume. A 4680 has about 5.5 times the volume of a 21700, so it holds about five times the energy per cell. The energy per kilogram is similar; the difference is fewer, larger cells per pack, which is a manufacturing and pack-design advantage.</p>
+      <h3>Which cell format is best?</h3>
+      <p>It depends on the pack. 18650 is the mature standard for laptops and power tools; 21700 is the EV sweet spot balancing size, cooling and energy; 4680 reduces cell count and cost at pack level but needs more advanced thermal management because each cell is larger. "Best" is a pack-design question, not a chemistry one.</p>
+
+      <h2>Sources</h2>
+      <p>Cell dimensions per the industry naming convention; capacity ranges cross-verified from cell-manufacturer datasheets; the volume calculation is this site&rsquo;s own derivation from the published dimensions.</p>
+      <ul>
+        <li>Cell-manufacturer datasheets — 18650 / 21700 capacity ranges.</li>
+        <li>Tesla Battery Day (2020) — 4680 dimensions and the ~5× energy design target.</li>
+        <li>Battery engineering references — cylindrical cell geometry and thermal management.</li>
+      </ul>
+
+      <p class="muted">
+        Related: <a href="/lithium/nca-battery/">NCA chemistry</a> ·
+        <a href="/lithium/energy-density/">energy density</a> ·
+        <a href="/lithium/what-is-bms/">BMS</a> · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

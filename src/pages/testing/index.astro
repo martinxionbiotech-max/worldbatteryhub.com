@@ -1,26 +1,163 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Testing Methods';
+const description = 'Battery testing methods — capacity, CCA, load, resistance, cycle and safety testing: what each measures, how it is measured, and the applicable standards.';
+const canonical = '/testing/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/testing/',
+  about: 'Battery testing methods and standards',
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is CCA tested?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The battery is cooled to −18°C (0°F), then discharged at the cold-cranking amperage for 30 seconds. It must hold at or above a cutoff voltage — 7.2V for a 12V battery under SAE J537 — for the rating to stand. EN 50342 and JIS D5301 use different temperatures and cutoffs, which is why CCA numbers differ between standards.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a C20 capacity test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'C20 is the 20-hour discharge rate used to rate a battery\u2019s capacity. The battery is discharged at a constant current over 20 hours until it reaches a cutoff voltage, and the amp-hours delivered is its C20 capacity. A faster rate (C10, C5) yields a lower capacity, which is why the rate must always be stated.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between internal resistance and conductance testing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Internal resistance (measured in milliohms) rises as a battery ages or sulfates; a higher value means a weaker battery. Conductance (measured in siemens) is its inverse and is what most handheld field testers read. Both are proxies for cranking ability, but they are not interchangeable with a true CCA load test.',
+      },
+    },
+  ],
+};
 ---
 
 <BaseLayout
-  title="Battery Testing Methods"
-  description="Battery testing methods — capacity, CCA, load, resistance, cycle and safety testing: what each measures and how to interpret it."
-  canonical="/testing/"
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
 >
   <section class="section">
     <div class="container">
+      <p class="byline">Testing · Last reviewed 2026-09-17</p>
       <h1>Battery Testing Methods</h1>
-      <p class="lead">Capacity, CCA, load and resistance testing — methods, standards and interpretation.</p>
+      <p class="lead">
+        Testing is where a battery&rsquo;s claims become measurements. Capacity, CCA, load, resistance, cycle life
+        and safety are not opinions — they are numbers produced by defined procedures under defined conditions,
+        and the test standard is what makes the number checkable.
+      </p>
 
-      <h2>Capacity &amp; performance</h2>
-      <ul>
-        <li><a href="/testing/battery-capacity-testing/">Battery capacity testing (C20 rate)</a></li>
-      </ul>
+      <div class="takeaways">
+        <strong>At a glance:</strong> Battery testing splits into <strong>performance</strong> (capacity, CCA,
+        load, reserve), <strong>electrical condition</strong> (internal resistance, conductance, impedance),
+        <strong>life</strong> (cycle, degradation, self-discharge) and <strong>safety</strong> (abuse, thermal,
+        short-circuit, vibration). Every method resolves to a standard, a test condition and a pass criterion —
+        and the condition is half the meaning of the number.
+      </div>
 
-      <h2>CCA</h2>
-      <ul>
-        <li><a href="/lead-acid/cca/how-cca-is-tested/">How CCA is tested</a></li>
-      </ul>
+      <h2>What this section covers</h2>
+      <p>
+        This hub is the entry point to the site&rsquo;s testing knowledge. It defines what each method measures,
+        how the measurement is made, and which standard governs it. The detailed, standards-referenced method
+        pages live on the
+        <a href="https://testing.worldbatteryhub.com/">testing sub-site</a>; the standards themselves are
+        catalogued in the <a href="/standards/">standards directory</a>. The two work as one: a method says
+        <em>what you do</em>, the standard says <em>under what conditions and to what pass mark</em>.
+      </p>
+
+      <h2>The testing method catalog</h2>
+      <p>
+        Twenty-one core methods, grouped by what they measure. Each links to its standards-referenced page on the
+        testing sub-site.
+      </p>
+      <table>
+        <thead><tr><th>Method</th><th>Measures</th><th>Main standard(s)</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testing</a></td><td>Cold-cranking ability</td><td>SAE J537, EN 50342, JIS D5301, DIN 43539</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/capacity-testing/">Capacity testing (C20)</a></td><td>Stored amp-hours at the 20-hour rate</td><td>IEC 60095, EN 50342</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/capacity-rates/">Capacity rates (C20/C10/C5)</a></td><td>How capacity falls at faster discharge rates</td><td>IEC 60095, EN 50342</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/reserve-capacity/">Reserve capacity (RC)</a></td><td>Minutes of 25 A discharge to 10.5V</td><td>BCI / SAE</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/load-testing/">Load testing</a></td><td>Voltage under a calibrated load</td><td>Manufacturer / field practice</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/charge-acceptance/">Charge acceptance</a></td><td>How readily the battery takes charge</td><td>EN 50342</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/resistance-conductance/">Internal resistance &amp; conductance</a></td><td>Electrical condition (aging, sulfation)</td><td>IEC / manufacturer method</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/impedance-testing/">Impedance testing (EIS)</a></td><td>Complex impedance spectrum</td><td>IEC / lab method</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/conductance-vs-load-test/">Conductance vs load test</a></td><td>Field screening vs full load verification</td><td>Manufacturer / field practice</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/c-rate-testing/">C-rate testing</a></td><td>Performance at high discharge rates</td><td>IEC 62660, IEC 61960</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/cycle-safety/">Cycle testing</a></td><td>Capacity retention over charge/discharge cycles</td><td>IEC 62660, IEC 61427</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/degradation-testing/">Degradation testing</a></td><td>Capacity and resistance drift over life</td><td>IEC 62660, IEC 61427</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/self-discharge-testing/">Self-discharge testing</a></td><td>Charge lost while standing</td><td>IEC / manufacturer method</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/abuse-testing/">Abuse testing</a></td><td>Safety limits under overcharge/overheat/crush</td><td>UN 38.3, UL 1973, SAE J2464</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/short-circuit-testing/">Short-circuit testing</a></td><td>Behaviour under an external short</td><td>UN 38.3, IEC 62133</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/temperature-testing/">Temperature &amp; thermal testing</a></td><td>Performance and stability across temperature</td><td>IEC 62660, SAE J2464</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/thermal-shock-testing/">Thermal shock testing</a></td><td>Resistance to rapid temperature change</td><td>UN 38.3, IEC 62660</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/vibration-testing/">Vibration testing</a></td><td>Mechanical integrity under vibration</td><td>UN 38.3, IEC 62660</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/leak-testing/">Leak testing</a></td><td>Electrolyte containment</td><td>IEC 60095, manufacturer method</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/bms-testing/">BMS testing</a></td><td>Protection and balancing functions</td><td>IEC 62619, UL 1973</td></tr>
+          <tr><td><a href="https://testing.worldbatteryhub.com/acceptance-testing/">Acceptance testing (incoming QC)</a></td><td>Verification on receipt before installation</td><td>IEEE 1188, manufacturer spec</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        The testing sub-site also carries pressure, insulation-resistance and related specialised pages — see the
+        <a href="https://testing.worldbatteryhub.com/">full method index</a>.
+      </p>
+
+      <h2>Standards that govern battery testing</h2>
+      <p>
+        Every method resolves to a standard. The four that anchor lead-acid testing are
+        <a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a> (North American cranking),
+        <a href="https://testing.worldbatteryhub.com/standards/en-50342/">EN 50342</a> (European starter),
+        <a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">JIS D5301</a> (Japanese automotive) and
+        <a href="https://testing.worldbatteryhub.com/standards/din-43539/">DIN 43539</a> (German cranking). For
+        lithium, the anchors are <a href="https://testing.worldbatteryhub.com/standards/iec-62660/">IEC 62660</a>
+        (EV cells), <a href="https://testing.worldbatteryhub.com/standards/iec-62133/">IEC 62133</a> (portable
+        safety) and <a href="https://testing.worldbatteryhub.com/standards/un-38-3/">UN 38.3</a> (transport). The
+        full directory is in the <a href="/standards/">standards hub</a>.
+      </p>
+
+      <h2>Engineering interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>What the data means:</strong> A battery number without its test condition is marketing. The same
+          battery can show different CCA under SAE, EN and DIN — not because it changed, but because the test
+          temperature and cutoff changed. The useful habit is to always read a rating <em>with</em> its standard,
+          and to treat cross-standard comparisons as translation, not arithmetic.</p>
+        <p>
+          <strong>Why it matters:</strong> Testing is the site&rsquo;s professional moat: it turns &ldquo;this
+          battery is good&rdquo; into &ldquo;this battery delivers X under condition Y per standard Z&rdquo; — the
+          difference between a blog and a knowledge platform that engineers and AI systems can both verify.</p>
+        <p class="muted"><em>Engineering interpretation, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How is CCA tested?</h3>
+      <p>The battery is cooled to −18°C (0°F), then discharged at the cold-cranking amperage for 30 seconds. It must hold at or above a cutoff voltage — 7.2V for a 12V battery under SAE J537 — for the rating to stand. EN 50342 and JIS D5301 use different temperatures and cutoffs, which is why CCA numbers differ between standards.</p>
+      <h3>What is a C20 capacity test?</h3>
+      <p>C20 is the 20-hour discharge rate used to rate a battery&rsquo;s capacity. The battery is discharged at a constant current over 20 hours until it reaches a cutoff voltage, and the amp-hours delivered is its C20 capacity. A faster rate (C10, C5) yields a lower capacity, which is why the rate must always be stated.</p>
+      <h3>What is the difference between internal resistance and conductance testing?</h3>
+      <p>Internal resistance (measured in milliohms) rises as a battery ages or sulfates; a higher value means a weaker battery. Conductance (measured in siemens) is its inverse and is what most handheld field testers read. Both are proxies for cranking ability, but they are not interchangeable with a true CCA load test.</p>
+
+      <h2>Sources</h2>
+      <p>Method definitions and standard conditions per the publishing organizations (SAE, EN/DIN, JIS, IEC, UL, UN) as cited on the linked testing sub-site pages.</p>
+
+      <p class="muted">
+        <a href="/standards/">Standards directory</a> · <a href="/lead-acid/cca/how-cca-is-tested/">How CCA is tested</a> ·
+        <a href="/testing/battery-capacity-testing/">Capacity testing (C20)</a> · Last reviewed: 2026-09-17
+      </p>
     </div>
   </section>
 </BaseLayout>
