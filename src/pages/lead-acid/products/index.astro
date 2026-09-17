@@ -1,15 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import productsData from '../../data/products.json';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import productsData from '../../../data/products.json';
 
 const title = 'Powsea OEM Battery Products — Commercial Section';
 const description = 'The commercial section: 35 Powsea OEM lead-acid batteries from cnbatteries.com — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines, with published specifications and honest sourcing notes.';
-const canonical = '/products/';
+const canonical = '/lead-acid/products/';
 
 const collectionJsonLd = {
   '@type': 'CollectionPage',
   name: title,
-  url: 'https://worldbatteryhub.com/products/',
+  url: 'https://worldbatteryhub.com/lead-acid/products/',
   about: 'Powsea OEM battery product catalogue',
 };
 
@@ -56,7 +56,7 @@ for (const p of productsData.products) {
             <tbody>
               {items.map((p) => (
                 <tr>
-                  <td><a href={`/products/${p.id}/`}>{p.name}</a></td>
+                  <td><a href={`/lead-acid/products/${p.id}/`}>{p.name}</a></td>
                   <td>{p.capacity_ah ? `${p.capacity_ah} Ah` : '—'}</td>
                   <td>{p.cca ? `${p.cca} A` : '—'}</td>
                   <td>{p.dimensions_mm ? `${p.dimensions_mm} mm` : '—'}</td>

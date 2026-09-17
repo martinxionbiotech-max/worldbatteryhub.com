@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import productsData from '../../data/products.json';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import productsData from '../../../data/products.json';
 
 export function getStaticPaths() {
   return productsData.products.map((p) => ({ params: { product: p.id } }));
@@ -16,7 +16,7 @@ const productJsonLd = {
   description: p.description,
   brand: { '@type': 'Brand', name: 'Powsea' },
   manufacturer: { '@type': 'Organization', name: 'Powsea (CN Batteries)', url: 'https://cnbatteries.com' },
-  url: `https://worldbatteryhub.com/products/${p.id}/`,
+  url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
 };
 
 const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source_url, source } = p;
@@ -40,7 +40,7 @@ const related = productsData.products.filter((x) => x.category === category && x
 <BaseLayout
   title={title}
   description={description}
-  canonical={`/products/${p.id}/`}
+  canonical={`/lead-acid/products/${p.id}/`}
   ogType="article"
   jsonLd={[productJsonLd]}
   author="World Battery Hub"
@@ -118,7 +118,7 @@ const related = productsData.products.filter((x) => x.category === category && x
         <>
           <h2>Related products</h2>
           <ul>
-            {related.map((r) => <li><a href={`/products/${r.id}/`}>{r.name}</a></li>)}
+            {related.map((r) => <li><a href={`/lead-acid/products/${r.id}/`}>{r.name}</a></li>)}
           </ul>
         </>
       )}
@@ -127,7 +127,7 @@ const related = productsData.products.filter((x) => x.category === category && x
       <p class="muted">{source} · <a href={source_url}>Product page on cnbatteries.com</a></p>
 
       <p class="muted">
-        <a href="/products/">All products</a> · <a href="/lead-acid/">Lead-acid knowledge</a> · Last reviewed: 2026-09-17
+        <a href="/lead-acid/products/">All products</a> · <a href="/lead-acid/">Lead-acid knowledge</a> · Last reviewed: 2026-09-17
       </p>
     </div>
   </section>
