@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Capacity: Ah, Wh, CCA and RC Explained';
+const description = 'Battery capacity in simple terms — amp-hours, watt-hours, CCA and reserve capacity, and why the usable capacity is smaller than the label says.';
+const canonical = '/basics/battery-capacity/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does amp-hours mean on a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Amp-hours (Ah) measure capacity: a 100 Ah battery delivers 10 amps for about 10 hours at its rated 20-hour rate. The rating assumes that slow rate — heavy loads deliver less, the Peukert effect — and the usable amount is further reduced by the depth-of-discharge window.',
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'What is the difference between Ah and Wh?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wh = Ah × voltage, which makes Wh the voltage-independent energy unit. 100 Ah is 1,200 Wh at 12V but 4,800 Wh at 48V. Compare Ah within one voltage class and Wh across them.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>Battery Capacity: Ah, Wh, CCA and RC Explained</h1>
+      <p class="lead">Capacity is the tank — and the tank has two units, two extra ratings, and one honest adjustment most labels leave to the fine print.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>Ah</strong> = how many amps for how many hours at the rated rate; <strong>Wh</strong> = Ah × voltage (the voltage-independent unit); <strong>CCA</strong> = the cold-cranking punch; <strong>RC</strong> = minutes at 25A. And the <strong>usable</strong> capacity is the nameplate times the depth-of-discharge window — ~50% for lead-acid, 80–90% for LFP.
+      </div>
+
+      <h2>What does amp-hours mean?</h2>
+      <p>A 100 Ah battery delivers <strong>10A for about 10 hours</strong> — or 5A for about 20 — at its rated (C20) rate and before usable-depth adjustments. The fine print matters: the nameplate Ah assumes the slow 20-hour discharge, and heavy loads deliver less (the <a href="/lithium/c-rate/">Peukert effect</a>). Ah compares batteries only at the same voltage — which is why Wh exists.</p>
+
+      <h2>What is the difference between Ah and Wh?</h2>
+      <p>Wh removes the voltage ambiguity: <strong>Wh = Ah × V</strong>. 100 Ah at 12V is 1,200 Wh; 100 Ah at 48V is 4,800 Wh — same amp-hours, four times the energy. Use Ah within one voltage class; use Wh to compare across them (see <a href="/technology/ah-vs-wh/">the full comparison</a>).</p>
+
+      <h2>What are CCA and RC?</h2>
+      <p>The two automotive extras: <strong>CCA</strong> (cold cranking amps) is the current the battery can deliver for 30 seconds at −18°C — the starting punch, standard-dependent (see <a href="/lead-acid/cca/what-is-cca/">the CCA ladder</a>). <strong>RC</strong> (reserve capacity) is the minutes at 25A before falling to 10.5V — the "engine off, lights on" endurance, roughly 1.5–1.7× the Ah rating in minutes (see <a href="/lead-acid/reserve-capacity/">reserve capacity</a>).</p>
+
+      <h2>Why is the usable capacity smaller than the label?</h2>
+      <p>Because the chemistry's longevity window is smaller than its tank: lead-acid lives longest cycled to <strong>~50%</strong> of its nameplate; LFP to <strong>80–90%</strong>. The label states the tank; the depth-of-discharge states how much of the tank you should spend (see <a href="/lithium/lifespan/">cycle-life numbers</a>). The <a href="/tools/runtime-calculator/">runtime calculator</a> encodes the difference directly.</p>
+
+      <h2>Why This Matters</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> Capacity is the battery market's most misread number — quoted without its rate, its voltage or its usable depth — and all three omissions run in the same direction: making the battery look bigger than it is.</p>
+        <p>
+          <strong>Why:</strong> The three qualifiers are the difference between a plan and a wish. A capacity number that carries its rate, voltage and depth is a usable engineering input; one that does not is advertising. This lesson exists so readers can tell the two apart at a glance.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What does amp-hours mean on a battery?</h3>
+      <p>Amp-hours (Ah) measure capacity: a 100 Ah battery delivers 10 amps for about 10 hours at its rated 20-hour rate. The rating assumes that slow rate — heavy loads deliver less, the Peukert effect — and the usable amount is further reduced by the depth-of-discharge window.</p>
+      <h3>What is the difference between Ah and Wh?</h3>
+      <p>Wh = Ah × voltage, which makes Wh the voltage-independent energy unit. 100 Ah is 1,200 Wh at 12V but 4,800 Wh at 48V. Compare Ah within one voltage class and Wh across them.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Battery engineering references — rate capacity and Peukert behaviour.</li>
+        <li>Manufacturer datasheets — Ah, CCA and RC ratings.</li>
+      </ul>
+
+      <p class="muted">
+        Next: <a href="/basics/battery-chemistry-basics/">Lesson 4 — chemistries</a> · <a href="/basics/">Series index</a> · <a href="/tools/sizing-calculator/">Sizing calculator</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

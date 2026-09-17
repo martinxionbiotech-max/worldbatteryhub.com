@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Basics 101: Six Lessons from Zero';
+const description = "A beginner's learning path through batteries — what they are, volts and amps, capacity, chemistries, charging and safety. Six lessons, each with a direct answer and a path to the deep pages.";
+const canonical = '/basics/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>Battery Basics 101: Six Lessons from Zero</h1>
+      <p class="lead">Six lessons that take you from zero to a working understanding of batteries — each one honest about where the simple version ends and the engineering begins.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A battery is stored chemistry, released on demand. These six lessons build the whole picture in order: <strong>what a battery is → the electricity basics → capacity → chemistries → charging → safety</strong> — with every lesson linking to the deep pages and calculators when you are ready to go further.
+      </div>
+
+      <h2>The learning path</h2>
+      <table>
+        <thead><tr><th>Lesson</th><th>What you will learn</th></tr></thead>
+        <tbody>
+          <tr><td>1. <a href="/basics/what-is-a-battery/">What is a battery?</a></td><td>Stored chemistry, cells vs batteries, the two chemistries at a glance</td></tr>
+          <tr><td>2. <a href="/basics/voltage-amperage/">Voltage and amperage</a></td><td>Volts push, amps flow, watts measure the work</td></tr>
+          <tr><td>3. <a href="/basics/battery-capacity/">Battery capacity</a></td><td>Ah, Wh, CCA, RC — and why the usable capacity is smaller than the label</td></tr>
+          <tr><td>4. <a href="/basics/battery-chemistry-basics/">The two chemistries</a></td><td>Lead-acid vs lithium: the trade-offs that decide every purchase</td></tr>
+          <tr><td>5. <a href="/basics/charging-basics/">Charging basics</a></td><td>The stages, why charging slows near full, the rules by chemistry</td></tr>
+          <tr><td>6. <a href="/basics/battery-safety-basics/">Safety basics</a></td><td>The short rules that prevent most battery incidents</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to use the series</h2>
+      <p>Read the lessons in order — each assumes the one before it. When a lesson's simple version leaves a question open, it points to the deep page that closes it, and when a number is involved, it points to the <a href="/tools/">calculators</a> that do the arithmetic for you.</p>
+
+      <h2>What the series deliberately avoids</h2>
+      <p>Two things: <strong>over-simplification that becomes wrong</strong>, and <strong>jargon that becomes a wall</strong>. The series states its simplifications openly — the C20 assumption, the 50% rule of thumb — because a beginner who knows where the model ends is ahead of an expert who does not.</p>
+
+      <h2>Our Read</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My read:</strong> Battery knowledge has an unfortunate structure: the beginner-friendly version is often wrong, and the correct version is often unreadable. This series exists to be the middle path — simple enough to enter, honest enough to trust.</p>
+        <p>
+          <strong>Why:</strong> Every battery decision, from a car purchase to a solar bank, is made on a mental model. A wrong model costs real money; a model that knows its own limits rarely does. The series builds the second kind.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Battery engineering references — the linked pages cite them individually.</li>
+        <li>Manufacturer documentation — specification examples used throughout.</li>
+      </ul>
+
+      <p class="muted">
+        Series: <a href="/basics/what-is-a-battery/">1 What is a battery</a> · <a href="/basics/voltage-amperage/">2 Voltage &amp; amperage</a> · <a href="/basics/battery-capacity/">3 Capacity</a> · <a href="/basics/battery-chemistry-basics/">4 Chemistries</a> · <a href="/basics/charging-basics/">5 Charging</a> · <a href="/basics/battery-safety-basics/">6 Safety</a> · <a href="/glossary/">Glossary</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

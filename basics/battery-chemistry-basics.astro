@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lead-Acid vs Lithium: The Two Chemistries Explained';
+const description = 'The two battery chemistries in one lesson — lead-acid vs lithium: energy, cost, usable depth, safety and why lead-acid still owns starting.';
+const canonical = '/basics/battery-chemistry-basics/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between lead-acid and lithium batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lead-acid is cheap, heavy and proven: ~30–50 Wh/kg, 50% usable depth, excellent cold cranking and a ~99% recycling loop. Lithium carries 3–5× the energy per kilogram, allows 80–90% usable depth and thousands of cycles, but costs more and requires a BMS.',
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'Why does lead-acid still exist if lithium is better?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because the chemistries won different jobs: lead-acid still wins cold-weather starting, cost-first budgets and proven standby duty, while lithium wins weight-sensitive transport and deep-cycle storage. The market split is a structure, not a transition delay.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>Lead-Acid vs Lithium: The Two Chemistries Explained</h1>
+      <p class="lead">One job, two chemistries, opposite trade-offs — and the market has sorted them cleanly: lead-acid owns starting, lithium owns weight and cycles.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Lead-acid: <strong>cheap, proven, heavy</strong> — ~30–50 Wh/kg, 50% usable, no electronics needed, unbeatable cold cranking and a ~99% recycling loop. Lithium: <strong>3–5× the energy per kg</strong>, 80–90% usable, thousands of cycles — but it costs more and every pack needs a <a href='/lithium/what-is-bms/'>BMS</a>.
+      </div>
+
+      <h2>What is the difference between lead-acid and lithium?</h2>
+      <table>
+        <thead><tr><th></th><th>Lead-acid</th><th>Lithium (LFP / NMC)</th></tr></thead>
+        <tbody>
+          <tr><td>Energy per kg</td><td>~30–50 Wh</td><td>~150–250 Wh</td></tr>
+          <tr><td>Usable depth</td><td>~50%</td><td>80–90%</td></tr>
+          <tr><td>Cycle life</td><td>~400–800</td><td>~2,000–5,000 (LFP)</td></tr>
+          <tr><td>Cold cranking</td><td>Excellent (−18°C rated)</td><td>Charging blocked below 0°C</td></tr>
+          <tr><td>Price per kWh</td><td>Lower</td><td>Higher (falling fast)</td></tr>
+          <tr><td>Recycling</td><td>~99%, established</td><td>Building, regulated from 2031</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Order-of-magnitude values — the deep pages carry the sources and caveats.</p>
+
+      <h2>Why does lead-acid still exist if lithium is better?</h2>
+      <p>Because "better" is application-specific. Lead-acid still wins three jobs: <strong>starting</strong> (cold cranking at −18°C, no electronics to fail), <strong>cost-first</strong> (the budget replacement market), and <strong>proven standby</strong> (VRLA in telecom and UPS). Lithium wins weight-sensitive transport and deep-cycle storage. The market split is not a transition delay — it is two chemistries on two jobs (see <a href="/technology/lithium-vs-lead-acid/">the full comparison</a>).</p>
+
+      <h2>Which lithium chemistries matter?</h2>
+      <p>Two: <strong>LFP</strong> (lithium iron phosphate) — the safe, long-lived, no-cobalt workhorse of storage and entry EVs — and <strong>NMC</strong> (nickel-manganese-cobalt) — the energy-dense premium EV choice. LTO adds extreme endurance for niche industrial use, and the future chemistries (<a href="/lithium/solid-state-batteries/">solid-state</a>, <a href="/lithium/sodium-ion-batteries/">sodium-ion</a>) are building on the same comparison. See <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a>.</p>
+
+      <h2>Which should I choose?</h2>
+      <p>The decision rule in one line: <strong>starting a vehicle in all weather → lead-acid (flooded/EFB/AGM); weight, cycles or storage → lithium (LFP usually)</strong>. The <a href="/lead-acid/types/">lead-acid types page</a> and the <a href="/lithium/">lithium section</a> carry the decision the rest of the way, including the start-stop and deep-cycle middle grounds.</p>
+
+      <h2>Our Interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> The lead-acid vs lithium question is the battery industry's favourite false binary — and the honest answer is a market split that has already happened: starting is lead-acid's, weight and cycles are lithium's, and the two will coexist until one loses a job, not until one 'wins'.</p>
+        <p>
+          <strong>Why:</strong> The false binary sells oversimplified advice. The split view — two chemistries, each dominant where its trade-offs fit — matches both the data and the purchasing reality, and it is the model that survives contact with actual batteries.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between lead-acid and lithium batteries?</h3>
+      <p>Lead-acid is cheap, heavy and proven: ~30–50 Wh/kg, 50% usable depth, excellent cold cranking and a ~99% recycling loop. Lithium carries 3–5× the energy per kilogram, allows 80–90% usable depth and thousands of cycles, but costs more and requires a BMS.</p>
+      <h3>Why does lead-acid still exist if lithium is better?</h3>
+      <p>Because the chemistries won different jobs: lead-acid still wins cold-weather starting, cost-first budgets and proven standby duty, while lithium wins weight-sensitive transport and deep-cycle storage. The market split is a structure, not a transition delay.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Battery engineering references — chemistry energy densities and cycle life.</li>
+        <li>Manufacturer datasheets — chemistry specifications.</li>
+      </ul>
+
+      <p class="muted">
+        Next: <a href="/basics/charging-basics/">Lesson 5 — charging</a> · <a href="/basics/">Series index</a> · <a href="/technology/lithium-vs-lead-acid/">Full comparison</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

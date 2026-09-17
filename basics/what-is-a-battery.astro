@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'What Is a Battery? The Simple Explanation';
+const description = 'What a battery is in simple terms — stored chemistry released on demand, the difference between a cell and a battery, and the two chemistries at a glance.';
+const canonical = '/basics/what-is-a-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a battery in simple terms?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "A battery converts stored chemical energy into electrical energy through a reversible reaction: discharge releases electrons through the circuit; charge runs the reaction backward. Two different electrode materials in an electrolyte set the cell's voltage, and that voltage is fixed by the chemistry.",
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'What is the difference between a cell and a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "The cell is the chemistry's natural unit — about 2.0V for lead-acid, 3.2V for LFP. A battery is cells connected in series to reach a useful voltage: six lead-acid cells make the 12V car battery, four LFP cells make a 12.8V pack.",
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>What Is a Battery? The Simple Explanation</h1>
+      <p class="lead">A battery is energy in a parked car: stored chemistry that sits quietly until a circuit connects, and then turns into electricity on demand.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A battery converts stored <strong>chemical energy</strong> into <strong>electrical energy</strong> through a reversible reaction — discharge releases electrons through the circuit; charge runs the reaction backward. A <strong>cell</strong> is the single unit; a <strong>battery</strong> is the assembly of cells (six lead-acid cells make the 12V car battery).
+      </div>
+
+      <h2>What is a battery in simple terms?</h2>
+      <p>Think of it as a chemical pump: inside the cell, two different materials — the electrodes — sit in an electrolyte that carries ions between them. Connect a wire and the chemistry starts pushing electrons through it: that electron flow <em>is</em> the electricity. Disconnect the wire and the reaction pauses. Recharge and the same reaction runs backward, storing the energy again.</p>
+
+      <h2>What is the difference between a cell and a battery?</h2>
+      <p>The <strong>cell</strong> is the chemistry's natural unit — its voltage is fixed by the materials: roughly <strong>2.0V for lead-acid</strong>, <strong>3.2V for LFP</strong>, <strong>3.6–3.7V for NMC</strong>. A <strong>battery</strong> is cells connected in series to reach a useful voltage: six 2V lead-acid cells make the 12V car battery, four LFP cells make a 12.8V pack (see <a href="/technology/series-vs-parallel/">series vs parallel</a>).</p>
+
+      <h2>What happens inside during discharge?</h2>
+      <p>At the negative electrode, the chemistry gives up electrons; at the positive electrode, it takes them back — and the electrons travel the long way around through your circuit, doing the work. The electrolyte carries the ions between the electrodes to keep the charge balanced. In a lead-acid cell the acid gets <em>weaker</em> as it discharges, which is why a hydrometer can read the state of charge directly (see <a href="https://technology.worldbatteryhub.com/electrolyte-specific-gravity/">specific gravity</a>).</p>
+
+      <h2>What happens during charge?</h2>
+      <p>Exactly the same reaction, driven backward by an outside voltage: the charger pushes electrons in the reverse direction and the chemistry re-stores them. The energy was never destroyed — a battery does not make electricity, it <em>holds</em> it, and every charge is a deposit back into the same chemical account.</p>
+
+      <h2>The two chemistries at a glance</h2>
+      <table>
+        <thead><tr><th></th><th>Lead-acid</th><th>Lithium-ion</th></tr></thead>
+        <tbody>
+          <tr><td>Voltage per cell</td><td>~2.0V</td><td>3.2–3.7V</td></tr>
+          <tr><td>Energy per kg</td><td>~30–50 Wh</td><td>~150–250 Wh</td></tr>
+          <tr><td>Usable depth</td><td>~50%</td><td>80–90%</td></tr>
+          <tr><td>Cost</td><td>Lower</td><td>Higher</td></tr>
+          <tr><td>Extra electronics</td><td>None needed</td><td>BMS required</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">The full trade-offs live in <a href="/basics/battery-chemistry-basics/">lesson 4</a>.</p>
+
+      <h2>Why This Matters</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> The word 'battery' hides the one fact that explains everything else: the cell's chemistry sets its voltage, and everything from the 12V car to the EV pack is just cells arranged to reach a target. Learn the cell and you have learned the battery.</p>
+        <p>
+          <strong>Why:</strong> Once the stored-chemistry model is in place, the rest of battery knowledge stops being memorisation and becomes prediction — why the acid weakens, why the voltage is fixed, why recharging works. One model, correctly built, explains a hundred facts.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is a battery in simple terms?</h3>
+      <p>A battery converts stored chemical energy into electrical energy through a reversible reaction: discharge releases electrons through the circuit; charge runs the reaction backward. Two different electrode materials in an electrolyte set the cell's voltage, and that voltage is fixed by the chemistry.</p>
+      <h3>What is the difference between a cell and a battery?</h3>
+      <p>The cell is the chemistry's natural unit — about 2.0V for lead-acid, 3.2V for LFP. A battery is cells connected in series to reach a useful voltage: six lead-acid cells make the 12V car battery, four LFP cells make a 12.8V pack.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Battery engineering references — cell chemistry and voltage.</li>
+        <li>Manufacturer datasheets — cell and battery voltage ratings.</li>
+      </ul>
+
+      <p class="muted">
+        Next: <a href="/basics/voltage-amperage/">Lesson 2 — voltage &amp; amperage</a> · <a href="/basics/">Series index</a> · <a href="/glossary/">Glossary</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

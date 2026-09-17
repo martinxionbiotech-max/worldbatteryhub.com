@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Charging Basics: The Stages Explained';
+const description = 'How battery charging works in simple terms — bulk, absorption and float stages, why charging slows near full, and the rules that differ by chemistry.';
+const canonical = '/basics/charging-basics/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does battery charging work in simple terms?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Charging runs the discharge reaction backward: the charger applies a slightly higher voltage and pushes current into the battery. It happens in stages — bulk at constant current, then absorption at constant voltage with a tapering current — and the last 20% takes about as long as the first 80%.',
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'Why does charging slow down near full?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The charger switches from constant current to constant voltage and the current tapers to protect the chemistry from overcharge. The taper is deliberate — the careful finish that keeps the battery from being over-driven.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>Battery Charging Basics: The Stages Explained</h1>
+      <p class="lead">Charging is the discharge reaction run backward — and it slows down near the end by design, which is why every charger's last hour feels the longest.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Charging pushes current through the battery to <strong>reverse the chemical reaction</strong>. It runs in stages: <strong>bulk</strong> (constant current, the fast fill), then <strong>absorption</strong> (constant voltage, tapering current), then <strong>float</strong> (a low maintenance voltage). The rule of thumb: <strong>the last 20% takes about as long as the first 80%</strong>.
+      </div>
+
+      <h2>How does charging work in simple terms?</h2>
+      <p>Discharge let electrons out; charging <strong>pumps them back in</strong>, running the chemistry backward. The charger is just a voltage source a little higher than the battery's, pushing current through it. The rate matters because the chemistry can only accept current so fast without damage — and the charger's job is to stay inside that envelope (see <a href="/lead-acid/lead-acid-charging/">lead-acid charging</a>).</p>
+
+      <h2>What are the charging stages?</h2>
+      <table>
+        <thead><tr><th>Stage</th><th>What happens</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bulk</strong></td><td>Constant current at the charger's rating — the fast fill to ~80%</td></tr>
+          <tr><td><strong>Absorption</strong></td><td>Constant voltage, current tapers as the battery fills — the careful finish</td></tr>
+          <tr><td><strong>Float</strong></td><td>A low holding voltage against self-discharge — standby only</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">The profile varies by chemistry — flooded, AGM, gel and lithium each carry their own voltage limits.</p>
+
+      <h2>Why does charging slow down near full?</h2>
+      <p>Because the charger switches from pushing current to <strong>holding voltage</strong>, and the current tapers to protect the chemistry from overcharge — the same physics as filling a glass without spilling (see <a href="/lithium/lithium-charging-cc-cv/">CC-CV charging</a>). Hence the 80/20 rule: the last 20% arrives at a fraction of the charger's rating.</p>
+
+      <h2>How long does charging take?</h2>
+      <p>Bulk time = <strong>capacity to replace ÷ charger current</strong> — 50 Ah at 10A is about 5 hours — then add the tail. The <a href="/tools/charging-time-calculator/">charging time calculator</a> does the arithmetic including the realistic total.</p>
+
+      <h2>What are the charging rules by chemistry?</h2>
+      <ul>
+        <li><strong>Lead-acid:</strong> charge at ~10–20% of the Ah rating; match the profile to the type (flooded/AGM/gel — each has its own voltage ceiling, see <a href="/lead-acid/agm-charging/">the voltage numbers</a>).</li>
+        <li><strong>Lithium:</strong> respect the voltage limit exactly (3.65V/cell LFP, 4.2V NMC), terminate around C/10–C/20, and <strong>never charge below 0°C</strong> (see <a href="/lithium/how-to-charge/">lithium charging rules</a>).</li>
+      </ul>
+
+      <h2>The Editor's View</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My read:</strong> Charging is where battery knowledge becomes battery habit — the stage model, the taper, and the chemistry's rules are all simple, and the failure to apply them is the most common way batteries die young.</p>
+        <p>
+          <strong>Why:</strong> Overcharge is the great battery killer, and it is almost always a charger-profile mistake rather than a battery defect. The stage model is cheap protection: understand bulk and absorption, match the profile, and the battery reaches its rated life instead of half of it.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How does battery charging work in simple terms?</h3>
+      <p>Charging runs the discharge reaction backward: the charger applies a slightly higher voltage and pushes current into the battery. It happens in stages — bulk at constant current, then absorption at constant voltage with a tapering current — and the last 20% takes about as long as the first 80%.</p>
+      <h3>Why does charging slow down near full?</h3>
+      <p>The charger switches from constant current to constant voltage and the current tapers to protect the chemistry from overcharge. The taper is deliberate — the careful finish that keeps the battery from being over-driven.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Charger-manufacturer documentation — bulk/absorption/float profiles.</li>
+        <li>Battery engineering references — CC-CV charging physics.</li>
+      </ul>
+
+      <p class="muted">
+        Next: <a href="/basics/battery-safety-basics/">Lesson 6 — safety</a> · <a href="/basics/">Series index</a> · <a href="/tools/charging-time-calculator/">Charging calculator</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

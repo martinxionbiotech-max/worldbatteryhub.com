@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Safety Basics: The Short Rules';
+const description = 'The battery safety rules in plain language — shorts, overcharge, frozen lithium, the chemistry differences, and what an emergency looks like.';
+const canonical = '/basics/battery-safety-basics/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the main battery safety rules?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Never short the terminals; never overcharge (match the charger profile to the chemistry); never charge a frozen lithium battery; store lead-acid full and cool and lithium at 40–60% and cool; and handle acid and heavy batteries with care.',
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'Which battery is safer, lead-acid or lithium?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Different hazards, not a simple ranking: lead-acid carries corrosive acid and hydrogen gassing when overcharged; lithium carries thermal runaway if abused, mitigated by the BMS. Both are safe within their rules — the rules are what differ.',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>Battery Safety Basics: The Short Rules</h1>
+      <p class="lead">Battery safety is a short list — respect the terminals, the voltage limits and the heat — and nearly every battery incident ever reported broke one of the three.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The rules: <strong>never short the terminals</strong>, <strong>never overcharge</strong> (lead-acid gasses; lithium runs away), <strong>never charge a frozen lithium battery</strong>, store lead-acid <strong>charged and cool</strong> and lithium at <strong>partial charge</strong> — and respect the weight: lead is heavy, acid is corrosive, and both deserve care.
+      </div>
+
+      <h2>What are the main battery safety rules?</h2>
+      <ul>
+        <li><strong>No shorts</strong> — a ring or a spanner across the terminals is the classic incident; remove metal jewellery before working.</li>
+        <li><strong>No overcharge</strong> — the charger profile must match the chemistry; overcharge is the most common way batteries fail dangerously (see <a href="/basics/charging-basics/">lesson 5</a>).</li>
+        <li><strong>No frozen-lithium charging</strong> — below 0°C, charging plates lithium metal and damages the cell; lead-acid tolerates cold better (see <a href="/lead-acid/cold-weather-battery/">cold weather</a>).</li>
+        <li><strong>Store correctly</strong> — lead-acid full and cool; lithium at 40–60% and cool (see <a href="/lithium/storage/">lithium storage</a>).</li>
+      </ul>
+
+      <h2>Which is safer, lead-acid or lithium?</h2>
+      <p>The honest answer is "different, not simply better": lead-acid's hazards are the <strong>sulfuric acid</strong> (corrosive) and the <strong>hydrogen</strong> it emits when overcharged (flammable); lithium's hazard is the <strong>thermal runaway</strong> chain if a cell is damaged or abused — and its <strong>BMS</strong> exists precisely to prevent that (see <a href="/lithium/what-is-bms/">what a BMS does</a>). Treated within their rules, both chemistries are safe in ordinary use; the rules differ, which is the point of this lesson.</p>
+
+      <h2>What does a battery emergency look like?</h2>
+      <p>Two recognisable ones: a <strong>swollen lithium cell</strong> (the pouch bulges with decomposition gas) — stop using it, move it somewhere fire-safe, and take it to recycling (see <a href="/lithium/swollen-battery/">swollen battery</a>); and a <strong>leaking lead-acid battery</strong> — keep the acid off skin and surfaces, neutralise spills carefully, and replace the battery. Neither is a do-it-yourself repair job; both are handle-with-respect disposal jobs.</p>
+
+      <h2>What everyday habits prevent problems?</h2>
+      <p>Three habits cover most of it: <strong>terminal care</strong> (clean, tight, protected — see <a href="/lead-acid/terminal-corrosion/">corrosion</a>), <strong>charging discipline</strong> (the right profile, the right charger size), and <strong>storage discipline</strong> (charged lead-acid, partial-charge lithium, both cool). The habits are boring; the incidents they prevent are not.</p>
+
+      <h2>The Author's Take</h2>
+      <div class="takeaways">
+        <p>
+          <strong>In my view:</strong> Battery safety is a rules problem, not a risk problem — the hazards are real but the rules are short, and the gap between safe use and an incident is almost always a skipped rule rather than a hidden danger.</p>
+        <p>
+          <strong>Why:</strong> The industry ships billions of batteries safely because the rules are applied billions of times a day. The lesson worth teaching is exactly that asymmetry: respect the short list, and the chemistry respects you back.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What are the main battery safety rules?</h3>
+      <p>Never short the terminals; never overcharge (match the charger profile to the chemistry); never charge a frozen lithium battery; store lead-acid full and cool and lithium at 40–60% and cool; and handle acid and heavy batteries with care.</p>
+      <h3>Which battery is safer, lead-acid or lithium?</h3>
+      <p>Different hazards, not a simple ranking: lead-acid carries corrosive acid and hydrogen gassing when overcharged; lithium carries thermal runaway if abused, mitigated by the BMS. Both are safe within their rules — the rules are what differ.</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Battery engineering references — failure modes and safety design.</li>
+        <li>Standards references — UN 38.3, IEC 62133 safety testing.</li>
+      </ul>
+
+      <p class="muted">
+        <a href="/basics/">Series index</a> · <a href="https://testing.worldbatteryhub.com/abuse-testing/">How batteries are safety-tested</a> · <a href="/lithium/thermal-runaway/">Thermal runaway, explained</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

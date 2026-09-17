@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Voltage and Amperage: The Simple Explanation';
+const description = 'Volts, amps and watts explained simply — volts push, amps flow, watts measure the work — with the water analogy and what the numbers on a battery label actually mean.';
+const canonical = '/basics/voltage-amperage/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Battery Basics',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What do volts and amps mean in a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Voltage is the electrical pressure the chemistry provides — fixed per cell, about 2.0V for lead-acid. Amps are the flow of current, set by the load: the same 12V battery can push 1A into a light or 300A into a starter motor.',
+      },
+    },
+        {
+      '@type': 'Question',
+      name: 'How do watts relate to volts and amps?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Power in watts equals voltage times current: W = V × A. A 12V battery delivering 10A produces 120W. Energy then multiplies power by time — 120W for one hour is 120 watt-hours (Wh).',
+      },
+    }
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Last reviewed 2026-09-17</p>
+      <h1>Battery Voltage and Amperage: The Simple Explanation</h1>
+      <p class="lead">The three electrical words are one metaphor: voltage is the pressure, current is the flow, and power is the work that flow does — and the battery label states all three.</p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Voltage (V) is the <strong>push</strong>; current (A) is the <strong>flow</strong>; power (W) is <strong>volts × amps</strong>. A 12V battery delivering 10A is doing 120W of work. The battery's voltage is fixed by its chemistry; the current depends on what you connect.
+      </div>
+
+      <h2>What do volts and amps mean?</h2>
+      <p>The water-pipe analogy earns its keep here: <strong>voltage is the water pressure</strong>, <strong>current is the flow rate</strong>, and the <strong>load is the valve</strong>. High pressure with the valve closed does no work — voltage with no circuit is just potential. The battery's chemistry sets the pressure (12V, 24V, 48V); your load decides how much flow it draws.</p>
+
+      <h2>How do watts relate to volts and amps?</h2>
+      <p>Power = voltage × current: <strong>W = V × A</strong>. A 12V battery at 10A delivers 120W; the same 120W at 24V needs only 5A — which is why higher-voltage systems use thinner wires for the same power. Energy then adds time: power × hours = watt-hours (Wh), the honest unit for comparing stored energy (see <a href="/technology/ah-vs-wh/">Ah vs Wh</a>).</p>
+
+      <h2>Why is the battery's voltage fixed?</h2>
+      <p>Because the cell's chemistry fixes it — lead-acid gives ~2.0V per cell, LFP 3.2V, NMC ~3.7V — and a battery is just cells stacked to the target (see <a href="/basics/what-is-a-battery/">lesson 1</a>). That is why a "12V battery" actually sits around 12.6V when full and why a lithium pack reads 13.2–13.4V: the label voltage is the chemistry's nameplate, not its live reading.</p>
+
+      <h2>What numbers on the label actually matter?</h2>
+      <ul>
+        <li><strong>Voltage</strong> — must match the vehicle or system; the chemistry fixes it.</li>
+        <li><strong>CCA</strong> — the cold-cranking punch, the starting battery's headline (see <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>).</li>
+        <li><strong>Ah / Wh</strong> — the capacity, covered in <a href="/basics/battery-capacity/">lesson 3</a>.</li>
+      </ul>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My take:</strong> Voltage, current and power are one multiplication away from each other — W = V × A — and most battery confusion comes from treating them as interchangeable. The label states all three for a reason; the reason is that each answers a different question.</p>
+        <p>
+          <strong>Why:</strong> The multiplication is the whole lesson: once power is volts times amps, the system-voltage choice, the wire sizing and the capacity comparisons all become arithmetic instead of mystery. One formula, honestly applied, demystifies half the battery market's spec sheets.</p>
+        <p class="muted"><em>My editorial view, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What do volts and amps mean in a battery?</h3>
+      <p>Voltage is the electrical pressure the chemistry provides — fixed per cell, about 2.0V for lead-acid. Amps are the flow of current, set by the load: the same 12V battery can push 1A into a light or 300A into a starter motor.</p>
+      <h3>How do watts relate to volts and amps?</h3>
+      <p>Power in watts equals voltage times current: W = V × A. A 12V battery delivering 10A produces 120W. Energy then multiplies power by time — 120W for one hour is 120 watt-hours (Wh).</p>
+
+      <h2>Sources</h2>
+      <p>Cross-verified from the engineering references cited on the linked pages.</p>
+      <ul>
+        <li>Battery engineering references — cell voltages and power calculations.</li>
+        <li>Manufacturer datasheets — voltage and CCA ratings.</li>
+      </ul>
+
+      <p class="muted">
+        Next: <a href="/basics/battery-capacity/">Lesson 3 — capacity</a> · <a href="/basics/">Series index</a> · <a href="/tools/runtime-calculator/">Runtime calculator</a>
+        · Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
