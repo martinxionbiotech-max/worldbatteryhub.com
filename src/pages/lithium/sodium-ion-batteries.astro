@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Sodium-Ion Batteries: The 2026 Status';
+const description = 'Sodium-ion batteries went commercial in 2025-2026 — CATL\u2019s Naxtra claims 15,000 cycles at LFP cost parity. How they compare with LFP, where they win first, and their honest limits.';
+const canonical = '/lithium/sodium-ion-batteries/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Sodium-ion batteries',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a sodium-ion battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A battery that uses sodium ions in place of lithium ions — the same working principle, a different carrier. Sodium is abundant and cheap (the raw material advantage), but the cells are less energy-dense: roughly 160\u2013175 Wh/kg against LFP\u2019s ~190\u2013210 Wh/kg.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where will sodium-ion batteries be used first?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Grid storage and entry-level vehicles: stationary storage values cost and cycle life over energy density, and sodium-ion\u2019s raw-material advantage of roughly 30\u201340% over LFP matters most there. CATL targets mass production around 160 Wh/kg with EV deployment guided for the second half of 2026.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Future Technology · Last reviewed 2026-09-17</p>
+      <h1>Sodium-Ion Batteries: The 2026 Status</h1>
+      <p class="lead">
+        Sodium-ion is the rare battery story where the incumbent's input prices became the newcomer's business
+        case — after lithium's 2022–2025 price cycle, a chemistry built on the sixth most abundant element
+        stopped being an experiment and started being a product.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A sodium-ion battery swaps <strong>sodium for lithium</strong> in the same
+        working principle — abundant raw material, lower cost, <strong>lower energy density</strong> (roughly
+        160–175 Wh/kg against LFP's ~190–210). In 2026 it is commercial: CATL is in mass production, its
+        <strong>Naxtra</strong> cell claims <strong>15,000 cycles</strong> at LFP cost parity, and packs are
+        already on roads in China.
+      </div>
+
+      <h2>What is a sodium-ion battery?</h2>
+      <p>
+        The cell works like a lithium-ion cell — ions shuttle between two electrodes through an electrolyte —
+        but the ion is <strong>sodium</strong>, whose salts and cathode materials (layered oxides, Prussian-blue
+        analogues) avoid lithium, nickel and cobalt. The consequences follow directly: the raw material bill
+        collapses, and the energy density gives back roughly 10–20% to LFP, because sodium is heavier and its
+        voltage slightly lower (see <a href="/lithium/lfp-vs-nmc-vs-lto/">the chemistry baseline</a>).
+      </p>
+
+      <h2>How does sodium-ion compare with LFP?</h2>
+      <table>
+        <thead><tr><th></th><th>Sodium-ion (2026)</th><th>LFP</th></tr></thead>
+        <tbody>
+          <tr><td>Energy density</td><td>~160–175 Wh/kg (manufacturer figures)</td><td>~190–210 Wh/kg</td></tr>
+          <tr><td>Raw material cost</td><td>~30–40% lower than LFP (industry estimates)</td><td>Baseline</td></tr>
+          <tr><td>Cycle life</td><td>Up to ~15,000 cycles claimed (Naxtra)</td><td>~2,000–5,000 typical</td></tr>
+          <tr><td>Cold performance</td><td>Strong — &gt;92% retention at −20°C claimed</td><td>Charging blocked below 0°C</td></tr>
+          <tr><td>Input dependence</td><td>Abundant sodium, no nickel/cobalt</td><td>Lithium, iron, phosphate</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Manufacturer claims, hedged as such — the density gap is real physics; the cost gap is real economics;
+        the cycle numbers still need field years to confirm.
+      </p>
+
+      <h2>Why is sodium-ion suddenly commercial?</h2>
+      <p>
+        The trigger was the <a href="/market/china-battery-prices/">lithium price cycle</a>: carbonate went from
+        60,000 to 597,000 yuan/ton and back between 2021 and 2025, and every buyer along the chain learned to
+        hedge a single input. Sodium-ion is the structural hedge — a chemistry whose inputs have no comparable
+        cycle — plus a genuine cost advantage where density does not decide. The 2025–2026 launches (CATL, BYD,
+        HiNa) are the industry cashing in that lesson.
+      </p>
+
+      <h2>Who is scaling it in 2026?</h2>
+      <ul>
+        <li><strong>CATL</strong> — first-generation cells at ~160 Wh/kg in mass production; the
+        <strong>Naxtra</strong> line claims 175 Wh/kg, 15,000 cycles, a 30-year calendar life and per-kWh cost
+        "essentially equivalent" to LFP. EV deployment guided for H2 2026.</li>
+        <li><strong>BYD</strong> — sodium chemistry in its energy-storage pipeline, the same playbook it ran on
+        LFP.</li>
+        <li><strong>BAIC</strong> — the Aurora series pack runs sodium cells above 170 Wh/kg with 4C fast
+        charging (~11 minutes) and −40°C to 60°C operating claims.</li>
+        <li><strong>HiNa</strong> — the specialist incumbent, from grid storage upward.</li>
+      </ul>
+
+      <h2>Where does sodium-ion win first?</h2>
+      <p>
+        The beachhead is <strong>stationary storage</strong>: a BESS values cost per cycle and longevity over
+        kilograms, and sodium-ion's 30–40% raw-material advantage shows up directly in the levelized cost of
+        storage — the offset being the extra space its lower density needs (see
+        <a href="/market/battery-demand-forecast/">the storage growth engine</a>). After that come entry-level
+        EVs and two-wheelers, where the range penalty is survivable and the price matters most.
+      </p>
+
+      <h2>What are sodium-ion's honest limits?</h2>
+      <ul>
+        <li><strong>Energy density</strong> — 10–20% below LFP means bigger, heavier packs for the same range;
+        it will not power long-range flagship EVs.</li>
+        <li><strong>Immature supply chain</strong> — the cell is commercial, but its cathode and hard-carbon
+        anode supply chains are years behind lithium's scale.</li>
+        <li><strong>Cycle-life claims vs field data</strong> — 15,000 cycles is a laboratory figure until enough
+        fleets have run long enough to confirm it (see <a href="https://testing.worldbatteryhub.com/cycle-safety/">cycle
+        testing</a> for how such numbers are made).</li>
+      </ul>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My read:</strong> Sodium-ion is not a lithium killer — it is lithium's price ceiling. The
+          moment a credible substitute exists for the bottom of the market, the incumbent's input can never
+          again spike the way 2022's carbonate did, and that changes the whole industry's risk structure even
+          where sodium never ships a cell.</p>
+        <p>
+          <strong>Why:</strong> The 2022–2025 cycle taught buyers to hedge; sodium-ion is the hedge made physical.
+          Its real market is storage and entry transport, but its real effect is wider: it caps the downside
+          scenario that every battery procurement plan must now price in anyway.</p>
+        <p class="muted"><em>My editorial view, not investment or purchasing advice.</em></p>
+      </div>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>What is the cycle life claimed, and to which end-of-life definition (80% or 70%)?</li>
+        <li>What is the delivered energy density, and does the installation have the space for it?</li>
+        <li>What field data exists beyond the laboratory cycle claims?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is a sodium-ion battery?</h3>
+      <p>
+        A battery that uses sodium ions in place of lithium ions — the same working principle, a different
+        carrier. Sodium is abundant and cheap (the raw material advantage), but the cells are less energy-dense:
+        roughly 160–175 Wh/kg against LFP's ~190–210 Wh/kg.
+      </p>
+      <h3>Where will sodium-ion batteries be used first?</h3>
+      <p>
+        Grid storage and entry-level vehicles: stationary storage values cost and cycle life over energy
+        density, and sodium-ion's raw-material advantage of roughly 30–40% over LFP matters most there. CATL
+        targets mass production around 160 Wh/kg with EV deployment guided for the second half of 2026.
+      </p>
+
+      <h2>Sources</h2>
+      <p>Company announcements and industry reporting, reviewed 2026-09-17.</p>
+      <ul>
+        <li>CATL — sodium-ion mass production status and Naxtra specifications (2024–2026 announcements).</li>
+        <li>BAIC — Aurora sodium-ion pack specifications, 2025–2026.</li>
+        <li>Industry estimates — sodium-ion raw-material cost advantage versus LFP, 2026.</li>
+      </ul>
+
+      <p class="muted">
+        Related: <a href="/lithium/solid-state-batteries/">solid-state</a> ·
+        <a href="/lithium/silicon-anode-batteries/">silicon anode</a> ·
+        <a href="/market/china-battery-prices/">lithium prices</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>

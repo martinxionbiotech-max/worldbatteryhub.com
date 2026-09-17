@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Solid-State Batteries: The 2026 Status';
+const description = 'Solid-state batteries crossed from lab promise to pilot reality in 2025-2026 — QuantumScape, Toyota, Samsung and the race to 500 Wh/kg. What the solid electrolyte changes, who is scaling it, and when buyers should care.';
+const canonical = '/lithium/solid-state-batteries/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Solid-state batteries',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-17',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a solid-state battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A battery whose electrolyte is a solid material instead of the flammable liquid of today\u2019s lithium-ion cells. The solid electrolyte enables a lithium-metal anode, which is the route to 400\u2013500 Wh/kg — roughly 50% above current NMC cells — and it removes the flammable liquid that dominates lithium-ion safety design.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When will solid-state batteries be in cars?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pilot scale is happening now: QuantumScape\u2019s QSE-5 cells are in a Ducati motorcycle and its Eagle Line pilot plant opened in early 2026, while Toyota, Samsung SDI and others run pilot lines and semi-solid cells (MG4) already drive on roads. Volume automotive production is generally guided for 2027\u20132030, not before.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-17"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium Knowledge · Future Technology · Last reviewed 2026-09-17</p>
+      <h1>Solid-State Batteries: The 2026 Status</h1>
+      <p class="lead">
+        After decades of laboratory promise, the solid-state battery crossed into pilot reality in 2025–2026 —
+        and the honest question changed from "will it work?" to "who scales it first, and at what cost?"
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A solid-state battery replaces the flammable <strong>liquid electrolyte</strong>
+        with a <strong>solid</strong> one, which unlocks a <strong>lithium-metal anode</strong> and the road to
+        <strong>400–500 Wh/kg</strong> — roughly 50% above today's NMC cells. In 2026 it is real at pilot scale
+        (QuantumScape's QSE-5, Toyota's line, semi-solid MG4s on the road) and still expensive at volume scale.
+      </div>
+
+      <h2>What is a solid-state battery?</h2>
+      <p>
+        Today's lithium-ion cell is a liquid system: a flammable organic electrolyte carries the ions between the
+        electrodes. The solid-state design replaces that liquid with a <strong>solid electrolyte</strong> — a
+        ceramic or polymer that conducts ions but cannot leak, ignite or freeze in the same way. The swap is
+        small in description and enormous in consequence, because it changes which anode the cell can use
+        (see <a href="/lithium/lfp-vs-nmc-vs-lto/">the chemistry comparison</a> for the incumbent baseline).
+      </p>
+
+      <h2>Why does the solid electrolyte matter?</h2>
+      <p>
+        Three consequences follow from the one material change:
+      </p>
+      <ul>
+        <li><strong>The lithium-metal anode becomes practical.</strong> Liquid electrolytes grow dendrites —
+        needle-like lithium that shorts the cell. A stiff solid electrolyte blocks them, which is what allows the
+        metal anode and its much higher energy per gram.</li>
+        <li><strong>Safety architecture simplifies.</strong> Without the flammable liquid, the failure chain that
+        ends in <a href="/lithium/thermal-runaway/">thermal runaway</a> loses its fuel and its pressure vessel.</li>
+        <li><strong>Energy density jumps.</strong> The 400–500 Wh/kg targets sit roughly 50% above today's NMC
+        cells — the difference between a 100 kWh pack weighing ~550 kg and one in the low 300s.</li>
+      </ul>
+
+      <h2>Which solid electrolytes are in the race?</h2>
+      <table>
+        <thead><tr><th>Family</th><th>Strengths</th><th>Open problem</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sulfide</strong></td><td>Highest conductivity, closest to liquid</td><td>Moisture sensitivity, manufacturing atmosphere</td></tr>
+          <tr><td><strong>Oxide</strong></td><td>Stable, rigid against dendrites</td><td>Interface contact with electrodes</td></tr>
+          <tr><td><strong>Polymer</strong></td><td>Flexible, manufacturable</td><td>Conductivity at low temperature</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Three families, one shared bottleneck: the solid-solid interface must stay in contact through years of
+        expansion and contraction — the interface, not the electrolyte, is the technology's real frontier.
+      </p>
+
+      <h2>Who is actually scaling it in 2026?</h2>
+      <p>
+        The named milestones, per company announcements and industry reporting:
+      </p>
+      <ul>
+        <li><strong>QuantumScape</strong> — QSE-5 cells debuted in a Ducati motorcycle at IAA Munich; the Eagle
+        Line pilot facility opened in <strong>February 2026</strong>.</li>
+        <li><strong>Toyota</strong> — its pilot line is the anchor of the Japanese programme, with production
+        guided toward the late 2020s.</li>
+        <li><strong>Samsung SDI</strong> — sulfide-route pilot production and sample deliveries to automakers.</li>
+        <li><strong>Semi-solid on the road</strong> — MG's MG4 with semi-solid cells and Mercedes road-test
+        programmes show the intermediate step already driving.</li>
+      </ul>
+
+      <h2>What can solid-state do that lithium-ion cannot?</h2>
+      <p>
+        The honest scoreboard: solid-state's promise is <strong>energy density and safety in one step</strong> —
+        the 500 Wh/kg class with the flammable liquid removed. What it has not yet proven at scale is
+        <strong>cost and cycle life</strong>: every pilot must convert laboratory performance into years of
+        automotive-grade cycling at a price per kWh that competes with <a href="/market/battery-price-trends/">a
+        $108/kWh incumbent</a>. The race is not to make one cell; it is to make millions cheaply.
+      </p>
+
+      <h2>When should buyers care?</h2>
+      <p>
+        The timeline, honestly drawn: <strong>2025–2027</strong> is pilot and semi-solid territory;
+        <strong>2027–2030</strong> is the guided window for first volume automotive cells; and
+        <strong>today's buyer</strong> is still choosing between LFP and NMC — the solid-state cell belongs to
+        the next purchase cycle, not this one. Watch the pilot-line yield numbers, not the headlines, for the
+        real pace.
+      </p>
+
+      <h2>Our Interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>My position:</strong> Solid-state has finally become an engineering race instead of a science
+          project — and the tell is that the milestones now reported are factories and road tests rather than
+          paper energy densities, which is exactly how every battery generation that mattered announced itself.</p>
+        <p>
+          <strong>Why:</strong> The physics was never the doubt; the interface and the cost curve were. The 2026
+          pilots answer the first and begin on the second — and the second is the one that decides whether
+          solid-state replaces liquid lithium-ion or remains the premium layer above it.</p>
+        <p class="muted"><em>My editorial view, not investment or purchasing advice.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is a solid-state battery?</h3>
+      <p>
+        A battery whose electrolyte is a solid material instead of the flammable liquid of today's lithium-ion
+        cells. The solid electrolyte enables a lithium-metal anode, which is the route to 400–500 Wh/kg —
+        roughly 50% above current NMC cells — and it removes the flammable liquid that dominates lithium-ion
+        safety design.
+      </p>
+      <h3>When will solid-state batteries be in cars?</h3>
+      <p>
+        Pilot scale is happening now: QuantumScape's QSE-5 cells are in a Ducati motorcycle and its Eagle Line
+        pilot plant opened in early 2026, while Toyota, Samsung SDI and others run pilot lines and semi-solid
+        cells (MG4) already drive on roads. Volume automotive production is generally guided for 2027–2030, not
+        before.
+      </p>
+
+      <h2>Sources</h2>
+      <p>Company announcements and industry reporting, reviewed 2026-09-17.</p>
+      <ul>
+        <li>QuantumScape — QSE-5 deployment (Ducati, IAA Munich) and Eagle Line pilot facility, Feb 2026.</li>
+        <li>Toyota / Samsung SDI — pilot-line progress announcements, 2025–2026.</li>
+        <li>Industry reporting — MG4 semi-solid vehicles and Mercedes road tests, 2025–2026.</li>
+      </ul>
+
+      <p class="muted">
+        Related: <a href="/lithium/sodium-ion-batteries/">sodium-ion</a> ·
+        <a href="/lithium/silicon-anode-batteries/">silicon anode</a> ·
+        <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a> ·
+        Last reviewed: 2026-09-17
+      </p>
+    </div>
+  </section>
+</BaseLayout>
