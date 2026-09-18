@@ -44,3 +44,18 @@
 - Reason: audit #18 §40 depth gate — thin answer sections need the mechanism/evidence "why" beneath the table or list
 - Old: bare tables/lists or one-line answers | New: a short analysis paragraph added under each flagged section
 - SEO risk: Low — additive, no structural changes | Rollback: git revert
+
+## 2026-09-18 — V2.0 补装 + Audit#3 P1（night-batch-0918-1805）
+- Change: 76 页加「What buyers should ask」买家清单 + 68 页加「The bottom line」结论节（重叠 51 页）
+- Reason: audit #18 §57（买家清单强制）/ §42（结论节）— 域适配条目，禁模板套用，结论不重复立场块
+- Old: 页末仅有 FAQ/Sources，无买家清单和结论节 | New: 每页末尾加域适配买家清单 + 简短 The bottom line
+- SEO risk: Low — 纯增补，不改 URL/slug/title/H1/canonical/schema | Rollback: git revert（6 个 commit）
+- Change: 枢纽轻补强——lead-acid hub 加 At a glance 直答框；technology hub 修复 data 子站断链（/data.worldbatteryhub.com → https://）
+- Reason: audit #18 枢纽页专项 | Old: lead-acid hub 无直答框、technology hub 断链 | New: 直答框 + 断链修复
+- SEO risk: Low — additive | Rollback: git revert
+- Change: 新建 /methodology/ 页（研究方法论、来源层级、数据验证、厂商声明政策、标准验证、冲突处理、市场数据方法、更正、更新、编辑独立性）
+- Reason: audit #19 item 19 / P1-6 | Old: 无 methodology 页 | New: /methodology/ 页 + nav/footer 链接
+- SEO risk: Low — net-new URL | Rollback: git revert
+- Change: /about/ 补 Editorial Entity「World Battery Hub Research Desk」（方法论+审核+更正政策，不虚构真人专家）
+- Reason: audit #19 item 11 / P1-7 | Old: about 无编辑部实体 | New: Research Desk 集体编辑部实体 + 方法/审核/更正/独立性
+- SEO risk: Low — additive | Rollback: git revert
