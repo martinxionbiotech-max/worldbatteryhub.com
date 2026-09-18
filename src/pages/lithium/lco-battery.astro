@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'LCO Battery: The Original Lithium Chemistry';
+const description = 'LCO (lithium cobalt oxide) explained — the first commercial lithium cathode, still dominant in phones and laptops: typical specs, cobalt content, cycle life, safety and what buyers should verify.';
+const canonical = '/lithium/lco-battery/';
+
+const articleJsonLd = {
+  '@type': 'TechArticle',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'LCO battery chemistry',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-18',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Why is LCO used in phones but not EVs?', acceptedAnswer: { '@type': 'Answer', text: 'LCO wins on energy density per gram, which is what a phone or laptop needs, but its cycle life is short and its cobalt content is high — both disqualify it for electric vehicles, where LFP and NMC dominate.' } },
+    { '@type': 'Question', name: 'Is LCO being replaced?', acceptedAnswer: { '@type': 'Answer', text: 'Not in consumer electronics, where LCO remains the standard cathode — cobalt reduction happens through doping and high-voltage formulations rather than chemistry replacement, while cobalt-free chemistries took over vehicles and storage instead.' } },
+    { '@type': 'Question', name: 'How much cobalt is in an LCO battery?', acceptedAnswer: { '@type': 'Answer', text: 'Cobalt is typically around 60% of the cathode material by weight in LCO, which makes the chemistry the most cobalt-intensive of the commercial cathodes — and the most exposed to cobalt price cycles.' } },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub Research Desk"
+  dateModified="2026-09-18"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Chemistry · Last reviewed 2026-09-18</p>
+      <h1>LCO Battery: The Original Lithium Chemistry</h1>
+      <p class="lead">
+        Lithium cobalt oxide is the chemistry that started the lithium-ion era — and three decades later it is
+        still the standard inside the device you are probably reading this on, for reasons no newer chemistry
+        has been able to beat.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> LCO&rsquo;s layered oxide cathode delivers roughly 3.6–3.7V nominal voltage and
+        the highest energy density per gram among mainstream cathodes — which is why it dominates phones,
+        laptops and wearables. Its costs are the mirror image: cycle life is short (on the order of 300–500
+        full cycles for consumer cells), and cobalt is typically around 60% of the cathode by weight, making
+        LCO the most cobalt-intensive commercial chemistry and the most exposed to cobalt price swings.
+      </div>
+
+      <h2>What makes LCO the energy-density champion</h2>
+      <p>
+        The layered LiCoO&sb2; structure lets lithium ions shuttle out and back between stacked oxygen planes
+        with a high operating voltage and good rate capability in a small, dense package. For a phone that is
+        charged daily and replaced every two to three years, energy per gram matters far more than cycle count
+        or materials cost — and that is precisely LCO&rsquo;s trade: it optimizes the axis consumer electronics
+        actually rewards.
+      </p>
+
+      <h2>LCO&rsquo;s limits, in numbers</h2>
+      <table>
+        <thead><tr><th>Parameter</th><th>LCO (typical consumer cells)</th></tr></thead>
+        <tbody>
+          <tr><td>Nominal voltage</td><td>~3.6–3.7V (high-voltage variants charge to 4.45V+)</td></tr>
+          <tr><td>Cell energy density</td><td>~150–200 Wh/kg, format-dependent</td></tr>
+          <tr><td>Cycle life</td><td>~300–500 full cycles (typical, rate- and voltage-dependent)</td></tr>
+          <tr><td>Thermal class</td><td>Layered oxide — less stable than olivine, protection circuits mandatory</td></tr>
+          <tr><td>Cobalt content</td><td>~60% of cathode weight (typical)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>An original calculation: cobalt exposure per battery</h2>
+      <p>
+        A phone cell holds roughly 15 Wh. At ~60% cobalt in the cathode and a working cathode share of roughly
+        1/3 of cell weight, that cell carries on the order of 3 g of cobalt — a few cents at 2024–2026 cobalt
+        prices, but it is the same arithmetic that scales painfully: a chemistry built on the most volatile
+        battery metal stays cheap only while cobalt stays cheap. When cobalt prices spiked in past cycles, LCO
+        cells absorbed the shock directly, which is why every major cell maker invested in cobalt reduction —
+        through high-voltage formulations that extract more energy per gram of cobalt, not through abandoning
+        the chemistry.
+      </p>
+
+      <h2>Why LCO never went to cars</h2>
+      <p>
+        EVs demand thousands of cycles and strict cost per kilowatt-hour; LCO offers hundreds of cycles and the
+        industry&rsquo;s highest cobalt bill. The chemistry that fits in a pocket fails on a drivetrain — which is
+        why vehicles moved to <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP and NMC</a>, while LCO stayed exactly
+        where its trade makes sense.
+      </p>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>Charge-voltage ceiling (4.40V vs 4.45V+ high-voltage variants) — energy density and calendar life both move with it.</li>
+        <li>Cycle-life test conditions — rate, depth of discharge and temperature all shift the 300–500 cycle figure.</li>
+        <li>Cobalt sourcing documentation — the chemistry&rsquo;s cost and compliance risk live in that one metal.</li>
+        <li>Protection-circuit configuration and safety certifications for the assembled pack.</li>
+        <li>Calendar-aging data — consumer cells age on the shelf as well as in use.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>Why is LCO used in phones but not EVs?</h3><p>LCO wins on energy density per gram, which is what a phone or laptop needs, but its cycle life is short and its cobalt content is high — both disqualify it for electric vehicles, where LFP and NMC dominate.</p></div>
+      <div class="faq-item"><h3>Is LCO being replaced?</h3><p>Not in consumer electronics, where LCO remains the standard cathode — cobalt reduction happens through doping and high-voltage formulations rather than chemistry replacement, while cobalt-free chemistries took over vehicles and storage instead.</p></div>
+      <div class="faq-item"><h3>How much cobalt is in an LCO battery?</h3><p>Cobalt is typically around 60% of the cathode material by weight in LCO, which makes the chemistry the most cobalt-intensive of the commercial cathodes — and the most exposed to cobalt price cycles.</p></div>
+
+      <h2>What This Means</h2>
+      <div class="takeaways">
+        <p><strong>My position:</strong> LCO is not a legacy chemistry being phased out — it is a specialist that never pretended to be a generalist, and it will hold the pocket-electronics niche until a chemistry beats it at its own metric: energy per gram at small scale.</p>
+        <p><strong>Why:</strong> The cobalt critique is real but priced in; buyers who understand the trade buy LCO deliberately, and buyers who do not are the ones surprised by cycle life. Understanding beats substitution here.</p>
+        <p class="muted"><em>Editorial interpretation, not purchasing advice.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Typical values compiled from cell-manufacturer datasheets and cathode-material publications (2024–2026); ranges stated as typical — see the platform <a href="/methodology/">methodology</a>.</p>
+
+      <p class="muted">
+        <a href="/lithium/">Lithium knowledge</a> · <a href="/lithium/lmfp-battery/">LMFP battery</a> ·
+        <a href="/lithium/graphite-anode/">Graphite anode</a> · Last reviewed: 2026-09-18
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Lithium Electrode Manufacturing: Mixing to Formation';
+const description = 'Lithium electrode manufacturing explained — slurry mixing, coating, drying, calendering, slitting, stacking vs winding, electrolyte filling, formation and aging, with the parameters that decide cell quality.';
+const canonical = '/technology/lithium-electrode-manufacturing/';
+
+const articleJsonLd = {
+  '@type': 'TechArticle',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Lithium electrode manufacturing process',
+  articleSection: 'Battery Technology',
+  dateModified: '2026-09-18',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is formation in battery manufacturing?', acceptedAnswer: { '@type': 'Answer', text: 'Formation is the first controlled charge a new cell receives — it builds the solid-electrolyte interface on the anode and converts electrode materials into their working state; the profile (current steps, temperature, time) is one of the most tightly guarded recipes in a cell factory.' } },
+    { '@type': 'Question', name: 'Why is electrode coating so precise?', acceptedAnswer: { '@type': 'Answer', text: 'Coating weight and uniformity set the cell\'s capacity and consistency directly — a thickness deviation of a few microns translates into measurable capacity spread, which is why coating lines run automated closed-loop control and in-line measurement.' } },
+    { '@type': 'Question', name: 'What is a dry room in cell manufacturing?', acceptedAnswer: { '@type': 'Answer', text: 'A dry room is the low-humidity environment where electrolyte filling and assembly happen — moisture reacts with electrolyte and poisons cell life, so humidity is typically held below 1% RH in the critical zones.' } },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub Research Desk"
+  dateModified="2026-09-18"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Technology · Manufacturing · Last reviewed 2026-09-18</p>
+      <h1>Lithium Electrode Manufacturing: Mixing to Formation</h1>
+      <p class="lead">
+        A lithium cell is a precision coating job with an electrochemical ending — the electrode line decides
+        the cell&rsquo;s capacity, consistency and cost before the first charge ever flows, and the steps after it
+        decide the life.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> The lithium cell line runs ten steps —
+        <strong>mixing → coating → drying → calendering → slitting → stacking/winding → electrolyte filling →
+        formation → aging → grading</strong>. The quality of the cell is written in the first six: coating
+        uniformity sets capacity consistency, calendering sets density and rate capability, and the dry room
+        protects everything after filling. The last three — formation, aging and grading — sort the good cells
+        from the merely finished ones.
+      </div>
+
+      <h2>The ten steps, and the parameter that matters at each</h2>
+      <table>
+        <thead><tr><th>Step</th><th>What happens</th><th>Parameter that decides quality</th></tr></thead>
+        <tbody>
+          <tr><td>Mixing</td><td>Active material, binder and solvent become slurry</td><td>Solid content and viscosity — typically 60–75% solids for NMP-based slurries</td></tr>
+          <tr><td>Coating</td><td>Slurry is metered onto foil (Al cathode, Cu anode)</td><td>Coating weight uniformity — in-line β-ray measurement, microns of tolerance</td></tr>
+          <tr><td>Drying</td><td>Solvent evaporates in long ovens</td><td>Temperature profile and residual moisture — plus solvent recovery efficiency</td></tr>
+          <tr><td>Calendering</td><td>Rollers compress the coating to target porosity</td><td>Compaction density — the energy-density versus rate-capability dial</td></tr>
+          <tr><td>Slitting</td><td>Master rolls become electrode strips</td><td>Edge quality — burrs become internal short circuits</td></tr>
+          <tr><td>Stacking / winding</td><td>Electrodes + separator become a cell structure</td><td>Alignment accuracy — misalignment wastes capacity and invites dendrites</td></tr>
+          <tr><td>Electrolyte filling</td><td>Electrolyte is dosed into the cell (dry room)</td><td>Humidity — typically below 1% RH in critical zones; moisture kills life</td></tr>
+          <tr><td>Formation</td><td>First controlled charge builds the SEI</td><td>Charge profile (steps, temperature, time) — the factory&rsquo;s guarded recipe</td></tr>
+          <tr><td>Aging</td><td>Cells rest at controlled temperature</td><td>Aging time and temperature — the hidden calendar-quality filter</td></tr>
+          <tr><td>Grading</td><td>Cells are tested and binned by capacity and resistance</td><td>Grading thresholds — the line between A-grade and everything else</td></tr>
+        </tbody>
+      </table>
+
+      <h2>An original calculation: what solvent recovery is worth</h2>
+      <p>
+        NMP — the standard solvent for cathode slurries — is expensive and regulated, so coating lines recover
+        it. The arithmetic: a GWh-scale line applies roughly 2,000–3,000 tonnes of slurry per year; at a
+        working solid content of ~65%, that is on the order of 700–1,000 tonnes of NMP evaporated annually.
+        At industrial NMP prices, that solvent stream is worth millions — which is why recovery systems
+        capturing 99%+ of evaporated NMP pay for themselves quickly, and why &ldquo;solvent recovery rate&rdquo; belongs
+        on every factory audit checklist next to capacity.
+      </p>
+
+      <h2>Why coating consistency is the factory&rsquo;s real currency</h2>
+      <p>
+        Every downstream step inherits the coating. A coating-weight deviation of a few percent across a roll
+        becomes capacity spread across cells, and capacity spread becomes sorting losses and warranty risk.
+        The best lines run closed-loop coating control — in-line measurement feeding the metering system —
+        and their quality story is told in two numbers: coating-weight capability (Cpk) and the capacity
+        spread of the graded output. Buyers auditing a factory should ask for both.
+      </p>
+
+      <h2>What buyers and auditors should ask</h2>
+      <ul>
+        <li>Coating-weight and thickness capability data (Cpk), not just nominal specifications.</li>
+        <li>Moisture control: dry-room RH levels and residual-moisture checks on incoming materials.</li>
+        <li>Formation and aging recipes — cycle-life claims without formation discipline are wishes.</li>
+        <li>Grading thresholds and the ratio of grades produced — it reveals true yield.</li>
+        <li>Traceability: lot-level linking from slurry batch to graded cell.</li>
+        <li>Solvent recovery rate and environmental permits — cost and compliance in one metric.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>What is formation in battery manufacturing?</h3><p>Formation is the first controlled charge a new cell receives — it builds the solid-electrolyte interface on the anode and converts electrode materials into their working state; the profile (current steps, temperature, time) is one of the most tightly guarded recipes in a cell factory.</p></div>
+      <div class="faq-item"><h3>Why is electrode coating so precise?</h3><p>Coating weight and uniformity set the cell&rsquo;s capacity and consistency directly — a thickness deviation of a few microns translates into measurable capacity spread, which is why coating lines run automated closed-loop control and in-line measurement.</p></div>
+      <div class="faq-item"><h3>What is a dry room in cell manufacturing?</h3><p>A dry room is the low-humidity environment where electrolyte filling and assembly happen — moisture reacts with electrolyte and poisons cell life, so humidity is typically held below 1% RH in the critical zones.</p></div>
+
+      <h2>Engineering interpretation</h2>
+      <div class="takeaways">
+        <p><strong>Where I stand:</strong> When two cell suppliers quote the same chemistry and the same datasheet, the difference you are really buying is their coating capability and their formation discipline — the two least visible and most valuable assets in the factory.</p>
+        <p><strong>Why:</strong> Electrode uniformity sets the distribution of every later property, and formation sets the life. Everything a buyer can see on a datasheet — capacity, cycle life, consistency — is downstream of those two steps, which is why a factory visit beats a brochure by exactly that margin.</p>
+        <p class="muted"><em>Engineering interpretation, not purchasing advice.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Parameter ranges compiled from cell-manufacturer publications, equipment-vendor documentation and industry references (2024–2026); stated as typical working values — see the platform <a href="/methodology/">methodology</a>.</p>
+
+      <p class="muted">
+        <a href="/technology/">Technology hub</a> · <a href="/lithium/cell-formats-18650-21700-4680/">Cell formats</a> ·
+        <a href="/lithium/graphite-anode/">Graphite anode</a> · Last reviewed: 2026-09-18
+      </p>
+    </div>
+  </section>
+</BaseLayout>
