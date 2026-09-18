@@ -63,7 +63,7 @@ const faqJsonLd = {
       <p>Energy = 100W × 8h = <strong>800 Wh</strong>. Modest by house standards — and enough to strand a boat if the bank is undersized, because there is no grid to fall back on.</p>
 
       <h2>Step 2: the sizing</h2>
-      <p>800 Wh ÷ 12V = <strong>67 Ah usable</strong>. At lead-acid's 50% window: <strong>~134 Ah rated</strong> — in practice a pair of Group 27 deep-cycles in parallel, or a single 130–150 Ah deep-cycle (see the <a href='/tools/sizing-calculator/'>sizing calculator</a>). At LFP's 80%: ~84 Ah rated — the same duty at roughly 60% of the bank.</p>
+      <p>800 Wh ÷ 12V = <strong>67 Ah usable</strong>. At lead-acid's 50% window: <strong>~134 Ah rated</strong> — in practice a pair of <a href="https://data.worldbatteryhub.com/battery-groups/group27/">Group 27</a> <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a>s in parallel, or a single 130–150 Ah deep-cycle (see the <a href='/tools/sizing-calculator/'>sizing calculator</a>). At <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP</a>'s 80%: ~84 Ah rated — the same duty at roughly 60% of the bank.</p>
 
       <h2>Step 3: the runtime cross-check</h2>
       <p>At 100W the 12V bank draws ~8.3A. The 134 Ah lead-acid bank's usable 67 Ah at 8.3A runs <strong>~8.1 hours</strong> — exactly the requirement (see the <a href='/tools/runtime-calculator/'>runtime calculator</a>). The numbers close; the marine design rules are next.</p>
@@ -71,7 +71,7 @@ const faqJsonLd = {
       <h2>Step 4: the marine-specific rules</h2>
       <ul>
         <li><strong>Separate the engine battery</strong> — the house bank must never be able to leave the boat unable to start; a <a href='/lead-acid/marine-battery/'>dedicated starting battery</a> with a charge relay is the standard.</li>
-        <li><strong>Read the ratings correctly</strong> — marine batteries are rated in <strong>MCA at 0°C</strong>, which reads higher than CCA at −18°C; do not compare the two ladders (see <a href='/lead-acid/cca/cca-vs-ca/'>CCA vs CA</a>).</li>
+        <li><strong>Read the ratings correctly</strong> — marine batteries are rated in <strong>MCA at 0°C</strong>, which reads higher than <a href="/lead-acid/cca/what-is-cca/">CCA</a> at −18°C; do not compare the two ladders (see <a href='/lead-acid/cca/cca-vs-ca/'>CCA vs CA</a>).</li>
         <li><strong>Anchor the bank</strong> — a boat that heels is a vibration and shifting hazard; strap the batteries down as firmly as the engine.</li>
       </ul>
 

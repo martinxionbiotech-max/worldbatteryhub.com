@@ -63,13 +63,13 @@ const faqJsonLd = {
       <p>Energy = 500W × 8h = <strong>4,000 Wh</strong>. At 48V that is <strong>~83 Ah</strong> — the raw requirement, before the standby discipline begins.</p>
 
       <h2>Step 2: the standby design factor</h2>
-      <p>Standby banks are sized <em>up</em>, not down, for two reasons: the battery must deliver the full duration <strong>at end of life</strong>, not when new, and aging reduces real capacity toward the rating. Practice applies a design factor of roughly <strong>1.25</strong> (the IEEE 485-style logic): <strong>83 Ah × 1.25 ≈ 104 Ah</strong> — the honest bank is ~105 Ah at 48V, typically a string of 4× 12V 105 Ah VRLA blocks or an LFP system rated likewise.</p>
+      <p>Standby banks are sized <em>up</em>, not down, for two reasons: the battery must deliver the full duration <strong>at end of life</strong>, not when new, and aging reduces real capacity toward the rating. Practice applies a design factor of roughly <strong>1.25</strong> (the IEEE 485-style logic): <strong>83 Ah × 1.25 ≈ 104 Ah</strong> — the honest bank is ~105 Ah at 48V, typically a string of 4× 12V 105 Ah VRLA blocks or an <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP</a> system rated likewise.</p>
 
       <h2>Step 3: the recharge window</h2>
       <p>The second constraint most off-grid cases never face: the bank must <strong>recharge before the next outage</strong>. With an 8-hour autonomy and a 48V/20A charger, the bulk recharge is ~104 Ah ÷ 20A ≈ <strong>5+ hours</strong> plus the tail (see the <a href='/tools/charging-time-calculator/'>charging calculator</a>) — fine for daily cycling, tight for a site that can lose power twice in a day. The recharge window is as much a design input as the autonomy.</p>
 
       <h2>Step 4: the chemistry choice</h2>
-      <p>Two honest options: <strong>VRLA lead-acid</strong> — the incumbent, no electronics, calendar-limited (~5 years float), or <strong>LFP</strong> — longer life, higher upfront, needs a BMS, and wins where the site cycles often (see <a href='/lead-acid/telecom-battery/'>telecom batteries</a>). The standby duty's distinguishing feature is the <strong>float life</strong>: the battery ages on the shelf of its own rack (see <a href='/lead-acid/ups-battery/'>UPS float life</a>).</p>
+      <p>Two honest options: <strong>VRLA lead-acid</strong> — the incumbent, no electronics, calendar-limited (~5 years float), or <strong>LFP</strong> — longer life, higher upfront, needs a <a href="/lithium/what-is-bms/">BMS</a>, and wins where the site cycles often (see <a href='/lead-acid/telecom-battery/'>telecom batteries</a>). The standby duty's distinguishing feature is the <strong>float life</strong>: the battery ages on the shelf of its own rack (see <a href='/lead-acid/ups-battery/'>UPS float life</a>).</p>
 
       <h2>What the case teaches</h2>
       <p>Standby sizing inverts the off-grid mindset: the cycling case fears running out of depth; the standby case fears arriving at the outage with a battery that has quietly aged. The design factor and the float-life discipline are the standby world's version of the depth-of-discharge margin — same honesty, different axis.</p>

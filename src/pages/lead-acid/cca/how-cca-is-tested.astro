@@ -62,10 +62,10 @@ const faqJsonLd = {
 
       <div class="takeaways">
         <strong>Direct answer:</strong> The rating is determined at the factory by discharging a fully-charged battery at
-        its rated current for 30 seconds at −18°C and confirming the voltage stays above 7.2V (SAE J537). In the
+        its rated current for 30 seconds at −18°C and confirming the voltage stays above 7.2V (<a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a>). In the
         field, a technician checks a battery with a <strong>load test</strong> — typically half the rated CCA for about 15
         seconds, expecting the voltage to hold above roughly 9.6V — or with a <strong>conductance tester</strong> that reads
-        internal resistance and estimates CCA without a heavy discharge.
+        <a href="/technology/internal-resistance/">internal resistance</a> and estimates CCA without a heavy discharge.
       </div>
 
       <h2>CCA standards compared: SAE vs EN vs JIS</h2>
@@ -73,8 +73,8 @@ const faqJsonLd = {
         <thead><tr><th>Standard</th><th>Region</th><th>Test temperature</th><th>Rating method</th></tr></thead>
         <tbody>
           <tr><td><strong>SAE J537</strong></td><td>North America</td><td>−18°C (0°F)</td><td>Discharge at rated current for 30 s, voltage stays ≥7.2V (1.2V/cell)</td></tr>
-          <tr><td><strong>EN 50342</strong></td><td>Europe</td><td>−18°C</td><td>Cold-cranking test at −18°C; the European rating on most start-stop and DIN-cased batteries</td></tr>
-          <tr><td><strong>JIS D5301</strong></td><td>Japan</td><td>−15°C</td><td>Japanese cold-cranking test at −15°C; the warmer test reads higher than SAE/EN for the same battery</td></tr>
+          <tr><td><strong><a href="https://testing.worldbatteryhub.com/standards/en-50342/">EN 50342</a></strong></td><td>Europe</td><td>−18°C</td><td>Cold-cranking test at −18°C; the European rating on most start-stop and DIN-cased batteries</td></tr>
+          <tr><td><strong><a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">JIS D5301</a></strong></td><td>Japan</td><td>−15°C</td><td>Japanese cold-cranking test at −15°C; the warmer test reads higher than SAE/EN for the same battery</td></tr>
         </tbody>
       </table>
       <p class="muted">
@@ -123,7 +123,7 @@ const faqJsonLd = {
       <ul>
         <li><strong>State of charge</strong> — a load test on a partially-charged battery reads low; the battery must be fully charged (or corrected) first.</li>
         <li><strong>Temperature</strong> — a cold battery delivers less current, so a test run in a freezing bay reads lower than the same battery warm.</li>
-        <li><strong>Age and sulfation</strong> — accumulated sulfation raises internal resistance, which is exactly what a conductance test detects.</li>
+        <li><strong>Age and <a href="/lead-acid/battery-sulfation/">sulfation</a></strong> — accumulated sulfation raises internal resistance, which is exactly what a conductance test detects.</li>
       </ul>
 
       <h2>What do people get wrong about CCA testing?</h2>
