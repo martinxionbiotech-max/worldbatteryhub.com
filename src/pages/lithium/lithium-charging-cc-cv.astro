@@ -139,6 +139,14 @@ const faqJsonLd = {
       </div>
 
       
+            <h2>An original calculation: where the charging time goes</h2>
+      <p>
+        A 100 Ah cell charged at 0.5 C: the CC phase pushes 50 A up to the 4.2 V limit in roughly 2 hours,
+        carrying on the order of 80% of the energy; the CV phase then tapers the current over roughly another
+        hour for the last ~20%. Doubling the charger to 1 C halves the CC phase but barely shortens the tail —
+        the final 20% is set by chemistry, not charger power. That is why fast-charge claims are quoted to
+        80%: the arithmetic of the curve makes the last fifth non-negotiable.
+      </p>
       <h2>Frequently asked questions</h2>
       <h3>How is a lithium battery charged?</h3>
       <p>With a constant-current / constant-voltage (CC/CV) profile. First the charger holds a constant current while the cell voltage rises to its limit (about 4.2V for NMC, 3.65V for LFP); then it holds that voltage while the current tapers down to a small cutoff, at which point charging ends.</p>
