@@ -66,6 +66,15 @@ const faqJsonLd = {
         <strong>avoid sitting at 100%</strong> (see <a href="/lithium/lithium-charging-cc-cv/">CC-CV charging</a>).
       </div>
 
+      <h2>How to charge, step by step</h2>
+      <ol>
+        <li><strong>Check the temperature</strong> — if the battery is below 0°C, warm it first; never apply charge current while frozen.</li>
+        <li><strong>Set the right voltage limit</strong> — about 3.65V per cell for LFP, 4.2V for NMC.</li>
+        <li><strong>Charge at constant current (CC)</strong> — current holds until the cell reaches the voltage limit.</li>
+        <li><strong>Hold constant voltage (CV)</strong> — voltage stays at the limit while current tapers to the cutoff.</li>
+        <li><strong>Stop — no trickle</strong> — the charge ends at the cutoff; for longevity, set a daily limit of 80–90% instead of 100%.</li>
+      </ol>
+
       <h2>The rules and why</h2>
       <table>
         <thead><tr><th>Rule</th><th>Why</th></tr></thead>

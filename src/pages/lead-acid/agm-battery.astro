@@ -56,6 +56,13 @@ const articleJsonLd = {
           <tr><td>Water top-up</td><td>Possible</td><td>Not possible (sealed)</td></tr>
         </tbody>
       </table>
+      <p>
+        Every row in that table traces back to one design choice — immobilising the acid. The glass mat holds the
+        electrolyte against the plates and shortens the ion path, which lowers internal resistance; that single
+        physical change is what produces the higher CCA, the faster charge acceptance and the doubled-to-tripled
+        cycle life, and it is also what removes the option of topping up (see the
+        <a href="/lead-acid/agm-vs-flooded/">AGM vs flooded</a> comparison).
+      </p>
 
       <h2>Does AGM deliver more cranking power than flooded?</h2>
       <p>
@@ -72,6 +79,13 @@ const articleJsonLd = {
         <li>Motorcycles, powersports and marine</li>
         <li>UPS and deep-cycle / solar applications (AGM deep-cycle variants)</li>
       </ul>
+      <p>
+        The shared thread is duty, not price: every application on the list either deep-cycles or vibrates in ways a
+        conventional flooded plate wears out from. Start-stop is the one that made AGM standard-fit rather than
+        optional — the repeated partial discharge and instant recharge is exactly the pattern flooded chemistry
+        sulfates under, which is why the two technologies parted ways in modern cars
+        (see <a href="/lead-acid/start-stop-battery/">start-stop battery</a>).
+      </p>
 
       <h2>How should an AGM battery be charged?</h2>
       <p>
@@ -79,6 +93,13 @@ const articleJsonLd = {
         cannot be replaced. Charge at AGM-specific voltages (typically a slightly lower absorption voltage than
         flooded, around 14.2–14.4 V) and <strong>never equalize</strong> an AGM. See
         <a href="/lead-acid/lead-acid-charging/">how to charge a lead-acid battery</a>.
+      </p>
+      <p>
+        The no-equalize rule is absolute because equalization voltage (~15.5V) pushes a sealed AGM past its
+        recombination limit: the gas escapes through the valve instead of recombining, and the lost water is
+        unrecoverable. The ~14.2–14.4V absorption ceiling is the manufacturer-documented safe zone, and exceeding
+        it is the single most common AGM failure mode — see <a href="/lead-acid/agm-charging/">AGM charging</a>
+        for the full limits.
       </p>
 
       <h2>Key takeaways</h2>

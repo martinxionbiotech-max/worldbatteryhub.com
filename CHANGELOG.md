@@ -30,3 +30,17 @@
 - Old: no finder; tools index listed 3 calculators only | New: /tools/battery-finder/ + finder row in tools index.
 - SEO risk: Low — net-new URL, no existing URL/title/H1/canonical touched; data is a trimmed snapshot of data-site batteries.json.
 - Rollback: `git revert` this commit (removes page + data file + index row).
+
+## 2026-09-18 — V2.0 content fix quick batch (cron v2fix-quick-0918-1305)
+- Change: Added `<ol>` step lists to 8 how-to-titled pages (battery-date-code, desulfation, how-to-test-a-battery, jump-starting, lead-acid-charging, runtime-calculation, lithium/how-to-charge, lithium/storage)
+- Reason: audit #18 §6 title-promise gap — how-to titles must deliver an ordered step list
+- Old: how-to pages carried tables/lists but no `<ol>` step sequence | New: each now has a "…step by step" ordered list
+- SEO risk: Low — additive only, no URL/title/H1/canonical/schema change | Rollback: git revert
+- Change: Added SAE/EN/JIS CCA comparison table to /lead-acid/cca/how-cca-is-tested/
+- Reason: audit #18 §6 — comparison title but no comparison table
+- Old: prose-only standards mention | New: SAE J537 / EN 50342 / JIS D5301 table (region, temperature, method)
+- SEO risk: Low — additive | Rollback: git revert
+- Change: Deepened <50-word QAE answer sections on 5 pages (agm-battery, efb-battery, gel-battery, marine-battery, truck-battery) with evidence + analysis layers
+- Reason: audit #18 §40 depth gate — thin answer sections need the mechanism/evidence "why" beneath the table or list
+- Old: bare tables/lists or one-line answers | New: a short analysis paragraph added under each flagged section
+- SEO risk: Low — additive, no structural changes | Rollback: git revert

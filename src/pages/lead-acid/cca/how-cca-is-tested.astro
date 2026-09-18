@@ -68,6 +68,22 @@ const faqJsonLd = {
         internal resistance and estimates CCA without a heavy discharge.
       </div>
 
+      <h2>CCA standards compared: SAE vs EN vs JIS</h2>
+      <table>
+        <thead><tr><th>Standard</th><th>Region</th><th>Test temperature</th><th>Rating method</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SAE J537</strong></td><td>North America</td><td>−18°C (0°F)</td><td>Discharge at rated current for 30 s, voltage stays ≥7.2V (1.2V/cell)</td></tr>
+          <tr><td><strong>EN 50342</strong></td><td>Europe</td><td>−18°C</td><td>Cold-cranking test at −18°C; the European rating on most start-stop and DIN-cased batteries</td></tr>
+          <tr><td><strong>JIS D5301</strong></td><td>Japan</td><td>−15°C</td><td>Japanese cold-cranking test at −15°C; the warmer test reads higher than SAE/EN for the same battery</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        The three standards are not directly interchangeable: a JIS value (tested at −15°C) prints higher than the
+        same battery's SAE or EN value (tested at −18°C). Compare only within one standard — see
+        <a href="/lead-acid/cca/cca-vs-ca/">the temperature ladder</a> and
+        <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>.
+      </p>
+
       <h2>The factory rating test (SAE J537)</h2>
       <p>
         The printed CCA is a <em>specification measured once</em>, under controlled conditions. A battery that is to be

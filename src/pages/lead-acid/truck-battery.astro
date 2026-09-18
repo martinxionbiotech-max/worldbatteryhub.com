@@ -59,12 +59,24 @@ const articleJsonLd = {
         for the same battery. Compare only within one standard. See
         <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>.
       </p>
+      <p>
+        Read the CCA column with that standard caveat in mind: these are typical published values, and a JIS-rated
+        N150 (~900 A at −15°C) is not the same test as a Group 31 rated under SAE at −18°C. The capacity column is
+        the other half of the story — truck batteries run auxiliary loads (lift gates, sleeper cabs) with the engine
+        off, which is why Ah matters as much as cranking here.
+      </p>
 
       <h2>12V vs 24V: read the system, not just the battery</h2>
       <p>
         Light and medium trucks run on 12V. Many heavy trucks, buses and off-highway machines run on
         <strong>24V</strong>, built from two 12V batteries wired in series. The two batteries must be matched — same
         chemistry, capacity and age — or the pair ages unevenly and fails early.
+      </p>
+      <p>
+        The matched-pair rule follows from series wiring: two batteries in series share the same current, so the
+        weaker or older unit becomes the limiting one and the pair drags each other down. In practice fleets replace
+        24V pairs as a matched set — same chemistry, capacity and age — because a fresh battery wired next to a tired
+        one fails the pair early, not just itself.
       </p>
 
       <h2>What makes a truck battery different</h2>
@@ -84,6 +96,11 @@ const articleJsonLd = {
           <li>Always state the CCA standard when comparing truck batteries.</li>
         </ul>
       </div>
+      <p>
+        The one-line summary: a truck battery is the same lead-acid chemistry, scaled up and hardened — more lead for
+        more Ah, more plate area for more CCA, and a case built for vibration. The detail that trips buyers is the
+        rating standard, because the same battery prints very different CCA numbers across SAE, EN and JIS.
+      </p>
       <h2>What buyers should ask</h2>
       <ul>
         <li>What group (N-series, Group 31/8D) and terminal type fit the truck?</li>
