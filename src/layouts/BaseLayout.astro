@@ -1066,6 +1066,13 @@ const breadcrumbJsonLd = {
       </div>
     </header>
     <main id="main">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+          <a href="/">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>{title}</span>
+        </div>
+      </nav>
       <slot />
     </main>
     <footer class="site-footer">
