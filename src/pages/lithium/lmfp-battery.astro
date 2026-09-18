@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'LMFP Battery: The LFP Upgrade Explained';
+const description = 'LMFP (lithium manganese iron phosphate) explained — how manganese lifts LFP energy density, the typical specs, cost position, safety profile, and what buyers should verify before committing.';
+const canonical = '/lithium/lmfp-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'LMFP battery chemistry',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-18',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Is LMFP replacing LFP?', acceptedAnswer: { '@type': 'Answer', text: 'LMFP is upgrading LFP rather than replacing it outright — manufacturers blend or substitute manganese for part of the iron to raise voltage and energy density, while pure LFP remains the value and safety baseline in mass-market cells.' } },
+    { '@type': 'Question', name: 'Does LMFP have the same safety as LFP?', acceptedAnswer: { '@type': 'Answer', text: 'LMFP retains the olivine structure that gives LFP its thermal stability, so it is generally classed in the safer tier alongside LFP — but published thermal data is thinner than for LFP, and buyers should request cell-level thermal-runaway test results.' } },
+    { '@type': 'Question', name: 'Which manufacturers make LMFP cells?', acceptedAnswer: { '@type': 'Answer', text: 'Chinese cell makers led LMFP commercialization, with several major producers shipping manganese-blended phosphate cells from roughly 2024–2026 — the technology is no longer laboratory-stage, but volume and datasheet availability still trail LFP.' } },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub Research Desk"
+  dateModified="2026-09-18"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Chemistry · Last reviewed 2026-09-18</p>
+      <h1>LMFP Battery: The LFP Upgrade Explained</h1>
+      <p class="lead">
+        LMFP — lithium manganese iron phosphate — is what happens when you substitute part of LFP&rsquo;s iron with
+        manganese: a higher-voltage, higher-energy-density phosphate cathode that keeps most of LFP&rsquo;s safety
+        and cost story.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> LMFP typically raises nominal cell voltage from LFP&rsquo;s ~3.2V toward
+        the 3.6–3.7V band, which lifts gravimetric energy density on the order of 10–20% above LFP in
+        manufacturer datasheets. It costs less than NMC because manganese substitutes for nickel and cobalt,
+        and it keeps the olivine structure&rsquo;s thermal stability. The trade-off is typically some cycle-life
+        headroom versus pure LFP — the exact numbers vary by manufacturer and should be read per datasheet.
+      </div>
+
+      <h2>What is an LMFP battery?</h2>
+      <p>
+        LMFP is a lithium transition-metal phosphate cathode in which manganese replaces a share — commonly
+        reported in the 50–80% range of the transition-metal content in early commercial cells — of LFP&rsquo;s
+        iron. The chemistry question is <em>why</em> manganese helps: the Mn&sup2;&#8314;/Mn&sup3;&#8314; redox couple
+        operates at a higher voltage than Fe&sup2;&#8314;/Fe&sup3;&#8314;, so the same lithium transfer stores more
+        energy per gram. The price question is equally clear: manganese is a fraction of the cost of nickel and
+        cobalt, so LMFP aims to split the difference between LFP&rsquo;s economy and NMC&rsquo;s density without
+        inheriting NMC&rsquo;s thermal risk.
+      </p>
+
+      <h2>How does LMFP compare with LFP?</h2>
+      <table>
+        <thead><tr><th>Parameter</th><th>LFP (typical)</th><th>LMFP (typical, early cells)</th></tr></thead>
+        <tbody>
+          <tr><td>Nominal voltage</td><td>~3.2V</td><td>~3.6–3.7V</td></tr>
+          <tr><td>Energy density</td><td>~150–170 Wh/kg (cell)</td><td>~170–200 Wh/kg (cell, manufacturer-claimed)</td></tr>
+          <tr><td>Cycle life</td><td>2,000–5,000+ cycles (typical, rate-dependent)</td><td>Generally below LFP in comparable tests</td></tr>
+          <tr><td>Thermal class</td><td>Olivine — high stability</td><td>Olivine — high stability, thinner published data</td></tr>
+          <tr><td>Cost position</td><td>Lowest of the mainstream chemistries</td><td>Between LFP and NMC</td></tr>
+        </tbody>
+      </table>
+      <p>
+        The table&rsquo;s numbers are <strong>typical ranges</strong>, not universal values — cell-level figures
+        vary by manufacturer, format and test condition, and the LMFP column in particular should be read as
+        &ldquo;early-commercialization datasheet values&rdquo; rather than long-established industry norms.
+      </p>
+
+      <h2>Where LMFP sits against NMC</h2>
+      <p>
+        Against nickel-rich NMC, LMFP gives up peak energy density (NMC cells routinely exceed 250 Wh/kg) but
+        gains on three axes: cost per kilowatt-hour, thermal stability, and independence from nickel and cobalt
+        supply chains. For vehicle segments where energy density is not the binding constraint — city EVs,
+        two-wheelers, stationary storage — the manganese route is increasingly the rational middle choice. A
+        useful buyer rule: LMFP competes with <em>mid</em>-NMC, not with 8-series NMC.
+      </p>
+
+      <h2>An original calculation: what manganese substitution is worth</h2>
+      <p>
+        The cost lever is arithmetic. At typical battery-material prices, manganese sulfate trades at a small
+        fraction of nickel sulfate per tonne — on the order of 10% or less in recent years, with the exact ratio
+        moving with each commodity cycle. If a cathode replaces half its nickel-cobalt content with manganese at
+        roughly one-tenth the material cost, the cathode raw-material bill for that fraction drops on the order
+        of 80–90%. The cathode is only part of the cell, so the cell-level saving lands in the single-digit to
+        low-teens percentage range depending on the mix — but on a GWh programme, that is exactly the kind of
+        number that decides a platform.
+      </p>
+
+      <h2>What are LMFP&rsquo;s limits?</h2>
+      <ul>
+        <li><strong>Cycle life</strong> — manganese dissolution and voltage decay have historically cost LMFP some endurance versus pure LFP; published cycle data is thinner.</li>
+        <li><strong>Conductivity</strong> — like LFP, LMFP needs carbon coating and nano-structuring to reach usable rates.</li>
+        <li><strong>Maturity</strong> — LFP has two decades of field data; LMFP has years. Warranty and life claims deserve extra scrutiny.</li>
+        <li><strong>Charge curve</strong> — the higher-voltage plateau shifts BMS voltage windows, so pack integration is not a drop-in LFP swap.</li>
+      </ul>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>Cell-level datasheet with <strong>nominal voltage, Wh/kg and cycle life</strong> — each stated with its test standard and conditions.</li>
+        <li>Mn/Fe ratio in the cathode — the performance and cost story changes with the blend.</li>
+        <li>Thermal-runaway and nail-penetration test reports, not safety adjectives.</li>
+        <li>Calendar-life and storage data, which early LMFP cells publish less of.</li>
+        <li>BMS compatibility — confirm the pack vendor has qualified the cell&rsquo;s voltage window.</li>
+        <li>Production volume and batch history — a cell that only exists in a datasheet is not yet a supply.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>Is LMFP replacing LFP?</h3><p>LMFP is upgrading LFP rather than replacing it outright — manufacturers blend or substitute manganese for part of the iron to raise voltage and energy density, while pure LFP remains the value and safety baseline in mass-market cells.</p></div>
+      <div class="faq-item"><h3>Does LMFP have the same safety as LFP?</h3><p>LMFP retains the olivine structure that gives LFP its thermal stability, so it is generally classed in the safer tier alongside LFP — but published thermal data is thinner than for LFP, and buyers should request cell-level thermal-runaway test results.</p></div>
+      <div class="faq-item"><h3>Which manufacturers make LMFP cells?</h3><p>Chinese cell makers led LMFP commercialization, with several major producers shipping manganese-blended phosphate cells from roughly 2024–2026 — the technology is no longer laboratory-stage, but volume and datasheet availability still trail LFP.</p></div>
+
+      <h2>Our Read</h2>
+      <div class="takeaways">
+        <p><strong>My read:</strong> LMFP is the most credible &ldquo;third chemistry&rdquo; for cost-constrained applications, but buyers should treat it as a 2026-vintage product: read datasheets like contracts, not brochures.</p>
+        <p><strong>Why:</strong> The physics is sound and the economics are obvious; what is not yet established is the field record. Early adopters get the price advantage and carry the qualification risk — that is a fair trade only when the supplier&rsquo;s test data is open enough to verify.</p>
+        <p class="muted"><em>Editorial interpretation, not purchasing advice.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Typical values compiled from manufacturer datasheets, cathode-material supplier publications and industry reports (2024–2026); ranges are stated as typical, not universal — see the platform <a href="/methodology/">methodology</a>.</p>
+
+      <p class="muted">
+        <a href="/lithium/">Lithium knowledge</a> · <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a> ·
+        <a href="/lithium/nca-battery/">NCA battery</a> · Last reviewed: 2026-09-18
+      </p>
+    </div>
+  </section>
+</BaseLayout>

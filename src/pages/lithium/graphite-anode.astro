@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Graphite Anode: The Lithium Battery Standard';
+const description = 'Graphite anode explained — why graphite is the default lithium-ion anode, natural vs synthetic graphite, typical content per kWh, China supply share, silicon replacement, and buyer verification points.';
+const canonical = '/lithium/graphite-anode/';
+
+const articleJsonLd = {
+  '@type': 'TechArticle',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Graphite anode',
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-09-18',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Why is graphite still the standard anode?', acceptedAnswer: { '@type': 'Answer', text: 'Graphite pairs low and flat voltage with low cost, long cycle life and a mature supply chain — silicon holds more lithium but swells, cracks and costs more, so graphite remains the anode workhorse while silicon is blended in small shares.' } },
+    { '@type': 'Question', name: 'How much graphite is in a lithium battery?', acceptedAnswer: { '@type': 'Answer', text: 'Roughly 1–1.2 kg of anode graphite per kWh of cell capacity is a commonly cited working figure, so a 60 kWh EV pack contains on the order of 60–70 kg — the anode is one of the battery\'s largest single-material masses.' } },
+    { '@type': 'Question', name: 'Does China control the graphite supply chain?', acceptedAnswer: { '@type': 'Answer', text: 'China dominates anode-grade graphite production, with industry estimates putting its share of natural graphite supply and anode processing in the region of 90% or more — which is why export controls announced in recent years moved the whole supply chain\'s attention.' } },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub Research Desk"
+  dateModified="2026-09-18"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Materials · Last reviewed 2026-09-18</p>
+      <h1>Graphite Anode: The Lithium Battery Standard</h1>
+      <p class="lead">
+        Almost every lithium-ion cell made today is, weight-for-weight, mostly graphite on its negative side —
+        the least glamorous material in the battery is also the largest single-material mass and the quietest
+        supply-chain risk.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> Graphite is the default lithium-ion anode because it stores lithium at a
+        low, flat voltage (~0.1–0.2V vs Li/Li&sup2;&#8314;), costs little, cycles for thousands of charges and has a
+        mature, if concentrated, supply chain. Its theoretical capacity of 372 mAh/g is modest next to
+        silicon&rsquo;s, which is why silicon is blended in small shares — typically on the order of 5–15% in
+        &ldquo;silicon-blended&rdquo; anodes — to lift capacity while graphite does the structural work.
+      </div>
+
+      <h2>Why graphite became the standard anode</h2>
+      <p>
+        An anode must absorb lithium ions on charge and release them on discharge, over thousands of cycles,
+        without swelling, cracking or wasting voltage. Graphite meets every one of those demands: its layered
+        structure intercalates lithium with a volume change of only about 10%, its operating voltage is so low
+        that almost the whole cell voltage comes out on the cathode side, and it is cheap at industrial scale.
+        The alternative metals that store more lithium fail on the same list — lithium metal grows dendrites,
+        and silicon swells several-fold, which is why both remain additives or research targets rather than the
+        main event.
+      </p>
+
+      <h2>Natural vs synthetic graphite</h2>
+      <table>
+        <thead><tr><th>Parameter</th><th>Natural (flake, coated)</th><th>Synthetic (from needle coke)</th></tr></thead>
+        <tbody>
+          <tr><td>Production route</td><td>Mined, purified, spheroidized, carbon-coated</td><td>High-temperature graphitization (~2,800°C+)</td></tr>
+          <tr><td>Cost position</td><td>Lower</td><td>Higher, energy-intensive</td></tr>
+          <tr><td>Typical strength</td><td>Higher capacity per gram</td><td>Better rate and cycle stability</td></tr>
+          <tr><td>Common use</td><td>Cost-sensitive cells</td><td>Power cells, premium blends</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Most commercial anodes are blends of both — the ratio is a specification, not a detail: natural graphite
+        buys capacity per dollar, synthetic buys rate capability and longevity, and the blend is tuned to the
+        cell&rsquo;s duty.
+      </p>
+
+      <h2>An original calculation: graphite per kWh</h2>
+      <p>
+        A commonly cited working figure is 1–1.2 kg of anode graphite per kWh of cell capacity. The arithmetic
+        behind it: a graphite anode stores ~350 mAh/g in practice (near its 372 mAh/g theoretical ceiling), and
+        at ~0.1V operating voltage that yields roughly 35 Wh of anode-side energy per gram; a 60 kWh pack at the
+        1–1.2 kg/kWh figure therefore carries on the order of 60–70 kg of graphite — more mass than any cathode
+        material in an LFP pack. That is the number behind the supply chain: a 1 TWh industry needs on the
+        order of a million tonnes of anode graphite per year, and that arithmetic is why the material&rsquo;s
+        geography matters more than its chemistry.
+      </p>
+
+      <h2>The supply-chain concentration question</h2>
+      <p>
+        China dominates the graphite supply chain at every stage — mining of natural flake, purification,
+        spheroidization, and above all the energy-intensive synthetic route. Industry estimates commonly put
+        China&rsquo;s share of natural graphite supply and anode processing around 90% or higher, which is why
+        China&rsquo;s export-control announcements of recent years moved the entire battery industry&rsquo;s attention
+        and triggered Western efforts to rebuild anode capacity. Buyers should treat anode graphite as a
+        <strong>concentrated-input risk</strong>, not a commodity assumption — diversification of anode supply is
+        now part of pack procurement language.
+      </p>
+
+      <h2>Where silicon fits in</h2>
+      <p>
+        Silicon stores roughly ten times the lithium per gram of graphite, so anode makers blend it in small
+        shares — commonly in the 5–15% range in blended anodes — to lift cell capacity by single-digit to
+        low-teens percentages. The price: swelling management through nano-structuring and coatings, and a
+        shorter cycle-life record. Graphite stays the structural workhorse; silicon is the booster, and cells
+        sold as &ldquo;silicon anodes&rdquo; are almost always graphite-silicon composites.
+      </p>
+
+      <h2>What buyers should ask</h2>
+      <ul>
+        <li>Natural/synthetic ratio in the anode blend — the capacity-versus-cycle trade-off lives in that number.</li>
+        <li>First-cycle efficiency and capacity retention data, with the test conditions stated.</li>
+        <li>Purification route and impurity spec (Fe, Si, Al) — impurities are the hidden cycle-life tax.</li>
+        <li>Silicon share if blended, and the swelling-management evidence behind it.</li>
+        <li>Anode supply-chain geography and second-source qualification — concentration risk is now a procurement line item.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>Why is graphite still the standard anode?</h3><p>Graphite pairs low and flat voltage with low cost, long cycle life and a mature supply chain — silicon holds more lithium but swells, cracks and costs more, so graphite remains the anode workhorse while silicon is blended in small shares.</p></div>
+      <div class="faq-item"><h3>How much graphite is in a lithium battery?</h3><p>Roughly 1–1.2 kg of anode graphite per kWh of cell capacity is a commonly cited working figure, so a 60 kWh EV pack contains on the order of 60–70 kg — the anode is one of the battery&rsquo;s largest single-material masses.</p></div>
+      <div class="faq-item"><h3>Does China control the graphite supply chain?</h3><p>China dominates anode-grade graphite production, with industry estimates putting its share of natural graphite supply and anode processing in the region of 90% or more — which is why export controls announced in recent years moved the whole supply chain&rsquo;s attention.</p></div>
+
+      <h2>Editorial interpretation</h2>
+      <div class="takeaways">
+        <p><strong>Where I stand:</strong> Anode graphite is the most underappreciated strategic material in the battery — the industry worries about lithium while the tonne-count and the geography concentration both live in graphite.</p>
+        <p><strong>Why:</strong> Lithium supply is politically noisy but geographically diversified; graphite&rsquo;s processing is genuinely concentrated, and its volume per vehicle is larger. Procurement that audits cathode chemistry but skips anode provenance is auditing half a battery.</p>
+        <p class="muted"><em>Editorial interpretation, not purchasing advice.</em></p>
+      </div>
+
+      <h2>Sources</h2>
+      <p>Figures compiled from cell-manufacturer datasheets, anode-material supplier publications, USGS and industry supply-chain reports (2024–2026); ranges stated as typical working values — see the platform <a href="/methodology/">methodology</a>.</p>
+
+      <p class="muted">
+        <a href="/lithium/">Lithium knowledge</a> · <a href="/lithium/silicon-anode-batteries/">Silicon anode batteries</a> ·
+        <a href="/lithium/lmfp-battery/">LMFP battery</a> · Last reviewed: 2026-09-18
+      </p>
+    </div>
+  </section>
+</BaseLayout>
