@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Methodology';
+const description = 'How World Battery Hub researches, verifies and corrects its battery data — source hierarchy, data verification, standards verification, manufacturer-claim policy, market-data method and correction policy.';
+const canonical = '/methodology/';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  dateModified="2026-09-18"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Editorial Policy · Last reviewed 2026-09-18</p>
+      <h1>Methodology</h1>
+      <p class="lead">
+        This page states how World Battery Hub produces, verifies, corrects and updates its content and data.
+        It exists so a reader or an AI can see, before trusting a number, exactly how that number was obtained —
+        and what its confidence level is.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> Every claim on this platform is produced by the
+        <a href="/about/#research-desk">World Battery Hub Research Desk</a> from public sources, tagged with a
+        source, a standard and a confidence level, and corrected on a public schedule when it is wrong. We do
+        not fabricate figures, and we do not present a single-author "expert" persona — the desk is a
+        collective editorial entity with a stated process, not a person.
+      </div>
+
+      <h2>Research methodology</h2>
+      <p>
+        Content is synthesized from multiple independent sources — including Chinese and English primary
+        material — rather than translated from a single source. The method runs in four steps:
+      </p>
+      <ol>
+        <li><strong>Collect</strong> — gather primary material: manufacturer datasheets, standards documents, government and industry data.</li>
+        <li><strong>Cross-check</strong> — reconcile at least two independent sources for any factual claim; where they agree, record the agreement.</li>
+        <li><strong>Label</strong> — attach the source, the test standard and the confidence level to every number.</li>
+        <li><strong>Explain</strong> — where sources disagree, state the disagreement and its likely cause instead of silently choosing one number.</li>
+      </ol>
+
+      <h2>Source hierarchy</h2>
+      <p>
+        Sources are ranked by independence and authority, in this order:
+      </p>
+      <ol>
+        <li><strong>Primary</strong> — manufacturer documentation, standards bodies (SAE, EN, JIS, IEC, UL, UN), government and regulatory data.</li>
+        <li><strong>Secondary</strong> — industry publications, trade organisations and technical reviews.</li>
+        <li><strong>Community</strong> — forums and user reports, used only to discover real-world questions, never as evidence.</li>
+      </ol>
+      <p>
+        A claim is only asserted as fact when it can be traced to a primary or a corroborated secondary source.
+        Anything below that is stated qualitatively, or marked as unknown.
+      </p>
+
+      <h2>Data verification</h2>
+      <p>
+        Database fields (battery-group dimensions, CCA ranges, chemistry parameters) are written only when a
+        source supports them. Where a value is a <strong>typical range</strong>, a
+        <strong>standard-defined</strong> limit or a <strong>manufacturer claim</strong>, the field is tagged
+        with that <code>value_type</code> so a reader or an AI cannot mistake a representative range for a
+        guarantee. A missing value is written as <code>null</code> — never estimated to fill a gap.
+      </p>
+
+      <h2>Manufacturer-claim policy</h2>
+      <p>
+        Manufacturer data (company identity, capacity, certifications) is recorded at the verification level the
+        evidence supports — <strong>claimed</strong> until it is independently corroborated, then
+        <strong>cross-verified</strong>, then <strong>independently verified</strong>. We do not upgrade a
+        manufacturer's own claim to "verified" without independent evidence, and we state plainly when a
+        certification has not been independently accredited here.
+      </p>
+
+      <h2>Standards verification</h2>
+      <p>
+        A rating is only meaningful with its standard and test condition. Where we state a CCA or capacity
+        value, we state the governing standard (SAE J537, EN 50342, JIS D5301, DIN 43539, IEC 60095, etc.) and
+        the test condition. We do not compare values across standards as if they were interchangeable — the
+        temperature and cutoff differ, and the difference is stated, not hidden.
+      </p>
+
+      <h2>Conflict resolution</h2>
+      <p>
+        When sources conflict, we do not pick the convenient number. We report the conflict, list the competing
+        values with their sources, and state the likely reason for the difference (different year, scope,
+        geography, or test method). Where a single value must be given, we give the range and its confidence.
+      </p>
+
+      <h2>Market-data method</h2>
+      <p>
+        Market figures (prices per kWh, GWh production, market size) are especially easy to misread because they
+        vary by year, scope, geography, and battery definition (cell vs pack, production vs shipment, revenue vs
+        market value). Each market figure is tagged with its <strong>metric, value, year, scope, source, method
+        and confidence</strong>. A figure without that frame is not published.
+      </p>
+
+      <h2>Corrections</h2>
+      <p>
+        Errors are corrected in place, and material corrections are logged. To report an error, use the contact
+        route on the <a href="/about/">About page</a>. A correction does not rewrite history silently — the
+        change is recorded with the date, the old value and the new value.
+      </p>
+
+      <h2>Update policy</h2>
+      <p>
+        Pages and database entities carry a <strong>last-reviewed</strong> date. Database entities are revised
+        on a schedule and record a revision history where the underlying data changes. Content is not left to
+        drift — the review date is part of the page, and a stale page is marked as such rather than presented
+        as current.
+      </p>
+
+      <h2>Editorial independence</h2>
+      <p>
+        The platform has a commercial section (the <a href="/lead-acid/products/">product catalogue</a>) that is
+        clearly separated from the editorial and data content. Editorial conclusions, buyer guidance and the
+        stance blocks are the Research Desk's own analysis and are labelled as such — they are not paid
+        placement, and a commercial relationship does not change a rating, a standard or a confidence level.
+      </p>
+
+      <p class="muted">Last reviewed: 2026-09-18</p>
+    </div>
+  </section>
+</BaseLayout>
