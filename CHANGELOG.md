@@ -10,3 +10,15 @@
 | 2026-09-17 | worldbatteryhub.com/lithium/nca-battery/ (new) | New NCA chemistry page (QAE title, At-a-glance box, Engineering interpretation block, original cathode→cell density calc, FAQ matching schema) | P0 §5 Lithium 扩容 — NCA chemistry page | No page existed | New page /lithium/nca-battery/ | Low — net-new URL, no existing URL/title touched | `git revert` this commit (removes page) |
 | 2026-09-17 | worldbatteryhub.com/lithium/cell-formats-18650-21700-4680/ (new) | New cell-format comparison page (QAE title, At-a-glance box, Engineering interpretation block, original cylinder-volume calc, FAQ matching schema) | P0 §5 Lithium 扩容 — cell format comparison page | No page existed | New page /lithium/cell-formats-18650-21700-4680/ | Low — net-new URL | `git revert` this commit (removes page) |
 | 2026-09-17 | worldbatteryhub.com/lithium/ | Added links to two new pages (NCA under Chemistries, cell formats under Fundamentals) | P0 §5 — surface new pages from hub | New pages unlisted on hub | Two new links added | Low — additive links only | `git revert` this commit |
+
+## 2026-09-18 — SEO/AIO fix batch (audit #15, user-approved)
+- Change: 36 page titles trimmed to ≤58 chars (SERP truncation)
+- Reason: audit 15-seo-aio-audit.md P1 — titles >62 chars truncate in results
+- Old: full descriptive titles (e.g. 80-char) | New: truncated at word boundary with …
+- SEO risk: low (title variable feeds JSON-LD headline + og:title consistently)
+- Rollback: git revert
+- Change: 68 meta descriptions trimmed to ≤155 chars
+- Reason: audit P1 — descriptions >165 chars truncate in results
+- SEO risk: low | Rollback: git revert
+- Change: 7 technology/testing pages upgraded Article → TechArticle schema
+- Reason: audit P2 #2 — structured technical claims | SEO risk: low | Rollback: git revert
