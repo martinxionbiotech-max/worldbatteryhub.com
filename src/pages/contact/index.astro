@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Contact World Battery Hub';
+const description = 'Contact World Battery Hub — request a quote for the lead-acid product catalogue, send editorial corrections, or ask data and methodology questions. Contact details are placeholders pending final setup.';
+const canonical = '/contact/';
+
+const contactJsonLd = {
+  '@type': 'ContactPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/contact/',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="website"
+  jsonLd={[contactJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-18"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Contact · Last reviewed 2026-09-18</p>
+      <h1>Contact World Battery Hub</h1>
+      <p class="lead">
+        Three contact paths: commercial RFQ for the product catalogue, editorial corrections, and data or
+        methodology questions.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> All contact details on this page are
+        <strong> placeholders pending final setup</strong> and will be updated before launch traffic relies on
+        them.
+      </div>
+
+      <h2>Request a quote (RFQ)</h2>
+      <p>
+        For the <a href="/lead-acid/products/">lead-acid product catalogue</a> — bulk supply, private
+        labelling, and OEM/ODM programmes. Pricing is quotation-based; no price list is published.
+      </p>
+      <p><strong>Email:</strong> rfq@worldbatteryhub.com <span class="muted">(placeholder — to be updated)</span></p>
+      <p><strong>Include in your inquiry:</strong> model or group size, quantity, target market and required certifications.</p>
+
+      <h2>Editorial &amp; corrections</h2>
+      <p>
+        Found an incorrect specification or an outdated source? Send the page URL, the current value and the
+        corrected value — corrections are recorded as Original value / Corrected value / Reason / Date per the
+        site&rsquo;s methodology.
+      </p>
+      <p><strong>Email:</strong> editorial@worldbatteryhub.com <span class="muted">(placeholder — to be updated)</span></p>
+
+      <h2>Data &amp; methodology questions</h2>
+      <p>
+        Questions about dataset methodology, source provenance, evidence status or the
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> dataset license.
+      </p>
+      <p><strong>Email:</strong> data@worldbatteryhub.com <span class="muted">(placeholder — to be updated)</span></p>
+
+      <h2>What this page does not do</h2>
+      <p>No purchasing advice and no published price lists — RFQ responses are quotation-based.</p>
+
+      <p class="muted">
+        Return to <a href="/">home</a> · <a href="/lead-acid/products/">product catalogue</a> ·
+        <a href="/about/">about</a> · Last reviewed: 2026-09-18
+      </p>
+    </div>
+  </section>
+</BaseLayout>
