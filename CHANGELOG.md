@@ -22,3 +22,11 @@
 - SEO risk: low | Rollback: git revert
 - Change: 7 technology/testing pages upgraded Article → TechArticle schema
 - Reason: audit P2 #2 — structured technical claims | SEO risk: low | Rollback: git revert
+
+## 2026-09-18 — P1 batch (cron p1p2-batch-0918-1205)
+- Date: 2026-09-18 | URL: worldbatteryhub.com/tools/battery-finder/ (new) + /tools/ + src/data/battery-groups.json (new)
+- Change: Added interactive Battery Finder tool — static embedded JSON of 56 lead-acid groups, pure-JS client-side filter by group code / case size / voltage, with CCA-standard column and links to data.worldbatteryhub.com entity pages; added finder row to tools index.
+- Reason: P1 §4 (audit #16 §38 "Battery Finder") — cross-reference/finder is the site's strongest entry tool.
+- Old: no finder; tools index listed 3 calculators only | New: /tools/battery-finder/ + finder row in tools index.
+- SEO risk: Low — net-new URL, no existing URL/title/H1/canonical touched; data is a trimmed snapshot of data-site batteries.json.
+- Rollback: `git revert` this commit (removes page + data file + index row).

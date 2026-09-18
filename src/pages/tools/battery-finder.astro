@@ -1,0 +1,357 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import batteryGroups from '../../data/battery-groups.json';
+
+const title = 'Battery Finder: Search by Group, Size or Voltage';
+const description = 'Find a battery group by group code, case size or voltage. Live filter over 56 lead-acid groups with Ah, CCA (and its standard), dimensions and terminal.';
+const canonical = '/tools/battery-finder/';
+
+const groups = batteryGroups.batteries;
+const groupsJson = JSON.stringify(groups);
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery group finder',
+  articleSection: 'Battery Tools',
+  dateModified: '2026-09-18',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I find my car battery group size?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Start from what you already know — the group code printed on the battery (e.g. H6, 94R, 55D23), the case dimensions in millimetres, or the voltage. Enter any of these in the finder and it filters 56 lead-acid groups down to the matches, each with capacity, CCA (and its test standard), dimensions and terminal.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does the same battery have more than one group name?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because different naming families describe the same case. H6 is the EN/DIN name, Group 48 is its BCI name, and L3 is a common alias — one battery, three labels. The finder lists the aliases so a code from any family resolves to the same case.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-18"
+>
+  <style>
+    .finder {
+      margin: 24px 0;
+      padding: 22px 24px 24px;
+      border: 1px solid var(--accent-border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, #f2f6ff 0%, #ffffff 64%);
+      box-shadow: var(--shadow-sm);
+    }
+    .finder-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 180px;
+      gap: 14px 16px;
+    }
+    .finder-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 0.84rem;
+      font-weight: 650;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+    .finder-field input,
+    .finder-field select {
+      padding: 10px 12px;
+      border: 1px solid #b9cdf6;
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: border-color 140ms ease, box-shadow 140ms ease;
+    }
+    .finder-field input:hover,
+    .finder-field select:hover {
+      border-color: #93b4f2;
+    }
+    .finder-field input:focus-visible,
+    .finder-field select:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .finder-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%23475569' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 12px;
+      padding-right: 34px;
+    }
+    .finder-count {
+      margin: 14px 0 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .finder-results {
+      margin-top: 14px;
+      overflow-x: auto;
+    }
+    .finder-results table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .finder-results th,
+    .finder-results td {
+      text-align: left;
+      padding: 8px 9px;
+      border-bottom: 1px solid #e5e9f0;
+      vertical-align: top;
+    }
+    .finder-results th {
+      color: var(--navy);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .finder-empty {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--warn-border);
+      border-left: 4px solid #f59e0b;
+      border-radius: 10px;
+      background: var(--warn-bg);
+      color: var(--warn-ink);
+      font-size: 0.92rem;
+    }
+    @media (max-width: 640px) {
+      .finder {
+        padding: 18px 16px 20px;
+        border-radius: 12px;
+      }
+      .finder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Tools · Interactive · Last reviewed 2026-09-18</p>
+      <h1>Battery Finder: Search by Group, Size or Voltage</h1>
+      <p class="lead">
+        One box answers the question every battery replacement starts with: which group am I looking at? Type a
+        group code, a case size, or a voltage — the finder filters 56 lead-acid groups down to the matches and
+        shows the spec that matters for each.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> Enter what you already know — a <strong>group code</strong> (H6, 94R, 55D23),
+        a <strong>case size</strong> (e.g. &ldquo;242 × 175 × 190&rdquo; mm), or a <strong>voltage</strong> (6, 8 or
+        12V). Each match shows capacity (Ah), CCA with its test standard, dimensions and terminal, and links to the
+        full entity page on the data site. Values are cross-verified typical ranges, not a single datasheet.
+      </div>
+
+      <h2>The finder</h2>
+      <div class="finder">
+        <div class="finder-grid">
+          <label class="finder-field">Group, size or keyword
+            <input type="text" id="q" placeholder="e.g. H6 · 94R · 55D23 · 242 × 175 × 190" autocomplete="off" />
+          </label>
+          <label class="finder-field">Voltage
+            <select id="v">
+              <option value="">Any voltage</option>
+              <option value="6">6 V</option>
+              <option value="8">8 V</option>
+              <option value="12">12 V</option>
+            </select>
+          </label>
+        </div>
+        <p class="finder-count" id="count">Showing all 56 groups.</p>
+        <div class="finder-results" id="results" aria-live="polite"></div>
+        <div class="finder-empty" id="empty" hidden>
+          No group matches that search. Try a shorter code (e.g. &ldquo;H6&rdquo; instead of the full name) or clear
+          the voltage filter.
+        </div>
+      </div>
+      <p class="muted">
+        Data is a static snapshot of the <a href="https://data.worldbatteryhub.com">Battery Group Reference Data</a>
+        (56 groups). CCA figures from different standards are not interchangeable — compare only within one standard.
+      </p>
+
+      <h2>How does the finder work?</h2>
+      <p>
+        The filter matches your text against five fields at once — group name, aliases, standard family, case
+        dimensions and terminal — then narrows by voltage if you set one. It is pure client-side filtering over a
+        static list; nothing is sent to a server and no model guesses a spec. The three most useful things to type:
+      </p>
+      <ul>
+        <li><strong>A group code</strong> — &ldquo;H6&rdquo;, &ldquo;94R&rdquo;, &ldquo;55D23&rdquo;, &ldquo;Group 31&rdquo;.
+        The aliases field also catches cross-family names like &ldquo;L3&rdquo;.</li>
+        <li><strong>A case size</strong> — a partial dimension string like &ldquo;242 × 175&rdquo; or &ldquo;306&rdquo;
+        to see every group in that case family.</li>
+        <li><strong>A standard</strong> — &ldquo;EN/DIN&rdquo;, &ldquo;JIS&rdquo; or &ldquo;BCI&rdquo; to list one
+        naming family and read the CCA basis that goes with it.</li>
+      </ul>
+
+      <h2>Why does one battery have several names?</h2>
+      <p>
+        The same case is named differently by different standards. H6 (EN/DIN) is Group 48 (BCI) and L3 (a common
+        alias); H7 is Group 94R; H8 is Group 49. The finder lists every alias so a code from any family resolves to
+        the same case — but the <em>CCA number</em> still depends on the standard it was tested under (EN/SAE at
+        −18°C, JIS at −15°C), which is why each match shows its CCA basis (see
+        <a href="/lead-acid/cca/what-is-cca/">what CCA means</a>).
+      </p>
+
+      <h2>Engineering interpretation</h2>
+      <div class="takeaways">
+        <p>
+          <strong>What the data means:</strong> A battery finder that ignores the CCA basis is doing half the job.
+          Two batteries can both be &ldquo;H6&rdquo; and still disagree on cranking amps because one was rated to
+          EN 50342 and the other to SAE J537 at a different temperature — so the finder keeps the group, the
+          dimensions and the CCA standard on the same row, never a bare number.</p>
+        <p>
+          <strong>Why it matters:</strong> The goal is a group that fits and starts, not a keyword match. Fit is
+          geometry (case + terminal), start is CCA within its standard. A finder that separates those two is how a
+          reference tool earns trust; one that merges them produces a confident wrong battery.</p>
+        <p class="muted"><em>Engineering interpretation, not a purchasing guarantee.</em></p>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How do I find my car battery group size?</h3>
+      <p>
+        Start from what you already know — the group code printed on the battery (e.g. H6, 94R, 55D23), the case
+        dimensions in millimetres, or the voltage. Enter any of these in the finder and it filters 56 lead-acid
+        groups down to the matches, each with capacity, CCA (and its test standard), dimensions and terminal.
+      </p>
+      <h3>Why does the same battery have more than one group name?</h3>
+      <p>
+        Because different naming families describe the same case. H6 is the EN/DIN name, Group 48 is its BCI name,
+        and L3 is a common alias — one battery, three labels. The finder lists the aliases so a code from any
+        family resolves to the same case.
+      </p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the same reference set behind the data site: EN 50342 and JIS D5301 group tables, BCI
+        group-size reference, and manufacturer datasheets (Varta, Bosch, Exide, GS Yuasa, Panasonic, East Penn).
+      </p>
+      <ul>
+        <li>EN 50342 / JIS D5301 / BCI — group case codes and CCA test temperatures.</li>
+        <li>Manufacturer datasheets (Varta, Bosch, Exide, GS Yuasa, Panasonic, East Penn) — per-group Ah and CCA.</li>
+      </ul>
+
+      <p class="muted">
+        More tools: <a href="/tools/runtime-calculator/">runtime calculator</a> ·
+        <a href="/tools/sizing-calculator/">bank sizing calculator</a> ·
+        <a href="/tools/charging-time-calculator/">charging time calculator</a> ·
+        Data: <a href="https://data.worldbatteryhub.com">battery group reference</a> ·
+        Last reviewed: 2026-09-18
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ groupsJson }}>
+  const groups = JSON.parse(groupsJson);
+  const DATA_BASE = 'https://data.worldbatteryhub.com/battery-groups/';
+
+  const qEl = document.getElementById('q');
+  const vEl = document.getElementById('v');
+  const resultsEl = document.getElementById('results');
+  const countEl = document.getElementById('count');
+  const emptyEl = document.getElementById('empty');
+
+  function render(rows) {
+    countEl.textContent =
+      rows.length === groups.length
+        ? `Showing all ${groups.length} groups.`
+        : `${rows.length} of ${groups.length} groups match.`;
+
+    if (rows.length === 0) {
+      resultsEl.innerHTML = '';
+      emptyEl.hidden = false;
+      return;
+    }
+    emptyEl.hidden = true;
+
+    const th = (t) => `<th>${t}</th>`;
+    const esc = (s) =>
+      String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    const rowsHtml = rows
+      .map((b) => {
+        const name = esc(b.group);
+        const aliases = esc((b.aliases || []).join(' · '));
+        const link = `${DATA_BASE}${encodeURIComponent(b.id)}/`;
+        return `<tr>
+          <td><a href="${link}" target="_blank" rel="noopener"><strong>${name}</strong></a></td>
+          <td>${aliases}</td>
+          <td>${esc(b.standard)}</td>
+          <td>${esc(String(b.voltage))}V</td>
+          <td>${esc(String(b.capacity_ah))}</td>
+          <td>${esc(String(b.cca))}</td>
+          <td>${esc(b.cca_basis)}</td>
+          <td>${esc(b.dimensions_mm)}</td>
+          <td>${esc(b.terminal)}</td>
+        </tr>`;
+      })
+      .join('');
+
+    resultsEl.innerHTML = `<table>
+      <thead><tr>
+        ${th('Group')}${th('Aliases')}${th('Standard')}${th('V')}${th('Ah')}${th('CCA')}${th('CCA basis')}${th('Dimensions (mm)')}${th('Terminal')}
+      </tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>`;
+  }
+
+  function filter() {
+    const q = qEl.value.trim().toLowerCase();
+    const v = vEl.value;
+    const terms = q.split(/\s+/).filter(Boolean);
+
+    const rows = groups.filter((b) => {
+      if (v && String(b.voltage) !== v) return false;
+      if (!terms.length) return true;
+
+      const haystack = [
+        b.group,
+        (b.aliases || []).join(' '),
+        b.standard,
+        b.dimensions_mm,
+        b.terminal,
+        b.technology,
+      ]
+        .join(' ')
+        .toLowerCase();
+
+      return terms.every((t) => haystack.includes(t));
+    });
+
+    render(rows);
+  }
+
+  qEl.addEventListener('input', filter);
+  vEl.addEventListener('change', filter);
+  render(groups);
+</script>

@@ -1,0 +1,1107 @@
+{
+  "generated": "2026-09-18",
+  "note": "Battery-finder reference data — trimmed static snapshot of data-worldbatteryhub batteries.json (56 groups). Values are cross-verified typical ranges, not a specific datasheet. Link target: data.worldbatteryhub.com/battery-groups/<id>/.",
+  "source": "https://data.worldbatteryhub.com",
+  "count": 56,
+  "batteries": [
+    {
+      "id": "h4",
+      "group": "H4",
+      "aliases": [
+        "L1",
+        "LB1",
+        "DIN 55"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "55–60",
+      "cca": "500–600",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "207 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Small / compact cars"
+      ]
+    },
+    {
+      "id": "h5",
+      "group": "H5",
+      "aliases": [
+        "L2",
+        "LB2",
+        "DIN 60"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "60",
+      "cca": "600",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "242 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Compact / midsize cars"
+      ]
+    },
+    {
+      "id": "h6",
+      "group": "H6",
+      "aliases": [
+        "L3",
+        "LB3",
+        "DIN 70"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "70",
+      "cca": "640–700",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "278 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Midsize cars",
+        "Start-stop"
+      ]
+    },
+    {
+      "id": "h7",
+      "group": "H7",
+      "aliases": [
+        "L4",
+        "LN4",
+        "DIN 80"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "70–80",
+      "cca": "760",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "315 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Large cars",
+        "SUV",
+        "Start-stop"
+      ]
+    },
+    {
+      "id": "h8",
+      "group": "H8",
+      "aliases": [
+        "L5",
+        "LB5",
+        "DIN 90"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "90–95",
+      "cca": "850–900",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "352 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "AGM / EFB",
+      "applications": [
+        "Large SUV",
+        "Light truck"
+      ]
+    },
+    {
+      "id": "h9",
+      "group": "H9",
+      "aliases": [
+        "L6",
+        "LB6",
+        "DIN 105"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "105",
+      "cca": "950",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "394 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "AGM / EFB",
+      "applications": [
+        "Heavy-duty",
+        "Premium vehicles"
+      ]
+    },
+    {
+      "id": "55d23",
+      "group": "55D23",
+      "aliases": [
+        "D23"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "60",
+      "cca": "540",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "232 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "Japanese passenger cars"
+      ]
+    },
+    {
+      "id": "n150",
+      "group": "N150",
+      "aliases": [
+        "145G51"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "135",
+      "cca": "900",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "508 × 222 × 212",
+      "terminal": "JIS type A (large taper)",
+      "technology": "Heavy-duty flooded",
+      "applications": [
+        "Trucks",
+        "Heavy-duty"
+      ]
+    },
+    {
+      "id": "n200",
+      "group": "N200",
+      "aliases": [
+        "190H52"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "200",
+      "cca": "1100",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "520 × 278 × 220",
+      "terminal": "JIS type A (large taper)",
+      "technology": "Heavy-duty flooded",
+      "applications": [
+        "Trucks",
+        "Heavy-duty"
+      ]
+    },
+    {
+      "id": "group31",
+      "group": "Group 31",
+      "aliases": [
+        "31"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "100",
+      "cca": "900",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "330 × 173 × 240",
+      "terminal": "SAE stud / post",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Commercial",
+        "Marine",
+        "Trucks"
+      ]
+    },
+    {
+      "id": "group8d",
+      "group": "Group 8D",
+      "aliases": [
+        "8D"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "200+",
+      "cca": "1400+",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "527 × 283 × 250",
+      "terminal": "SAE stud",
+      "technology": "Heavy-duty flooded",
+      "applications": [
+        "Commercial",
+        "Marine",
+        "Diesel"
+      ]
+    },
+    {
+      "id": "group24",
+      "group": "Group 24",
+      "aliases": [
+        "24"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "70–75",
+      "cca": "700",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "260 × 173 × 225",
+      "terminal": "SAE post",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Marine",
+        "RV",
+        "Passenger cars"
+      ]
+    },
+    {
+      "id": "group27",
+      "group": "Group 27",
+      "aliases": [
+        "27"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "90–95",
+      "cca": "800",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "306 × 173 × 225",
+      "terminal": "SAE post",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Marine",
+        "RV",
+        "Trucks"
+      ]
+    },
+    {
+      "id": "group4d",
+      "group": "Group 4D",
+      "aliases": [
+        "4D"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "160–180",
+      "cca": "1100",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "527 × 222 × 250",
+      "terminal": "SAE stud",
+      "technology": "Heavy-duty flooded",
+      "applications": [
+        "Commercial",
+        "Marine",
+        "Diesel"
+      ]
+    },
+    {
+      "id": "65d23",
+      "group": "65D23",
+      "aliases": [
+        "D23"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "65",
+      "cca": "580",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "232 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "Japanese passenger cars"
+      ]
+    },
+    {
+      "id": "n70",
+      "group": "N70",
+      "aliases": [
+        "65G24"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "70",
+      "cca": "700",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "260 × 173 × 222",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "Passenger cars",
+        "Light trucks"
+      ]
+    },
+    {
+      "id": "n100",
+      "group": "N100",
+      "aliases": [
+        "95E41"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "100",
+      "cca": "800",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "408 × 172 × 213",
+      "terminal": "JIS type A (large taper)",
+      "technology": "Heavy-duty flooded",
+      "applications": [
+        "Trucks",
+        "Buses"
+      ]
+    },
+    {
+      "id": "n120",
+      "group": "N120",
+      "aliases": [
+        "115F51"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "120",
+      "cca": "900",
+      "cca_basis": "JIS D5301 (−15°C)",
+      "dimensions_mm": "503 × 180 × 216",
+      "terminal": "JIS type A (large taper)",
+      "technology": "Heavy-duty flooded",
+      "applications": [
+        "Trucks",
+        "Buses"
+      ]
+    },
+    {
+      "id": "group-34",
+      "group": "Group 34",
+      "aliases": [
+        "34",
+        "34R"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "55–75",
+      "cca": "750–900",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "260 × 175 × 182 (approx.)",
+      "terminal": "Top post",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Trucks",
+        "SUVs",
+        "high-power automotive"
+      ]
+    },
+    {
+      "id": "group-49",
+      "group": "Group 49",
+      "aliases": [
+        "H8",
+        "L5",
+        "88L5"
+      ],
+      "standard": "BCI/SAE (DIN/EN H8)",
+      "voltage": 12,
+      "capacity_ah": "80–95",
+      "cca": "850–950",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "353 × 175 × 190 (H8 equivalent)",
+      "terminal": "Top post",
+      "technology": "Flooded / AGM / EFB",
+      "applications": [
+        "Luxury cars",
+        "trucks",
+        "high-electrical-load vehicles"
+      ]
+    },
+    {
+      "id": "group-65",
+      "group": "Group 65",
+      "aliases": [
+        "65"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "70–75",
+      "cca": "750–950",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "306 × 190 × 192 (approx.)",
+      "terminal": "Top post",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Ford/Lincoln trucks",
+        "SUVs"
+      ]
+    },
+    {
+      "id": "gc2",
+      "group": "GC2",
+      "aliases": [
+        "Golf cart",
+        "6V deep-cycle"
+      ],
+      "standard": "BCI",
+      "voltage": 6,
+      "capacity_ah": "215",
+      "cca": "—",
+      "cca_basis": "Not cranking-rated (deep-cycle)",
+      "dimensions_mm": "260 × 180 × 275",
+      "terminal": "Flag / embedded",
+      "technology": "Flooded deep-cycle",
+      "applications": [
+        "Golf carts",
+        "Floor machines",
+        "Off-grid 6V banks"
+      ]
+    },
+    {
+      "id": "gc12",
+      "group": "GC12",
+      "aliases": [
+        "12V golf cart"
+      ],
+      "standard": "BCI",
+      "voltage": 12,
+      "capacity_ah": "150",
+      "cca": "—",
+      "cca_basis": "Not cranking-rated (deep-cycle)",
+      "dimensions_mm": "327 × 181 × 278",
+      "terminal": "Flag / threaded",
+      "technology": "Flooded deep-cycle",
+      "applications": [
+        "Golf carts",
+        "Floor machines"
+      ]
+    },
+    {
+      "id": "group-25",
+      "group": "Group 25",
+      "aliases": [
+        "25"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "45–60",
+      "cca": "550–650",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "230 × 175 × 225",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Compact cars",
+        "Some imports"
+      ]
+    },
+    {
+      "id": "group-26",
+      "group": "Group 26",
+      "aliases": [
+        "26"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "45–55",
+      "cca": "500–550",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "208 × 173 × 197",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Older imports",
+        "Marine starting"
+      ]
+    },
+    {
+      "id": "group-35",
+      "group": "Group 35",
+      "aliases": [
+        "35"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "45–60",
+      "cca": "550–650",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "230 × 175 × 225",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Japanese imports"
+      ]
+    },
+    {
+      "id": "group-48",
+      "group": "Group 48",
+      "aliases": [
+        "H6",
+        "L3",
+        "DIN 70"
+      ],
+      "standard": "BCI/SAE (EN H6)",
+      "voltage": 12,
+      "capacity_ah": "70",
+      "cca": "700–760",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "278 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "European cars",
+        "Mid-size"
+      ]
+    },
+    {
+      "id": "group-51",
+      "group": "Group 51",
+      "aliases": [
+        "51",
+        "51R"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "45–50",
+      "cca": "450–500",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "238 × 129 × 223",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Small Japanese cars"
+      ]
+    },
+    {
+      "id": "group-58",
+      "group": "Group 58",
+      "aliases": [
+        "58"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "50–55",
+      "cca": "500–550",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "255 × 183 × 175",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Ford",
+        "Some imports"
+      ]
+    },
+    {
+      "id": "group-75-25",
+      "group": "Group 75/25",
+      "aliases": [
+        "75/25",
+        "25"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "50",
+      "cca": "500–550",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "230 × 175 × 197",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "GM side/post applications"
+      ]
+    },
+    {
+      "id": "group-78",
+      "group": "Group 78",
+      "aliases": [
+        "78"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "55–65",
+      "cca": "700–800",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "260 × 175 × 185",
+      "terminal": "SAE side",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "GM trucks",
+        "SUVs"
+      ]
+    },
+    {
+      "id": "group-94r",
+      "group": "Group 94R",
+      "aliases": [
+        "H7",
+        "L4",
+        "DIN 80"
+      ],
+      "standard": "BCI/SAE (EN H7)",
+      "voltage": 12,
+      "capacity_ah": "80",
+      "cca": "800–850",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "315 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "European cars"
+      ]
+    },
+    {
+      "id": "group-96r",
+      "group": "Group 96R",
+      "aliases": [
+        "96R"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "50",
+      "cca": "550–600",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "243 × 173 × 175",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "European compact"
+      ]
+    },
+    {
+      "id": "75d23",
+      "group": "75D23",
+      "aliases": [
+        "75D23L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "65",
+      "cca": "600–650",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "260 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded",
+      "applications": [
+        "Japanese cars"
+      ]
+    },
+    {
+      "id": "80d26",
+      "group": "80D26",
+      "aliases": [
+        "80D26L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "70",
+      "cca": "650–700",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "260 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded",
+      "applications": [
+        "Japanese mid-size"
+      ]
+    },
+    {
+      "id": "95d31",
+      "group": "95D31",
+      "aliases": [
+        "95D31L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "80",
+      "cca": "750–800",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "306 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded",
+      "applications": [
+        "Vans",
+        "4WD"
+      ]
+    },
+    {
+      "id": "115d31",
+      "group": "115D31",
+      "aliases": [
+        "115D31L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "90",
+      "cca": "850–900",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "306 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded",
+      "applications": [
+        "Large SUVs",
+        "Vans"
+      ]
+    },
+    {
+      "id": "130d31",
+      "group": "130D31",
+      "aliases": [
+        "130D31L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "95",
+      "cca": "900–950",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "306 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded",
+      "applications": [
+        "Large vans",
+        "Commercial"
+      ]
+    },
+    {
+      "id": "55b24",
+      "group": "55B24",
+      "aliases": [
+        "55B24L",
+        "55B24R"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "45",
+      "cca": "400–450",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "238 × 129 × 227",
+      "terminal": "JIS type B",
+      "technology": "Flooded",
+      "applications": [
+        "Small Japanese cars"
+      ]
+    },
+    {
+      "id": "40b19",
+      "group": "40B19",
+      "aliases": [
+        "40B19L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "28–30",
+      "cca": "300–350",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "187 × 127 × 227",
+      "terminal": "JIS type B",
+      "technology": "Flooded",
+      "applications": [
+        "Kei cars",
+        "Small cars"
+      ]
+    },
+    {
+      "id": "h3",
+      "group": "H3",
+      "aliases": [
+        "L0",
+        "EN 32L0"
+      ],
+      "standard": "EN/DIN",
+      "voltage": 12,
+      "capacity_ah": "35–45",
+      "cca": "330–360",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "175 × 175 × 190",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB",
+      "applications": [
+        "Small city cars",
+        "Some compact hatchbacks"
+      ]
+    },
+    {
+      "id": "22f",
+      "group": "Group 22F",
+      "aliases": [
+        "22F"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "50–55",
+      "cca": "500–550",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "241 × 175 × 211",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Japanese imports",
+        "Compact cars (Honda, Acura)"
+      ]
+    },
+    {
+      "id": "group-63",
+      "group": "Group 63",
+      "aliases": [
+        "63"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "45–50",
+      "cca": "430–470",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "258 × 162 × 225",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB",
+      "applications": [
+        "Compact cars",
+        "Some Toyota / Lexus"
+      ]
+    },
+    {
+      "id": "group-86",
+      "group": "Group 86",
+      "aliases": [
+        "86",
+        "Group 85"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "50–60",
+      "cca": "550–600",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "230 × 173 × 203",
+      "terminal": "SAE post / side",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Ford / Mazda",
+        "Compact cars"
+      ]
+    },
+    {
+      "id": "group-27f",
+      "group": "Group 27F",
+      "aliases": [
+        "27F"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "90–100",
+      "cca": "710–800",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "318 × 173 × 227",
+      "terminal": "SAE post (front)",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Ford trucks",
+        "Large SUVs",
+        "Light commercial"
+      ]
+    },
+    {
+      "id": "t5",
+      "group": "T5",
+      "aliases": [
+        "LB2",
+        "LBN2",
+        "45LB"
+      ],
+      "standard": "DIN/EN (low height)",
+      "voltage": 12,
+      "capacity_ah": "55–60",
+      "cca": "540–580",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "242 × 175 × 175",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "European compact cars",
+        "Low-tray applications"
+      ]
+    },
+    {
+      "id": "t6",
+      "group": "T6",
+      "aliases": [
+        "LB3",
+        "LBN3",
+        "66LB"
+      ],
+      "standard": "DIN/EN (low height)",
+      "voltage": 12,
+      "capacity_ah": "60–70",
+      "cca": "600–640",
+      "cca_basis": "EN 50342 (−18°C)",
+      "dimensions_mm": "278 × 175 × 175",
+      "terminal": "SAE post",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "European midsize cars",
+        "Low-tray applications"
+      ]
+    },
+    {
+      "id": "60b19",
+      "group": "60B19",
+      "aliases": [
+        "60B19L",
+        "60B19R"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "40–45",
+      "cca": "380–420",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "187 × 127 × 227",
+      "terminal": "JIS type B",
+      "technology": "Flooded MF",
+      "applications": [
+        "Kei cars",
+        "Small Japanese cars"
+      ]
+    },
+    {
+      "id": "65b24",
+      "group": "65B24",
+      "aliases": [
+        "65B24L",
+        "65B24R"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "50–55",
+      "cca": "450–480",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "238 × 129 × 227",
+      "terminal": "JIS type B",
+      "technology": "Flooded MF",
+      "applications": [
+        "Small Japanese cars",
+        "Compact sedans"
+      ]
+    },
+    {
+      "id": "85d23",
+      "group": "85D23",
+      "aliases": [
+        "85D23L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "70–75",
+      "cca": "560–600",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "232 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "Japanese midsize cars",
+        "SUVs"
+      ]
+    },
+    {
+      "id": "100d26",
+      "group": "100D26",
+      "aliases": [
+        "100D26L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "80–85",
+      "cca": "640–680",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "260 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "Japanese trucks",
+        "4WD / SUVs"
+      ]
+    },
+    {
+      "id": "105d31",
+      "group": "105D31",
+      "aliases": [
+        "105D31L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "85–90",
+      "cca": "650–700",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "306 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "SUVs",
+        "Light commercial diesel"
+      ]
+    },
+    {
+      "id": "110d31",
+      "group": "110D31",
+      "aliases": [
+        "110D31L"
+      ],
+      "standard": "JIS",
+      "voltage": 12,
+      "capacity_ah": "90–95",
+      "cca": "700–740",
+      "cca_basis": "JIS D5301 (−18°C)",
+      "dimensions_mm": "306 × 173 × 225",
+      "terminal": "JIS type A",
+      "technology": "Flooded MF",
+      "applications": [
+        "Large SUVs",
+        "Vans",
+        "Commercial"
+      ]
+    },
+    {
+      "id": "gc8",
+      "group": "GC8",
+      "aliases": [
+        "8V golf cart"
+      ],
+      "standard": "BCI",
+      "voltage": 8,
+      "capacity_ah": "165–170",
+      "cca": "—",
+      "cca_basis": "Not cranking-rated (deep-cycle)",
+      "dimensions_mm": "264 × 183 × 277",
+      "terminal": "Flag / threaded",
+      "technology": "Flooded deep-cycle",
+      "applications": [
+        "Golf carts (48V = 6 × GC8)",
+        "Floor machines",
+        "Off-grid 8V banks"
+      ]
+    },
+    {
+      "id": "group-34r",
+      "group": "Group 34R",
+      "aliases": [
+        "34R",
+        "34 (reversed terminal)"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "55–75",
+      "cca": "750–900",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "260 × 173 × 200",
+      "terminal": "Top post (reversed polarity)",
+      "technology": "Flooded / AGM",
+      "applications": [
+        "Trucks",
+        "SUVs",
+        "High-power automotive"
+      ]
+    },
+    {
+      "id": "group-51r",
+      "group": "Group 51R",
+      "aliases": [
+        "51R",
+        "51 (reversed terminal)"
+      ],
+      "standard": "BCI/SAE",
+      "voltage": 12,
+      "capacity_ah": "45–50",
+      "cca": "450–500",
+      "cca_basis": "SAE J537 (−18°C)",
+      "dimensions_mm": "238 × 129 × 223",
+      "terminal": "SAE post (reversed polarity)",
+      "technology": "Flooded / EFB / AGM",
+      "applications": [
+        "Honda compacts",
+        "Nissan compacts",
+        "Japanese imports"
+      ]
+    }
+  ]
+}
