@@ -10,13 +10,26 @@ const { product } = Astro.params;
 const p = productsData.products.find((x) => x.id === product);
 const title = `${p.name} — Powsea OEM Battery | World Battery Hub`;
 
+const productProps = [
+  { '@type': 'PropertyValue', name: 'Voltage', value: 12, unitText: 'V' },
+];
+if (p.capacity_ah) productProps.push({ '@type': 'PropertyValue', name: 'Nominal Capacity', value: p.capacity_ah, unitText: 'Ah' });
+if (p.cca) productProps.push({ '@type': 'PropertyValue', name: 'CCA', value: p.cca, unitText: 'A' });
+if (p.dimensions_mm) productProps.push({ '@type': 'PropertyValue', name: 'Dimensions', value: p.dimensions_mm, unitText: 'mm' });
+if (p.chemistry) productProps.push({ '@type': 'PropertyValue', name: 'Battery Technology', value: p.chemistry });
+productProps.push({ '@type': 'PropertyValue', name: 'Sales Model', value: 'B2B / OEM / Wholesale' });
+productProps.push({ '@type': 'PropertyValue', name: 'Pricing Model', value: 'Request for Quote' });
+
 const productJsonLd = {
   '@type': 'Product',
+  '@id': `https://worldbatteryhub.com/lead-acid/products/${p.id}/#product`,
   name: p.name,
   description: p.description,
+  url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
   brand: { '@type': 'Brand', name: 'Powsea' },
   manufacturer: { '@type': 'Organization', name: 'Powsea' },
-  url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
+  category: productsData.categories[p.category] ? productsData.categories[p.category][0] : p.category,
+  additionalProperty: productProps,
 };
 
 const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source, brand_note, source_type, source_date, last_verified, verification_status } = p;
