@@ -131,6 +131,16 @@ const faqJsonLd = {
       <p>CC-CV: constant current until the cell reaches its voltage limit (e.g. 3.65V for LFP), then constant voltage while the current tapers to the cutoff — then stop. No trickle charging, and no charging below 0°C, which would plate metallic lithium.</p>
       <h3>Should lithium batteries be kept at 100% charge?</h3>
       <p>No. Lithium ages fastest at full charge and at high temperature. For daily use, charging to 80-90% extends life; for storage, 40-60% is optimal. Unlike lead-acid, lithium prefers not to sit full.</p>
+<h2>What buyers should ask</h2>
+<ul>
+  <li>Does the charger implement the correct CC/CV profile at the cell's exact voltage limit?</li>
+  <li>Is the charge current matched to the battery's C-rate, not just its voltage?</li>
+  <li>Is there a hard low-temperature cutoff, since charging below 0°C damages the cell?</li>
+  <li>Does the charger stop at the correct end-of-charge current to avoid overcharge?</li>
+</ul>
+<h2>The bottom line</h2>
+<p>Charging lithium is a two-stage CC/CV handoff with an absolute voltage limit and an absolute cold rule — no charging below 0°C. Match the profile, the current and the temperature cutoff, and the battery lives; violate one and it is damaged.</p>
+
 <h2>Sources</h2>
       <p>Cross-verified from cell-manufacturer charging guidance and battery engineering references.</p>
       <ul>
