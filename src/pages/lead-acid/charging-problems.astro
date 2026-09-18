@@ -130,7 +130,22 @@ const articleJsonLd = {
       <h2>The bottom line</h2>
       <p>Charging problems are overcharge, undercharge or a failed regulator — and the symptom maps to a cause that a voltage measurement confirms. Fix the charging system before replacing the battery, or the new battery inherits the same fault.</p>
 
-            <h2>The Author&rsquo;s Take</h2>
+                  <h2>The charging-problem decision table</h2>
+      <table>
+        <thead><tr><th>Symptom</th><th>First measurement</th><th>Likely cause</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Chronic undercharge</td><td>Resting OCV below ~12.4 V</td><td>Short trips, low alternator output</td><td>Absorption charge, verify charging voltage</td></tr>
+          <tr><td>Overcharge / gassing</td><td>Terminal voltage above ~14.8 V running</td><td>Regulator fault</td><td>Regulator replacement — do not run on</td></tr>
+          <tr><td>No charge at all</td><td>0 V across terminals, engine on</td><td>Alternator, belt, wiring</td><td>System diagnosis, not battery replacement</td></tr>
+          <tr><td>Battery full but car dead</td><td>12.6 V+ resting, no crank</td><td>Parasitic drain</td><td>Drain hunt — the battery is innocent</td></tr>
+        </tbody>
+      </table>
+      <p>
+        The table&rsquo;s quiet message: measure before replacing. A battery is the cheapest component to blame and
+        often the last one that actually failed.
+      </p>
+
+      <h2>The Author&rsquo;s Take</h2>
       <div class="takeaways">
         <p><strong>My position:</strong> Most &ldquo;charging problems&rdquo; are measurement problems — the single most valuable tool in the diagnosis is a multimeter reading taken before anything is replaced.</p>
         <p><strong>Why:</strong> The decision table shows the pattern: four symptoms, and only the first one is usually the battery&rsquo;s fault. Replacing parts in the order of suspicion rather than evidence is how a £20 regulator fault becomes a £100 battery bill.</p>
