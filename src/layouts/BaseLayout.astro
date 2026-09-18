@@ -17,7 +17,13 @@ const orgJsonLd = {
   description: 'Battery knowledge and data platform covering lead-acid and lithium batteries — specifications, technology, testing, manufacturers and market intelligence.',
 };
 
-const pageJsonLd = jsonLd.map((item) => ({ '@context': 'https://schema.org', ...item }));
+const pageJsonLd = jsonLd.map((item) => {
+  const enriched = { '@context': 'https://schema.org', ...item };
+  if (enriched['@type'] === 'Article' || enriched['@type'] === 'TechArticle') {
+    return { ...enriched, author: { '@type': 'Organization', name: 'World Battery Hub Research Desk', url: `${SITE}/about/#research-desk` } };
+  }
+  return enriched;
+});
 
 const pageUrl = canonical ? `${SITE}${canonical}` : SITE;
 
