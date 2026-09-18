@@ -141,6 +141,14 @@ const faqJsonLd = {
       <p>With a constant-current / constant-voltage (CC/CV) profile. First the charger holds a constant current while the cell voltage rises to its limit (about 4.2V for NMC, 3.65V for LFP); then it holds that voltage while the current tapers down to a small cutoff, at which point charging ends.</p>
       <h3>What happens if you overcharge a lithium battery?</h3>
       <p>Lithium cells cannot tolerate overcharge — it plates lithium metal and can trigger thermal runaway. That is why the BMS and charger enforce a strict voltage limit and cut off charging, unlike a lead-acid battery which merely gasses.</p>
+<h2>What buyers should ask</h2>
+<ul>
+  <li>Does the charger implement the correct CC/CV profile at the cell's exact voltage limit?</li>
+  <li>Is the charge current (C-rate) appropriate for the battery, not just the voltage?</li>
+  <li>Will the battery ever be charged below 0°C, where CC charging plates lithium metal?</li>
+  <li>Does the charger stop or taper correctly at the end of the constant-voltage stage?</li>
+</ul>
+
 <h2>Sources</h2>
       <p>
         Cross-verified from battery engineering references and cell/charger manufacturer documentation. The CC/CV
