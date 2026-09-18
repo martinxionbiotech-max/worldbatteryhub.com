@@ -6,6 +6,15 @@ const title = 'Lead-Acid Product Catalogue — Powsea OEM (Commercial Section)';
 const description = '35 Powsea OEM lead-acid batteries — JIS, DIN, BCI, AGM, EFB, deep-cycle, marine and OEM lines. Filterable catalogue with group-size navigation, published…';
 const canonical = '/lead-acid/products/';
 
+const itemListJsonLd = {
+  '@type': 'ItemList',
+  itemListElement: productsData.products.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.name,
+    url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
+  })),
+};
 const collectionJsonLd = {
   '@type': 'CollectionPage',
   name: title,
@@ -55,7 +64,7 @@ const findP = (id) => productsData.products.find((p) => p.id === id);
   description={description}
   canonical={canonical}
   ogType="article"
-  jsonLd={[collectionJsonLd]}
+  jsonLd={[collectionJsonLd, itemListJsonLd]}
   author="World Battery Hub"
   dateModified="2026-09-17"
 >
