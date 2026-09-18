@@ -19,7 +19,7 @@ const productJsonLd = {
   url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
 };
 
-const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source, brand_note } = p;
+const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source, brand_note, source_type, source_date, last_verified, verification_status } = p;
 const catName = productsData.categories[category] ? productsData.categories[category][0] : category;
 const knowLinks = {
   'group-sizes': { href: '/lead-acid/battery-group-sizes/', label: 'Battery group sizes explained' },
@@ -91,6 +91,16 @@ const related = productsData.products.filter((x) => x.category === category && x
           </p>
         </>
       )}
+
+      <h2>Specification source</h2>
+      <table>
+        <tbody>
+          <tr><th>Source type</th><td>{source_type}</td></tr>
+          <tr><th>Source date</th><td>{source_date}</td></tr>
+          <tr><th>Verification</th><td>{verification_status}</td></tr>
+          <tr><th>Last verified</th><td>{last_verified}</td></tr>
+        </tbody>
+      </table>
 
       <h2>Read before buying</h2>
       <ul>
