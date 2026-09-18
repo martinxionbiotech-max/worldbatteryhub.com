@@ -76,6 +76,34 @@ const breadcrumbJsonLd = {
          Blue identity (#1d4ed8 family) on navy header/footer, light surfaces,
          generous article rhythm, refined tables, cards and callouts. */
 
+      /* Breadcrumb (matches BreadcrumbList schema) */
+      .breadcrumbs {
+        padding: 14px 0 0;
+        color: var(--muted, #64748b);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .breadcrumbs .container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .breadcrumbs a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .breadcrumbs a:hover {
+        text-decoration: underline;
+      }
+
+      .breadcrumbs span[aria-hidden] {
+        color: var(--accent-border);
+      }
+
       :root {
         /* Brand */
         --accent: #1d4ed8;
