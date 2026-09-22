@@ -63,6 +63,9 @@ const breadcrumbJsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#0d1e3c" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <title>{fullTitle}</title>
     <meta name="description" content={resolvedDescription} />
     <link rel="canonical" href={canonical ? `${SITE}${canonical}` : SITE} />
@@ -71,7 +74,11 @@ const breadcrumbJsonLd = {
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical ? `${SITE}${canonical}` : SITE} />
     <meta property="og:site_name" content={BRAND} />
+    <meta property="og:image" content={`${SITE}/images/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${SITE}/images/og-image.png`} />
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(webSiteJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(webPageJsonLd)} />
@@ -282,14 +289,10 @@ const breadcrumbJsonLd = {
         white-space: nowrap;
       }
 
-      .brand::before {
-        content: "";
-        width: 12px;
-        height: 18px;
+      .brand-logo {
         flex: 0 0 auto;
-        border: 2px solid var(--sky);
-        border-radius: 3px;
-        background: linear-gradient(to top, rgba(125, 211, 252, 0.9) 42%, transparent 42%);
+        border-radius: 8px;
+        box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.35);
       }
 
       .nav {
@@ -1093,7 +1096,10 @@ const breadcrumbJsonLd = {
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/">World Battery Hub</a>
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/images/logo-icon.svg" alt="World Battery Hub" width="34" height="34" loading="eager" decoding="async" />
+          <span>World Battery Hub</span>
+        </a>
         <nav class="nav" aria-label="Primary">
           <a href="/lead-acid/">Lead-Acid</a>
           <a href="/lithium/">Lithium</a>

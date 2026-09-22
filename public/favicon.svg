@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- favicon：深海军蓝圆角方块 + 闪电 + WBH -->
+  <rect width="64" height="64" rx="12" fill="#0f1f3d"/>
+  <path d="M 12 8 L 28 8 L 22 20 L 28 20 L 17 46 L 19 28 L 12 28 Z" fill="#38bdf8"/>
+  <g fill="#ffffff" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" text-anchor="middle">
+    <text x="39" y="42" font-size="26">WBH</text>
+  </g>
+</svg>

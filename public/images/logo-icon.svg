@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- header 用：透明底，闪电 + WBH，白色系（站点 header 为深海军蓝） -->
+  <path d="M 10 4 L 30 4 L 23 18 L 30 18 L 16 48 L 18 28 L 10 28 Z" fill="#38bdf8"/>
+  <g fill="#ffffff" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" text-anchor="middle">
+    <text x="38" y="40" font-size="28">WBH</text>
+  </g>
+</svg>
