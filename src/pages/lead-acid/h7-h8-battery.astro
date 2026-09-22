@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'H7 vs H8 Battery: Size, Capacity, CCA and the Upgrade…';
+const description = 'H7 (L4) and H8 (L5) compared — H7 is ~315 × 175 × 190 mm with ~70–80 Ah and ~760 CCA (EN); H8 is ~352 × 175 × 190 mm with ~90–95 Ah and ~850–900 CCA. Whether…';
+const canonical = '/lead-acid/h7-h8-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'H7 vs H8 battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between H7 and H8 batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Length and output. Both are EN/DIN 12V groups about 175 mm wide and 190 mm tall, but H8 is roughly 37 mm longer — about 352 mm versus about 315 mm for H7 — and typically carries about 90–95 Ah and 850–900 CCA (EN) versus about 70–80 Ah and 760 CCA for H7.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I replace an H7 with an H8?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if the tray, hold-down and cables accept the ~37 mm longer H8 case. The electrical upgrade is real — more capacity and CCA — but the physical fit decides, and on start-stop vehicles the battery management registration requirement also applies.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do H7 and H8 batteries need AGM or EFB?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If the vehicle has start-stop, yes — it needs the battery technology it was designed for, usually AGM or EFB, and many cars require electronic registration of the new battery. Replacing with a plain flooded battery in a start-stop car shortens life and disables features.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-22</p>
+      <h1>H7 vs H8 Battery: Size, Capacity, CCA and the Upgrade Question</h1>
+      <p class="lead">
+        H7 and H8 are the two large European (EN/DIN) passenger-car groups — the batteries of big sedans, SUVs
+        and luxury cars. They share width and height; the entire difference is <strong>~37 mm of length</strong>, which buys
+        the H8 roughly <strong>20 Ah more capacity</strong> and <strong>100–150 A more CCA</strong>.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <a href="https://data.worldbatteryhub.com/battery-groups/h7/">H7</a> (L4/LN4) is about
+        <strong>315 × 175 × 190 mm</strong> with typical ratings of <strong>~70–80 Ah and ~760 CCA (EN 50342)</strong>;
+        <a href="https://data.worldbatteryhub.com/battery-groups/h8/">H8</a> (L5/LB5) is about <strong>352 × 175 × 190 mm</strong> with
+        <strong>~90–95 Ah and ~850–900 CCA</strong>. Same width and height, longer case — so the upgrade H7 → H8 is
+        decided by <strong>whether the tray accepts the longer battery</strong>, and on modern cars by the battery-management
+        registration that follows.
+      </div>
+
+      <h2>Side-by-side comparison</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>H7 (L4 / LN4)</th><th>H8 (L5 / LB5)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Standard</strong></td><td>EN/DIN</td><td>EN/DIN</td></tr>
+          <tr><td><strong>Dimensions</strong></td><td>~315 × 175 × 190 mm</td><td>~352 × 175 × 190 mm</td></tr>
+          <tr><td><strong>Capacity (typical)</strong></td><td>~70–80 Ah (20h)</td><td>~90–95 Ah (20h)</td></tr>
+          <tr><td><strong>CCA (typical)</strong></td><td>~760 A (EN 50342)</td><td>~850–900 A (EN 50342)</td></tr>
+          <tr><td><strong>Terminals</strong></td><td>SAE post</td><td>SAE post</td></tr>
+          <tr><td><strong>Typical vehicles</strong></td><td>Large sedans, mid SUVs</td><td>Large SUVs, luxury, light trucks</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Cross-verified typical ranges from the World Battery Hub data section; a specific battery's datasheet wins.
+        CCA figures are EN 50342 (−18°C) — compare only within one standard (see
+        <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>). For the full three-way picture with H6, see
+        <a href="/lead-acid/h6-vs-h7-vs-h8/">H6 vs H7 vs H8</a>.
+      </p>
+
+      <h2>The physical difference: ~37 mm of length</h2>
+      <p>
+        Both groups share the ~175 mm width and ~190 mm height of the EN/DIN large-car family, with SAE posts in the
+        standard positions. The only dimensional change is <strong>length</strong>: the H8 is roughly 37 mm (about 1.5 inches)
+        longer. That extra room holds larger plates, and the larger plates are the entire source of the H8's higher
+        Ah and CCA.
+      </p>
+      <p>
+        The fit rule follows directly: <strong>an H8 drops into an H7 tray only if ~37 mm of length is spare</strong>.
+        Many vehicles are offered with both groups from the factory — same tray, different hold-down position — but
+        plenty are not, so the tray, not the catalogue, is the authority. The
+        <a href="/lead-acid/battery-size-selection/">battery size selection</a> guide covers measuring the tray properly.
+      </p>
+
+      <h2>AGM, EFB and the start-stop question</h2>
+      <p>
+        H7 and H8 vehicles are disproportionately <strong>start-stop</strong> models, and start-stop changes the purchase
+        completely: the car needs the <strong>technology it was designed for</strong> — usually
+        <a href="/lead-acid/agm-battery/">AGM</a>, sometimes <a href="/lead-acid/efb-battery/">EFB</a> — not a plain flooded battery.
+        Fitting a standard flooded unit into a start-stop car shortens its life sharply and can disable the system.
+      </p>
+      <p>
+        The second start-stop rule is <strong>registration</strong>: many modern cars track battery age and charge history
+        in the battery management system, and a new battery must be registered electronically so the car resets its
+        charging strategy. This applies whether the replacement is the same group or an upgrade, and it is a
+        workshop step, not an optional extra. See the <a href="/lead-acid/start-stop-battery/">start-stop battery</a> guide for
+        the full picture.
+      </p>
+
+      <h2>Is the H7 → H8 upgrade worth it?</h2>
+      <ul>
+        <li><strong>Fits, same technology, more reserve</strong> — a genuine upgrade: more Ah for accessory load and longer parking endurance, more CCA for cold starts.</li>
+        <li><strong>Does not fit</strong> — the question ends; an H8 in an H7 tray is a safety hazard, not an upgrade.</li>
+        <li><strong>Start-stop vehicle</strong> — upgrade only within the maker-approved technology (AGM→AGM, EFB→EFB) and register the battery.</li>
+        <li><strong>Downgrade H8 → H7</strong> — fits physically but drops capacity and CCA; re-check the vehicle's electrical load first.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>H7 and H8 differ in <strong>length only</strong> — ~315 mm vs ~352 mm, same width and height.</li>
+          <li>The extra length buys <strong>~20 Ah and ~100–150 CCA</strong> (typical): a real but modest upgrade.</li>
+          <li><strong>Tray fit decides</strong> the upgrade; output decides only whether it is worth doing.</li>
+          <li>On start-stop cars, <strong>match the technology (AGM/EFB) and register the battery</strong> — this matters more than the group size.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the group decision locked to the vehicle's actual tray and hold-down, not to a catalogue equivalence table?</li>
+        <li>Are the quoted Ah and CCA figures tied to a discharge rate and a named standard (EN 50342 vs SAE vs DIN)?</li>
+        <li>For start-stop fleets: is the technology (AGM / EFB) specified, and is battery registration part of the installation procedure?</li>
+        <li>Is the terminal layout and polarity verified — including position, which varies across DIN/EN variants?</li>
+        <li>Do quotations across suppliers compare <a href="/procurement/battery-quotation-comparison/">like for like</a> — same group, same technology, same CCA standard?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between H7 and H8 batteries?</h3>
+      <p>Length and output. Both are EN/DIN 12V groups about 175 mm wide and 190 mm tall, but H8 is roughly 37 mm longer — about 352 mm versus about 315 mm for H7 — and typically carries about 90–95 Ah and 850–900 CCA (EN) versus about 70–80 Ah and 760 CCA for H7.</p>
+      <h3>Can I replace an H7 with an H8?</h3>
+      <p>Only if the tray, hold-down and cables accept the ~37 mm longer H8 case. The electrical upgrade is real — more capacity and CCA — but the physical fit decides, and on start-stop vehicles the battery management registration requirement also applies.</p>
+      <h3>Do H7 and H8 batteries need AGM or EFB?</h3>
+      <p>If the vehicle has start-stop, yes — it needs the battery technology it was designed for, usually AGM or EFB, and many cars require electronic registration of the new battery. Replacing with a plain flooded battery in a start-stop car shortens life and disables features.</p>
+      <h3>What is the H7 equivalent in North America?</h3>
+      <p>H7 is commonly cross-referenced as BCI Group 94R (L4/LN4); H8 is commonly cross-referenced as BCI Group 49 (L5). These are close physical equivalents, not universal interchangeability rules — verify dimensions, terminals, hold-down and polarity before substituting.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the World Battery Hub entity database and public references; where sources differ, the
+        difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/h7/">H7 reference page</a> and <a href="https://data.worldbatteryhub.com/battery-groups/h8/">H8 reference page</a>.</li>
+        <li>EN 50342 — European lead-acid starter battery standard used for the quoted CCA figures.</li>
+        <li>Manufacturer datasheets (AGM and EFB, H7 and H8) — dimension, capacity and CCA cross-checks.</li>
+        <li>Vehicle OEM battery specifications — group and technology requirements for start-stop models.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = '8D Battery: The Big Heavy-Duty Group Explained (Size…';
+const description = 'The 8D is one of the largest common lead-acid groups — about 527 × 283 × 250 mm, ~200+ Ah and ~1400+ CCA under SAE J537. What it is used for, how it compares…';
+const canonical = '/lead-acid/8d-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'BCI Group 8D battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an 8D battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A BCI-standardized 12V battery group measuring about 527 × 283 × 250 mm, typically rated at 200 Ah or more and 1400+ CCA under SAE J537, with stud terminals. It is one of the largest common lead-acid formats, used in heavy trucks, buses, large boats, off-grid banks and industrial standby systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does an 8D battery weigh?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Roughly 60–75 kg (about 130–165 lb) depending on construction — among the heaviest batteries routinely handled by two people. Always check the maker’s weight figure and use proper lifting equipment and a two-person lift.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between 8D and 4D batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both are large stud-terminal BCI groups of similar height and width, but 8D is the bigger and more powerful of the two: roughly 200+ Ah and 1400+ CCA versus roughly 160–180 Ah and 1100 CCA for 4D. The 4D’s narrower case fits where the 8D does not.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-22</p>
+      <h1>8D Battery: The Big Heavy-Duty Group Explained</h1>
+      <p class="lead">
+        The 8D is one of the largest lead-acid batteries a buyer will routinely handle: a
+        <strong>12V, ~527 × 283 × 250 mm</strong> case delivering <strong>~200+ Ah and ~1400+ CCA (SAE J537)</strong> through
+        <strong>stud terminals</strong>. It is the battery of heavy trucks, buses, big boats and off-grid banks — and it is
+        heavy enough that handling, not spec, is often the first thing to plan.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> 8D is a <a href="/lead-acid/battery-group-sizes/">BCI group size</a>, not a performance grade.
+        The <a href="https://data.worldbatteryhub.com/battery-groups/group8d/">8D reference page</a> in our data section lists the
+        cross-verified typicals: <strong>~527 × 283 × 250 mm, ~200+ Ah (20h), ~1400+ CCA (SAE J537, −18°C), SAE stud
+        terminals</strong>. It comes in flooded, <a href="/lead-acid/agm-battery/">AGM</a> and deep-cycle builds, and it is used
+        wherever a single 12V battery must deliver both huge cranking current and long reserve capacity.
+      </div>
+
+      <h2>What is an 8D battery?</h2>
+      <p>
+        8D belongs to the BCI's large commercial-vehicle family alongside <a href="https://data.worldbatteryhub.com/battery-groups/group4d/">4D</a> and
+        <a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31</a>. All three share stud terminals and heavy-duty
+        construction, but 8D is the flagship: the longest, widest and most powerful of the commonly stocked formats.
+        Its typical ratings make it a <em>single-battery answer</em> to loads that smaller groups would need two units
+        to cover.
+      </p>
+      <p>
+        The group's reputation comes from that combination: enough CCA to crank a large diesel cold, and enough Ah
+        to run hotel loads — lights, refrigeration, lift gates, inverters — with the engine off. That dual character
+        is why 8D shows up in starting banks, house banks and standby systems alike.
+      </p>
+
+      <h2>8D at a glance</h2>
+      <table>
+        <thead>
+          <tr><th>Attribute</th><th>Typical 8D value</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Voltage</strong></td><td>12V (6 cells)</td><td>Nominal lead-acid voltage</td></tr>
+          <tr><td><strong>Dimensions</strong></td><td>~527 × 283 × 250 mm</td><td>Roughly 20.75 × 11.1 × 9.8 in</td></tr>
+          <tr><td><strong>Capacity</strong></td><td>~200+ Ah (20h)</td><td>Deep-cycle builds commonly exceed 200 Ah</td></tr>
+          <tr><td><strong>CCA</strong></td><td>~1400+ A</td><td>SAE J537 (−18°C); state the standard when comparing</td></tr>
+          <tr><td><strong>Terminals</strong></td><td>SAE stud</td><td>Ring-lug connections; check stud position per maker</td></tr>
+          <tr><td><strong>Weight (typical)</strong></td><td>~60–75 kg</td><td>Among the heaviest common batteries — plan the lift</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Cross-verified typical ranges from the World Battery Hub data section and manufacturer datasheets; a specific
+        battery's datasheet wins. CCA is standard-dependent — see <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>.
+      </p>
+
+      <h2>8D vs 4D vs Group 31</h2>
+      <table>
+        <thead>
+          <tr><th>Group</th><th>Dimensions (typical)</th><th>Capacity (typical)</th><th>CCA (typical, SAE)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong><a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31</a></strong></td><td>~330 × 173 × 240 mm</td><td>~100 Ah</td><td>~900 A</td></tr>
+          <tr><td><strong><a href="https://data.worldbatteryhub.com/battery-groups/group4d/">4D</a></strong></td><td>~527 × 222 × 250 mm</td><td>~160–180 Ah</td><td>~1100 A</td></tr>
+          <tr><td><strong>8D</strong></td><td>~527 × 283 × 250 mm</td><td>~200+ Ah</td><td>~1400+ A</td></tr>
+        </tbody>
+      </table>
+      <p>
+        The ladder is easy to read: 4D and 8D share length and height, but the 8D's extra ~61 mm of width buys the
+        step from ~170 Ah to ~200+ Ah. The practical consequence is fit — a 4D goes where an 8D will not — and
+        weight: an 8D is heavy enough that swapping one in the field is a two-person job.
+      </p>
+
+      <h2>Starting, deep-cycle and AGM builds</h2>
+      <ul>
+        <li>
+          <strong>Starting 8D</strong> — the classic heavy-truck and bus cranking battery, maximizing plate area for CCA.
+          See the <a href="/lead-acid/truck-battery/">truck battery guide</a> for how it fits 12V and 24V systems.
+        </li>
+        <li>
+          <strong>Deep-cycle 8D</strong> — thicker plates, fewer of them, built for repeated discharge in house banks and
+          off-grid storage. This is the <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> end of the family.
+        </li>
+        <li>
+          <strong>AGM 8D</strong> — sealed, position-tolerant and spill-proof; the standard for marine and coach house
+          banks where ventilation is poor. See <a href="/lead-acid/agm-battery/">what an AGM battery is</a>.
+        </li>
+      </ul>
+      <p>
+        One 8D-specific warning: its weight makes handling a genuine hazard. Always use proper lifting equipment or
+        a two-person lift, and keep the terminals covered — a short across a 200 Ah battery is a serious arc and
+        burn risk.
+      </p>
+
+      <h2>Where 8D batteries are used</h2>
+      <ul>
+        <li><strong>Heavy trucks and buses</strong> — main cranking batteries, singly or in parallel banks.</li>
+        <li><strong>Large boats</strong> — house banks and engine starting; see the <a href="/lead-acid/marine-battery/">marine battery guide</a>.</li>
+        <li><strong>Coaches and RVs</strong> — house power for extended boondocking.</li>
+        <li><strong>Off-grid and industrial standby</strong> — battery banks and backup systems.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>8D is a <strong>size standard</strong> — ~527 × 283 × 250 mm — carrying typical ratings of <strong>~200+ Ah and ~1400+ CCA (SAE J537)</strong>.</li>
+          <li>It is the top of the BCI ladder above <strong>4D and Group 31</strong>, and the extra width is what buys the capacity.</li>
+          <li>Available in <strong>starting, deep-cycle and AGM</strong> builds — the datasheet's duty matters more than the group number.</li>
+          <li>At <strong>~60–75 kg</strong>, plan the lift before the installation.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the duty stated — starting, deep-cycle or AGM — and does the plate construction match the application?</li>
+        <li>Does the quoted CCA carry its test standard, and the Ah its discharge rate (20h vs 100h figures differ significantly at this size)?</li>
+        <li>Does the dimensional drawing match the battery box, including width — the 8D's ~283 mm width is what usually does not fit?</li>
+        <li>Is the weight on the datasheet, and does the logistics plan (handling, freight, installation) account for it?</li>
+        <li>For bank purchases, are matched units specified, and is a <a href="/procurement/quality-control-shipment-inspection/">shipment inspection</a> plan in place for a battery this costly to freight?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is an 8D battery?</h3>
+      <p>A BCI-standardized 12V battery group measuring about 527 × 283 × 250 mm, typically rated at 200 Ah or more and 1400+ CCA under SAE J537, with stud terminals. It is one of the largest common lead-acid formats, used in heavy trucks, buses, large boats, off-grid banks and industrial standby systems.</p>
+      <h3>How much does an 8D battery weigh?</h3>
+      <p>Roughly 60–75 kg (about 130–165 lb) depending on construction — among the heaviest batteries routinely handled by two people. Always check the maker's weight figure and use proper lifting equipment and a two-person lift.</p>
+      <h3>What is the difference between 8D and 4D batteries?</h3>
+      <p>Both are large stud-terminal BCI groups of similar height and width, but 8D is the bigger and more powerful of the two: roughly 200+ Ah and 1400+ CCA versus roughly 160–180 Ah and 1100 CCA for 4D. The 4D's narrower case fits where the 8D does not.</p>
+      <h3>Can an 8D battery be used for solar storage?</h3>
+      <p>Yes — deep-cycle 8D batteries are used in off-grid banks, but their weight and footprint usually make multiple smaller deep-cycle batteries easier to install and service, so banks built from them are less common than Group 31 or GC2 banks.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the World Battery Hub entity database and public references; where sources differ, the
+        difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/group8d/">8D reference page</a>, <a href="https://data.worldbatteryhub.com/battery-groups/group4d/">4D reference page</a>, <a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31 reference page</a>.</li>
+        <li>Battery Council International (BCI) — group size definitions and dimensional data.</li>
+        <li>SAE J537 — cranking-ampere test method for the quoted CCA figures.</li>
+        <li>Manufacturer datasheets (flooded / AGM / deep-cycle 8D) — dimension, weight and rating cross-checks.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

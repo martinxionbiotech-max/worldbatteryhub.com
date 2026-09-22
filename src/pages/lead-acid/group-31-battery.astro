@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Group 31 Battery: Dimensions, Capacity, CCA and Why…';
+const description = 'Group 31 is the workhorse heavy-duty 12V group — about 330 × 173 × 240 mm, ~100 Ah and ~900 CCA under SAE J537, with stud terminals. Why trucks, marine, RV…';
+const canonical = '/lead-acid/group-31-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'BCI Group 31 battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a Group 31 battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A BCI-standardized 12V battery group measuring about 330 × 173 × 240 mm, typically rated around 100 Ah and 900 CCA under SAE J537, with stud or combination stud/post terminals. It is the most common heavy-duty format for trucks, buses, marine, RV and off-grid applications.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the dimensions of a Group 31 battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Approximately 330 mm long × 173 mm wide × 240 mm high (about 13 × 6.8 × 9.4 inches). Always confirm against the tray and the manufacturer drawing, because height and terminal style vary between brands and between flooded, AGM and lithium drop-in versions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a Group 31 battery deep-cycle or starting?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both variants exist. Starting Group 31 batteries are built for cranking with high CCA; deep-cycle Group 31 batteries use thicker plates for repeated discharge; dual-purpose versions compromise between the two. Check which duty the battery was built for before buying.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between Group 31 and Group 27?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Group 31 is larger — about 330 mm long versus about 306 mm for Group 27 — and typically carries roughly 100 Ah and 900 CCA versus roughly 90–95 Ah and 800 CCA. The two are not interchangeable unless the tray and cables accept the bigger case.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-22</p>
+      <h1>Group 31 Battery: Dimensions, Capacity, CCA and Why Stud Terminals Matter</h1>
+      <p class="lead">
+        Group 31 is the heavy-duty battery that shows up everywhere — trucks, buses, boats, RVs, off-grid
+        solar banks and medical carts. It is a <strong>physical size standard</strong> (about
+        <strong>330 × 173 × 240 mm</strong>), and most Group 31 batteries cluster around
+        <strong>~100 Ah capacity and ~900 CCA under SAE J537</strong>, with <strong>stud terminals</strong> instead of the
+        automotive post.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Group 31 is a <a href="/lead-acid/battery-group-sizes/">BCI group size</a> — a 12V case of
+        roughly 330 × 173 × 240 mm that typically carries ~100 Ah and ~900 CCA (SAE J537). It exists in three
+        duties: <strong>starting</strong> (high CCA), <strong>deep-cycle</strong> (thick plates, repeated discharge) and
+        <strong>dual-purpose</strong> (a compromise of both). The defining detail is the <strong>stud terminal</strong>, which
+        handles the higher currents and ring-lug connections of heavy-duty installations.
+      </div>
+
+      <h2>What is a Group 31 battery?</h2>
+      <p>
+        Group 31 is one of the large-format groups defined by the Battery Council International (BCI). The
+        group number describes the <strong>case dimensions and terminal layout</strong>, not the performance — two Group
+        31 batteries from different makers fit the same tray but can differ widely in capacity, CCA and
+        construction. The <a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31 reference page</a> in
+        our data section lists the cross-verified typical specification: 330 × 173 × 240 mm, ~100 Ah, ~900 CCA
+        (SAE J537, −18°C), stud or stud/post combination terminals.
+      </p>
+      <p>
+        The format grew out of North American heavy-duty trucking, where it became the standard electrical
+        workhorse. Its blend of size and output has since spread it to marine, RV, off-grid and industrial
+        duty — which is why the same group number appears on batteries with very different internal builds.
+      </p>
+
+      <h2>Group 31 at a glance</h2>
+      <table>
+        <thead>
+          <tr><th>Attribute</th><th>Typical Group 31 value</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Voltage</strong></td><td>12V (6 cells)</td><td>Nominal lead-acid voltage</td></tr>
+          <tr><td><strong>Dimensions</strong></td><td>~330 × 173 × 240 mm</td><td>Confirm height &amp; terminal style per brand</td></tr>
+          <tr><td><strong>Capacity</strong></td><td>~100 Ah (20-hour rate)</td><td>Varies ~90–110 Ah by maker and duty</td></tr>
+          <tr><td><strong>CCA</strong></td><td>~900 A</td><td>SAE J537 (−18°C); state the standard when comparing</td></tr>
+          <tr><td><strong>Terminals</strong></td><td>Stud, or stud + post</td><td>3/8″-16 stud common; SAE automotive post on some</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Values are cross-verified typical ranges from the World Battery Hub data section, not a substitute for a
+        specific battery's datasheet. CCA is standard-dependent — a figure without its test standard is not comparable
+        (see <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>).
+      </p>
+
+      <h2>Why stud terminals define this group</h2>
+      <p>
+        The Group 31 terminal is the group's most practical feature. Where passenger cars use tapered
+        <a href="/lead-acid/battery-terminal-types/">SAE posts</a>, heavy-duty installations bolt <strong>ring lugs</strong> onto a
+        threaded <strong>stud</strong> — usually 3/8″-16 — with a nut and washer. A bolted connection survives vibration,
+        resists loosening, and carries the continuous currents of winches, inverters and hydraulic pumps that a
+        spring-clamped post connection handles poorly.
+      </p>
+      <p>
+        The catch is the <strong>layout variants</strong>: stud-only, stud-plus-post, and different stud positions. Before
+        ordering, check which terminal pattern your cables and accessories expect — the
+        <a href="/lead-acid/dual-purpose-battery/">dual-purpose</a> and marine variants are the ones that most often add the
+        automotive post for clamp-on accessories.
+      </p>
+
+      <h2>Starting, deep-cycle or dual-purpose?</h2>
+      <p>
+        Group 31 is a <em>case</em>, and the same case holds three very different batteries:
+      </p>
+      <ul>
+        <li>
+          <strong>Starting Group 31</strong> — many thin plates for maximum plate surface area, high CCA for cranking large
+          diesels. Built to give short, hard bursts, not deep discharges. Compare
+          <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle vs starting construction</a>.
+        </li>
+        <li>
+          <strong>Deep-cycle Group 31</strong> — fewer, thicker plates that tolerate repeated discharge to 50% and recharging,
+          at the cost of some cranking punch. The choice for house banks, trolling motors and solar storage.
+        </li>
+        <li>
+          <strong>Dual-purpose Group 31</strong> — plate design between the two, good enough to crank and able to cycle
+          modestly. Convenient where one battery must do both, with neither done as well as a purpose-built unit.
+        </li>
+      </ul>
+      <p>
+        The nameplate alone will not tell you the duty. The datasheet will: a deep-cycle unit quotes cycle life and
+        reserve capacity rather than a headline CCA figure, and its CCA is usually lower than a starting unit's. Read
+        the <a href="/procurement/how-to-read-battery-datasheet/">datasheet, not the sticker</a>.
+      </p>
+
+      <h2>AGM vs flooded Group 31</h2>
+      <p>
+        Group 31 exists in both flooded and <a href="/lead-acid/agm-battery/">AGM</a> construction. AGM versions dominate in
+        marine, RV and off-grid duty because they are sealed, position-tolerant, vibration-resistant and charge
+        faster; flooded versions remain common in heavy trucks where cost per Ah matters and maintenance is routine.
+        The trade-offs mirror the general <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded</a> comparison — with
+        one Group 31-specific note: the AGM version of the same group is often slightly shorter than the flooded one,
+        so check height against the hold-down.
+      </p>
+
+      <h2>Where Group 31 is used</h2>
+      <ul>
+        <li><strong>Heavy trucks and buses</strong> — often as the main cranking battery or one of a bank; see the <a href="/lead-acid/truck-battery/">truck battery guide</a>.</li>
+        <li><strong>Marine</strong> — house banks, trolling motors and dual-purpose duty; see the <a href="/lead-acid/marine-battery/">marine battery guide</a>.</li>
+        <li><strong>RV and camper</strong> — house battery for lighting, pumps and inverters; see the <a href="/lead-acid/rv-battery/">RV battery guide</a>.</li>
+        <li><strong>Off-grid solar</strong> — small battery banks where the 100 Ah format is a building block; see the <a href="/lead-acid/solar-battery/">solar battery guide</a>.</li>
+        <li><strong>Industrial and mobility</strong> — lift gates, pallet movers, scrubbers, medical equipment.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Group 31 is a <strong>size standard</strong> (~330 × 173 × 240 mm), not a performance spec — verify Ah, CCA and duty per maker.</li>
+          <li>Typical values are <strong>~100 Ah and ~900 CCA (SAE J537)</strong>; CCA must always carry its test standard.</li>
+          <li><strong>Stud terminals</strong> are the group's signature — check stud-only vs stud+post before ordering.</li>
+          <li>Choose the <strong>duty</strong> deliberately: starting, deep-cycle or dual-purpose are different batteries in the same case.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the CCA figure stated with its test standard (SAE J537 vs EN vs JIS), and does the quoted Ah carry a discharge rate?</li>
+        <li>Which terminal layout is specified — stud-only or stud+post — and does it match the fleet's cable lugs?</li>
+        <li>Is the duty stated (starting / deep-cycle / dual-purpose), and does the plate construction support it?</li>
+        <li>Does the supplier's drawing match the tray, including height and hold-down, for both flooded and AGM versions?</li>
+        <li>For bank purchases, are matched units (same maker, lot and age) specified, since series or parallel banks degrade unevenly otherwise?</li>
+        <li>Does the quotation separate the battery spec from accessories, and is a <a href="/procurement/battery-quotation-comparison/">like-for-like comparison</a> possible across suppliers?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is a Group 31 battery?</h3>
+      <p>A BCI-standardized 12V battery group measuring about 330 × 173 × 240 mm, typically rated around 100 Ah and 900 CCA under SAE J537, with stud or stud/post terminals. It is the most common heavy-duty format across trucks, marine, RV and off-grid use.</p>
+      <h3>What are the dimensions of a Group 31 battery?</h3>
+      <p>Approximately 330 mm long × 173 mm wide × 240 mm high (about 13 × 6.8 × 9.4 inches). Height and terminal style vary between brands and between flooded, AGM and lithium drop-in versions, so always confirm against the tray and the manufacturer drawing.</p>
+      <h3>Is a Group 31 battery deep-cycle or starting?</h3>
+      <p>Both variants exist. Starting versions maximize CCA with many thin plates; deep-cycle versions use thicker plates for repeated discharge; dual-purpose versions compromise between the two. Check the duty in the datasheet before buying.</p>
+      <h3>What is the difference between Group 31 and Group 27?</h3>
+      <p>Group 31 is larger — about 330 mm long versus about 306 mm for Group 27 — and typically carries roughly 100 Ah and 900 CCA versus roughly 90–95 Ah and 800 CCA. They are not interchangeable unless the tray and cables accept the bigger case.</p>
+      <h3>Can I replace a Group 31 with a lithium battery of the same group?</h3>
+      <p>Lithium drop-in batteries are sold in Group 31 case format, but the charging system, temperature limits and battery management requirements differ from lead-acid. The vehicle or system must be verified for lithium compatibility, including the alternator and charge profile.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the World Battery Hub entity database and public references; where sources differ, the
+        difference is flagged rather than silently resolved. Values quoted are typical ranges, not guarantees.
+      </p>
+      <ul>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31 reference page</a> (dimensions, capacity, CCA basis, terminal).</li>
+        <li>Battery Council International (BCI) — battery group size definitions.</li>
+        <li>SAE J537 — cranking-ampere test method used for North American CCA ratings.</li>
+        <li>Manufacturer datasheets (flooded and AGM Group 31, starting / deep-cycle / dual-purpose variants) — dimensional and rating cross-checks.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

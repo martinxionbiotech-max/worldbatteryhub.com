@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Group 24 vs Group 27 Battery: Size, Capacity, CCA and…';
+const description = 'Group 24 and Group 27 are the two most common mid-size 12V groups. Group 24 is ~260 × 173 × 225 mm with ~70–75 Ah and ~700 CCA; Group 27 is ~306 × 173 × 225 mm…';
+const canonical = '/lead-acid/group-24-vs-27/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Group 24 vs Group 27 battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between Group 24 and Group 27 batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Length and output. Both are 12V, about 173 mm wide and 225 mm tall, but Group 27 is roughly 46 mm longer — about 306 mm versus about 260 mm — which buys roughly 20 Ah more capacity (about 90–95 Ah versus 70–75 Ah) and roughly 100 A more CCA (about 800 versus 700, SAE J537).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I replace a Group 24 with a Group 27?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if the tray has room for the ~46 mm longer case and the hold-down can secure it. Going from Group 27 down to Group 24 usually fits physically but loses capacity and CCA, so the load must be re-checked.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which is better, Group 24 or Group 27?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Group 27 offers more capacity and CCA in a larger case; Group 24 fits smaller trays. The right choice is the largest group the tray accepts while still meeting the load — fit decides first, then output.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-22</p>
+      <h1>Group 24 vs Group 27 Battery: Size, Capacity, CCA and Which Fits</h1>
+      <p class="lead">
+        Group 24 and Group 27 are the two most common mid-size 12V groups in North America — the default
+        batteries of boats, RVs, generators and light equipment. They share width and height; the entire
+        difference is <strong>~46 mm of length</strong>, which buys Group 27 roughly <strong>20 Ah more capacity</strong> and
+        roughly <strong>100 A more CCA</strong>.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Group 24 is about <strong>260 × 173 × 225 mm</strong> with typical ratings of
+        <strong>~70–75 Ah and ~700 CCA (SAE J537)</strong>; Group 27 is about <strong>306 × 173 × 225 mm</strong> with
+        <strong>~90–95 Ah and ~800 CCA</strong>. Same width and height, different length — so the choice is decided by
+        <strong>whether the tray accepts the longer case</strong>, then by whether the bigger battery's output is worth the
+        extra weight and cost.
+      </div>
+
+      <h2>Side-by-side comparison</h2>
+      <table>
+        <thead>
+          <tr><th></th><th><a href="https://data.worldbatteryhub.com/battery-groups/group24/">Group 24</a></th><th><a href="https://data.worldbatteryhub.com/battery-groups/group27/">Group 27</a></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Voltage</strong></td><td>12V</td><td>12V</td></tr>
+          <tr><td><strong>Dimensions</strong></td><td>~260 × 173 × 225 mm</td><td>~306 × 173 × 225 mm</td></tr>
+          <tr><td><strong>Capacity (typical)</strong></td><td>~70–75 Ah (20h)</td><td>~90–95 Ah (20h)</td></tr>
+          <tr><td><strong>CCA (typical, SAE J537)</strong></td><td>~700 A</td><td>~800 A</td></tr>
+          <tr><td><strong>Terminals</strong></td><td>SAE post</td><td>SAE post</td></tr>
+          <tr><td><strong>Typical duty</strong></td><td>Smaller boats, generators, light equipment</td><td>Boats, RVs, house banks, larger engines</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Cross-verified typical ranges from the World Battery Hub data section; a specific battery's datasheet wins.
+        CCA figures are SAE J537 (−18°C) — compare only within one standard (see
+        <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>).
+      </p>
+
+      <h2>The physical difference: length is everything</h2>
+      <p>
+        Both groups share the ~173 mm width and ~225 mm height of the BCI mid-size family, so terminals and
+        hold-downs sit at familiar positions. The only dimensional change is <strong>length</strong>: Group 27 is roughly
+        46 mm (about 1.8 inches) longer. That extra lead — more and larger plates — is where the additional ~20 Ah
+        and ~100 CCA come from; there is no other trick to the upgrade.
+      </p>
+      <p>
+        The practical rule follows directly: <strong>upgrading 24 → 27 needs ~46 mm of spare tray length</strong>.
+        Downgrading 27 → 24 almost always fits physically but drops capacity and CCA, which matters for house loads
+        that were sized against the bigger battery.
+      </p>
+
+      <h2>Capacity and CCA: what the upgrade actually buys</h2>
+      <p>
+        Capacity is the headline for <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> use — the difference between
+        ~75 Ah and ~95 Ah is roughly a quarter more runtime for the same load on a house bank, trolling motor or
+        generator start. CCA is the headline for cranking: ~800 A instead of ~700 A makes a meaningful difference
+        turning a cold, large engine, but is wasted headroom on a small one that cranks happily at ~500 A.
+      </p>
+      <p>
+        For load sizing, the <a href="/lead-acid/reserve-capacity/">reserve capacity</a> rating matters as much as CCA here,
+        because both groups spend more of their lives running auxiliary loads than cranking.
+      </p>
+
+      <h2>Which one fits your application?</h2>
+      <ul>
+        <li><strong>Marine starting / small house bank</strong> — Group 24 where the battery box is tight; Group 27 where the box has length to spare and the house load wants the Ah.</li>
+        <li><strong>RV house batteries</strong> — Group 27 is the common default; see the <a href="/lead-acid/rv-battery/">RV battery guide</a>.</li>
+        <li><strong>Generators and light equipment</strong> — Group 24's smaller case often matches the factory tray exactly.</li>
+        <li><strong>Dual-purpose boat duty</strong> — Group 27 <a href="/lead-acid/dual-purpose-battery/">dual-purpose</a> units give the best balance of crank and cycle.</li>
+      </ul>
+      <p>
+        When neither case fits the box, the broader <a href="/lead-acid/battery-size-selection/">battery size selection</a> guide
+        walks through measuring the tray and reading the <a href="/lead-acid/battery-group-sizes/">group size</a> labels.
+      </p>
+
+      <h2>AGM vs flooded within the two groups</h2>
+      <p>
+        Both groups are available in flooded, <a href="/lead-acid/agm-battery/">AGM</a> and dual-purpose builds. In marine and RV
+        duty the AGM versions dominate for the usual reasons — sealed, spill-proof, vibration-tolerant, faster
+        charging — while flooded versions remain the budget workhorses. The general trade-offs are covered in the
+        <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded</a> comparison; nothing about the 24 vs 27 choice
+        changes them.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>Group 24 and Group 27 differ in <strong>length only</strong> — ~260 mm vs ~306 mm, same width and height.</li>
+          <li>The extra length buys <strong>~20 Ah and ~100 CCA</strong> (typical): a real but modest upgrade.</li>
+          <li><strong>Fit decides first</strong> — measure the tray before choosing the bigger group.</li>
+          <li>Downgrading 27 → 24 fits but <strong>re-check the load</strong> against the lower capacity and CCA.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the tray dimension drawing confirm the ~46 mm length difference is accommodated before upgrading 24 → 27?</li>
+        <li>Are the quoted Ah and CCA figures tied to a discharge rate and a named CCA standard (SAE J537 vs EN vs JIS)?</li>
+        <li>For fleet purchases, is the choice locked to the application's real load — house-bank Ah need vs engine cranking CCA need?</li>
+        <li>Is the duty (starting / deep-cycle / dual-purpose) stated, or is a single "group" being quoted across incompatible duties?</li>
+        <li>Do the two groups' quotations compare <a href="/procurement/battery-quotation-comparison/">like for like</a> — same chemistry, same duty, same terminal layout?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between Group 24 and Group 27 batteries?</h3>
+      <p>Length and output. Both are 12V, about 173 mm wide and 225 mm tall, but Group 27 is roughly 46 mm longer — about 306 mm versus about 260 mm — which buys roughly 20 Ah more capacity (about 90–95 Ah versus 70–75 Ah) and roughly 100 A more CCA (about 800 versus 700, SAE J537).</p>
+      <h3>Can I replace a Group 24 with a Group 27?</h3>
+      <p>Only if the tray has room for the ~46 mm longer case and the hold-down can secure it. Going from Group 27 down to Group 24 usually fits physically but loses capacity and CCA, so the load must be re-checked.</p>
+      <h3>Which is better, Group 24 or Group 27?</h3>
+      <p>Group 27 offers more capacity and CCA in a larger case; Group 24 fits smaller trays. The right choice is the largest group the tray accepts while still meeting the load — fit decides first, then output.</p>
+      <h3>Is Group 27 the same as Group 31?</h3>
+      <p>No. Group 31 is larger still — about 330 × 173 × 240 mm with typical ratings around 100 Ah and 900 CCA, and it usually carries stud terminals rather than SAE posts.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the World Battery Hub entity database and public references; where sources differ, the
+        difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/group24/">Group 24 reference page</a> and <a href="https://data.worldbatteryhub.com/battery-groups/group27/">Group 27 reference page</a>.</li>
+        <li>Battery Council International (BCI) — group size definitions and dimensional data.</li>
+        <li>SAE J537 — cranking-ampere test method for the quoted CCA figures.</li>
+        <li>Manufacturer datasheets (flooded / AGM / dual-purpose, both groups) — rating and dimension cross-checks.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

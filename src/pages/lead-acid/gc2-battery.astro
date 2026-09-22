@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'GC2 Battery: The 6V Golf-Cart Deep-Cycle Standard';
+const description = 'GC2 is the 6V deep-cycle standard — about 260 × 180 × 275 mm and ~215 Ah (20h), with flag terminals. How golf-cart banks are built, GC2 vs GC12, and what…';
+const canonical = '/lead-acid/gc2-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'BCI GC2 battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a GC2 battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A BCI-standardized 6-volt deep-cycle battery measuring about 260 × 180 × 275 mm with a typical capacity around 215 Ah (20-hour rate) and flag or embedded terminals. GC2s are wired in series — six for a 36V cart, eight for a 48V cart — and are also popular in RV house banks and off-grid systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why are golf cart batteries 6 volts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A 6V cell block allows thicker, taller plates per cell than a 12V case of similar footprint, which suits deep cycling. Carts need 36V or 48V anyway, so wiring six or eight 6V units in series costs nothing extra and gives a more robust, longer-cycling bank than fewer 12V batteries.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between GC2 and GC12?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'GC2 is 6V with roughly 215 Ah; GC12 is the 12V sibling with roughly 150 Ah. Two GC2s in series make a 12V, 215 Ah pair that outperforms a single GC12 in capacity and typically in cycle life — the reason GC2 pairs dominate RV and off-grid banks.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups · Last reviewed 2026-09-22</p>
+      <h1>GC2 Battery: The 6V Golf-Cart Deep-Cycle Standard</h1>
+      <p class="lead">
+        GC2 is the battery that powers golf carts, and by extension a huge share of RV house banks and off-grid
+        systems: a <strong>6-volt, ~260 × 180 × 275 mm</strong> deep-cycle unit rated around <strong>215 Ah (20h)</strong>, wired
+        in <strong>series strings</strong> of six (36V) or eight (48V). It has no cranking rating at all — it is built purely
+        to be discharged and recharged, day after day.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> GC2 is a BCI group size for a <strong>6V deep-cycle</strong> battery. The
+        <a href="https://data.worldbatteryhub.com/battery-groups/gc2/">GC2 reference page</a> lists the cross-verified typicals:
+        <strong>~260 × 180 × 275 mm, ~215 Ah (20h), flag/embedded terminals, no CCA rating</strong>. Golf carts string six
+        GC2s in series for 36V or eight for 48V; RV and solar users wire two in series for a 12V, ~215 Ah house pair.
+      </div>
+
+      <h2>Why 6 volts? The design logic of the GC2</h2>
+      <p>
+        A lead-acid cell is always about 2 volts, so a 6V battery is <strong>three cells</strong> and a 12V battery is
+        <strong>six</strong>. In a case of similar footprint, the 3-cell battery gives each cell roughly twice the room of a
+        6-cell battery — room used for <strong>thicker, taller plates</strong>. Thicker plates are exactly what
+        <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> duty demands: they shed less material per discharge and
+        survive hundreds of cycles that would kill a starting battery.
+      </p>
+      <p>
+        Since golf carts need 36V or 48V anyway, there is no penalty for using 6V blocks — six or eight of them in
+        series is simply how the pack is built. The 6V format is a design choice, not a compromise.
+      </p>
+
+      <h2>GC2 at a glance</h2>
+      <table>
+        <thead>
+          <tr><th>Attribute</th><th>Typical GC2 value</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Voltage</strong></td><td>6V (3 cells)</td><td>Wired in series for 12V / 36V / 48V systems</td></tr>
+          <tr><td><strong>Dimensions</strong></td><td>~260 × 180 × 275 mm</td><td>Confirm height — taller than car batteries</td></tr>
+          <tr><td><strong>Capacity</strong></td><td>~215 Ah (20h)</td><td>Also quoted at the 5h and 100h rates</td></tr>
+          <tr><td><strong>CCA</strong></td><td>Not rated</td><td>Deep-cycle construction — cranking is not its duty</td></tr>
+          <tr><td><strong>Terminals</strong></td><td>Flag / embedded</td><td>Bolt-down lugs; check pattern per maker</td></tr>
+          <tr><td><strong>Chemistry</strong></td><td>Flooded (maintenance / low-maintenance) or AGM</td><td>Flooded needs periodic watering</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Cross-verified typical ranges from the World Battery Hub data section and manufacturer datasheets; a specific
+        battery's datasheet wins. Capacity figures always carry a discharge rate — the same battery prints a higher
+        Ah at the 100h rate than at the 20h rate.
+      </p>
+
+      <h2>GC2 vs GC12: the 6V/12V decision</h2>
+      <p>
+        The BCI defines both a 6V GC2 and a 12V <a href="https://data.worldbatteryhub.com/battery-groups/gc12/">GC12</a> (about
+        327 × 181 × 278 mm, ~150 Ah). The comparison is the classic series-vs-single trade:
+      </p>
+      <table>
+        <thead>
+          <tr><th></th><th>GC2 (6V)</th><th>GC12 (12V)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Capacity (typical)</strong></td><td>~215 Ah</td><td>~150 Ah</td></tr>
+          <tr><td><strong>To make 12V</strong></td><td>Two in series → 12V, ~215 Ah</td><td>One unit → 12V, ~150 Ah</td></tr>
+          <tr><td><strong>Plate design</strong></td><td>Thicker (3 cells per case)</td><td>Thinner (6 cells per case)</td></tr>
+          <tr><td><strong>Typical cycle life</strong></td><td>Higher</td><td>Lower</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Two GC2s in series deliver more capacity and usually more cycles than one GC12 in a similar footprint — which
+        is why the GC2 pair is the default RV and off-grid house bank. The series wiring itself is straightforward
+        but must be done correctly; see <a href="/technology/series-vs-parallel/">series vs parallel wiring</a>.
+      </p>
+
+      <h2>Maintenance: the flooded GC2's real cost</h2>
+      <p>
+        Most GC2s are <strong>flooded</strong>, and flooded deep-cycle batteries need <strong>periodic watering</strong> with
+        distilled water, terminal cleaning and equalization charging — a real maintenance commitment that AGM builds
+        avoid. The watering schedule and <a href="/lead-acid/battery-water/">battery water level</a> checks are part of owning
+        a flooded bank, and neglect shortens life faster than cycling does. AGM GC2s trade that maintenance for a
+        higher price, per the general <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs flooded</a> comparison.
+      </p>
+
+      <h2>Where GC2 batteries are used</h2>
+      <ul>
+        <li><strong>Golf carts and utility vehicles</strong> — six in series (36V) or eight (48V).</li>
+        <li><strong>RV house banks</strong> — two in series for 12V; see the <a href="/lead-acid/rv-battery/">RV battery guide</a>.</li>
+        <li><strong>Off-grid solar</strong> — series/parallel banks; see the <a href="/lead-acid/solar-battery/">solar battery guide</a>.</li>
+        <li><strong>Floor scrubbers, lifts and sweepers</strong> — industrial motive power.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>GC2 is a <strong>6V deep-cycle</strong> standard — ~260 × 180 × 275 mm, ~215 Ah (20h), flag terminals, <strong>no CCA rating</strong>.</li>
+          <li>The 6V design gives each cell room for <strong>thicker plates</strong> — the foundation of deep-cycle durability.</li>
+          <li>Two GC2s in series beat one GC12: <strong>~215 Ah vs ~150 Ah</strong> at 12V, typically with longer cycle life.</li>
+          <li>Flooded GC2s need <strong>watering and maintenance</strong>; AGM versions trade maintenance for price.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the capacity quoted with its discharge rate — and is it the 20h figure, not a flattering 100h figure?</li>
+        <li>For bank purchases, are the units matched (same maker, lot, age) so the series string ages evenly?</li>
+        <li>Is the duty cycling (daily discharge depth) within the maker's stated cycle-life curve?</li>
+        <li>Flooded or AGM — has the maintenance budget (watering, equalization) been priced into the flooded option?</li>
+        <li>Do the flag/embedded terminals match the fleet's cable lugs, and is the height verified against the battery box?</li>
+        <li>Does the <a href="/procurement/battery-warranty-terms-distributors/">warranty</a> cover cycle-life claims, and are those claims stated against a documented test standard?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is a GC2 battery?</h3>
+      <p>A BCI-standardized 6-volt deep-cycle battery measuring about 260 × 180 × 275 mm with a typical capacity around 215 Ah (20-hour rate) and flag or embedded terminals. GC2s are wired in series — six for a 36V cart, eight for a 48V cart — and are also popular in RV house banks and off-grid systems.</p>
+      <h3>Why are golf cart batteries 6 volts?</h3>
+      <p>A 6V cell block allows thicker, taller plates per cell than a 12V case of similar footprint, which suits deep cycling. Carts need 36V or 48V anyway, so wiring six or eight 6V units in series costs nothing extra and gives a more robust, longer-cycling bank than fewer 12V batteries.</p>
+      <h3>What is the difference between GC2 and GC12?</h3>
+      <p>GC2 is 6V with roughly 215 Ah; GC12 is the 12V sibling with roughly 150 Ah. Two GC2s in series make a 12V, 215 Ah pair that outperforms a single GC12 in capacity and typically in cycle life — the reason GC2 pairs dominate RV and off-grid banks.</p>
+      <h3>How long do GC2 batteries last?</h3>
+      <p>In golf-cart duty a well-maintained flooded GC2 typically lasts around 4–6 years; in gentler RV or solar duty, longer. Depth of discharge, watering discipline and charge quality determine the number — cycle life claims should be tied to a stated discharge depth.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the World Battery Hub entity database and public references; where sources differ, the
+        difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/gc2/">GC2 reference page</a> and <a href="https://data.worldbatteryhub.com/battery-groups/gc12/">GC12 reference page</a>.</li>
+        <li>Battery Council International (BCI) — GC2 and GC12 group definitions and dimensional data.</li>
+        <li>Manufacturer datasheets (flooded and AGM GC2, multiple makers) — capacity-at-rate, cycle-life and dimension cross-checks.</li>
+        <li>Golf-cart OEM battery specifications — 36V / 48V pack configurations.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>
