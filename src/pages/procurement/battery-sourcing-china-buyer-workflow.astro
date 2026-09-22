@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Sourcing from China: The Buyer Workflow, Step by Step';
+const description = 'A step-by-step buyer workflow for sourcing batteries from China — RFQ and shortlisting, capability verification, sample and first-article order, pre-shipment inspection, payment milestones and post-delivery claims.';
+const canonical = '/procurement/battery-sourcing-china-buyer-workflow/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Step-by-step battery sourcing workflow for buyers importing from China',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the correct sequence for sourcing batteries from China?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Roughly: define the specification and target volumes; issue an RFQ to a shortlist; verify supplier claims (certificates, references, facility); request samples and run a first-article inspection; negotiate MOQ, payment terms and Incoterm; place a pilot order with a pre-shipment inspection gate; then scale volume as claim history accumulates. Each step gates the next — payment should never run ahead of verification.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you verify a Chinese battery supplier before ordering?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Four layers: documentary (business license, export history, test certificates); technical (test reports tied to batches, equipment calibration); references (existing buyers in your region or channel); and physical (a factory audit or third-party verification visit). None of the layers substitutes for the others — a good certificate is not a good factory.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should the first order from a new supplier be large?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The first order should be a pilot: small enough to survive a total loss, large enough to be representative of production — a trial lot that runs the full pipeline (tooling, production, PSI, freight, arrival testing) before volume is committed. The pilot order is where you pay to learn the supplier\'s real capability.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How should payment be staged in a China battery sourcing deal?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Stage payments to match the verification gates: a deposit on order, a balance tranche against shipping documents, and — where possible — a retention against arrival testing or the warranty period. Staging ties money to evidence: each payment releases only when the previous gate passed. Never put all payment before the first inspection result.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Sourcing Workflow · Last reviewed 2026-09-22</p>
+      <h1>Battery Sourcing from China: The Buyer Workflow, Step by Step</h1>
+      <p class="lead">
+        China builds a large share of the world's lead-acid batteries — and the distance between a good
+        factory and a bad one is measured in verification, not brochures. This workflow sequences the
+        purchase so that <em>money only ever runs one gate ahead of evidence</em>: every payment releases after the
+        check in front of it passes.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The workflow is <strong>spec → shortlist → verify → sample → pilot → scale</strong>,
+        with payment staged to the gates. Skip no step; the ones buyers skip (supplier verification, pilot
+        order, PSI) are exactly where the expensive failures live. Each step below links to the deeper guide
+        for that gate.
+      </div>
+
+      <h2>Step 1: Fix the specification before the RFQ</h2>
+      <p>
+        The RFQ only works if it describes one product. Fix the specification first:
+        <a href="/lead-acid/battery-group-sizes/">group size</a>, <a href="/lead-acid/battery-terminal-types/">terminal type</a>,
+        CCA under a <em>named standard</em> (<a href="/procurement/spec-comparison-jis-din-bci-buyers/">JIS, DIN, EN or BCI</a>),
+        Ah at a named discharge rate, chemistry class, case and label requirements, and target volumes across
+        the quantity ladder. A vague RFQ returns incomparable quotes — the failure mode dissected in
+        <a href="/procurement/battery-quotation-comparison/">quotation comparison</a>. If the spec is weak, start with
+        <a href="/procurement/how-to-read-battery-datasheet/">reading datasheets properly</a> so the fields are named
+        correctly.
+      </p>
+
+      <h2>Step 2: Shortlist and verify before the first sample</h2>
+      <p>
+        Verification happens in four layers, and none substitutes for the others:
+      </p>
+      <ul>
+        <li><strong>Documentary.</strong> Business license, export history, certificates claimed — checked against the issuing bodies, not the supplier's scan.</li>
+        <li><strong>Technical.</strong> Test reports tied to real batches and calibrated equipment, per the <a href="/procurement/verify-cca-claims-bulk-purchase/">CCA claim verification</a> method.</li>
+        <li><strong>References.</strong> Existing buyers in your region or channel, asked about claim history — not hand-picked testimonials.</li>
+        <li><strong>Physical.</strong> A factory audit against the four-zone <a href="/procurement/battery-factory-evaluation-checklist/">factory evaluation checklist</a>, or a third-party verification visit — see the <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">verification criteria</a> on the manufacturer sub-site.</li>
+      </ul>
+
+      <h2>Step 3: Sample order and first-article inspection</h2>
+      <p>
+        Before committing volume, buy a <strong>sample or first-article unit</strong> and inspect it as the production
+        unit it claims to be: construction, dimensions, terminals, weight against the datasheet (compare the
+        <a href="https://data.worldbatteryhub.com/weight-chart/">weight reference</a>), and ratings tested under the
+        stated standard. The first article is the moment design intent meets physical reality — changes here
+        are cheap, per <a href="/procurement/quality-control-shipment-inspection/">the QC guide</a>.
+      </p>
+
+      <h2>Step 4: Pilot order with commercial terms and PSI</h2>
+      <p>
+        The first real order is a <strong>pilot</strong>: small enough to survive a total loss, large enough to be
+        representative. Negotiate the commercial bundle —
+        <a href="/procurement/moq-payment-incoterms-battery-imports/">MOQ, payment terms and Incoterm</a> — and write in
+        the <strong>pre-shipment inspection</strong> gate: AQL sampling plan, test method, who performs and pays for
+        PSI, and the remedy for failure. Staged payment matches the gates: deposit on order, balance tranche
+        against shipping documents, and a retention where the terms allow it.
+      </p>
+      <p class="muted">
+        World Battery Hub recommends no specific suppliers or inspection companies and quotes no supplier
+        prices — the workflow names the gates and the buyer's own route data fills in the numbers.
+      </p>
+
+      <h2>Step 5: Arrival audit, claims and scale</h2>
+      <p>
+        On arrival, run the audit: open-circuit voltage per unit, weight, performance spot-check and
+        <a href="/lead-acid/battery-date-code/">date codes</a>. Record claim-rate history by product line from day one —
+        it is the input that justifies scaling volume and that powers the warranty costing in
+        <a href="/procurement/battery-warranty-terms-distributors/">warranty terms for distributors</a>. Only when a
+        supplier has passed the full pipeline on a pilot do you move volume — and even then, keep the PSI and
+        arrival gates in place, because capability drifts and batches vary.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the RFQ written against a fixed specification — group, terminals, CCA standard, Ah rate, chemistry, volumes?</li>
+        <li>Has the supplier been verified on all four layers: documentary, technical, references and physical audit?</li>
+        <li>Is the first order a pilot, small enough to survive a loss but representative of production?</li>
+        <li>Are payment milestones staged to match the verification gates, with no payment running ahead of evidence?</li>
+        <li>Are PSI and arrival testing written into the contract for every shipment, not just the pilot?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the correct sequence for sourcing batteries from China?</h3>
+      <p>Roughly: define the specification and target volumes; issue an RFQ to a shortlist; verify supplier claims (certificates, references, facility); request samples and run a first-article inspection; negotiate MOQ, payment terms and Incoterm; place a pilot order with a pre-shipment inspection gate; then scale volume as claim history accumulates. Each step gates the next — payment should never run ahead of verification.</p>
+      <h3>How do you verify a Chinese battery supplier before ordering?</h3>
+      <p>Four layers: documentary (business license, export history, test certificates); technical (test reports tied to batches, equipment calibration); references (existing buyers in your region or channel); and physical (a factory audit or third-party verification visit). None of the layers substitutes for the others — a good certificate is not a good factory.</p>
+      <h3>Should the first order from a new supplier be large?</h3>
+      <p>No. The first order should be a pilot: small enough to survive a total loss, large enough to be representative of production — a trial lot that runs the full pipeline (tooling, production, PSI, freight, arrival testing) before volume is committed. The pilot order is where you pay to learn the supplier's real capability.</p>
+      <h3>How should payment be staged in a China battery sourcing deal?</h3>
+      <p>Stage payments to match the verification gates: a deposit on order, a balance tranche against shipping documents, and — where possible — a retention against arrival testing or the warranty period. Staging ties money to evidence: each payment releases only when the previous gate passed. Never put all payment before the first inspection result.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Synthesized from trade practice in battery sourcing and the standards named in the workflow; this
+        guide names no suppliers, recommends no inspection companies and quotes no prices or success-rate
+        statistics — the workflow is a sequence of gates the buyer applies with their own route data.
+      </p>
+      <ul>
+        <li>ISO 2859-1 — AQL sampling procedures referenced by the PSI gate.</li>
+        <li>ICC Incoterms 2020 — risk and cost transfer definitions used in the commercial bundle.</li>
+        <li>Battery Council International — group size and rating definitions used in the specification gate.</li>
+        <li>World Battery Hub procurement cluster — the five gate guides linked in each step above.</li>
+        <li>World Battery Hub manufacturer sub-site — <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">supplier verification criteria</a> for the evidence each layer should produce.</li>
+        <li>World Battery Hub market sub-site — <a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">HS code reference</a> for the customs step after ordering.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

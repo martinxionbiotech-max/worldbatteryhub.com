@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Quality Control and Shipment Inspection for Battery Imports';
+const description = 'Quality control for battery imports happens at three gates: incoming materials, pre-shipment inspection, and arrival testing. This guide covers AQL sampling, first-article inspection, the test battery and what a useful inspection report contains.';
+const canonical = '/procurement/quality-control-shipment-inspection/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Quality control and pre-shipment inspection for battery imports',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is pre-shipment inspection (PSI) for batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pre-shipment inspection is a third-party check performed at the factory or warehouse before the goods are released for shipment. For batteries it typically covers quantity and packing, dimensions, terminals and polarity, open-circuit voltage, weight, labelling and date codes, and performance spot-checks such as CCA or capacity on a sample. The output is a report the buyer uses to accept, rework or reject the lot.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is AQL sampling and how does it apply to battery inspection?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'AQL (Acceptable Quality Limit) sampling, defined in ISO 2859-1, is a statistical scheme that decides how many units to inspect and how many defects are tolerable, given a lot size and an AQL level. It converts "check a random sample" into a reproducible rule — e.g. a given lot size and AQL level dictates a sample size and accept/reject defect counts. Critical, major and minor defects are judged against different limits.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which tests belong in a battery arrival inspection?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The three checks that catch most problems: open-circuit voltage per unit (a low reading flags a discharged, shorted or aged unit), weight versus the datasheet (plate material differences show up as weight), and a performance spot-check — CCA via a conductance or discharge tester, or capacity under the standard discharge rate — on a sample drawn to the AQL plan. Date codes should also be verified against freshness.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a first-article inspection and why does it matter for batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'First-article inspection (FAI) examines and tests the first production units — or a pre-production sample — against the agreed specification before mass production runs. For batteries it is the moment design intent meets physical reality: plate construction, fill weights, terminal geometry and ratings are verified on actual units, and changes are cheap to make before thousands of units exist.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Quality Control · Last reviewed 2026-09-22</p>
+      <h1>Quality Control and Shipment Inspection for Battery Imports</h1>
+      <p class="lead">
+        Quality in a battery import is not discovered at the destination — it is decided at three gates:
+        what goes into the product, what leaves the factory, and what arrives. An importer who skips the
+        middle gate (pre-shipment inspection) has no lever between production and payment.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Build a three-gate QC chain — <strong>first-article inspection</strong> before mass
+        production, <strong>pre-shipment inspection (PSI)</strong> on a statistically-defined sample before release, and
+        <strong>arrival testing</strong> as the final audit — and fix the sampling rule in the contract. The method
+        complements the <a href="/procurement/battery-factory-evaluation-checklist/">factory evaluation checklist</a>, which
+        audits capability; this guide audits the goods.
+      </div>
+
+      <h2>Gate 1: First-article inspection</h2>
+      <p>
+        The first article is the first production unit — or a pre-production sample — built to the agreed
+        specification, and its inspection is the cheapest mistake you will ever catch. Before mass
+        production, verify on the actual unit:
+      </p>
+      <ul>
+        <li><strong>Construction.</strong> Plate count and geometry, separator quality, fill and seal — the invisible internals behind the <a href="/technology/how-lead-acid-battery-works/">chemistry's performance</a>.</li>
+        <li><strong>Dimensions and terminals.</strong> Group-size fitment and <a href="/lead-acid/battery-terminal-types/">terminal type</a> against the drawing, not the brochure.</li>
+        <li><strong>Ratings under the stated standard.</strong> CCA and Ah tested under the method the datasheet names — see <a href="/procurement/verify-cca-claims-bulk-purchase/">verifying CCA claims</a> for the standard trap.</li>
+        <li><strong>Weight.</strong> Plate material differences are hard to hide from a scale; compare against the <a href="https://data.worldbatteryhub.com/weight-chart/">weight data</a> on the data sub-site.</li>
+      </ul>
+      <p>
+        Changes at first-article stage cost a conversation; the same changes after a container is built cost
+        a claim.
+      </p>
+
+      <h2>Gate 2: Pre-shipment inspection (PSI)</h2>
+      <p>
+        PSI is the third-party check at the factory or warehouse before release for shipment. Its power comes
+        from the <strong>sampling rule</strong>: how many units are opened, measured and tested, and how many defects
+        are tolerable. The reproducible way to set the rule is AQL sampling per
+        <strong>ISO 2859-1</strong>, which ties a lot size and an AQL level to a sample size and accept/reject defect
+        counts. Defects are graded:
+      </p>
+      <ul>
+        <li><strong>Critical</strong> — safety or non-conformance that fails the product: cracked cases, reversed polarity, leaking acid, zero voltage. Even one critical defect typically rejects the lot.</li>
+        <li><strong>Major</strong> — functional or commercial failure: CCA or capacity below spec, wrong terminals, damaged covers, missing labels.</li>
+        <li><strong>Minor</strong> — cosmetic: scratches, smeared printing, uneven strap welds with no functional impact.</li>
+      </ul>
+      <p>
+        A useful PSI report is not a certificate — it is a dataset: sample size and plan, the unit serial or
+        date codes checked, the measurements taken (voltage, weight, dimensions), the test method and
+        equipment for any performance spot-check, photos of defects, and an accept/rework/reject
+        recommendation. A report without the sampling plan is a summary of feelings.
+      </p>
+
+      <h2>Gate 3: Arrival testing</h2>
+      <p>
+        Arrival testing is the audit that catches what happened between the factory gate and your warehouse —
+        and what PSI could not see. The three checks with the highest catch rate:
+      </p>
+      <ul>
+        <li><strong>Open-circuit voltage per unit.</strong> A fully-charged 12V lead-acid battery should read at its charged resting voltage; a low reading flags a discharged, shorted or aged unit. See the <a href="/lead-acid/12v-voltage-chart/">12V voltage chart</a> for the reference values.</li>
+        <li><strong>Weight against the datasheet.</strong> The cheapest independent check of plate material.</li>
+        <li><strong>Performance spot-check.</strong> CCA via a calibrated conductance or discharge tester, or capacity under the standard discharge rate, on a sample drawn to the AQL plan — the same logic as <a href="/testing/battery-capacity-testing/">capacity testing</a>.</li>
+        <li><strong>Date codes.</strong> Verify freshness — batteries age in storage, and <a href="/lead-acid/battery-date-code/">reading the date code</a> tells you how long the lot sat.</li>
+      </ul>
+
+      <h2>Writing QC into the contract</h2>
+      <p>
+        All three gates are worth little if they are not contractual. The purchase order should name the
+        specification version, the AQL levels for critical/major/minor defects, who performs PSI and who pays,
+        the test method and standard for performance spot-checks, and the remedy when a gate fails —
+        rework, discount, replacement or rejection. Agreeing the remedy in advance turns a failed inspection
+        into a defined process instead of a negotiation under time pressure. The same discipline applies to
+        the <a href="/procurement/moq-payment-incoterms-battery-imports/">commercial terms</a> around the inspection.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is a first-article inspection required before mass production — and does it cover construction, terminals, ratings and weight?</li>
+        <li>Does the PSI report state the sampling plan (lot size, AQL level, sample size) and the test method, not just a pass/fail verdict?</li>
+        <li>Are critical, major and minor defects judged against different limits, with the lot rejected on criticals?</li>
+        <li>Does the contract name the AQL levels, who performs and pays for PSI, and the remedy for a failed gate?</li>
+        <li>Is arrival testing planned — voltage, weight, performance spot-check and date codes — on the same sampling discipline?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is pre-shipment inspection (PSI) for batteries?</h3>
+      <p>Pre-shipment inspection is a third-party check performed at the factory or warehouse before the goods are released for shipment. For batteries it typically covers quantity and packing, dimensions, terminals and polarity, open-circuit voltage, weight, labelling and date codes, and performance spot-checks such as CCA or capacity on a sample. The output is a report the buyer uses to accept, rework or reject the lot.</p>
+      <h3>What is AQL sampling and how does it apply to battery inspection?</h3>
+      <p>AQL (Acceptable Quality Limit) sampling, defined in ISO 2859-1, is a statistical scheme that decides how many units to inspect and how many defects are tolerable, given a lot size and an AQL level. It converts "check a random sample" into a reproducible rule — a given lot size and AQL level dictates a sample size and accept/reject defect counts. Critical, major and minor defects are judged against different limits.</p>
+      <h3>Which tests belong in a battery arrival inspection?</h3>
+      <p>The checks that catch most problems: open-circuit voltage per unit (a low reading flags a discharged, shorted or aged unit), weight versus the datasheet (plate material differences show up as weight), and a performance spot-check — CCA via a conductance or discharge tester, or capacity under the standard discharge rate — on a sample drawn to the AQL plan. Date codes should also be verified against freshness.</p>
+      <h3>What is a first-article inspection and why does it matter for batteries?</h3>
+      <p>First-article inspection (FAI) examines and tests the first production units — or a pre-production sample — against the agreed specification before mass production runs. For batteries it is the moment design intent meets physical reality: plate construction, fill weights, terminal geometry and ratings are verified on actual units, and changes are cheap to make before thousands of units exist.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Synthesized from inspection and sampling standards plus battery trade practice; this guide names no
+        inspection companies and quotes no defect-rate statistics — the sampling plan is given as a method
+        the buyer applies to their own lots.
+      </p>
+      <ul>
+        <li>ISO 2859-1 — sampling procedures for inspection by attributes (AQL schemes).</li>
+        <li>SAE J537 and EN 50342 — the cranking and capacity test methods referenced by performance spot-checks.</li>
+        <li>Battery Council International — group size, terminal and rating definitions used in inspection criteria.</li>
+        <li>World Battery Hub testing sub-site — <a href="https://testing.worldbatteryhub.com/standards/">standard test conditions</a> for the methods behind spot-checks.</li>
+        <li>World Battery Hub data sub-site — <a href="https://data.worldbatteryhub.com/battery-groups/">battery group data</a> and <a href="https://data.worldbatteryhub.com/weight-chart/">weight reference</a> used as inspection targets.</li>
+        <li>World Battery Hub procurement cluster — <a href="/procurement/battery-factory-evaluation-checklist/">factory evaluation checklist</a> and <a href="/procurement/verify-cca-claims-bulk-purchase/">CCA claim verification</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

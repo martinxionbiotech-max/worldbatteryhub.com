@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'MOQ, Payment Terms and Incoterms for Battery Imports';
+const description = 'MOQ, payment terms and Incoterms decide the real cost and risk of a battery import long before the unit price does. This guide maps quantity ladders, payment instruments (T/T, LC), and EXW/FOB/CIF/DDP risk transfer for battery-class cargo.';
+const canonical = '/procurement/moq-payment-incoterms-battery-imports/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'MOQ, payment terms and Incoterms for battery import purchasing',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an MOQ and why do battery factories set one?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'MOQ (minimum order quantity) is the smallest order a supplier will produce or ship on the quoted terms. Battery factories set MOQs because production runs, plate batches, mould changes and container consolidation carry fixed costs that only recover above a volume threshold. The MOQ is a negotiation input, not a physical constant — smaller first orders are common, usually at a higher unit cost.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which payment terms are common in battery imports?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Commonly: T/T (telegraphic transfer) with a deposit and balance against shipping documents or before release; letter of credit (L/C) issued by the buyer\'s bank; and open account for established relationships. Each instrument moves risk and working capital between buyer and seller — the payment term is part of the price, not an administrative detail.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which Incoterm is best for a battery importer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no single best term — it depends on who controls the freight and carries the risk. EXW gives the buyer full control but full obligation from the factory gate. FOB transfers risk at the vessel and leaves the buyer to arrange main carriage. CIF has the seller arrange and pay freight and insurance to the destination port. DDP has the seller deliver duty-paid. For hazardous-classed, heavy cargo like batteries, the freight-and-duty slice is large, so the Incoterm choice is a cost decision, not a formality.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does battery freight cost differ from ordinary cargo?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lead-acid and lithium batteries are regulated as dangerous goods: lead-acid because of the acid and lithium because of the fire risk. Carriers apply dangerous-goods surcharges, require UN-certified packaging, special labelling and documentation (IATA DGR for air, IMDG Code for sea), and may cap quantities per container. These rules raise freight cost and must be priced into the Incoterm comparison.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Commercial Terms · Last reviewed 2026-09-22</p>
+      <h1>MOQ, Payment Terms and Incoterms for Battery Imports</h1>
+      <p class="lead">
+        The unit price on a battery quotation is the last number that should interest an importer. The
+        quantity ladder, the payment instrument and the Incoterm decide how much cash is committed, when it
+        leaves, and who carries the risk at each mile — and for hazardous-classed, heavy cargo, those three
+        lines dominate the total cost of the deal.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Model the deal as <strong>cash × risk × time</strong>. MOQ sets the cash
+        commitment, payment terms set the timing and exposure, and the Incoterm sets where risk and freight
+        change hands. Only when all three are fixed do unit prices become comparable — the same logic used in
+        <a href="/procurement/battery-quotation-comparison/">quotation comparison</a>.
+      </div>
+
+      <h2>MOQ: the quantity ladder is part of the price</h2>
+      <p>
+        An MOQ is the smallest order a factory will run or ship on the quoted terms, and it exists for real
+        reasons: plate and grid batches, paste mixing, mould and case changes, and container consolidation
+        all carry fixed costs that only recover above a volume threshold. But the MOQ is not a physical
+        constant — it is a negotiation input. Common moves:
+      </p>
+      <ul>
+        <li><strong>First-order trial.</strong> A smaller trial order at a higher unit cost, to test quality and logistics before committing volume.</li>
+        <li><strong>Mixed containers.</strong> Combining groups and chemistries into one container to reach the ladder rung.</li>
+        <li><strong>Quantity breaks.</strong> Tiered pricing where the unit cost falls at each breakpoint — a quote valid at one container may not hold at pallet scale, so every comparison must sit on the same rung.</li>
+      </ul>
+      <p>
+        The procurement discipline: <strong>quote the same quantity to every supplier</strong>, and ask what happens at
+        the rung above and below. Suppliers who quietly quote different ladders are selling different deals.
+      </p>
+
+      <h2>Payment terms: the instruments and what they move</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Instrument</th>
+            <th>Typical shape</th>
+            <th>Risk sits with</th>
+            <th>Working capital</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>T/T with deposit</strong></td>
+            <td>Deposit on order, balance against shipping documents or before release</td>
+            <td>Buyer, from deposit onward</td>
+            <td>High — cash out before goods arrive</td>
+          </tr>
+          <tr>
+            <td><strong>Letter of credit (L/C)</strong></td>
+            <td>Bank pays against compliant documents</td>
+            <td>Split — bank intermediates</td>
+            <td>Medium — line tied up, cash later</td>
+          </tr>
+          <tr>
+            <td><strong>Open account</strong></td>
+            <td>Goods first, payment on agreed terms</td>
+            <td>Seller</td>
+            <td>Low for buyer</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Payment terms are a price component. A lower unit price on full pre-payment is not automatically
+        cheaper than a higher price on an L/C — the buyer's cost of capital and the risk of non-delivery
+        belong in the same equation. For a first order with an unproven supplier, the standard progression is
+        deposit-plus-balance against documents, moving toward letter of credit or open account only as claim
+        history and
+        <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">verified capability</a> accumulate.
+      </p>
+
+      <h2>Incoterms: where risk and freight change hands</h2>
+      <p>
+        The Incoterm decides two things: where the seller's cost and risk end, and where the buyer's begin.
+        The ICC Incoterms 2020 rules define the terms; the practical battery-import map:
+      </p>
+      <ul>
+        <li><strong>EXW (Ex Works).</strong> Buyer takes everything from the factory gate — export clearance, loading, freight, insurance, duty. Maximum control, maximum obligation.</li>
+        <li><strong>FOB (Free on Board).</strong> Seller clears export and loads; risk transfers when the goods are on board the vessel. Buyer arranges main carriage.</li>
+        <li><strong>CIF (Cost, Insurance and Freight).</strong> Seller arranges and pays freight and insurance to the destination port; risk still transfers on board, but the seller manages the main leg.</li>
+        <li><strong>DDP (Delivered Duty Paid).</strong> Seller delivers duty-paid to the buyer's named place — the seller carries almost everything until arrival.</li>
+      </ul>
+      <p>
+        Because batteries are heavy and dangerous-goods classed, the freight-and-duty slice is a major share
+        of landed cost, so the same unit price at EXW and at DDP are radically different deals. Normalizing
+        the Incoterm is the first step of any
+        <a href="/procurement/battery-quotation-comparison/">like-for-like price comparison</a>.
+      </p>
+
+      <h2>Why battery freight is a category of its own</h2>
+      <p>
+        Battery freight is not ordinary cargo. Lead-acid batteries are regulated because of the acid content;
+        lithium batteries because of the fire risk. The practical consequences for the importer:
+      </p>
+      <ul>
+        <li><strong>Dangerous-goods documentation</strong> — declarations, UN-numbered classification and test summaries per the IATA DGR (air) or IMDG Code (sea).</li>
+        <li><strong>UN-certified packaging</strong> — tested packaging with the correct marks, which adds cost and weight.</li>
+        <li><strong>Carrier surcharges and caps</strong> — dangerous-goods surcharges and per-shipment quantity limits, especially for air.</li>
+        <li><strong>State-of-charge limits</strong> — carriers impose maximum SOC for lithium shipments, which affects the goods' condition on arrival.</li>
+      </ul>
+      <p>
+        These rules change the freight line in both directions of the comparison — they must be priced, not
+        assumed. The <a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">HS code reference</a> covers the
+        customs classification half, and the market sub-site tracks
+        <a href="https://market.worldbatteryhub.com/battery-price-trends/">price trends</a> with named sources for
+        market-level context.
+      </p>
+
+      <h2>Putting it together: the landed-cost walk</h2>
+      <p>
+        The standard walk from quotation to comparable number: unit price × quantity at the agreed rung →
+        packaging → freight under the chosen Incoterm (or priced out to a common point) → insurance if
+        CIF-style → duty using the correct HS code → inland delivery. The result is the
+        <strong>landed cost per unit</strong> — the number that belongs in the comparison table, alongside the
+        payment-term cash-flow profile from the same walk.
+      </p>
+      <p class="muted">
+        World Battery Hub quotes no supplier prices, freight rates or duty rates in this guide; the walk is a
+        method, and the site-specific numbers (freight, duty) are inputs the buyer obtains for their own
+        route.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Are all quotes sitting on the same quantity rung — and what happens at the rung above and below?</li>
+        <li>What payment instrument is proposed, and has the cost of capital and non-delivery risk been priced into the comparison?</li>
+        <li>Is the Incoterm identical across quotes, or explicitly priced out to a common delivery point?</li>
+        <li>Have dangerous-goods documentation, UN-certified packaging and carrier surcharges been priced into the freight line?</li>
+        <li>Does the deal's landed cost per unit include duty via the correct HS code and inland delivery?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is an MOQ and why do battery factories set one?</h3>
+      <p>MOQ (minimum order quantity) is the smallest order a supplier will produce or ship on the quoted terms. Battery factories set MOQs because production runs, plate batches, mould changes and container consolidation carry fixed costs that only recover above a volume threshold. The MOQ is a negotiation input, not a physical constant — smaller first orders are common, usually at a higher unit cost.</p>
+      <h3>Which payment terms are common in battery imports?</h3>
+      <p>Commonly: T/T (telegraphic transfer) with a deposit and balance against shipping documents or before release; letter of credit (L/C) issued by the buyer's bank; and open account for established relationships. Each instrument moves risk and working capital between buyer and seller — the payment term is part of the price, not an administrative detail.</p>
+      <h3>Which Incoterm is best for a battery importer?</h3>
+      <p>There is no single best term — it depends on who controls the freight and carries the risk. EXW gives the buyer full control but full obligation from the factory gate. FOB transfers risk at the vessel and leaves the buyer to arrange main carriage. CIF has the seller arrange and pay freight and insurance to the destination port. DDP has the seller deliver duty-paid. For hazardous-classed, heavy cargo like batteries, the freight-and-duty slice is large, so the Incoterm choice is a cost decision, not a formality.</p>
+      <h3>Why does battery freight cost differ from ordinary cargo?</h3>
+      <p>Lead-acid and lithium batteries are regulated as dangerous goods: lead-acid because of the acid and lithium because of the fire risk. Carriers apply dangerous-goods surcharges, require UN-certified packaging, special labelling and documentation (IATA DGR for air, IMDG Code for sea), and may cap quantities per container. These rules raise freight cost and must be priced into the Incoterm comparison.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Synthesized from Incoterms rules, dangerous-goods transport regulation and trade practice; this guide
+        quotes no supplier prices, freight rates or duty rates — where a cost is route-specific, the method
+        for obtaining it is given instead of a number.
+      </p>
+      <ul>
+        <li>ICC Incoterms 2020 — definitions of EXW, FOB, CIF, DDP and the risk/cost transfer points.</li>
+        <li>IATA Dangerous Goods Regulations (DGR) — air transport classification and packaging for batteries.</li>
+        <li>IMDG Code — sea transport dangerous-goods requirements for battery-class cargo.</li>
+        <li>World Customs Organization HS 2022 — Chapter 85.07 battery classifications for duty determination.</li>
+        <li>World Battery Hub procurement cluster — <a href="/procurement/battery-quotation-comparison/">quotation comparison method</a> and <a href="/procurement/how-to-read-battery-datasheet/">datasheet reading</a>.</li>
+        <li>World Battery Hub sub-sites — <a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">HS code reference</a> and <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">supplier verification criteria</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

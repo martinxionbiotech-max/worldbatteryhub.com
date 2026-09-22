@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Verify CCA Claims Before a Bulk Battery Purchase';
+const description = 'A printed CCA number is a claim, not a fact, until someone has verified it. This guide shows importers and distributors how to verify CCA claims before bulk purchase — test standards, batch sampling, third-party testing and lot acceptance.';
+const canonical = '/procurement/verify-cca-claims-bulk-purchase/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Verifying cold cranking amp claims in bulk battery procurement',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you verify a battery\'s CCA claim before buying in bulk?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In four steps: pin down which test standard the claim refers to (SAE, EN, JIS, DIN); require the supplier\'s own test reports and trace them to a batch; pull a random sample from the pre-production or first article lot and test it on an independent CCA tester under the same standard and temperature; and write a lot-acceptance clause into the contract so every future shipment is tested to the same method, not just the sample.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do some batteries test lower than their printed CCA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Several reasons. The printed number may come from a warmer or looser test method (JIS at -15°C prints higher than SAE at -18°C). The battery may be under-filled, aged in storage, or from a batch where plate weight drifted below the design. Some labels inflate the number outright. Independent testing under the same standard closes the gap between label and reality.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is lot acceptance testing for CCA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A contract clause that says each shipment is accepted only if a defined sample of batteries, drawn at random, meets the agreed CCA (and other ratings) when tested under the agreed standard and temperature. Samples below the limit trigger a remedy — replacement, discount or rejection — rather than a dispute after delivery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can third-party labs test CCA before shipment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Pre-shipment inspection companies and battery test laboratories run CCA tests with calibrated conductance or high-rate discharge testers, typically as part of a wider inspection that also covers dimensions, terminals, voltage, weight and labelling. The report is issued against a defined sampling plan, usually an AQL-based scheme such as ISO 2859-1.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · CCA Verification · Last reviewed 2026-09-22</p>
+      <h1>How to Verify CCA Claims Before a Bulk Battery Purchase</h1>
+      <p class="lead">
+        A CCA figure on a label is a claim, not a measurement, until someone has reproduced it. In bulk
+        purchasing the question is not "what does the label say" but "what will an independent test of
+        <em>my shipment</em> say" — and the answer is built into the purchase before the first container leaves the
+        factory.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Verification is a chain, not a single test. Pin the claim to a
+        <strong>test standard</strong>, require <strong>batch-traceable test reports</strong>, test a
+        <strong>random sample</strong> independently under the same standard, and write
+        <strong>lot acceptance</strong> into the contract so every future shipment is judged the same way.
+      </div>
+
+      <h2>Step 1: Pin the claim to a test standard</h2>
+      <p>
+        The first verification step costs nothing and eliminates the most common cause of "failed" CCA
+        checks: the label does not say which standard the number came from. The same physical battery prints
+        different numbers under different methods — a warmer JIS test (−15°C) yields a higher figure than
+        SAE (−18°C), and a DIN test with a 9.0V cut-off yields a lower one. If the claim is not tied to a
+        standard, it is not testable, and an untestable claim is unverifiable by definition. See
+        <a href="/lead-acid/cca/what-is-cca/">what CCA means under each standard</a> and
+        <a href="/lead-acid/cca/how-cca-is-tested/">how CCA is actually tested</a> for the conditions behind each number.
+      </p>
+
+      <h2>Step 2: Require batch-traceable test reports</h2>
+      <p>
+        A test report that cannot be traced to a batch is decoration. Ask the supplier to tie each report to a
+        <strong>production batch, production date and battery date code</strong> — the same coding that lets you read
+        <a href="/lead-acid/battery-date-code/">battery date codes</a> yourself on arrival. What to look for in the report:
+      </p>
+      <ul>
+        <li><strong>Method stated.</strong> SAE J537, EN 50342, JIS D5301 or the IEC method the figure refers to — and the test temperature and cut-off voltage written out.</li>
+        <li><strong>Equipment identified.</strong> The tester model and its calibration date. An uncalibrated tester's number is a guess.</li>
+        <li><strong>Sample identified.</strong> The report should state which batteries were tested, not "a representative sample" in general terms.</li>
+        <li><strong>All cells covered.</strong> CCA is a battery-level result; a report for one cell or one module does not verify the finished battery.</li>
+      </ul>
+
+      <h2>Step 3: Independent testing on a random sample</h2>
+      <p>
+        Supplier reports establish intent; independent tests establish fact. The standard practice for bulk
+        battery orders is to test a sample drawn <strong>at random from the first article lot</strong> or from the
+        pre-production batch, using a calibrated conductance or high-rate discharge tester, at the same
+        temperature and cut-off as the claimed standard. If the sample was hand-picked by the supplier, it
+        verifies nothing — the sampling rule matters as much as the test.
+      </p>
+      <p>
+        A practical frame for judging results: label claims should be read as a <em>minimum performance</em>, not a
+        target with a tolerance band that drifts down. A batch whose tested CCA falls consistently 5–10% below
+        the label under the same method is not "close enough" — it is a different product class than the one
+        quoted. See <a href="/procurement/spec-comparison-jis-din-bci-buyers/">how to read the JIS/DIN/BCI spec systems</a>
+        for the notation side of the same problem.
+      </p>
+
+      <h2>Step 4: Lot acceptance in the contract</h2>
+      <p>
+        The difference between a verified purchase and a gamble is what happens to <em>every subsequent
+        shipment</em>, not the first sample. A lot-acceptance clause does three things:
+      </p>
+      <ul>
+        <li><strong>Defines the test.</strong> Standard, temperature, cut-off, equipment class and who pays for testing — the same method for every lot.</li>
+        <li><strong>Defines the sample.</strong> Sampling plan and acceptable quality level, typically drawn from an AQL scheme such as ISO 2859-1, so "how many to test" is not renegotiated per shipment.</li>
+        <li><strong>Defines the remedy.</strong> What happens when the sample fails — replacement, discount, rejection, or re-test at the supplier's cost. A failure clause agreed in advance is cheap; a failure dispute after delivery is not.</li>
+      </ul>
+
+      <h2>What else to verify in the same inspection</h2>
+      <p>
+        CCA is the headline, but the same inspection visit or report should cover the fields that move with
+        it — <a href="/lead-acid/battery-group-sizes/">group size and terminal type</a>, weight against the datasheet,
+        open-circuit voltage, physical condition and labelling. A battery that passes CCA but arrives in the
+        wrong group size is a failed purchase with a good test report. The full checklist is covered in
+        <a href="/procurement/battery-factory-evaluation-checklist/">the factory evaluation checklist</a>, and the
+        capacity-side verification in <a href="/testing/battery-capacity-testing/">how battery capacity testing works</a>.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the CCA claim name a test standard (SAE, EN, JIS, DIN), and does the contract lock testing to that same standard?</li>
+        <li>Are the supplier's test reports traceable to a production batch, date code and calibrated equipment?</li>
+        <li>Is the verification sample drawn at random from the first article lot — not hand-picked by the supplier?</li>
+        <li>Does the contract include a lot-acceptance clause covering every future shipment, with a defined sampling plan and failure remedy?</li>
+        <li>Are group size, terminals, weight, voltage and labelling verified in the same inspection as CCA?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How do you verify a battery's CCA claim before buying in bulk?</h3>
+      <p>In four steps: pin down which test standard the claim refers to (SAE, EN, JIS, DIN); require the supplier's own test reports and trace them to a batch; pull a random sample from the pre-production or first article lot and test it on an independent CCA tester under the same standard and temperature; and write a lot-acceptance clause into the contract so every future shipment is tested to the same method, not just the sample.</p>
+      <h3>Why do some batteries test lower than their printed CCA?</h3>
+      <p>Several reasons. The printed number may come from a warmer or looser test method (JIS at -15°C prints higher than SAE at -18°C). The battery may be under-filled, aged in storage, or from a batch where plate weight drifted below the design. Some labels inflate the number outright. Independent testing under the same standard closes the gap between label and reality.</p>
+      <h3>What is lot acceptance testing for CCA?</h3>
+      <p>A contract clause that says each shipment is accepted only if a defined sample of batteries, drawn at random, meets the agreed CCA (and other ratings) when tested under the agreed standard and temperature. Samples below the limit trigger a remedy — replacement, discount or rejection — rather than a dispute after delivery.</p>
+      <h3>Can third-party labs test CCA before shipment?</h3>
+      <p>Yes. Pre-shipment inspection companies and battery test laboratories run CCA tests with calibrated conductance or high-rate discharge testers, typically as part of a wider inspection that also covers dimensions, terminals, voltage, weight and labelling. The report is issued against a defined sampling plan, usually an AQL-based scheme such as ISO 2859-1.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Synthesized from the published test methods and sampling practice; no supplier prices, ratings or
+        pass rates are quoted anywhere in this guide, and no specific laboratory or inspection company is
+        named or endorsed.
+      </p>
+      <ul>
+        <li>SAE J537 — cranking-ampere test method (−18°C, 30 s, 7.2V) that North American CCA claims resolve to.</li>
+        <li>EN 50342 — European starter battery standard, including cold-cranking performance test conditions.</li>
+        <li>JIS D5301 — Japanese automotive lead-acid battery standard (−15°C cranking test).</li>
+        <li>ISO 2859-1 — sampling procedures for inspection by attributes (AQL schemes) used in lot acceptance.</li>
+        <li>Battery Council International — CCA definition and battery group size references.</li>
+        <li>World Battery Hub testing sub-site — <a href="https://testing.worldbatteryhub.com/standards/">standard test condition pages</a> and <a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a> for method detail.</li>
+        <li>World Battery Hub manufacturer sub-site — <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">supplier verification criteria</a> for the evidence a credible factory should hold.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

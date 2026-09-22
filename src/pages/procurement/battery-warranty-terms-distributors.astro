@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Warranty Terms for Distributors: Reading the Fine Print';
+const description = 'A battery warranty is a commercial instrument, not a durability promise. This guide explains warranty terms for distributors — free replacement vs pro-rata, what voids coverage, claim handling and how to cost a warranty into a purchase.';
+const canonical = '/procurement/battery-warranty-terms-distributors/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery warranty terms for distributors and importers',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between free replacement and pro-rata warranty?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A free replacement warranty replaces a failed battery at no charge (possibly with freight conditions) during the free period, then may switch to pro-rata, where the buyer receives credit proportional to the time remaining on the warranty period. Pro-rata compensation shrinks as the battery ages, so two warranties with the same length are not the same deal.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What voids a battery warranty?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Typical exclusions: physical damage, over-discharge or deep-discharge damage from misuse, charging with a wrong-profile charger, modification, water loss from improper use, and applications outside the battery\'s design class (e.g. a starting battery used for cycling). The exclusions are where most distributor claim disputes happen, so they must be read before purchase, not after a failure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who pays return freight on a warranty claim?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the written terms. Many supplier warranties cover the replacement battery but not return freight, which for heavy, hazardous-classed batteries can exceed the value of the credit on a pro-rated claim. Freight responsibility is one of the first clauses a distributor should negotiate and put in writing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How should a distributor cost a warranty into a purchase decision?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Treat the warranty as a cash-flow and liability item: the free-replacement window is a stock and freight obligation, and the pro-rata tail is a credit stream. Compare quotes on expected claim cost — free-replacement length, pro-rata rate, freight terms and claim administration — not on warranty length alone. A shorter free window with freight covered can beat a longer window with freight on the buyer.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Warranty Terms · Last reviewed 2026-09-22</p>
+      <h1>Battery Warranty Terms for Distributors</h1>
+      <p class="lead">
+        The headline "36-month warranty" is the least informative sentence on the quotation. What the
+        distributor actually buys is a bundle of clauses — free-replacement window, pro-rata rate, exclusions,
+        freight rules and a claims process — and the bundle, not the number, determines what a warranty is
+        worth.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Read the warranty as a <strong>cost and liability instrument</strong>, not a
+        durability promise. Compare the <strong>free-replacement window</strong>, the <strong>pro-rata rate</strong>, the
+        <strong>exclusions</strong> and the <strong>freight terms</strong> across suppliers — warranty length alone
+        compares nothing. The consumer-side basics are covered in
+        <a href="/lead-acid/battery-warranty/">how battery warranties work</a>.
+      </div>
+
+      <h2>The two warranty structures: free replacement vs pro-rata</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Free replacement</th>
+            <th>Pro-rata</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>What the buyer receives</strong></td>
+            <td>A replacement battery at no charge (freight terms separate)</td>
+            <td>Credit proportional to the time remaining on the stated period</td>
+          </tr>
+          <tr>
+            <td><strong>When it applies</strong></td>
+            <td>Early life — the opening window of the warranty</td>
+            <td>Later life — after the free window closes, to the end of the period</td>
+          </tr>
+          <tr>
+            <td><strong>Risk to the distributor</strong></td>
+            <td>Stock and freight obligation, in full</td>
+            <td>Partial credit that shrinks with battery age</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Most battery warranties combine both: a free-replacement window (commonly the opening months of the
+        period) followed by a pro-rata tail. The split matters more than the total. A "24-month warranty" that
+        is free replacement for 6 months and pro-rata after, is a different instrument from a "24-month" that
+        is free for 18 — and both are different from a "36-month" that is pro-rata from day one.
+      </p>
+
+      <h2>What voids a warranty — the exclusions</h2>
+      <p>
+        Claim disputes concentrate in the exclusions, not the length. Typical exclusion language covers:
+      </p>
+      <ul>
+        <li><strong>Physical damage</strong> — dropped, crushed, or post-failure damage of any kind.</li>
+        <li><strong>Over-discharge and deep cycling</strong> — using a starting battery for deep-cycle duty, or leaving it discharged. See <a href="/lead-acid/deep-cycle-vs-starting/">starting vs deep-cycle</a> for the duty classes.</li>
+        <li><strong>Wrong charging</strong> — incorrect voltage profile or charger mismatch. See <a href="/lead-acid/agm-charging/">AGM charging requirements</a> for how easily a wrong charger damages a battery.</li>
+        <li><strong>Modification</strong> — opened cases, added acid, replaced terminals.</li>
+        <li><strong>Application mismatch</strong> — the battery installed outside its design class, vibration or temperature envelope.</li>
+      </ul>
+      <p>
+        For a distributor, the exclusions define the <em>claim rejection surface</em> — the set of customer failures
+        the supplier will refuse. A supplier with a long period and broad exclusions is offering less than one
+        with a shorter period and narrow ones, so the two documents must be read side by side.
+      </p>
+
+      <h2>Freight, duty and the claims process</h2>
+      <p>
+        Battery warranty claims carry a logistics cost that is easy to under-price: batteries are heavy,
+        hazardous-classed cargo, so return freight, packaging and (on cross-border claims) duty treatment are
+        real money on every claim. The written terms must state <strong>who pays return freight, who pays the
+        replacement's freight, and who administers the claim</strong> — inspection, decision and credit issuance.
+        A warranty that is silent on freight is a warranty that will be renegotiated on the first claim.
+      </p>
+
+      <h2>Costing a warranty into the purchase decision</h2>
+      <p>
+        The disciplined way to compare warranties across a shortlist is to estimate <strong>expected claim cost per
+        unit sold</strong>, using the supplier's own terms: free-replacement window × expected early-failure rate,
+        plus pro-rata tail × expected later-failure rate, plus freight and administration per claim. The
+        failure-rate inputs come from the supplier's claim history and your own market data — not from the
+        brochure. Where a supplier cannot or will not share claim-rate history, that is itself a datapoint to
+        weigh, alongside the technical evidence in the
+        <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">manufacturer verification criteria</a>.
+      </p>
+      <p class="muted">
+        World Battery Hub publishes no warranty-rate statistics of its own; where a number would be needed,
+        this guide names the input and its source discipline instead of inventing one.
+      </p>
+
+      <h2>Warranty vs service life — the distinction that prevents claims</h2>
+      <p>
+        A warranty is a contractual period, not a prediction of life. A battery's real service life is set by
+        chemistry, climate, duty and maintenance — see <a href="/lead-acid/how-long-does-a-car-battery-last/">how long a car battery lasts</a>
+        and <a href="/lead-acid/heat-degradation/">heat degradation</a> for the physical drivers. Distributors who set
+        customer expectations with the warranty document alone inherit the gap between contract and physics;
+        those who publish honest expected-life guidance next to the warranty convert a liability into a
+        selling point.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>What is the free-replacement window versus the pro-rata tail — and what is the pro-rata credit rate?</li>
+        <li>Which failures are excluded, and how broad is the exclusion language compared with competitors?</li>
+        <li>Who pays return freight and replacement freight, and is it in writing?</li>
+        <li>What is the claim process — inspection, decision time, credit issuance — and who administers it?</li>
+        <li>Will the supplier share claim-rate history by product line, so the warranty can be costed rather than assumed?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between free replacement and pro-rata warranty?</h3>
+      <p>A free replacement warranty replaces a failed battery at no charge (possibly with freight conditions) during the free period, then may switch to pro-rata, where the buyer receives credit proportional to the time remaining on the warranty period. Pro-rata compensation shrinks as the battery ages, so two warranties with the same length are not the same deal.</p>
+      <h3>What voids a battery warranty?</h3>
+      <p>Typical exclusions: physical damage, over-discharge or deep-discharge damage from misuse, charging with a wrong-profile charger, modification, water loss from improper use, and applications outside the battery's design class (e.g. a starting battery used for cycling). The exclusions are where most distributor claim disputes happen, so they must be read before purchase, not after a failure.</p>
+      <h3>Who pays return freight on a warranty claim?</h3>
+      <p>It depends on the written terms. Many supplier warranties cover the replacement battery but not return freight, which for heavy, hazardous-classed batteries can exceed the value of the credit on a pro-rated claim. Freight responsibility is one of the first clauses a distributor should negotiate and put in writing.</p>
+      <h3>How should a distributor cost a warranty into a purchase decision?</h3>
+      <p>Treat the warranty as a cash-flow and liability item: the free-replacement window is a stock and freight obligation, and the pro-rata tail is a credit stream. Compare quotes on expected claim cost — free-replacement length, pro-rata rate, freight terms and claim administration — not on warranty length alone. A shorter free window with freight covered can beat a longer window with freight on the buyer.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Synthesized from warranty practice in the battery trade and consumer-protection background; this
+        guide quotes no supplier warranty documents by name and invents no claim-rate statistics — where a
+        cost input is needed, the method for obtaining it is given instead.
+      </p>
+      <ul>
+        <li>Battery Council International — industry battery terminology and warranty-period conventions.</li>
+        <li>Consumer warranty regulation background — disclosure requirements that shape printed warranty documents.</li>
+        <li>IATA DGR / IMDG Code — hazardous-cargo classification that drives battery return-freight cost.</li>
+        <li>World Battery Hub lead-acid knowledge — <a href="/lead-acid/battery-warranty/">battery warranty basics</a>, <a href="/lead-acid/deep-cycle-vs-starting/">starting vs deep-cycle duty</a>, <a href="/lead-acid/agm-charging/">AGM charging requirements</a>.</li>
+        <li>World Battery Hub manufacturer sub-site — <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">supplier verification criteria</a> for the evidence a credible warranty is built on.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>
