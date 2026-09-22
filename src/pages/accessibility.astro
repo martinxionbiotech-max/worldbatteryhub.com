@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Accessibility';
+const description = 'World Battery Hub works toward WCAG 2.1 Level AA — our accessibility approach, known limitations, and how to report a barrier.';
+const canonical = '/accessibility/';
+
+const jsonLd = [{
+  '@type': 'WebPage',
+  name: 'Accessibility',
+  description,
+  url: 'https://worldbatteryhub.com/accessibility/',
+}];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={jsonLd}
+  dateModified="2026-09-21"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Legal · Last reviewed 2026-09-21</p>
+      <h1>Accessibility</h1>
+      <p class="lead">
+        A reference platform is only useful if it can be read. World Battery Hub aims to keep its content usable
+        by people with a wide range of abilities and with the assistive technology they use.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> We work toward the Web Content Accessibility Guidelines (WCAG) 2.1
+        Level AA for this site, we fix barriers when they are reported, and reporting one is easy — email
+        <a href="mailto:editorial@worldbatteryhub.com">editorial@worldbatteryhub.com</a> with the page and what
+        went wrong.
+      </div>
+
+      <h2>1. Our approach</h2>
+      <ul>
+        <li><strong>Semantic structure.</strong> Pages use headings in order, landmarks, lists and tables with
+            header cells, so screen readers and keyboard navigation can move through a page logically.</li>
+        <li><strong>Keyboard access.</strong> Navigation, links, form-free interactions and our calculators are
+            operable without a mouse where they are interactive.</li>
+        <li><strong>Text alternatives.</strong> Meaningful graphics and diagrams carry text alternatives; purely
+            decorative elements are marked so assistive technology can skip them.</li>
+        <li><strong>Readable presentation.</strong> Content is written in plain language with expandable
+            definitions in the <a href="/glossary/">glossary</a>, and pages are built to remain usable when text
+            is enlarged or the layout reflows to a narrow screen.</li>
+        <li><strong>Colour.</strong> Information is not conveyed by colour alone, and we aim for contrast
+            between text and background that meets the AA threshold.</li>
+        <li><strong>No motion traps.</strong> We do not use autoplaying media, and we do not rely on animation to
+            convey information.</li>
+      </ul>
+
+      <h2>2. Known limitations</h2>
+      <ul>
+        <li><strong>Dense data tables.</strong> Some specification and comparison tables are wide and
+            information-dense. On small screens they may require horizontal scrolling; if a particular table is
+            hard to use with your setup, tell us the page and we will look at an alternative presentation.</li>
+        <li><strong>Calculator tools.</strong> Our calculators are designed to be keyboard-operable and to
+            announce their results, but their usability with every assistive-technology combination has not been
+            exhaustively tested. Feedback here is especially useful.</li>
+        <li><strong>Third-party content.</strong> External sites we link to are outside our control and may not
+            meet the same standard.</li>
+        <li><strong>Older pages.</strong> Pages written before this statement may not yet fully meet it; they are
+            brought into line as they are reviewed.</li>
+      </ul>
+
+      <h2>3. Report an accessibility barrier</h2>
+      <p>
+        Email <a href="mailto:editorial@worldbatteryhub.com">editorial@worldbatteryhub.com</a> and include:
+      </p>
+      <ul>
+        <li>the page address (URL);</li>
+        <li>what you were trying to do;</li>
+        <li>what happened instead — including any error, or the assistive technology, browser and device you
+            were using;</li>
+        <li>your preferred way to receive a reply (for example, a description by email rather than a link).</li>
+      </ul>
+      <p>
+        We treat accessibility reports as editorial issues: we aim to acknowledge them and to fix or work around
+        a barrier as part of our normal review cycle. If we cannot fix it quickly, we will tell you what we can
+        do in the meantime — for example by providing the information in another form.
+      </p>
+
+      <h2>4. Standards reference</h2>
+      <p>
+        We use the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong> as our working
+        target. This page is a statement of intent and practice, not a certification, and it does not claim
+        conformance for every page at every moment.
+      </p>
+
+      <h2>Related policies</h2>
+      <ul>
+        <li><a href="/terms-of-use/">Terms of Use</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/disclaimer/">Disclaimer</a></li>
+        <li><a href="/methodology/">Methodology</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

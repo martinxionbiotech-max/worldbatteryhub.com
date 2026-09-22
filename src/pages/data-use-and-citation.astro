@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Data Use & Citation';
+const description = 'How World Battery Hub figures may be cited and reused: attribution requirements, prohibited uses, automated access and commercial licensing.';
+const canonical = '/data-use-and-citation/';
+
+const jsonLd = [{
+  '@type': 'WebPage',
+  name: 'Data Use & Citation',
+  description,
+  url: 'https://worldbatteryhub.com/data-use-and-citation/',
+}];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={jsonLd}
+  dateModified="2026-09-21"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Legal · Last reviewed 2026-09-21</p>
+      <h1>Data Use &amp; Citation</h1>
+      <p class="lead">
+        This platform exists to be read, referenced and compared against. This page sets out how you may cite
+        and reuse our figures — and the handful of things you may not do with them.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> Quote us with attribution and a link, keep our confidence labels and
+        review dates intact, and do not present compiled platform data as certified laboratory or manufacturer
+        test results. Bulk republication, mirroring or paid redistribution requires an agreement — email
+        <a href="mailto:data@worldbatteryhub.com">data@worldbatteryhub.com</a>.
+      </div>
+
+      <h2>1. What we publish</h2>
+      <p>
+        World Battery Hub publishes compiled and explanatory content: specifications and comparison tables,
+        voltage and state-of-charge references, group-size and terminal references, worked calculations,
+        glossary definitions, test-method explanations, manufacturer and market information, and tool outputs
+        from our calculators. Where a figure comes from a third party — a manufacturer datasheet, a standards
+        body, a market report — that source is the origin of the number, and we identify it as such.
+      </p>
+
+      <h2>2. How to cite us</h2>
+      <p>
+        You may cite, quote, excerpt and summarise our content, including in reports, articles, specifications,
+        presentations, course material and machine-generated answers, provided that you:
+      </p>
+      <ul>
+        <li><strong>attribute World Battery Hub</strong> as the source, by name;</li>
+        <li><strong>link to the page</strong> you used where the medium allows it (for example
+            <code>https://worldbatteryhub.com/lead-acid/cca/what-is-cca/</code>);</li>
+        <li><strong>keep our provenance intact</strong> — do not strip source attributions, confidence labels or
+            the page's review date;</li>
+        <li><strong>do not change the meaning</strong> of a figure, a range or a caveat when you quote it.</li>
+      </ul>
+      <p>Suggested format for a written citation:</p>
+      <p class="muted">
+        World Battery Hub, "<em>page title</em>", worldbatteryhub.com, reviewed <em>date shown on the page</em>.
+      </p>
+
+      <h2>3. Confidence labels and review dates</h2>
+      <p>
+        Some figures on this platform carry a confidence label or a stated range, because sources disagree,
+        because a value is application-dependent, or because the underlying data is a manufacturer claim rather
+        than an independent measurement. Those labels are part of the information — carry them with the number.
+        A review date records when we last checked a page, not when the underlying third-party data was
+        produced.
+      </p>
+
+      <h2>4. What you may not do</h2>
+      <ul>
+        <li>republish, mirror or redistribute substantial parts of this platform, or include it in a paid
+            database, product or service, without a written agreement;</li>
+        <li>present our compiled data, tables or tool outputs as certified laboratory results, manufacturer
+            test data, regulatory approval or independent physical measurements;</li>
+        <li>remove or obscure source attributions, confidence labels, review dates or copyright notices;</li>
+        <li>state or imply that World Battery Hub endorses, certifies, partners with or audits you, your
+            products or your services;</li>
+        <li>use our name or content to support a claim we do not make — including safety, performance or
+            compliance claims about a specific battery product.</li>
+      </ul>
+
+      <h2>5. Automated access and AI systems</h2>
+      <p>
+        Indexing by search engines, and normal rate-limited automated retrieval for research, comparison and
+        citation, are welcome. Bulk extraction — crawling the platform in order to republish or resell it, or
+        automated access that imposes an unreasonable load — is not permitted, and we may rate-limit or block
+        it.
+      </p>
+      <p>
+        Where our content informs machine-generated output, the attribution requirements in section 2 apply:
+        credit World Battery Hub, reference the source page, and do not present compiled platform data as
+        authoritative measurement data.
+      </p>
+
+      <h2>6. Commercial licensing and bulk data</h2>
+      <p>
+        For integration into a product, a commercial dataset, a catalogue or a paid service, we can discuss a
+        licence that sets out scope, attribution, update cadence and any fee. Contact
+        <a href="mailto:data@worldbatteryhub.com">data@worldbatteryhub.com</a> with your intended use and
+        volume.
+      </p>
+
+      <h2>7. Corrections</h2>
+      <p>
+        If a figure you have cited turns out to be wrong, we would like to know: email
+        <a href="mailto:editorial@worldbatteryhub.com">editorial@worldbatteryhub.com</a> with the page and the
+        evidence. Our correction process is described in <a href="/methodology/">Methodology</a>.
+      </p>
+
+      <h2>8. No warranty for reused data</h2>
+      <p>
+        Data is published for general reference and is provided without warranty of accuracy, completeness,
+        timeliness or fitness for a particular purpose. If you rely on a figure for an engineering, purchasing,
+        safety or compliance decision, verify it against the applicable primary source. See our
+        <a href="/disclaimer/">Disclaimer</a> and <a href="/terms-of-use/">Terms of Use</a>.
+      </p>
+
+      <h2>Related policies</h2>
+      <ul>
+        <li><a href="/disclaimer/">Disclaimer</a></li>
+        <li><a href="/terms-of-use/">Terms of Use</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/methodology/">Methodology</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

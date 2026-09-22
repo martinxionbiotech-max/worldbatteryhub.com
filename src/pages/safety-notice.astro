@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Safety & Liability Notice';
+const description = 'Battery safety notice for readers of World Battery Hub: lead-acid and lithium hazards, safe practice, transport and disposal, and where responsibility lies.';
+const canonical = '/safety-notice/';
+
+const jsonLd = [{
+  '@type': 'WebPage',
+  name: 'Safety & Liability Notice',
+  description,
+  url: 'https://worldbatteryhub.com/safety-notice/',
+}];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={jsonLd}
+  dateModified="2026-09-21"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Legal · Last reviewed 2026-09-21</p>
+      <h1>Safety &amp; Liability Notice</h1>
+      <p class="lead">
+        Batteries store large amounts of energy and contain hazardous materials. This notice summarises the
+        main hazards covered on this platform and states where responsibility lies. It is a general notice,
+        not a safety procedure for your installation.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> Work on batteries only if you are qualified to do so, always follow the
+        battery manufacturer's documentation and your jurisdiction's regulations, and where a situation is
+        outside your competence or is already dangerous, stop and get a qualified person or the emergency
+        services involved. Nothing published on World Battery Hub is a substitute for that.
+      </div>
+
+      <h2>1. Responsibility lies with the person doing the work</h2>
+      <p>
+        Sizing, installing, charging, discharging, testing, transporting, storing and disposing of a battery are
+        activities for a competent person, carried out under the manufacturer's instructions, the applicable
+        standards and local law. Information published on this platform is general reference material; it is
+        not a work instruction, a risk assessment or a safety certification for any specific battery or
+        installation.
+      </p>
+      <p>
+        Where our content and the manufacturer's documentation differ, the manufacturer's documentation and the
+        applicable regulations prevail.
+      </p>
+
+      <h2>2. General electrical hazards</h2>
+      <ul>
+        <li><strong>High short-circuit currents.</strong> A battery can deliver very high current into a short
+            circuit. Remove metal jewellery and watches, use insulated tools, and never lay tools or metal
+            objects across terminals.</li>
+        <li><strong>Arc, heat and fire.</strong> A short circuit can arc, melt metal and ignite surrounding
+            material. Work in a ventilated area away from ignition sources.</li>
+        <li><strong>Series strings.</strong> Higher-voltage battery strings (for example in solar, telecom, UPS
+            and traction systems) carry correspondingly greater hazards. Treat any such system as live.</li>
+        <li><strong>Personal protective equipment.</strong> Eye protection and appropriate gloves are basic
+            precautions; for lead-acid work, acid-resistant protection and an eyewash or clean water supply
+            should be available.</li>
+      </ul>
+
+      <h2>3. Lead-acid batteries</h2>
+      <ul>
+        <li><strong>Sulphuric acid.</strong> The electrolyte causes severe burns and permanent eye damage.
+            Handle flooded batteries upright, avoid splashing, and flush any contact with copious clean water —
+            seek medical attention for eye contact.</li>
+        <li><strong>Hydrogen and oxygen.</strong> Charging can release explosive hydrogen. Never charge or work
+            on a lead-acid battery near sparks, open flame, or equipment that can arc, and ventilate the space.
+            Never smoke nearby.</li>
+        <li><strong>Weight and lifting.</strong> Batteries are heavy and awkward — use proper lifting technique
+            or equipment, and secure them against movement.</li>
+        <li><strong>Vent caps and valve-regulated types.</strong> Do not open, tilt beyond the manufacturer's
+            limits, or obstruct the vents of a battery, including AGM and gel types.</li>
+      </ul>
+
+      <h2>4. Lithium-ion and lithium-metal batteries</h2>
+      <ul>
+        <li><strong>Thermal runaway.</strong> A damaged, overcharged, overheated, internally shorted or
+            defective lithium cell can enter thermal runaway — a self-sustaining reaction producing intense heat,
+            fire and toxic gas, which can spread to neighbouring cells and reignite after apparent extinction.</li>
+        <li><strong>Mechanical damage.</strong> Puncturing, crushing or dropping a lithium cell can trigger
+            internal short circuits, sometimes with delayed onset. Do not use a cell that has been damaged.</li>
+        <li><strong>Swelling, smell, heat or noise.</strong> A swollen, hot, hissing or leaking cell is an
+            immediate hazard. Do not charge or use it; isolate it, keep it away from combustible material, and
+            follow the manufacturer's and your fire service's guidance.</li>
+        <li><strong>Charging.</strong> Use only a charger specified for the cell chemistry, voltage and pack
+            configuration. Overcharging a mismatched pack is one of the most common causes of failure.</li>
+        <li><strong>In an emergency.</strong> Raise the alarm and call the emergency services — do not attempt to
+            fight a large lithium battery fire, and do not handle a smoking, hissing or burning pack.</li>
+      </ul>
+
+      <h2>5. Transport</h2>
+      <p>
+        Lithium cells and batteries are regulated dangerous goods for transport (UN 3480/3481 and related
+        packing instructions), and lead-acid batteries are also classified for transport (UN 2794/2800). Air,
+        sea and road shipments are subject to state-of-charge limits, packaging requirements, labelling and
+        documentation. Shipping a battery that is damaged, recalled or unapproved may be prohibited. Confirm the
+        requirement that applies to your shipment and route before dispatch.
+      </p>
+
+      <h2>6. Storage and disposal</h2>
+      <ul>
+        <li>Store batteries according to the manufacturer's temperature and humidity limits, protected from
+            mechanical damage, water ingress and unauthorised access.</li>
+        <li>Do not store damaged lithium cells with combustible material, and keep them away from occupied
+            spaces where your risk assessment requires it.</li>
+        <li>Never dispose of batteries in household waste. Lead-acid batteries and lithium batteries are subject
+            to recycling requirements, and the applicable rules vary by country and region — use an authorised
+            recycler or take-back scheme.</li>
+      </ul>
+
+      <h2>7. No liability for use or misuse</h2>
+      <p>
+        To the fullest extent permitted by applicable law, World Battery Hub and its operators accept no
+        liability for any injury, death, property damage, equipment damage, loss or cost arising from the
+        handling, installation, charging, discharging, testing, transport, storage or disposal of any battery,
+        whether or not it follows information published on this platform. See our
+        <a href="/disclaimer/">Disclaimer</a> for the general limits of what we claim.
+      </p>
+
+      <h2>Related policies</h2>
+      <ul>
+        <li><a href="/disclaimer/">Disclaimer</a></li>
+        <li><a href="/terms-of-use/">Terms of Use</a></li>
+        <li><a href="/basics/battery-safety-basics/">Battery safety basics</a> — the technical explainer.</li>
+        <li><a href="/lithium/thermal-runaway/">Thermal runaway</a> — how it starts and propagates.</li>
+        <li><a href="/methodology/">Methodology</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

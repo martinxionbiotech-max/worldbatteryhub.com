@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Disclaimer';
+const description = 'World Battery Hub publishes battery information for general reference only — not engineering, purchasing, legal or safety advice.';
+const canonical = '/disclaimer/';
+
+const jsonLd = [{
+  '@type': 'WebPage',
+  name: 'Disclaimer',
+  description,
+  url: 'https://worldbatteryhub.com/disclaimer/',
+}];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={jsonLd}
+  dateModified="2026-09-21"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Legal · Last reviewed 2026-09-21</p>
+      <h1>Disclaimer</h1>
+      <p class="lead">
+        World Battery Hub is a battery knowledge and data platform. Everything published here is general
+        reference information about battery technology, specifications, testing and markets — it is not
+        engineering advice, purchasing advice, legal advice or safety certification for your specific
+        application.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> Use this platform to understand batteries, not to certify a design.
+        Verifying a battery for a real installation — sizing, charging, ventilation, protection, transport and
+        disposal — is the responsibility of a qualified engineer and of whoever puts the system into service.
+        Always follow the battery manufacturer's own documentation, which prevails over anything published here.
+      </div>
+
+      <h2>1. Informational purpose only</h2>
+      <p>
+        Content on this platform — including specifications, equations, calculators, test descriptions,
+        manufacturer and market data — is published for general information and education. It is not a
+        substitute for professional engineering judgement, a manufacturer's datasheet, a standards document,
+        or the advice of a qualified person who has examined your application.
+      </p>
+      <p>
+        No content on this platform should be read as an instruction to install, modify, charge, discharge,
+        transport or dispose of a battery in a particular way.
+      </p>
+
+      <h2>2. No engineering, purchasing or professional advice</h2>
+      <p>
+        We do not provide engineering, design, installation, maintenance, transport or purchasing advice, and
+        nothing on this platform creates a professional relationship of any kind. Calculators and worked
+        examples are illustrative models: they use simplified assumptions and are not a substitute for a
+        design review, a load study, a protection study or a compliance assessment for your installation.
+      </p>
+      <p>
+        Where the platform describes products, manufacturers or market data, that is reference information
+        compiled from public sources. It is not a recommendation, endorsement, ranking or suitability
+        statement, and it is not a purchasing decision you should make on this platform's word alone.
+      </p>
+
+      <h2>3. Safety</h2>
+      <p>
+        Batteries store energy and can cause injury, fire, chemical burns or property damage if mishandled.
+        Lithium batteries can enter thermal runaway; lead-acid batteries contain sulphuric acid and can
+        release hydrogen. See our <a href="/safety-notice/">Safety &amp; Liability Notice</a> for the full
+        position.
+      </p>
+      <p>
+        <strong>The manufacturer's documentation governs.</strong> Where anything published on this platform
+        appears to conflict with the battery manufacturer's instructions, a standards document or your
+        jurisdiction's regulations, the manufacturer's instructions and the regulations prevail.
+      </p>
+
+      <h2>4. Accuracy, completeness and change</h2>
+      <p>
+        We research content from public sources and cross-check factual claims, as described in our
+        <a href="/methodology/">Methodology</a>. Even so, battery technology, product lines, standards and
+        regulations change continuously, and figures published by third parties can be revised, superseded or
+        withdrawn. We give <strong>no warranty</strong> that any content is accurate, complete, current or
+        fit for a particular purpose, and we may change, correct or withdraw content at any time.
+      </p>
+      <p>
+        Where figures are uncertain, ranges, approximations or confidence labels are used rather than
+        single-value precision. Values presented without a source or a confidence label should be treated as
+        indicative only.
+      </p>
+
+      <h2>5. Third-party content, trademarks and links</h2>
+      <p>
+        Standards, product names, company names and trademarks referenced on this platform belong to their
+        respective owners and are used for identification, comparison and explanation only. Their use does not
+        imply endorsement, sponsorship, certification or affiliation by either side.
+      </p>
+      <p>
+        Links to external websites are provided for reference. We do not control external content and are not
+        responsible for its accuracy, availability or practices.
+      </p>
+
+      <h2>6. Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, World Battery Hub and its operators are not liable
+        for any direct, indirect, incidental, consequential or special loss — including loss of profit,
+        business, data or goodwill, damage to equipment or property, personal injury, or costs of
+        replacement — arising from the use of, or reliance on, any information published on this platform.
+      </p>
+      <p>
+        Nothing in this disclaimer excludes liability that cannot lawfully be excluded.
+      </p>
+
+      <h2>7. Changes to this disclaimer</h2>
+      <p>
+        We may update this disclaimer as the platform develops. The version published on this page is the
+        current version.
+      </p>
+
+      <h2>Related policies</h2>
+      <ul>
+        <li><a href="/terms-of-use/">Terms of Use</a> — the terms governing your use of this website.</li>
+        <li><a href="/privacy-policy/">Privacy Policy</a> — what we collect and why.</li>
+        <li><a href="/safety-notice/">Safety &amp; Liability Notice</a> — battery hazards and safety responsibilities.</li>
+        <li><a href="/data-use-and-citation/">Data Use &amp; Citation</a> — how our data may be reused and cited.</li>
+        <li><a href="/methodology/">Methodology</a> — how content is researched, verified and corrected.</li>
+      </ul>
+
+      <p class="muted">
+        Questions about this disclaimer, or a correction to report? Email
+        <a href="mailto:editorial@worldbatteryhub.com">editorial@worldbatteryhub.com</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
