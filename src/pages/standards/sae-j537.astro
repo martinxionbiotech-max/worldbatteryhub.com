@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'SAE J537: The North American Cranking Amps Standard';
+const description = 'SAE J537 defines how North American 12V starter batteries are rated — CCA at −18°C (0°F) for 30 seconds to ≥7.2V, CA at 0°C, HCA at 27°C…';
+const canonical = '/standards/sae-j537/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'SAE J537 battery standard',
+  articleSection: 'Battery Standards',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does SAE J537 measure?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cranking performance and capacity of 12V automotive starter batteries. Its CCA test holds the battery at −18°C (0°F) and requires it to deliver a stated current for 30 seconds without dropping below 7.2V (1.2V per cell). It also defines CA (cranking amps at 0°C) and HCA (hot cranking amps at 27°C).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does SAE J537 CCA compare to JIS D5301 CCA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SAE tests colder. JIS D5301 measures CCA at −15°C, SAE J537 at −18°C, so the same battery prints a higher CCA under JIS than under SAE. There is no universal conversion factor — compare figures only within one standard.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between CCA, CA and HCA in SAE J537?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Temperature. CCA is at −18°C (0°F), CA is at 0°C (32°F) and HCA is at 27°C (80°F), all for 30 seconds to the same 7.2V floor. Warmer tests print higher numbers, so CA is typically 20–25% above CCA for the same battery.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Standards · North America · Last reviewed 2026-09-22</p>
+      <h1>SAE J537: The North American Cranking Amps Standard</h1>
+      <p class="lead">
+        SAE J537 is the document behind nearly every CCA number printed on a North American battery. It defines
+        <strong>how</strong> cranking amps are measured — which is why a "600 CCA" label means something precise:
+        <strong>600 amps for 30 seconds at −18°C (0°F), staying at or above 7.2 volts</strong>.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> SAE J537 (Society of Automotive Engineers) is the North American standard for
+        12V lead-acid starter-battery <strong>cranking performance and capacity</strong>. Its three cranking ratings are
+        the same 30-second, ≥7.2V test at three temperatures: <strong>CCA at −18°C (0°F)</strong>, <strong>CA at 0°C (32°F)</strong>
+        and <strong>HCA at 27°C (80°F)</strong>. When a US or Canadian label says "CCA" without qualification, it is a J537 number.
+      </div>
+
+      <h2>What SAE J537 actually tests</h2>
+      <p>
+        The standard's core is the <strong>cold cranking test</strong>: a fully-charged battery is cooled to −18°C, then
+        discharged at the rated current for 30 seconds. It passes if the terminal voltage stays at or above
+        <strong>7.2V</strong> — 1.2 volts per cell, the floor below which a starter can no longer reliably turn an engine.
+        The rating is the <em>largest current the battery can hold at that floor for that time</em>.
+      </p>
+      <p>
+        J537 also defines the <strong>20-hour capacity test</strong> (the "Ah" number, discharged over 20 hours to a
+        specified end voltage) and the <strong>reserve capacity test</strong> — minutes at 25 amps until the battery
+        drops below 10.5V. CCA, Ah and reserve capacity are three different measurements of the same battery; see
+        <a href="/lead-acid/cca-vs-ah/">CCA vs Ah</a> and <a href="/lead-acid/reserve-capacity/">reserve capacity explained</a>.
+      </p>
+
+      <h2>The temperature ladder: CCA, CA, HCA</h2>
+      <table>
+        <thead>
+          <tr><th>Rating</th><th>Temperature</th><th>Test</th><th>Relative number</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>CCA</strong> (cold cranking amps)</td><td>−18°C (0°F)</td><td>30 s, ≥7.2V</td><td>Baseline</td></tr>
+          <tr><td><strong>CA</strong> (cranking amps)</td><td>0°C (32°F)</td><td>30 s, ≥7.2V</td><td><strong>Higher</strong> (~20–25% above CCA)</td></tr>
+          <tr><td><strong>HCA</strong> (hot cranking amps)</td><td>27°C (80°F)</td><td>30 s, ≥7.2V</td><td><strong>Highest</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Same battery, same 30-second floor, three temperatures — the warmer the test, the bigger the printed number.
+        See <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA vs MCA</a> for the full temperature ladder.
+      </p>
+
+      <h2>SAE J537 vs EN 50342 vs JIS D5301</h2>
+      <p>
+        "CCA" is a number under a method, and the methods differ. SAE J537 and
+        <a href="/standards/en-50342/">EN 50342</a> both test at −18°C, but EN uses a 10-second discharge with a 7.5V
+        cut-off, while SAE holds 30 seconds to 7.2V — small differences that shift the printed number.
+        <a href="/standards/jis-d5301/">JIS D5301</a> tests at −15°C, which is why JIS figures read higher for the same
+        physical battery. The practical rule: <strong>compare SAE to SAE, EN to EN, JIS to JIS</strong>, and never
+        cross-convert with a fixed multiplier (see <a href="/lead-acid/cca/what-is-cca/">what CCA is</a> for the full comparison).
+      </p>
+
+      <h2>How the CCA test is run</h2>
+      <p>
+        The test sequence is: fully charge the battery → cool it to −18°C in a temperature-controlled chamber (usually
+        with an air bath) → record the open-circuit voltage → discharge at the rated current for 30 seconds while
+        logging terminal voltage every second → pass if the voltage never falls below 7.2V. The same procedure runs at
+        0°C for CA and 27°C for HCA. The full step-by-step is on the testing hub's
+        <a href="https://testing.worldbatteryhub.com/cca-testing/">how CCA is tested</a> page.
+      </p>
+
+      <h2>What J537 governs beyond cranking</h2>
+      <ul>
+        <li><strong>Capacity (C20)</strong> — ampere-hours over a 20-hour discharge, the "Ah" figure on the label.</li>
+        <li><strong>Reserve capacity</strong> — minutes of 25A discharge before the battery reaches 10.5V.</li>
+        <li><strong>Charge acceptance</strong> — how readily the battery takes charge, which matters for start-stop duty.</li>
+        <li><strong>Life/endurance requirements</strong> — cycle and vibration expectations for starter service.</li>
+      </ul>
+      <p>
+        BCI group sizing (Group 24, 31, 65…) lives beside J537: the group number fixes the physical envelope and
+        terminal layout, and J537 fixes how the ratings inside that envelope are measured. Both are needed to read a
+        North American label completely — see <a href="/lead-acid/battery-group-sizes/">battery group sizes explained</a>.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>SAE J537 is the <strong>North American</strong> starter-battery standard: CCA at −18°C, 30 s, ≥7.2V.</li>
+          <li>CA (0°C) and HCA (27°C) are the same test warmer — <strong>the warmer the test, the higher the number</strong>.</li>
+          <li>J537 also defines <strong>capacity (Ah), reserve capacity and charge acceptance</strong> — not cranking alone.</li>
+          <li>An unqualified "CCA" in North America is a J537 figure; <strong>never compare it to a JIS or EN figure</strong> without re-testing.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the datasheet state the rating standard — SAE J537 — or just print "CCA" with no basis?</li>
+        <li>Is the claimed CCA verified by an independent lab test, not only the manufacturer's self-declaration? See <a href="/procurement/verify-cca-claims-bulk-purchase/">verifying CCA claims in bulk purchase</a>.</li>
+        <li>When comparing an Asian supplier's JIS-rated battery against a North American SAE-rated spec, is the test temperature difference (−15°C vs −18°C) being handled?</li>
+        <li>Is the quoted capacity tied to the C20 rate, and reserve capacity listed for fleet vehicles with engine-off loads?</li>
+        <li>Does the supplier's <a href="/procurement/how-to-read-battery-datasheet/">datasheet</a> give the test standard per rating, or one merged number?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What does SAE J537 measure?</h3>
+      <p>Cranking performance and capacity of 12V automotive starter batteries. Its CCA test holds the battery at −18°C (0°F) and requires it to deliver a stated current for 30 seconds without dropping below 7.2V (1.2V per cell). It also defines CA (cranking amps at 0°C) and HCA (hot cranking amps at 27°C).</p>
+      <h3>How does SAE J537 CCA compare to JIS D5301 CCA?</h3>
+      <p>SAE tests colder. JIS D5301 measures CCA at −15°C, SAE J537 at −18°C, so the same battery prints a higher CCA under JIS than under SAE. There is no universal conversion factor — compare figures only within one standard.</p>
+      <h3>What is the difference between CCA, CA and HCA in SAE J537?</h3>
+      <p>Temperature. CCA is at −18°C (0°F), CA is at 0°C (32°F) and HCA is at 27°C (80°F), all for 30 seconds to the same 7.2V floor. Warmer tests print higher numbers, so CA is typically 20–25% above CCA for the same battery.</p>
+      <h3>Is SAE J537 the same as BCI group sizing?</h3>
+      <p>No. BCI group numbers (Group 24, 31, 65…) define the physical case envelope and terminal layout; SAE J537 defines how the electrical ratings are tested. A complete North American battery specification needs both: the group for fit, the standard for ratings.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the standard's published scope and the testing references on the World Battery Hub testing
+        hub; where sources differ on fine detail, the difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>SAE J537 — North American cranking-ampere test method; CCA (−18°C, 30 s, ≥7.2V), CA (0°C), HCA (27°C).</li>
+        <li><a href="https://testing.worldbatteryhub.com/standards/sae-j537/">Testing hub — SAE J537 reference page</a> and <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testing procedure</a>.</li>
+        <li>Battery Council International (BCI) — CCA definition and battery-group reference used alongside J537.</li>
+        <li>EN 50342 and JIS D5301 scopes — for the cross-standard comparison table.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

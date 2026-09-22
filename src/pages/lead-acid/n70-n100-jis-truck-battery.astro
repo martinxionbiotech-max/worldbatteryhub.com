@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'N70 vs N100 Battery: JIS Truck Battery Sizes Compared';
+const description = 'N70 (65G24) and N100 (95E41) compared — N70 is ~260 × 173 × 222 mm with ~70 Ah and ~700 CCA (JIS); N100 is ~408 × 172 × 213 mm with ~100 Ah and ~800 CCA.…';
+const canonical = '/lead-acid/n70-n100-jis-truck-battery/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'N70 vs N100 JIS battery',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between N70 and N100 batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Length, capacity and duty. Both are JIS D5301 12V lead-acid batteries with JIS type A (thin tapered) posts, but N100 is about 148 mm longer than N70 — roughly 408 × 172 × 213 mm versus 260 × 173 × 222 mm — and typically carries about 100 Ah and 800 CCA versus about 70 Ah and 700 CCA for N70. N70 serves passenger cars and light trucks; N100 is a heavy-duty group for trucks and buses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I replace an N70 with an N100?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if the tray, hold-down and cables accept the ~148 mm longer N100 case. The extra capacity and CCA are real, but the physical fit decides. Terminals are the same JIS type A posts, so the cable clamps match — the tray length is the usual blocker.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the N70 CCA figure comparable to a BCI Group 65 CCA figure?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not directly. N70 CCA is measured under JIS D5301 at −15°C, while BCI groups are typically rated under SAE J537 at −18°C. A warmer test prints a higher number, so JIS CCA and SAE CCA must be compared within their own standards, not across them.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · JIS Battery Groups · Last reviewed 2026-09-22</p>
+      <h1>N70 vs N100 Battery: JIS Truck Battery Sizes Compared</h1>
+      <p class="lead">
+        N70 and N100 are the two workhorse groups of the JIS <strong>N-series</strong> — the Japanese standard's
+        heavy-duty battery family. N70 covers passenger cars and light trucks; N100 steps up to trucks and buses.
+        The difference is mostly <strong>~148 mm of case length</strong>, which buys the N100 roughly
+        <strong>30 Ah more capacity</strong> and <strong>~100 A more CCA</strong>.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <a href="https://data.worldbatteryhub.com/battery-groups/n70/">N70</a> (alias
+        65G24) is about <strong>260 × 173 × 222 mm</strong> with typical ratings of <strong>~70 Ah and ~700 CCA (JIS D5301)</strong>;
+        <a href="https://data.worldbatteryhub.com/battery-groups/n100/">N100</a> (alias 95E41) is about <strong>408 × 172 × 213 mm</strong>
+        with <strong>~100 Ah and ~800 CCA</strong>. Both are 12V flooded lead-acid with JIS type A (thin tapered) terminals —
+        so the upgrade N70 → N100 is decided by <strong>whether the battery tray accepts the longer case</strong>, not by the terminals.
+      </div>
+
+      <h2>Side-by-side comparison</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>N70 (65G24)</th><th>N100 (95E41)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Standard</strong></td><td>JIS D5301</td><td>JIS D5301</td></tr>
+          <tr><td><strong>Dimensions</strong></td><td>~260 × 173 × 222 mm</td><td>~408 × 172 × 213 mm</td></tr>
+          <tr><td><strong>Capacity (typical)</strong></td><td>~70 Ah (20h)</td><td>~100 Ah (20h)</td></tr>
+          <tr><td><strong>CCA (typical)</strong></td><td>~700 A (JIS, −15°C)</td><td>~800 A (JIS, −15°C)</td></tr>
+          <tr><td><strong>Terminals</strong></td><td>JIS type A (thin tapered post)</td><td>JIS type A (large taper)</td></tr>
+          <tr><td><strong>Weight (typical)</strong></td><td>~16–18 kg</td><td>~25–28 kg</td></tr>
+          <tr><td><strong>Typical duty</strong></td><td>Passenger cars, light trucks</td><td>Trucks, buses</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Cross-verified typical ranges from the World Battery Hub data section; a specific battery's datasheet wins.
+        CCA figures are JIS D5301 (−15°C) — compare only within one standard (see
+        <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>). For the N-series' bigger siblings, see
+        <a href="/lead-acid/truck-battery/">the truck battery guide</a>.
+      </p>
+
+      <h2>How JIS N-series naming works</h2>
+      <p>
+        In the JIS system, the letter marks the performance class and the number roughly tracks the 20-hour capacity:
+        <strong>N</strong> is the heavy-duty class, and the figure approximates Ah — N70 ≈ 70 Ah, N100 ≈ 100 Ah, N120 ≈ 120 Ah,
+        <a href="https://data.worldbatteryhub.com/battery-groups/n150/">N150</a> ≈ 135 Ah, and
+        <a href="https://data.worldbatteryhub.com/battery-groups/n200/">N200</a> ≈ 200 Ah. The second code you see on labels —
+        65G24 for N70, 95E41 for N100 — is the case-size reference used in parts catalogues across Asia.
+      </p>
+      <p>
+        The naming matters because JIS codes are <em>capacity-class labels, not physical-dimension labels</em> the way
+        BCI group numbers are. Two "N70" batteries from different makers share the footprint, but a JIS number says
+        little about terminal orientation or hold-down style — those come from the vehicle's original fitment, which is
+        why <a href="/lead-acid/battery-group-sizes/">battery group size</a> checks always start from the tray.
+      </p>
+
+      <h2>The physical difference: ~148 mm of length</h2>
+      <p>
+        Both groups share roughly the same width (~172 mm) and height (~213–222 mm) with JIS pencil-type posts; the
+        entire step from N70 to N100 is <strong>length</strong> — about 148 mm (roughly 6 inches). The longer case holds
+        more plate area, and the extra lead is the whole source of the N100's higher Ah, higher CCA and heavier weight.
+      </p>
+      <p>
+        The fit rule follows directly: <strong>an N100 drops into an N70 tray only if ~148 mm of length is spare</strong>.
+        Many light trucks are offered with both groups from the factory — same tray, alternate hold-down position — but
+        plenty are not. Measure the tray, don't trust the catalogue: see
+        <a href="/lead-acid/battery-size-selection/">what size battery my car needs</a>.
+      </p>
+
+      <h2>JIS CCA reads higher — compare within the standard</h2>
+      <p>
+        The single most misread number on these labels is CCA. <a href="/standards/jis-d5301/">JIS D5301</a> measures
+        cold cranking amps at <strong>−15°C</strong>, while
+        <a href="/standards/sae-j537/">SAE J537</a> and <a href="/standards/en-50342/">EN 50342</a> test at −18°C. A
+        warmer test prints a higher number, so an "800 CCA" N100 is <em>not</em> the same test as an "800 CCA" BCI Group 65.
+        Read JIS to JIS, SAE to SAE — there is no universal conversion factor (see
+        <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA vs MCA</a> for the temperature ladder).
+      </p>
+
+      <h2>Which one fits your duty?</h2>
+      <ul>
+        <li><strong>Passenger car or light truck, 12V</strong> — N70 is the common Asian-OEM fitment; match the original spec rather than upgrading for its own sake.</li>
+        <li><strong>Medium truck, bus or heavy accessory load</strong> — N100 and up; the extra 30 Ah buys real endurance for lift gates, lights and sleeper-cab loads with the engine off.</li>
+        <li><strong>24V systems</strong> — both groups are used in series pairs on heavy trucks; pairs must be matched for chemistry, capacity and age (see the <a href="/lead-acid/truck-battery/">truck battery</a> page's 12V-vs-24V rule).</li>
+        <li><strong>Deep cycling duty</strong> — neither N-group is a deep-cycle battery; sustained cycling belongs to a <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> design, not a cranking N-series unit.</li>
+      </ul>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>N70 and N100 differ in <strong>length</strong> — ~260 mm vs ~408 mm — with the same JIS type A terminal family.</li>
+          <li>The extra length buys <strong>~30 Ah and ~100 CCA</strong> (typical): a genuine step-up for trucks and buses.</li>
+          <li><strong>Tray fit decides</strong> the upgrade; terminals matching does not make it fit.</li>
+          <li>JIS CCA (−15°C) prints higher than SAE/EN CCA (−18°C) — <strong>compare only within one standard</strong>.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the JIS code (N70 / N100) plus the case-size alias (65G24 / 95E41) confirmed against the vehicle's original fitment?</li>
+        <li>Are quoted CCA figures tied to a named standard — JIS D5301 at −15°C, not a bare number?</li>
+        <li>Is the terminal type (JIS type A thin post vs large taper) and polarity position verified for the fleet's cables?</li>
+        <li>For 24V truck fleets: does the supplier quote matched pairs, and is pair replacement policy in the contract?</li>
+        <li>Do quotations across suppliers compare <a href="/procurement/battery-quotation-comparison/">like for like</a> — same group, same CCA standard, same technology?</li>
+        <li>See the JIS/DIN/BCI cross-reference trap covered in <a href="/procurement/spec-comparison-jis-din-bci-buyers/">the buyer's spec comparison guide</a>.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between N70 and N100 batteries?</h3>
+      <p>Length, capacity and duty. Both are JIS D5301 12V lead-acid batteries with JIS type A (thin tapered) posts, but N100 is about 148 mm longer than N70 — roughly 408 × 172 × 213 mm versus 260 × 173 × 222 mm — and typically carries about 100 Ah and 800 CCA versus about 70 Ah and 700 CCA for N70. N70 serves passenger cars and light trucks; N100 is a heavy-duty group for trucks and buses.</p>
+      <h3>Can I replace an N70 with an N100?</h3>
+      <p>Only if the tray, hold-down and cables accept the ~148 mm longer N100 case. The extra capacity and CCA are real, but the physical fit decides. Terminals are the same JIS type A posts, so the cable clamps match — the tray length is the usual blocker.</p>
+      <h3>Is the N70 CCA figure comparable to a BCI Group 65 CCA figure?</h3>
+      <p>Not directly. N70 CCA is measured under JIS D5301 at −15°C, while BCI groups are typically rated under SAE J537 at −18°C. A warmer test prints a higher number, so JIS CCA and SAE CCA must be compared within their own standards, not across them.</p>
+      <h3>What does the second code (65G24, 95E41) mean?</h3>
+      <p>It is the JIS case-size reference used in Asian parts catalogues. 65G24 is the N70 case; 95E41 is the N100 case. Catalogues may list either the N-code or the case code, and both refer to the same physical battery footprint.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the World Battery Hub entity database and public references; where sources differ, the
+        difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/n70/">N70 reference page</a> and <a href="https://data.worldbatteryhub.com/battery-groups/n100/">N100 reference page</a>.</li>
+        <li>JIS D5301 — Japanese automotive lead-acid battery standard; N-series group codes and CCA test condition (−15°C).</li>
+        <li>Manufacturer datasheets (GS Yuasa, Panasonic, AtlasBX) — N70/N100 dimensions, capacity and CCA cross-checks.</li>
+        <li><a href="https://manufacturer.worldbatteryhub.com/korean-japanese-battery-manufacturers/">Korean &amp; Japanese battery manufacturers</a> — JIS-series product line references.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

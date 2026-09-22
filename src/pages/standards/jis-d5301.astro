@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'JIS D5301: The Japanese Automotive Battery Standard';
+const description = 'JIS D5301 is Japan\u2019s automotive lead-acid battery standard — CCA measured at −15°C (warmer than the −18°C used by EN and SAE), plus the N-series codes and…';
+const canonical = '/standards/jis-d5301/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'JIS D5301 battery standard',
+  articleSection: 'Battery Standards',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why do JIS D5301 CCA numbers read higher than SAE or EN?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Temperature. JIS D5301 measures cold cranking amps at −15°C, while SAE J537 and EN 50342 test at −18°C. A warmer test prints a higher number for the same physical battery, so a JIS-rated battery is not "stronger" — it was tested warmer. There is no universal conversion factor.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the N-series codes in JIS D5301?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The N-series is JIS D5301\u2019s heavy-duty battery class, where the number roughly tracks the 20-hour capacity: N70 ≈ 70 Ah, N100 ≈ 100 Ah, N120 ≈ 120 Ah, N150 ≈ 135 Ah, N200 ≈ 200 Ah. Labels also carry case-size aliases such as 65G24 (N70) and 95E41 (N100) used in Asian parts catalogues.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What terminals do JIS batteries use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'JIS type A pencil terminals — thin tapered posts, narrower than the SAE posts used on BCI-group batteries — plus JIS type B variations. The terminals are why a JIS battery often needs post adapters to fit SAE-style cable clamps, and why the terminal type must be checked before cross-substitution.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Standards · Japan / Asia · Last reviewed 2026-09-22</p>
+      <h1>JIS D5301: The Japanese Automotive Battery Standard</h1>
+      <p class="lead">
+        JIS D5301 is the Japanese standard behind every battery label in the JIS world — the N-series truck codes, the
+        B/D passenger-car sizes, and the CCA figures that Asian suppliers print. Its one structural quirk shapes the
+        entire Asian battery trade: <strong>it tests CCA at −15°C</strong>, warmer than the −18°C used by SAE and EN.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> JIS D5301 is the Japanese industrial standard for automotive lead-acid batteries.
+        It defines the <strong>group codes</strong> (N-series heavy-duty, plus passenger-car sizes), the
+        <strong>terminal types</strong> (JIS type A thin pencil posts), and the electrical ratings — including
+        <strong>CCA measured at −15°C</strong>. Because −15°C is warmer than SAE/EN's −18°C, a JIS CCA figure
+        <em>reads higher</em> for the same physical battery — the source of the classic JIS-vs-EN label trap.
+      </div>
+
+      <h2>The −15°C difference, explained</h2>
+      <p>
+        <a href="/standards/sae-j537/">SAE J537</a> and <a href="/standards/en-50342/">EN 50342</a> both cold-soak the
+        battery to <strong>−18°C</strong> before the cranking test. JIS D5301 uses <strong>−15°C</strong>. Three degrees
+        sounds trivial, but at the bottom of the electrolyte's working range it moves the printed number noticeably —
+        the whole reason a "600 CCA (JIS)" battery and a "540 CCA (EN)" battery can be the <em>same physical unit</em>.
+      </p>
+      <p>
+        The honest way to read two labels: <strong>compare JIS to JIS and EN to EN</strong>. There is no fixed conversion
+        factor — the gap depends on the battery's construction. The full temperature ladder and the DIN case (9.0V
+        cut-off, prints lower still) are in <a href="/lead-acid/cca/what-is-cca/">what CCA is</a> and
+        <a href="/lead-acid/cca/cca-vs-ca/">CCA vs CA vs MCA</a>.
+      </p>
+
+      <h2>The N-series: heavy-duty codes that track capacity</h2>
+      <table>
+        <thead>
+          <tr><th>JIS code</th><th>Case alias</th><th>Typical capacity</th><th>Typical CCA (JIS)</th><th>Typical duty</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://data.worldbatteryhub.com/battery-groups/n70/">N70</a></td><td>65G24</td><td>~70 Ah</td><td>~700 A</td><td>Cars, light trucks</td></tr>
+          <tr><td><a href="https://data.worldbatteryhub.com/battery-groups/n100/">N100</a></td><td>95E41</td><td>~100 Ah</td><td>~800 A</td><td>Trucks, buses</td></tr>
+          <tr><td><a href="https://data.worldbatteryhub.com/battery-groups/n120/">N120</a></td><td>115F51</td><td>~120 Ah</td><td>~900 A</td><td>Trucks, buses</td></tr>
+          <tr><td><a href="https://data.worldbatteryhub.com/battery-groups/n150/">N150</a></td><td>145G51</td><td>~135 Ah</td><td>~900 A</td><td>Heavy trucks</td></tr>
+          <tr><td><a href="https://data.worldbatteryhub.com/battery-groups/n200/">N200</a></td><td>190H52</td><td>~200 Ah</td><td>~1100 A</td><td>Heavy trucks, machinery</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Typical values per the World Battery Hub data section; a specific datasheet wins. For the N70↔N100 step-up in
+        detail, see <a href="/lead-acid/n70-n100-jis-truck-battery/">N70 vs N100</a> and the
+        <a href="/lead-acid/truck-battery/">truck battery guide</a>.
+      </p>
+
+      <h2>JIS terminals and group naming</h2>
+      <p>
+        JIS batteries use <strong>type A pencil terminals</strong> — thin, tapered posts noticeably narrower than the
+        SAE posts on BCI groups — with type B variants on some sizes. The terminals matter in two directions: JIS
+        cables clamp loosely onto SAE posts, and SAE clamps sit loose on JIS posts, so cross-substitution usually needs
+        adapters or new clamps. See <a href="/lead-acid/battery-terminal-types/">battery terminal types</a> for the
+        SAE/JIS/stud/side landscape.
+      </p>
+      <p>
+        Passenger-car JIS codes work differently from the N-series: codes like 55B24 and 75D23 encode the performance
+        class (B, D, E…) and the case footprint, not the capacity directly. That is why a JIS label needs its
+        <a href="/lead-acid/battery-group-sizes/">group-size</a> cross-reference read properly — the code is a class,
+        not a dimension, and buyers who treat it as one end up with the wrong tray fit.
+      </p>
+
+      <h2>Where JIS D5301 sits in the world</h2>
+      <p>
+        JIS D5301 is the reference for the Japanese domestic market and much of Asia — Japanese OEM fitments, Korean and
+        Japanese aftermarket lines, and a large share of batteries exported from Asian manufacturers. It exists in
+        parallel with Korea's equivalent sizing habits and the BCI system used in North America, which is why an Asian
+        export catalogue often prints <strong>two CCA columns</strong> — JIS and SAE/EN — for the same battery. The
+        cross-reference discipline for buyers is covered in
+        <a href="/procurement/spec-comparison-jis-din-bci-buyers/">the JIS/DIN/BCI spec comparison guide</a>.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>JIS D5301 is <strong>Japan's automotive lead-acid standard</strong> — N-series heavy-duty codes, B/D passenger codes, JIS type A terminals.</li>
+          <li>Its CCA test runs at <strong>−15°C</strong>, warmer than SAE/EN (−18°C), so JIS figures <strong>read higher</strong> for the same battery.</li>
+          <li>N-series numbers <strong>track capacity</strong> (N70 ≈ 70 Ah, N200 ≈ 200 Ah); passenger codes are performance-class + case codes.</li>
+          <li><strong>Never convert JIS CCA to SAE/EN CCA</strong> with a fixed multiplier — compare within one standard.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>When a supplier quotes CCA, does it state "JIS D5301 (−15°C)" or is a JIS figure being presented as if it were SAE/EN?</li>
+        <li>Is the JIS group code plus its case alias (N70/65G24, N100/95E41) both on the datasheet and the pallet label?</li>
+        <li>Are JIS type A terminals acceptable for the fleet, or do SAE-clamped vehicles need adapters — a hidden fitting cost?</li>
+        <li>Does the quotation compare JIS-rated batteries <a href="/procurement/battery-quotation-comparison/">like for like</a> with EN/SAE-rated ones, or mix standards across lines?</li>
+        <li>For bulk Asian sourcing, is the CCA standard discrepancy flagged in the contract and verified by <a href="/procurement/verify-cca-claims-bulk-purchase/">batch testing</a>?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why do JIS D5301 CCA numbers read higher than SAE or EN?</h3>
+      <p>Temperature. JIS D5301 measures cold cranking amps at −15°C, while SAE J537 and EN 50342 test at −18°C. A warmer test prints a higher number for the same physical battery, so a JIS-rated battery is not "stronger" — it was tested warmer. There is no universal conversion factor.</p>
+      <h3>What are the N-series codes in JIS D5301?</h3>
+      <p>The N-series is JIS D5301's heavy-duty battery class, where the number roughly tracks the 20-hour capacity: N70 ≈ 70 Ah, N100 ≈ 100 Ah, N120 ≈ 120 Ah, N150 ≈ 135 Ah, N200 ≈ 200 Ah. Labels also carry case-size aliases such as 65G24 (N70) and 95E41 (N100) used in Asian parts catalogues.</p>
+      <h3>What terminals do JIS batteries use?</h3>
+      <p>JIS type A pencil terminals — thin tapered posts, narrower than the SAE posts used on BCI-group batteries — plus JIS type B variations. The terminals are why a JIS battery often needs post adapters to fit SAE-style cable clamps, and why the terminal type must be checked before cross-substitution.</p>
+      <h3>Is JIS D5301 the same as the Korean battery sizing system?</h3>
+      <p>Not identical. Korean aftermarket batteries broadly follow JIS-style sizing habits and often print both JIS and SAE/EN ratings, but the formal standard for Korea is separate. For cross-border buying, treat each label's stated standard as the authority for its own numbers.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the standard's published scope and the entity references on the World Battery Hub data
+        section; where sources differ on fine detail, the difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>JIS D5301 — Japanese automotive lead-acid battery standard; N-series codes, terminals, CCA at −15°C.</li>
+        <li><a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">Testing hub — JIS D5301 reference page</a>.</li>
+        <li>World Battery Hub data section — <a href="https://data.worldbatteryhub.com/battery-groups/n100/">N100</a>, <a href="https://data.worldbatteryhub.com/battery-groups/n150/">N150</a>, <a href="https://data.worldbatteryhub.com/battery-groups/n200/">N200</a> group pages.</li>
+        <li>Manufacturer datasheets (GS Yuasa, Panasonic, AtlasBX, Rocket) — JIS group dimensions, capacities and dual-standard CCA printing.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

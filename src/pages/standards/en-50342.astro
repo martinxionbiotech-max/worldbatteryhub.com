@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'EN 50342: The European Starter Battery Standard';
+const description = 'EN 50342 governs European lead-acid starter batteries — capacity (C20), CCA at −18°C, charge acceptance and cycle endurance for SLI, EFB and…';
+const canonical = '/standards/en-50342/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'EN 50342 battery standard',
+  articleSection: 'Battery Standards',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does EN 50342 cover?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'European lead-acid starter batteries of all three technologies — flooded SLI, EFB and AGM. It defines capacity (C20), cold cranking performance at −18°C, charge acceptance and cycle endurance, and sets the dimensional and terminal requirements that the L1–L6 battery case sizes follow.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does EN 50342 CCA differ from SAE J537 CCA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both test at −18°C, but EN 50342 discharges for 10 seconds with a 7.5V cut-off while SAE J537 holds 30 seconds to 7.2V. The different duration and floor mean the printed numbers are not identical for the same battery, so EN and SAE figures should not be cross-converted with a fixed multiplier.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do start-stop batteries use EN 50342?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — EFB and AGM batteries for start-stop vehicles are rated under EN 50342, which includes the charge-acceptance and cycle-endurance (micro-cycling) tests that start-stop duty requires, beyond the standard cranking and capacity ratings.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Standards · Europe · Last reviewed 2026-09-22</p>
+      <h1>EN 50342: The European Starter Battery Standard</h1>
+      <p class="lead">
+        EN 50342 is the European standard behind every starter battery sold with an <strong>L-size code</strong> — H6, H7,
+        H8 and the rest. It defines the capacity, cold-cranking, charge-acceptance and endurance tests that a European
+        label's numbers are measured under, across all three technologies: <strong>flooded SLI, EFB and AGM</strong>.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> EN 50342 is the European lead-acid starter-battery standard. Its headline tests:
+        <strong>capacity C20</strong> (Ah over a 20-hour discharge), <strong>cold cranking at −18°C</strong> (a 10-second discharge
+        with a 7.5V cut-off), <strong>charge acceptance</strong> and <strong>cycle endurance</strong>. It also anchors the physical
+        <strong>L1–L6 (and H-series)</strong> case dimensions and terminal layouts that European vehicles are designed around.
+      </div>
+
+      <h2>What EN 50342 tests, rating by rating</h2>
+      <table>
+        <thead>
+          <tr><th>Rating</th><th>What EN 50342 measures</th><th>Why it matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Capacity (C20)</strong></td><td>Ah delivered over a 20-hour discharge to the specified end voltage</td><td>The stored-energy figure; the "70 Ah" on the label</td></tr>
+          <tr><td><strong>Cold cranking (CCA)</strong></td><td>Current for 10 s at −18°C with a 7.5V cut-off</td><td>Cold-start power; the "760 A (EN)" figure</td></tr>
+          <tr><td><strong>Charge acceptance</strong></td><td>How much charge the battery absorbs under specified conditions</td><td>Critical for start-stop regenerative braking duty</td></tr>
+          <tr><td><strong>Cycle endurance</strong></td><td>Life under repeated micro-cycling and specified duty cycles</td><td>Durability for EFB/AGM in start-stop cars</td></tr>
+          <tr><td><strong>Water consumption / maintenance</strong></td><td>Electrolyte loss limits over the test regime</td><td>Distinguishes maintenance-free from serviceable designs</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Rating names per the standard's published scope; a specific battery's datasheet states which tests its figures
+        come from. CCA context: <a href="/lead-acid/cca/what-is-cca/">what CCA is</a>.
+      </p>
+
+      <h2>EN 50342 vs SAE J537: same temperature, different test</h2>
+      <p>
+        The common trap is assuming EN and SAE CCA are interchangeable because both test at −18°C. They are not:
+        <a href="/standards/sae-j537/">SAE J537</a> discharges for <strong>30 seconds with a 7.2V floor</strong>, while
+        EN 50342 uses <strong>10 seconds with a 7.5V cut-off</strong>. The shorter discharge and higher floor print a
+        different number for the same physical battery — which is why European labels say "CCA (EN)" and North American
+        labels mean "CCA (SAE)". Read the qualifier, then compare within it.
+      </p>
+      <p>
+        Against <a href="/standards/jis-d5301/">JIS D5301</a> the gap is bigger still: JIS tests at −15°C, warmer than
+        both, so JIS figures read higher again. The full three-way picture with DIN is in
+        <a href="/lead-acid/cca/what-is-cca/">the CCA explainer</a>'s comparison table.
+      </p>
+
+      <h2>The L-series: where EN 50342 meets physical fit</h2>
+      <p>
+        EN 50342 is not only electrical — it anchors the <strong>L1–L6 case family</strong> that European cars are built
+        around, including their dimensions, hold-down features and terminal positions. The familiar groups map onto it:
+        <a href="https://data.worldbatteryhub.com/battery-groups/h6/">H6</a> (L2/LN2),
+        <a href="https://data.worldbatteryhub.com/battery-groups/h7/">H7</a> (L4/LN4),
+        <a href="https://data.worldbatteryhub.com/battery-groups/h8/">H8</a> (L5/LB5), and so on. That is why a European
+        replacement battery is specified by <em>both</em> its L-code (fit) and its EN ratings (performance) — see
+        <a href="/lead-acid/battery-group-sizes/">battery group sizes explained</a> and the
+        <a href="/lead-acid/h7-h8-battery/">H7 vs H8</a> comparison.
+      </p>
+
+      <h2>EFB and AGM: the start-stop provisions</h2>
+      <p>
+        EN 50342 is the standard that formally separates the three starter technologies. Beyond cranking and capacity,
+        it defines the <strong>charge acceptance</strong> and <strong>micro-cycle endurance</strong> requirements that
+        only EFB and AGM can meet — the tests that a plain flooded battery fails, which is why start-stop vehicles
+        require EFB or AGM rather than a conventional SLI unit. See
+        <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded</a> and
+        <a href="/lead-acid/start-stop-battery/">the start-stop battery guide</a>.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>EN 50342 is <strong>Europe's starter-battery standard</strong>: C20 capacity, CCA at −18°C (10 s, 7.5V), charge acceptance, cycle endurance.</li>
+          <li>It covers <strong>flooded, EFB and AGM</strong> — and its endurance tests are what separate start-stop technologies from plain SLI.</li>
+          <li>EN CCA ≠ SAE CCA despite the same −18°C: <strong>10 s/7.5V vs 30 s/7.2V</strong>.</li>
+          <li>The <strong>L1–L6 case family</strong> (H6/H7/H8…) is anchored by EN 50342 — fit and ratings come from the same document.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the quoted CCA explicitly "EN 50342 (−18°C)" — or a JIS/SAE number being substituted to look bigger?</li>
+        <li>For start-stop fleets: does the supplier's datasheet show EN 50342 charge-acceptance and cycle-endurance results, not just CCA?</li>
+        <li>Is the L-code (H6/H7/H8…) verified against the vehicle's tray and terminal position, including polarity variants?</li>
+        <li>Does the battery carry the CE marking / type-approval references implied for the European market, and can the supplier show the test report?</li>
+        <li>Are quotations compared with the same standard on both sides? See <a href="/procurement/spec-comparison-jis-din-bci-buyers/">the JIS/DIN/BCI buyer's spec comparison</a> and <a href="/procurement/verify-cca-claims-bulk-purchase/">CCA claim verification</a>.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What does EN 50342 cover?</h3>
+      <p>European lead-acid starter batteries of all three technologies — flooded SLI, EFB and AGM. It defines capacity (C20), cold cranking performance at −18°C, charge acceptance and cycle endurance, and sets the dimensional and terminal requirements that the L1–L6 battery case sizes follow.</p>
+      <h3>How does EN 50342 CCA differ from SAE J537 CCA?</h3>
+      <p>Both test at −18°C, but EN 50342 discharges for 10 seconds with a 7.5V cut-off while SAE J537 holds 30 seconds to 7.2V. The different duration and floor mean the printed numbers are not identical for the same battery, so EN and SAE figures should not be cross-converted with a fixed multiplier.</p>
+      <h3>Do start-stop batteries use EN 50342?</h3>
+      <p>Yes — EFB and AGM batteries for start-stop vehicles are rated under EN 50342, which includes the charge-acceptance and cycle-endurance (micro-cycling) tests that start-stop duty requires, beyond the standard cranking and capacity ratings.</p>
+      <h3>What is the relationship between EN 50342 and IEC 60095?</h3>
+      <p>IEC 60095 is the international standard for lead-acid starter batteries, largely aligned with the European requirements; EN 50342 is the European implementation with regional specifics for case dimensions and endurance testing. Buyers in Europe follow EN 50342; international trade often references both.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the standard's published scope and the testing references on the World Battery Hub testing
+        hub; where sources differ on fine detail, the difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>EN 50342 — European lead-acid starter-battery standard; capacity, CCA (−18°C), charge acceptance, cycle endurance.</li>
+        <li><a href="https://testing.worldbatteryhub.com/standards/en-50342/">Testing hub — EN 50342 reference page</a> and <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testing procedure</a>.</li>
+        <li><a href="https://data.worldbatteryhub.com/battery-groups/h7/">Data hub — H7 group page</a> (L-code and EN rating cross-check).</li>
+        <li>Manufacturer datasheets (Varta, Exide, Banner) — EN 50342 rating conventions and L-series dimensions.</li>
+        <li>IEC 60095 scope — for the EN/IEC relationship noted in the FAQ.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'IEC 62660 vs IEC 62133: EV Cells vs Portable Cells';
+const description = 'IEC 62660 and IEC 62133 are the two lithium-ion cell standards most often confused — 62660 governs EV propulsion cells (performance, cycle…';
+const canonical = '/standards/iec-62660-vs-62133/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'IEC 62660 vs IEC 62133',
+  articleSection: 'Battery Standards',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between IEC 62660 and IEC 62133?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Application and focus. IEC 62660 covers lithium-ion cells for electric vehicle propulsion — performance, cycle life and abuse testing at cell level. IEC 62133 covers safety requirements for portable sealed secondary lithium cells and batteries — phones, tools, e-bikes — with tests for overcharge, short circuit and thermal abuse. A cell can be tested to both, but a 62133 certificate is not an EV qualification.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does IEC 62133 apply to EV batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. IEC 62133 scopes portable applications. EV propulsion cells fall under IEC 62660 (cell level), with pack-level safety covered by standards such as UN 38.3 for transport and regional standards like SAE J2464, UL 2580 or GB 38031 for vehicle systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is IEC 62660 a safety standard?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Partly. IEC 62660 is primarily a performance and life standard — capacity, energy, power, cycle life and calendar life — but it also includes abuse tests (overcharge, short circuit, thermal) at cell level. Pack-level vehicle safety is handled by separate standards, not by 62660 alone.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Standards · Lithium-Ion · Last reviewed 2026-09-22</p>
+      <h1>IEC 62660 vs IEC 62133: EV Cells vs Portable Cells</h1>
+      <p class="lead">
+        Two IEC lithium-ion standards, two different worlds. <strong>IEC 62660</strong> is written for the cells that
+        propel electric vehicles — performance, life and abuse at cell level. <strong>IEC 62133</strong> is the safety
+        standard for portable cells — the ones in phones, power tools and e-bikes. A certificate from one says nothing
+        about the other.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>IEC 62660</strong> = lithium-ion <em>cell</em> standard for
+        <strong>EV propulsion</strong> — capacity, power, cycle life, calendar life plus cell-level abuse tests.
+        <strong>IEC 62133</strong> = <em>safety</em> standard for <strong>portable sealed secondary lithium cells and
+        batteries</strong> — overcharge, short circuit, forced discharge, thermal abuse. If a datasheet shows "IEC 62133
+        passed" for a cell intended for a vehicle pack, the qualification does not apply.
+      </div>
+
+      <h2>Side-by-side comparison</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>IEC 62660</th><th>IEC 62133</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Scope</strong></td><td>Lithium-ion cells for EV propulsion</td><td>Portable sealed secondary lithium cells/batteries</td></tr>
+          <tr><td><strong>Primary focus</strong></td><td>Performance and life</td><td>Safety</td></tr>
+          <tr><td><strong>Typical tests</strong></td><td>Capacity, energy, power, cycle life, calendar life, cell-level abuse</td><td>Overcharge, short circuit, forced discharge, thermal abuse, drop, mechanical</td></tr>
+          <tr><td><strong>Where it appears</strong></td><td>EV cell datasheets, propulsion R&D</td><td>Phones, laptops, power tools, e-bikes, battery packs</td></tr>
+          <tr><td><strong>Pack-level coverage</strong></td><td>No — cell level; packs use UN 38.3, UL 2580, SAE J2464, GB 38031</td><td>Cells and small portable packs</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Scopes per the standards' published summaries on the World Battery Hub testing hub
+        (<a href="https://testing.worldbatteryhub.com/standards/iec-62660/">IEC 62660</a> ·
+        <a href="https://testing.worldbatteryhub.com/standards/iec-62133/">IEC 62133</a>).
+      </p>
+
+      <h2>What IEC 62660 actually covers</h2>
+      <p>
+        IEC 62660 is structured as the <strong>performance and reliability</strong> standard for EV propulsion cells.
+        Its core measurements are capacity and energy at specified rates, power capability (what the cell can deliver
+        in acceleration bursts), <strong>cycle life</strong> (capacity retention over repeated charge/discharge) and
+        <strong>calendar life</strong> (storage aging at temperature). It also includes cell-level abuse tests —
+        overcharge, short circuit, thermal exposure — as a first filter before pack-level work begins.
+      </p>
+      <p>
+        What it does <em>not</em> do is certify a vehicle battery system. Pack-level safety and abuse for EVs sits in
+        separate documents: <a href="https://testing.worldbatteryhub.com/standards/un-38-3/">UN 38.3</a> for transport,
+        <a href="https://testing.worldbatteryhub.com/standards/ul-2580/">UL 2580</a> in North America,
+        <a href="https://testing.worldbatteryhub.com/standards/sae-j2464/">SAE J2464</a> for abuse testing and GB 38031
+        in China. The testing hub's <a href="https://testing.worldbatteryhub.com/abuse-testing/">abuse testing</a> page
+        maps that landscape.
+      </p>
+
+      <h2>What IEC 62133 actually covers</h2>
+      <p>
+        IEC 62133 is a <strong>safety</strong> standard: it defines the abuse a portable cell must survive without
+        fire, explosion or leakage — overcharge beyond the normal limit, external short circuit, forced discharge,
+        thermal abuse at elevated temperature, plus mechanical tests (drop, crush, impact) on the portable products'
+        cells and packs. It is the reference most consumer-device and power-tool suppliers cite, and it is often
+        demanded by importers as a precondition for shipping portable packs.
+      </p>
+      <p>
+        The confusion arises because e-bikes and light EVs sit in the middle: their cells are tested to 62133 for the
+        portable-safety requirements, while the propulsion qualification follows the 62660-style path. A cell can pass
+        both — but <strong>passing 62133 proves safety, not EV-grade performance or life</strong>.
+      </p>
+
+      <h2>The buyer's rule: match the standard to the application</h2>
+      <ul>
+        <li><strong>EV, PHEV, heavy mobility pack</strong> — the cell qualification is IEC 62660 (plus regional pack standards); a 62133-only datasheet is a red flag.</li>
+        <li><strong>Portable devices, power tools, e-bike packs</strong> — IEC 62133 is the applicable safety reference.</li>
+        <li><strong>Energy storage systems</strong> — neither standard is the primary gate; stationary storage follows its own chain (UL 1973, IEC 62619 and related), so check which standard the datasheet claims before trusting it.</li>
+      </ul>
+      <p>
+        The general discipline is the same as with lead-acid CCA: <strong>a number or certificate is only meaningful
+        under its named standard</strong> — see <a href="/lead-acid/cca/what-is-cca/">the CCA parallel</a> and the
+        <a href="/standards/">standards hub</a> for the full directory.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <div class="takeaways">
+        <ul>
+          <li>IEC 62660 = <strong>EV propulsion cells</strong> (performance, cycle life, calendar life, cell abuse).</li>
+          <li>IEC 62133 = <strong>portable cell safety</strong> (overcharge, short circuit, thermal abuse).</li>
+          <li>A 62133 pass <strong>does not qualify a cell for EV propulsion</strong> — and neither standard certifies a vehicle pack.</li>
+          <li>Match the standard to the application before trusting a certificate on a datasheet.</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the supplier's datasheet cite the standard that matches the application — 62660 for EV cells, 62133 for portable — or the wrong one to look qualified?</li>
+        <li>For EV-cell sourcing: is the 62660 test report (capacity, cycle life, calendar life, abuse) available, not just a summary line?</li>
+        <li>For portable packs: is the 62133 certificate current, from an accredited lab, and does it cover the exact cell model being shipped?</li>
+        <li>Is transport certification (UN 38.3) present separately — a 62133 pass does not cover transport requirements?</li>
+        <li>Does the <a href="/procurement/how-to-read-battery-datasheet/">datasheet reading</a> distinguish standard scope from marketing claims, as with the lead-acid CCA trap in <a href="/procurement/verify-cca-claims-bulk-purchase/">CCA verification</a>?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between IEC 62660 and IEC 62133?</h3>
+      <p>Application and focus. IEC 62660 covers lithium-ion cells for electric vehicle propulsion — performance, cycle life and abuse testing at cell level. IEC 62133 covers safety requirements for portable sealed secondary lithium cells and batteries — phones, tools, e-bikes — with tests for overcharge, short circuit and thermal abuse. A cell can be tested to both, but a 62133 certificate is not an EV qualification.</p>
+      <h3>Does IEC 62133 apply to EV batteries?</h3>
+      <p>No. IEC 62133 scopes portable applications. EV propulsion cells fall under IEC 62660 (cell level), with pack-level safety covered by standards such as UN 38.3 for transport and regional standards like SAE J2464, UL 2580 or GB 38031 for vehicle systems.</p>
+      <h3>Is IEC 62660 a safety standard?</h3>
+      <p>Partly. IEC 62660 is primarily a performance and life standard — capacity, energy, power, cycle life and calendar life — but it also includes abuse tests (overcharge, short circuit, thermal) at cell level. Pack-level vehicle safety is handled by separate standards, not by 62660 alone.</p>
+      <h3>Which standard covers energy storage system batteries?</h3>
+      <p>Neither primarily. Stationary storage follows its own chain — IEC 62619 for industrial cells, UL 1973 in North America and related regional documents. Check which standard the datasheet actually claims before relying on a 62133 or 62660 certificate in a storage context.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cross-verified from the standards' published scopes and the testing references on the World Battery Hub testing
+        hub; where sources differ on fine detail, the difference is flagged rather than silently resolved.
+      </p>
+      <ul>
+        <li>IEC 62660 — lithium-ion cell standard for EV propulsion; performance, cycle life and cell-level abuse.</li>
+        <li>IEC 62133 — safety requirements for portable sealed secondary lithium cells and batteries.</li>
+        <li><a href="https://testing.worldbatteryhub.com/standards/iec-62660/">Testing hub — IEC 62660 reference page</a> and <a href="https://testing.worldbatteryhub.com/standards/iec-62133/">IEC 62133 reference page</a>.</li>
+        <li>UN 38.3, UL 2580, SAE J2464, GB 38031 scopes — for the pack-level standards referenced in context.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>
