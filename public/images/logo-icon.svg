@@ -1,7 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64">
-  <!-- header 用：透明底。闪电在左（x 6-24），WBH 文字在右（x 30 起），互不重叠 -->
-  <path d="M 6 6 L 24 6 L 18 19 L 24 19 L 11 50 L 14 30 L 6 30 Z" fill="#38bdf8"/>
-  <g fill="#ffffff" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold">
-    <text x="30" y="42" font-size="26">WBH</text>
+  <!-- header 用：透明底。闪电在左（x≤19），WBH 矢量字母在右，字母间 2px 视觉间隔 -->
+  <path d="M 4 9 L 19 9 L 13.5 20 L 19 20 L 8 42 L 11 30 L 4 30 Z" fill="#38bdf8"/>
+  <g stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- W：路径 23–45 -->
+    <path d="M 23 17 L 28.5 47 L 34 27 L 39.5 47 L 45 17"/>
+    <!-- B：路径 52–62.5 -->
+    <path d="M 52 17 V 47 M 52 17 H 57.5 Q 62.5 17 62.5 24 Q 62.5 29.5 57.5 29.5 H 52 M 52 29.5 H 58 Q 62.5 29.5 62.5 38 Q 62.5 47 58 47 H 52"/>
+    <!-- H：路径 69.5–78.5 -->
+    <path d="M 69.5 17 V 47 M 78.5 17 V 47 M 69.5 32 H 78.5"/>
   </g>
 </svg>
