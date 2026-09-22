@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Procurement Guides';
+const description = 'Battery procurement guides — datasheet literacy, quotation comparison, OEM vs ODM, factory evaluation checklists and cross-system specification (JIS/DIN/BCI) for importers and distributors.';
+const canonical = '/procurement/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/procurement/',
+  about: 'Battery procurement knowledge for importers and distributors',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Cluster Hub · Last reviewed 2026-09-22</p>
+      <h1>Battery Procurement Guides</h1>
+      <p class="lead">
+        Procurement knowledge for importers, distributors and OEM buyers — how to read the specification,
+        compare the quotation, choose the manufacturing model and audit the factory before committing.
+      </p>
+
+      <div class="takeaways">
+        <strong>At a glance:</strong> These guides assume one premise — <em>every battery figure carries a test condition,
+        and every quotation carries commercial terms</em>. A specification or a price without its conditions is not
+        comparable, which is the single most expensive lesson in battery sourcing.
+      </div>
+
+      <h2>Procurement guides</h2>
+      <ul>
+        <li><a href="/procurement/how-to-read-battery-datasheet/">How to read a battery datasheet</a> — the ratings, physical and construction blocks, and the omissions that should stop an order</li>
+        <li><a href="/procurement/battery-quotation-comparison/">Battery quotation comparison</a> — normalizing spec, terms and freight before comparing prices</li>
+        <li><a href="/procurement/oem-vs-odm-battery-manufacturing/">OEM vs ODM battery manufacturing</a> — who owns the design, tooling and brand, and why it matters</li>
+        <li><a href="/procurement/battery-factory-evaluation-checklist/">Battery factory evaluation checklist</a> — the four-zone audit: materials, production, lab, traceability</li>
+        <li><a href="/procurement/spec-comparison-jis-din-bci-buyers/">JIS vs DIN vs BCI: specification systems</a> — reading the three notations and their traps</li>
+      </ul>
+
+      <h2>Related knowledge</h2>
+      <ul>
+        <li><a href="/lead-acid/cca/what-is-cca/">What is CCA</a> — the rating standard trap in detail</li>
+        <li><a href="/lead-acid/battery-group-sizes/">Battery group sizes</a> — BCI groups and cross-system fitment</li>
+        <li><a href="/lead-acid/battery-warranty/">Battery warranty</a> — terms, pro-rating and what voids them</li>
+        <li><a href="/standards/">Standards directory</a> — the 15-standard system every rating resolves to</li>
+      </ul>
+
+      <h2>Sub-site tools for buyers</h2>
+      <ul>
+        <li><a href="https://data.worldbatteryhub.com/battery-groups/">Battery group data</a> — size, terminal and rating data (data sub-site)</li>
+        <li><a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">Manufacturer verification criteria</a> — what supplier evidence looks like (manufacturer sub-site)</li>
+        <li><a href="https://market.worldbatteryhub.com/battery-price-trends/">Price trends</a> and <a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">HS codes</a> — market-level context with named sources (market sub-site)</li>
+        <li><a href="https://testing.worldbatteryhub.com/standards/">Test standard pages</a> — the conditions behind every rating (testing sub-site)</li>
+      </ul>
+
+      <p class="muted">
+        Procurement guides are informational — they are sourcing methodology, not legal, financial or
+        purchasing advice, and they quote no supplier prices or ratings. Commercial products live separately in
+        the <a href="/lead-acid/products/">product catalogue</a>.
+      </p>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

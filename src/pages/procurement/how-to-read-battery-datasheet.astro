@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How to Read a Battery Datasheet: A Buyer\'s Field Guide';
+const description = 'A battery datasheet is a contract written in ratings. This guide walks procurement readers through the ratings block (CCA, Ah, RC), the physical block (group size, terminals) and the construction block — and shows which omissions should stop a purchase order.';
+const canonical = '/procurement/how-to-read-battery-datasheet/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Reading and verifying battery datasheets for procurement',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the essential blocks of a battery datasheet?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A usable datasheet has three blocks: ratings (voltage, capacity Ah at a stated rate, CCA with its test standard, reserve capacity), physical (group size or dimensional drawing, terminal type and polarity, hold-down), and construction (chemistry, plate or cell technology, electrolyte). If any block is missing or unlabelled, the specification is incomplete.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why must a CCA figure name its test standard?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'CCA values depend on test temperature and cut-off voltage. SAE J537 tests at -18°C to 7.2V, JIS D5301 at -15°C, EN 50342 at -18°C to 7.5V and DIN at -18°C to 9.0V. The same battery prints different numbers under different methods, so a CCA without its standard cannot be compared to any other CCA.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What omissions in a datasheet should stop an order?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Missing discharge rate for the Ah figure, missing CCA test standard, missing dimensional drawing or terminal orientation, missing weight, and missing manufacturer name or batch traceability are all red flags. A rating without its test condition is not a verifiable specification.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can a buyer verify a datasheet claim?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Check the claim against the stated standard\'s test method, ask for the test report rather than the brochure figure, and spot-check production samples with independent capacity and CCA testing before or at first shipment. Third-party lab reports should name the standard, the equipment and the pass criterion.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Datasheet Literacy · Last reviewed 2026-09-22</p>
+      <h1>How to Read a Battery Datasheet</h1>
+      <p class="lead">
+        A battery datasheet is a contract written in ratings. The ratings are only as binding as their
+        <strong>test conditions</strong> — and the conditions are exactly what the weakest datasheets leave out. This
+        guide reads the sheet the way a procurement desk should: block by block, with the omissions flagged.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Read a datasheet in three blocks — <strong>ratings</strong> (voltage, Ah at a stated
+        rate, <a href="/lead-acid/cca/what-is-cca/">CCA</a> with its standard, reserve capacity),
+        <strong>physical</strong> (group size or drawing, terminals, polarity) and
+        <strong>construction</strong> (chemistry, plate technology). A figure without its test condition is marketing,
+        not specification — it should be treated as unverifiable until the condition is supplied.
+      </div>
+
+      <h2>The three blocks of a battery datasheet</h2>
+      <p>
+        Every usable datasheet answers three questions: <em>how much</em> (ratings), <em>does it fit</em> (physical) and
+        <em>how is it built</em> (construction). A sheet that answers only the first question is a brochure, not a
+        specification — procurement cannot hold a supplier to a brochure.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Block</th>
+            <th>Typical contents</th>
+            <th>What it is for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ratings</strong></td>
+            <td>Voltage, Ah (at a rate, e.g. C20), CCA (with standard), RC, weight</td>
+            <td>Electrical performance — what the battery does</td>
+          </tr>
+          <tr>
+            <td><strong>Physical</strong></td>
+            <td><a href="/lead-acid/battery-group-sizes/">Group size</a> or drawing, terminal type &amp; polarity, hold-down, venting</td>
+            <td>Fit and connection — whether it installs at all</td>
+          </tr>
+          <tr>
+            <td><strong>Construction</strong></td>
+            <td>Chemistry (flooded / <a href="/lead-acid/efb-battery/">EFB</a> / <a href="/lead-acid/agm-battery/">AGM</a> / gel), plate or cell tech, electrolyte</td>
+            <td>Technology family — durability, charging regime, price class</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Block 1 — the ratings: every number needs its condition</h2>
+      <p>
+        The ratings block is where most procurement mistakes are made, because the numbers look self-explanatory
+        and almost none of them are. Each rating is the output of a test, and the test has conditions. The
+        conditions change the number.
+      </p>
+      <ul>
+        <li>
+          <strong>CCA (Cold Cranking Amps)</strong> — meaningless without its standard. <a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a>
+          tests at −18°C to 7.2V; <a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">JIS D5301</a> at −15°C. A JIS number
+          is <em>higher</em> for the same battery simply because the test is warmer. Ask "which standard?" before comparing
+          two CCA figures. See <a href="/lead-acid/cca/what-is-cca/">what CCA means</a>.
+        </li>
+        <li>
+          <strong>Ah (capacity)</strong> — meaningless without its discharge rate. "60 Ah" means nothing until the rate is
+          stated: C20 (20-hour), C10, C5 or C1. The same battery prints a higher Ah at a slower rate. A
+          datasheet that omits the rate cannot be compared, priced or verified.
+        </li>
+        <li>
+          <strong>RC (Reserve Capacity)</strong> — minutes the battery sustains a standard 25&nbsp;amp discharge before
+          falling below 10.5V. It has a fixed method, so it is one of the more directly comparable ratings — but
+          only when both sheets state the method. See <a href="/lead-acid/reserve-capacity/">reserve capacity explained</a>.
+        </li>
+        <li>
+          <strong>Weight</strong> — a quiet audit tool. In lead-acid, capacity and plate mass correlate; a battery
+          claiming high Ah at unusually low weight warrants a second look at what was left out (plate mass,
+          electrolyte volume). Weight is also the freight bill, so it belongs on the sheet regardless.
+        </li>
+      </ul>
+
+      <h2>Block 2 — the physical block: fit is binary</h2>
+      <p>
+        A battery either fits the tray or it does not. The physical block is the least glamorous and the most
+        expensive to get wrong, because a wrong group size is a full return or rework, not a partial credit.
+      </p>
+      <ul>
+        <li>
+          <strong>Group size or dimensional drawing</strong> — BCI group numbers (<a href="https://data.worldbatteryhub.com/battery-groups/h6/">H6</a>,
+          <a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31</a>, etc.) bundle length × width × height and
+          terminal position into one code. Where no group number applies, an actual dimensioned drawing
+          (mm, with tolerances) is required. See <a href="/lead-acid/battery-group-sizes/">battery group sizes</a>.
+        </li>
+        <li>
+          <strong>Terminal type and polarity</strong> — SAE posts, JIS pencil posts, studs, side terminals, and the
+          handedness (positive-left or positive-right). A polarity mistake at installation is routine and
+          avoidable — but only if the sheet states it. See <a href="/lead-acid/battery-terminal-types/">battery terminal types</a>.
+        </li>
+        <li>
+          <strong>Hold-down and venting</strong> — bracket compatibility and, for flooded batteries, whether the design
+          vents to atmosphere or through a tube. Missing venting details matter for cabin or enclosed installs.
+        </li>
+      </ul>
+
+      <h2>Block 3 — the construction block: what family are you buying?</h2>
+      <p>
+        The construction line (flooded, EFB, AGM, gel) determines durability, charging behaviour and price class
+        far more than any single rating. A flooded battery and an AGM battery can print similar CCA and Ah yet
+        behave differently under start-stop duty, deep cycling and heat. See
+        <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded</a> for the trade-offs, and
+        <a href="https://technology.worldbatteryhub.com/lead-acid-manufacturing/">how the plates and paste are made</a> for what
+        construction claims rest on.
+      </p>
+      <p>
+        For procurement, the construction block is where a supplier signals the <em>class</em> of product — and where
+        a quotation for "the same spec" at very different prices usually resolves: one is AGM, the other is
+        flooded, and the ratings alone will not tell you.
+      </p>
+
+      <h2>What a weak datasheet looks like</h2>
+      <div class="takeaways">
+        <strong>Omissions that should stop an order:</strong>
+        <ul>
+          <li>Ah with no discharge rate (C20 / C10 / C5 unknown)</li>
+          <li>CCA with no test standard (SAE / EN / JIS / DIN unknown)</li>
+          <li>No dimensional drawing or group size, no terminal orientation</li>
+          <li>No weight, no chemistry line, no manufacturer name or model code</li>
+          <li>"Same as brand X" claims instead of published figures</li>
+        </ul>
+      </div>
+      <p>
+        None of these omissions is necessarily fraud — but each one makes the specification unverifiable, and an
+        unverifiable specification cannot anchor a purchase contract. The remedy is not to reject the supplier
+        outright but to request the missing conditions in writing before quotation comparison.
+      </p>
+
+      <h2>How to verify a datasheet claim</h2>
+      <ol>
+        <li>
+          <strong>Reconcile against the standard.</strong> Look up the named standard's method and pass criterion — the
+          <a href="https://testing.worldbatteryhub.com/standards/">testing sub-site standard pages</a> carry the conditions for
+          SAE, EN, JIS and DIN methods.
+        </li>
+        <li>
+          <strong>Ask for the test report, not the brochure.</strong> A genuine test report names the equipment, the
+          sample, the standard and the pass/fail criterion. Its absence after several requests is itself
+          information.
+        </li>
+        <li>
+          <strong>Spot-check with independent testing.</strong> Before bulk commitment, have production samples tested
+          for capacity and CCA — see <a href="/testing/battery-capacity-testing/">capacity testing</a> and
+          <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testing</a> for what the tests actually measure.
+        </li>
+        <li>
+          <strong>Compare like for like.</strong> Same standard, same rate, same duty. See
+          <a href="/procurement/battery-quotation-comparison/">quotation comparison</a> for the full method.
+        </li>
+      </ol>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does every rating on the sheet carry its test condition (discharge rate, standard, method)?</li>
+        <li>Is the group size or dimensional drawing present, with terminal type and polarity stated?</li>
+        <li>Is the chemistry (flooded / EFB / AGM / gel) stated, and does it match the application's duty?</li>
+        <li>Does the quoted weight plausibly support the claimed capacity class?</li>
+        <li>Can the supplier produce a test report naming the standard and pass criterion — not just the brochure figure?</li>
+        <li>Are the sheet's claims verifiable against the named standards before the first bulk order?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What are the essential blocks of a battery datasheet?</h3>
+      <p>A usable datasheet has three blocks: ratings (voltage, capacity Ah at a stated rate, CCA with its test standard, reserve capacity), physical (group size or dimensional drawing, terminal type and polarity, hold-down), and construction (chemistry, plate or cell technology, electrolyte). If any block is missing or unlabelled, the specification is incomplete.</p>
+      <h3>Why must a CCA figure name its test standard?</h3>
+      <p>CCA values depend on test temperature and cut-off voltage. SAE J537 tests at -18°C to 7.2V, JIS D5301 at -15°C, EN 50342 at -18°C to 7.5V and DIN at -18°C to 9.0V. The same battery prints different numbers under different methods, so a CCA without its standard cannot be compared to any other CCA.</p>
+      <h3>What omissions in a datasheet should stop an order?</h3>
+      <p>Missing discharge rate for the Ah figure, missing CCA test standard, missing dimensional drawing or terminal orientation, missing weight, and missing manufacturer name or batch traceability are all red flags. A rating without its test condition is not a verifiable specification.</p>
+      <h3>How can a buyer verify a datasheet claim?</h3>
+      <p>Check the claim against the stated standard's test method, ask for the test report rather than the brochure figure, and spot-check production samples with independent capacity and CCA testing before or at first shipment. Third-party lab reports should name the standard, the equipment and the pass criterion.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Built on the standards that define the ratings themselves, cross-checked against manufacturer datasheet
+        practice; where datasheet conventions vary, the stricter reading is recommended.
+      </p>
+      <ul>
+        <li>SAE J537 — North American cranking-ampere test method (−18°C, 30 s, 7.2V) and its CCA definition.</li>
+        <li>EN 50342 — European lead-acid starter battery standard (−18°C, 10 s, 7.5V).</li>
+        <li>JIS D5301 — Japanese automotive lead-acid battery standard (−15°C).</li>
+        <li>DIN 43539 — German starter battery test method (−18°C, 30 s, 9.0V).</li>
+        <li>Battery Council International (BCI) — battery group size definitions and reserve capacity method.</li>
+        <li>IEC 60095 — lead-acid starter battery general requirements and test methods.</li>
+        <li>Manufacturer datasheet practice (Clarios, Exide, GS Yuasa, East Penn) — reviewed for typical datasheet structure and the conditions normally published.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Factory Evaluation Checklist: What to Audit Before You Commit';
+const description = 'A battery factory audit is a process walk, not a hospitality visit. This checklist covers the four zones that decide product quality — materials in, production control, laboratory testing and traceability — and what evidence to collect.';
+const canonical = '/procurement/battery-factory-evaluation-checklist/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Evaluating and auditing battery factories before purchase commitment',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why audit a battery factory before ordering?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because datasheets and quotations are promises, and an audit checks whether the factory has the process to keep them. The audit verifies materials handling, production control, laboratory testing and traceability — the four zones that determine whether a shipped batch matches the approved sample.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the four zones of a battery factory audit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Materials in (lead, acid, separators, incoming inspection), production control (paste mixing, grid casting, plate curing, assembly, formation), laboratory testing (capacity, CCA, and reliability testing equipment that is actually used), and traceability (batch codes, records linking materials to finished batteries).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What documents should a battery supplier produce during an audit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Quality system certificates (such as ISO 9001, and IATF 16949 for automotive supply), product test reports naming the standard and pass criterion, calibration records for test equipment, batch traceability records, and evidence of hazardous-cargo compliance for shipping. The absence of test reports after repeated requests is a finding in itself.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a factory audit be done remotely?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Partially. Documents, videos, live walkthroughs and third-party audit reports cover a lot, but process observation — how paste is mixed, how plates are cured, how the lab actually tests — is best seen on site. Many buyers combine a third-party audit report with a first-article inspection of samples.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Supplier Audit · Last reviewed 2026-09-22</p>
+      <h1>Battery Factory Evaluation Checklist</h1>
+      <p class="lead">
+        A factory audit is a <strong>process walk</strong>, not a hospitality visit. The goal is to verify that the factory
+        has the process to keep the promises on its datasheet — because the datasheet describes the
+        <em>approved sample</em>, and the audit predicts what the <em>bulk shipment</em> will look like.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Audit four zones — <strong>materials in</strong>, <strong>production control</strong>,
+        <strong>laboratory testing</strong> and <strong>traceability</strong> — and collect evidence in each. A factory that passes
+        all four with records is one that can repeat its quality; a factory that cannot produce records in any
+        zone is one whose quality is an accident.
+      </div>
+
+      <h2>Zone 1 — materials in: quality starts before the factory's line</h2>
+      <p>
+        A lead-acid battery is mostly lead, acid and separator — and the difference between a durable battery and
+        a fast-fading one is set at the moment those materials arrive. The audit checks:
+      </p>
+      <ul>
+        <li>
+          <strong>Incoming inspection</strong> — is there a documented incoming-material check (lead alloy composition,
+          separator specification, acid purity) with records, or do materials flow straight to the line?
+        </li>
+        <li>
+          <strong>Material suppliers</strong> — are they named, stable and audited in turn? A factory that cannot name its
+          lead alloy source cannot vouch for its plate material.
+        </li>
+        <li>
+          <strong>Storage</strong> — are separators and paste materials stored correctly (dry, temperature-controlled)
+          or degrading in a corner? Lead-acid inputs are unforgiving about moisture and contamination.
+        </li>
+      </ul>
+      <p>
+        Material quality is invisible in the finished battery until months later — as premature
+        <a href="/lead-acid/battery-sulfation/">sulfation</a> or capacity fade — which is exactly why the audit must see it at the
+        gate, not infer it from the product.
+      </p>
+
+      <h2>Zone 2 — production control: the four processes that make the battery</h2>
+      <p>
+        The walk through production follows the battery itself. Each station is a chance to see whether the
+        process is <em>controlled</em> or merely <em>performed</em>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Station</th>
+            <th>What to look at</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Grid casting</strong></td>
+            <td>Alloy control, mold maintenance, grid thickness checks</td>
+            <td>Grids hold the active material; variance here is corrosion and early failure later</td>
+          </tr>
+          <tr>
+            <td><strong>Paste mixing &amp; pasting</strong></td>
+            <td>Weighed recipes, paste density checks, plate thickness control</td>
+            <td>Paste is the capacity; an uncontrolled mix is an uncontrolled Ah rating</td>
+          </tr>
+          <tr>
+            <td><strong>Curing &amp; formation</strong></td>
+            <td>Controlled temperature/humidity curing, correct formation charging</td>
+            <td>Curing and formation set the crystal structure — skipped time here is lost life there</td>
+          </tr>
+          <tr>
+            <td><strong>Assembly</strong></td>
+            <td>Weld quality, separator handling, lid/terminal sealing</td>
+            <td>Assembly defects are the classic "new battery fails early" pattern</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        For the process detail behind each station — what the paste is, why curing matters — see
+        <a href="https://technology.worldbatteryhub.com/lead-acid-manufacturing/">lead-acid manufacturing</a> on the technology
+        sub-site. The auditor's job is not to be a chemist but to check that <em>somebody in the factory is</em>, with
+        instruments and records rather than experience alone.
+      </p>
+
+      <h2>Zone 3 — laboratory testing: the factory's own promise-keeping</h2>
+      <p>
+        Every datasheet figure is a claim about what the product does; the lab is where the factory checks its own
+        claims. The audit looks for:
+      </p>
+      <ul>
+        <li>
+          <strong>Real equipment</strong> — discharge testers, <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testers</a>,
+          resistance meters, environmental chambers — that is <em>used</em>, not just displayed. Calibration labels and
+          records are the tell.
+        </li>
+        <li>
+          <strong>A sampling plan</strong> — is testing done on a defined sample of production (a lot-based plan) or only
+          when a customer complains? See <a href="/testing/battery-capacity-testing/">capacity testing</a> for what the tests measure.
+        </li>
+        <li>
+          <strong>Test reports</strong> — do they name the standard, the equipment and the pass criterion? A report that
+          says "600 CCA" without the standard is not a report, it is a restatement of the brochure.
+        </li>
+        <li>
+          <strong>Failure handling</strong> — what happens to a lot that fails? A factory that cannot describe its
+          non-conforming-product procedure has just described it.
+        </li>
+      </ul>
+
+      <h2>Zone 4 — traceability: from battery to batch to materials</h2>
+      <p>
+        Traceability is what turns a warranty claim from an argument into a lookup. The audit checks whether a
+        finished battery can be traced backwards: <a href="/lead-acid/battery-date-code/">date code and batch code</a> on the case,
+        records linking the batch to its paste mix, grid lot, curing run and test results. Forward traceability
+        matters too — if a batch is found bad, can the factory say which customers received it?
+      </p>
+      <p>
+        Traceability also includes <strong>documentation of compliance</strong>: hazardous-cargo declarations for shipping
+        (batteries travel under transport regulations), and the quality-system certificates the supplier claims.
+        Cross-check those against the <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">verification criteria</a>
+        the manufacturer sub-site uses — a certificate number that does not check out is a major finding.
+      </p>
+
+      <h2>Documents to collect</h2>
+      <div class="takeaways">
+        <strong>Collect during or immediately after the audit:</strong>
+        <ul>
+          <li>Quality system certificates (ISO 9001; IATF 16949 where automotive supply is claimed) — verify issuer and scope</li>
+          <li>Product test reports naming standard, equipment and pass criterion</li>
+          <li>Calibration records for the test equipment you saw</li>
+          <li>Batch traceability sample — one finished battery traced to its records</li>
+          <li>Non-conforming-product procedure and recent failure records</li>
+          <li>Hazardous-cargo / transport compliance evidence for the destination markets</li>
+        </ul>
+      </div>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is incoming material inspection documented, or do materials bypass it?</li>
+        <li>Are grid casting, pasting, curing and formation running on instruments and records, or on experience alone?</li>
+        <li>Does the laboratory test on a defined sampling plan, with calibrated equipment and reports that name the standard?</li>
+        <li>Can one finished battery be traced back to its paste mix, curing run and test records?</li>
+        <li>Do the claimed certificates verify with their issuers, and is transport compliance documented?</li>
+        <li>Is there a written procedure for non-conforming product, with records showing it has been used?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why audit a battery factory before ordering?</h3>
+      <p>Because datasheets and quotations are promises, and an audit checks whether the factory has the process to keep them. The audit verifies materials handling, production control, laboratory testing and traceability — the four zones that determine whether a shipped batch matches the approved sample.</p>
+      <h3>What are the four zones of a battery factory audit?</h3>
+      <p>Materials in (lead, acid, separators, incoming inspection), production control (paste mixing, grid casting, plate curing, assembly, formation), laboratory testing (capacity, CCA, and reliability testing equipment that is actually used), and traceability (batch codes, records linking materials to finished batteries).</p>
+      <h3>What documents should a battery supplier produce during an audit?</h3>
+      <p>Quality system certificates (such as ISO 9001, and IATF 16949 for automotive supply), product test reports naming the standard and pass criterion, calibration records for test equipment, batch traceability records, and evidence of hazardous-cargo compliance for shipping. The absence of test reports after repeated requests is a finding in itself.</p>
+      <h3>Can a factory audit be done remotely?</h3>
+      <p>Partially. Documents, videos, live walkthroughs and third-party audit reports cover a lot, but process observation — how paste is mixed, how plates are cured, how the lab actually tests — is best seen on site. Many buyers combine a third-party audit report with a first-article inspection of samples.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Compiled from battery-industry supplier-audit practice and quality-system requirements; the four-zone
+        structure follows the production sequence of lead-acid manufacturing so the checklist can be walked in
+        the same order as the process.
+      </p>
+      <ul>
+        <li>ISO 9001:2015 — quality management system requirements used as the baseline for supplier audits.</li>
+        <li>IATF 16949:2016 — automotive quality management system requirements for series production.</li>
+        <li>ISO/IEC 17025 — competence requirements for testing laboratories (calibration and report criteria).</li>
+        <li>Battery Council International — batch/date code marking conventions referenced in the traceability zone.</li>
+        <li>World Battery Hub technology sub-site — <a href="https://technology.worldbatteryhub.com/lead-acid-manufacturing/">lead-acid manufacturing process</a>.</li>
+        <li>World Battery Hub testing sub-site — <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testing</a> and <a href="https://testing.worldbatteryhub.com/capacity-testing/">capacity testing</a> methods.</li>
+        <li>World Battery Hub manufacturer sub-site — <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">verification criteria</a> for supplier evidence.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

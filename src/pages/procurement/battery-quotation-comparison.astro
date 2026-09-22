@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Quotation Comparison: How to Compare Quotes Like-for-Like';
+const description = 'Two battery quotations at different prices are rarely for the same thing. This guide shows procurement how to normalize quotes — standard, discharge rate, chemistry, Incoterm, payment terms, warranty and freight — before comparing prices.';
+const canonical = '/procurement/battery-quotation-comparison/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Normalizing and comparing battery supplier quotations',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why do two battery quotes for the "same" battery differ in price?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually because they are not for the same thing. The differences hide in the test standard of the CCA figure, the discharge rate of the Ah figure, the chemistry (flooded vs EFB vs AGM), the Incoterm, the payment terms, the warranty and the freight. Normalizing these fields usually closes most of the gap — the rest is supplier margin.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What fields must be normalized before comparing battery prices?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'At minimum: group size and terminals, CCA test standard, Ah discharge rate, chemistry, quantity and MOQ, Incoterm, payment terms, warranty length and pro-rating, packaging, certification, and freight to the same destination. Only then are unit prices comparable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which Incoterms are common in battery imports?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'EXW (buyer takes all risk from the factory gate), FOB (seller clears export, risk transfers at the vessel), CIF (seller pays freight and insurance to the destination port) and DDP (seller delivers duty-paid). Batteries are heavy and hazardous-classed, so the freight and duty split between Incoterms is a large share of landed cost.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the cheapest landed-cost quote always the best buy?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Landed cost must be weighed against warranty terms, reject-rate history, certification status and the supplier\'s production capability. A quote that fails first-article inspection costs more than the price difference, so capability and terms are part of the comparison, not extras.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Quotation Analysis · Last reviewed 2026-09-22</p>
+      <h1>Battery Quotation Comparison</h1>
+      <p class="lead">
+        Two suppliers quote "the same battery" at different prices — and one of them is usually quoting a
+        different battery. The job of quotation comparison is to find <em>which fields differ</em> before looking at the
+        price, because the price gap usually lives inside the fields.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Normalize every quote to the same <strong>specification</strong> (group size, CCA
+        standard, Ah rate, chemistry), the same <strong>commercial terms</strong> (quantity, Incoterm, payment, warranty)
+        and the same <strong>delivery point</strong> (freight, duty, packaging) — then compare the resulting landed cost,
+        not the quoted unit price. See <a href="/procurement/how-to-read-battery-datasheet/">how to read a datasheet</a> for the
+        specification half.
+      </div>
+
+      <h2>Why the same battery is never quoted the same way</h2>
+      <p>
+        A battery is not a commodity part number — it is a bundle of test conditions, materials, terms and
+        logistics. Suppliers legitimately quote the same physical battery at different numbers because they are
+        quoting different <em>bundles</em>: a warmer CCA test, a slower discharge rate, a cheaper Incoterm, a shorter
+        warranty. The first step of comparison is therefore not arithmetic but <strong>field reconciliation</strong>: put the
+        quotes side by side and mark every field that differs.
+      </p>
+
+      <h2>The specification fields that move the price</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>How it hides a difference</th>
+            <th>Where to check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CCA standard</strong></td>
+            <td>A JIS-tested number prints higher than an EN-tested one for the same battery</td>
+            <td><a href="/lead-acid/cca/what-is-cca/">CCA standards explained</a></td>
+          </tr>
+          <tr>
+            <td><strong>Ah discharge rate</strong></td>
+            <td>C20 Ah is higher than C10 Ah for the same battery</td>
+            <td><a href="/technology/ah-vs-wh/">Ah vs Wh</a></td>
+          </tr>
+          <tr>
+            <td><strong>Chemistry</strong></td>
+            <td>Flooded vs EFB vs AGM differ in cost and durability class</td>
+            <td><a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded</a></td>
+          </tr>
+          <tr>
+            <td><strong>Group / terminals</strong></td>
+            <td>A lookalike group with different terminal type is a different product</td>
+            <td><a href="/lead-acid/battery-group-sizes/">Group sizes</a></td>
+          </tr>
+          <tr>
+            <td><strong>Weight</strong></td>
+            <td>Lower weight at the same ratings usually means less plate material</td>
+            <td><a href="https://data.worldbatteryhub.com/weight-chart/">Weight data</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The commercial fields that move the cost</h2>
+      <ul>
+        <li>
+          <strong>Incoterm.</strong> The same unit price at EXW and at DDP are radically different deals. Under EXW the
+          buyer carries everything from the factory gate; under DDP the seller lands it duty-paid. For heavy,
+          hazardous-classed cargo like batteries, the freight-and-duty slice is a major part of landed cost, so
+          the Incoterm must be identical (or priced out) before unit prices are compared. The ICC Incoterms 2020
+          rules define these terms.
+        </li>
+        <li>
+          <strong>Payment terms.</strong> Cash-before-shipment, deposit-plus-balance against documents, and letter of credit
+          carry different working-capital costs and different risk. A lower price on worse payment terms is not a
+          cheaper deal — the terms are part of the price.
+        </li>
+        <li>
+          <strong>Warranty.</strong> Length, pro-rating and the claims process differ. A shorter or pro-rated warranty is a
+          hidden cost to the buyer. See <a href="/lead-acid/battery-warranty/">how battery warranties work</a>.
+        </li>
+        <li>
+          <strong>MOQ and quantity breaks.</strong> Quotes must sit on the same quantity ladder. A price valid at one
+          container may not hold at pallet scale, and MOQ differences change the cash commitment.
+        </li>
+        <li>
+          <strong>Packaging and marking.</strong> Palletization, brand marking, shrink wrap and export packing differ
+          between suppliers and are rarely free.
+        </li>
+        <li>
+          <strong>Certification.</strong> Who carries the cost of certification documents (test reports, transport
+          declarations, quality system certificates) is a quotable line — see
+          <a href="https://manufacturer.worldbatteryhub.com/verification-criteria/">what verification evidence looks like</a>.
+        </li>
+      </ul>
+
+      <h2>Freight, duty and the landed-cost model</h2>
+      <p>
+        Unit price comparison only makes sense after the quote is walked to a common delivery point. The
+        standard walk: unit price × quantity → add packaging → add freight to the named port or warehouse →
+        add insurance if CIF-style → add duty and customs fees using the correct
+        <a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">HS code classification</a> → add inland delivery.
+        The result is the <strong>landed cost per unit</strong> — the only number that belongs in a comparison table.
+      </p>
+      <p class="muted">
+        World Battery Hub does not publish price quotes or rate cards; the market sub-site tracks
+        <a href="https://market.worldbatteryhub.com/battery-price-trends/">price trends</a> with named sources and
+        methodology for market-level context, not supplier-specific quotes.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is every quote normalized to the same CCA standard, Ah rate, group size and chemistry before any price is compared?</li>
+        <li>Are Incoterm, payment terms, warranty length and pro-rating identical across the comparison — or priced out explicitly?</li>
+        <li>Is freight, duty and inland delivery walked to a common delivery point for all quotes?</li>
+        <li>Does the cheapest landed cost come with the required certifications and an acceptable reject-rate history?</li>
+        <li>Are quantity breaks and MOQ on the same ladder across all quotes?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why do two battery quotes for the "same" battery differ in price?</h3>
+      <p>Usually because they are not for the same thing. The differences hide in the test standard of the CCA figure, the discharge rate of the Ah figure, the chemistry (flooded vs EFB vs AGM), the Incoterm, the payment terms, the warranty and the freight. Normalizing these fields usually closes most of the gap — the rest is supplier margin.</p>
+      <h3>What fields must be normalized before comparing battery prices?</h3>
+      <p>At minimum: group size and terminals, CCA test standard, Ah discharge rate, chemistry, quantity and MOQ, Incoterm, payment terms, warranty length and pro-rating, packaging, certification, and freight to the same destination. Only then are unit prices comparable.</p>
+      <h3>Which Incoterms are common in battery imports?</h3>
+      <p>EXW (buyer takes all risk from the factory gate), FOB (seller clears export, risk transfers at the vessel), CIF (seller pays freight and insurance to the destination port) and DDP (seller delivers duty-paid). Batteries are heavy and hazardous-classed, so the freight and duty split between Incoterms is a large share of landed cost.</p>
+      <h3>Is the cheapest landed-cost quote always the best buy?</h3>
+      <p>No. Landed cost must be weighed against warranty terms, reject-rate history, certification status and the supplier's production capability. A quote that fails first-article inspection costs more than the price difference, so capability and terms are part of the comparison, not extras.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Synthesized from Incoterms rules, customs classification practice and procurement convention for
+        battery-class cargo; where a cost component is site-specific (duty rates, freight), the method is given
+        instead of a number, and no supplier prices are quoted anywhere in this guide.
+      </p>
+      <ul>
+        <li>ICC Incoterms 2020 — definitions of EXW, FOB, CIF, DDP and the risk/cost transfer points.</li>
+        <li>World Customs Organization HS 2022 — Chapter 85.07 battery classifications (8507.10–8507.90).</li>
+        <li>IATA DGR / IMDG Code — transport classification basis for battery freight cost and packaging.</li>
+        <li>Battery Council International — group size and rating definitions used in quotation normalization.</li>
+        <li>World Battery Hub market sub-site — <a href="https://market.worldbatteryhub.com/battery-price-trends/">price trend methodology</a> and <a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">HS code reference</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>

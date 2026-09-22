@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'JIS vs DIN vs BCI: A Buyer\'s Guide to Battery Specification Systems';
+const description = 'Three specification systems — JIS, DIN/EN and BCI — name the same lead-acid battery in different ways. This guide maps how each system describes size, ratings and terminals, and the traps buyers hit when comparing across them.';
+const canonical = '/procurement/spec-comparison-jis-din-bci-buyers/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Comparing JIS, DIN/EN and BCI battery specification systems for procurement',
+  articleSection: 'Procurement',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-22',
+  dateModified: '2026-09-22',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are JIS, DIN/EN and BCI battery specification systems?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'They are three regional systems for describing lead-acid starter batteries. JIS (Japan) uses codes like 55D23; DIN/EN (Europe) uses size codes like H6/LN3 plus EN 50342 ratings; BCI (North America) uses group numbers like 24, 31 or 34R. Each system bundles case dimensions, terminal style and ratings in its own notation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you convert a JIS battery code to a BCI group number?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Approximately, via dimension and terminal cross-reference tables, but not exactly — fitment should be confirmed by physical dimensions, terminal type and polarity, not by a converted code. Cross-reference tables are a starting point, not a purchasing guarantee.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do JIS CCA numbers look higher than DIN/EN numbers?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because the tests differ. JIS D5301 tests at -15°C while EN 50342 tests at -18°C with a 7.5V cut-off and DIN at -18°C with a 9.0V cut-off. The warmer JIS test prints a higher number for the same physical battery. Comparing JIS to EN CCA without conversion is the classic cross-system trap.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which system should a procurement specification use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The system of the destination market and the vehicles it serves — BCI for North America, DIN/EN for Europe, JIS for Japan/Asia. The safest practice is to specify dimensions, terminal type, polarity and the CCA standard explicitly, so the requirement survives any notation system.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-22"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Procurement · Specification Systems · Last reviewed 2026-09-22</p>
+      <h1>JIS vs DIN vs BCI: A Buyer's Guide to Battery Specification Systems</h1>
+      <p class="lead">
+        The same lead-acid battery has three names: a JIS code in Tokyo, a DIN code in Munich and a BCI group
+        number in Chicago. Each system bundles <strong>size, terminals and ratings</strong> in its own notation — and each
+        reads the other two as a trap.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> <strong>BCI</strong> (North America) names batteries by group number (24, 34, 31…);
+        <strong>DIN/EN</strong> (Europe) by size codes (H6/LN3…) with EN 50342 ratings; <strong>JIS</strong> (Japan/Asia) by type
+        codes (55D23…) with JIS D5301 ratings. The systems are not interchangeable — codes convert approximately
+        by dimension, but fitment must be confirmed physically, and ratings must be compared only within their
+        own standard.
+      </div>
+
+      <h2>The three systems at a glance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>System</th>
+            <th>Region</th>
+            <th>Size notation</th>
+            <th>Rating standard</th>
+            <th>Terminal style</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>BCI</strong> (Battery Council International)</td>
+            <td>North America</td>
+            <td>Group numbers (24, 27, 31, 34, 34R…)</td>
+            <td><a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a> (CCA), BCI RC method</td>
+            <td>SAE automotive posts, studs, side terminals</td>
+          </tr>
+          <tr>
+            <td><strong>DIN / EN</strong></td>
+            <td>Europe</td>
+            <td>Size codes (H5/LN2, H6/LN3, H7/LN4, H8/LN5…)</td>
+            <td><a href="https://testing.worldbatteryhub.com/standards/en-50342/">EN 50342</a>, <a href="https://testing.worldbatteryhub.com/standards/din-43539/">DIN 43539</a></td>
+            <td>European taper posts (19/17.9 mm), recessed</td>
+          </tr>
+          <tr>
+            <td><strong>JIS</strong></td>
+            <td>Japan / Asia</td>
+            <td>Type codes (55D23, 80D26, 105D31…)</td>
+            <td><a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">JIS D5301</a></td>
+            <td>Pencil posts, often recessed, R/L polarity</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>How each system encodes size</h2>
+      <h3>BCI group numbers</h3>
+      <p>
+        A BCI group number is a published recipe of case dimensions, terminal type, terminal position and
+        polarity. The suffix R or L fixes polarity (positive-right or positive-left). The number itself carries
+        no rating information — two <a href="https://data.worldbatteryhub.com/battery-groups/group31/">Group 31</a> batteries can differ
+        widely in CCA and Ah, which is exactly why the group alone is never a complete specification. See
+        <a href="/lead-acid/battery-group-sizes/">battery group sizes</a> for the system in detail.
+      </p>
+      <h3>DIN/EN size codes</h3>
+      <p>
+        European practice uses trade size codes — H6/LN3, H7/LN4 and so on — mapped to case dimensions and the
+        standard European recessed-terminal geometry. The "H" family (H5–H8) covers the common mid-size car
+        battery classes; see <a href="/lead-acid/h6-vs-h7-vs-h8/">H6 vs H7 vs H8</a> for how the codes step in size. Ratings
+        travel under EN 50342, with its own CCA method and Ah at the 20-hour rate.
+      </p>
+      <h3>JIS type codes</h3>
+      <p>
+        A JIS type code such as 55D23 is a compact sentence: the leading number is a performance rank (a
+        composite of capacity and cranking class), the letter is a width-and-height class, and the trailing
+        digits give the case length in centimetres. The system is dense and internally consistent, but the
+        performance rank is <em>not</em> a CCA figure — it is a category. Buyers who read "55" as amps are
+        misreading the code. The data sub-site's <a href="https://data.worldbatteryhub.com/battery-groups/">battery group reference</a>
+        covers how the codes map to physical packages.
+      </p>
+
+      <h2>The cross-system traps</h2>
+      <ul>
+        <li>
+          <strong>The CCA trap.</strong> JIS D5301 tests at −15°C; EN 50342 at −18°C with a 7.5V cut-off; DIN at −18°C with
+          a 9.0V cut-off. The same physical battery prints a higher number under JIS. Comparing a JIS CCA to an
+          EN CCA is comparing two different tests — see <a href="/lead-acid/cca/what-is-cca/">what CCA is</a> for the full ladder.
+        </li>
+        <li>
+          <strong>The terminal trap.</strong> JIS pencil posts and European taper posts are physically different. A battery
+          that fits the tray but not the vehicle's cable ends is a fitment failure with extra steps.
+          <a href="/lead-acid/battery-terminal-types/">Terminal types</a> must be specified explicitly, never assumed from a size code.
+        </li>
+        <li>
+          <strong>The conversion trap.</strong> "JIS 55D23 equals BCI 23F-ish" cross-references exist, but they are
+          approximate. Treat a converted code as a search hint, then confirm by the dimensioned drawing and
+          polarity — never order on a converted code alone.
+        </li>
+        <li>
+          <strong>The lookalike trap.</strong> Within one system, nearby codes can be genuinely different batteries (a
+          34 vs 34R differs in polarity; a JIS 55B24 vs 55D23 differs in terminal type). The suffix letters are
+          load-bearing.
+        </li>
+      </ul>
+
+      <h2>Writing a specification that survives all three systems</h2>
+      <p>
+        The robust procurement specification does not rely on any single notation. It states, explicitly and
+        independently:
+      </p>
+      <ol>
+        <li><strong>Dimensions</strong> — length × width × height in mm, with tolerances.</li>
+        <li><strong>Terminal type, position and polarity</strong> — post style, handedness, and the cable end it must accept.</li>
+        <li><strong>Ratings with standards</strong> — CCA <em>with its test standard</em>, Ah <em>with its discharge rate</em>, RC with its method.</li>
+        <li><strong>Chemistry</strong> — flooded, <a href="/lead-acid/efb-battery/">EFB</a>, <a href="/lead-acid/agm-battery/">AGM</a> or gel.</li>
+        <li><strong>Reference codes</strong> — the relevant BCI group, EN size code or JIS type code as a cross-check, not as the specification itself.</li>
+      </ol>
+      <p>
+        Written this way, the requirement survives translation between systems and between markets — the same
+        reason the <a href="/procurement/how-to-read-battery-datasheet/">datasheet reading guide</a> insists every figure carry its
+        condition.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the specification stated in dimensions, terminals and ratings — not only in one system's code?</li>
+        <li>Are CCA figures compared only within the same test standard (JIS to JIS, EN to EN, SAE to SAE)?</li>
+        <li>Are terminal type and polarity stated explicitly, including the R/L or handedness suffix where it applies?</li>
+        <li>Is any cross-system code conversion confirmed against a dimensioned drawing before ordering?</li>
+        <li>Does the quotation restate the spec in the supplier's local system without silently changing a figure?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What are JIS, DIN/EN and BCI battery specification systems?</h3>
+      <p>They are three regional systems for describing lead-acid starter batteries. JIS (Japan) uses codes like 55D23; DIN/EN (Europe) uses size codes like H6/LN3 plus EN 50342 ratings; BCI (North America) uses group numbers like 24, 31 or 34R. Each system bundles case dimensions, terminal style and ratings in its own notation.</p>
+      <h3>Can you convert a JIS battery code to a BCI group number?</h3>
+      <p>Approximately, via dimension and terminal cross-reference tables, but not exactly — fitment should be confirmed by physical dimensions, terminal type and polarity, not by a converted code. Cross-reference tables are a starting point, not a purchasing guarantee.</p>
+      <h3>Why do JIS CCA numbers look higher than DIN/EN numbers?</h3>
+      <p>Because the tests differ. JIS D5301 tests at -15°C while EN 50342 tests at -18°C with a 7.5V cut-off and DIN at -18°C with a 9.0V cut-off. The warmer JIS test prints a higher number for the same physical battery. Comparing JIS to EN CCA without conversion is the classic cross-system trap.</p>
+      <h3>Which system should a procurement specification use?</h3>
+      <p>The system of the destination market and the vehicles it serves — BCI for North America, DIN/EN for Europe, JIS for Japan/Asia. The safest practice is to specify dimensions, terminal type, polarity and the CCA standard explicitly, so the requirement survives any notation system.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Compiled from the three standards bodies' published definitions and battery industry fitment practice;
+        cross-system conversions are described as approximate because the systems define sizes independently.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — group number definitions (dimensions, terminals, polarity).</li>
+        <li>EN 50342 — European lead-acid starter battery standard (sizes, ratings, test conditions).</li>
+        <li>JIS D5301 — Japanese automotive lead-acid battery standard (type codes, ratings, test conditions).</li>
+        <li>DIN 43539 — German starter battery test method (−18°C, 30 s, 9.0V).</li>
+        <li>SAE J537 — North American cranking-ampere test method (−18°C, 30 s, 7.2V).</li>
+        <li>World Battery Hub data sub-site — <a href="https://data.worldbatteryhub.com/battery-groups/">battery group reference</a> for cross-system size data.</li>
+        <li>World Battery Hub testing sub-site — standard pages for <a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a>, <a href="https://testing.worldbatteryhub.com/standards/en-50342/">EN 50342</a>, <a href="https://testing.worldbatteryhub.com/standards/jis-d5301/">JIS D5301</a>, <a href="https://testing.worldbatteryhub.com/standards/din-43539/">DIN 43539</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-22</p>
+    </div>
+  </section>
+</BaseLayout>
