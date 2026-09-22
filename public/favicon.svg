@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- favicon：深海军蓝圆角方块 + 闪电 + WBH -->
+  <!-- favicon：深海军蓝圆角方块，上闪电下 WBH，双层布局防裁切 -->
   <rect width="64" height="64" rx="12" fill="#0f1f3d"/>
-  <path d="M 12 8 L 28 8 L 22 20 L 28 20 L 17 46 L 19 28 L 12 28 Z" fill="#38bdf8"/>
+  <path d="M 23 7 L 41 7 L 35 19 L 41 19 L 27 35 L 29 24 L 23 24 Z" fill="#38bdf8"/>
   <g fill="#ffffff" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" text-anchor="middle">
-    <text x="39" y="42" font-size="26">WBH</text>
+    <text x="32" y="52" font-size="19">WBH</text>
   </g>
 </svg>
