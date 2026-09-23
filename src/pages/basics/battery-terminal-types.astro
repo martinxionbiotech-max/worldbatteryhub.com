@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Terminal Types: A Beginner\'s Guide to the Four Families';
+const description = 'Battery terminals come in four main families — SAE post, JIS taper, stud and side. What they look like, which vehicles use them, and why the fit…';
+const canonical = '/basics/battery-terminal-types/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery terminal types',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the four main battery terminal types?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SAE post (the round tapered posts on most cars, positive thicker than negative), JIS (the pencil-thin tapered posts on Japanese and Asian cars), stud/bolt (threaded posts, common on trucks and marine batteries), and side terminal (flush GM-style bolts on the battery side). The vehicle\'s cable clamps are built for exactly one of them.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the terminal type matter when buying a replacement battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — it is a fit requirement, like group size. The existing cable clamps match one terminal family, and a battery with a different terminal type will not connect without adapters or cable work. Match the terminal type and orientation to the old battery and the vehicle.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do terminals corrode and how do I prevent it?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Acid vapour and moisture react with the metal, forming a corrosive deposit that raises connection resistance. Prevention: keep the terminals clean and dry, use protective coating, and make sure the connections are tight. Corroded terminals cause slow cranking and charging faults even when the battery itself is healthy.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Terminals · Last reviewed 2026-09-23</p>
+      <h1>Battery Terminal Types: A Beginner's Guide to the Four Families</h1>
+      <p class="lead">
+        The terminal is where the battery meets the car — two metal posts that carry the entire electrical
+        load of the vehicle. Get the family wrong and the battery will not connect; get the fit wrong and the
+        connection slowly fails even though the battery is fine.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Four families dominate: <strong>SAE post</strong> (round, tapered,
+        most cars), <strong>JIS</strong> (thin tapered posts, Japanese and Asian cars), <strong>stud/bolt</strong>
+        (threaded posts, trucks and marine) and <strong>side terminal</strong> (flush bolts, GM-style). The
+        vehicle's cables decide which one fits — the terminal, like the
+        <a href="/lead-acid/battery-group-sizes/">group size</a>, is a fit requirement, not a preference. A
+        deeper dive with identification photos and corrosion mechanics is on
+        <a href="/lead-acid/battery-terminal-types/">Battery terminal types: SAE, JIS, stud and side</a>.
+      </div>
+
+      <h2>Why terminals exist</h2>
+      <p>
+        A battery stores chemical energy and releases it as <a href="/basics/voltage-amperage/">electrical
+        current</a>. The terminals are the only path for that current to leave the battery — so the
+        connection must be tight, clean and large enough to carry the full cranking current without heating.
+        A loose or corroded terminal behaves like a narrow pipe: the battery holds the power, but the
+        connection will not deliver it.
+      </p>
+
+      <h2>The four families, one by one</h2>
+      <h3>1. SAE post (the automotive standard)</h3>
+      <p>
+        The round, tapered posts on top of most car batteries — the shape every beginner pictures. The
+        <strong>positive post is thicker</strong> than the negative, a deliberate anti-misconnection feature
+        that makes the cable clamps physically unable to fit the wrong way. North American and European cars
+        overwhelmingly use SAE posts.
+      </p>
+      <h3>2. JIS terminal (the thin taper)</h3>
+      <p>
+        Japanese and Korean vehicles use pencil-thin tapered posts that look like slimmed-down SAE terminals.
+        The positive is again the thicker of the pair. A JIS post will not accept an SAE clamp properly — a
+        common mistake when an imported battery meets a domestic cable set.
+      </p>
+      <h3>3. Stud / bolt terminals (threaded)</h3>
+      <p>
+        A threaded metal post held by a nut, common on trucks, marine and industrial batteries. The eyelet
+        lugs on the vehicle's cables slide over the stud and are bolted down — a robust connection that
+        tolerates vibration better than a clamp. See
+        <a href="/lead-acid/truck-battery/">Truck battery</a> for the systems that standardise on them.
+      </p>
+      <h3>4. Side terminals (GM-style)</h3>
+      <p>
+        Instead of posts on top, the connection is a threaded bolt hole in the side wall, into which the
+        cable's bolt screws. GM introduced the layout to keep the top of the battery clear. The terminal type
+        must match the vehicle — there is no adapter-free interchange between top-post and side-terminal
+        designs.
+      </p>
+
+      <h2>Polarity and orientation: the other half of the fit</h2>
+      <p>
+        Even among SAE-post batteries, the <strong>orientation</strong> differs: the positive post can sit on
+        the left or the right when the battery faces you. Buying the mirror image of the original battery
+        means the existing cables may not reach. The three fit checks — group size, terminal family, terminal
+        orientation — are all on the <a href="/lead-acid/battery-size-selection/">What size battery does my
+        car need?</a> page, and all three must match before the battery is a fit.
+      </p>
+
+      <h2>Corrosion: the terminal's natural enemy</h2>
+      <p>
+        Terminals corrode because acid vapour and moisture meet metal and air, forming a crust that raises
+        <a href="/technology/internal-resistance/">internal resistance</a> at the connection. Symptoms are
+        classic: slow cranking on a healthy battery, charging faults, or a car that occasionally refuses to
+        start. The fix is cleaning and protection, not a new battery — the full maintenance procedure and the
+        chemistry of the deposits are on <a href="/lead-acid/terminal-corrosion/">Terminal corrosion: why it
+        happens and how to fix it</a>.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the quotation state the <strong>terminal family and orientation</strong> — or just the group size? All three must match the end user's vehicle.</li>
+        <li>For mixed fleets, is the <strong>terminal spread</strong> (SAE vs JIS vs stud across the fleet) understood, so the right variants are ordered per vehicle class?</li>
+        <li>Are the <strong>posts sized for the clamps</strong> — SAE vs JIS taper differences are millimetres that decide whether the clamp seats properly?</li>
+        <li>Does the specification include <strong>terminal protection</strong> (grease or coatings) for corrosive environments?</li>
+        <li>Is the physical data cross-checked against the group reference — for example the <a href="https://data.worldbatteryhub.com/battery-groups/h6/">H6</a> and <a href="https://data.worldbatteryhub.com/battery-groups/h7/">H7</a> group pages on the data sub-site list terminal layout per group?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What are the four main battery terminal types?</h3>
+      <p>SAE post (the round tapered posts on most cars, positive thicker than negative), JIS (the pencil-thin tapered posts on Japanese and Asian cars), stud/bolt (threaded posts, common on trucks and marine batteries), and side terminal (flush GM-style bolts on the battery side). The vehicle's cable clamps are built for exactly one of them.</p>
+      <h3>Does the terminal type matter when buying a replacement battery?</h3>
+      <p>Yes — it is a fit requirement, like group size. The existing cable clamps match one terminal family, and a battery with a different terminal type will not connect without adapters or cable work. Match the terminal type and orientation to the old battery and the vehicle.</p>
+      <h3>Why do terminals corrode and how do I prevent it?</h3>
+      <p>Acid vapour and moisture react with the metal, forming a corrosive deposit that raises connection resistance. Prevention: keep the terminals clean and dry, use protective coating, and make sure the connections are tight. Corroded terminals cause slow cranking and charging faults even when the battery itself is healthy.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Terminal families and fit conventions cross-checked against BCI group specifications and vehicle
+        electrical practice; no quoted figures.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — group size and terminal configuration definitions.</li>
+        <li>Vehicle manufacturer electrical system documentation — terminal and orientation conventions.</li>
+        <li>Corrosion chemistry and maintenance practice — see the dedicated <a href="/lead-acid/terminal-corrosion/">terminal corrosion</a> page.</li>
+        <li>Cross-references: <a href="/lead-acid/battery-terminal-types/">Battery terminal types (lead-acid deep dive)</a>, <a href="/lead-acid/battery-group-sizes/">Battery group sizes</a>, <a href="/basics/voltage-amperage/">Voltage and amperage</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-23
+      </p>
+    </div>
+  </section>
+</BaseLayout>

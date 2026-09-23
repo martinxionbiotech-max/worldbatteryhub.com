@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Starting vs Deep-Cycle Batteries: Choosing by Application';
+const description = 'The starting vs deep-cycle decision is decided by the duty, not the label. How to read the plate-design difference, what each battery does, when to…';
+const canonical = '/compare/starting-vs-deep-cycle/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Starting vs deep-cycle battery selection',
+  articleSection: 'Battery Comparisons',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the difference between a starting and a deep-cycle battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Plate design. A starting battery uses many thin plates to maximise surface area for a short, huge burst of current — high CCA. A deep-cycle battery uses fewer, thicker plates to maximise active material for repeated deep discharges over many cycles. The two designs trade cranking power against discharge depth, and using one for the other\'s job shortens its life.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use a deep-cycle battery to start an engine?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if its cranking rating covers the engine\'s requirement. A large deep-cycle bank can often crank a small engine, and that is exactly how marine house banks are sized, but a deep-cycle battery is not built to be a starting battery — repeated starting duty on an undersized deep-cycle battery wears it prematurely. Check the CCA or MCA rating against the engine before relying on it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a dual-purpose battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A compromise design: plates between starting and deep-cycle thickness, offering usable cranking power and better deep-discharge tolerance than a starting battery — but less of each than a purpose-built battery. It suits boats and RVs with limited space and moderate house loads; heavy cycling still belongs to a true deep-cycle bank.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Comparisons · Starting/Deep-Cycle · Last reviewed 2026-09-23</p>
+      <h1>Starting vs Deep-Cycle Batteries: Choosing by Application</h1>
+      <p class="lead">
+        "Starting" and "deep-cycle" are not quality tiers — they are two engineering answers to two different
+        questions. Pick the answer for the question your application actually asks, and the battery lasts;
+        pick the wrong one and it dies early no matter how good it was.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A <strong>starting battery</strong> is built for a short, enormous
+        burst of current to crank an engine — high <a href="/lead-acid/cca/what-is-cca/">CCA</a>, thin plates,
+        shallow discharge. A <strong>deep-cycle battery</strong> is built for repeated deep discharges —
+        thicker plates, fewer of them, lower cranking power. The plate-design physics is on
+        <a href="/lead-acid/deep-cycle-vs-starting/">Deep cycle vs starting: the plate-design difference</a>;
+        this page is the <em>selection</em> guide — which one your application needs, and what happens if you
+        guess wrong.
+      </div>
+
+      <h2>The two designs in one table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Starting (SLI)</th>
+            <th>Deep-cycle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Built for</strong></td>
+            <td>One short, massive current burst</td>
+            <td>Long, steady discharge to a deep state</td>
+          </tr>
+          <tr>
+            <td><strong>Plate design</strong></td>
+            <td>Many thin plates — maximum surface area</td>
+            <td>Fewer thick plates — maximum active material</td>
+          </tr>
+          <tr>
+            <td><strong>Key rating</strong></td>
+            <td><a href="/lead-acid/cca/what-is-cca/">CCA</a> (cranking power)</td>
+            <td>Ah and <a href="/lead-acid/reserve-capacity/">reserve capacity</a> (stored energy)</td>
+          </tr>
+          <tr>
+            <td><strong>Typical discharge depth</strong></td>
+            <td>Shallow — recharged immediately</td>
+            <td>Deep — regularly discharged 50% or more</td>
+          </tr>
+          <tr>
+            <td><strong>Fails when</strong></td>
+            <td>Deep-cycled repeatedly</td>
+            <td>Asked to crank beyond its CCA</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What happens when you use the wrong one</h2>
+      <p>
+        The failure modes are mirror images. Deep-cycle a starting battery — run lights, fridges or an
+        inverter off it with the engine off — and the thin plates shed active material and sulfate rapidly;
+        the battery that could crank 700&nbsp;A on day one loses that ability within a season of abuse. Ask a
+        deep-cycle battery to do repeated starting duty beyond its cranking rating, and the sustained high
+        current over-stresses the thick plates' limited surface area. Neither failure is a manufacturing
+        defect; both are application mismatches.
+      </p>
+      <p>
+        The discharge-depth mechanics — why a starting battery dies young on 80% discharges while a
+        deep-cycle bank shrugs them off — are covered in
+        <a href="/testing/cycle-life-measured/">Cycle life: how it is measured</a>.
+      </p>
+
+      <h2>Choosing by application</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>Right design</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Car / truck starting</td>
+            <td><strong>Starting</strong></td>
+            <td>Shallow discharge, instant recharge, CCA is the whole job</td>
+          </tr>
+          <tr>
+            <td>RV house bank</td>
+            <td><strong>Deep-cycle</strong></td>
+            <td>Lights, fridge and inverter cycle the bank every night</td>
+          </tr>
+          <tr>
+            <td>Marine house bank</td>
+            <td><strong>Deep-cycle</strong></td>
+            <td>Sustained loads between engine runs</td>
+          </tr>
+          <tr>
+            <td>Marine engine start</td>
+            <td><strong>Starting</strong></td>
+            <td>Cold cranking in a wet environment, kept separate from the house bank</td>
+          </tr>
+          <tr>
+            <td>Golf cart / floor machine</td>
+            <td><strong>Deep-cycle</strong></td>
+            <td>Pure cycling duty — a <a href="/lead-acid/gc2-battery/">GC2</a> bank</td>
+          </tr>
+          <tr>
+            <td>Limited space, mixed duty</td>
+            <td><strong><a href="/lead-acid/dual-purpose-battery/">Dual-purpose</a></strong></td>
+            <td>A deliberate compromise — see below</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The dual-purpose compromise</h2>
+      <p>
+        A <a href="/lead-acid/dual-purpose-battery/">dual-purpose battery</a> sits between the two designs:
+        plates thick enough to tolerate moderate cycling, surface area enough to crank a moderate engine. It
+        is the right answer when space forbids two banks and the house load is light — a small runabout, a
+        camper with a fridge and a few lights. It is the wrong answer for heavy cycling; a dual-purpose
+        battery discharged deeply every day still dies young compared with a true deep-cycle bank of the same
+        footprint.
+      </p>
+
+      <h2>How to read the ratings before you choose</h2>
+      <ul>
+        <li><strong>For starting duty</strong> — the <a href="/lead-acid/cca/what-is-cca/">CCA</a> must meet the engine's requirement at your coldest expected temperature, on the same standard (SAE, EN, JIS, DIN).</li>
+        <li><strong>For cycling duty</strong> — the Ah rating at the 20-hour rate, plus the <a href="/lead-acid/reserve-capacity/">reserve capacity</a> if the load must ride through engine-off periods, decide the bank size.</li>
+        <li><strong>For either</strong> — the cycle-life claim must state its test depth of discharge. "Long cycle life" at 20% DoD says nothing about your 60% DoD duty.</li>
+      </ul>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the quotation actually a <strong>deep-cycle design</strong> — thicker plates, cycle-life data at stated depth of discharge — or a starting battery wearing a "marine" sticker?</li>
+        <li>For cycling duty, what is the <strong>cycle-life claim at your depth of discharge</strong> (50%? 80%?), and is it backed by a test report?</li>
+        <li>For starting duty, does the <strong>CCA figure name its standard</strong> (SAE / EN / JIS / DIN) so it can be compared with the engine's requirement?</li>
+        <li>Are <strong>house and starting banks separated</strong> in the system design — or is the quotation quietly asking one battery to do both jobs?</li>
+        <li>Does the <a href="https://data.worldbatteryhub.com/battery-groups/group24/">group size</a> and terminal layout fit the installation the design assumes?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between a starting and a deep-cycle battery?</h3>
+      <p>Plate design. A starting battery uses many thin plates to maximise surface area for a short, huge burst of current — high CCA. A deep-cycle battery uses fewer, thicker plates to maximise active material for repeated deep discharges over many cycles. The two designs trade cranking power against discharge depth, and using one for the other's job shortens its life.</p>
+      <h3>Can I use a deep-cycle battery to start an engine?</h3>
+      <p>Only if its cranking rating covers the engine's requirement. A large deep-cycle bank can often crank a small engine, and that is exactly how marine house banks are sized, but a deep-cycle battery is not built to be a starting battery — repeated starting duty on an undersized deep-cycle battery wears it prematurely. Check the CCA or MCA rating against the engine before relying on it.</p>
+      <h3>What is a dual-purpose battery?</h3>
+      <p>A compromise design: plates between starting and deep-cycle thickness, offering usable cranking power and better deep-discharge tolerance than a starting battery — but less of each than a purpose-built battery. It suits boats and RVs with limited space and moderate house loads; heavy cycling still belongs to a true deep-cycle bank.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Selection guidance built on the plate-design and rating documentation on the linked pages; no quoted
+        cycle-count or price figures.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — starting, deep-cycle and dual-purpose design definitions.</li>
+        <li>SAE J537 — cranking rating method referenced for starting-duty selection.</li>
+        <li>Manufacturer application guides — marine and RV house-bank sizing practice.</li>
+        <li>Cross-references: <a href="/lead-acid/deep-cycle-vs-starting/">Deep cycle vs starting (plate design)</a>, <a href="/lead-acid/dual-purpose-battery/">Dual-purpose battery</a>, <a href="/testing/cycle-life-measured/">Cycle life measured</a>, <a href="/lead-acid/reserve-capacity/">Reserve capacity</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>

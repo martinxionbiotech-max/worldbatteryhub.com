@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Comparisons: Head-to-Head Decision Guides';
+const description = 'Head-to-head battery comparisons built for decisions — AGM vs EFB vs flooded TCO, LFP vs NMC for fleets, 12V vs 24V systems, starting vs deep-cycle.';
+const canonical = '/compare/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/compare/',
+  about: 'Head-to-head battery comparison guides',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Comparisons · Last reviewed 2026-09-23</p>
+      <h1>Battery Comparisons: Head-to-Head Decision Guides</h1>
+      <p class="lead">
+        Comparisons built the way decisions actually happen: two candidates, one duty cycle, and the
+        difference that decides the purchase — not a tie score.
+      </p>
+
+      <div class="takeaways">
+        <strong>How this cluster works:</strong> each page answers one "X vs Y" question with the
+        <strong>deciding variable</strong> named up front — total cost, cycle life, system current, or duty
+        type — then follows it through to the buying checklist. The engineering deep dives live in
+        <a href="/lead-acid/">Lead-Acid</a> and <a href="/lithium/">Lithium</a>; these pages connect them to
+        decisions.
+      </div>
+
+      <h2>The comparisons</h2>
+      <ul>
+        <li><a href="/compare/agm-vs-efb-vs-flooded-tco/">AGM vs EFB vs flooded: total cost of ownership</a> — why the sticker-price ranking can invert once duty, start-stop and replacement labour enter the calculation.</li>
+        <li><a href="/compare/lfp-vs-nmc-fleet-buyers/">LFP vs NMC for fleet buyers</a> — cycle life, safety margin and cost per cycle versus energy density and range.</li>
+        <li><a href="/compare/12v-vs-24v-system-design/">12V vs 24V system design</a> — how doubling the voltage halves the current, and which system your loads and cable runs demand.</li>
+        <li><a href="/compare/starting-vs-deep-cycle/">Starting vs deep-cycle batteries</a> — the two plate designs, the applications that need each, and the dual-purpose compromise.</li>
+      </ul>
+
+      <h2>Related decision pages elsewhere on the site</h2>
+      <ul>
+        <li><a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded — construction and ratings</a> (the engineering behind the TCO page)</li>
+        <li><a href="/lead-acid/deep-cycle-vs-starting/">Deep cycle vs starting — the plate-design difference</a></li>
+        <li><a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO — the chemistries compared</a></li>
+        <li><a href="/procurement/battery-quotation-comparison/">How to compare battery quotations</a> (the procurement companion)</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <p>Each comparison page carries its own source list; standards and cross-references are cited there individually.</p>
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>

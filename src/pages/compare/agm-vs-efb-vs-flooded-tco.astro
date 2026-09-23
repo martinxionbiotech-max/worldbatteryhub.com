@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'AGM vs EFB vs Flooded: Total Cost of Ownership';
+const description = 'The sticker price ranks flooded cheapest and AGM dearest — but total cost of ownership over the battery\'s life can invert that order. How duty cycle, start-stop…';
+const canonical = '/compare/agm-vs-efb-vs-flooded-tco/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'AGM vs EFB vs flooded total cost of ownership',
+  articleSection: 'Battery Comparisons',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Which is cheaper to own: AGM, EFB or flooded?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on duty. A flooded battery has the lowest purchase price and is cheapest when the duty is light — standard starting with no start-stop. In heavier duty (start-stop, repeated discharge, hot engine bays) an EFB or AGM typically lasts longer and saves fuel and replacement labour, which can invert the total-cost order despite the higher sticker price. There is no single winner across all applications.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is AGM worth the price premium over EFB?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'AGM justifies its premium when the duty demands it: heavy start-stop with regenerative braking, deep-cycling auxiliary loads, or mounting constraints where a sealed, leak-resistant battery is required. If the vehicle was engineered around an EFB and the duty is light, the AGM premium mostly buys headroom you will not use. Match the technology to the vehicle specification and duty, not to the highest label.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an EFB or AGM replace a flooded battery in a standard car?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually yes electrically, but the charging system must be compatible and the replacement must never downgrade below the vehicle specification — an AGM can replace an EFB or flooded requirement, an EFB can replace a flooded requirement, but never the reverse in a vehicle that was designed for the higher technology.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Comparisons · AGM/EFB/Flooded · Last reviewed 2026-09-23</p>
+      <h1>AGM vs EFB vs Flooded: Total Cost of Ownership</h1>
+      <p class="lead">
+        Every buyer sees the sticker price first: flooded cheapest, EFB in the middle, AGM dearest. This page
+        is about the part the sticker hides — what each technology costs <em>per year of service</em> once duty
+        cycle, start-stop, fuel consumption and replacement labour enter the calculation.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> There is no universal winner. In light starting duty the
+        <a href="/lead-acid/sli-battery/">flooded</a> battery is cheapest to own because its low price is not
+        punished by a short life. In start-stop and deep-cycling duty, the
+        <a href="/lead-acid/efb-battery/">EFB</a> or <a href="/lead-acid/agm-battery/">AGM</a> typically lasts
+        longer and works harder, and its higher purchase price is paid back through longer service life, fuel
+        savings and fewer replacements. The construction differences behind those claims are covered in
+        <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded: construction and ratings</a>.
+      </div>
+
+      <h2>The three technologies at a glance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Flooded (SLI)</th>
+            <th>EFB</th>
+            <th>AGM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Electrolyte</strong></td>
+            <td>Liquid, can spill</td>
+            <td>Liquid, carbon-enhanced plates</td>
+            <td>Absorbed in glass mat, sealed</td>
+          </tr>
+          <tr>
+            <td><strong>Purchase price</strong></td>
+            <td>Lowest</td>
+            <td>Middle</td>
+            <td>Highest</td>
+          </tr>
+          <tr>
+            <td><strong>Cycle life in repeated discharge</strong></td>
+            <td>Shortest</td>
+            <td>Longer than flooded</td>
+            <td>Longest of the three</td>
+          </tr>
+          <tr>
+            <td><strong>Charge acceptance</strong></td>
+            <td>Lowest</td>
+            <td>Higher</td>
+            <td>Highest</td>
+          </tr>
+          <tr>
+            <td><strong>Typical home</strong></td>
+            <td>Standard cars, light duty</td>
+            <td>Entry start-stop vehicles</td>
+            <td>Heavy start-stop, aux loads, harsh installs</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The engineering detail — plate design, carbon additives, the glass mat and how they change CCA and
+        cycle life — is on the
+        <a href="/lead-acid/agm-vs-efb-vs-flooded/">construction comparison page</a>. Here we follow the money
+        instead of the millimetres.
+      </p>
+
+      <h2>What the sticker price does not tell you</h2>
+      <p>
+        A battery's total cost of ownership has four components, and the purchase price is only one of them:
+      </p>
+      <ul>
+        <li>
+          <strong>Purchase price</strong> — the number on the quotation. Flooded wins outright.
+        </li>
+        <li>
+          <strong>Service life</strong> — how many months the battery survives its actual duty before
+          <a href="/lead-acid/capacity-loss/">capacity loss</a> forces replacement. In deep-cycling or
+          start-stop duty this is where the cheap battery loses the race.
+        </li>
+        <li>
+          <strong>Operating cost while alive</strong> — chiefly fuel. A start-stop system can only save fuel
+          if the battery's <a href="/technology/internal-resistance/">internal resistance</a> is low and its
+          charge acceptance high enough to absorb regenerative braking energy. That is exactly what EFB and
+          AGM are engineered for; a flooded battery in the same role charges slower and forces the engine to
+          run more.
+        </li>
+        <li>
+          <strong>Replacement and downtime</strong> — labour, vehicle off-road time and disposal. A battery
+          that lasts two replacement cycles instead of one halves every one of these.
+        </li>
+      </ul>
+      <p>
+        The general pattern: the harder the duty, the more the second, third and fourth components dominate,
+        and the more the AGM premium stops being a premium and starts being a discount.
+      </p>
+
+      <h2>When the flooded battery is the cheapest to own</h2>
+      <p>
+        Flooded wins when the duty is what it was designed for: a standard car in a moderate climate, one
+        start per trip, no start-stop, no auxiliary loads running with the engine off. The battery is never
+        cycled deeply, so its shorter cycle life is never exercised, and its lowest purchase price is pure
+        saving. Adding a maintenance-free label or the right
+        <a href="/lead-acid/battery-group-sizes/">group size</a> does not change the economics.
+      </p>
+      <p>
+        It also wins as the <strong>up-front capital floor</strong> for fleet buyers: where a vehicle is
+        expected to be sold within a typical battery lifetime, buying more battery than the duty needs is
+        spending money for the next owner's benefit.
+      </p>
+
+      <h2>When EFB and AGM earn back their premium</h2>
+      <ul>
+        <li>
+          <strong>Start-stop vehicles.</strong> The battery is cycled dozens of times per trip. A flooded
+          battery in this role ages fast; the manufacturer specifies <a href="/lead-acid/start-stop-battery/">EFB
+          or AGM</a> for a reason, and downgrading below spec is a false economy that usually ends in early
+          failure.
+        </li>
+        <li>
+          <strong>Deep or partial cycling.</strong> Auxiliary loads — lighting, refrigeration, inverters —
+          discharge the battery between charges. The longer
+          <a href="/testing/cycle-life-measured/">cycle life</a> of EFB and AGM directly converts to fewer
+          replacements per year of operation.
+        </li>
+        <li>
+          <strong>Hot engine bays and harsh mounting.</strong> Heat accelerates
+          <a href="/lead-acid/heat-degradation/">degradation</a> in every lead-acid battery, but sealed AGM
+          tolerates the conditions better and survives mounting positions a flooded battery cannot.
+        </li>
+        <li>
+          <strong>Fuel-sensitive fleets.</strong> Where fuel is a tracked cost line, the faster charge
+          acceptance of EFB/AGM in a start-stop or mild-hybrid system shows up in the fuel ledger, not the
+          battery ledger.
+        </li>
+      </ul>
+
+      <h2>Warranty and the TCO calculation</h2>
+      <p>
+        Warranty terms feed directly into TCO — a longer pro-rata period changes the effective cost of an
+        early failure. The same reading rules apply as for any battery purchase: what is covered, for how
+        long, under what duty, and who pays the labour. See
+        <a href="/procurement/battery-warranty-terms-distributors/">Warranty terms for distributors and bulk
+        buyers</a> for the full checklist.
+      </p>
+
+      <h2>A simple TCO worksheet</h2>
+      <p>No formulas required — the decision is a comparison of three lines per candidate:</p>
+      <ol>
+        <li><strong>Purchase price</strong> — from the quotation, per battery.</li>
+        <li><strong>Expected service life</strong> — from the supplier's own cycle-life and calendar-life data under <em>your</em> duty, not a showroom duty.</li>
+        <li><strong>Replacement and operating cost</strong> — labour, downtime, and any fuel or maintenance difference over the same period.</li>
+      </ol>
+      <p>
+        Divide line 1 by line 2 and add line 3: the result is cost per year of service. The ranking it
+        produces can differ from the sticker-price ranking — which is the entire point of this page.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the vehicle <strong>engineered for start-stop</strong>, and does the quotation respect the manufacturer's technology floor (AGM/EFB minimum) rather than undercut it?</li>
+        <li>What <strong>cycle-life and calendar-life data</strong> does the supplier provide for the battery under your actual duty — not just a CCA number from the label?</li>
+        <li>What are the <strong>warranty terms</strong> — coverage period, pro-rata structure, labour, and whether deep-cycling duty voids it?</li>
+        <li>Does the lower sticker price survive the <strong>TCO worksheet</strong> above, or does a shorter expected life plus replacement labour reverse the ranking?</li>
+        <li>Is the construction actually what the label claims — an EFB with carbon-enhanced plates, an AGM with a real glass mat — or a flooded battery wearing a marketing name? See the <a href="https://technology.worldbatteryhub.com/vrla/">VRLA technology reference</a> for what sealed construction must mean.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Which is cheaper to own: AGM, EFB or flooded?</h3>
+      <p>It depends on duty. A flooded battery has the lowest purchase price and is cheapest when the duty is light — standard starting with no start-stop. In heavier duty (start-stop, repeated discharge, hot engine bays) an EFB or AGM typically lasts longer and saves fuel and replacement labour, which can invert the total-cost order despite the higher sticker price. There is no single winner across all applications.</p>
+      <h3>Is AGM worth the price premium over EFB?</h3>
+      <p>AGM justifies its premium when the duty demands it: heavy start-stop with regenerative braking, deep-cycling auxiliary loads, or mounting constraints where a sealed, leak-resistant battery is required. If the vehicle was engineered around an EFB and the duty is light, the AGM premium mostly buys headroom you will not use. Match the technology to the vehicle specification and duty, not to the highest label.</p>
+      <h3>Can an EFB or AGM replace a flooded battery in a standard car?</h3>
+      <p>Usually yes electrically, but the charging system must be compatible and the replacement must never downgrade below the vehicle specification — an AGM can replace an EFB or flooded requirement, an EFB can replace a flooded requirement, but never the reverse in a vehicle that was designed for the higher technology.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cost-of-ownership reasoning built on the construction and rating differences documented on the linked
+        pages; no quoted prices, because list prices vary by region and channel and any printed figure would
+        be stale. Where standards define the performance classes, the standards are named.
+      </p>
+      <ul>
+        <li>EN 50342 — European lead-acid starter battery standard, defining the performance classes that separate flooded, EFB and AGM duty (see <a href="https://testing.worldbatteryhub.com/standards/en-50342/">testing.worldbatteryhub.com</a>).</li>
+        <li>Battery Council International (BCI) — battery technology definitions and replacement guidance.</li>
+        <li>Vehicle manufacturer start-stop specifications — the basis for the "never downgrade below spec" rule.</li>
+        <li>VRLA and AGM construction references — <a href="https://technology.worldbatteryhub.com/vrla/">technology.worldbatteryhub.com</a>.</li>
+        <li>Cross-references: <a href="/lead-acid/agm-vs-efb-vs-flooded/">AGM vs EFB vs flooded (construction)</a>, <a href="/testing/cycle-life-measured/">Cycle life: how it is measured</a>, <a href="/procurement/battery-warranty-terms-distributors/">Warranty terms for bulk buyers</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>
