@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Internal Resistance: Why It Matters and How It Is Measured';
+const description = 'Internal resistance is the battery\u2019s own opposition to current flow, measured in milliohms. Why it rises with age and sulfation, what it does to cranking…';
+const canonical = '/testing/internal-resistance-matters/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery internal resistance and conductance testing',
+  articleSection: 'Battery Testing',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is battery internal resistance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Internal resistance is the battery\u2019s own opposition to current flow, expressed in milliohms. Every battery has some; it comes from the electrolyte, the plates, the separators and the internal connections. As a battery ages or sulfates, internal resistance rises, and a higher resistance means more voltage sag under load and more heat at high current.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is internal resistance measured?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Two common ways: a DC load test applies a known current and measures the voltage drop (Ohm\u2019s law), and an AC impedance or conductance test applies a small AC signal (often around 1 kHz) and reads the response. Handheld field testers mostly use the AC conductance method because it is fast, safe and needs no real load.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does internal resistance matter for buying batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because it sets the voltage sag under cranking load and the heat generated at high current. A battery with rising internal resistance delivers less voltage to the starter at the same CCA demand, and it converts more of the discharge into heat. Resistance trend data is also the standard early-warning signal for aging and sulfation.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Testing · Electrical Condition Cluster · Last reviewed 2026-09-23</p>
+      <h1>Internal Resistance: Why It Matters and How It Is Measured</h1>
+      <p class="lead">
+        Every battery fights its own current. That fight — internal resistance, in milliohms — is the single
+        most informative number about a battery's condition, and the one most buyers never ask for. It decides
+        how much voltage reaches the starter, how much of the discharge becomes heat, and whether the battery
+        is quietly dying.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Internal resistance is the battery's own opposition to current flow.
+        It is low (a few milliohms) in a healthy starter battery and <strong>rises with age, sulfation and
+        temperature extremes</strong>. Higher resistance means more voltage sag under load, more heat, and less
+        usable cranking power — which is why it is the standard early-warning measurement for battery health.
+      </div>
+
+      <h2>Where internal resistance comes from</h2>
+      <p>
+        A battery is not a pure voltage source; it is a voltage source with losses. The losses stack up across
+        the whole current path: the electrolyte's ionic conductivity, the plates and their connections, the
+        separators, and the terminal-to-strap welds. Together they present a small resistance that every
+        discharge must push through.
+      </p>
+      <p>
+        The useful model is Ohm's law: under load, the terminal voltage is the open-circuit voltage minus the
+        current times the internal resistance. At cranking currents of several hundred amps, even a few
+        milliohms of extra resistance costs real voltage at the starter — the same physics that makes
+        <a href="/lead-acid/cca/what-is-cca/">CCA</a> a temperature-sensitive number.
+      </p>
+
+      <h2>What makes it rise</h2>
+      <ul>
+        <li>
+          <strong>Sulfation.</strong> As a lead-acid battery ages or sits discharged, sulfate crystals build on
+          the plates, shrinking active surface area and raising resistance. See
+          <a href="/lead-acid/battery-sulfation/">battery sulfation</a> for the mechanism.
+        </li>
+        <li>
+          <strong>Grid corrosion.</strong> Positive-grid corrosion over years of charging thins the conductors
+          and adds resistance.
+        </li>
+        <li>
+          <strong>Electrolyte loss or stratification.</strong> Drying out or an uneven acid distribution both
+          raise resistance locally.
+        </li>
+        <li>
+          <strong>Cold.</strong> Resistance is temperature-dependent: colder electrolyte conducts worse, so
+          resistance rises exactly when cranking demand peaks — the double whammy behind
+          <a href="/lead-acid/cca/cca-and-temperature/">cold-weather CCA loss</a>.
+        </li>
+      </ul>
+
+      <h2>Two measurement families: DC load vs AC conductance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>DC load method</th>
+            <th>AC conductance / impedance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Principle</strong></td>
+            <td>Apply a known current, measure the voltage drop, divide</td>
+            <td>Apply a small AC signal (often ~1 kHz), read the response</td>
+          </tr>
+          <tr>
+            <td><strong>Equipment</strong></td>
+            <td>Carbon-pile or electronic load + voltmeter</td>
+            <td>Handheld conductance tester</td>
+          </tr>
+          <tr>
+            <td><strong>Readout</strong></td>
+            <td>Milliohms (resistance)</td>
+            <td>Siemens (conductance, the inverse) or a converted mΩ/CCA figure</td>
+          </tr>
+          <tr>
+            <td><strong>Trade-offs</strong></td>
+            <td>Loads the battery, needs care; closest to real duty</td>
+            <td>Fast, safe, repeatable; an estimate correlated to load behaviour</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Conductance is simply the inverse of resistance, which is why handheld testers that "measure
+        conductance" are really measuring resistance from the other side. The comparison is unpacked in
+        <a href="/technology/internal-resistance-vs-conductance/">internal resistance vs conductance</a>; the
+        deeper physics is in <a href="/technology/internal-resistance/">what internal resistance means</a>.
+      </p>
+
+      <h2>Reading the number: trend beats snapshot</h2>
+      <p>
+        A single milliohm figure has limited meaning without a baseline — healthy resistance depends on battery
+        size and chemistry, and a large 8D reads differently from a small motorcycle battery. The professional
+        habit is the <strong>trend</strong>: log resistance at install and at each service, and watch the slope.
+        A battery whose resistance has roughly doubled since new — whatever its absolute value — is telling you
+        something, usually sulfation or corrosion. That is the same discipline used in
+        <a href="/lead-acid/how-to-test-a-battery/">how to test a battery</a>.
+      </p>
+      <p>
+        Field practice pairs the trend with a periodic true load test: conductance screens the fleet in minutes,
+        and any battery flagged by trend gets a
+        <a href="/testing/cca-testing-deep-dive/">real load verification</a> before a decision.
+      </p>
+
+      <h2>Why it matters at the moment of purchase</h2>
+      <p>
+        For buyers, internal resistance is the cheapest honest proxy for <em>what is inside</em>: two batteries
+        with identical labels and the same printed CCA can differ measurably in resistance at the warehouse
+        door, because resistance reflects plate quality, welding and fill state — things the label does not
+        state. A quick conductance scan of a sample can separate a fresh, well-built lot from a stale or
+        sloppily built one before money changes hands.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Has the supplier published an <strong>internal-resistance specification</strong> (or conductance window) per model, not just CCA and Ah?</li>
+        <li>Will the contract allow a <strong>sample-lot resistance scan on receipt</strong>, with results compared against a factory baseline for the same model?</li>
+        <li>Is the lot <strong>fresh</strong>? Elevated resistance across a whole lot can signal long storage — ask for production dates and storage conditions.</li>
+        <li>Is the resistance figure tied to a <strong>temperature</strong>? Resistance readings without temperature are not comparable.</li>
+        <li>For warranties and claims, is there a defined <strong>resistance-based failure criterion</strong>, or only "won't start"?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is battery internal resistance?</h3>
+      <p>Internal resistance is the battery's own opposition to current flow, expressed in milliohms. Every battery has some; it comes from the electrolyte, the plates, the separators and the internal connections. As a battery ages or sulfates, internal resistance rises, and a higher resistance means more voltage sag under load and more heat at high current.</p>
+      <h3>How is internal resistance measured?</h3>
+      <p>Two common ways: a DC load test applies a known current and measures the voltage drop (Ohm's law), and an AC impedance or conductance test applies a small AC signal (often around 1 kHz) and reads the response. Handheld field testers mostly use the AC conductance method because it is fast, safe and needs no real load.</p>
+      <h3>Why does internal resistance matter for buying batteries?</h3>
+      <p>Because it sets the voltage sag under cranking load and the heat generated at high current. A battery with rising internal resistance delivers less voltage to the starter at the same CCA demand, and it converts more of the discharge into heat. Resistance trend data is also the standard early-warning signal for aging and sulfation.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Measurement principles and aging mechanisms cross-verified from the referenced standards and
+        instrument-method documentation; where practices differ (DC load vs AC conductance), both are
+        described rather than conflated.
+      </p>
+      <ul>
+        <li>IEC — internal resistance and impedance measurement practice for lead-acid and lithium batteries.</li>
+        <li>Battery Council International (BCI) — condition testing and conductance guidance.</li>
+        <li>Instrument manufacturer documentation — AC conductance (1 kHz) and DC load test methods.</li>
+        <li>Manufacturer technical literature (Yuasa, Trojan, Canadian Energy, Midtronics-style field practice) — resistance trend interpretation and failure criteria.</li>
+        <li>Method cross-reference: <a href="https://testing.worldbatteryhub.com/resistance-conductance/">testing.worldbatteryhub.com — Internal resistance &amp; conductance</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>

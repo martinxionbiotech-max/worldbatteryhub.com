@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Group Size vs Performance: What a Group Number Does — and…';
+const description = 'BCI group size standardizes the case, not the power. Why the same group number can mean 600 CCA or 900 CCA, how construction shifts the rating, and…';
+const canonical = '/lead-acid/group-size-vs-performance-mapping/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery group size and performance mapping',
+  articleSection: 'Lead-Acid Battery Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Does a bigger group size mean more power?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually, but not automatically. Group size fixes the physical case, so a larger group has room for more plate material and therefore typically offers higher capacity and CCA. But construction — plate thickness, paste density, flooded vs AGM — moves the ratings substantially within the same group, so two batteries of the same group size can differ measurably in performance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do batteries of the same group size have different CCA and Ah?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because group size standardizes fit, not construction. A starting battery in a group uses many thin plates for cranking surface (high CCA, modest Ah); a deep-cycle battery in the same case uses fewer, thicker plates (more Ah and endurance, lower CCA). Quality, paste, separators and grid alloy move the numbers further.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I fit a higher-performance battery in the same group?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Within limits, yes. As long as the group size, terminal type and polarity match the vehicle, a higher-CCA or higher-Ah build of the same group will fit. The real constraint is the tray, hold-down and cable length — always verify physical fit against the manufacturer drawing, not just the group name.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lead-Acid Knowledge · Battery Groups Cluster · Last reviewed 2026-09-23</p>
+      <h1>Battery Group Size vs Performance: What a Group Number Does — and Does Not — Guarantee</h1>
+      <p class="lead">
+        A BCI group number is a <strong>fit specification</strong>: case dimensions, terminal type and polarity.
+        It is not a power specification. The same group number can be built to 600 CCA or 900 CCA, 50 Ah or
+        100 Ah — and the difference is not marketing noise. It is construction, and it is visible in the
+        datasheet if you know where to look.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Group size fixes the box; the build fixes the power. Larger groups
+        generally offer more capacity and CCA because the case holds more plate material, but within any one
+        group, <strong>plate count, plate thickness, flooded-vs-AGM and quality choices</strong> shift the
+        ratings materially. Buy the group for the fit, and the <em>ratings for the duty</em>.
+      </div>
+
+      <h2>What the group number actually standardizes</h2>
+      <p>
+        The Battery Council International group system exists so that any battery labelled
+        <a href="/lead-acid/battery-group-sizes/">Group 24</a>, say, fits any Group 24 tray: length, width,
+        height, terminal arrangement and polarity are defined. What it does <em>not</em> define is how much
+        lead is inside, how the plates are built, or what the battery must deliver. Two Group 24s can sit in
+        the same tray and perform very differently — which is precisely what
+        <a href="/lead-acid/group-24-vs-27/">Group 24 vs 27</a> comparisons are really about: the larger case
+        <em>enables</em> more performance, it does not mandate it.
+      </p>
+
+      <h2>How the same group produces different ratings</h2>
+      <p>
+        Three construction choices move the numbers inside a fixed case:
+      </p>
+      <ul>
+        <li>
+          <strong>Plate count vs thickness.</strong> A starting build packs many thin plates to maximize
+          surface area — high <a href="/lead-acid/cca/what-is-cca/">CCA</a>, modest Ah. A
+          <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a> build uses fewer, thicker plates — more
+          Ah and endurance, lower CCA. Same group, opposite priorities.
+        </li>
+        <li>
+          <strong>Flooded vs AGM.</strong> An <a href="/lead-acid/agm-battery/">AGM</a> build of a group
+          typically supports higher charge acceptance and better vibration resistance than a flooded build, and
+          the two can carry different ratings despite identical case dimensions.
+        </li>
+        <li>
+          <strong>Material quality.</strong> Grid alloy, paste density, separator grade and welding quality
+          all move real performance — and real
+          <a href="/testing/internal-resistance-matters/">internal resistance</a> — even when the label
+          numbers look the same.
+        </li>
+      </ul>
+
+      <h2>Group → typical performance map</h2>
+      <p>
+        The table shows typical ranges for the most common groups. These are <strong>typical build ranges</strong>,
+        not guarantees — within every group, starting, deep-cycle and AGM variants sit at different points.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Typical case</th>
+            <th>Typical Ah range</th>
+            <th>Typical CCA range</th>
+            <th>Typical duty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>H5 / L2 (Group 47)</strong></td>
+            <td>242 × 175 mm</td>
+            <td>~55–60 Ah</td>
+            <td>~500–650</td>
+            <td>Compact car starting</td>
+          </tr>
+          <tr>
+            <td><strong>H6 / L3 (Group 48)</strong></td>
+            <td>278 × 175 mm</td>
+            <td>~60–70 Ah</td>
+            <td>~600–760</td>
+            <td>Mid-size car starting</td>
+          </tr>
+          <tr>
+            <td><strong>H7 / L4 (Group 94R)</strong></td>
+            <td>315 × 175 mm</td>
+            <td>~70–80 Ah</td>
+            <td>~760–850</td>
+            <td>Large car / SUV starting</td>
+          </tr>
+          <tr>
+            <td><strong>H8 / L5 (Group 49)</strong></td>
+            <td>354 × 175 mm</td>
+            <td>~90–95 Ah</td>
+            <td>~850–900</td>
+            <td>Large SUV / diesel</td>
+          </tr>
+          <tr>
+            <td><strong>Group 24</strong></td>
+            <td>260 × 173 mm</td>
+            <td>~70–75 Ah</td>
+            <td>~700</td>
+            <td>Marine / RV dual-purpose</td>
+          </tr>
+          <tr>
+            <td><strong>Group 27</strong></td>
+            <td>306 × 173 mm</td>
+            <td>~90–95 Ah</td>
+            <td>~800</td>
+            <td>Marine / RV / trucks</td>
+          </tr>
+          <tr>
+            <td><strong><a href="/lead-acid/group-31-battery/">Group 31</a></strong></td>
+            <td>330 × 173 mm</td>
+            <td>~100 Ah</td>
+            <td>~900</td>
+            <td>Heavy-duty trucks, marine, off-grid</td>
+          </tr>
+          <tr>
+            <td><strong><a href="/lead-acid/8d-battery/">8D</a></strong></td>
+            <td>~527 × 283 mm</td>
+            <td>~200 Ah+</td>
+            <td>~1,200+</td>
+            <td>Heavy industrial / large marine</td>
+          </tr>
+          <tr>
+            <td><strong><a href="/lead-acid/gc2-battery/">GC2</a></strong></td>
+            <td>6V, 264 × 183 mm</td>
+            <td>~215 Ah (6V)</td>
+            <td>N/A (deep-cycle)</td>
+            <td>Golf cart / floor machine deep cycle</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Typical ranges compiled from the site's group pages and manufacturer fitment literature — use them to
+        orient, then verify against the specific datasheet, because the same group spans multiple builds.
+      </p>
+
+      <h2>The H-family: same width, growing length</h2>
+      <p>
+        The H5→H8 progression shows the mapping logic cleanly: all four share the same 175 mm width and terminal
+        layout, and each step adds case length — about 36 mm from H5 to H6, then to H7, then to H8. Each step
+        buys room for more plate area, and the typical Ah and CCA step up with it. The fit difference is
+        described in <a href="/lead-acid/h7-h8-battery/">H7 vs H8</a>; the point here is that within the
+        H-family, <strong>bigger group ≈ bigger ratings</strong> holds — but only <em>on average</em>. A premium
+        H6 build can out-rate a budget H7, because construction outranks case size once the build quality gap
+        widens.
+      </p>
+
+      <h2>What the group number cannot tell you</h2>
+      <ul>
+        <li>
+          <strong>Duty design.</strong> Whether a Group 24 is a starting, deep-cycle or dual-purpose build is
+          not in the group number — it is in the plate design.
+        </li>
+        <li>
+          <strong>Actual tested ratings.</strong> Two labels can print the same CCA under different standards
+          (<a href="/lead-acid/cca/what-is-cca/">JIS vs EN vs SAE</a>), so the printed figure still needs its
+          standard.
+        </li>
+        <li>
+          <strong>Quality and longevity.</strong> Warranty length, <a href="/testing/cycle-life-measured/">cycle life</a>
+          and calendar life are set by construction quality, invisible in the group name.
+        </li>
+      </ul>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Buy the group for <strong>fit</strong> — verify tray dimensions, hold-down and terminal layout against the drawing, not just the group name.</li>
+        <li>Then buy the <strong>ratings for the duty</strong>: cranking CCA for starting, Ah and RC for deep-cycle/standby, from the specific datasheet, with the standard named.</li>
+        <li>When two suppliers quote the same group at different prices, compare <strong>build spec</strong> — plate type, AGM vs flooded, warranty — not just the printed CCA.</li>
+        <li>Ask whether the quoted rating is the <strong>production-unit tested value</strong> or a catalogue family figure.</li>
+        <li>For mixed fleets, consider <strong>group consolidation</strong>: standardizing on one or two groups simplifies stock, but only where fit genuinely allows it.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Does a bigger group size mean more power?</h3>
+      <p>Usually, but not automatically. Group size fixes the physical case, so a larger group has room for more plate material and therefore typically offers higher capacity and CCA. But construction — plate thickness, paste density, flooded vs AGM — moves the ratings substantially within the same group, so two batteries of the same group size can differ measurably in performance.</p>
+      <h3>Why do batteries of the same group size have different CCA and Ah?</h3>
+      <p>Because group size standardizes fit, not construction. A starting battery in a group uses many thin plates for cranking surface (high CCA, modest Ah); a deep-cycle battery in the same case uses fewer, thicker plates (more Ah and endurance, lower CCA). Quality, paste, separators and grid alloy move the numbers further.</p>
+      <h3>Can I fit a higher-performance battery in the same group?</h3>
+      <p>Within limits, yes. As long as the group size, terminal type and polarity match the vehicle, a higher-CCA or higher-Ah build of the same group will fit. The real constraint is the tray, hold-down and cable length — always verify physical fit against the manufacturer drawing, not just the group name.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Group dimensions and typical rating ranges cross-verified from BCI group-size reference data,
+        manufacturer fitment literature and the site's own group pages (all of which cite their sources
+        individually); typical ranges are marked as ranges, not guarantees.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — group-size definitions and dimensions.</li>
+        <li>Manufacturer and distributor fitment literature (Varta, Bosch, Exide-style fitment guides; Canadian Energy, Impact Battery, RD Batteries group references).</li>
+        <li>Site group pages for per-group detail: <a href="/lead-acid/group-31-battery/">Group 31</a>, <a href="/lead-acid/group-24-vs-27/">Group 24 vs 27</a>, <a href="/lead-acid/8d-battery/">8D</a>, <a href="/lead-acid/gc2-battery/">GC2</a>, <a href="/lead-acid/h7-h8-battery/">H7 vs H8</a>.</li>
+        <li>Data cross-reference: <a href="https://data.worldbatteryhub.com/battery-groups/h6/">data.worldbatteryhub.com — H6 group data</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Reserve Capacity Explained: The RC Number, Test Method and…';
+const description = 'Reserve capacity (RC) is how many minutes a fully charged 12V battery keeps delivering 25 amps before dropping to 10.5V. What it measures, how it is…';
+const canonical = '/testing/reserve-capacity-explained/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery reserve capacity (RC)',
+  articleSection: 'Battery Testing',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is reserve capacity (RC) on a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Reserve capacity is the number of minutes a fully charged 12V battery can deliver a constant 25 amps at about 27°C (80°F) before the voltage drops to 10.5V. It describes how long the battery can keep essential loads running if the charging system fails — it is a stamina rating, not a cranking rating.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is reserve capacity tested?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The battery is fully charged, brought to about 27°C, and discharged at a constant 25 amps while voltage is recorded. The test ends when terminal voltage reaches 10.5V, and the elapsed minutes are the reserve capacity. Higher RC means the battery sustains the same load longer.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between reserve capacity and amp-hours?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both describe stored energy, but under different discharge rates. Ah is usually rated at the slow 20-hour rate (C20), while RC uses a faster 25-amp discharge. A battery\'s RC and C20 Ah are related but not interchangeable — the faster RC discharge yields proportionally less total energy than the slow C20 rate.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Testing · Reserve Capacity Cluster · Last reviewed 2026-09-23</p>
+      <h1>Reserve Capacity Explained: The RC Number, Test Method and Why It Matters</h1>
+      <p class="lead">
+        Reserve capacity (RC) answers a question no cranking rating can: <em>if the alternator dies on a rainy
+        night, how many minutes do I have?</em> It is the stamina number on the label — minutes of 25-amp
+        endurance at 10.5V — and it is one of the most misread ratings in the battery business.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> RC is the number of minutes a fully charged 12V battery can deliver a
+        constant <strong>25 amps at about 27°C (80°F) before voltage falls to 10.5V</strong>. It measures
+        sustained low-to-moderate load endurance, not cranking power. A battery with RC 120 keeps a 25A load
+        alive for about two hours.
+      </div>
+
+      <h2>What reserve capacity actually measures</h2>
+      <p>
+        RC is a defined, repeatable endurance test: charge the battery fully, hold it at approximately 27°C,
+        then discharge at a constant 25 amperes while recording voltage. The clock stops when terminal voltage
+        reaches 10.5V — the floor below which the battery can no longer sustain the load. The elapsed time in
+        minutes <em>is</em> the reserve capacity.
+      </p>
+      <p>
+        The 25A figure is not arbitrary. It approximates a vehicle's essential night-time load — headlights,
+        wipers, defroster, ignition, fuel pump — running on the battery alone after the charging system fails.
+        That is why RC is sometimes called the "get-you-home" rating: it is the worst-reasonable-case buffer,
+        not a convenience number.
+      </p>
+
+      <h2>RC vs CCA vs Ah: three different questions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Question it answers</th>
+            <th>Test shape</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><a href="/lead-acid/cca/what-is-cca/">CCA</a></strong></td>
+            <td>Can it start the engine in the cold?</td>
+            <td>Very high current, 30 seconds, −18°C</td>
+          </tr>
+          <tr>
+            <td><strong>RC</strong></td>
+            <td>How long can it carry essential loads if charging fails?</td>
+            <td>Moderate current (25A), minutes, ~27°C</td>
+          </tr>
+          <tr>
+            <td><strong>Ah (C20)</strong></td>
+            <td>How much total energy does it store?</td>
+            <td>Low current, 20 hours, to 10.5V</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The three are independent dimensions, and a battery can be strong in one and modest in another — the
+        sprint, the marathon and the tank. The CCA-versus-Ah distinction is covered in
+        <a href="/lead-acid/cca-vs-ah/">CCA vs Ah</a>; RC sits between them, closer to Ah but at a faster,
+        more realistic discharge rate.
+      </p>
+
+      <h2>RC and amp-hours: related but not interchangeable</h2>
+      <p>
+        Both RC and Ah describe stored energy, and both end at the same 10.5V floor — but at different
+        discharge rates. Ah is normally rated at the slow 20-hour rate (<a href="/testing/battery-capacity-testing/">C20</a>);
+        RC uses a 25A discharge that drains the battery in roughly 1.5–2.5 hours. Because lead-acid batteries
+        deliver <em>less</em> total energy at faster discharge rates, RC minutes and C20 Ah do not convert with
+        a single fixed formula; a rough practical rule is that minutes × 25A approximates the energy at the RC
+        rate, while the C20 number will be somewhat higher for the same battery. Always compare RC to RC and
+        C20 to C20.
+      </p>
+
+      <h2>Why RC deserves more attention than it gets</h2>
+      <p>
+        Buyers obsess over CCA and skim past RC, but RC is often the better predictor of real-world
+        dependability in three situations:
+      </p>
+      <ul>
+        <li>
+          <strong>Charging-system failure.</strong> RC is the only rating that says how long the vehicle keeps
+          running its essentials without the alternator.
+        </li>
+        <li>
+          <strong>Accessory-heavy vehicles.</strong> Winches, inverters, communication rigs and refrigeration
+          draw on the battery while parked — an RC-first, not CCA-first, spec.
+        </li>
+        <li>
+          <strong>Deep-cycle and dual-purpose duty.</strong> For <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle</a>
+          and marine/off-grid applications, endurance ratings like RC matter more than cranking headroom.
+        </li>
+      </ul>
+      <p>
+        Within the same case size, a higher RC usually means thicker or more plates — construction choices that
+        can trade against CCA. That is exactly the trade-off a
+        <a href="/lead-acid/deep-cycle-vs-starting/">starting vs deep-cycle</a> comparison makes visible.
+      </p>
+
+      <h2>How RC is verified in practice</h2>
+      <p>
+        The laboratory test is straightforward — constant 25A, ~27°C, stopwatch to 10.5V — and unlike CCA it
+        needs no cold chamber, so it is comparatively cheap to reproduce in a warehouse. A disciplined incoming
+        QC program can verify RC on a sample batch with a constant-current discharger and a voltmeter. The
+        discipline is in the details: the battery must be fully charged first, the discharge current must stay
+        at 25A (a resistive load drifts as voltage falls), and the test must end at exactly 10.5V.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the RC figure stated in <strong>minutes at 25A to 10.5V</strong>? A number without its discharge current and cut-off voltage is not an RC rating.</li>
+        <li>Does the application actually need endurance? Vehicles with heavy accessory or standby loads should be specced on RC first, CCA second.</li>
+        <li>Is the RC figure a <strong>tested value</strong> on the production unit, or a marketing figure copied across the range? Request the test report with charge state and temperature stated.</li>
+        <li>Can the supplier commit to an <strong>incoming-QC RC test</strong> on samples — it is one of the cheapest meaningful tests to reproduce independently?</li>
+        <li>For deep-cycle or marine lots, is RC declared <em>per battery model</em>, not as a blanket family figure?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is reserve capacity (RC) on a battery?</h3>
+      <p>Reserve capacity is the number of minutes a fully charged 12V battery can deliver a constant 25 amps at about 27°C (80°F) before the voltage drops to 10.5V. It describes how long the battery can keep essential loads running if the charging system fails — it is a stamina rating, not a cranking rating.</p>
+      <h3>How is reserve capacity tested?</h3>
+      <p>The battery is fully charged, brought to about 27°C, and discharged at a constant 25 amps while voltage is recorded. The test ends when terminal voltage reaches 10.5V, and the elapsed minutes are the reserve capacity. Higher RC means the battery sustains the same load longer.</p>
+      <h3>What is the difference between reserve capacity and amp-hours?</h3>
+      <p>Both describe stored energy, but under different discharge rates. Ah is usually rated at the slow 20-hour rate (C20), while RC uses a faster 25-amp discharge. A battery's RC and C20 Ah are related but not interchangeable — the faster RC discharge yields proportionally less total energy than the slow C20 rate.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Method conditions cross-verified from BCI/SAE definitions and the site's existing capacity-testing
+        references; where sources differ on conversion practice, the difference is flagged rather than hidden.
+      </p>
+      <ul>
+        <li>Battery Council International (BCI) — reserve capacity definition (25A, ~27°C, to 10.5V).</li>
+        <li>SAE — automotive battery ratings practice for RC.</li>
+        <li>IEC 60095 / EN 50342 — lead-acid starter battery test framework (C20 and discharge-rate behaviour).</li>
+        <li>Manufacturer and distributor technical literature (Yuasa, Trojan-style deep-cycle guidance, Canadian Energy) — RC interpretation and RC-vs-Ah practice.</li>
+        <li>Method cross-reference: <a href="https://testing.worldbatteryhub.com/reserve-capacity/">testing.worldbatteryhub.com — Reserve capacity</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>

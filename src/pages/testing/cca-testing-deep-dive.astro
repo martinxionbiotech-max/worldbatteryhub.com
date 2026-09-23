@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'CCA Testing Deep Dive: Lab Procedure, Load Testers and…';
+const description = 'How cold cranking amps are actually measured: the SAE J537 laboratory procedure, EN/JIS/DIN variants, what carbon-pile and conductance testers really read…';
+const canonical = '/testing/cca-testing-deep-dive/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'CCA testing methods and equipment',
+  articleSection: 'Battery Testing',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is CCA actually tested in a laboratory?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under SAE J537 the battery is soaked at −18°C (0°F) until the electrolyte reaches test temperature, then discharged at the cold-cranking amperage for 30 seconds. The terminal voltage must stay at or above 7.2V for the 12V battery to be rated at that CCA. EN 50342, JIS D5301 and DIN 43539 use different temperatures and cut-offs, which is why the same battery prints different CCA figures under different standards.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between a carbon-pile load tester and a conductance tester?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A carbon-pile load tester applies a real, adjustable electrical load (typically half the rated CCA) and reads the voltage sag — a genuine load test. A conductance tester applies a small AC signal and calculates cold cranking ability from conductance and temperature; it is fast and safe but estimates CCA rather than measuring it under real load.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can buyers verify a CCA claim before a bulk purchase?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ask the supplier which standard the CCA figure refers to, request the third-party type-test report showing the test temperature and cut-off voltage, and run independent incoming QC on a sample using a calibrated carbon-pile tester after a full charge and temperature soak. A figure without its standard and test conditions is not verifiable.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Testing · CCA Cluster · Last reviewed 2026-09-23</p>
+      <h1>CCA Testing Deep Dive: Lab Procedure, Load Testers and Verification</h1>
+      <p class="lead">
+        Every CCA number on a battery label was produced by a procedure — a defined temperature, a defined
+        discharge, a defined voltage floor. This page walks through that procedure end to end, from the
+        laboratory type test to the handheld tester in a warehouse, so you can tell a measured rating from a
+        printed one.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> A true CCA test is a <strong>30-second, high-current discharge at a
+        controlled cold temperature</strong>. Under <a href="/standards/sae-j537/">SAE J537</a> that is −18°C (0°F)
+        at or above 7.2V. Everything else — a conductance reading, a quick tester printout, a number copied
+        from another label — is an <em>estimate of</em> CCA, not a CCA test. The difference matters the moment
+        a rating is used to accept or reject a shipment.
+      </div>
+
+      <h2>What the SAE J537 laboratory test actually does</h2>
+      <p>
+        The canonical North American method, <a href="/standards/sae-j537/">SAE J537</a>, defines CCA as the
+        number of amperes a 12V battery can deliver for 30 seconds at −18°C (0°F) while maintaining at least
+        7.2V. The procedure behind that one-line definition is what separates a real rating from a guess:
+      </p>
+      <ol>
+        <li>
+          <strong>Full charge.</strong> The battery is brought to a fully charged state, because a partially
+          charged battery fails the test for the wrong reason.
+        </li>
+        <li>
+          <strong>Temperature soak.</strong> The battery is held in a chamber at −18°C until its internal
+          temperature — not the chamber air — reaches test temperature. A soak measured in hours, not minutes,
+          because the electrolyte holds heat.
+        </li>
+        <li>
+          <strong>Discharge.</strong> The battery is discharged at the rated current for 30 seconds while
+          terminal voltage is recorded continuously.
+        </li>
+        <li>
+          <strong>Pass criterion.</strong> The voltage must stay at or above 7.2V for the entire 30 seconds. If
+          it sags below the floor, the battery does not hold that CCA rating.
+        </li>
+      </ol>
+      <p>
+        Two details do most of the work. The first is the <strong>temperature</strong>: the colder the battery,
+        the slower its electrochemistry and the higher its
+        <a href="/technology/internal-resistance/">internal resistance</a>, so a few degrees change the measured
+        current materially. The second is the <strong>voltage floor</strong>: 7.2V is 1.2V per cell — the point
+        below which the battery can no longer reliably turn a starter.
+      </p>
+
+      <h2>Why the same battery prints different CCA under different standards</h2>
+      <p>
+        "CCA" is a number <em>under a method</em>. The four main standards vary the two variables above, and
+        each variation moves the printed number:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Standard</th>
+            <th>Region</th>
+            <th>Temperature</th>
+            <th>Discharge / cut-off</th>
+            <th>Effect on the number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SAE J537</strong></td>
+            <td>North America</td>
+            <td>−18°C</td>
+            <td>30 s, ≥7.2V</td>
+            <td>Baseline</td>
+          </tr>
+          <tr>
+            <td><strong><a href="/standards/en-50342/">EN 50342</a></strong></td>
+            <td>Europe</td>
+            <td>−18°C</td>
+            <td>10 s, ≥7.5V</td>
+            <td>Differs (shorter, higher cut-off)</td>
+          </tr>
+          <tr>
+            <td><strong><a href="/standards/jis-d5301/">JIS D5301</a></strong></td>
+            <td>Japan / Asia</td>
+            <td>−15°C</td>
+            <td>Reference (warmer test)</td>
+            <td><strong>Higher</strong> for the same battery</td>
+          </tr>
+          <tr>
+            <td><strong>DIN 43539</strong></td>
+            <td>Germany</td>
+            <td>−18°C</td>
+            <td>30 s, ≥9.0V</td>
+            <td><strong>Lower</strong> (much stricter cut-off)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The practical consequence is the <strong>JIS vs EN trap</strong>: a battery labelled "600 CCA (JIS)"
+        and one labelled "540 CCA (EN)" may be the same physical battery. The warmer JIS test simply produces
+        a bigger number. The full comparison logic is covered in
+        <a href="/lead-acid/cca/what-is-cca/">What is CCA</a>; the point here is that the test — not the
+        battery — is half the label.
+      </p>
+
+      <h2>Lab test vs field test: what the two main tester types actually read</h2>
+      <p>
+        Away from the laboratory, two families of instrument dominate, and they are not equivalent:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Carbon-pile load tester</th>
+            <th>Conductance / impedance tester</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>What it applies</strong></td>
+            <td>A real adjustable load, typically half the rated CCA for ~15 seconds</td>
+            <td>A small AC signal (typically 1 kHz), no real load</td>
+          </tr>
+          <tr>
+            <td><strong>What it reads</strong></td>
+            <td>Voltage sag under load — the actual cranking behaviour</td>
+            <td>Conductance (siemens) and temperature, converted to an estimated CCA</td>
+          </tr>
+          <tr>
+            <td><strong>Use case</strong></td>
+            <td>Workshop verification, incoming QC, dispute resolution</td>
+            <td>Fast warehouse screening of many batteries</td>
+          </tr>
+          <tr>
+            <td><strong>Limits</strong></td>
+            <td>Loads the battery, needs ventilation and training</td>
+            <td>An <em>estimate</em>, not a load test; can miss some failure modes</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        A conductance tester reading is only as good as its correlation to a real load test for that battery
+        family — the instrument converts conductance to "CCA" using a stored model. For a deeper look at what
+        the electrical reading means, see
+        <a href="/testing/internal-resistance-matters/">Internal resistance: why it matters</a>.
+      </p>
+
+      <h2>How to read a CCA test report</h2>
+      <p>
+        A type-test report or incoming-QC record is worth reading only if it names its conditions. The minimum
+        checklist:
+      </p>
+      <ul>
+        <li><strong>Standard and revision</strong> — SAE J537, EN 50342, JIS D5301 or DIN 43539, with the edition.</li>
+        <li><strong>Test temperature</strong> — the stated soak temperature, not just "cold".</li>
+        <li><strong>Voltage floor and duration</strong> — 7.2V/30 s tells a different story from 9.0V/30 s.</li>
+        <li><strong>Charge state before test</strong> — a rating measured on a fully charged unit.</li>
+        <li><strong>Serial or batch identification</strong> — so the report matches the batteries in front of you.</li>
+      </ul>
+      <p>
+        A report that omits the temperature, the cut-off or the standard is a marketing document wearing a
+        lab coat.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does every CCA figure in the quotation name its standard — SAE, EN, JIS or DIN? Cross-standard figures cannot be compared directly.</li>
+        <li>Has the supplier provided a <strong>third-party type-test report</strong> with temperature, cut-off voltage and duration stated, not just a label number?</li>
+        <li>Will the contract allow <strong>incoming QC by load test</strong> — a carbon-pile discharge on a sample after full charge and cold soak — with an agreed pass/fail and remedy for failures?</li>
+        <li>Is the rating for the battery <em>as shipped</em>, not a prototype or a "reference design" variant?</li>
+        <li>Do the test records tie to batch/serial numbers, so claims are traceable to the units you actually receive?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How is CCA actually tested in a laboratory?</h3>
+      <p>Under SAE J537 the battery is soaked at −18°C (0°F) until the electrolyte reaches test temperature, then discharged at the cold-cranking amperage for 30 seconds. The terminal voltage must stay at or above 7.2V for the 12V battery to be rated at that CCA. EN 50342, JIS D5301 and DIN 43539 use different temperatures and cut-offs, which is why the same battery prints different CCA figures under different standards.</p>
+      <h3>What is the difference between a carbon-pile load tester and a conductance tester?</h3>
+      <p>A carbon-pile load tester applies a real, adjustable electrical load (typically half the rated CCA) and reads the voltage sag — a genuine load test. A conductance tester applies a small AC signal and calculates cold cranking ability from conductance and temperature; it is fast and safe but estimates CCA rather than measuring it under real load.</p>
+      <h3>How can buyers verify a CCA claim before a bulk purchase?</h3>
+      <p>Ask the supplier which standard the CCA figure refers to, request the third-party type-test report showing the test temperature and cut-off voltage, and run independent incoming QC on a sample using a calibrated carbon-pile tester after a full charge and temperature soak. A figure without its standard and test conditions is not verifiable.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Procedure conditions cross-verified from the published standards and the referenced method pages; where
+        standards differ, the difference is stated rather than averaged.
+      </p>
+      <ul>
+        <li>SAE J537 — North American battery cranking test method (−18°C, 30 s, 7.2V).</li>
+        <li>EN 50342 — European lead-acid starter battery standard (−18°C, 10 s, 7.5V).</li>
+        <li>JIS D5301 — Japanese automotive lead-acid battery standard (−15°C).</li>
+        <li>DIN 43539 — German starter battery test (−18°C, 30 s, 9.0V).</li>
+        <li>Battery Council International (BCI) — CCA definition and test guidance.</li>
+        <li>Instrument practice for carbon-pile and conductance testers per manufacturer documentation (Midtronics-style conductance method, carbon-pile load-test procedure).</li>
+        <li>Method cross-references: <a href="https://testing.worldbatteryhub.com/cca-testing/">testing.worldbatteryhub.com — CCA testing</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>

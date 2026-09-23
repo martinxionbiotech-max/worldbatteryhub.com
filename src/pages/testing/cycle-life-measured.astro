@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'How Cycle Life Is Measured: Depth of Discharge, Test Methods and…';
+const description = 'Cycle life is how many charge/discharge cycles a battery survives before capacity falls below a threshold. How it is measured, why depth of discharge…';
+const canonical = '/testing/cycle-life-measured/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery cycle life testing',
+  articleSection: 'Battery Testing',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-23',
+  dateModified: '2026-09-23',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is battery cycle life measured?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The battery is repeatedly charged and discharged between defined states of charge under defined temperature and current, and its capacity is checked periodically. Cycle life is the number of cycles completed before usable capacity falls below a threshold — commonly 80% of the rated value. The result only means something when the depth of discharge, rate and temperature are stated.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does depth of discharge matter for cycle life?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Deeper discharges stress the plates more per cycle, so a battery cycled to 50% depth of discharge survives far more cycles than the same battery cycled to 100%. A cycle-life figure without its depth of discharge is not comparable to any other figure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between cycle life and calendar life?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cycle life counts charge/discharge cycles until the battery is worn out by use; calendar life counts time until it wears out by aging while standing — corrosion, self-discharge, electrolyte dry-out. Both run in parallel, and whichever limit is reached first ends the battery\u2019s service life.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-23"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Testing · Life Testing Cluster · Last reviewed 2026-09-23</p>
+      <h1>How Cycle Life Is Measured: Depth of Discharge, Test Methods and Reading Datasheets</h1>
+      <p class="lead">
+        "1,200 cycles" is the most abused number on a battery datasheet. It means nothing until you know the
+        depth of discharge, the test temperature, the charge/discharge rates and the end-of-life threshold. This
+        page explains how cycle life is actually measured — so a datasheet claim becomes a testable statement.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Cycle life is the number of full charge/discharge cycles a battery
+        completes before its usable capacity falls below a defined threshold — commonly <strong>80% of rated
+        capacity</strong>. The number depends almost entirely on <strong>depth of discharge (DoD)</strong>:
+        shallow cycles yield far more cycles than deep ones, so a cycle-life claim without its DoD is marketing.
+      </div>
+
+      <h2>What counts as one cycle</h2>
+      <p>
+        One cycle is one discharge plus the recharge that restores the battery. In practice duty is rarely
+        a clean 100%-to-0% swing: a battery discharged by 30% and recharged three times has done roughly one
+        "equivalent full cycle". Test standards normalize this by defining the cycle profile explicitly — the
+        discharge current (or C-rate), the depth of discharge, the charge regime and the temperature.
+      </p>
+
+      <h2>How a cycle-life test actually runs</h2>
+      <p>
+        A cycle-life test is a long, automated loop, not a one-off measurement:
+      </p>
+      <ol>
+        <li>
+          <strong>Establish baseline capacity.</strong> The battery's capacity is measured under standard
+          conditions so "80% of rated" has a reference.
+        </li>
+        <li>
+          <strong>Cycle.</strong> The battery is repeatedly discharged to the defined DoD and recharged with a
+          defined profile, at a defined temperature — the conditions are held constant for the whole test.
+        </li>
+        <li>
+          <strong>Periodic capacity check.</strong> At intervals, capacity is re-measured and plotted against
+          cycle count.
+        </li>
+        <li>
+          <strong>End of life.</strong> When measured capacity falls below the threshold (typically 80%), the
+          test stops and the cycle count is the cycle life.
+        </li>
+      </ol>
+      <p>
+        For lead-acid, the reference frameworks include IEC 60896 (stationary) and IEC 61427 (renewable-energy
+        duty); for lithium cells, <a href="/standards/iec-62660-vs-62133/">IEC 62660</a> defines cycle and
+        endurance testing for EV cells. The standard matters because it pins down the cycle profile — change
+        the profile, change the number.
+      </p>
+
+      <h2>Why depth of discharge dominates the number</h2>
+      <p>
+        Deeper discharge stresses the active material more per cycle, so cycle life is not a fixed property of
+        the battery — it is a property of <em>the battery plus the duty</em>. The same battery might deliver a
+        long cycle count at 30% DoD and a small fraction of that at 100% DoD. This is why
+        <a href="/lead-acid/deep-cycle-vs-starting/">deep-cycle batteries</a> are built differently from
+        <a href="/lead-acid/deep-cycle-vs-starting/">starting batteries</a>: thick plates tolerate deep cycling;
+        thin, high-surface plates are optimized for cranking and punished by deep discharge.
+      </p>
+
+      <h2>Cycle life vs calendar life: two clocks running at once</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cycle life</th>
+            <th>Calendar life</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Counts</strong></td>
+            <td>Charge/discharge cycles to end of life</td>
+            <td>Time to end of life while standing</td>
+          </tr>
+          <tr>
+            <td><strong>Main aging drivers</strong></td>
+            <td>Depth of discharge, rate, cycling stress</td>
+            <td>Corrosion, <a href="/lead-acid/self-discharge/">self-discharge</a>, electrolyte dry-out, temperature</td>
+          </tr>
+          <tr>
+            <td><strong>Limits</strong></td>
+            <td>Worn out by use</td>
+            <td>Worn out by aging even with light use</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Whichever limit is reached first ends the battery's useful life. A standby battery may never accumulate
+        many cycles yet die by calendar aging; a cycled solar battery may wear out by cycles long before its
+        calendar years are up. Buying on cycle life alone ignores the other clock.
+      </p>
+
+      <h2>Reading a cycle-life datasheet claim</h2>
+      <p>
+        A defensible claim states at least four things: the <strong>depth of discharge</strong>, the
+        <strong>discharge/charge rates</strong>, the <strong>temperature</strong>, and the
+        <strong>end-of-life threshold</strong> (usually 80% of rated capacity). A claim that states only a cycle
+        count is not wrong so much as meaningless — you cannot compare it to anything or verify it against a
+        test.
+      </p>
+      <p>
+        Also watch for the <strong>accelerated-test caveat</strong>: many cycle counts come from laboratory
+        cycling at higher rates or shallower DoD than your application, which flatters the number. The honest
+        question is not "how many cycles" but "how many cycles <em>in my duty profile</em>".
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the datasheet state <strong>depth of discharge, rates, temperature and the 80% threshold</strong> for its cycle-life claim?</li>
+        <li>What is the cycle life at <em>your</em> application's DoD, not at the flattering shallow-cycling profile used in the brochure?</li>
+        <li>Is the claim backed by a <strong>test report</strong> under a named standard (e.g. IEC 60896, IEC 61427, IEC 62660), with the cycle profile documented?</li>
+        <li>What is the <strong>calendar life and warranty period</strong>? A battery with a strong cycle number and a short warranty is telling you which clock it trusts.</li>
+        <li>For fleets, is there a <strong>capacity-check maintenance plan</strong> in the contract — periodic capacity measurement against the 80% threshold, not just "replace when it stops starting"?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How is battery cycle life measured?</h3>
+      <p>The battery is repeatedly charged and discharged between defined states of charge under defined temperature and current, and its capacity is checked periodically. Cycle life is the number of cycles completed before usable capacity falls below a threshold — commonly 80% of the rated value. The result only means something when the depth of discharge, rate and temperature are stated.</p>
+      <h3>Why does depth of discharge matter for cycle life?</h3>
+      <p>Deeper discharges stress the plates more per cycle, so a battery cycled to 50% depth of discharge survives far more cycles than the same battery cycled to 100%. A cycle-life figure without its depth of discharge is not comparable to any other figure.</p>
+      <h3>What is the difference between cycle life and calendar life?</h3>
+      <p>Cycle life counts charge/discharge cycles until the battery is worn out by use; calendar life counts time until it wears out by aging while standing — corrosion, self-discharge, electrolyte dry-out. Both run in parallel, and whichever limit is reached first ends the battery's service life.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Test-method structure cross-verified from the named standards and manufacturer cycle-life documentation;
+        where duty profiles differ between standards, that difference is stated rather than blended.
+      </p>
+      <ul>
+        <li>IEC 60896 — stationary lead-acid battery test framework (cycle and endurance).</li>
+        <li>IEC 61427 — secondary batteries for renewable-energy storage (cycling duty).</li>
+        <li>IEC 62660 — lithium-ion cell cycle and endurance testing for EV applications.</li>
+        <li>Manufacturer and distributor technical literature (Trojan, Yuasa, Canadian Energy, deep-cycle and solar-battery guidance) — DoD-vs-cycle-life practice.</li>
+        <li>Method cross-reference: <a href="https://testing.worldbatteryhub.com/cycle-safety/">testing.worldbatteryhub.com — Cycle testing</a>.</li>
+      </ul>
+
+      <p class="muted">Last reviewed: 2026-09-23</p>
+    </div>
+  </section>
+</BaseLayout>
