@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Charging Voltage Guide: The Numbers by Chemistry';
+const description = 'Charging is a voltage decision before it is anything else. The absorption and float numbers for flooded, AGM, gel and LFP — and why the wrong voltage quietly kills…';
+const canonical = '/basics/battery-charging-voltage-guide/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery charging voltages',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-24',
+  dateModified: '2026-09-24',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What charging voltage does a 12V lead-acid battery need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the construction. A flooded 12V battery typically charges at about 14.4–14.8V in the absorption stage and floats at roughly 13.2–13.8V; AGM takes similar absorption voltages with a stricter maximum; gel is the most sensitive and charges at the lower end (around 14.1–14.4V absorption). Charging any lead-acid chemistry at the wrong voltage either undercharges (sulfation) or overcharges (gassing and water loss).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What voltage charges a 12V LFP (LiFePO4) battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A 12V LFP battery (four cells in series) is typically charged with constant current to about 14.2–14.6V (3.55–3.65V per cell) and then held or allowed to settle. LFP has a very flat voltage curve, so voltage is a poor state-of-charge indicator — the bulk of the energy arrives while the voltage barely moves.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does the charger voltage need to match the battery chemistry?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Each chemistry has a voltage window between undercharge and overcharge damage. Too low and lead-acid sulfates, lithium never fills; too high and lead-acid gasses and dries out, while lithium risks plating and degradation. A charger set for one chemistry quietly shortens the life of another — which is why the charger and battery must be specified as a pair.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-24"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Charging · Last reviewed 2026-09-24</p>
+      <h1>Battery Charging Voltage Guide: The Numbers by Chemistry</h1>
+      <p class="lead">
+        Charging is a voltage decision before it is anything else. Too low and the battery never fills; too
+        high and the same current that fills it starts destroying it. The right number is not "about 14
+        volts" — it is a specific window for a specific chemistry.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> On a nominal <strong>12V</strong> system, flooded lead-acid charges
+        at roughly <strong>14.4–14.8V</strong> (absorption) and floats at <strong>13.2–13.8V</strong>;
+        <strong>AGM</strong> takes a similar range with a stricter ceiling; <strong>gel</strong> is the most
+        voltage-sensitive and sits lower (around <strong>14.1–14.4V</strong> absorption); <strong>LFP</strong>
+        fills at about <strong>14.2–14.6V</strong> (3.55–3.65V per cell). The stage logic behind these
+        numbers is on <a href="/basics/charging-basics/">Charging basics</a>; the full lead-acid procedure on
+        <a href="/lead-acid/lead-acid-charging/">Lead-acid charging</a>; the lithium method on
+        <a href="/lithium/lithium-charging-cc-cv/">Lithium CC-CV charging</a>.
+      </div>
+
+      <h2>Why charging is a voltage problem first</h2>
+      <p>
+        Every battery chemistry has a voltage window bounded by two failures. Below the floor, the chemistry
+        stops accepting charge properly — lead-acid
+        <a href="/lead-acid/battery-sulfation/">sulfates</a>, lithium simply never fills. Above the ceiling,
+        the excess energy goes somewhere destructive — in lead-acid it splits water into gas (venting,
+        drying, heat), in lithium it drives
+        <a href="/lithium/lithium-degradation/">degradation reactions</a> that shorten life at best. The
+        charger's job is to walk the current through the safe zone: constant current up to the absorption
+        voltage, hold there while the current tapers, then drop to a maintenance float. The <em>numbers</em>
+        in that sequence are set by the chemistry, and getting them from the wrong column is the classic
+        silent killer.
+      </p>
+
+      <h2>The numbers by chemistry (12V systems)</h2>
+      <table>
+        <thead><tr><th>Chemistry</th><th>Absorption / bulk ceiling</th><th>Float</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flooded lead-acid</strong></td><td>~14.4–14.8V</td><td>~13.2–13.8V</td><td>Tolerates periodic <a href="/lead-acid/equalization/">equalization</a> above the normal ceiling</td></tr>
+          <tr><td><strong>AGM</strong></td><td>~14.4–14.8V (stricter ceiling)</td><td>~13.2–13.8V</td><td>Sealed and recombinant — sustained overcharge vents and dries it, so the ceiling is a hard limit</td></tr>
+          <tr><td><strong>Gel</strong></td><td>~14.1–14.4V</td><td>~13.2–13.6V</td><td>Most voltage-sensitive of the lead-acid family; the charger must have a gel setting</td></tr>
+          <tr><td><strong>LFP (4S)</strong></td><td>~14.2–14.6V (3.55–3.65V/cell)</td><td>~13.5–13.8V or rest</td><td>Flat curve — voltage is a weak SOC signal; see <a href="/lithium/lifepo4-voltage-chart/">LiFePO4 voltage chart</a></td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Typical manufacturer-recommended windows for 12V nominal systems; the specific battery's datasheet
+        always wins. Temperature compensation shifts these numbers — most lead-acid chargers trim the
+        voltage as temperature rises.
+      </p>
+
+      <h2>Where the wrong voltage shows up</h2>
+      <p>
+        The damage is usually invisible at first and obvious later. An AGM charged on a flooded setting
+        loses water it cannot replace, heats in summer, and dies early — the classic
+        <a href="/lead-acid/agm-charging/">AGM charging</a> mistake. A flooded battery charged too gently
+        never fully recharges and slowly sulfates — the classic
+        <a href="/lead-acid/battery-sulfation/">sulfation</a> failure. A gel battery on an AGM setting
+        gasses the gel permanently. An LFP pack on a lead-acid charger sits in the wrong regime entirely:
+        the BMS may save it from damage, but the charger never really fills it, and a charger with a
+        desulfation or equalization mode is outright hostile to lithium. The rule is blunt: the charger and
+        the battery are a pair, and the voltage table is what makes them one.
+      </p>
+
+      <h2>Temperature compensation: the second knob</h2>
+      <p>
+        Lead-acid charging voltages are temperature-dependent — the same battery wants slightly <em>more</em>
+        voltage when cold and slightly <em>less</em> when hot, with typical compensation on the order of a
+        few millivolts per cell per degree Celsius away from the 25°C reference. Quality chargers do this
+        automatically via a temperature sensor; cheap ones assume room temperature all year. In an engine
+        bay or an outdoor cabinet, the uncompensated charger is quietly overcharging all summer and
+        undercharging all winter. For voltage-based state-of-charge logic across temperatures, see the
+        <a href="/lead-acid/12v-voltage-chart/">12V voltage chart</a> and the
+        <a href="/technology/electrolyte-specific-gravity/">electrolyte specific gravity</a> reference on
+        the technology sub-site.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the specification state the <strong>charging voltage window and float voltage</strong> for the exact battery — or just a nominal "12V"?</li>
+        <li>Is the charger (or the customer's existing charger) <strong>compatible with the chemistry</strong> — flooded, AGM, gel and LFP are not interchangeable settings?</li>
+        <li>For fleets and banks, is <strong>temperature compensation</strong> part of the charger spec, or will the system drift with the seasons?</li>
+        <li>Does the battery's datasheet state <strong>maximum charge voltage</strong>, and does the quoted charger respect it?</li>
+        <li>Is the voltage window cross-checked against the chemistry reference — the <a href="https://technology.worldbatteryhub.com/electrolyte-specific-gravity/">technology sub-site</a> covers the lead-acid charging physics, and the <a href="/lithium/lifepo4-voltage-chart/">LiFePO4 voltage chart</a> the lithium side?</li>
+        <li>For lithium packs, does the <a href="/lithium/what-is-bms/">BMS</a> specification list its own charge cut-off, and does it sit inside the charger's window rather than outside it?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What charging voltage does a 12V lead-acid battery need?</h3>
+      <p>It depends on the construction. A flooded 12V battery typically charges at about 14.4–14.8V in the absorption stage and floats at roughly 13.2–13.8V; AGM takes similar absorption voltages with a stricter maximum; gel is the most sensitive and charges at the lower end (around 14.1–14.4V absorption). Charging any lead-acid chemistry at the wrong voltage either undercharges (sulfation) or overcharges (gassing and water loss).</p>
+      <h3>What voltage charges a 12V LFP (LiFePO4) battery?</h3>
+      <p>A 12V LFP battery (four cells in series) is typically charged with constant current to about 14.2–14.6V (3.55–3.65V per cell) and then held or allowed to settle. LFP has a very flat voltage curve, so voltage is a poor state-of-charge indicator — the bulk of the energy arrives while the voltage barely moves.</p>
+      <h3>Why does the charger voltage need to match the battery chemistry?</h3>
+      <p>Each chemistry has a voltage window between undercharge and overcharge damage. Too low and lead-acid sulfates, lithium never fills; too high and lead-acid gasses and dries out, while lithium risks plating and degradation. A charger set for one chemistry quietly shortens the life of another — which is why the charger and battery must be specified as a pair.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Voltage windows cross-checked from battery and charger manufacturer documentation and the sources
+        cited on the linked deep-dive pages; ranges are typical manufacturer recommendations, and the
+        datasheet of the specific battery always takes precedence.
+      </p>
+      <ul>
+        <li>Battery manufacturer charging specifications — flooded, AGM, gel and LFP voltage windows.</li>
+        <li>Charger manufacturer documentation — three-stage charging logic and temperature compensation practice.</li>
+        <li>Cross-references: <a href="/basics/charging-basics/">Charging basics</a>, <a href="/lead-acid/lead-acid-charging/">Lead-acid charging</a>, <a href="/lead-acid/agm-charging/">AGM charging</a>, <a href="/lithium/lithium-charging-cc-cv/">Lithium CC-CV charging</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-24
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Storage Market Sizing: How Analysts Count GWh and Why the Number Moves';
+const description = 'Energy storage market reports measure deployments in GWh, but the numbers move with definitions: cells vs systems, installed vs shipped, front-of-meter vs behind. How…';
+const canonical = '/market/storage-market-sizing/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Energy storage market sizing methodology',
+  articleSection: 'Market Knowledge',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-24',
+  dateModified: '2026-09-24',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why do energy storage market reports disagree with each other?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because they count different things under the same name. One report counts cell shipments, another counts completed system installations; one covers only grid-scale (front-of-meter), another includes residential and commercial (behind-the-meter). Definitions of the boundary, the geography and the stage (announced, shipped, installed) move the headline number — which is why the methodology section matters more than the headline.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between MW and MWh in storage market reports?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'MW measures power (how fast the system can charge or discharge); MWh measures energy (how much it can store). A 100 MW / 400 MWh battery is a 100 MW system that can run for about 4 hours. Market reports may headline either unit, and converting one to the other requires the duration assumption — a hidden variable in many comparisons.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does LFP dominate stationary storage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Stationary storage cares about cycle life, cost and safety more than energy density — exactly the strengths of LFP (lithium iron phosphate) over NMC. Storage systems sit in fixed locations where weight barely matters, so the higher energy density of NMC buys little, while LFP\'s longer cycle life and higher thermal stability suit daily grid cycling.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-24"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Market Knowledge · Storage · Last reviewed 2026-09-24</p>
+      <h1>Storage Market Sizing: How Analysts Count GWh and Why the Number Moves</h1>
+      <p class="lead">
+        Two reports on the "energy storage market" can print numbers that differ by a factor of two and both
+        be correct. The difference is almost never the market — it is what each report decided to count.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Storage market reports count deployments in <strong>gigawatt-hours
+        (GWh)</strong> of energy capacity and <strong>gigawatts (GW)</strong> of power, split into
+        <strong>front-of-meter</strong> (utility/grid-scale) and <strong>behind-the-meter</strong>
+        (commercial, industrial, residential) segments. The headline moves with four definitions: the
+        segment boundary, the geography, the stage being counted (<strong>announced, shipped, or
+        installed</strong>), and whether the unit is <strong>cells or complete systems</strong>. The sourced
+        figures live on the <a href="https://market.worldbatteryhub.com/storage-battery-market/">storage
+        battery market</a> page of the market sub-site; this page explains how to read them.
+      </div>
+
+      <h2>MW vs MWh: the two units that both headline</h2>
+      <p>
+        Storage systems are quoted in two units that measure different things: <strong>MW</strong> is power
+        — how fast the system can charge or discharge — and <strong>MWh</strong> is energy — how much it can
+        hold. A "100 MW / 400 MWh" project is a 100 MW system with four hours of duration at full power.
+        Reports headline either, and the industry uses <strong>duration</strong> (the MWh ÷ MW ratio) as the
+        bridge. Comparing a GW figure from one report with a GWh figure from another without the duration
+        assumption is the first way market numbers get misread. The same unit discipline applies at battery
+        scale — see <a href="/technology/ah-vs-wh/">Ah vs Wh</a> for the cell-level version.
+      </p>
+
+      <h2>The two segments, and why they are not one market</h2>
+      <h3>Front-of-meter (grid-scale and utility)</h3>
+      <p>
+        Large systems connected to the grid, sized in the tens to hundreds of MWh, built for frequency
+        regulation, peak shifting and renewable firming. A single project here can move a country's
+        quarterly deployment number, which is why grid-scale reports are lumpy — one big project finishes,
+        and the quarter jumps.
+      </p>
+      <h3>Behind-the-meter (C&I and residential)</h3>
+      <p>
+        Commercial, industrial and residential systems paired with rooftop solar or used for
+        demand-charge management and backup. This segment is a long tail of small units — steadier in
+        aggregate but harder to count precisely, and some reports exclude it entirely or estimate it
+        separately.
+      </p>
+      <p>
+        A report that counts both is describing a different thing from one that counts only grid-scale —
+        not a better or worse thing, just a different boundary. The honest reader checks the boundary
+        before comparing numbers.
+      </p>
+
+      <h2>Installed, shipped, or announced: the stage that changes everything</h2>
+      <p>
+        Market reports count different stages of a project's life: <strong>announced</strong> (a developer's
+        plan, which may never be built), <strong>shipped</strong> (cells or systems delivered to the site),
+        and <strong>installed</strong> (commissioned and operating). A pipeline report of announced projects
+        is not a deployment report of installed ones, yet both can be headlined as "the storage market".
+        The same ambiguity runs through battery trade generally — the
+        <a href="/procurement/battery-quotation-comparison/">quotation comparison</a> discipline of asking
+        "what exactly is being counted" applies to market data too.
+      </p>
+
+      <h2>Cells vs systems: the volume trap</h2>
+      <p>
+        A GWh of <em>cells</em> and a GWh of <em>complete systems</em> are different products at different
+        points in the value chain — the system adds enclosures, inverters, thermal management and BMS on top
+        of the cells. Reports drawn from cell-maker shipment data and reports drawn from integrator project
+        data therefore describe overlapping but non-identical volumes. When a report does not say which it
+        counts, the safest reading is to treat its number as order-of-magnitude signal, not precision.
+      </p>
+
+      <h2>Why LFP dominates the storage chemistry mix</h2>
+      <p>
+        Stationary storage is where the <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC</a> trade-off tilts
+        decisively toward LFP. Storage systems sit in fixed locations, so energy density — NMC's advantage —
+        buys almost nothing, while LFP's longer <a href="/testing/cycle-life-measured/">cycle life</a> and
+        higher thermal stability are exactly what daily grid cycling demands. The result: stationary storage
+        has become an LFP-dominated market, with the chemistry's cost curve driven by the same scaling as
+        the <a href="/lithium/energy-density/">energy-density</a> frontier but optimised for endurance
+        instead of range.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the market report you are relying on state its <strong>segment boundary</strong> — grid-scale only, or behind-the-meter included?</li>
+        <li>Is the figure <strong>announced, shipped, or installed</strong> — and does your business decision actually depend on that stage?</li>
+        <li>Is the unit <strong>cells or systems</strong>, and <strong>MW or MWh</strong> — and is the duration assumption stated for any conversion?</li>
+        <li>Does the report cover your <strong>target geography</strong> — regional storage demand moves on policy, not global averages?</li>
+        <li>Is the chemistry mix (LFP vs NMC) relevant to your product line — a cell purchase strategy built on a global mix number can miss the segment where you actually sell?</li>
+        <li>Are the underlying sources primary — for example the <a href="https://market.worldbatteryhub.com/storage-battery-market/">storage battery market</a> page on the market sub-site carries its methodology, and the <a href="https://market.worldbatteryhub.com/battery-demand-forecast/">battery demand forecast</a> page the demand side?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why do energy storage market reports disagree with each other?</h3>
+      <p>Because they count different things under the same name. One report counts cell shipments, another counts completed system installations; one covers only grid-scale (front-of-meter), another includes residential and commercial (behind-the-meter). Definitions of the boundary, the geography and the stage (announced, shipped, installed) move the headline number — which is why the methodology section matters more than the headline.</p>
+      <h3>What is the difference between MW and MWh in storage market reports?</h3>
+      <p>MW measures power (how fast the system can charge or discharge); MWh measures energy (how much it can store). A 100 MW / 400 MWh battery is a 100 MW system that can run for about 4 hours. Market reports may headline either unit, and converting one to the other requires the duration assumption — a hidden variable in many comparisons.</p>
+      <h3>Why does LFP dominate stationary storage?</h3>
+      <p>Stationary storage cares about cycle life, cost and safety more than energy density — exactly the strengths of LFP (lithium iron phosphate) over NMC. Storage systems sit in fixed locations where weight barely matters, so the higher energy density of NMC buys little, while LFP's longer cycle life and higher thermal stability suit daily grid cycling.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Methodology framing drawn from the market sub-site's documented sources; this page deliberately
+        carries no standalone figures — the sourced numbers and their methods live on the sub-site pages
+        linked below.
+      </p>
+      <ul>
+        <li><a href="https://market.worldbatteryhub.com/storage-battery-market/">Market sub-site — storage battery market</a> (sourced deployment figures and methodology).</li>
+        <li><a href="https://market.worldbatteryhub.com/battery-demand-forecast/">Market sub-site — battery demand forecast</a> (demand-side methodology).</li>
+        <li>Analyst-practice conventions on segment boundaries (front-of-meter vs behind-the-meter) and stage definitions (announced/shipped/installed).</li>
+        <li>Cross-references: <a href="/technology/ah-vs-wh/">Ah vs Wh</a>, <a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a>, <a href="/testing/cycle-life-measured/">Cycle life measured</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/market/">Market Knowledge</a> series · Last reviewed: 2026-09-24
+      </p>
+    </div>
+  </section>
+</BaseLayout>

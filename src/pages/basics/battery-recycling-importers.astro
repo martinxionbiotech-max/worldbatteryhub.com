@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Recycling for Importers: Why Disposal Rules Are Now a Buying Requirement';
+const description = 'Battery recycling is no longer the end user\'s problem — it is the importer\'s. Extended producer responsibility, take-back obligations and the lead-acid closed loop, explained…';
+const canonical = '/basics/battery-recycling-importers/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery recycling obligations for importers',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-24',
+  dateModified: '2026-09-24',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why is battery recycling an importer\'s obligation, not just the user\'s?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Under extended producer responsibility (EPR) regimes — most prominently the EU Battery Regulation — the company that first places batteries on the market (often the importer) becomes responsible for their end-of-life: registration, take-back, collection targets and recycling-efficiency standards. Responsibility follows the product back to whoever put it into circulation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is lead-acid recycling considered a success story?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lead-acid batteries are among the most-recycled products in the world, with mature collection networks and recycling rates reported above 95% in many developed markets. The lead, plastic and acid are all recovered and reused — new lead-acid batteries are largely built from recycled material. This closed loop is one reason lead-acid remains competitive despite the rise of lithium.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does recycling affect the procurement decision?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It moves compliance from the end of life to the purchase: the importer must know the destination market\'s registration and take-back rules before ordering, the battery chemistry determines which recycling obligations apply, and the supplier\'s documentation must support compliance. Recycling is now a line in the quotation, not an afterthought.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-24"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Compliance · Last reviewed 2026-09-24</p>
+      <h1>Battery Recycling for Importers: Why Disposal Rules Are Now a Buying Requirement</h1>
+      <p class="lead">
+        For decades, recycling was the battery's retirement problem — somebody else's, after the sale. The
+        regulatory tide has turned it into an importer's obligation that begins the day the battery enters
+        the market. In some jurisdictions, that day is also the day the paperwork starts.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Under <strong>extended producer responsibility (EPR)</strong> —
+        most prominently the <strong>EU Battery Regulation</strong> — whoever first places batteries on the
+        market, including importers, carries the end-of-life duties: registration, collection targets,
+        take-back and recycling-efficiency standards. The chemistry decides which rules apply: lead-acid
+        rides a mature, high-recovery closed loop (recycling rates reported above 95% in many developed
+        markets), while lithium recycling is newer and still scaling. For buyers this is not an
+        afterthought — it is a <strong>procurement criterion</strong>. The lead-acid mechanics are on
+        <a href="/lead-acid/recycling/">Lead-acid battery recycling</a>; the lithium side on
+        <a href="/lithium/lithium-recycling/">Lithium battery recycling</a>.
+      </div>
+
+      <h2>Why responsibility now lands on importers</h2>
+      <p>
+        EPR inverts the old logic. Instead of the last owner carrying the disposal cost, the first seller —
+        the producer, or in cross-border trade, the <strong>importer</strong> — is named as the responsible
+        party. The EU Battery Regulation applies to <em>all</em> battery chemistries and sizes, from the
+        button cell to the industrial bank, and requires the responsible party to register, fund collection,
+        meet recovery targets and document the chain. The practical consequence for a distributor: you
+        cannot import first and ask questions later; compliance is part of the import decision itself, much
+        like the <a href="/basics/battery-transport-regulations/">transport rules</a>.
+      </p>
+
+      <h2>The two recycling worlds: lead-acid vs lithium</h2>
+      <h3>Lead-acid: the closed loop that already works</h3>
+      <p>
+        Lead-acid recycling is the industry's oldest success story. Collection networks are dense — the
+        scrap value of the lead itself pulls batteries back through garages, scrap yards and distributors —
+        and reported recovery rates top 95% in many developed markets. The lead is re-smelted into new
+        plates, the polypropylene case into new cases, and the acid neutralised or reprocessed; a new
+        lead-acid battery is substantially a rebuilt old one. This mature loop is a real, quotable
+        environmental credential — see the market data on
+        <a href="https://market.worldbatteryhub.com/battery-recycling-market/">the recycling market</a>
+        and the process detail on
+        <a href="https://technology.worldbatteryhub.com/battery-recycling-technology/">battery recycling technology</a>.
+      </p>
+      <h3>Lithium: newer, harder, and required anyway</h3>
+      <p>
+        Lithium recycling is technically more demanding: cells are many chemistries (<a href="/lithium/lfp-vs-nmc-vs-lto/">LFP, NMC, LTO</a>)
+        mixed inside one pack, disassembly carries fire risk, and the economics have historically depended
+        on recovering the more valuable metals (cobalt and nickel above all). The recovery chain exists and
+        is scaling, but it is not yet the everywhere-loop that lead-acid enjoys. Importers of lithium packs
+        inherit the same EPR duties with a less mature recycling infrastructure behind them — which is why
+        the chemistry choice is now partly a compliance choice.
+      </p>
+
+      <h2>What the importer's obligations look like in practice</h2>
+      <ul>
+        <li><strong>Registration</strong> — the responsible party must be registered in the destination market before placing batteries there.</li>
+        <li><strong>Collection and take-back</strong> — fund and operate (or join) a collection scheme so spent batteries have a route home; refusal to take back is usually not an option.</li>
+        <li><strong>Recovery targets</strong> — staged collection and recycling-efficiency targets rise over time under the EU regime, and reporting is mandatory.</li>
+        <li><strong>Documentation</strong> — the chain from supplier to recycler must be traceable; the supplier's declarations feed directly into the importer's filings.</li>
+      </ul>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the destination market's <strong>EPR registration</strong> in place before the first order ships — or is the importer buying into a compliance problem?</li>
+        <li>Does the quotation distinguish <strong>chemistry-specific obligations</strong> (lead-acid vs lithium) — the same order can trigger different regimes?</li>
+        <li>Does the supplier provide the <strong>recyclability and materials documentation</strong> the importer's own filings depend on?</li>
+        <li>Is <strong>take-back written into the commercial terms</strong> — who collects spent batteries from the customer, and who pays?</li>
+        <li>For lithium, does the supplier's pack documentation state the <strong>chemistry precisely</strong> (LFP vs NMC), since recovery economics and rules diverge sharply?</li>
+        <li>Is the supplier's environmental record part of the factory assessment — see <a href="/procurement/battery-factory-evaluation-checklist/">Battery factory evaluation checklist</a>?</li>
+        <li>Are the obligations priced — collection-scheme fees and documentation are <strong>landed costs</strong>, not overhead to discover later, as the <a href="/procurement/moq-payment-incoterms-battery-imports/">MOQ, payment and Incoterms</a> guide explains?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why is battery recycling an importer's obligation, not just the user's?</h3>
+      <p>Under extended producer responsibility (EPR) regimes — most prominently the EU Battery Regulation — the company that first places batteries on the market (often the importer) becomes responsible for their end-of-life: registration, take-back, collection targets and recycling-efficiency standards. Responsibility follows the product back to whoever put it into circulation.</p>
+      <h3>Why is lead-acid recycling considered a success story?</h3>
+      <p>Lead-acid batteries are among the most-recycled products in the world, with mature collection networks and recycling rates reported above 95% in many developed markets. The lead, plastic and acid are all recovered and reused — new lead-acid batteries are largely built from recycled material. This closed loop is one reason lead-acid remains competitive despite the rise of lithium.</p>
+      <h3>How does recycling affect the procurement decision?</h3>
+      <p>It moves compliance from the end of life to the purchase: the importer must know the destination market's registration and take-back rules before ordering, the battery chemistry determines which recycling obligations apply, and the supplier's documentation must support compliance. Recycling is now a line in the quotation, not an afterthought.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Regulatory framing and recovery figures cross-checked from the sources cited on the linked deep-dive
+        pages; where figures are quoted they carry their source rather than standing alone.
+      </p>
+      <ul>
+        <li>EU Battery Regulation (Regulation (EU) 2023/1542) — EPR, registration, collection and recovery requirements for all battery categories.</li>
+        <li>Battery Council International (BCI) and industry association reports — lead-acid collection and recycling-rate figures (above 95% in many developed markets).</li>
+        <li>Cross-references: <a href="/lead-acid/recycling/">Lead-acid battery recycling</a>, <a href="/lithium/lithium-recycling/">Lithium battery recycling</a>, <a href="/lead-acid/disposal/">Battery disposal</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-24
+      </p>
+    </div>
+  </section>
+</BaseLayout>

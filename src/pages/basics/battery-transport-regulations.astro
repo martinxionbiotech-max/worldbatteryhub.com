@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Transport Regulations: What Must Travel With the Battery';
+const description = 'Batteries are dangerous goods, and shipping them is governed by UN tests, classes and packaging rules. UN 38.3, Class 8 vs Class 9, and the paperwork that travels…';
+const canonical = '/basics/battery-transport-regulations/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery transport regulations',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-24',
+  dateModified: '2026-09-24',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Are batteries dangerous goods for transport?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, in almost every case. Wet (filled) lead-acid batteries are Class 8 corrosive dangerous goods; lithium batteries are Class 9 miscellaneous dangerous goods. Both travel under UN numbers, packaging rules and carrier restrictions — shipping a battery without the correct classification and paperwork is a compliance breach, not a detail.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is UN 38.3 and when is it required?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UN 38.3 is the test sequence in the UN Manual of Tests and Criteria that lithium cells and batteries must pass before transport: altitude simulation, thermal cycling, vibration, shock, external short circuit, impact/crush, overcharge and forced discharge. A test summary document must accompany lithium batteries since the 2020 IMDG/IATA requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is state of charge restricted for air transport of lithium batteries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A lithium-ion cell stores more energy when fully charged, and a fully charged cell is closer to thermal runaway conditions in an incident. Air transport regulations therefore cap lithium-ion cells and batteries at 30% state of charge (with limited exceptions), reducing the energy available if something goes wrong.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-24"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Logistics · Last reviewed 2026-09-24</p>
+      <h1>Battery Transport Regulations: What Must Travel With the Battery</h1>
+      <p class="lead">
+        A battery is stored energy, and stored energy is a hazard in transit. That single fact governs
+        everything about shipping one: the classification, the packaging, the paperwork — and the
+        penalties for getting any of it wrong.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Batteries are <strong>dangerous goods</strong>. Wet lead-acid is
+        <strong>Class 8 (corrosive)</strong>; lithium is <strong>Class 9 (miscellaneous)</strong>. Lithium
+        cells and batteries must pass the <strong>UN 38.3</strong> test sequence and travel with a
+        <strong>test summary</strong>; lithium-ion air shipments are capped at <strong>30% state of
+        charge</strong>. Lead-acid often rides under the non-spillable exemption (UN 2800). The rules live
+        in the <a href="/procurement/moq-payment-incoterms-battery-imports/">shipping and Incoterms</a> part
+        of procurement, and they decide how your goods can physically move.
+      </div>
+
+      <h2>Why batteries are dangerous goods at all</h2>
+      <p>
+        Transport regulators care about three things in a battery: it can <strong>leak corrosive
+        electrolyte</strong> (lead-acid), it can <strong>short-circuit and overheat</strong> (any chemistry),
+        and a damaged lithium cell can enter <a href="/lithium/thermal-runaway/">thermal runaway</a> — a
+        self-sustaining fire that ordinary aircraft fire suppression cannot reliably stop. That is why
+        lithium air transport carries special restrictions, and why the classification system exists in the
+        first place.
+      </p>
+
+      <h2>Class 8 vs Class 9: the two battery regimes</h2>
+      <table>
+        <thead><tr><th></th><th>Wet lead-acid</th><th>Lithium (all chemistries)</th></tr></thead>
+        <tbody>
+          <tr><td>Hazard class</td><td>Class 8 — corrosive</td><td>Class 9 — miscellaneous dangerous goods</td></tr>
+          <tr><td>UN numbers</td><td>UN 2794 (filled with acid); UN 2800 (non-spillable)</td><td>UN 3480 (Li-ion), UN 3090 (Li-metal); UN 3481/3091 when contained in or packed with equipment</td></tr>
+          <tr><td>Key requirement</td><td>Non-spillable design and packaging test; upright and short-circuit protection</td><td>UN 38.3 test + test summary; SOC limits for air</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        UN numbers are the universal identifiers in transport documents — the shipper's declaration names
+        the UN number and class, and the rest of the chain relies on that entry being correct.
+      </p>
+
+      <h2>UN 38.3: the lithium gatekeeper</h2>
+      <p>
+        Before a lithium cell or battery may be transported, it must pass the UN 38.3 test sequence from the
+        UN Manual of Tests and Criteria: altitude simulation, thermal cycling, vibration, shock, external
+        short circuit, impact/crush, overcharge and forced discharge. The sequence is designed to prove the
+        design survives transport stress without venting, rupture or fire. Since 2020, a <strong>test
+        summary</strong> must be available for every lithium shipment — one of the documents a serious buyer
+        asks for with the quotation, before the goods are on the water.
+      </p>
+
+      <h2>The air transport special case</h2>
+      <p>
+        Air freight is where lithium gets strictest. Lithium-ion cells and batteries travel by air only at
+        <strong>30% state of charge or less</strong> (with narrow exceptions), because a charged cell holds
+        more energy and sits closer to the runaway threshold. Passenger-aircraft carriage of bare lithium
+        cells and batteries is banned entirely; equipment containing them is permitted within quantity
+        limits. The practical effect: your supplier's <strong>discharge practice before packing</strong> is
+        now a compliance variable, worth a line in the QC checklist rather than an assumption.
+      </p>
+
+      <h2>The lead-acid route: non-spillable and proud of it</h2>
+      <p>
+        Wet lead-acid batteries ship under the Class 8 corrosive regime unless they qualify as
+        <strong>non-spillable</strong> (UN 2800): the electrolyte is absorbed or immobilised — as in
+        <a href="/lead-acid/agm-battery/">AGM</a> and <a href="/lead-acid/gel-battery/">gel</a> designs — and
+        the battery passes a vibration and pressure-differential test. Non-spillable batteries face lighter
+        packaging and documentation duties than their free-acid cousins. The battery's own construction
+        therefore decides the paperwork: another reason the chemistry and design details in the
+        <a href="/procurement/how-to-read-battery-datasheet/">datasheet</a> matter before the logistics
+        conversation starts.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the quotation state the <strong>UN number and class</strong> for the exact battery being ordered — not a generic "lithium battery" line?</li>
+        <li>For lithium: is the <strong>UN 38.3 test summary</strong> provided with the quotation, and is it for the <em>actual cell model</em> in the pack?</li>
+        <li>For air freight: is the supplier's <strong>30% SOC discharge practice</strong> confirmed in writing, before the freight is booked?</li>
+        <li>For lead-acid: is the battery <strong>non-spillable (UN 2800)</strong> — and is the test documentation available — or will it travel as Class 8 corrosive at higher cost and restriction?</li>
+        <li>Does the <strong>Incoterm and freight forwarder</strong> line up with the dangerous-goods rules — see <a href="/procurement/moq-payment-incoterms-battery-imports/">MOQ, payment and Incoterms</a>?</li>
+        <li>Are <strong>packaging and labelling</strong> (orientation arrows, short-circuit protection) part of the supplier's obligations, verified at <a href="/procurement/quality-control-shipment-inspection/">shipment inspection</a>?</li>
+        <li>Is the destination country's <strong>import regime</strong> (permitted chemistries, certification demands) checked before the goods move?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Are batteries dangerous goods for transport?</h3>
+      <p>Yes, in almost every case. Wet (filled) lead-acid batteries are Class 8 corrosive dangerous goods; lithium batteries are Class 9 miscellaneous dangerous goods. Both travel under UN numbers, packaging rules and carrier restrictions — shipping a battery without the correct classification and paperwork is a compliance breach, not a detail.</p>
+      <h3>What is UN 38.3 and when is it required?</h3>
+      <p>UN 38.3 is the test sequence in the UN Manual of Tests and Criteria that lithium cells and batteries must pass before transport: altitude simulation, thermal cycling, vibration, shock, external short circuit, impact/crush, overcharge and forced discharge. A test summary document must accompany lithium batteries since the 2020 IMDG/IATA requirements.</p>
+      <h3>Why is state of charge restricted for air transport of lithium batteries?</h3>
+      <p>A lithium-ion cell stores more energy when fully charged, and a fully charged cell is closer to thermal runaway conditions in an incident. Air transport regulations therefore cap lithium-ion cells and batteries at 30% state of charge (with limited exceptions), reducing the energy available if something goes wrong.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Transport classification and requirements cross-checked from the UN model regulations and modal
+        codes; no quoted figures beyond the regulatory limits themselves, which carry their source.
+      </p>
+      <ul>
+        <li>UN Model Regulations and the UN Manual of Tests and Criteria — Class 8/9 classification, UN numbers, UN 38.3 test sequence.</li>
+        <li>IATA Dangerous Goods Regulations (air) — 30% SOC limit and passenger-aircraft restrictions for lithium.</li>
+        <li>IMDG Code (sea) and ADR (road) — modal requirements, including the 2020 lithium test-summary obligation.</li>
+        <li>Cross-references: <a href="/lithium/thermal-runaway/">Thermal runaway</a>, <a href="/basics/battery-safety-basics/">Safety basics</a>, <a href="/procurement/moq-payment-incoterms-battery-imports/">MOQ, payment and Incoterms</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-24
+      </p>
+    </div>
+  </section>
+</BaseLayout>

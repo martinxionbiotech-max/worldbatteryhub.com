@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Market Knowledge: Reading Battery Market Data';
+const description = 'Battery market knowledge — storage market sizing, demand and price data with explicit methodology, plus the sourced figures on the market sub-site.';
+const canonical = '/market/';
+
+const collectionJsonLd = {
+  '@type': 'CollectionPage',
+  name: title,
+  url: 'https://worldbatteryhub.com/market/',
+  about: 'Battery market knowledge and market-data reading guides',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[collectionJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-24"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Market Knowledge · Last reviewed 2026-09-24</p>
+      <h1>Market Knowledge: Reading Battery Market Data</h1>
+      <p class="lead">
+        Battery market numbers are only as good as the definitions behind them. This cluster teaches the
+        reading skills first — segment boundaries, stages, units — and points to the sourced figures on the
+        market sub-site.
+      </p>
+
+      <div class="takeaways">
+        <strong>How this cluster works:</strong> each page here explains <strong>how to read</strong> a
+        class of market data — what is counted, what is not, and what moves the number. The
+        <strong>sourced figures</strong> themselves live on
+        <a href="https://market.worldbatteryhub.com">market.worldbatteryhub.com</a>, where every statistic
+        carries its source and methodology.
+      </div>
+
+      <h2>In this series</h2>
+      <ul>
+        <li><a href="/market/storage-market-sizing/">Storage market sizing</a> — why GWh deployment numbers differ between reports: cells vs systems, announced vs installed, front-of-meter vs behind-the-meter.</li>
+      </ul>
+
+      <h2>The sourced data on the market sub-site</h2>
+      <ul>
+        <li><a href="https://market.worldbatteryhub.com/storage-battery-market/">Storage battery market</a> — deployment figures with methodology.</li>
+        <li><a href="https://market.worldbatteryhub.com/battery-demand-forecast/">Battery demand forecast</a> — the demand side.</li>
+        <li><a href="https://market.worldbatteryhub.com/battery-price-trends/">Battery price trends</a> — price series with source and method.</li>
+        <li><a href="https://market.worldbatteryhub.com/lead-acid-battery-market/">Lead-acid battery market</a> — the mature side of the industry.</li>
+        <li><a href="https://market.worldbatteryhub.com/battery-trade-hs-codes/">Battery trade HS codes</a> — how battery trade is classified and tracked.</li>
+      </ul>
+
+      <h2>Related reading on this site</h2>
+      <ul>
+        <li><a href="/procurement/battery-quotation-comparison/">How to compare battery quotations</a> — the same "what exactly is being counted" discipline applied to price.</li>
+        <li><a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a> — the chemistry trade-offs behind the storage mix.</li>
+        <li><a href="/technology/ah-vs-wh/">Ah vs Wh</a> — the unit discipline at cell level.</li>
+        <li><a href="/methodology/">Methodology</a> — how this platform sources and cross-verifies.</li>
+      </ul>
+
+      <h2>Sources</h2>
+      <p>Cluster pages carry their own source lists; the sub-site figures carry source and methodology individually.</p>
+      <p class="muted">Last reviewed: 2026-09-24</p>
+    </div>
+  </section>
+</BaseLayout>

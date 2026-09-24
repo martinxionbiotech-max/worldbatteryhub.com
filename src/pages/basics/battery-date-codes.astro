@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Date Codes: How to Read the Birthdate on Any Battery';
+const description = 'Every battery is born on a specific day, and the date code on the case records it. How to read the common stamp formats on lead-acid and lithium batteries, and why…';
+const canonical = '/basics/battery-date-codes/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery date codes',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-24',
+  dateModified: '2026-09-24',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a battery date code?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A small stamp, engraving or heat-burned mark on the battery case that records when it was manufactured. Common formats are a letter for the month plus a digit for the year (F6 = June 2026), a plain month/year stamp (06/26), or a year-plus-week code (2624 = week 24 of 2026). The format varies by brand, so the pattern matters more than any single rule.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does the manufacture date matter when buying a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Batteries age even in storage: self-discharge and slow sulfation proceed without any use. A battery that has sat on a shelf for many months has used part of its service life before it is installed, which is why procurement checks set a maximum acceptable shelf age — commonly a few months for lead-acid — and require the date code to be verified on arrival.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do lithium batteries have date codes too?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, but they are less standardised. Cells often carry a factory code, and packs may show a manufacture or assembly date on the label or in the BMS data. Because lithium cells degrade with calendar time as well as cycles, the manufacture date matters for lithium purchases just as it does for lead-acid.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-24"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Purchasing · Last reviewed 2026-09-24</p>
+      <h1>Battery Date Codes: How to Read the Birthdate on Any Battery</h1>
+      <p class="lead">
+        A battery does not start aging on the day you buy it — it started the day it was made. The date
+        code is the birthdate stamped on the case, and it is one of the few facts on the label that nobody
+        can argue with.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> The date code is a short mark on the case or label — usually
+        <strong>a letter for the month and a digit for the year</strong> (<strong>F6 = June 2026</strong>,
+        skipping I in the letter sequence). Formats vary by brand: some print a plain month/year, some a
+        year-and-week, some an internal factory code. What is universal is why it matters: batteries age on
+        the shelf, and a fresh code is the buyer's best defence against paying full price for part of a
+        service life that has already been spent. The brand-by-brand decoding table lives on the
+        <a href="/lead-acid/battery-date-code/">How to read a battery date code</a> deep dive.
+      </div>
+
+      <h2>Why the date code matters more than the warranty</h2>
+      <p>
+        A warranty usually starts at the date of <em>sale</em> — but the battery started discharging and
+        slowly sulfating at the date of <em>manufacture</em>. The gap between the two is shelf time, and
+        shelf time is not free: <a href="/lead-acid/self-discharge/">self-discharge</a> pulls the battery
+        down slowly, and in lead-acid the sulfate that forms during long idle storage is exactly what ages
+        the plates. A battery that sat a year before sale is, chemically, a year older than the receipt
+        suggests. The date code is the only label that tells you the true age — see
+        <a href="/lead-acid/how-long-does-a-car-battery-last/">How long does a car battery last</a> for what
+        that age costs you.
+      </p>
+
+      <h2>The common formats</h2>
+      <table>
+        <thead><tr><th>Format</th><th>Example</th><th>Reads as</th></tr></thead>
+        <tbody>
+          <tr><td>Letter + digit</td><td>F6</td><td>June 2026 (F = June, 6 = 2026)</td></tr>
+          <tr><td>Month / year</td><td>06/26</td><td>June 2026</td></tr>
+          <tr><td>Year + week</td><td>2624</td><td>2026, week 24</td></tr>
+          <tr><td>Factory code</td><td>varies</td><td>Brand-specific; needs the maker's key</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        The letter-month convention skips the letter I to avoid confusion with the digit 1 — A = January
+        through M = December, with I omitted. Brands also differ on whether the letter or the digit comes
+        first, which is why the stamp must be checked against the maker's own key rather than guessed.
+      </p>
+
+      <h2>Where to find it</h2>
+      <p>
+        On a typical <a href="/lead-acid/types/">lead-acid car battery</a> the code is heat-burned or
+        stamped into the case — usually along the top edge near a terminal, or on the side wall. On lithium
+        packs it is more often printed on the label or recorded in the
+        <a href="/lithium/what-is-bms/">BMS</a> data rather than engraved in the case, which makes a label
+        photograph part of any sensible receiving check. If the stamp is missing or illegible, treat the
+        battery as unverifiable and flag it — a missing date code is a finding, not a detail.
+      </p>
+
+      <h2>What a date code can and cannot tell you</h2>
+      <ul>
+        <li><strong>It tells you manufacture date</strong> — the starting line for shelf age and the only honest measure of how old the battery is.</li>
+        <li><strong>It tells you nothing about quality or capacity</strong> — a fresh battery can still be a weak design; age is one input to the decision, not the whole decision (for the rest, see <a href="/basics/battery-capacity/">Battery capacity</a>).</li>
+        <li><strong>It is only useful if it is real</strong> — codes can be re-stamped, which is why serious receiving checks photograph the code on arrival and compare it with the order terms.</li>
+      </ul>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the purchase order define a <strong>maximum acceptable shelf age</strong> at delivery — and is the date code, not the invoice date, the reference point?</li>
+        <li>Is the code checked <strong>on arrival, before acceptance</strong> — photographed, decoded against the brand key, and recorded in the receiving file?</li>
+        <li>For bulk orders, is <strong>freshness written into the contract</strong> (for example "manufactured within X months of shipment") rather than left as a verbal promise?</li>
+        <li>Are mixed lots screened for <strong>re-stamped or missing codes</strong> — one of the classic findings in third-party inspection reports?</li>
+        <li>Is the same check applied to lithium packs, where the date may live in <strong>label or BMS data</strong> rather than on the case — see <a href="/procurement/quality-control-shipment-inspection/">Quality control and shipment inspection</a> for the full receiving protocol?</li>
+        <li>Are group specs and model data confirmed against the <a href="https://data.worldbatteryhub.com/battery-groups/">battery group database</a> so the code is read on the right product?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is a battery date code?</h3>
+      <p>A small stamp, engraving or heat-burned mark on the battery case that records when it was manufactured. Common formats are a letter for the month plus a digit for the year (F6 = June 2026), a plain month/year stamp (06/26), or a year-plus-week code (2624 = week 24 of 2026). The format varies by brand, so the pattern matters more than any single rule.</p>
+      <h3>Why does the manufacture date matter when buying a battery?</h3>
+      <p>Batteries age even in storage: self-discharge and slow sulfation proceed without any use. A battery that has sat on a shelf for many months has used part of its service life before it is installed, which is why procurement checks set a maximum acceptable shelf age — commonly a few months for lead-acid — and require the date code to be verified on arrival.</p>
+      <h3>Do lithium batteries have date codes too?</h3>
+      <p>Yes, but they are less standardised. Cells often carry a factory code, and packs may show a manufacture or assembly date on the label or in the BMS data. Because lithium cells degrade with calendar time as well as cycles, the manufacture date matters for lithium purchases just as it does for lead-acid.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Date-code conventions cross-checked across brand documentation and the formats documented on the
+        <a href="/lead-acid/battery-date-code/">lead-acid deep-dive page</a>; no quoted figures.
+      </p>
+      <ul>
+        <li>Battery manufacturer labelling documentation — letter-month and year-week conventions (formats vary by brand).</li>
+        <li>Battery Council International (BCI) — group reference and date-code guidance for lead-acid batteries.</li>
+        <li>Lithium pack manufacturer documentation — label and BMS data practices for manufacture dating.</li>
+        <li>Cross-references: <a href="/lead-acid/battery-date-code/">How to read a battery date code</a>, <a href="/lead-acid/self-discharge/">Self-discharge</a>, <a href="/procurement/quality-control-shipment-inspection/">QC and shipment inspection</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-24
+      </p>
+    </div>
+  </section>
+</BaseLayout>
