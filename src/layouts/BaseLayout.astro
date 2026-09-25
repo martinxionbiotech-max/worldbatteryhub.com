@@ -5,6 +5,71 @@ const { title, description, canonical, ogType = 'website', jsonLd = [], author, 
 
 const SITE = 'https://worldbatteryhub.com';
 const BRAND = 'World Battery Hub';
+
+// 主导航分组（下拉菜单）。新增页面时改这里即可，勿在模板里散写链接。
+const NAV: { label: string; items: { label: string; href: string }[] }[] = [
+  { label: 'Battery Types', items: [
+      { label: 'Lead-Acid Batteries', href: '/lead-acid/' },
+      { label: 'Lithium Batteries', href: '/lithium/' },
+      { label: 'Battery Products', href: '/lead-acid/products/' },
+      { label: 'Lead-Acid Types Explained', href: '/lead-acid/types/' },
+      { label: 'Lithium vs Lead-Acid', href: '/technology/lithium-vs-lead-acid/' }] },
+  { label: 'Basics', items: [
+      { label: 'Battery Basics', href: '/basics/' },
+      { label: 'What Is a Battery', href: '/basics/what-is-a-battery/' },
+      { label: 'Battery Capacity', href: '/basics/battery-capacity/' },
+      { label: 'Voltage & Amperage', href: '/basics/voltage-amperage/' },
+      { label: 'Charging Basics', href: '/basics/charging-basics/' },
+      { label: 'Battery Safety Basics', href: '/basics/battery-safety-basics/' },
+      { label: 'Date Codes & Age', href: '/basics/battery-date-codes/' },
+      { label: 'Charging Voltage Guide', href: '/basics/battery-charging-voltage-guide/' },
+      { label: 'Transport Regulations', href: '/basics/battery-transport-regulations/' },
+      { label: 'Recycling for Importers', href: '/basics/battery-recycling-importers/' }] },
+  { label: 'Technology', items: [
+      { label: 'Technology Overview', href: '/technology/' },
+      { label: 'How a Lead-Acid Battery Works', href: '/technology/how-lead-acid-battery-works/' },
+      { label: 'Internal Resistance', href: '/technology/internal-resistance/' },
+      { label: 'Resistance vs Conductance', href: '/technology/internal-resistance-vs-conductance/' },
+      { label: 'Series vs Parallel', href: '/technology/series-vs-parallel/' },
+      { label: 'Ah vs Wh', href: '/technology/ah-vs-wh/' },
+      { label: 'All Comparisons', href: '/compare/' },
+      { label: '12V vs 24V System Design', href: '/compare/12v-vs-24v-system-design/' },
+      { label: 'AGM vs EFB vs Flooded (TCO)', href: '/compare/agm-vs-efb-vs-flooded-tco/' },
+      { label: 'LFP vs NMC for Fleets', href: '/compare/lfp-vs-nmc-fleet-buyers/' },
+      { label: 'Starting vs Deep Cycle', href: '/compare/starting-vs-deep-cycle/' }] },
+  { label: 'Tools & Testing', items: [
+      { label: 'Tools Overview', href: '/tools/' },
+      { label: 'Battery Finder', href: '/tools/battery-finder/' },
+      { label: 'Runtime Calculator', href: '/tools/runtime-calculator/' },
+      { label: 'Sizing Calculator', href: '/tools/sizing-calculator/' },
+      { label: 'Charging-Time Calculator', href: '/tools/charging-time-calculator/' },
+      { label: 'Testing Overview', href: '/testing/' },
+      { label: 'Battery Capacity Testing', href: '/testing/battery-capacity-testing/' }] },
+  { label: 'Buyers & Market', items: [
+      { label: 'Battery Procurement Guides', href: '/procurement/' },
+      { label: 'Sourcing from China: Buyer Workflow', href: '/procurement/battery-sourcing-china-buyer-workflow/' },
+      { label: 'Factory Evaluation Checklist', href: '/procurement/battery-factory-evaluation-checklist/' },
+      { label: 'How to Read a Battery Datasheet', href: '/procurement/how-to-read-battery-datasheet/' },
+      { label: 'Spec Comparison: JIS / DIN / BCI', href: '/procurement/spec-comparison-jis-din-bci-buyers/' },
+      { label: 'Verify CCA Claims', href: '/procurement/verify-cca-claims-bulk-purchase/' },
+      { label: 'MOQ, Payment & Incoterms', href: '/procurement/moq-payment-incoterms-battery-imports/' },
+      { label: 'Quotation Comparison', href: '/procurement/battery-quotation-comparison/' },
+      { label: 'OEM vs ODM Manufacturing', href: '/procurement/oem-vs-odm-battery-manufacturing/' },
+      { label: 'QC & Shipment Inspection', href: '/procurement/quality-control-shipment-inspection/' },
+      { label: 'Warranty Terms for Distributors', href: '/procurement/battery-warranty-terms-distributors/' },
+      { label: 'Market Data', href: '/market/' },
+      { label: 'Storage Market Sizing', href: '/market/storage-market-sizing/' }] },
+  { label: 'Standards & Data', items: [
+      { label: 'Standards', href: '/standards/' },
+      { label: 'Methodology', href: '/methodology/' },
+      { label: 'Glossary', href: '/glossary/' },
+      { label: 'Data Use & Citation', href: '/data-use-and-citation/' }] },
+  { label: 'About', items: [
+      { label: 'About Us', href: '/about/' },
+      { label: 'Contact', href: '/contact/' },
+      { label: 'Safety Notice', href: '/safety-notice/' },
+      { label: 'Accessibility', href: '/accessibility/' }] },
+];
 const fullTitle = title.includes('World Battery Hub') ? title : `${title} | ${BRAND}`;
 const resolvedDescription = description || 'A battery knowledge and data platform — lead-acid and lithium battery specifications, technology, testing, manufacturers and market data.';
 
@@ -301,8 +366,6 @@ const breadcrumbJsonLd = {
         align-items: center;
         justify-content: flex-end;
         gap: 2px;
-        overflow-x: auto;
-        scrollbar-width: none;
       }
 
       .nav::-webkit-scrollbar {
@@ -918,6 +981,32 @@ const breadcrumbJsonLd = {
       }
 
       /* Responsive */
+  /* ─── Primary nav with dropdown menus ─── */
+  .nav-item { position: relative; }
+  .nav-trigger {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: transparent; border: 0; font: inherit;
+    font-size: 0.88rem; font-weight: 600; line-height: 1.2;
+    color: #cfdff2; padding: 8px 12px; border-radius: var(--radius-sm);
+    cursor: pointer; white-space: nowrap;
+  }
+  .nav-trigger:hover, .nav-trigger:focus-visible { background: rgba(255, 255, 255, 0.12); color: #ffffff; }
+  .nav-trigger[aria-expanded="true"] { background: rgba(255, 255, 255, 0.16); color: #ffffff; }
+  .nav-caret { font-size: 0.62rem; line-height: 1; transition: transform 0.18s ease; }
+  .nav-item[data-open="true"] .nav-caret { transform: rotate(180deg); }
+  .nav-panel {
+    position: absolute; top: calc(100% + 8px); left: 0; min-width: 246px;
+    display: none; flex-direction: column; gap: 1px; padding: 8px;
+    background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.09);
+    border-radius: 12px; box-shadow: 0 20px 44px rgba(2, 8, 23, 0.22); z-index: 140;
+  }
+  .nav-item[data-open="true"] > .nav-panel { display: flex; }
+  .nav-panel a {
+    display: block; color: #0f172a; font-size: 0.85rem; font-weight: 600;
+    line-height: 1.35; padding: 8px 10px; border-radius: 8px; text-decoration: none;
+  }
+  .nav-panel a:hover, .nav-panel a:focus-visible { background: #eff6ff; color: #1d4ed8; }
+
       @media (max-width: 760px) {
         .container,
         .site-header .container,
@@ -941,13 +1030,11 @@ const breadcrumbJsonLd = {
           justify-content: center;
         }
 
-        .nav {
-          justify-content: flex-start;
-          margin-inline: -6px;
-          padding: 0 6px 2px;
-          mask-image: linear-gradient(90deg, #000 88%, transparent);
-          -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
-        }
+        .nav { flex-direction: column; align-items: stretch; gap: 1px; margin-inline: 0; padding: 0; }
+        .nav-trigger { width: 100%; justify-content: space-between; padding: 9px 10px; }
+        .nav-panel { position: static; min-width: 0; box-shadow: none; border: 0; border-radius: 8px; background: rgba(255, 255, 255, 0.06); margin: 0 0 4px; }
+        .nav-panel a { color: #cfdff2; }
+        .nav-panel a:hover, .nav-panel a:focus-visible { background: rgba(255, 255, 255, 0.14); color: #ffffff; }
 
         .section {
           padding: 36px 0 48px;
@@ -1102,16 +1189,17 @@ const breadcrumbJsonLd = {
           <span>World Battery Hub</span>
         </a>
         <nav class="nav" aria-label="Primary">
-          <a href="/lead-acid/">Lead-Acid</a>
-          <a href="/lithium/">Lithium</a>
-          <a href="/procurement/">Procurement</a>
-          <a href="/testing/">Testing</a>
-          <a href="/standards/">Standards</a>
-          <a href="/technology/">Technology</a>
-          <a href="/lead-acid/products/">Products</a>
-          <a href="/methodology/">Methodology</a>
-          <a href="/contact/">Contact</a>
-          <a href="/about/">About</a>
+          {NAV.map((group, gi) => (
+            <div class="nav-item" data-nav-item data-open="false">
+              <button type="button" class="nav-trigger" id={`nav-trigger-${gi}`} aria-expanded="false" aria-controls={`nav-panel-${gi}`}>
+                {group.label}
+                <span class="nav-caret" aria-hidden="true">&#9662;</span>
+              </button>
+              <div class="nav-panel" id={`nav-panel-${gi}`} role="group" aria-labelledby={`nav-trigger-${gi}`}>
+                {group.items.map((item) => (<a href={item.href}>{item.label}</a>))}
+              </div>
+            </div>
+          ))}
         </nav>
       </div>
     </header>
@@ -1135,5 +1223,43 @@ const breadcrumbJsonLd = {
         {dateModified && <p class="muted">Last reviewed: {dateModified}</p>}
       </div>
     </footer>
-  </body>
+    <script is:inline>
+    // 主导航下拉：悬停或点击打开；鼠标移开、滚动、点击外部、Esc、Tab 离开时自动弹回。
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll('.nav-item[data-nav-item]'));
+      if (!items.length) return;
+      var hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      var closeTimer = null;
+      function setOpen(el, open) {
+        el.setAttribute('data-open', open ? 'true' : 'false');
+        var t = el.querySelector('.nav-trigger');
+        if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      function closeAll(except) { items.forEach(function (el) { if (el !== except) setOpen(el, false); }); }
+      function openOnly(el) { closeAll(el); setOpen(el, true); }
+      function scheduleClose(el) { clearTimeout(closeTimer); closeTimer = setTimeout(function () { setOpen(el, false); }, 170); }
+      items.forEach(function (el) {
+        var trigger = el.querySelector('.nav-trigger');
+        el.addEventListener('mouseenter', function () { if (!hoverCapable) return; clearTimeout(closeTimer); openOnly(el); });
+        el.addEventListener('mouseleave', function () { if (!hoverCapable) return; scheduleClose(el); });
+        if (trigger) {
+          trigger.addEventListener('click', function (e) { e.preventDefault(); var willOpen = el.getAttribute('data-open') !== 'true'; closeAll(el); setOpen(el, willOpen); });
+          trigger.addEventListener('focus', function () { if (hoverCapable) openOnly(el); });
+        }
+        Array.prototype.forEach.call(el.querySelectorAll('.nav-panel a'), function (a) {
+          a.addEventListener('click', function () { setOpen(el, false); });
+        });
+      });
+      document.addEventListener('click', function (e) { if (!e.target.closest || !e.target.closest('.nav-item')) closeAll(); });
+      document.addEventListener('focusin', function (e) { if (!e.target.closest || !e.target.closest('.nav-item')) closeAll(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' || e.key === 'Esc') closeAll(); });
+      var scrollLock = false;
+      window.addEventListener('scroll', function () {
+        if (scrollLock) return; scrollLock = true; closeAll();
+        setTimeout(function () { scrollLock = false; }, 250);
+      }, { passive: true });
+      window.addEventListener('resize', function () { closeAll(); });
+    })();
+  </script>
+</body>
 </html>
