@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Cold Weather Battery Performance: What Actually Happens Below Zero';
+const description = 'Cold attacks batteries on two fronts: the chemistry slows and the engine demands more. What cold does to lead-acid and lithium, why CCA exists, and how to spec for a cold climate.';
+const canonical = '/basics/cold-weather-performance/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Cold weather battery performance',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-25',
+  dateModified: '2026-09-25',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why does cold weather weaken a battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cold slows the electrochemical reactions inside a battery and thickens the electrolyte, which raises internal resistance — so the battery can deliver less current at any given voltage, exactly when a cold engine needs more cranking power. The two effects stack: the battery has the least to give at the moment the starter asks for the most.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much starting power does a battery lose in the cold?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The loss is steep but published as a rating rather than a guess: CCA exists to describe exactly this. A battery rated 600 CCA (SAE) is certified to deliver 600 amps for 30 seconds at −18°C while staying above 7.2V. As a practical reference, the available cranking power of a lead-acid battery at −18°C is only a fraction of its warm-weather capability — which is why the cold rating, not the warm one, is the one to spec.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you charge a lithium battery in freezing temperatures?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Charging lithium-ion below 0°C risks lithium plating, which permanently damages the cells — most BMS units block charging below freezing for exactly this reason. Discharging cold lithium is restricted but less damaging. Cold-climate lithium installations therefore need heating or a BMS with low-temperature charge protection, not just a bigger battery.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-25"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Climate · Last reviewed 2026-09-25</p>
+      <h1>Cold Weather Battery Performance</h1>
+      <p class="lead">
+        Cold is the battery's unfair fight: the chemistry slows down at the exact moment the engine
+        demands more from it. Understanding the mechanism — not just the rule of thumb — is what
+        separates a battery that starts in January from one that doesn't.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Cold raises a battery's
+        <a href="/technology/internal-resistance/">internal resistance</a> and slows its reactions, so
+        available current drops — which is precisely why the <strong>CCA rating</strong> exists: it
+        certifies cranking power at <strong>−18°C</strong>, not in the showroom. Lead-acid cranks
+        worse but can usually still be charged in the cold; <strong>lithium is the opposite</strong> —
+        it discharges cold acceptably but must not be charged below 0°C. The rating mechanics are in
+        <a href="/lead-acid/cca/what-is-cca/">What is CCA</a>.
+      </div>
+
+      <h2>The two-front attack</h2>
+      <p>
+        Cold attacks starting twice. Inside the battery, lower temperature slows ion movement and
+        thickens the electrolyte, raising internal resistance — the battery can deliver
+        <em>less</em> current at any voltage. Outside the battery, cold thickens the engine oil, so the
+        starter motor demands <em>more</em> torque and current. Supply falls while demand rises; the gap
+        between the curves is why a battery that started fine in summer fails the first hard freeze. The
+        temperature mechanics behind the resistance rise are on
+        <a href="/lead-acid/cca/cca-and-temperature/">CCA and temperature</a>.
+      </p>
+
+      <h2>Lead-acid in the cold</h2>
+      <p>
+        Lead-acid performance degrades steadily as temperature falls, which is why the industry built
+        cold into the rating system: CCA measures the discharge at −18°C, and the
+        <a href="/testing/cca-testing-deep-dive/">CCA testing method</a> exists to make that number
+        honest. Three cold-specific facts matter in practice:
+      </p>
+      <ul>
+        <li><strong>Available capacity drops with temperature</strong> — a lead-acid battery's usable amp-hours at −18°C are a fraction of the 25°C figure on the label.</li>
+        <li><strong>Charging voltage needs compensation</strong> — cold batteries want slightly higher charging voltages, which is why good chargers sense temperature; see the <a href="/basics/battery-charging-voltage-guide/">charging voltage guide</a>.</li>
+        <li><strong>Freezing is a state-of-charge problem</strong> — a fully charged lead-acid battery's electrolyte freezes far below 0°C, but a deeply discharged one can freeze near it. A discharged battery in a cold yard can be destroyed by its own electrolyte turning to ice.</li>
+      </ul>
+      <p>
+        For vehicles that must start in hard winters, the buying answer is the same every year:
+        <strong>spec CCA for the climate, not the engine's bare minimum</strong>, and choose a battery
+        whose cold rating comes from a stated standard — the
+        <a href="/lead-acid/cold-weather-battery/">cold weather battery</a> page walks the selection.
+      </p>
+
+      <h2>Lithium in the cold: the charge ban</h2>
+      <p>
+        Lithium behaves differently, and the difference is a safety rule. Discharging cold lithium is
+        restricted (the cells sag and deliver less) but not destructive; <strong>charging below
+        0°C is</strong>. At low temperature, lithium ions that should intercalate into the anode instead
+        plate onto its surface as metal, permanently reducing capacity and, at worst, creating internal
+        short paths. This is not a preference — it is chemistry, and it is why every competent
+        <a href="/lithium/what-is-bms/">BMS</a> blocks charging below freezing. Cold-climate lithium
+        systems therefore need one of three things: low-temperature charge protection, pack heating, or
+        a use pattern that never asks for cold charging. None of them is free, which is the honest
+        argument for staying lead-acid in an unheated cold-climate engine bay.
+      </p>
+
+      <h2>Specifying for a cold climate</h2>
+      <p>
+        The cold-climate spec is a chain: pick the <a href="/lead-acid/battery-group-sizes/">group
+        size</a> the vehicle takes, then the highest honest CCA within it, then a standard you can
+        verify — and match the charger's temperature behavior to the battery. A battery with a big CCA
+        number under a warmer test standard is not the cold-weather upgrade it looks like; the
+        <a href="/procurement/spec-comparison-jis-din-bci-buyers/">JIS vs DIN vs SAE</a> comparison is
+        the trap to read first.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the <strong>CCA figure tied to a stated standard</strong> (SAE, EN, JIS, DIN) — a cold-climate purchase without the standard is unverifiable?</li>
+        <li>For lithium, does the specification include <strong>low-temperature charge protection or heating</strong>, and does the BMS actually enforce it?</li>
+        <li>Does the charger (or the customer's charger) provide <strong>temperature-compensated charging</strong> for winter use?</li>
+        <li>For lead-acid stock shipped or stored in cold regions, is there a <strong>minimum state-of-charge rule</strong> to prevent freezing damage in the yard?</li>
+        <li>Is the cold rating verified on a sample lot, not just the label — see <a href="/procurement/verify-cca-claims-bulk-purchase/">verify CCA claims</a>?</li>
+        <li>Is the cold-performance data cross-checked against the testing sub-site's <a href="https://testing.worldbatteryhub.com/cca-testing/">CCA testing reference</a> and <a href="https://testing.worldbatteryhub.com/standards/sae-j537/">SAE J537</a> conditions?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why does cold weather weaken a battery?</h3>
+      <p>Cold slows the battery's electrochemical reactions and thickens the electrolyte, which raises internal resistance — so the battery can deliver less current at any given voltage, exactly when a cold engine needs more cranking power. The two effects stack: the battery has the least to give at the moment the starter asks for the most.</p>
+      <h3>How much starting power does a battery lose in the cold?</h3>
+      <p>The loss is steep but published as a rating rather than a guess: CCA exists to describe exactly this. A battery rated 600 CCA (SAE) is certified to deliver 600 amps for 30 seconds at −18°C while staying above 7.2V. As a practical reference, a lead-acid battery's available cranking power at −18°C is only a fraction of its warm-weather capability — which is why the cold rating, not the warm one, is the one to spec.</p>
+      <h3>Can you charge a lithium battery in freezing temperatures?</h3>
+      <p>Charging lithium-ion below 0°C risks lithium plating, which permanently damages the cells — most BMS units block charging below freezing for exactly this reason. Discharging cold lithium is restricted but less damaging. Cold-climate lithium installations therefore need heating or a BMS with low-temperature charge protection, not just a bigger battery.</p>
+      <h3>Why does a battery fail in winter but test fine in summer?</h3>
+      <p>Because the summer test runs warm. A marginal battery can hold enough voltage to pass a warm-weather test yet sag below the cranking floor once cold resistance stacks on top of thickened engine oil. Testing at the battery's winter operating temperature — or comparing against its honest CCA — is what exposes the margin.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Cold-performance behavior follows from the temperature dependence of battery electrochemistry;
+        rating conditions are fixed by the standards (SAE J537, EN 50342, JIS D5301) and the
+        no-charge-below-freezing rule for lithium is documented in cell manufacturer guidance and BMS
+        specifications.
+      </p>
+      <ul>
+        <li>SAE J537 — cold cranking test method (−18°C, 30 s, 7.2V).</li>
+        <li>Lithium cell manufacturer guidance — low-temperature charge restriction and plating risk.</li>
+        <li>BMS and charger manufacturer documentation — low-temperature charge protection and temperature compensation.</li>
+        <li>Cross-references: <a href="/lead-acid/cca/what-is-cca/">What is CCA</a>, <a href="/testing/cca-testing-deep-dive/">CCA testing deep dive</a>, <a href="/lead-acid/cold-weather-battery/">Cold weather battery selection</a>, <a href="/basics/battery-charging-voltage-guide/">Charging voltage guide</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-25
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Weight vs Capacity: The Rule of Lead and the Lithium Break';
+const description = 'Heavier usually means more lead and more capacity — until lithium breaks the rule. Why weight tracks Ah in lead-acid, why it stops tracking in lithium, and how buyers use weight as a fraud check.';
+const canonical = '/basics/weight-vs-capacity-relationship/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery weight and capacity relationship',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-25',
+  dateModified: '2026-09-25',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Does a heavier battery always have more capacity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Within one chemistry and construction, generally yes — for lead-acid, capacity is largely stored in the mass of active material, so heavier almost always means more Ah. Across chemistries the rule breaks completely: lithium stores several times more energy per kilogram, so a lighter lithium battery can carry the same Ah label as a much heavier lead-acid one.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is lead-acid so heavy for its capacity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lead is dense and electrochemically modest: a lead-acid battery stores only on the order of 30–50 Wh per kilogram at the cell level, because most of the weight is lead plates, grid and electrolyte doing structural and conductive work rather than storing energy. Lithium chemistries reach roughly three to five times that specific energy, which is why a same-Ah lithium pack weighs a fraction of the lead-acid battery it replaces.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can weight be used to check a battery spec?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because lead-acid capacity scales with lead mass, weight is a blunt but useful honesty check: a battery labelled with a high Ah and CCA that weighs far less than comparable units in the same BCI group is likely thin-plate construction or an inflated rating. Cross-check the stated weight against published weight tables for the group size before trusting the electrical figures.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-25"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Capacity · Last reviewed 2026-09-25</p>
+      <h1>Battery Weight vs Capacity: The Rule of Lead and the Lithium Break</h1>
+      <p class="lead">
+        For a century of lead-acid batteries, weight was the honest proxy for capacity — more lead,
+        more amp-hours, more cranking amps. Then lithium arrived and broke the correlation. Knowing
+        which rule applies to the battery in front of you is both a sizing tool and a fraud check.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> In <strong>lead-acid</strong>, capacity tracks weight because the
+        energy lives in the mass of lead and acid — heavier almost always means more Ah, at roughly
+        <strong>30–50 Wh/kg</strong> at cell level. In <strong>lithium</strong>, the same kilogram stores
+        roughly <strong>three to five times</strong> the energy, so weight stops being a capacity signal
+        and becomes a chemistry signal instead. For the formal definition of the capacity unit behind
+        all of this, start at <a href="/basics/battery-capacity/">battery capacity</a>.
+      </div>
+
+      <h2>Why lead-acid capacity is a weight game</h2>
+      <p>
+        A lead-acid cell stores energy by converting lead dioxide and spongy lead into lead sulfate.
+        The reaction is heavy and inefficient by modern standards: most of the battery's mass is
+        <strong>grid and plate lead</strong> doing structural and conductive work, not storing energy.
+        The practical consequence is the old trade rule — <em>within a group size, the heavier battery is
+        the bigger battery</em>. More plate lead means more active material, which means more
+        <a href="/lead-acid/cca-vs-ah/">Ah and CCA</a>. Weight charts for BCI groups exist precisely
+        because of this correlation; the group's weight range is documented, and a battery far below
+        the range for its group is a thin-plate economy build or an optimistic label.
+      </p>
+
+      <h2>The numbers that set the rule</h2>
+      <table>
+        <thead><tr><th>Chemistry (cell level)</th><th>Typical specific energy (Wh/kg)</th><th>What it means in hand</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flooded lead-acid</strong></td><td>~30–40</td><td>A 100 Ah / 12V unit (~1.2 kWh) weighs on the order of 30+ kg</td></tr>
+          <tr><td><strong>AGM / VRLA</strong></td><td>~35–45</td><td>Similar mass to flooded; the benefit is mounting and maintenance, not weight</td></tr>
+          <tr><td><strong>LFP (LiFePO4)</strong></td><td>~90–160</td><td>Same Ah label at roughly a third of the lead weight</td></tr>
+          <tr><td><strong>NMC / NCA</strong></td><td>~150–250</td><td>Highest energy per kg of the mainstream chemistries</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Typical literature ranges, not universal constants — cell design, packaging, BMS and case all
+        move the as-shipped number below the cell-level figure. Always compare complete-battery weight
+        against complete-battery weight, never against a bare-cell claim.
+      </p>
+
+      <h2>The lithium break</h2>
+      <p>
+        Lithium stores energy in lighter, more energetic couples, so a lithium pack carries the same
+        <em>label</em> — 100 Ah, 12V — at a fraction of the mass. Two traps follow. First,
+        <strong>never compare lead-acid and lithium by weight</strong>: the lighter lithium unit is not
+        "undersized", it is a different chemistry with different
+        <a href="/lithium/energy-density/">energy density</a>. Second, never assume the lighter battery
+        is the weaker one — the metrics that matter (cycle life, usable depth of discharge, voltage
+        sag) live elsewhere, in the <a href="/lithium/lifespan/">lithium lifespan</a> and
+        <a href="/lithium/soc-vs-soh/">SOC vs SOH</a> pages.
+      </p>
+
+      <h2>Weight as a procurement honesty check</h2>
+      <p>
+        Because lead-acid capacity is lead mass, <strong>weight is the cheapest pre-payment test an
+        importer has</strong>. A 12V deep-cycle battery labelled 100 Ah should land inside the weight
+        band of its BCI group; one that arrives far lighter than the group's documented range is not a
+        technological breakthrough — it is thin plates, or a rating that will not survive a
+        <a href="/testing/cycle-life-measured/">cycle-life test</a>. The same logic applies to lithium,
+        in reverse: a lithium pack sold at a lead-acid weight for its Ah label is equally suspect.
+        Write the weight into the purchase order and weigh a sample at arrival, alongside the checks in
+        <a href="/procurement/how-to-read-battery-datasheet/">how to read a battery datasheet</a>.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the <strong>stated weight on the datasheet</strong>, and does it sit inside the documented range for the group size — or has the supplier left it off entirely?</li>
+        <li>For lead-acid, does a <strong>sample weigh-in at arrival</strong> match the spec, with a tolerance agreed in the purchase order?</li>
+        <li>For lithium, is the <strong>chemistry stated</strong> (LFP vs NMC) — weight comparisons are only meaningful within one chemistry?</li>
+        <li>Are you comparing <strong>complete-battery weight to complete-battery weight</strong>, not to a cell-level specific-energy claim?</li>
+        <li>Does an unusually light battery for its group trigger the deeper verification steps — capacity and <a href="/testing/cca-testing-deep-dive/">CCA testing</a> on a sample lot?</li>
+        <li>Is the weight cross-checked against reference data — the <a href="https://data.worldbatteryhub.com/weight-chart/">weight chart</a> and <a href="https://data.worldbatteryhub.com/battery-groups/">group data</a> on the data sub-site?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Does a heavier battery always have more capacity?</h3>
+      <p>Within one chemistry and construction, generally yes — for lead-acid, capacity is largely stored in the mass of active material, so heavier almost always means more Ah. Across chemistries the rule breaks completely: lithium stores several times more energy per kilogram, so a lighter lithium battery can carry the same Ah label as a much heavier lead-acid one.</p>
+      <h3>Why is lead-acid so heavy for its capacity?</h3>
+      <p>Lead is dense and electrochemically modest: a lead-acid battery stores only on the order of 30–50 Wh per kilogram at the cell level, because most of the weight is lead plates, grid and electrolyte doing structural and conductive work rather than storing energy. Lithium chemistries reach roughly three to five times that specific energy, which is why a same-Ah lithium pack weighs a fraction of the lead-acid battery it replaces.</p>
+      <h3>How can weight be used to check a battery spec?</h3>
+      <p>Because lead-acid capacity scales with lead mass, weight is a blunt but useful honesty check: a battery labelled with a high Ah and CCA that weighs far less than comparable units in the same BCI group is likely thin-plate construction or an inflated rating. Cross-check the stated weight against published weight tables for the group size before trusting the electrical figures.</p>
+      <h3>Does a lithium battery's weight say anything about its quality?</h3>
+      <p>Not directly — the same Ah label can ship at different weights across LFP and NMC, and packaging dominates. Quality signals in lithium live in the cell provenance, the BMS specification and the cycle-life test results, not on the scale.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Specific-energy ranges are typical literature values cited as ranges, not universal constants;
+        the weight-as-proxy logic for lead-acid follows from the chemistry of the lead–acid couple and
+        is documented in group-size weight tables.
+      </p>
+      <ul>
+        <li>Battery engineering references — specific energy by chemistry (lead-acid vs LFP vs NMC).</li>
+        <li>BCI and manufacturer group-size data — documented weight ranges by group.</li>
+        <li>Cross-references: <a href="/basics/battery-capacity/">Battery capacity</a>, <a href="/lithium/energy-density/">Lithium energy density</a>, <a href="/lead-acid/cca-vs-ah/">CCA vs Ah</a>, <a href="/procurement/how-to-read-battery-datasheet/">How to read a battery datasheet</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-25
+      </p>
+    </div>
+  </section>
+</BaseLayout>

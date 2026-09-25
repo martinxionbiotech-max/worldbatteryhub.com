@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Self-Discharge Rates by Chemistry: What Storage Costs You';
+const description = 'Every battery loses charge in storage. How fast depends on chemistry and temperature: flooded lead-acid self-discharges fastest, AGM and lithium far slower — and heat roughly doubles the rate every 10°C.';
+const canonical = '/basics/self-discharge-rates-by-chemistry/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery self-discharge rates by chemistry',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-25',
+  dateModified: '2026-09-25',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How fast does a lead-acid battery self-discharge?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A flooded lead-acid battery typically loses on the order of 3–5% of its charge per month at around 25°C, with valve-regulated types (AGM and gel) closer to 1–3% per month. The rate rises sharply with temperature — as a rule of thumb it roughly doubles for every 10°C above the reference, which is why warehouse and container storage temperature is the number that decides whether a shipment arrives fresh.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do lithium batteries self-discharge less than lead-acid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A lithium-ion battery in storage typically loses on the order of 1–3% of its charge per month, and often less in cool conditions, because its internal side reactions are slower than lead-acid chemistry. Note the BMS draws a small quiescent current, so very long storage still needs a scheduled top-up or the pack can over-discharge through its own electronics.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does temperature affect self-discharge so much?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Self-discharge is a chemical side reaction, and chemical reaction rates follow an Arrhenius-type temperature dependence: roughly, the rate doubles for every 10°C rise. A battery stored at 35°C self-discharges about twice as fast as one at 25°C, and a container in a tropical port faster still. The practical rule for importers: storage temperature is a spec, not a detail.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-25"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Storage · Last reviewed 2026-09-25</p>
+      <h1>Battery Self-Discharge Rates by Chemistry</h1>
+      <p class="lead">
+        A battery is a slow chemical reaction that you can pause but never stop. Even with nothing
+        connected, every battery leaks charge back into heat — and the leak rate is set by two variables:
+        <strong>the chemistry</strong> and <strong>the storage temperature</strong>.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> At roughly <strong>25°C</strong>, a flooded lead-acid battery
+        typically loses on the order of <strong>3–5% per month</strong>; valve-regulated lead-acid
+        (AGM, gel) about <strong>1–3% per month</strong>; lithium-ion typically
+        <strong>1–3% per month</strong> or less. Nickel-metal hydride sits far higher, especially in the
+        first days after charging. And the temperature rule dominates everything: the rate roughly
+        <strong>doubles for every 10°C</strong> above the reference — see the numbers on
+        <a href="/lead-acid/12v-voltage-chart/">state of charge vs voltage</a> to track where a stored
+        battery has drifted.
+      </div>
+
+      <h2>What self-discharge actually is</h2>
+      <p>
+        A charged battery is a system held away from chemical equilibrium. Self-discharge is the slow
+        crawl back. In lead-acid chemistry the dominant paths are reactions at the plate surface —
+        antimony migration in flooded designs is a classic accelerator — plus internal leakage currents.
+        In lithium-ion it is slower surface and electrolyte side reactions, plus whatever current the
+        protection electronics draw. The point for procurement: this is a <em>rate</em>, not an event, and
+        it compounds through the entire journey from factory floor to end customer's shelf.
+      </p>
+
+      <h2>Typical rates by chemistry</h2>
+      <table>
+        <thead><tr><th>Chemistry</th><th>Typical monthly loss (~25°C)</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flooded lead-acid</strong></td><td>~3–5%</td><td>Highest of the lead-acid family; antimony alloys self-discharge faster than calcium</td></tr>
+          <tr><td><strong>AGM / gel (VRLA)</strong></td><td>~1–3%</td><td>Lower internal leakage than flooded; long shelf life is a genuine VRLA selling point — see <a href="/lead-acid/agm-battery/">AGM batteries</a></td></tr>
+          <tr><td><strong>Lithium-ion (LFP, NMC)</strong></td><td>~1–3% or less</td><td>Slowest common chemistries; BMS quiescent draw adds its own slow drain — see <a href="/lithium/storage/">lithium storage</a></td></tr>
+          <tr><td><strong>NiMH</strong></td><td>Highest of the group</td><td>Loses charge fastest in the first days after charging, then the rate tapers</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Typical ranges from chemistry literature and manufacturer storage guidance — always expressed
+        per month at the stated temperature, and always a <em>range</em>, because alloy, purity and
+        construction move the number inside the band.
+      </p>
+
+      <h2>The temperature multiplier</h2>
+      <p>
+        Self-discharge is chemistry, and chemistry is temperature-driven: the rate roughly
+        <strong>doubles for every 10°C</strong> above the reference. A flooded battery that loses ~4% a
+        month at 25°C loses on the order of twice that at 35°C — and a sealed container crossing the
+        tropics can sit far hotter than 35°C for weeks. This is why <em>shelf life starts at the factory
+        gate, not at your warehouse</em>, and why the
+        <a href="/basics/battery-date-codes/">date code</a> matters more than the invoice date.
+      </p>
+      <p>
+        The same curve runs backwards in the cold: at low single-digit Celsius, self-discharge nearly
+        stalls, which is why cool, dry storage is the cheapest battery-preservation tool an importer has.
+      </p>
+
+      <h2>Why importers and distributors should care</h2>
+      <p>
+        Self-discharge converts time into lost state of charge, and lost state of charge into two
+        expensive outcomes. First, a battery that arrives deeply discharged can be damaged before the
+        customer ever sees it — lead-acid sulfates, lithium over-discharges through its own BMS.
+        Second, a battery that sits discharged on a shelf for months will fail early and come back as a
+        <a href="/procurement/battery-warranty-terms-distributors/">warranty claim</a> that no chemistry
+        excuse will settle. Storage is a supply-chain spec: temperature, ventilation and a
+        <strong>recharge schedule</strong> for long-sitting stock.
+      </p>
+
+      <h2>Reading self-discharge off the battery</h2>
+      <p>
+        For lead-acid, state of charge maps to open-circuit voltage and electrolyte specific gravity, so
+        a stored battery can be checked with a voltmeter or hydrometer — the numbers are on the
+        <a href="/lead-acid/12v-voltage-chart/">12V voltage chart</a>. For lithium the voltage curve is
+        nearly flat across the useful range, so state of charge has to come from the
+        <a href="/lithium/soc-vs-soh/">BMS's SOC estimate</a>, not a voltmeter. The chemistry dictates
+        which instrument your warehouse QC actually needs.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Does the supplier state a <strong>shelf life and recommended storage temperature</strong> for the exact chemistry, and does the warranty assume it was met?</li>
+        <li>What is the <strong>production date vs the ship date</strong> — is the "new" stock already months into its shelf life? The <a href="/basics/battery-date-codes/">date code</a> tells you, not the packing list.</li>
+        <li>Is the <strong>shipping and warehouse route</strong> temperature-controlled or at least shaded — a container that bakes in a tropical port is burning shelf life every day?</li>
+        <li>For lithium packs, does the BMS quiescent draw mean stock needs a <strong>scheduled recharge</strong>, and who is responsible for doing it?</li>
+        <li>Does the purchase order pin a <strong>minimum state of charge on arrival</strong>, with an agreed inspection method — voltmeter for lead-acid, BMS readout for lithium?</li>
+        <li>Is the self-discharge expectation cross-checked against chemistry reference data — the <a href="https://testing.worldbatteryhub.com/capacity-rates/">capacity-rate reference</a> on the testing sub-site and the <a href="https://data.worldbatteryhub.com/battery-groups/">group data</a> on the data sub-site?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How fast does a lead-acid battery self-discharge?</h3>
+      <p>A flooded lead-acid battery typically loses on the order of 3–5% of its charge per month at around 25°C, with valve-regulated types (AGM and gel) closer to 1–3% per month. The rate rises sharply with temperature — as a rule of thumb it roughly doubles for every 10°C above the reference, which is why warehouse and container storage temperature is the number that decides whether a shipment arrives fresh.</p>
+      <h3>Do lithium batteries self-discharge less than lead-acid?</h3>
+      <p>Yes. A lithium-ion battery in storage typically loses on the order of 1–3% of its charge per month, and often less in cool conditions, because its internal side reactions are slower than lead-acid chemistry. Note the BMS draws a small quiescent current, so very long storage still needs a scheduled top-up or the pack can over-discharge through its own electronics.</p>
+      <h3>Why does temperature affect self-discharge so much?</h3>
+      <p>Self-discharge is a chemical side reaction, and chemical reaction rates follow an Arrhenius-type temperature dependence: roughly, the rate doubles for every 10°C rise. A battery stored at 35°C self-discharges about twice as fast as one at 25°C, and a container in a tropical port faster still. The practical rule for importers: storage temperature is a spec, not a detail.</p>
+      <h3>Can self-discharge damage a stored battery permanently?</h3>
+      <p>It can, through the chemistry's own failure modes: lead-acid left discharged sulfates and loses capacity, and a lithium pack can be over-discharged through its BMS quiescent draw below the safe floor, after which many packs refuse to recharge. Scheduled top-ups prevent both.</p>
+
+      <h2>Sources</h2>
+      <p>
+        Rates expressed as typical monthly percentage ranges at ~25°C, cross-checked against battery
+        chemistry literature, manufacturer storage guidance, and the storage and shelf-life sections of
+        the standards and references cited on the linked pages; ranges vary with alloy, purity and
+        temperature, so no single figure is stated as universal.
+      </p>
+      <ul>
+        <li>Battery manufacturer storage and shelf-life guidance — flooded, VRLA and lithium-ion families.</li>
+        <li>Battery chemistry literature — self-discharge mechanisms (plate reactions, leakage currents, SEI side reactions).</li>
+        <li>Cross-references: <a href="/basics/battery-chemistry-basics/">Battery chemistry basics</a>, <a href="/lead-acid/self-discharge/">Lead-acid self-discharge</a>, <a href="/lithium/storage/">Lithium storage</a>, <a href="/basics/battery-date-codes/">Battery date codes</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-25
+      </p>
+    </div>
+  </section>
+</BaseLayout>

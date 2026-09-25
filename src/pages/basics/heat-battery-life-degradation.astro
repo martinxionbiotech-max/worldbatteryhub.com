@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Heat and Battery Life: The Degradation Rule Every Buyer Misses';
+const description = 'Heat is the battery killer hiding in plain sight. The Arrhenius rule, what heat does to lead-acid and lithium, and why a hot climate changes the procurement spec.';
+const canonical = '/basics/heat-battery-life-degradation/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Heat and battery life degradation',
+  articleSection: 'Battery Basics',
+  author: { '@type': 'Organization', name: 'World Battery Hub Research Desk' },
+  datePublished: '2026-09-25',
+  dateModified: '2026-09-25',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does heat shorten battery life?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'As a widely used rule of thumb, battery aging reactions roughly double in speed for every 10°C above the 25°C reference — a battery that lasts five years at 25°C can fall to roughly half that in a consistently hot engine bay or warehouse. The relationship is approximate, but the direction is certain: heat is the dominant accelerator of chemical aging in both lead-acid and lithium.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does heat do to a lead-acid battery?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Heat accelerates grid corrosion and water loss, the two classic lead-acid killers. In flooded batteries the water escapes faster; in sealed VRLA types it cannot be replaced, and sustained heat can push a VRLA battery into thermal runaway — self-heating feedback that ends in venting or worse. The float life of every lead-acid battery is specified at a reference temperature, and life derates sharply above it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does heat damage lithium batteries too?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, through different chemistry: elevated temperature accelerates electrolyte decomposition and SEI growth on the anode, which permanently consumes the lithium that carries charge. A lithium pack stored or cycled hot ages faster than the same pack kept cool, and heat is also the precondition for thermal runaway when a fault occurs.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={[articleJsonLd, faqJsonLd]}
+  author="World Battery Hub"
+  dateModified="2026-09-25"
+>
+  <section class="section">
+    <div class="container">
+      <p class="byline">Battery Basics · Life &amp; Aging · Last reviewed 2026-09-25</p>
+      <h1>Heat and Battery Life: The Degradation Rule</h1>
+      <p class="lead">
+        Everyone worries about cold cranking; almost nobody prices in heat. Yet heat is the dominant
+        accelerator of battery aging — a quiet, compounding tax collected every hour the battery sits
+        above its comfort temperature.
+      </p>
+
+      <div class="takeaways">
+        <strong>Direct answer:</strong> Battery aging reactions follow an Arrhenius-type temperature
+        dependence — as a rule of thumb, <strong>aging speed roughly doubles for every 10°C above
+        25°C</strong>. For lead-acid, heat drives grid corrosion and water loss, and can push VRLA into
+        thermal runaway; for lithium, it accelerates SEI growth and electrolyte decomposition. The
+        float-life derating for lead-acid is documented in the
+        <a href="/lead-acid/heat-degradation/">heat degradation</a> deep page.
+      </div>
+
+      <h2>The rule of thumb and its limits</h2>
+      <p>
+        The "double every 10°C" rule is an approximation of the Arrhenius equation — the same physics
+        that governs the <a href="/basics/self-discharge-rates-by-chemistry/">self-discharge rate</a>.
+        It is a rule of thumb, not a warranty clause: real batteries have temperature windows, cooling
+        design and chemistry-specific thresholds. But it is the right mental model, because it tells you
+        the one fact buyers routinely ignore: <strong>a battery's life is set by its hot hours, not its
+        calendar age</strong>. Two identical batteries, one in a temperate warehouse and one in a hot
+        one, age on different clocks.
+      </p>
+
+      <h2>What heat does to lead-acid</h2>
+      <p>
+        Lead-acid chemistry dies in heat two ways. <strong>Grid corrosion</strong> — the structural lead
+        of the plates corroding away — is temperature-driven and irreversible. <strong>Water loss</strong>
+        accelerates too: hotter charging means more gassing, which a flooded battery survives by being
+        topped up, but a sealed <a href="/lead-acid/agm-battery/">AGM</a> or gel battery cannot — every
+        gram of lost water is lost life. The worst case is <strong>thermal runaway</strong> in VRLA
+        designs: heat raises current, current raises heat, in a loop that ends in venting or worse. The
+        mechanism and the mitigation are detailed on the technology sub-site's
+        <a href="https://technology.worldbatteryhub.com/vrla/">VRLA reference</a>, and the
+        <a href="/lead-acid/heat-degradation/">lead-acid heat degradation</a> page covers the numbers.
+      </p>
+      <p>
+        Float life is the practical consequence: a standby battery's design life is specified at a
+        reference temperature (commonly 20–25°C), and operation above it derates the life — the
+        <a href="/lead-acid/ups-battery/">UPS battery</a> and
+        <a href="/lead-acid/telecom-battery/">telecom battery</a> pages show where this bites hardest,
+        because standby batteries spend their whole lives charging in warm rooms.
+      </p>
+
+      <h2>What heat does to lithium</h2>
+      <p>
+        Lithium's hot-weather damage is subtler but just as real: elevated temperature accelerates
+        <strong>SEI growth</strong> on the anode and <strong>electrolyte decomposition</strong>, both of
+        which permanently consume the lithium ions that carry charge — capacity that is not lost to use,
+        but to the clock. It is why <a href="/lithium/lithium-degradation/">lithium degradation</a> is
+        usually reported as calendar aging plus cycle aging, with temperature multiplying the calendar
+        term. And heat is the precondition for the worst case:
+        <a href="/lithium/thermal-runaway/">thermal runaway</a> needs elevated temperature to sustain
+        itself once triggered. A hot-climate lithium installation is not just an efficiency question —
+        it is a safety design question.
+      </p>
+
+      <h2>Buying for a hot climate</h2>
+      <p>
+        The procurement answer mirrors the cold-climate one: <strong>spec for the climate, not the
+        showroom</strong>. For lead-acid, prefer chemistries and constructions rated for the
+        environment — AGM where sealed is required, flooded with a watering regime where maintenance
+        exists — and understand the float-life derating before quoting a design life. For lithium,
+        require the pack's stated operating and storage temperature ranges, verify the BMS thermal
+        protection thresholds, and check whether the application's duty cycle actually respects them.
+        The <a href="/compare/agm-vs-efb-vs-flooded-tco/">AGM vs EFB vs flooded TCO</a> comparison shows
+        how climate tilts the economics, and
+        <a href="/basics/battery-transport-regulations/">transport regulations</a> matter here too — a
+        hot container is part of the battery's life story.
+      </p>
+
+      <h2>What procurement buyers should check</h2>
+      <ul>
+        <li>Is the <strong>design life quoted at a stated temperature</strong> — and what does it derate to at the customer's actual operating temperature?</li>
+        <li>For VRLA, is the application's ambient temperature inside the <strong>thermal-runaway safety window</strong> the manufacturer specifies?</li>
+        <li>For lithium, does the datasheet state <strong>operating and storage temperature ranges</strong>, and does the BMS enforce its own thermal cut-offs?</li>
+        <li>Does the <strong>warranty</strong> quietly exclude damage from temperatures the battery will realistically see — the exclusion that voids hot-climate claims?</li>
+        <li>Is warehouse and container storage <strong>shaded and ventilated</strong>, with a maximum-temperature rule written into the logistics spec?</li>
+        <li>Is the heat-aging expectation cross-checked against references — the <a href="https://technology.worldbatteryhub.com/vrla/">VRLA reference</a> on the technology sub-site and the <a href="/testing/cycle-life-measured/">cycle life</a> test methodology?</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How much does heat shorten battery life?</h3>
+      <p>As a widely used rule of thumb, battery aging reactions roughly double in speed for every 10°C above the 25°C reference — a battery that lasts five years at 25°C can fall to roughly half that in a consistently hot engine bay or warehouse. The relationship is approximate, but the direction is certain: heat is the dominant accelerator of chemical aging in both lead-acid and lithium.</p>
+      <h3>What does heat do to a lead-acid battery?</h3>
+      <p>Heat accelerates grid corrosion and water loss, the two classic lead-acid killers. In flooded batteries the water escapes faster; in sealed VRLA types it cannot be replaced, and sustained heat can push a VRLA battery into thermal runaway — self-heating feedback that ends in venting or worse. Every lead-acid battery's float life is specified at a reference temperature, and life derates sharply above it.</p>
+      <h3>Does heat damage lithium batteries too?</h3>
+      <p>Yes, through different chemistry: elevated temperature accelerates electrolyte decomposition and SEI growth on the anode, which permanently consumes the lithium that carries charge. A lithium pack stored or cycled hot ages faster than the same pack kept cool, and heat is also the precondition for thermal runaway when a fault occurs.</p>
+      <h3>Is the 10°C rule exact?</h3>
+      <p>No — it is an Arrhenius-based approximation with chemistry-specific windows and thresholds, not a warranty formula. It is reliable for direction and rough magnitude: hot operation shortens life in both major chemistries, and cool, ventilated storage is the cheapest life extension available.</p>
+
+      <h2>Sources</h2>
+      <p>
+        The 10°C doubling rule is presented as the standard Arrhenius-based rule of thumb, not a
+        guarantee; chemistry-specific mechanisms (grid corrosion, water loss, SEI growth) follow from
+        battery engineering literature and manufacturer float-life and thermal guidance.
+      </p>
+      <ul>
+        <li>Battery engineering literature — Arrhenius temperature dependence of aging reactions.</li>
+        <li>Battery manufacturer documentation — float life vs temperature derating, thermal-runaway windows.</li>
+        <li>Lithium cell manufacturer guidance — storage and operating temperature limits, SEI aging.</li>
+        <li>Cross-references: <a href="/lead-acid/heat-degradation/">Lead-acid heat degradation</a>, <a href="/lithium/lithium-degradation/">Lithium degradation</a>, <a href="/basics/self-discharge-rates-by-chemistry/">Self-discharge by chemistry</a>, <a href="/lithium/thermal-runaway/">Thermal runaway</a>.</li>
+      </ul>
+
+      <p class="muted">
+        Part of the <a href="/basics/">Battery Basics 101</a> series · Last reviewed: 2026-09-25
+      </p>
+    </div>
+  </section>
+</BaseLayout>
