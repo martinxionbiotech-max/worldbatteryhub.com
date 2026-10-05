@@ -119,7 +119,7 @@ for (const f of files) {
   if (!body) continue;
   const md = `# ${title}\n\n${htmlToMd(body)}\n`;
 
-  const rel = f.slice(DIST.length).replace(/\/index\.html$/, '').replace(/\.html$/, '');
+  const rel = f.slice(DIST.length).replace(/\/index\.html$/, '').replace(/\.html$/, '').replace(/^\//, '');
   const outPath = join(DIST, 'llms', rel, 'index.md');
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, md);
