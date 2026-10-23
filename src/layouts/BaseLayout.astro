@@ -83,8 +83,16 @@ const orgJsonLd = {
   '@type': 'Organization',
   '@id': `${SITE}/#organization`,
   name: BRAND,
+  legalName: 'Jinzhou Chengguang Power Source Co., Ltd.',
+  alternateName: 'Chengguang Power Tech',
   url: SITE,
   description: 'Battery knowledge and data platform covering lead-acid and lithium batteries — specifications, technology, testing, manufacturers and market intelligence.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Jinzhou',
+    addressRegion: 'Hebei',
+    addressCountry: 'CN',
+  },
 };
 
 const pageJsonLd = jsonLd.map((item) => {
@@ -1220,7 +1228,7 @@ const breadcrumbJsonLd = {
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p>World Battery Hub — a battery knowledge and data platform. Content is researched from public sources and cross-verified; it is informational only, and is not engineering, purchasing, legal or safety advice. Always follow the battery manufacturer's documentation.</p>
+        <p>World Battery Hub — a battery knowledge and data platform, operated by Jinzhou Chengguang Power Source Co., Ltd. (Chengguang Power Tech). Content is researched from public sources and cross-verified; it is informational only, and is not engineering, purchasing, legal or safety advice. Always follow the battery manufacturer's documentation.</p>
         <p class="muted">Data sub-sites: <a href="https://data.worldbatteryhub.com">Data</a> · <a href="https://technology.worldbatteryhub.com">Technology</a> · <a href="https://testing.worldbatteryhub.com">Testing</a> · <a href="https://manufacturer.worldbatteryhub.com">Manufacturers</a> · <a href="https://market.worldbatteryhub.com">Market</a> · <a href="/methodology/">Methodology</a></p>
         <nav class="muted" aria-label="Policies and compliance">
           <a href="/disclaimer/">Disclaimer</a> · <a href="/terms-of-use/">Terms of Use</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/safety-notice/">Safety Notice</a> · <a href="/data-use-and-citation/">Data Use &amp; Citation</a> · <a href="/accessibility/">Accessibility</a> · <a href="/methodology/">Methodology</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a>
