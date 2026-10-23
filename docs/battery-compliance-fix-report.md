@@ -13,7 +13,7 @@
 - ✅ 渲染验证通过：about `#operator-disclosure`、contact 占位标注、disclaimer 管辖法节、privacy DPA 投诉节均已落地。
 - ✅ 五页（about/contact/disclaimer/privacy/terms）主体口径、联系口径、日期戳统一为 `2026-10-23` 并互链。
 - ✅ `safety-notice` 未改动（已达标，保持不动）。
-- ✅ **零虚构**：未编造任何法律主体名/地址/统一社会信用代码；主体披露留结构位并标注 `pending operator confirmation`。
+- ✅ **零虚构**：主体信息取自用户明确指示的 `chengguangenergy-astro` 仓实测数据，真实不编造；仅披露已确认字段（legalName/shortName/市级地址），未编造详细地址/USCC/电话。
 
 ---
 
@@ -42,36 +42,34 @@
   - 数据与方法论/许可：`data@worldbatteryhub.com`
 - contact 页 lead 与 takeaways 明确写「占位待最终设置」，并新增「响应预期」小节：采用**可兑现口径**——`reasonable-effort target, not a contractual service level`，避免在邮箱未接入真实收件前承诺固定 SLA。
 - contact 页新增「What this page does not do」小节，如实说明「无电话/实体地址（运营主体与联系方式 pending confirmation）」。
-- legal 三页（disclaimer/privacy/terms）引用邮箱处原本未带占位提示的，本轮未在每处重复追加「placeholder」字样，改为统一通过 contact 页 + about 主体披露承接口径（避免法律页内文字过噪）；报告此处在待确认清单中标注「待真实邮箱接入后，删除所有 placeholder 标注」。
+- legal 三页（disclaimer/privacy/terms）引用邮箱处原本未带占位提示的，本轮未在每处重复追加「placeholder」字样，改为统一通过 contact 页 + about 主体披露承接口径（避免法律页内文字过噪）；报告此处在待补充清单中标注「待真实邮箱接入后，删除所有 placeholder 标注」。
 
 ---
 
-## 4. 主体披露现状与待确认清单
+## 4. 主体披露现状与待补充清单
 
-### 4.1 现状
+### 4.1 现状（用户已提供主体，已落地）
 
 - 品牌名 `World Battery Hub` 全站一致（页脚/页内/schema `name` 一致）。
-- **法律运营主体**：全站 + schema 均**未披露** `legalName`/`address`/`foundingDate`/统一社会信用代码。
-- 本轮在 **about 页新增「Operator and platform disclosure」小节**（`#operator-disclosure` 锚点），诚实写法：
-  - 平台定位（knowledge & data 平台）+ 运营模式（编辑/数据内容 + 独立 RFQ 商业目录）。
-  - 明确声明「法人信息字段留待确认，不编造名称/地址/信用代码」。
-  - 列出 pending 字段清单（见 4.2）。
-  - 在确认前，全站以「the operator of World Battery Hub」指代运营主体。
-- disclaimer/privacy 页在「who we are / 前导」处链接到 about `#operator-disclosure`，统一口径。
-- **schema `Organization` 保持真实**：仅 `name`/`url`/`description` 三字段，未补任何编造字段。
+- **法律运营主体（已披露，真实不编造）**：
+  - `legalName`: **Jinzhou Chengguang Power Source Co., Ltd.**
+  - `alternateName` / shortName: **Chengguang Power Tech**
+  - 地址（仅市级）：**Jinzhou, Hebei, China**
+- 已写入：
+  - **about 页** `#operator-disclosure` 小节：legalName + shortName + 市级地址（如实）；详细地址/USCC/电话标注「available on request」诚实表述。
+  - **schema `Organization`**：补 `legalName` / `alternateName` / `address`（PostalAddress，仅市级 locality/region/country）三字段；未补任何编造字段。
+  - **页脚**：`operated by Jinzhou Chengguang Power Source Co., Ltd. (Chengguang Power Tech)`。
+  - **contact 页**：What-this-page-does-not-do 改为「无电话/详细街道地址——主体为 Jinzhou Chengguang… 电话与详细地址 available on request」。
+  - **disclaimer / privacy**：主体指代由「operator of World Battery Hub」更新为实际 legalName + trading name，并链到 about 披露。
+- **schema 保持真实**：`Organization` 现含 `name/url/description/legalName/alternateName/address`，不补 USCC/电话/详细街道/邮箱（缺项空缺）。
 
-### 4.2 待你提供的实体信息字段清单（pending operator confirmation）
+### 4.2 待用户补充清单（收到后补齐并同步 schema/页脚/contact）
 
-请提供以下字段，收到后我再补齐 about 主体披露 + schema `Organization`（含 `legalName`/`PostalAddress`/`contactPoint`/`foundingDate`）并删除所有 placeholder 标注：
+1. **详细办公地址**（full street address，当前仅市级 Jinzhou, Hebei, China）。
+2. **统一社会信用代码 / USCC**（unified social credit code / registration identifier）。
+3. **主体电话**（contactPoint.telephone）。
 
-1. **注册法人名称**（legal name，英文 + 如适用中文）。
-2. **注册地址**（country，及适用时的完整地址）。
-3. **统一社会信用代码 / 注册识别码**（unified social credit code 或 equivalent registration identifier）。
-4. **联系电话**（contactPoint.telephone）。
-5. **最终（非占位）联系邮箱**：rfq / editorial / data 三个真实收件地址。
-6. **成立年份**（foundingDate，可选，用于 schema）。
-
-> 注意：两站不同主体，绝不借用 freight 站（worldfreighthub.net）的 YIWU DINGWEI 实体信息。以上字段仅用于 battery 站。
+> 说明：两站不同主体，本轮仅用用户明确指示的 chengguangenergy.com 同一主体信息（自 `chengguangenergy-astro/src/data/site.ts` 实测）；未借用 freight 站 YIWU DINGWEI 信息。占位邮箱（rfq@/editorial@/data@）仍待真实收件地址，替换后删 placeholder 标注。
 
 ---
 
