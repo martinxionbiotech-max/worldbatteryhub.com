@@ -1,16 +1,28 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'About World Battery Hub';
+const description = 'About World Battery Hub — a battery knowledge and data platform. Editorial method, source hierarchy, the Research Desk process, correction policy, editorial independence, and operator disclosure.';
+const canonical = '/about/';
 ---
 
 <BaseLayout
-  title="About World Battery Hub"
-  description="About World Battery Hub — a battery knowledge and data platform. Editorial method, source hierarchy, and how content is researched and cross-verified."
-  canonical="/about/"
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="website"
+  dateModified="2026-10-23"
 >
   <section class="section">
     <div class="container">
+      <p class="byline">About · Last reviewed 2026-10-23</p>
       <h1>About World Battery Hub</h1>
-      <p class="lead">World Battery Hub is a battery knowledge and data platform. It is informational, not a store.</p>
+      <p class="lead">
+        World Battery Hub is a battery knowledge and data platform. It is informational and educational —
+        not a store, not a certification body, and not a laboratory. This page explains what the platform is,
+        how its content is made, how errors are handled, how its commercial section is kept separate from its
+        editorial content, and who operates it.
+      </p>
 
       <div class="takeaways">
         <strong>At a glance:</strong> World Battery Hub is a battery knowledge and data platform — six sites
@@ -18,29 +30,74 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <strong>data</strong> (battery groups, references), <strong>technology</strong> (engineering),
         <strong>testing</strong> (methods and standards), <strong>manufacturers</strong> and
         <strong>market intelligence</strong>. Content is researched from public sources, cross-verified, and
-        labelled with its sources, standards and limitations.
+        labelled with its sources, standards and limitations. We do not fabricate figures, and we do not
+        publish a legal-entity name until the operator has confirmed it.
       </div>
 
-      <h2>Editorial method</h2>
-      <ul>
-        <li><strong>Cross-verified, not translated</strong> — content is synthesized from multiple independent sources, including Chinese and English, not translated from a single source.</li>
-        <li><strong>Every number carries its standard</strong> — a <a href="/lead-acid/cca/what-is-cca/">CCA</a> value states whether it is JIS, EN, SAE or DIN; a capacity states its rate (C20, etc.).</li>
-        <li><strong>Conflicts are explained</strong> — where sources disagree, the disagreement and its likely cause are stated rather than a single number being silently chosen.</li>
-        <li><strong>No fabrication</strong> — if a figure cannot be traced to a source, it is stated qualitatively or marked as unknown.</li>
-      </ul>
+      <h2>What this platform is</h2>
+      <p>
+        World Battery Hub is a reference platform for people who work with batteries — engineers, buyers,
+        importers, distributors, students and researchers. It explains how battery chemistries and ratings
+        work, publishes specification and comparison data, offers calculators and tools, and documents
+        standards, manufacturers and market figures.
+      </p>
+      <p>
+        The platform has two clearly separated parts. The <strong>editorial and data</strong> part is what
+        this About page describes: researched, cross-verified, source-labelled reference content. The
+        <strong>commercial</strong> part is the <a href="/lead-acid/products/">lead-acid product catalogue</a>,
+        which operates on a quotation (RFQ) basis and is kept visibly separate from editorial content. Nothing
+        in the editorial part is paid placement, and nothing in the commercial part is presented as editorial
+        judgement.
+      </p>
 
       <h2>What the platform covers</h2>
+      <p>The platform spans six areas, each maintained as its own site or section:</p>
       <ul>
-        <li><a href="/lead-acid/">Lead-acid knowledge</a> — groups, CCA, <a href="/lead-acid/agm-battery/">AGM</a>/<a href="/lead-acid/efb-battery/">EFB</a>, applications and maintenance</li>
-        <li><a href="/lithium/">Lithium knowledge</a> — chemistries, cells, <a href="/lithium/what-is-bms/">BMS</a>, safety and emerging technology</li>
-        <li><a href="/basics/">Battery Basics 101</a> — the six-lesson beginner path</li>
-        <li><a href="/tools/">Calculators</a> — runtime, sizing and charging-time tools</li>
-        <li><a href="/standards/">Standards</a> — the 15-standard directory</li>
-        <li><a href="/lead-acid/products/">Product catalogue</a> — the commercial section, clearly separated</li>
+        <li><a href="/lead-acid/"><strong>Lead-acid knowledge</strong></a> — battery groups, <a href="/lead-acid/cca/what-is-cca/">CCA</a>, <a href="/lead-acid/agm-battery/">AGM</a>/<a href="/lead-acid/efb-battery/">EFB</a>/gel/flooded chemistries, applications, charging and maintenance.</li>
+        <li><a href="/lithium/"><strong>Lithium knowledge</strong></a> — chemistries, cells, <a href="/lithium/what-is-bms/">BMS</a>, safety and emerging technology.</li>
+        <li><a href="/basics/"><strong>Battery Basics 101</strong></a> — the beginner path from "what is a battery" through capacity, voltage, charging and safety.</li>
+        <li><a href="/tools/"><strong>Calculators and tools</strong></a> — runtime, sizing, charging-time and battery-finder tools.</li>
+        <li><a href="/standards/"><strong>Standards</strong></a> — the standards directory used to interpret ratings.</li>
+        <li><a href="/lead-acid/products/"><strong>Product catalogue</strong></a> — the commercial section, clearly separated from the rest.</li>
+      </ul>
+
+      <h2>Editorial method</h2>
+      <p>
+        Every piece of editorial content is produced by the same process and to the same standard. The method
+        is stated so a reader — human or machine — can see, before trusting a number, how it was obtained.
+      </p>
+      <ul>
+        <li><strong>Cross-verified, not translated.</strong> Content is synthesized from multiple independent
+            sources, including Chinese and English primary material, rather than translated or paraphrased
+            from a single source.</li>
+        <li><strong>Every number carries its standard.</strong> A <a href="/lead-acid/cca/what-is-cca/">CCA</a>
+            value states whether it is JIS, EN, SAE or DIN; a capacity states its rate (C20, C5, and so on);
+            a dimension states its group convention. A number without a standard is not presented as fact.</li>
+        <li><strong>Conflicts are explained, not hidden.</strong> Where sources disagree, the disagreement and
+            its likely cause are stated rather than a single number being silently chosen.</li>
+        <li><strong>No fabrication.</strong> If a figure cannot be traced to a source, it is stated
+            qualitatively or marked as unknown. A missing value is left as a gap, never estimated to fill it.</li>
+        <li><strong>Confidence is labelled.</strong> Where a value is a typical range, a standard-defined limit
+            or a manufacturer claim, the page says so, so a representative range is not mistaken for a
+            guarantee.</li>
+        <li><strong>Limitations are stated.</strong> Calculators and worked examples are illustrative models
+            with simplified assumptions; they are not a substitute for a design review or a load study.</li>
       </ul>
 
       <h2>Source hierarchy</h2>
-      <p>Primary sources (manufacturer documentation, standards organizations, government data) are preferred over industry publications, which are preferred over community sources. Community sources are used to discover real-world questions, not as evidence.</p>
+      <p>Sources are ranked by independence and authority, in this order:</p>
+      <ol>
+        <li><strong>Primary</strong> — manufacturer documentation, standards bodies (SAE, EN, JIS, IEC, UL,
+            UN), and government or regulatory data.</li>
+        <li><strong>Secondary</strong> — industry publications, trade organisations and technical reviews.</li>
+        <li><strong>Community</strong> — forums and user reports, used only to discover real-world questions,
+            never as evidence.</li>
+      </ol>
+      <p>
+        A claim is asserted as fact only when it can be traced to a primary or a corroborated secondary source.
+        Anything below that threshold is stated qualitatively, or marked as unknown. Community sources are
+        used to find out what people actually ask, not to prove what is true.
+      </p>
 
       <h2 id="research-desk">The World Battery Hub Research Desk</h2>
       <p>
@@ -49,12 +106,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "expert" persona, because a fabricated expert would be worse than an honest collective: the desk's
         authority rests on its <em>process</em>, which is stated and checkable, not on a name.
       </p>
+      <p>The desk's production process runs in four steps, in order:</p>
+      <ol>
+        <li><strong>Collect</strong> — gather primary material: manufacturer datasheets, standards documents,
+            and government or industry data.</li>
+        <li><strong>Cross-check</strong> — reconcile at least two independent sources for any factual claim,
+            and record where they agree.</li>
+        <li><strong>Label</strong> — attach the source, the test standard and the confidence level to every
+            number before publication.</li>
+        <li><strong>Explain</strong> — where sources disagree, state the disagreement and its likely cause
+            instead of silently choosing one value.</li>
+      </ol>
       <ul>
-        <li><strong>Research methodology</strong> — content is synthesized from multiple independent sources (including Chinese and English) and cross-verified, not translated from one source. See the full <a href="/methodology/">methodology</a>.</li>
-        <li><strong>Source verification</strong> — every figure carries its source and its test standard; a number without a traceable source is stated qualitatively or marked unknown.</li>
-        <li><strong>Technical review process</strong> — claims are reconciled against standards documents and manufacturer datasheets before publication; conflicts are explained, not silently resolved.</li>
-        <li><strong>Correction policy</strong> — errors are corrected in place and logged; the correction records the date, the old value and the new value.</li>
-        <li><strong>Editorial independence</strong> — the commercial <a href="/lead-acid/products/">product catalogue</a> is separated from editorial and data content, and a commercial relationship does not change a rating, a standard or a confidence level.</li>
+        <li><strong>Research methodology</strong> — synthesis from multiple independent sources, cross-verified,
+            never translated from a single source. See the full <a href="/methodology/">methodology</a>.</li>
+        <li><strong>Source verification</strong> — every figure carries its source and its test standard; a
+            number without a traceable source is stated qualitatively or marked unknown.</li>
+        <li><strong>Technical review</strong> — claims are reconciled against standards documents and
+            manufacturer datasheets before publication; conflicts are explained, not silently resolved.</li>
+        <li><strong>Correction policy</strong> — errors are corrected in place and logged with the date, the
+            old value and the new value.</li>
+        <li><strong>Editorial independence</strong> — the commercial product catalogue is separated from
+            editorial and data content, and a commercial relationship does not change a rating, a standard or
+            a confidence level.</li>
       </ul>
       <p>
         If a real engineer or researcher reviews this material in the future, that person will be credited as a
@@ -62,7 +136,71 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         fictional byline.
       </p>
 
-      <p class="muted">Last reviewed: 2026-09-18</p>
+      <h2>Correction policy</h2>
+      <p>
+        Errors are corrected in place and logged. A correction does not rewrite history silently: the change is
+        recorded with the date, the original value and the corrected value, so a reader can see what changed
+        and when. Material corrections — those that change a specification, a standard reference or a
+        conclusion — are reflected in the page's review date.
+      </p>
+      <p>
+        To report an error, use the <a href="/contact/#editorial">editorial correction route</a> on the
+        Contact page. Include the page URL, the current value and the corrected value (with a source if you
+        have one). Reports are triaged against primary sources before any change is made.
+      </p>
+
+      <h2>Editorial independence</h2>
+      <p>
+        The platform has a commercial section (the <a href="/lead-acid/products/">product catalogue</a>) that is
+        clearly separated from the editorial and data content. Editorial conclusions, buyer guidance and stance
+        blocks are the Research Desk's own analysis and are labelled as such. They are not paid placement, and
+        a commercial relationship — present or prospective — does not change a rating, a standard, a confidence
+        level or a recommendation.
+      </p>
+      <p>
+        We do not accept payment to rank a manufacturer, to inflate a specification, or to suppress a finding.
+        Where a figure comes from a manufacturer's own claim, it is labelled as a manufacturer claim and is not
+        upgraded to "verified" without independent evidence.
+      </p>
+
+      <h2 id="operator-disclosure">Operator and platform disclosure</h2>
+      <p>
+        World Battery Hub is a battery knowledge and data platform. It publishes editorial and data content, and
+        operates a clearly separated commercial product catalogue with a quotation (RFQ) process. This section
+        states, honestly and without fabrication, what is and is not yet disclosed about the entity that
+        operates the platform.
+      </p>
+      <p>
+        <strong>Operating entity — pending operator confirmation.</strong> The legal entity that operates this
+        platform — its registered legal name, registered address, registration identifier (unified social
+        credit code or equivalent) and legal representative — has not yet been published on this site. We do
+        not invent a legal name, address or registration number, because an incorrect or fabricated legal
+        entity would be worse than a clearly stated pending field.
+      </p>
+      <p>
+        Until these fields are confirmed, the platform's legal identity is described as "the operator of World
+        Battery Hub", and contact is made through the channels listed on the Contact page.
+      </p>
+      <p><strong>Pending fields</strong> — to be added once confirmed by the operator:</p>
+      <ul>
+        <li>Registered legal name of the operating entity.</li>
+        <li>Registered address (country, and full address where applicable).</li>
+        <li>Registration identifier / unified social credit code (or equivalent).</li>
+        <li>Contact telephone number.</li>
+        <li>Final, non-placeholder contact email addresses.</li>
+      </ul>
+
+      <h2>Related pages</h2>
+      <ul>
+        <li><a href="/contact/">Contact</a> — request a quote, report a correction, or ask a data question.</li>
+        <li><a href="/methodology/">Methodology</a> — the full research, verification and correction method.</li>
+        <li><a href="/data-use-and-citation/">Data Use &amp; Citation</a> — how our data may be reused and cited.</li>
+        <li><a href="/disclaimer/">Disclaimer</a> — the limits of what we claim.</li>
+        <li><a href="/terms-of-use/">Terms of Use</a> — the terms governing use of this site.</li>
+        <li><a href="/privacy-policy/">Privacy Policy</a> — what we collect and why.</li>
+        <li><a href="/safety-notice/">Safety &amp; Liability Notice</a> — battery hazards and safety responsibilities.</li>
+        <li><a href="/accessibility/">Accessibility</a> — our accessibility commitment.</li>
+      </ul>
     </div>
   </section>
 </BaseLayout>
