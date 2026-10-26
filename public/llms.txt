@@ -1,0 +1,45 @@
+# World Battery Hub
+
+> Lead-acid and lithium battery knowledge and data platform — editorial reference covering chemistry, sizing, charging, testing, technology, procurement, and market intelligence, plus interactive tools and a commercial product catalogue with an RFQ process. Operated by Jinzhou Chengguang Power Source Co., Ltd., trading as Chengguang Power Tech (Jinzhou, Hebei, China). Part of a six-site family (main + testing, data, manufacturer, market, technology sub-sites).
+
+## Core Pages
+
+- [Home](https://worldbatteryhub.com/): Entry point to the World Battery Hub battery knowledge base.
+- [About](https://worldbatteryhub.com/about/): Editorial method, source hierarchy, correction policy, and operator disclosure.
+- [Lead-Acid Batteries](https://worldbatteryhub.com/lead-acid/): Guide index for lead-acid battery topics (67 pages: sizing, charging, sulfation, group sizes, AGM/EFB/gel/flooded, disposal, and more).
+- [Lithium Batteries](https://worldbatteryhub.com/lithium/): Guide index for lithium battery topics (28 pages).
+- [Basics](https://worldbatteryhub.com/basics/): Battery chemistry and usage fundamentals (20 pages).
+- [Technology](https://worldbatteryhub.com/technology/): Battery technology explainers (8 pages).
+- [Testing](https://worldbatteryhub.com/testing/): Battery testing methods and standards (6 pages).
+- [Compare](https://worldbatteryhub.com/compare/): Head-to-head battery comparisons (5 pages: starting vs deep-cycle, 12V vs 24V, AGM vs EFB vs flooded TCO, LFP vs NMC for fleets).
+- [Market](https://worldbatteryhub.com/market/): Battery market overview and storage-market sizing (2 pages).
+- [Procurement](https://worldbatteryhub.com/procurement/): Buying and sourcing guides for distributors and importers (12 pages: datasheets, spec comparison, factory evaluation, QC inspection, MOQ/payment/Incoterms, sourcing workflow).
+- [Tools](https://worldbatteryhub.com/tools/): Interactive calculators — runtime, sizing, charging time, and battery finder.
+- [Standards](https://worldbatteryhub.com/standards/): Battery standards reference (SAE J537, EN 50342, JIS D5301, IEC 62660 vs 62133).
+- [Product Catalogue](https://worldbatteryhub.com/lead-acid/products/): Commercial lead-acid product catalogue with RFQ path.
+- [Glossary](https://worldbatteryhub.com/glossary/): Battery terminology definitions.
+- [Methodology](https://worldbatteryhub.com/methodology/): Research, verification, and correction method.
+- [Contact](https://worldbatteryhub.com/contact/): RFQ, editorial corrections, and data/methodology questions.
+
+## Legal & Policy
+
+- [Terms of Use](https://worldbatteryhub.com/terms-of-use/): Terms governing use, citation, and automated access.
+- [Safety & Liability Notice](https://worldbatteryhub.com/safety-notice/): Battery safety and liability notice.
+- [Privacy Policy](https://worldbatteryhub.com/privacy-policy/): Privacy policy.
+- [Disclaimer](https://worldbatteryhub.com/disclaimer/): General-reference disclaimer.
+- [Data Use & Citation](https://worldbatteryhub.com/data-use-and-citation/): How figures may be cited and reused.
+- [Accessibility](https://worldbatteryhub.com/accessibility/): Accessibility approach (WCAG 2.1 AA).
+
+## Sub-sites
+
+- [Testing](https://testing.worldbatteryhub.com/): Battery testing methodology reference.
+- [Data](https://data.worldbatteryhub.com/): Battery specification data (groups, chemistries, CCA, dimensions, weights).
+- [Manufacturer](https://manufacturer.worldbatteryhub.com/): Battery manufacturer directory by region.
+- [Market](https://market.worldbatteryhub.com/): Battery market intelligence and forecasts.
+- [Technology](https://technology.worldbatteryhub.com/): Battery materials, manufacturing, and recycling technology.
+
+## Notes
+
+- Content is editorial/reference material; specification and sizing figures are general reference values and should be verified against manufacturer datasheets before purchase decisions.
+- Contact email addresses on the /contact/ page are placeholders pending final setup; full street address, registration identifier, and telephone are available on request.
+- Sub-site link pages each carry their own llms.txt.
