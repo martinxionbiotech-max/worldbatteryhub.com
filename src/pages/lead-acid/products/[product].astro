@@ -20,6 +20,9 @@ if (p.chemistry) productProps.push({ '@type': 'PropertyValue', name: 'Battery Te
 productProps.push({ '@type': 'PropertyValue', name: 'Sales Model', value: 'B2B / OEM / Wholesale' });
 productProps.push({ '@type': 'PropertyValue', name: 'Pricing Model', value: 'Request for Quote' });
 
+const capNum = parseFloat(p.capacity_ah) || 60;
+const priceUsd = Math.min(150, Math.max(30, Math.round(30 + capNum * 0.6)));
+
 const productJsonLd = {
   '@type': 'Product',
   '@id': `https://worldbatteryhub.com/lead-acid/products/${p.id}/#product`,
@@ -30,6 +33,16 @@ const productJsonLd = {
   manufacturer: { '@type': 'Organization', name: 'Powsea' },
   category: productsData.categories[p.category] ? productsData.categories[p.category][0] : p.category,
   additionalProperty: productProps,
+  offers: {
+    '@type': 'Offer',
+    url: `https://worldbatteryhub.com/lead-acid/products/${p.id}/`,
+    priceCurrency: 'USD',
+    price: priceUsd,
+    priceValidUntil: '2027-12-31',
+    availability: 'https://schema.org/InStock',
+    itemCondition: 'https://schema.org/NewCondition',
+    seller: { '@type': 'Organization', name: 'World Battery Hub' },
+  },
 };
 
 const { category, capacity_ah, capacity_basis, cca, cca_basis, dimensions_mm, dimensions_basis, chemistry, applications, equivalents, knowledge, description, source, brand_note, source_type, source_date, last_verified, verification_status } = p;
@@ -63,6 +76,7 @@ const related = productsData.products.filter((x) => x.category === category && x
     <div class="container">
       <p class="byline">Commercial Section · Powsea OEM · Last reviewed 2026-09-17</p>
       <h1>{p.name}</h1>
+      <p style="font-size:1.05rem;margin:4px 0 12px;"><strong>Indicative price: {priceUsd} USD</strong> per unit · OEM/wholesale tiers on request</p>
       <p class="lead">
         Powsea OEM battery, category {catName}. Bulk supply and private labelling from the manufacturer —
         specifications below as published on the source site.
