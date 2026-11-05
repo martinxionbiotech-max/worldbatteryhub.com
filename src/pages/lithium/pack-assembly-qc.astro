@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Lithium Pack Assembly and QC \u2014 The Checks That Prevent Field Failures";
+const description = "Lithium pack assembly quality control: cell matching, busbar and weld quality, torque, insulation, leak test, end-of-line test and traceability records.";
+const canonical = '/lithium/pack-assembly-qc/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Lithium pack assembly quality control",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Lithium Pack Assembly and QC — The Checks That Prevent Field Failures</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> Most pack failures are assembly failures, not cell failures: mismatched cells, weak welds, high-resistance joints, damaged insulation or a missed leak. QC must test the joints, the isolation and the completed pack — not just the cells.</div>
+
+<h2>Cell matching before assembly</h2>
+<p>Cells in a series string should be matched on capacity, internal resistance and self-discharge. A single low-capacity cell limits the whole string and will be driven to the protection threshold first. Ask for the matching criteria and the spread, not just the average.</p>
+<h2>The joints are the weak point</h2>
+<p>Laser or ultrasonic welds, busbars and bolted terminals all add resistance. A high-resistance joint heats under load, ages faster and can fail open. Check weld pull strength on a sample, measure joint resistance, and specify a torque value with a calibrated tool for bolted connections.</p>
+<table><thead><tr><th>Check</th><th>Method</th><th>What it catches</th></tr></thead><tbody>
+<tr><td>Cell matching</td><td>Capacity + IR + self-discharge</td><td>Weak cell in a string</td></tr>
+<tr><td>Weld quality</td><td>Pull test, cross-section, resistance</td><td>Cold weld, burn-through</td></tr>
+<tr><td>Torque</td><td>Calibrated torque wrench, mark</td><td>Loose terminal, heat</td></tr>
+<tr><td>Insulation</td><td>Megohmmeter at specified voltage</td><td>Creepage, damaged sleeve</td></tr>
+<tr><td>Leak</td><td>Pressure/ helium or bubble test</td><td>Seal or vent defect</td></tr>
+<tr><td>End-of-line</td><td>Capacity, IR, self-discharge</td><td>Assembly-induced faults</td></tr>
+</tbody></table>
+<h2>Insulation and isolation</h2>
+<p>A pack is a high-voltage system even at 48 V. Test insulation resistance between live parts and the enclosure, and between the positive and negative terminals, at the specified voltage. A damaged cell sleeve or a pinched sense wire may only show up under vibration — add a vibration check for transport-critical packs.</p>
+<h2>Traceability</h2>
+<p>Record the cell lot, the weld parameters, the torque values, the operator and the end-of-line result against the pack serial number. Without that record, a field failure cannot be traced to a cause, and a warranty claim becomes an argument.</p>
+<h2>What to audit in a supplier</h2>
+<ol><li>Is there a documented cell-matching procedure with acceptance limits?</li><li>Are weld parameters recorded per pack, and is pull testing done on a sample?</li><li>Is torque calibrated and marked?</li><li>Is insulation and leak testing performed on 100% of packs?</li><li>Can the supplier retrieve the records for a given serial number?</li></ol>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+        <li><a href="/applications/">Applications</a> — choosing by duty cycle.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

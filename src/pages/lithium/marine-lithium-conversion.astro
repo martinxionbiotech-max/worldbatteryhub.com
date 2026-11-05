@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Marine Lithium Conversion \u2014 Charging, Isolation and Insurance";
+const description = "Converting a boat from lead-acid to lithium: alternator and charger compatibility, BMS and isolation, ventilation, ABYC/E-13 considerations, weight and insurance.";
+const canonical = '/lithium/marine-lithium-conversion/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Marine lithium battery conversion",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Marine Lithium Conversion — Charging, Isolation and Insurance</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> A marine lithium conversion is a charging-system project, not a battery swap. The alternator, shore charger, solar controller and BMS must agree on voltage and current; the installation must be isolated, fused and inspected; and the insurer must know.</div>
+
+<h2>Why the charging system decides the project</h2>
+<p>A lithium pack accepts charge quickly and holds a higher voltage than lead-acid. A standard alternator or shore charger may overheat trying to feed it, or may stop at a voltage that leaves the pack partial. The charger must be lithium-compatible, or have a profile the BMS can control.</p>
+<table><thead><tr><th>Component</th><th>What changes</th></tr></thead><tbody>
+<tr><td>Alternator</td><td>May need a regulator or a DC-DC charger; direct alternator charging can overheat</td></tr>
+<tr><td>Shore charger</td><td>Lithium profile, correct absorption and float voltages</td></tr>
+<tr><td>Solar controller</td><td>Lithium profile and temperature compensation off</td></tr>
+<tr><td>BMS</td><td>Controls charge/discharge, balances cells, reports to the system</td></tr>
+<tr><td>Isolation</td><td>DC system isolated from the hull; fuses and disconnects rated for the current</td></tr>
+</tbody></table>
+<h2>Isolation and safety</h2>
+<p>Marine installations add water, salt and vibration. Use tinned cable, sealed terminals, fuses at the battery, and a disconnect that can break the full current. Keep the pack out of the bilge and away from fuel vapour. A lithium fire on a boat is a different problem from a lead-acid spill; the installation must be designed so that a venting cell is not trapped.</p>
+<h2>Standards and insurance</h2>
+<p>ABYC E-13 and the applicable ISO/CE requirements cover lithium installation in recreational craft. The insurer will ask who installed the system and whether the components are listed for marine use. A DIY conversion may be technically sound and still uninsurable; confirm before buying the pack.</p>
+<h2>A conversion checklist</h2>
+<ol><li>Audit the loads and the charging sources.</li><li>Choose a pack voltage and BMS that match the existing system.</li><li>Confirm charger and alternator compatibility in writing.</li><li>Design fusing, isolation and ventilation.</li><li>Get the installation inspected and notify the insurer.</li></ol>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+        <li><a href="/applications/">Applications</a> — choosing by duty cycle.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Lithium vs Lead-Acid: Total Cost of Ownership";
+const description = "A total-cost-of-ownership comparison of lithium (LFP) and lead-acid batteries: upfront price, usable capacity, cycle life, efficiency, maintenance and replacement.";
+const canonical = '/lithium/lithium-vs-lead-acid-tco/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Lithium versus lead-acid total cost of ownership",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Lithium vs Lead-Acid: Total Cost of Ownership</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> Lithium usually costs more upfront and less over life — but only when the cycle count is actually used. At low cycle counts, lead-acid remains cheaper. The comparison must use usable kWh, not nameplate kWh.</div>
+
+<h2>Start with usable capacity, not nameplate</h2>
+<p>A lead-acid battery is normally cycled to 50% depth of discharge (DoD) to preserve life; an LFP pack can use 80–90%. A 100 Ah lead-acid battery therefore delivers roughly 50 Ah of usable capacity per cycle, while a 100 Ah LFP pack delivers 80–90 Ah. Comparing the sticker price per amp-hour overstates the lead-acid advantage.</p>
+<table><thead><tr><th>Metric</th><th>Flooded / AGM lead-acid</th><th>LFP lithium</th></tr></thead><tbody>
+<tr><td>Usable DoD</td><td>50% (30% for deep-cycle longevity)</td><td>80–90%</td></tr>
+<tr><td>Round-trip efficiency</td><td>75–85%</td><td>92–96%</td></tr>
+<tr><td>Cycle life at stated DoD</td><td>300–800</td><td>2,000–6,000</td></tr>
+<tr><td>Maintenance</td><td>Watering, equalisation (flooded)</td><td>None routine</td></tr>
+<tr><td>Temperature tolerance</td><td>Tolerates heat better</td><td>Needs thermal management; no charging below 0 °C</td></tr>
+</tbody></table>
+<h2>The TCO formula</h2>
+<p>Total cost = purchase price + replacement cost + energy lost in charging + maintenance + end-of-life cost − residual value. Replacement cost is the purchase price multiplied by the number of replacements over the service period. Energy loss is the difference between energy in and energy out, priced at your electricity tariff.</p>
+<p>For a daily-cycled off-grid system, the replacement term usually dominates: lead-acid may need three to five replacements in the life of one LFP pack. For a standby UPS that cycles twice a year, the cycle-life advantage never gets used, and lead-acid wins on price.</p>
+<h2>Where lithium loses</h2>
+<ul><li>Cold charging: LFP must not be charged below 0 °C without heating; a cold-climate installation needs a heated pack or a different chemistry.</li><li>Upfront capital: the battery is only part of the cost — BMS, charger and installation add to it.</li><li>Insurance and compliance: some insurers and codes treat lithium differently from lead-acid.</li><li>Abuse tolerance: a lithium pack needs a functioning BMS; a failed BMS can turn a cost advantage into a safety event.</li></ul>
+<h2>Where lead-acid still wins</h2>
+<p>Low-cycle standby, high-temperature environments, short-duration cranking, and installations where the capital budget is the binding constraint. Lead-acid is also simpler to recycle and has an established return chain in most markets.</p>
+<h2>A practical rule</h2>
+<p>If the application cycles more than about 200 times a year and the installation can manage charging temperature, compare on usable kWh over ten years. If it cycles less, compare on purchase price and replacement interval. Do not choose a chemistry from a slogan; choose it from the duty cycle.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/lithium/thermal-runaway/">Thermal runaway</a> — what happens when limits are exceeded.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

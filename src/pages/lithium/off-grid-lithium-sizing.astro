@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Off-Grid Lithium Sizing \u2014 Load, Autonomy and Temperature Derating";
+const description = "How to size an off-grid lithium battery: load audit, days of autonomy, usable depth of discharge, inverter and wiring losses, temperature derating and PV matching.";
+const canonical = '/lithium/off-grid-lithium-sizing/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Off-grid lithium battery sizing",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Off-Grid Lithium Sizing — Load, Autonomy and Temperature Derating</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> Size from the daily energy load, not from the inverter rating. Multiply by autonomy days, divide by usable depth of discharge, then add losses and a temperature derate; the result is usually larger than the first estimate.</div>
+
+<h2>Step 1: the daily energy audit</h2>
+<p>List each load in watts, the hours per day, and whether it runs in winter. Add the standby loads — inverter idle, controllers, router — because they run 24 hours. Convert to watt-hours per day. A load audit that misses standby can under-size the pack by 20–30%.</p>
+<h2>Step 2: autonomy and usable energy</h2>
+<p>Required usable energy = daily kWh × autonomy days. Divide by the usable depth of discharge: 0.8–0.9 for LFP, 0.5 for lead-acid. Then divide by the round-trip efficiency of the whole system (about 0.9 for LFP with a good inverter).</p>
+<p>Example: 5 kWh/day, 2 days autonomy, LFP at 0.85 DoD and 0.9 efficiency → 5 × 2 ÷ 0.85 ÷ 0.9 ≈ 13.1 kWh nominal. A 12 kWh pack is too small.</p>
+<h2>Step 3: temperature derating</h2>
+<p>LFP loses usable capacity in the cold and must not be charged below 0 °C. If the pack sits in an unheated space, either derate the capacity by 10–20% or include heating energy in the load. A pack that is warm but undersized is worse than a cold pack with margin.</p>
+<h2>Step 4: PV and charging</h2>
+<p>The array must replace the daily load plus losses, and still charge on a poor winter day. Size the PV for the worst month, not the annual average, and confirm the charge controller's lithium profile. More battery without more PV only extends the time to recover from a deficit.</p>
+<h2>A sizing table</h2>
+<table><thead><tr><th>Item</th><th>Typical value</th></tr></thead><tbody>
+<tr><td>Usable DoD (LFP)</td><td>85%</td></tr>
+<tr><td>Round-trip efficiency</td><td>90%</td></tr>
+<tr><td>Inverter idle load</td><td>10–30 W continuous</td></tr>
+<tr><td>Cold derate</td><td>10–20% in an unheated space</td></tr>
+<tr><td>Design margin</td><td>10–20%</td></tr>
+</tbody></table>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+        <li><a href="/applications/">Applications</a> — choosing by duty cycle.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

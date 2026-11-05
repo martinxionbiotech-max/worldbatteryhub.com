@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Lithium Battery Warranty and Failure Analysis \u2014 What the Claim Needs";
+const description = "How lithium battery warranties work, the failure modes behind claims, the evidence a supplier needs, pro-rata terms, exclusions and how root-cause analysis is done.";
+const canonical = '/lithium/warranty-failure-analysis/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Lithium battery warranty and failure analysis",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Lithium Battery Warranty and Failure Analysis — What the Claim Needs</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> A warranty claim is an evidence exercise: the failure mode, the operating history and the pack condition decide the outcome. A policy that excludes the actual cause — or cannot trace the pack — is worth less than its headline years.</div>
+
+<h2>Read the warranty as a specification</h2>
+<p>Check what is warranted (capacity, not just "the battery"), the throughput or cycle limit, the operating window, the exclusions and the remedy. A 10-year warranty that excludes cycling beyond 1,000 cycles is a 1,000-cycle warranty with a long calendar tail.</p>
+<table><thead><tr><th>Term</th><th>Question to ask</th></tr></thead><tbody>
+<tr><td>Capacity guarantee</td><td>What percentage, measured how, at what temperature and C-rate?</td></tr>
+<tr><td>Cycle limit</td><td>Is the warranty pro-rata after a threshold?</td></tr>
+<tr><td>Operating window</td><td>Temperature, SOC, charge rate and depth of discharge</td></tr>
+<tr><td>Exclusions</td><td>Water, vibration, unauthorised BMS changes, reverse polarity</td></tr>
+<tr><td>Remedy</td><td>Repair, replacement, credit or refund — and who pays freight?</td></tr>
+</tbody></table>
+<h2>Common failure modes and their evidence</h2>
+<table><thead><tr><th>Failure</th><th>Likely cause</th><th>Evidence</th></tr></thead><tbody>
+<tr><td>Capacity fade faster than specified</td><td>High temperature, high C-rate, deep cycling</td><td>BMS logs, temperature history, cycle count</td></tr>
+<tr><td>Sudden death / open circuit</td><td>Weld or busbar failure</td><td>Resistance map, cross-section, inspection</td></tr>
+<tr><td>Swelling</td><td>Overcharge, over-discharge, gas generation</td><td>Voltage log, BMS thresholds, charge profile</td></tr>
+<tr><td>Imbalance</td><td>Cell mismatch, faulty balancer</td><td>Cell voltage history, balancing current</td></tr>
+<tr><td>BMS failure</td><td>Moisture, vibration, overvoltage</td><td>Enclosure inspection, event log</td></tr>
+</tbody></table>
+<h2>What a claim should include</h2>
+<p>The pack serial number, the purchase and installation date, the BMS event log, the operating conditions, photographs of the installation and the failed part, and a capacity or resistance test result. Without the log, the supplier can only inspect the corpse; with it, the cause is usually visible.</p>
+<h2>Pro-rata and good faith</h2>
+<p>Many warranties reduce the remedy over time. That is normal, but the calculation should be in writing and tied to a measurable value, not to the supplier's discretion. A good warranty also states what happens to the failed pack — return, recycling or disposal — because that cost is part of the claim.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+        <li><a href="/applications/">Applications</a> — choosing by duty cycle.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

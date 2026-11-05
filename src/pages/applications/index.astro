@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Applications — EV, Storage, Marine, Telecom, UPS & SLI';
+const description = 'Battery selection by application: EV and e-bike, stationary storage and solar, marine, telecom, UPS/data centre, forklift, RV, motorcycle and automotive SLI — with the specification that decides each one.';
+const canonical = '/applications/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Applications',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Applications · Last reviewed 2026-11-05</p>
+      <h1>Battery applications</h1>
+      <p class="lead">Battery choice starts with the duty cycle, not the chemistry. This hub groups the application pages by what the battery is asked to do — cranking, cycling, standby or traction — and links the specification that decides each one.</p>
+
+      <div class="takeaways">
+        <strong>Quick answer:</strong> Match the battery to the load profile first. <strong>SLI/start-stop</strong> needs high short-duration current; <strong>storage/solar</strong> needs cycle life at partial state of charge; <strong>marine and RV</strong> need dual-purpose behaviour; <strong>telecom/UPS</strong> needs standby life and low self-discharge; <strong>forklift</strong> needs deep daily cycling. Chemistry follows from that profile, not the other way round.
+      </div>
+
+      <h2>Application clusters</h2>
+      <table>
+        <thead><tr><th>Application</th><th>What decides the specification</th><th>Start here</th></tr></thead>
+        <tbody>
+          <tr><td>Automotive SLI &amp; start-stop</td><td>CCA at the installed temperature, reserve capacity, AGM/EFB compatibility</td><td><a href="/lead-acid/sli-battery/">SLI batteries</a> · <a href="/lead-acid/start-stop-battery/">Start-stop</a></td></tr>
+          <tr><td>Marine</td><td>Dual-purpose cranking + cycling, vibration, corrosion</td><td><a href="/lead-acid/marine-battery/">Marine batteries</a></td></tr>
+          <tr><td>Solar &amp; off-grid storage</td><td>Depth of discharge, cycle life, charge acceptance</td><td><a href="/lead-acid/solar-battery/">Solar batteries</a> · <a href="/lithium/storage/">Lithium storage</a></td></tr>
+          <tr><td>Telecom</td><td>Standby life, float voltage, low self-discharge</td><td><a href="/lead-acid/telecom-battery/">Telecom batteries</a></td></tr>
+          <tr><td>UPS &amp; data centre</td><td>Short-duration high-rate discharge, impedance, monitoring</td><td><a href="/lead-acid/ups-battery/">UPS batteries</a></td></tr>
+          <tr><td>Forklift &amp; traction</td><td>Daily deep cycling, watering/charging infrastructure, counterweight</td><td><a href="/lead-acid/forklift-battery/">Forklift batteries</a></td></tr>
+          <tr><td>RV &amp; camper</td><td>Deep-cycle tolerance, weight, charging from alternator/solar</td><td><a href="/lead-acid/rv-battery/">RV batteries</a></td></tr>
+          <tr><td>Motorcycle &amp; powersport</td><td>Small format, vibration, cold cranking, maintenance-free</td><td><a href="/lead-acid/motorcycle-battery/">Motorcycle batteries</a></td></tr>
+          <tr><td>Truck &amp; commercial</td><td>CCA, vibration, dual-battery systems, long idle loads</td><td><a href="/lead-acid/truck-battery/">Truck batteries</a></td></tr>
+          <tr><td>E-bike &amp; light EV</td><td>Energy density, pack voltage, BMS, cycle life</td><td><a href="/lithium/e-bike-battery/">E-bike batteries</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to choose without over-specifying</h2>
+      <p>Write down four numbers before comparing products: the load in watts or amps, the duration, the ambient temperature range, and the acceptable weight. Those four decide whether a lead-acid or lithium product is even in the running. Only then compare CCA, Ah, cycle life and price — otherwise you are comparing catalogues, not fit.</p>
+      <p>Use the <a href="/tools/runtime-calculator/">runtime calculator</a> for discharge time, the <a href="/lead-acid/sizing-calculation/">sizing calculation</a> for capacity, and the <a href="/compare/">comparison pages</a> for chemistry trade-offs. For wholesale selection, the <a href="/procurement/">procurement hub</a> covers MOQ, Incoterms and supplier verification.</p>
+
+      <h2>Application is not a chemistry</h2>
+      <p>The same application can be served by more than one chemistry. A solar installation may use flooded lead-acid, AGM or LFP depending on budget, cycle requirement and available space. Treat any "best chemistry for X" claim as a starting hypothesis, not a specification; the duty cycle and the total cost of ownership decide.</p>
+
+      <h2>Related pillars</h2>
+      <ul>
+        <li><a href="/lead-acid/">Lead-acid technology</a> — types, groups, charging and failure modes.</li>
+        <li><a href="/lithium/">Lithium-ion technology</a> — LFP/NMC, BMS, thermal and storage.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — what changes when the battery ships.</li>
+        <li><a href="/recycling/">Recycling &amp; end of life</a> — what happens after the application.</li>
+      </ul>
+
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

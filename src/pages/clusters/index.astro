@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Knowledge Map — Every Pillar and Cluster';
+const description = 'A single map of the World Battery Hub knowledge ecosystem: fundamentals, lead-acid, lithium, applications, safety, recycling, testing, manufacturing, market, data and procurement.';
+const canonical = '/clusters/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: 'Battery knowledge map',
+  articleSection: 'Knowledge map',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Knowledge map · Last reviewed 2026-11-05</p>
+      <h1>Battery knowledge map</h1>
+      <p class="lead">Every pillar and cluster in the ecosystem, on one page. Use it to find the entry point for a topic, or to see which cluster a page belongs to.</p>
+
+      <h2>Technology &amp; fundamentals</h2>
+      <table>
+        <thead><tr><th>Pillar</th><th>What it covers</th><th>Cluster hubs</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/basics/">Battery basics</a></td><td>What a battery is, volts and amps, capacity, chemistries, charging, safety</td><td>6 lessons</td></tr>
+          <tr><td><a href="/lead-acid/">Lead-acid</a></td><td>Types, groups, CCA, charging, failure modes, applications</td><td><a href="https://technology.worldbatteryhub.com/lead-acid-technology/">Lead-acid technology</a></td></tr>
+          <tr><td><a href="/lithium/">Lithium-ion</a></td><td>Chemistries, cells, BMS, SOC/SOH, thermal, storage</td><td><a href="https://technology.worldbatteryhub.com/lithium-technology/">Lithium technology</a></td></tr>
+          <tr><td><a href="https://technology.worldbatteryhub.com/materials-manufacturing/">Materials &amp; manufacturing</a></td><td>Material inputs, electrode process, QC, recycling technology</td><td>6 articles</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Application &amp; selection</h2>
+      <table>
+        <thead><tr><th>Pillar</th><th>What it covers</th><th>Start here</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/applications/">Applications</a></td><td>SLI, marine, solar, telecom, UPS, forklift, RV, motorcycle, e-bike</td><td>Application table</td></tr>
+          <tr><td><a href="/compare/">Comparisons</a></td><td>Chemistry and technology trade-offs</td><td><a href="/lithium/lfp-vs-nmc-vs-lto/">LFP vs NMC vs LTO</a></td></tr>
+          <tr><td><a href="/tools/">Calculators</a></td><td>Runtime, sizing and voltage tools</td><td>Runtime calculator</td></tr>
+          <tr><td><a href="/procurement/">Procurement</a></td><td>MOQ, Incoterms, supplier verification, contracts</td><td>Sourcing framework</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Safety, testing &amp; compliance</h2>
+      <table>
+        <thead><tr><th>Pillar</th><th>What it covers</th><th>Cluster hubs</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/safety-transport/">Safety &amp; transport</a></td><td>UN38.3, IATA/IMDG/ADR, SDS, packaging, warehousing</td><td><a href="https://testing.worldbatteryhub.com/abuse-testing/">Abuse testing</a></td></tr>
+          <tr><td><a href="/testing/">Testing overview</a></td><td>Capacity, CCA, load, impedance, cycle, abuse</td><td><a href="https://testing.worldbatteryhub.com/test-methods/">Test methods by category</a></td></tr>
+          <tr><td><a href="/standards/">Standards</a></td><td>IEC, SAE, JIS, EN, UL, UN, IATA</td><td><a href="https://testing.worldbatteryhub.com/standards/">Standards index</a></td></tr>
+          <tr><td><a href="/recycling/">Recycling</a></td><td>Lead-acid loop, lithium routes, second life, regulation</td><td><a href="/lithium/second-life-batteries/">Second life</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Market &amp; data</h2>
+      <table>
+        <thead><tr><th>Pillar</th><th>What it covers</th><th>Cluster hubs</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://market.worldbatteryhub.com/">Market intelligence</a></td><td>Prices, demand, trade, regional markets, regulation</td><td><a href="https://market.worldbatteryhub.com/regions/asia/">Asia</a> · <a href="https://market.worldbatteryhub.com/regions/europe/">Europe</a> · <a href="https://market.worldbatteryhub.com/regions/americas/">Americas</a> · <a href="https://market.worldbatteryhub.com/regions/middle-east-africa/">MEA</a> · <a href="https://market.worldbatteryhub.com/prices/">Prices</a></td></tr>
+          <tr><td><a href="https://data.worldbatteryhub.com/">Reference data</a></td><td>Battery groups, dimensions, capacity, CCA, chemistries</td><td><a href="https://data.worldbatteryhub.com/weight-chart/">Weight chart</a> · <a href="https://data.worldbatteryhub.com/dimensions-terminals/">Dimensions</a></td></tr>
+          <tr><td><a href="https://manufacturer.worldbatteryhub.com/">Manufacturer directory</a></td><td>50 profiles, regional hubs, verification criteria</td><td><a href="https://manufacturer.worldbatteryhub.com/china-lead-acid-manufacturers/">China</a> · <a href="https://manufacturer.worldbatteryhub.com/european-battery-manufacturers/">Europe</a> · <a href="https://manufacturer.worldbatteryhub.com/us-battery-manufacturers/">US</a> · <a href="https://manufacturer.worldbatteryhub.com/indian-battery-manufacturers/">India</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>How the map is maintained</h2>
+      <p>Each pillar page lists its own cluster. When a new article is published, it is added to the relevant pillar and to this map. A page that is not reachable from a pillar is treated as an orphan and fixed at the next review — the map is the check.</p>
+
+      <div class="ruo">Reference information for battery buyers and engineers. Verify specifications against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

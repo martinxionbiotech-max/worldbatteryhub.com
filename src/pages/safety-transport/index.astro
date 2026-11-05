@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Safety & Transport — UN38.3, IATA, SDS and Warehousing';
+const description = 'Battery safety and transport compliance: UN38.3, IATA/IMDG/ADR, SDS and labelling, thermal runaway, packaging, warehousing and the tests that support each claim.';
+const canonical = '/safety-transport/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Safety & Transport',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Safety &amp; transport · Last reviewed 2026-11-05</p>
+      <h1>Battery safety &amp; transport</h1>
+      <p class="lead">A battery that is safe on a bench can be unsafe in a container. This hub separates product safety from transport compliance, because the documents, tests and responsibilities are different.</p>
+
+      <div class="takeaways">
+        <strong>Quick answer:</strong> Product safety asks whether the battery fails safely under abuse. Transport compliance asks whether the package, label, declaration and test summary satisfy the carrier and the destination authority. <strong>UN38.3</strong> is the transport test summary; <strong>IATA/IMDG/ADR</strong> govern the mode; <strong>SDS</strong> and labelling carry the information. A supplier that cannot produce all four is not ready to export.
+      </div>
+
+      <h2>Product safety: what to test</h2>
+      <table>
+        <thead><tr><th>Test</th><th>Question it answers</th><th>Reference</th></tr></thead>
+        <tbody>
+          <tr><td>External short circuit</td><td>Does the cell/package contain the energy without fire?</td><td><a href="https://testing.worldbatteryhub.com/short-circuit-testing/">Short-circuit testing</a></td></tr>
+          <tr><td>Abuse / overcharge</td><td>What happens beyond the specified charge envelope?</td><td><a href="https://testing.worldbatteryhub.com/abuse-testing/">Abuse testing</a></td></tr>
+          <tr><td>Thermal shock</td><td>Does the design survive rapid temperature change?</td><td><a href="https://testing.worldbatteryhub.com/thermal-shock-testing/">Thermal shock</a></td></tr>
+          <tr><td>Vibration</td><td>Will transport and service vibration loosen connections?</td><td><a href="https://testing.worldbatteryhub.com/vibration-testing/">Vibration testing</a></td></tr>
+          <tr><td>Pressure / altitude</td><td>Does the cell vent or leak at low pressure?</td><td><a href="https://testing.worldbatteryhub.com/pressure-testing/">Pressure testing</a></td></tr>
+          <tr><td>Thermal runaway propagation</td><td>Does one failing cell take the pack with it?</td><td><a href="/lithium/thermal-runaway/">Thermal runaway</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Transport compliance: the document set</h2>
+      <p>For lithium cells and batteries, the core documents are the <strong>UN38.3 test summary</strong>, the <strong>transport declaration</strong> (where required), the <strong>safety data sheet</strong>, and the package mark/label for the applicable mode. For lead-acid, the key issues are <strong>acid containment</strong>, <strong>terminal protection</strong>, and whether the battery is shipped wet or dry.</p>
+      <ul>
+        <li><strong>Air:</strong> IATA Dangerous Goods Regulations — state of charge limits, package limits and pilot/cargo differences.</li>
+        <li><strong>Sea:</strong> IMDG Code — segregation, documentation and container packing.</li>
+        <li><strong>Road:</strong> ADR (Europe) and national equivalents — training, documentation and tunnel codes.</li>
+        <li><strong>Standards index:</strong> <a href="https://testing.worldbatteryhub.com/standards/">battery testing standards</a> for UN 3171, IATA DGR, SAE J2464 and related documents.</li>
+      </ul>
+
+      <h2>Packaging and warehousing</h2>
+      <p>Transport packaging is not the retail box. It must prevent terminal contact, contain leakage or venting, and survive the drop and stack tests the mode requires. In the warehouse, separate damaged or swollen cells, keep flammable materials away, and train staff to recognise a warming pack before it vents.</p>
+      <p>For lead-acid, dilute sulfuric acid is corrosive: use acid-resistant containment, eye protection and neutralising material. For lithium, the main risk is thermal runaway; water may cool but does not stop the reaction, and smoke is toxic.</p>
+
+      <h2>What to request from a supplier</h2>
+      <ol>
+        <li>The UN38.3 test summary for the exact cell and pack model, not a family certificate.</li>
+        <li>The SDS in the destination language, with the correct transport classification.</li>
+        <li>The package specification and drop/stack test evidence.</li>
+        <li>The state-of-charge declaration for air shipments.</li>
+        <li>The name of the responsible person for dangerous goods, where required.</li>
+      </ol>
+
+      <h2>Related pillars</h2>
+      <ul>
+        <li><a href="/recycling/">Recycling &amp; end of life</a> — what happens after the pack is retired.</li>
+        <li><a href="/applications/">Applications</a> — the duty cycle that drives the safety case.</li>
+        <li><a href="/testing/">Testing overview</a> — how the tests are run and reported.</li>
+      </ul>
+
+      <div class="ruo">Reference information, not a substitute for the applicable regulation or a dangerous-goods professional's advice. Confirm the current edition with your carrier and authority.</div>
+    </div>
+  </section>
+</BaseLayout>

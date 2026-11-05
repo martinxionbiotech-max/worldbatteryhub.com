@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Lithium Cold-Weather Performance \u2014 Capacity, Charging and Heating";
+const description = "How lithium batteries behave in cold weather: capacity loss, charge acceptance, the 0 \u00b0C charging limit, lithium plating, heated packs and storage recommendations.";
+const canonical = '/lithium/cold-weather-performance/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Lithium battery cold-weather performance",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Lithium Cold-Weather Performance — Capacity, Charging and Heating</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> Cold reduces available capacity and charge acceptance, and charging a lithium cell below 0 °C can cause lithium plating. A cold-climate installation needs a heated pack, a lower charge rate, or a chemistry and BMS rated for the temperature.</div>
+
+<h2>What cold does to a lithium cell</h2>
+<p>At low temperature the electrolyte conducts less well and the kinetics slow down. The immediate effects are higher internal resistance, lower available capacity and a voltage that sags under load. The dangerous effect is charging: below 0 °C, lithium can plate onto the anode instead of intercalating, permanently reducing capacity and creating a safety risk.</p>
+<table><thead><tr><th>Temperature</th><th>Typical effect</th><th>Action</th></tr></thead><tbody>
+<tr><td>25 °C</td><td>Reference performance</td><td>None</td></tr>
+<tr><td>0 °C</td><td>Capacity down ~10–20%; charge acceptance falls</td><td>Reduce charge rate; enable low-temp charge limit</td></tr>
+<tr><td>−10 °C</td><td>Capacity down ~20–30%; charging usually blocked</td><td>Heat the pack before charging</td></tr>
+<tr><td>−20 °C</td><td>Capacity down ~30–40%; discharge only</td><td>Insulate; consider a different chemistry</td></tr>
+</tbody></table>
+<h2>Charging below zero</h2>
+<p>Most LFP and NMC BMS units block charging below 0 °C, and that is a feature, not a fault. If a system charges anyway, the risk is plating. The correct solution is to warm the pack — with a heater mat, a warm enclosure or a charge profile that waits — not to override the limit.</p>
+<h2>Heated packs</h2>
+<p>A heated pack consumes energy to stay warm. In a solar or off-grid system, that energy must be included in the load calculation. Insulation and placing the pack inside the thermal envelope are usually cheaper than heating.</p>
+<h2>Storage in cold climates</h2>
+<p>Store at partial state of charge, above the minimum voltage, and avoid charging until the pack is above 0 °C. A pack stored at −20 °C is not damaged by the cold itself; it is damaged by charging while cold.</p>
+<h2>Lead-acid for comparison</h2>
+<p>Lead-acid loses cranking current in the cold — a battery rated 600 CCA at −18 °C may deliver far less at −30 °C — but it can be charged at low temperature, slowly. The trade-off is real: lithium is lighter and more efficient, lead-acid is more forgiving of cold charging.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/lithium/thermal-runaway/">Thermal runaway</a> — what happens when limits are exceeded.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

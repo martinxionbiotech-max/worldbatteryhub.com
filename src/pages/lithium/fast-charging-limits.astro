@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Fast Charging Limits \u2014 C-Rate, Heat and Lithium Plating";
+const description = "What limits fast charging: C-rate, cell temperature, lithium plating, BMS and charger coordination, state-of-charge window and the difference between peak and sustained rate.";
+const canonical = '/lithium/fast-charging-limits/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Fast charging limits for lithium batteries",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Fast Charging Limits — C-Rate, Heat and Lithium Plating</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> Fast charging is limited by heat and by the cell’s ability to intercalate lithium without plating. The safe rate depends on temperature, state of charge and cell design, not on the charger’s label.</div>
+
+<h2>C-rate is a starting point, not a specification</h2>
+<p>A 1C charge for a 100 Ah cell is 100 A. Many cells accept 1C to 80% state of charge at 25 °C, then taper. At 0 °C the same cell may accept only 0.2C, and at 45 °C the limit may be thermal rather than electrochemical. The charger must know the cell temperature and the SOC, not just the voltage.</p>
+<table><thead><tr><th>Condition</th><th>Typical charge limit</th><th>Risk if exceeded</th></tr></thead><tbody>
+<tr><td>25 °C, 10–80% SOC</td><td>0.5–1C (cell-dependent)</td><td>Heat, accelerated aging</td></tr>
+<tr><td>0–10 °C</td><td>0.1–0.3C</td><td>Lithium plating</td></tr>
+<tr><td>Below 0 °C</td><td>Charge blocked</td><td>Plating, safety event</td></tr>
+<tr><td>Above 45 °C</td><td>Derate or stop</td><td>Thermal runaway risk</td></tr>
+</tbody></table>
+<h2>Why the last 20% is slow</h2>
+<p>At high state of charge the cell voltage approaches the cutoff and the acceptable current falls. A charger that pushes full current to 100% either trips the BMS or damages the cell. The tapering is chemistry, not charger weakness.</p>
+<h2>System coordination</h2>
+<p>Fast charging is a system property: cell, BMS, charger, cable and connector. A 200 A charger cannot help a pack whose BMS limits current to 50 A, and a thin cable adds voltage drop and heat. Confirm the continuous rating of every element, not only the peak.</p>
+<h2>What to ask a supplier</h2>
+<ol><li>What continuous and peak charge C-rate does the cell datasheet allow at 25 °C?</li><li>What is the low-temperature charge limit, and does the BMS enforce it?</li><li>What is the maximum cell temperature during fast charge, and how is it measured?</li><li>Does the charger communicate with the BMS, or does it charge blind?</li></ol>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/lithium/thermal-runaway/">Thermal runaway</a> — what happens when limits are exceeded.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

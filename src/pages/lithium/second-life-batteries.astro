@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Second-Life Batteries \u2014 Grading, Risks and When Reuse Beats Recycling";
+const description = "Second-life lithium batteries: how packs are graded, what state-of-health data is needed, the risks of reused packs, and when reuse is better than recycling.";
+const canonical = '/lithium/second-life-batteries/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Second-life battery packs",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Second-Life Batteries — Grading, Risks and When Reuse Beats Recycling</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> A second-life pack is an EV pack reused in a less demanding application. It works when the pack history is known and the state of health is tested; without that data, the buyer is pricing an unknown.</div>
+
+<h2>What second life means</h2>
+<p>An EV pack is usually retired when its capacity falls below about 70–80% of the original, because range matters more than capacity in a vehicle. The same pack may still be useful in stationary storage, where weight and volume are less constrained and the duty cycle is milder.</p>
+<h2>Grading</h2>
+<table><thead><tr><th>Grade</th><th>Typical condition</th><th>Usual application</th></tr></thead><tbody>
+<tr><td>A</td><td>&gt;80% SOH, balanced, known history</td><td>Commercial storage, backup</td></tr>
+<tr><td>B</td><td>70–80% SOH, minor imbalance</td><td>Low-rate storage, demonstration</td></tr>
+<tr><td>C</td><td>&lt;70% SOH or unknown history</td><td>Recycling, not reuse</td></tr>
+</tbody></table>
+<h2>The data that makes or breaks the deal</h2>
+<p>Ask for the pack's charge and discharge history, the temperature history, the number of equivalent full cycles, the cell voltages at rest, and a recent capacity test. A pack that has spent years at high temperature may pass a short capacity test and still fail early in its second application.</p>
+<h2>Risks</h2>
+<ul><li>Unknown history: the pack may have been in a collision or a flood.</li><li>Cell imbalance: a weak module drags the pack down.</li><li>BMS mismatch: the original BMS may not support the new inverter.</li><li>Warranty: most second-life packs carry a short or no warranty.</li><li>Regulation: transport and installation rules may treat a used pack differently from a new one.</li></ul>
+<h2>When reuse beats recycling</h2>
+<p>Reuse avoids the energy and cost of dismantling and re-refining now. It makes sense when the pack is graded, the application is stationary, and the buyer can test and monitor it. It makes less sense when the pack is damaged, of unknown chemistry, or needed in a location where service access is difficult. Recycling is the better end when the data is missing or the pack is unsafe.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/lithium/thermal-runaway/">Thermal runaway</a> — what happens when limits are exceeded.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

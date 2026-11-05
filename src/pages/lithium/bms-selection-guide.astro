@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "BMS Selection Guide \u2014 Matching a Battery Management System to the Pack";
+const description = "How to select a battery management system: cell count and chemistry, current rating, balancing, communication, protection thresholds, temperature sensing and certification.";
+const canonical = '/lithium/bms-selection-guide/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Battery management system selection",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>BMS Selection Guide — Matching a Battery Management System to the Pack</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> A BMS is specified by the pack, not bought off a shelf: cell count and chemistry, continuous and peak current, balancing method, communication protocol, protection thresholds and the number of temperature sensors.</div>
+
+<h2>The six inputs that define the BMS</h2>
+<table><thead><tr><th>Input</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>Cell count and chemistry</td><td>Sets voltage range and the protection thresholds (LFP vs NMC vs LTO)</td></tr>
+<tr><td>Continuous and peak current</td><td>Sets the MOSFET/contactor rating and heat load</td></tr>
+<tr><td>Balancing method</td><td>Passive is cheap and dissipative; active moves charge between cells</td></tr>
+<tr><td>Communication</td><td>CAN, RS485 or Bluetooth — must match the inverter, charger or telematics</td></tr>
+<tr><td>Temperature sensors</td><td>One per module is a minimum; hot spots need more</td></tr>
+<tr><td>Certification and enclosure</td><td>IP rating, isolation and the standard the product claims</td></tr>
+</tbody></table>
+<h2>Protection thresholds are not universal</h2>
+<p>An LFP cell and an NMC cell have different safe voltage windows. A BMS configured for NMC will overcharge an LFP pack or cut off too early. Ask the supplier for the threshold table and confirm it against the cell datasheet, not against a generic "12V lithium" label.</p>
+<h2>Balancing: passive vs active</h2>
+<p>Passive balancing bleeds energy from the highest cell; it is simple and adequate when cells are well matched. Active balancing moves energy between cells and is useful in large packs or after partial replacement. Neither fixes a pack built from mismatched cells — matching at assembly matters more than the balancer.</p>
+<h2>Communication and integration</h2>
+<p>The BMS must speak the language of the system around it. A CAN protocol that the inverter does not recognise turns a smart pack into a dumb one. Confirm the protocol, the pinout and the message map before purchase, and test the integration on a bench.</p>
+<h2>Questions to ask a supplier</h2>
+<ol><li>What cell chemistry and voltage window is this BMS configured for?</li><li>What is the continuous and peak current rating at the intended ambient temperature?</li><li>How many temperature sensors, and where are they placed?</li><li>What does the protection do on overcurrent — latch off or auto-retry?</li><li>Which communication protocol, and is the message map documented?</li><li>What standard or certification does the BMS claim, and who tested it?</li></ol>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/lithium/thermal-runaway/">Thermal runaway</a> — what happens when limits are exceeded.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

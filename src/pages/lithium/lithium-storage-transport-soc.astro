@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Lithium Storage and Transport State of Charge \u2014 What the Rules Require";
+const description = "State of charge for lithium storage and transport: the 30% air-shipment limit, long-term storage voltage, temperature, BMS sleep and the evidence a carrier expects.";
+const canonical = '/lithium/lithium-storage-transport-soc/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: "Lithium battery state of charge for storage and transport",
+  articleSection: 'Lithium Battery Knowledge',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Lithium · Last reviewed 2026-11-05</p>
+      <h1>Lithium Storage and Transport State of Charge — What the Rules Require</h1>
+      <div class="takeaways"><strong>Quick answer:</strong> For air transport, lithium cells and batteries are generally limited to about 30% state of charge. For long-term storage, a partial charge — not full, not empty — slows aging. The BMS should be put to sleep, and the state of charge should be documented.</div>
+
+<h2>Transport: why 30%</h2>
+<p>A lithium cell at high state of charge holds more energy and is more reactive if it fails. The air-transport rules therefore limit the state of charge for cells and batteries shipped alone (not in equipment) to about 30% of rated capacity. The exact limit and the exceptions depend on the mode and the packing instruction; confirm the current edition with the carrier.</p>
+<table><thead><tr><th>Mode</th><th>Typical SOC rule</th><th>Documentation</th></tr></thead><tbody>
+<tr><td>Air (cells/batteries alone)</td><td>≤30% SOC</td><td>UN38.3 summary, declaration, SOC statement</td></tr>
+<tr><td>Air (in equipment)</td><td>Equipment-specific; often ≤30% or disabled</td><td>Declaration, packing instruction</td></tr>
+<tr><td>Sea / road</td><td>Mode and carrier rules apply</td><td>Dangerous goods documentation</td></tr>
+</tbody></table>
+<h2>Long-term storage</h2>
+<p>Store at 30–50% state of charge, in a cool, dry place, away from flammable material. A full pack ages faster; an empty pack can drift into over-discharge. Check the voltage periodically and recharge if it falls below the manufacturer's minimum.</p>
+<h2>BMS sleep and self-consumption</h2>
+<p>A BMS left awake draws a small current that can flatten a pack over months. Use the sleep or shipping mode, disconnect the load, and record the state of charge at the start of storage. A pack that arrives at 0 V after a year in a warehouse has probably been over-discharged.</p>
+<h2>What to ask a supplier</h2>
+<ol><li>At what state of charge will the pack ship, and how is it verified?</li><li>Is the BMS in shipping mode, and what is the self-consumption?</li><li>What is the maximum storage temperature and the recommended recharge interval?</li><li>Does the documentation include the SOC statement the carrier requires?</li></ol>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/lithium/">Lithium-ion hub</a> — the full cluster.</li>
+        <li><a href="/lithium/what-is-bms/">What is a BMS?</a> — the control layer behind these limits.</li>
+        <li><a href="/safety-transport/">Safety &amp; transport</a> — shipping and handling.</li>
+        <li><a href="/applications/">Applications</a> — choosing by duty cycle.</li>
+      </ul>
+      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+    </div>
+  </section>
+</BaseLayout>

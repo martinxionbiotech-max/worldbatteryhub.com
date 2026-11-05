@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Battery Recycling & End of Life — Lead-Acid, Lithium and Second Life';
+const description = 'Battery recycling and end-of-life: lead-acid collection and smelting, lithium hydrometallurgy and pyrometallurgy, second-life packs, regulation and the market for recovered materials.';
+const canonical = '/recycling/';
+
+const articleJsonLd = {
+  '@type': 'Article',
+  '@id': `https://worldbatteryhub.com${canonical}#article`,
+  headline: title,
+  url: `https://worldbatteryhub.com${canonical}`,
+  inLanguage: 'en',
+  about: title,
+  articleSection: 'Recycling',
+  dateModified: '2026-11-05',
+  isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+  <section class="section">
+    <div class="container">
+      <p class="byline">Recycling &amp; end of life · Last reviewed 2026-11-05</p>
+      <h1>Battery recycling &amp; end of life</h1>
+      <p class="lead">Lead-acid is the most recycled battery chemistry in the world; lithium is the most complicated. The difference is not effort — it is economics, chemistry and the condition of the pack when it arrives.</p>
+
+      <div class="takeaways">
+        <strong>Quick answer:</strong> Lead-acid recycling is mature because the lead has high value and the process is well established. Lithium recycling is growing but constrained by collection, pack design and the value of recovered materials. <strong>Second life</strong> — reusing a pack in a less demanding application — sits between use and recycling, and only works when the pack's history is known.
+      </div>
+
+      <h2>Lead-acid recycling</h2>
+      <p>The process is a loop: collect, drain and neutralise the acid, break the battery, separate the lead grids and paste, and smelt the lead for new plates. Polypropylene cases are reground; the acid is neutralised or reclaimed. The loop works because the recovered lead is a large share of the input value, and because collection is often mandated at the point of sale.</p>
+      <ul>
+        <li><a href="/lead-acid/recycling/">Lead-acid recycling</a> — the process and what can be recovered.</li>
+        <li><a href="/lead-acid/disposal/">Disposal and handling</a> — why a battery is not general waste.</li>
+        <li><a href="https://market.worldbatteryhub.com/battery-recycling-market/">Recycling market</a> — collection rates and regional economics.</li>
+      </ul>
+
+      <h2>Lithium recycling</h2>
+      <p>Lithium packs are harder to recycle because the cells are assembled into modules and packs, the chemistry varies, and a discharged pack is a transport hazard. The two industrial routes are <strong>pyrometallurgy</strong> (smelt the whole pack, recover a mixed alloy) and <strong>hydrometallurgy</strong> (pre-treat, leach and separate the metals). Hydrometallurgy recovers more of the lithium and nickel but needs the pack disassembled and the chemistry identified.</p>
+      <ul>
+        <li><a href="/lithium/lithium-recycling/">Lithium recycling</a> — routes and recovery.</li>
+        <li><a href="/lithium/disposal/">Lithium disposal</a> — why a swollen or damaged pack is a different problem.</li>
+        <li><a href="https://technology.worldbatteryhub.com/battery-recycling-technology/">Recycling technology</a> — process detail.</li>
+      </ul>
+
+      <h2>Second life</h2>
+      <p>A pack that no longer meets an EV's range requirement may still have 60–80% of its capacity. Reusing it in stationary storage avoids the energy and cost of recycling now. The condition is data: without the pack's charge history, temperature history and state-of-health test, a second-life buyer cannot price the risk. That is why second life is growing in fleets with telematics and slow in the open market.</p>
+
+      <h2>Regulation and responsibility</h2>
+      <p>Extended producer responsibility, collection targets and transport rules differ by region. The practical questions for a buyer are: who takes the pack back, who pays for transport, and what documentation proves the chain of custody. A supplier that cannot answer those questions has not designed for end of life.</p>
+      <p>See the <a href="https://market.worldbatteryhub.com/battery-regulation/">battery regulation</a> reference for the policy landscape, and the <a href="/safety-transport/">safety and transport</a> pillar for the shipping rules that apply to waste batteries.</p>
+
+      <h2>Related pillars</h2>
+      <ul>
+        <li><a href="/applications/">Applications</a> — the duty cycle that determines when a pack is retired.</li>
+        <li><a href="/lead-acid/">Lead-acid technology</a> — design for recyclability.</li>
+        <li><a href="/lithium/">Lithium-ion technology</a> — chemistry and pack design.</li>
+      </ul>
+
+      <div class="ruo">Reference information. Recycling and waste-shipment rules vary by jurisdiction; confirm with the competent authority and a licensed recycler.</div>
+    </div>
+  </section>
+</BaseLayout>
