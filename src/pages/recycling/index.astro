@@ -16,9 +16,11 @@ const articleJsonLd = {
   dateModified: '2026-11-05',
   isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
 };
+const faqLd = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is lead-acid recycling really closed-loop?", "acceptedAnswer": {"@type": "Answer", "text": "Largely yes: lead, polypropylene and a large share of the acid are recovered, and the recovered lead is a major part of the input value. The loop depends on collection, which is why deposit and take-back schemes matter."}}, {"@type": "Question", "name": "Can lithium packs be recycled economically?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on chemistry, scale and transport cost. Hydrometallurgy recovers more value but needs disassembly and a known chemistry; pyrometallurgy is simpler but recovers less lithium."}}, {"@type": "Question", "name": "What is second life?", "acceptedAnswer": {"@type": "Answer", "text": "Reusing a pack that no longer meets an EV range requirement in a less demanding application, usually stationary storage. It works when the pack history and state of health are known."}}]};
+
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd, faqLd]} author="World Battery Hub" dateModified="2026-11-05">
   <section class="section">
     <div class="container">
       <p class="byline">Recycling &amp; end of life · Last reviewed 2026-11-05</p>
@@ -59,7 +61,14 @@ const articleJsonLd = {
         <li><a href="/lithium/">Lithium-ion technology</a> — chemistry and pack design.</li>
       </ul>
 
-      <div class="ruo">Reference information. Recycling and waste-shipment rules vary by jurisdiction; confirm with the competent authority and a licensed recycler.</div>
+            <h2>Frequently asked questions</h2>
+      <h3>Is lead-acid recycling really closed-loop?</h3>
+      <p>Largely yes: lead, polypropylene and a large share of the acid are recovered, and the recovered lead is a major part of the input value. The loop depends on collection, which is why deposit and take-back schemes matter.</p>
+      <h3>Can lithium packs be recycled economically?</h3>
+      <p>It depends on chemistry, scale and transport cost. Hydrometallurgy recovers more value but needs disassembly and a known chemistry; pyrometallurgy is simpler but recovers less lithium.</p>
+      <h3>What is second life?</h3>
+      <p>Reusing a pack that no longer meets an EV range requirement in a less demanding application, usually stationary storage. It works when the pack history and state of health are known.</p>
+<div class="ruo">Reference information. Recycling and waste-shipment rules vary by jurisdiction; confirm with the competent authority and a licensed recycler.</div>
     </div>
   </section>
 </BaseLayout>

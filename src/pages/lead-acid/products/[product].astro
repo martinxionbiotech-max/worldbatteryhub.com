@@ -60,6 +60,14 @@ const knowLinks = {
   'oem': { href: '/lead-acid/sli-battery/', label: 'SLI batteries' },
   'truck-battery': { href: '/lead-acid/truck-battery/', label: 'Truck batteries' },
 };
+const faqLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: `Is ${p.name} for human use?`, acceptedAnswer: { '@type': 'Answer', text: 'No. It is supplied for laboratory research only, not for human or veterinary use.' } },
+    { '@type': 'Question', name: 'What documentation ships with the order?', acceptedAnswer: { '@type': 'Answer', text: 'A batch-specific COA with HPLC chromatogram and method, MS confirmation, MSDS and storage instructions.' } },
+    { '@type': 'Question', name: 'Can I order a sample before a bulk order?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, for qualified business buyers. The sample ships with its own batch COA.' } },
+  ],
+};
 const related = productsData.products.filter((x) => x.category === category && x.id !== p.id).slice(0, 4);
 ---
 
@@ -68,7 +76,7 @@ const related = productsData.products.filter((x) => x.category === category && x
   description={description}
   canonical={`/lead-acid/products/${p.id}/`}
   ogType="article"
-  jsonLd={[productJsonLd]}
+  jsonLd={[productJsonLd, faqLd]}
   author="World Battery Hub"
   dateModified="2026-09-17"
 >
@@ -178,5 +186,12 @@ const related = productsData.products.filter((x) => x.category === category && x
         <a href="/lead-acid/products/">All products</a> · <a href="/lead-acid/">Lead-acid knowledge</a> · Last reviewed: 2026-09-17
       </p>
     </div>
-  </section>
+        <h2>Frequently asked questions</h2>
+      <h3>Is this product for human use?</h3>
+      <p>No. It is supplied for laboratory research only, not for human or veterinary use, diagnosis, treatment or cosmetic application.</p>
+      <h3>What documentation ships with the order?</h3>
+      <p>A batch-specific COA with HPLC chromatogram and method, MS confirmation, MSDS and storage instructions.</p>
+      <h3>Can I order a sample before a bulk order?</h3>
+      <p>Yes, for qualified business buyers. The sample ships with its own batch COA.</p>
+</section>
 </BaseLayout>

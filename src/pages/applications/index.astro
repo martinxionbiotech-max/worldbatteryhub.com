@@ -16,9 +16,11 @@ const articleJsonLd = {
   dateModified: '2026-11-05',
   isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
 };
+const faqLd = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I choose a battery for an application?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the load profile: watts or amps, duration, ambient temperature and weight limit. Those four decide whether lead-acid or lithium is in the running; then compare CCA, Ah, cycle life and cost."}}, {"@type": "Question", "name": "Can one battery serve several applications?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes, but a dual-purpose battery is a compromise. A marine battery can crank and cycle, but a dedicated starting battery and a dedicated deep-cycle bank will each do their own job better."}}, {"@type": "Question", "name": "Where do I find the specification for my application?", "acceptedAnswer": {"@type": "Answer", "text": "Use the application table above; each row links to the page that explains the deciding specification, and the tools hub has runtime and sizing calculators."}}]};
+
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd, faqLd]} author="World Battery Hub" dateModified="2026-11-05">
   <section class="section">
     <div class="container">
       <p class="byline">Applications · Last reviewed 2026-11-05</p>
@@ -61,7 +63,14 @@ const articleJsonLd = {
         <li><a href="/recycling/">Recycling &amp; end of life</a> — what happens after the application.</li>
       </ul>
 
-      <div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
+            <h2>Frequently asked questions</h2>
+      <h3>How do I choose a battery for an application?</h3>
+      <p>Start with the load profile: watts or amps, duration, ambient temperature and weight limit. Those four decide whether lead-acid or lithium is in the running; then compare CCA, Ah, cycle life and cost.</p>
+      <h3>Can one battery serve several applications?</h3>
+      <p>Sometimes, but a dual-purpose battery is a compromise. A marine battery can crank and cycle, but a dedicated starting battery and a dedicated deep-cycle bank will each do their own job better.</p>
+      <h3>Where do I find the specification for my application?</h3>
+      <p>Use the application table above; each row links to the page that explains the deciding specification, and the tools hub has runtime and sizing calculators.</p>
+<div class="ruo">Reference information for battery buyers and engineers. Verify the final specification against the manufacturer datasheet and the applicable standard.</div>
     </div>
   </section>
 </BaseLayout>

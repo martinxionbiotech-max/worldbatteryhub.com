@@ -16,9 +16,11 @@ const articleJsonLd = {
   dateModified: '2026-11-05',
   isPartOf: { '@id': 'https://worldbatteryhub.com/#website' },
 };
+const faqLd = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is UN38.3 required for every lithium shipment?", "acceptedAnswer": {"@type": "Answer", "text": "It is the test summary the transport regulations require for lithium cells and batteries; the mode and packing instruction determine what else is needed. Confirm the current edition with your carrier."}}, {"@type": "Question", "name": "What documents should accompany a lithium shipment?", "acceptedAnswer": {"@type": "Answer", "text": "UN38.3 summary, transport declaration where required, SDS, package mark and label, and the state-of-charge statement for air. Lead-acid needs acid containment and terminal protection documentation."}}, {"@type": "Question", "name": "Who is responsible for import compliance?", "acceptedAnswer": {"@type": "Answer", "text": "The buyer, unless the Incoterm and a written agreement transfer a specific duty. The supplier provides the product documents; the importer confirms the permit, classification and destination rules."}}]};
+
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd]} author="World Battery Hub" dateModified="2026-11-05">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" jsonLd={[articleJsonLd, faqLd]} author="World Battery Hub" dateModified="2026-11-05">
   <section class="section">
     <div class="container">
       <p class="byline">Safety &amp; transport · Last reviewed 2026-11-05</p>
@@ -71,7 +73,14 @@ const articleJsonLd = {
         <li><a href="/testing/">Testing overview</a> — how the tests are run and reported.</li>
       </ul>
 
-      <div class="ruo">Reference information, not a substitute for the applicable regulation or a dangerous-goods professional's advice. Confirm the current edition with your carrier and authority.</div>
+            <h2>Frequently asked questions</h2>
+      <h3>Is UN38.3 required for every lithium shipment?</h3>
+      <p>It is the test summary the transport regulations require for lithium cells and batteries; the mode and packing instruction determine what else is needed. Confirm the current edition with your carrier.</p>
+      <h3>What documents should accompany a lithium shipment?</h3>
+      <p>UN38.3 summary, transport declaration where required, SDS, package mark and label, and the state-of-charge statement for air. Lead-acid needs acid containment and terminal protection documentation.</p>
+      <h3>Who is responsible for import compliance?</h3>
+      <p>The buyer, unless the Incoterm and a written agreement transfer a specific duty. The supplier provides the product documents; the importer confirms the permit, classification and destination rules.</p>
+<div class="ruo">Reference information, not a substitute for the applicable regulation or a dangerous-goods professional's advice. Confirm the current edition with your carrier and authority.</div>
     </div>
   </section>
 </BaseLayout>
