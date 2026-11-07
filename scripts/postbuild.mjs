@@ -79,6 +79,32 @@ for (const file of pages) {
     }
   }
 
+  if (!/"@type"\s*:\s*"(Article|TechArticle|CollectionPage|WebSite)"/.test(html)) {
+    const rel = path.relative(dist, file).split(path.sep);
+    const segs = rel.slice(0, -1);
+    if (segs.length >= 1) {
+      const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [])[1]?.split('|')[0].trim() || siteName;
+      const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/) || [])[1]?.trim() || siteDesc;
+      const canon = (html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/) || [])[1]?.trim();
+      if (canon) {
+        const art = {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: title,
+          description: desc,
+          url: canon,
+          mainEntityOfPage: canon,
+          dateModified: '2026-11-07',
+          author: { '@type': 'Organization', name: siteName },
+          publisher: { '@id': 'https://worldbatteryhub.com/#organization' },
+          isPartOf: { '@id': siteUrl + '/' },
+        };
+        html = html.replace('</head>', `    <script type="application/ld+json">${JSON.stringify(art)}</script>\n  </head>`);
+        changed = true;
+      }
+    }
+  }
+
   if (changed) fs.writeFileSync(file, html);
 }
 
