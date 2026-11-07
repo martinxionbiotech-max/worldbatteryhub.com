@@ -82,6 +82,30 @@ for (const file of pages) {
   if (changed) fs.writeFileSync(file, html);
 }
 
+// Related-cluster links for sub-sites (improves crawl depth and cluster connectivity).
+if (siteUrl !== 'https://worldbatteryhub.com') {
+  const infos = pages.map((file) => {
+    const rel = path.relative(dist, file).split(path.sep);
+    const segs = rel.slice(0, -1);
+    const url = segs.length ? '/' + segs.join('/') + '/' : '/';
+    const html = fs.readFileSync(file, 'utf8');
+    const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [])[1]?.split('|')[0].trim() || '';
+    return { file, url, title, section: segs.length >= 2 ? segs[0] : (segs.length === 1 ? '(articles)' : '') };
+  });
+  for (const info of infos) {
+    if (!info.section || !info.title) continue;
+    let html = fs.readFileSync(info.file, 'utf8');
+    if (html.includes('More in this cluster')) continue;
+    const siblings = infos.filter((p) => p.section === info.section && p.url !== info.url && p.title).slice(0, 4);
+    if (siblings.length < 2) continue;
+    const list = siblings.map((p) => `<li><a href="${p.url}">${p.title}</a></li>`).join('');
+    const block = `<h2>More in this cluster</h2><ul>${list}</ul>`;
+    if (html.includes('<footer')) html = html.replace('<footer', block + '<footer');
+    else html = html.replace('</body>', block + '</body>');
+    fs.writeFileSync(info.file, html);
+  }
+}
+
 if (process.env.SKIP_LLMS !== '1' && !fs.existsSync(path.join(dist, 'llms.txt'))) {
   const lines = [];
   for (const file of pages) {
