@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/build-llms.mjs && node ../scripts/generate-markdown.mjs",
+    "build": "astro build && node scripts/build-llms.mjs && node scripts/generate-markdown.mjs && SITE_URL=https://worldbatteryhub.com SITE_NAME=\"World Battery Hub\" SITE_DESC=\"Battery knowledge and data platform\" node scripts/postbuild.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
